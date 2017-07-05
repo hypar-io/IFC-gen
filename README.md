@@ -18,6 +18,11 @@ The class definitions were generated using `xsd.exe` on Windows as follows:
 xsd <path to xsd> /n:IFC4 /c /out:<path to outputdir>
 ```
 
+### To Generate Class Files
+```
+dotnet run "C:\Users\Ian\Documents\GitHub\IFC-dotnet\src\bin\Debug\netstandard2.0\IFC-dotnet.dll" "C:\Users\Ian\Documents\GitHub\IFC-dotnet\src"
+```
+
 ### To Do
 
 - Write utility to automatically generate partial class files from class definitions in IFC4_ADD2.cs.
