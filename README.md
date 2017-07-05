@@ -25,6 +25,7 @@ dotnet run "C:\Users\Ian\Documents\GitHub\IFC-dotnet\src\bin\Debug\netstandard2.
 
 ### To Do
 
-- Write utility to automatically generate partial class files from class definitions in IFC4_ADD2.cs.
-  - Utility should add documentation from IFC docs.
-- Investigate use of [ANTLR Express Grammar](https://github.com/opensourceBIM/BuildingSMARTLibrary/blob/master/BuildingSMARTLibrary/src/net/sourceforge/osexpress/parser/express.g) for opening IFC files.
+- Generate code comments from IFC docs.
+- Investigate use of [ANTLR Express Grammar](https://github.com/opensourceBIM/BuildingSMARTLibrary/blob/master/BuildingSMARTLibrary/src/net/sourceforge/osexpress/parser/express.g) for parsing EXPRESS.
+- Drop 'Ifc' from the front of all classes.
+- Convert all properties ending in Specified to null checks.
