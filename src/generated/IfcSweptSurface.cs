@@ -14,8 +14,8 @@ namespace IFC4
 				IfcAxis2Placement3D position,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.sweptCurveField = sweptCurve;
-			this.positionField = position;
+			this.SweptCurve = sweptCurve;
+			this.Position = position;
 		}
 	}
 }

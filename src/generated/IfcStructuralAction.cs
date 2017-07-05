@@ -34,8 +34,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.destabilizingLoadField = destabilizingLoad;
-			this.destabilizingLoadSpecifiedField = destabilizingLoadSpecified;
+			this.DestabilizingLoad = destabilizingLoad;
+			this.DestabilizingLoadSpecified = destabilizingLoadSpecified;
 		}
 	}
 }

@@ -24,18 +24,18 @@ namespace IFC4
 				Boolean rotationalDisplacementRZSpecified,
 				String name) : base(name)
 		{
-			this.displacementXField = displacementX;
-			this.displacementXSpecifiedField = displacementXSpecified;
-			this.displacementYField = displacementY;
-			this.displacementYSpecifiedField = displacementYSpecified;
-			this.displacementZField = displacementZ;
-			this.displacementZSpecifiedField = displacementZSpecified;
-			this.rotationalDisplacementRXField = rotationalDisplacementRX;
-			this.rotationalDisplacementRXSpecifiedField = rotationalDisplacementRXSpecified;
-			this.rotationalDisplacementRYField = rotationalDisplacementRY;
-			this.rotationalDisplacementRYSpecifiedField = rotationalDisplacementRYSpecified;
-			this.rotationalDisplacementRZField = rotationalDisplacementRZ;
-			this.rotationalDisplacementRZSpecifiedField = rotationalDisplacementRZSpecified;
+			this.DisplacementX = displacementX;
+			this.DisplacementXSpecified = displacementXSpecified;
+			this.DisplacementY = displacementY;
+			this.DisplacementYSpecified = displacementYSpecified;
+			this.DisplacementZ = displacementZ;
+			this.DisplacementZSpecified = displacementZSpecified;
+			this.RotationalDisplacementRX = rotationalDisplacementRX;
+			this.RotationalDisplacementRXSpecified = rotationalDisplacementRXSpecified;
+			this.RotationalDisplacementRY = rotationalDisplacementRY;
+			this.RotationalDisplacementRYSpecified = rotationalDisplacementRYSpecified;
+			this.RotationalDisplacementRZ = rotationalDisplacementRZ;
+			this.RotationalDisplacementRZSpecified = rotationalDisplacementRZSpecified;
 		}
 	}
 }

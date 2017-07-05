@@ -15,9 +15,9 @@ namespace IFC4
 				IfcTessellatedFaceSetHasTextures hasTextures,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.coordinatesField = coordinates;
-			this.hasColoursField = hasColours;
-			this.hasTexturesField = hasTextures;
+			this.Coordinates = coordinates;
+			this.HasColours = hasColours;
+			this.HasTextures = hasTextures;
 		}
 	}
 }

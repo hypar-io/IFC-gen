@@ -19,14 +19,14 @@ namespace IFC4
 				String[] prefixTitles,
 				String[] suffixTitles) : base()
 		{
-			this.rolesField = roles;
-			this.addressesField = addresses;
-			this.identificationField = identification;
-			this.familyNameField = familyName;
-			this.givenNameField = givenName;
-			this.middleNamesField = middleNames;
-			this.prefixTitlesField = prefixTitles;
-			this.suffixTitlesField = suffixTitles;
+			this.Roles = roles;
+			this.Addresses = addresses;
+			this.Identification = identification;
+			this.FamilyName = familyName;
+			this.GivenName = givenName;
+			this.MiddleNames = middleNames;
+			this.PrefixTitles = prefixTitles;
+			this.SuffixTitles = suffixTitles;
 		}
 	}
 }

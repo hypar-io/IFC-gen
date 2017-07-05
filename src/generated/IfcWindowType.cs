@@ -31,13 +31,13 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.partitioningTypeField = partitioningType;
-			this.partitioningTypeSpecifiedField = partitioningTypeSpecified;
-			this.parameterTakesPrecedenceField = parameterTakesPrecedence;
-			this.parameterTakesPrecedenceSpecifiedField = parameterTakesPrecedenceSpecified;
-			this.userDefinedPartitioningTypeField = userDefinedPartitioningType;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.PartitioningType = partitioningType;
+			this.PartitioningTypeSpecified = partitioningTypeSpecified;
+			this.ParameterTakesPrecedence = parameterTakesPrecedence;
+			this.ParameterTakesPrecedenceSpecified = parameterTakesPrecedenceSpecified;
+			this.UserDefinedPartitioningType = userDefinedPartitioningType;
 		}
 	}
 }

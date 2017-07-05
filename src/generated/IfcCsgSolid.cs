@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcCsgSolid(IfcCsgSolidTreeRootExpression treeRootExpression,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.treeRootExpressionField = treeRootExpression;
+			this.TreeRootExpression = treeRootExpression;
 		}
 	}
 }

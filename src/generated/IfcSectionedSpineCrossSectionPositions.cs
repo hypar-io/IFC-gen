@@ -15,10 +15,10 @@ namespace IFC4
 				aggregateType[] cType,
 				String[] arraySize) : base()
 		{
-			this.ifcAxis2Placement3DField = ifcAxis2Placement3D;
-			this.itemTypeField = itemType;
-			this.cTypeField = cType;
-			this.arraySizeField = arraySize;
+			this.IfcAxis2Placement3D = ifcAxis2Placement3D;
+			this.itemType = itemType;
+			this.cType = cType;
+			this.arraySize = arraySize;
 		}
 	}
 }

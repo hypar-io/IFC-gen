@@ -29,9 +29,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.appliedLoadField = appliedLoad;
-			this.globalOrLocalField = globalOrLocal;
-			this.globalOrLocalSpecifiedField = globalOrLocalSpecified;
+			this.AppliedLoad = appliedLoad;
+			this.GlobalOrLocal = globalOrLocal;
+			this.GlobalOrLocalSpecified = globalOrLocalSpecified;
 		}
 	}
 }

@@ -19,9 +19,9 @@ namespace IFC4
 				position,
 				styledByItem)
 		{
-			this.extrudedDirectionField = extrudedDirection;
-			this.depthField = depth;
-			this.depthSpecifiedField = depthSpecified;
+			this.ExtrudedDirection = extrudedDirection;
+			this.Depth = depth;
+			this.DepthSpecified = depthSpecified;
 		}
 	}
 }

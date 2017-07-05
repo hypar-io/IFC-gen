@@ -25,9 +25,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.longNameField = longName;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.LongName = longName;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

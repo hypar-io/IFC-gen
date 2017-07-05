@@ -17,7 +17,7 @@ namespace IFC4
 				edgeEnd,
 				styledByItem)
 		{
-			this.parentEdgeField = parentEdge;
+			this.ParentEdge = parentEdge;
 		}
 	}
 }

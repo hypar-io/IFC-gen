@@ -12,12 +12,15 @@ namespace IFC_dotnet_generate
 
 		public string Name {get;set;}
 
+		public string CorrespondingPropertyName{get;set;}
+
 		public bool IsInherited {get;set;}
 
-		public ParameterInfo(string typeName, string name, bool isInherited)
+		public ParameterInfo(string typeName, string name, string correspondingPropertyName, bool isInherited)
 		{
 			TypeName = typeName;
 			Name = name;
+			CorrespondingPropertyName = correspondingPropertyName;
 			IsInherited = isInherited;
 		}
 	}
@@ -76,7 +79,7 @@ namespace IFC_dotnet_generate
 		/// </summary>
 		/// <returns></returns>
 		private string ToFieldAssignmentString(){
-			var fieldAssignments = string.Join(";\n", Parameters.Where(p=>!p.IsInherited).Select(i=>$"\t\t\tthis.{i.Name}Field = {i.Name}"));
+			var fieldAssignments = string.Join(";\n", Parameters.Where(p=>!p.IsInherited).Select(i=>$"\t\t\tthis.{i.CorrespondingPropertyName} = {i.Name}"));
 			return fieldAssignments + ";";
 		}
 
@@ -190,7 +193,7 @@ namespace IFC4
 					pName = "op";
 				}
 
-				classInfo.Parameters.Add(new ParameterInfo(p.PropertyType.Name, pName, p.DeclaringType != t));
+				classInfo.Parameters.Add(new ParameterInfo(p.PropertyType.Name, pName, p.Name, p.DeclaringType != t));
 			}
 
 			return classInfo;

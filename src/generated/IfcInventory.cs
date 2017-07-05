@@ -29,13 +29,13 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.jurisdictionField = jurisdiction;
-			this.responsiblePersonsField = responsiblePersons;
-			this.currentValueField = currentValue;
-			this.originalValueField = originalValue;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.lastUpdateDateField = lastUpdateDate;
+			this.Jurisdiction = jurisdiction;
+			this.ResponsiblePersons = responsiblePersons;
+			this.CurrentValue = currentValue;
+			this.OriginalValue = originalValue;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.LastUpdateDate = lastUpdateDate;
 		}
 	}
 }

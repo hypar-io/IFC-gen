@@ -18,13 +18,13 @@ namespace IFC4
 				String mode,
 				String[] parameter) : base()
 		{
-			this.textureTransformField = textureTransform;
-			this.repeatSField = repeatS;
-			this.repeatSSpecifiedField = repeatSSpecified;
-			this.repeatTField = repeatT;
-			this.repeatTSpecifiedField = repeatTSpecified;
-			this.modeField = mode;
-			this.parameterField = parameter;
+			this.TextureTransform = textureTransform;
+			this.RepeatS = repeatS;
+			this.RepeatSSpecified = repeatSSpecified;
+			this.RepeatT = repeatT;
+			this.RepeatTSpecified = repeatTSpecified;
+			this.Mode = mode;
+			this.Parameter = parameter;
 		}
 	}
 }

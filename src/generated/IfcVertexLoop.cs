@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcVertexLoop(IfcVertex loopVertex,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.loopVertexField = loopVertex;
+			this.LoopVertex = loopVertex;
 		}
 	}
 }

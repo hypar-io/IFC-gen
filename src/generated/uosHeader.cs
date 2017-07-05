@@ -20,15 +20,15 @@ namespace IFC4
 				String authorization,
 				String documentation) : base()
 		{
-			this.nameField = name;
-			this.time_stampField = time_stamp;
-			this.time_stampSpecifiedField = time_stampSpecified;
-			this.authorField = author;
-			this.organizationField = organization;
-			this.preprocessor_versionField = preprocessor_version;
-			this.originating_systemField = originating_system;
-			this.authorizationField = authorization;
-			this.documentationField = documentation;
+			this.name = name;
+			this.time_stamp = time_stamp;
+			this.time_stampSpecified = time_stampSpecified;
+			this.author = author;
+			this.organization = organization;
+			this.preprocessor_version = preprocessor_version;
+			this.originating_system = originating_system;
+			this.authorization = authorization;
+			this.documentation = documentation;
 		}
 	}
 }

@@ -23,7 +23,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.longNameField = longName;
+			this.LongName = longName;
 		}
 	}
 }

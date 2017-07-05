@@ -29,11 +29,11 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.eventTriggerTypeField = eventTriggerType;
-			this.eventTriggerTypeSpecifiedField = eventTriggerTypeSpecified;
-			this.userDefinedEventTriggerTypeField = userDefinedEventTriggerType;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.EventTriggerType = eventTriggerType;
+			this.EventTriggerTypeSpecified = eventTriggerTypeSpecified;
+			this.UserDefinedEventTriggerType = userDefinedEventTriggerType;
 		}
 	}
 }

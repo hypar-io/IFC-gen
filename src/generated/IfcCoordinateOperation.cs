@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcCoordinateOperation(IfcCoordinateReferenceSystem targetCRS) : base()
 		{
-			this.targetCRSField = targetCRS;
+			this.TargetCRS = targetCRS;
 		}
 	}
 }

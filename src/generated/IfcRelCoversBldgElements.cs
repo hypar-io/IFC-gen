@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelCoversBldgElements(IfcElement relatingBuildingElement,
 				IfcRelCoversBldgElementsRelatedCoverings relatedCoverings) : base()
 		{
-			this.relatingBuildingElementField = relatingBuildingElement;
-			this.relatedCoveringsField = relatedCoverings;
+			this.RelatingBuildingElement = relatingBuildingElement;
+			this.RelatedCoverings = relatedCoverings;
 		}
 	}
 }

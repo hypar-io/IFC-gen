@@ -28,14 +28,14 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.bottomXDimField = bottomXDim;
-			this.bottomXDimSpecifiedField = bottomXDimSpecified;
-			this.topXDimField = topXDim;
-			this.topXDimSpecifiedField = topXDimSpecified;
-			this.yDimField = yDim;
-			this.yDimSpecifiedField = yDimSpecified;
-			this.topXOffsetField = topXOffset;
-			this.topXOffsetSpecifiedField = topXOffsetSpecified;
+			this.BottomXDim = bottomXDim;
+			this.BottomXDimSpecified = bottomXDimSpecified;
+			this.TopXDim = topXDim;
+			this.TopXDimSpecified = topXDimSpecified;
+			this.YDim = yDim;
+			this.YDimSpecified = yDimSpecified;
+			this.TopXOffset = topXOffset;
+			this.TopXOffsetSpecified = topXOffsetSpecified;
 		}
 	}
 }

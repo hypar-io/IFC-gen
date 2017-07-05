@@ -34,10 +34,10 @@ namespace IFC4
 				selfIntersectSpecified,
 				styledByItem)
 		{
-			this.knotMultiplicitiesField = knotMultiplicities;
-			this.knotsField = knots;
-			this.knotSpecField = knotSpec;
-			this.knotSpecSpecifiedField = knotSpecSpecified;
+			this.KnotMultiplicities = knotMultiplicities;
+			this.Knots = knots;
+			this.KnotSpec = knotSpec;
+			this.KnotSpecSpecified = knotSpecSpecified;
 		}
 	}
 }

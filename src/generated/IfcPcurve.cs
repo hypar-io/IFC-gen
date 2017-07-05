@@ -14,8 +14,8 @@ namespace IFC4
 				IfcCurve referenceCurve,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisSurfaceField = basisSurface;
-			this.referenceCurveField = referenceCurve;
+			this.BasisSurface = basisSurface;
+			this.ReferenceCurve = referenceCurve;
 		}
 	}
 }

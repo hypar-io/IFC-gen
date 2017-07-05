@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelCoversSpaces(IfcSpace relatingSpace,
 				IfcRelCoversSpacesRelatedCoverings relatedCoverings) : base()
 		{
-			this.relatingSpaceField = relatingSpace;
-			this.relatedCoveringsField = relatedCoverings;
+			this.RelatingSpace = relatingSpace;
+			this.RelatedCoverings = relatedCoverings;
 		}
 	}
 }

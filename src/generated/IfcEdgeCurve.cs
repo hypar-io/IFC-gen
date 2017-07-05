@@ -19,9 +19,9 @@ namespace IFC4
 				edgeEnd,
 				styledByItem)
 		{
-			this.edgeGeometryField = edgeGeometry;
-			this.sameSenseField = sameSense;
-			this.sameSenseSpecifiedField = sameSenseSpecified;
+			this.EdgeGeometry = edgeGeometry;
+			this.SameSense = sameSense;
+			this.SameSenseSpecified = sameSenseSpecified;
 		}
 	}
 }

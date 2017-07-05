@@ -21,13 +21,13 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.definingValuesField = definingValues;
-			this.definedValuesField = definedValues;
-			this.definingUnitField = definingUnit;
-			this.definedUnitField = definedUnit;
-			this.expressionField = expression;
-			this.curveInterpolationField = curveInterpolation;
-			this.curveInterpolationSpecifiedField = curveInterpolationSpecified;
+			this.DefiningValues = definingValues;
+			this.DefinedValues = definedValues;
+			this.DefiningUnit = definingUnit;
+			this.DefinedUnit = definedUnit;
+			this.Expression = expression;
+			this.CurveInterpolation = curveInterpolation;
+			this.CurveInterpolationSpecified = curveInterpolationSpecified;
 		}
 	}
 }

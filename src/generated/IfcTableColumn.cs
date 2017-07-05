@@ -16,11 +16,11 @@ namespace IFC4
 				String name,
 				String description) : base()
 		{
-			this.unitField = unit;
-			this.referencePathField = referencePath;
-			this.identifierField = identifier;
-			this.nameField = name;
-			this.descriptionField = description;
+			this.Unit = unit;
+			this.ReferencePath = referencePath;
+			this.Identifier = identifier;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

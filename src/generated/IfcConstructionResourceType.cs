@@ -26,8 +26,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.baseCostsField = baseCosts;
-			this.baseQuantityField = baseQuantity;
+			this.BaseCosts = baseCosts;
+			this.BaseQuantity = baseQuantity;
 		}
 	}
 }

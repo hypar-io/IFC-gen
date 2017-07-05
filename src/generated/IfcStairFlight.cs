@@ -42,16 +42,16 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.numberOfRisersField = numberOfRisers;
-			this.numberOfRisersSpecifiedField = numberOfRisersSpecified;
-			this.numberOfTreadsField = numberOfTreads;
-			this.numberOfTreadsSpecifiedField = numberOfTreadsSpecified;
-			this.riserHeightField = riserHeight;
-			this.riserHeightSpecifiedField = riserHeightSpecified;
-			this.treadLengthField = treadLength;
-			this.treadLengthSpecifiedField = treadLengthSpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.NumberOfRisers = numberOfRisers;
+			this.NumberOfRisersSpecified = numberOfRisersSpecified;
+			this.NumberOfTreads = numberOfTreads;
+			this.NumberOfTreadsSpecified = numberOfTreadsSpecified;
+			this.RiserHeight = riserHeight;
+			this.RiserHeightSpecified = riserHeightSpecified;
+			this.TreadLength = treadLength;
+			this.TreadLengthSpecified = treadLengthSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

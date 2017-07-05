@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcCartesianPoint(Double[] coordinates,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.coordinatesField = coordinates;
+			this.Coordinates = coordinates;
 		}
 	}
 }

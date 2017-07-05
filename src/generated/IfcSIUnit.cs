@@ -20,10 +20,10 @@ namespace IFC4
 				unitType,
 				unitTypeSpecified)
 		{
-			this.prefixField = prefix;
-			this.prefixSpecifiedField = prefixSpecified;
-			this.nameField = name;
-			this.nameSpecifiedField = nameSpecified;
+			this.Prefix = prefix;
+			this.PrefixSpecified = prefixSpecified;
+			this.Name = name;
+			this.NameSpecified = nameSpecified;
 		}
 	}
 }

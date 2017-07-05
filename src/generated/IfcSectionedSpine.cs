@@ -15,9 +15,9 @@ namespace IFC4
 				IfcSectionedSpineCrossSectionPositions crossSectionPositions,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.spineCurveField = spineCurve;
-			this.crossSectionsField = crossSections;
-			this.crossSectionPositionsField = crossSectionPositions;
+			this.SpineCurve = spineCurve;
+			this.CrossSections = crossSections;
+			this.CrossSectionPositions = crossSectionPositions;
 		}
 	}
 }

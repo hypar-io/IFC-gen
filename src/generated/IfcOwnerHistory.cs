@@ -23,18 +23,18 @@ namespace IFC4
 				Int64 creationDate,
 				Boolean creationDateSpecified) : base()
 		{
-			this.owningUserField = owningUser;
-			this.owningApplicationField = owningApplication;
-			this.lastModifyingUserField = lastModifyingUser;
-			this.lastModifyingApplicationField = lastModifyingApplication;
-			this.stateField = state;
-			this.stateSpecifiedField = stateSpecified;
-			this.changeActionField = changeAction;
-			this.changeActionSpecifiedField = changeActionSpecified;
-			this.lastModifiedDateField = lastModifiedDate;
-			this.lastModifiedDateSpecifiedField = lastModifiedDateSpecified;
-			this.creationDateField = creationDate;
-			this.creationDateSpecifiedField = creationDateSpecified;
+			this.OwningUser = owningUser;
+			this.OwningApplication = owningApplication;
+			this.LastModifyingUser = lastModifyingUser;
+			this.LastModifyingApplication = lastModifyingApplication;
+			this.State = state;
+			this.StateSpecified = stateSpecified;
+			this.ChangeAction = changeAction;
+			this.ChangeActionSpecified = changeActionSpecified;
+			this.LastModifiedDate = lastModifiedDate;
+			this.LastModifiedDateSpecified = lastModifiedDateSpecified;
+			this.CreationDate = creationDate;
+			this.CreationDateSpecified = creationDateSpecified;
 		}
 	}
 }

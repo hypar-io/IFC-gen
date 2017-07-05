@@ -17,12 +17,12 @@ namespace IFC4
 				Boolean sequenceTypeSpecified,
 				String userDefinedSequenceType) : base()
 		{
-			this.relatingProcessField = relatingProcess;
-			this.relatedProcessField = relatedProcess;
-			this.timeLagField = timeLag;
-			this.sequenceTypeField = sequenceType;
-			this.sequenceTypeSpecifiedField = sequenceTypeSpecified;
-			this.userDefinedSequenceTypeField = userDefinedSequenceType;
+			this.RelatingProcess = relatingProcess;
+			this.RelatedProcess = relatedProcess;
+			this.TimeLag = timeLag;
+			this.SequenceType = sequenceType;
+			this.SequenceTypeSpecified = sequenceTypeSpecified;
+			this.UserDefinedSequenceType = userDefinedSequenceType;
 		}
 	}
 }

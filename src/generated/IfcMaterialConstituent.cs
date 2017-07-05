@@ -18,12 +18,12 @@ namespace IFC4
 				String category,
 				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
-			this.materialField = material;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.fractionField = fraction;
-			this.fractionSpecifiedField = fractionSpecified;
-			this.categoryField = category;
+			this.Material = material;
+			this.Name = name;
+			this.Description = description;
+			this.Fraction = fraction;
+			this.FractionSpecified = fractionSpecified;
+			this.Category = category;
 		}
 	}
 }

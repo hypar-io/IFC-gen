@@ -9,9 +9,6 @@ namespace test
         [Fact]
         public void Test1()
         {
-            var el = new IFC4.IfcBeam();
-            el.PredefinedType = IfcBeamTypeEnum.beam;
-
         }
     }
 }

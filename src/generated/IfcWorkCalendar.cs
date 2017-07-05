@@ -28,10 +28,10 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.workingTimesField = workingTimes;
-			this.exceptionTimesField = exceptionTimes;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.WorkingTimes = workingTimes;
+			this.ExceptionTimes = exceptionTimes;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

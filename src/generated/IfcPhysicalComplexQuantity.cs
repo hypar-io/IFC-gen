@@ -18,10 +18,10 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.hasQuantitiesField = hasQuantities;
-			this.discriminationField = discrimination;
-			this.qualityField = quality;
-			this.usageField = usage;
+			this.HasQuantities = hasQuantities;
+			this.Discrimination = discrimination;
+			this.Quality = quality;
+			this.Usage = usage;
 		}
 	}
 }

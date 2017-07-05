@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelFlowControlElements(IfcRelFlowControlElementsRelatedControlElements relatedControlElements,
 				IfcDistributionFlowElement relatingFlowElement) : base()
 		{
-			this.relatedControlElementsField = relatedControlElements;
-			this.relatingFlowElementField = relatingFlowElement;
+			this.RelatedControlElements = relatedControlElements;
+			this.RelatingFlowElement = relatingFlowElement;
 		}
 	}
 }

@@ -19,9 +19,9 @@ namespace IFC4
 				identification,
 				name)
 		{
-			this.hasReferencesField = hasReferences;
-			this.descriptionField = description;
-			this.sortField = sort;
+			this.HasReferences = hasReferences;
+			this.Description = description;
+			this.Sort = sort;
 		}
 	}
 }

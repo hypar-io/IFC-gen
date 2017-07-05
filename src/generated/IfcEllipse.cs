@@ -18,10 +18,10 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(position,
 				styledByItem)
 		{
-			this.semiAxis1Field = semiAxis1;
-			this.semiAxis1SpecifiedField = semiAxis1Specified;
-			this.semiAxis2Field = semiAxis2;
-			this.semiAxis2SpecifiedField = semiAxis2Specified;
+			this.SemiAxis1 = semiAxis1;
+			this.SemiAxis1Specified = semiAxis1Specified;
+			this.SemiAxis2 = semiAxis2;
+			this.SemiAxis2Specified = semiAxis2Specified;
 		}
 	}
 }

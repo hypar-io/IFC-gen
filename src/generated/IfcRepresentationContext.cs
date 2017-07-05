@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRepresentationContext(String contextIdentifier,
 				String contextType) : base()
 		{
-			this.contextIdentifierField = contextIdentifier;
-			this.contextTypeField = contextType;
+			this.ContextIdentifier = contextIdentifier;
+			this.ContextType = contextType;
 		}
 	}
 }

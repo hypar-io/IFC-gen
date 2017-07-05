@@ -22,8 +22,8 @@ namespace IFC4
 				unitType,
 				unitTypeSpecified)
 		{
-			this.conversionOffsetField = conversionOffset;
-			this.conversionOffsetSpecifiedField = conversionOffsetSpecified;
+			this.ConversionOffset = conversionOffset;
+			this.ConversionOffsetSpecified = conversionOffsetSpecified;
 		}
 	}
 }

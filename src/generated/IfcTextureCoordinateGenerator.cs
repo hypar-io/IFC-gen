@@ -14,8 +14,8 @@ namespace IFC4
 				Double[] parameter,
 				IfcTextureCoordinateMaps maps) : base(maps)
 		{
-			this.modeField = mode;
-			this.parameterField = parameter;
+			this.Mode = mode;
+			this.Parameter = parameter;
 		}
 	}
 }

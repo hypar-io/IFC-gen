@@ -31,15 +31,15 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.actionTypeField = actionType;
-			this.actionTypeSpecifiedField = actionTypeSpecified;
-			this.actionSourceField = actionSource;
-			this.actionSourceSpecifiedField = actionSourceSpecified;
-			this.coefficientField = coefficient;
-			this.coefficientSpecifiedField = coefficientSpecified;
-			this.purposeField = purpose;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.ActionType = actionType;
+			this.ActionTypeSpecified = actionTypeSpecified;
+			this.ActionSource = actionSource;
+			this.ActionSourceSpecified = actionSourceSpecified;
+			this.Coefficient = coefficient;
+			this.CoefficientSpecified = coefficientSpecified;
+			this.Purpose = purpose;
 		}
 	}
 }

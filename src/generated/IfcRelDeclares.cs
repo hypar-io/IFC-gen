@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelDeclares(IfcRelDeclaresRelatedDefinitions relatedDefinitions) : base()
 		{
-			this.relatedDefinitionsField = relatedDefinitions;
+			this.RelatedDefinitions = relatedDefinitions;
 		}
 	}
 }

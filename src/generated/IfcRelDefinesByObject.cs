@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelDefinesByObject(IfcRelDefinesByObjectRelatedObjects relatedObjects) : base()
 		{
-			this.relatedObjectsField = relatedObjects;
+			this.RelatedObjects = relatedObjects;
 		}
 	}
 }

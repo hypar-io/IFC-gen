@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelDefinesByTemplate(IfcRelDefinesByTemplateRelatedPropertySets relatedPropertySets,
 				IfcPropertySetTemplate relatingTemplate) : base()
 		{
-			this.relatedPropertySetsField = relatedPropertySets;
-			this.relatingTemplateField = relatingTemplate;
+			this.RelatedPropertySets = relatedPropertySets;
+			this.RelatingTemplate = relatingTemplate;
 		}
 	}
 }

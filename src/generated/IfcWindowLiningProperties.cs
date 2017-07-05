@@ -34,29 +34,29 @@ namespace IFC4
 				Double liningToPanelOffsetY,
 				Boolean liningToPanelOffsetYSpecified) : base()
 		{
-			this.shapeAspectStyleField = shapeAspectStyle;
-			this.liningDepthField = liningDepth;
-			this.liningDepthSpecifiedField = liningDepthSpecified;
-			this.liningThicknessField = liningThickness;
-			this.liningThicknessSpecifiedField = liningThicknessSpecified;
-			this.transomThicknessField = transomThickness;
-			this.transomThicknessSpecifiedField = transomThicknessSpecified;
-			this.mullionThicknessField = mullionThickness;
-			this.mullionThicknessSpecifiedField = mullionThicknessSpecified;
-			this.firstTransomOffsetField = firstTransomOffset;
-			this.firstTransomOffsetSpecifiedField = firstTransomOffsetSpecified;
-			this.secondTransomOffsetField = secondTransomOffset;
-			this.secondTransomOffsetSpecifiedField = secondTransomOffsetSpecified;
-			this.firstMullionOffsetField = firstMullionOffset;
-			this.firstMullionOffsetSpecifiedField = firstMullionOffsetSpecified;
-			this.secondMullionOffsetField = secondMullionOffset;
-			this.secondMullionOffsetSpecifiedField = secondMullionOffsetSpecified;
-			this.liningOffsetField = liningOffset;
-			this.liningOffsetSpecifiedField = liningOffsetSpecified;
-			this.liningToPanelOffsetXField = liningToPanelOffsetX;
-			this.liningToPanelOffsetXSpecifiedField = liningToPanelOffsetXSpecified;
-			this.liningToPanelOffsetYField = liningToPanelOffsetY;
-			this.liningToPanelOffsetYSpecifiedField = liningToPanelOffsetYSpecified;
+			this.ShapeAspectStyle = shapeAspectStyle;
+			this.LiningDepth = liningDepth;
+			this.LiningDepthSpecified = liningDepthSpecified;
+			this.LiningThickness = liningThickness;
+			this.LiningThicknessSpecified = liningThicknessSpecified;
+			this.TransomThickness = transomThickness;
+			this.TransomThicknessSpecified = transomThicknessSpecified;
+			this.MullionThickness = mullionThickness;
+			this.MullionThicknessSpecified = mullionThicknessSpecified;
+			this.FirstTransomOffset = firstTransomOffset;
+			this.FirstTransomOffsetSpecified = firstTransomOffsetSpecified;
+			this.SecondTransomOffset = secondTransomOffset;
+			this.SecondTransomOffsetSpecified = secondTransomOffsetSpecified;
+			this.FirstMullionOffset = firstMullionOffset;
+			this.FirstMullionOffsetSpecified = firstMullionOffsetSpecified;
+			this.SecondMullionOffset = secondMullionOffset;
+			this.SecondMullionOffsetSpecified = secondMullionOffsetSpecified;
+			this.LiningOffset = liningOffset;
+			this.LiningOffsetSpecified = liningOffsetSpecified;
+			this.LiningToPanelOffsetX = liningToPanelOffsetX;
+			this.LiningToPanelOffsetXSpecified = liningToPanelOffsetXSpecified;
+			this.LiningToPanelOffsetY = liningToPanelOffsetY;
+			this.LiningToPanelOffsetYSpecified = liningToPanelOffsetYSpecified;
 		}
 	}
 }

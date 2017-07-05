@@ -15,10 +15,10 @@ namespace IFC4
 				String applicationFullName,
 				String applicationIdentifier) : base()
 		{
-			this.applicationDeveloperField = applicationDeveloper;
-			this.versionField = version;
-			this.applicationFullNameField = applicationFullName;
-			this.applicationIdentifierField = applicationIdentifier;
+			this.ApplicationDeveloper = applicationDeveloper;
+			this.Version = version;
+			this.ApplicationFullName = applicationFullName;
+			this.ApplicationIdentifier = applicationIdentifier;
 		}
 	}
 }

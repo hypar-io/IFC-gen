@@ -15,7 +15,7 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(coordIndex,
 				styledByItem)
 		{
-			this.innerCoordIndicesField = innerCoordIndices;
+			this.InnerCoordIndices = innerCoordIndices;
 		}
 	}
 }

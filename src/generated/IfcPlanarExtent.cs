@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean sizeInYSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.sizeInXField = sizeInX;
-			this.sizeInXSpecifiedField = sizeInXSpecified;
-			this.sizeInYField = sizeInY;
-			this.sizeInYSpecifiedField = sizeInYSpecified;
+			this.SizeInX = sizeInX;
+			this.SizeInXSpecified = sizeInXSpecified;
+			this.SizeInY = sizeInY;
+			this.SizeInYSpecified = sizeInYSpecified;
 		}
 	}
 }

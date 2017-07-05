@@ -21,7 +21,7 @@ namespace IFC4
 				sizeInYSpecified,
 				styledByItem)
 		{
-			this.placementField = placement;
+			this.Placement = placement;
 		}
 	}
 }

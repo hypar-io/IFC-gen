@@ -23,7 +23,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.identificationField = identification;
+			this.Identification = identification;
 		}
 	}
 }

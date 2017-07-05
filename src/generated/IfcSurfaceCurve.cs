@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean masterRepresentationSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.curve3DField = curve3D;
-			this.associatedGeometryField = associatedGeometry;
-			this.masterRepresentationField = masterRepresentation;
-			this.masterRepresentationSpecifiedField = masterRepresentationSpecified;
+			this.Curve3D = curve3D;
+			this.AssociatedGeometry = associatedGeometry;
+			this.MasterRepresentation = masterRepresentation;
+			this.MasterRepresentationSpecified = masterRepresentationSpecified;
 		}
 	}
 }

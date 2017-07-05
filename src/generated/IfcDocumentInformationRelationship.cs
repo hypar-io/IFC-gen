@@ -17,9 +17,9 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.relatingDocumentField = relatingDocument;
-			this.relatedDocumentsField = relatedDocuments;
-			this.relationshipTypeField = relationshipType;
+			this.RelatingDocument = relatingDocument;
+			this.RelatedDocuments = relatedDocuments;
+			this.RelationshipType = relationshipType;
 		}
 	}
 }

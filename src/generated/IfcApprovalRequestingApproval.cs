@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcApprovalRequestingApproval(Entity item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

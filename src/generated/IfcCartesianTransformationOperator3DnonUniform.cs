@@ -28,10 +28,10 @@ namespace IFC4
 				scaleSpecified,
 				styledByItem)
 		{
-			this.scale2Field = scale2;
-			this.scale2SpecifiedField = scale2Specified;
-			this.scale3Field = scale3;
-			this.scale3SpecifiedField = scale3Specified;
+			this.Scale2 = scale2;
+			this.Scale2Specified = scale2Specified;
+			this.Scale3 = scale3;
+			this.Scale3Specified = scale3Specified;
 		}
 	}
 }

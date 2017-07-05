@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcAssetOwner(Entity item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

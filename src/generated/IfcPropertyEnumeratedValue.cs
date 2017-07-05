@@ -16,8 +16,8 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.enumerationValuesField = enumerationValues;
-			this.enumerationReferenceField = enumerationReference;
+			this.EnumerationValues = enumerationValues;
+			this.EnumerationReference = enumerationReference;
 		}
 	}
 }

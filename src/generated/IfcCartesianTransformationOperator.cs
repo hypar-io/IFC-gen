@@ -17,11 +17,11 @@ namespace IFC4
 				Boolean scaleSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.axis1Field = axis1;
-			this.axis2Field = axis2;
-			this.localOriginField = localOrigin;
-			this.scaleField = scale;
-			this.scaleSpecifiedField = scaleSpecified;
+			this.Axis1 = axis1;
+			this.Axis2 = axis2;
+			this.LocalOrigin = localOrigin;
+			this.Scale = scale;
+			this.ScaleSpecified = scaleSpecified;
 		}
 	}
 }

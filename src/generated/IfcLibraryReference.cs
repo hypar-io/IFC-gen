@@ -19,9 +19,9 @@ namespace IFC4
 				identification,
 				name)
 		{
-			this.referencedLibraryField = referencedLibrary;
-			this.descriptionField = description;
-			this.languageField = language;
+			this.ReferencedLibrary = referencedLibrary;
+			this.Description = description;
+			this.Language = language;
 		}
 	}
 }

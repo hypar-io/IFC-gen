@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcResourceLevelRelationship(String name,
 				String description) : base()
 		{
-			this.nameField = name;
-			this.descriptionField = description;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

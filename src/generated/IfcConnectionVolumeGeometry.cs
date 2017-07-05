@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcConnectionVolumeGeometry(IfcConnectionVolumeGeometryVolumeOnRelatingElement volumeOnRelatingElement,
 				IfcConnectionVolumeGeometryVolumeOnRelatedElement volumeOnRelatedElement) : base()
 		{
-			this.volumeOnRelatingElementField = volumeOnRelatingElement;
-			this.volumeOnRelatedElementField = volumeOnRelatedElement;
+			this.VolumeOnRelatingElement = volumeOnRelatingElement;
+			this.VolumeOnRelatedElement = volumeOnRelatedElement;
 		}
 	}
 }

@@ -35,11 +35,11 @@ namespace IFC4
 				contextIdentifier,
 				contextType)
 		{
-			this.targetScaleField = targetScale;
-			this.targetScaleSpecifiedField = targetScaleSpecified;
-			this.targetViewField = targetView;
-			this.targetViewSpecifiedField = targetViewSpecified;
-			this.userDefinedTargetViewField = userDefinedTargetView;
+			this.TargetScale = targetScale;
+			this.TargetScaleSpecified = targetScaleSpecified;
+			this.TargetView = targetView;
+			this.TargetViewSpecified = targetViewSpecified;
+			this.UserDefinedTargetView = userDefinedTargetView;
 		}
 	}
 }

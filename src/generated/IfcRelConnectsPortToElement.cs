@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelConnectsPortToElement(IfcPort relatingPort,
 				IfcDistributionElement relatedElement) : base()
 		{
-			this.relatingPortField = relatingPort;
-			this.relatedElementField = relatedElement;
+			this.RelatingPort = relatingPort;
+			this.RelatedElement = relatedElement;
 		}
 	}
 }

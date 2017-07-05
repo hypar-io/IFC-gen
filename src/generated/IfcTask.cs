@@ -35,15 +35,15 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.taskTimeField = taskTime;
-			this.statusField = status;
-			this.workMethodField = workMethod;
-			this.isMilestoneField = isMilestone;
-			this.isMilestoneSpecifiedField = isMilestoneSpecified;
-			this.priorityField = priority;
-			this.prioritySpecifiedField = prioritySpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.TaskTime = taskTime;
+			this.Status = status;
+			this.WorkMethod = workMethod;
+			this.IsMilestone = isMilestone;
+			this.IsMilestoneSpecified = isMilestoneSpecified;
+			this.Priority = priority;
+			this.PrioritySpecified = prioritySpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

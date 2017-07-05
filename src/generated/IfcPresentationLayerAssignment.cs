@@ -15,10 +15,10 @@ namespace IFC4
 				String description,
 				String identifier) : base()
 		{
-			this.assignedItemsField = assignedItems;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.identifierField = identifier;
+			this.AssignedItems = assignedItems;
+			this.Name = name;
+			this.Description = description;
+			this.Identifier = identifier;
 		}
 	}
 }

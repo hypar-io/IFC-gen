@@ -17,11 +17,11 @@ namespace IFC4
 				Boolean modelOrDraughtingSpecified,
 				String name) : base(name)
 		{
-			this.curveFontField = curveFont;
-			this.curveWidthField = curveWidth;
-			this.curveColourField = curveColour;
-			this.modelOrDraughtingField = modelOrDraughting;
-			this.modelOrDraughtingSpecifiedField = modelOrDraughtingSpecified;
+			this.CurveFont = curveFont;
+			this.CurveWidth = curveWidth;
+			this.CurveColour = curveColour;
+			this.ModelOrDraughting = modelOrDraughting;
+			this.ModelOrDraughtingSpecified = modelOrDraughtingSpecified;
 		}
 	}
 }

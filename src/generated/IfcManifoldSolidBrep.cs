@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcManifoldSolidBrep(IfcClosedShell outer,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.outerField = outer;
+			this.Outer = outer;
 		}
 	}
 }

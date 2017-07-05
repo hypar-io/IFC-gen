@@ -18,10 +18,10 @@ namespace IFC4
 				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isNestedBy,
 				isDecomposedBy)
 		{
-			this.isDeclaredByField = isDeclaredBy;
-			this.isTypedByField = isTypedBy;
-			this.isDefinedByField = isDefinedBy;
-			this.objectTypeField = objectType;
+			this.IsDeclaredBy = isDeclaredBy;
+			this.IsTypedBy = isTypedBy;
+			this.IsDefinedBy = isDefinedBy;
+			this.ObjectType = objectType;
 		}
 	}
 }

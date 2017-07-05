@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelAssignsToProcessRelatingProcess(IfcObjectDefinition item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

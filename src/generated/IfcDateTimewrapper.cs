@@ -15,10 +15,10 @@ namespace IFC4
 				String[] pos,
 				String value) : base()
 		{
-			this.idField = id;
-			this.pathField = path;
-			this.posField = pos;
-			this.valueField = value;
+			this.id = id;
+			this.path = path;
+			this.pos = pos;
+			this.Value = value;
 		}
 	}
 }

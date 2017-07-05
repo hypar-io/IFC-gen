@@ -23,7 +23,7 @@ namespace IFC4
 				scaleSpecified,
 				styledByItem)
 		{
-			this.axis3Field = axis3;
+			this.Axis3 = axis3;
 		}
 	}
 }

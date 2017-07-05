@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcConic(IfcConicPosition position,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.positionField = position;
+			this.Position = position;
 		}
 	}
 }

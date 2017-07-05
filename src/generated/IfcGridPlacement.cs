@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcGridPlacement(IfcVirtualGridIntersection placementLocation,
 				IfcGridPlacementPlacementRefDirection placementRefDirection) : base()
 		{
-			this.placementLocationField = placementLocation;
-			this.placementRefDirectionField = placementRefDirection;
+			this.PlacementLocation = placementLocation;
+			this.PlacementRefDirection = placementRefDirection;
 		}
 	}
 }

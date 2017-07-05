@@ -18,12 +18,12 @@ namespace IFC4
 				Boolean blueSpecified,
 				String name) : base(name)
 		{
-			this.redField = red;
-			this.redSpecifiedField = redSpecified;
-			this.greenField = green;
-			this.greenSpecifiedField = greenSpecified;
-			this.blueField = blue;
-			this.blueSpecifiedField = blueSpecified;
+			this.Red = red;
+			this.RedSpecified = redSpecified;
+			this.Green = green;
+			this.GreenSpecified = greenSpecified;
+			this.Blue = blue;
+			this.BlueSpecified = blueSpecified;
 		}
 	}
 }

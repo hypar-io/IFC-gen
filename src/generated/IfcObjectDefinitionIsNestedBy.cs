@@ -15,10 +15,10 @@ namespace IFC4
 				aggregateType[] cType,
 				String[] arraySize) : base()
 		{
-			this.ifcRelNestsField = ifcRelNests;
-			this.itemTypeField = itemType;
-			this.cTypeField = cType;
-			this.arraySizeField = arraySize;
+			this.IfcRelNests = ifcRelNests;
+			this.itemType = itemType;
+			this.cType = cType;
+			this.arraySize = arraySize;
 		}
 	}
 }

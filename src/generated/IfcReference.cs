@@ -16,11 +16,11 @@ namespace IFC4
 				String instanceName,
 				Int64[] listPositions) : base()
 		{
-			this.innerReferenceField = innerReference;
-			this.typeIdentifierField = typeIdentifier;
-			this.attributeIdentifierField = attributeIdentifier;
-			this.instanceNameField = instanceName;
-			this.listPositionsField = listPositions;
+			this.InnerReference = innerReference;
+			this.TypeIdentifier = typeIdentifier;
+			this.AttributeIdentifier = attributeIdentifier;
+			this.InstanceName = instanceName;
+			this.ListPositions = listPositions;
 		}
 	}
 }

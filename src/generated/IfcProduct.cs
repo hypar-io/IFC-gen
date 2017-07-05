@@ -24,8 +24,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.objectPlacementField = objectPlacement;
-			this.representationField = representation;
+			this.ObjectPlacement = objectPlacement;
+			this.Representation = representation;
 		}
 	}
 }

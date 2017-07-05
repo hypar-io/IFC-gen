@@ -24,12 +24,12 @@ namespace IFC4
 				description,
 				userDefinedPurpose)
 		{
-			this.telephoneNumbersField = telephoneNumbers;
-			this.facsimileNumbersField = facsimileNumbers;
-			this.pagerNumberField = pagerNumber;
-			this.electronicMailAddressesField = electronicMailAddresses;
-			this.wWWHomePageURLField = wWWHomePageURL;
-			this.messagingIDsField = messagingIDs;
+			this.TelephoneNumbers = telephoneNumbers;
+			this.FacsimileNumbers = facsimileNumbers;
+			this.PagerNumber = pagerNumber;
+			this.ElectronicMailAddresses = electronicMailAddresses;
+			this.WWWHomePageURL = wWWHomePageURL;
+			this.MessagingIDs = messagingIDs;
 		}
 	}
 }

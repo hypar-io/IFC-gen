@@ -22,8 +22,8 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.radiusField = radius;
-			this.radiusSpecifiedField = radiusSpecified;
+			this.Radius = radius;
+			this.RadiusSpecified = radiusSpecified;
 		}
 	}
 }

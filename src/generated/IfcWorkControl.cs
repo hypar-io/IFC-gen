@@ -31,13 +31,13 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.creatorsField = creators;
-			this.creationDateField = creationDate;
-			this.purposeField = purpose;
-			this.durationField = duration;
-			this.totalFloatField = totalFloat;
-			this.startTimeField = startTime;
-			this.finishTimeField = finishTime;
+			this.Creators = creators;
+			this.CreationDate = creationDate;
+			this.Purpose = purpose;
+			this.Duration = duration;
+			this.TotalFloat = totalFloat;
+			this.StartTime = startTime;
+			this.FinishTime = finishTime;
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcIndexedPolygonalFace(Int64[] coordIndex,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.coordIndexField = coordIndex;
+			this.CoordIndex = coordIndex;
 		}
 	}
 }

@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcConnectionSurfaceGeometry(IfcConnectionSurfaceGeometrySurfaceOnRelatingElement surfaceOnRelatingElement,
 				IfcConnectionSurfaceGeometrySurfaceOnRelatedElement surfaceOnRelatedElement) : base()
 		{
-			this.surfaceOnRelatingElementField = surfaceOnRelatingElement;
-			this.surfaceOnRelatedElementField = surfaceOnRelatedElement;
+			this.SurfaceOnRelatingElement = surfaceOnRelatingElement;
+			this.SurfaceOnRelatedElement = surfaceOnRelatedElement;
 		}
 	}
 }

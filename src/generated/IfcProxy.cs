@@ -29,9 +29,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.proxyTypeField = proxyType;
-			this.proxyTypeSpecifiedField = proxyTypeSpecified;
-			this.tagField = tag;
+			this.ProxyType = proxyType;
+			this.ProxyTypeSpecified = proxyTypeSpecified;
+			this.Tag = tag;
 		}
 	}
 }

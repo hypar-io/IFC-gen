@@ -27,7 +27,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.appliedConditionField = appliedCondition;
+			this.AppliedCondition = appliedCondition;
 		}
 	}
 }

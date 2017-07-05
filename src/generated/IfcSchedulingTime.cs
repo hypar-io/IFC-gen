@@ -15,10 +15,10 @@ namespace IFC4
 				Boolean dataOriginSpecified,
 				String userDefinedDataOrigin) : base()
 		{
-			this.nameField = name;
-			this.dataOriginField = dataOrigin;
-			this.dataOriginSpecifiedField = dataOriginSpecified;
-			this.userDefinedDataOriginField = userDefinedDataOrigin;
+			this.Name = name;
+			this.DataOrigin = dataOrigin;
+			this.DataOriginSpecified = dataOriginSpecified;
+			this.UserDefinedDataOrigin = userDefinedDataOrigin;
 		}
 	}
 }

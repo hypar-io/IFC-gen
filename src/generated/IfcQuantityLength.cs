@@ -19,9 +19,9 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.lengthValueField = lengthValue;
-			this.lengthValueSpecifiedField = lengthValueSpecified;
-			this.formulaField = formula;
+			this.LengthValue = lengthValue;
+			this.LengthValueSpecified = lengthValueSpecified;
+			this.Formula = formula;
 		}
 	}
 }

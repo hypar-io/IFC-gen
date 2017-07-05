@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcPresentationStyle(String name) : base()
 		{
-			this.nameField = name;
+			this.Name = name;
 		}
 	}
 }

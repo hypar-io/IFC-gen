@@ -17,9 +17,9 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(bounds,
 				styledByItem)
 		{
-			this.faceSurfaceField = faceSurface;
-			this.sameSenseField = sameSense;
-			this.sameSenseSpecifiedField = sameSenseSpecified;
+			this.FaceSurface = faceSurface;
+			this.SameSense = sameSense;
+			this.SameSenseSpecified = sameSenseSpecified;
 		}
 	}
 }

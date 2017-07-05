@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelServicesBuildings(IfcSystem relatingSystem,
 				IfcRelServicesBuildingsRelatedBuildings relatedBuildings) : base()
 		{
-			this.relatingSystemField = relatingSystem;
-			this.relatedBuildingsField = relatedBuildings;
+			this.RelatingSystem = relatingSystem;
+			this.RelatedBuildings = relatedBuildings;
 		}
 	}
 }

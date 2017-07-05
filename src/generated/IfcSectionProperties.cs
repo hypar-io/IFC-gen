@@ -15,10 +15,10 @@ namespace IFC4
 				IfcSectionTypeEnum sectionType,
 				Boolean sectionTypeSpecified) : base()
 		{
-			this.startProfileField = startProfile;
-			this.endProfileField = endProfile;
-			this.sectionTypeField = sectionType;
-			this.sectionTypeSpecifiedField = sectionTypeSpecified;
+			this.StartProfile = startProfile;
+			this.EndProfile = endProfile;
+			this.SectionType = sectionType;
+			this.SectionTypeSpecified = sectionTypeSpecified;
 		}
 	}
 }

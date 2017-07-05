@@ -14,9 +14,9 @@ namespace IFC4
 				Int64 exponent,
 				Boolean exponentSpecified) : base()
 		{
-			this.unitField = unit;
-			this.exponentField = exponent;
-			this.exponentSpecifiedField = exponentSpecified;
+			this.Unit = unit;
+			this.Exponent = exponent;
+			this.ExponentSpecified = exponentSpecified;
 		}
 	}
 }

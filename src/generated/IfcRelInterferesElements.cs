@@ -17,12 +17,12 @@ namespace IFC4
 				IfcLogical impliedOrder,
 				Boolean impliedOrderSpecified) : base()
 		{
-			this.relatingElementField = relatingElement;
-			this.relatedElementField = relatedElement;
-			this.interferenceGeometryField = interferenceGeometry;
-			this.interferenceTypeField = interferenceType;
-			this.impliedOrderField = impliedOrder;
-			this.impliedOrderSpecifiedField = impliedOrderSpecified;
+			this.RelatingElement = relatingElement;
+			this.RelatedElement = relatedElement;
+			this.InterferenceGeometry = interferenceGeometry;
+			this.InterferenceType = interferenceType;
+			this.ImpliedOrder = impliedOrder;
+			this.ImpliedOrderSpecified = impliedOrderSpecified;
 		}
 	}
 }

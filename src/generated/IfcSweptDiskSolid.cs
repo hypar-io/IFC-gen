@@ -21,15 +21,15 @@ namespace IFC4
 				Boolean endParamSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.directrixField = directrix;
-			this.radiusField = radius;
-			this.radiusSpecifiedField = radiusSpecified;
-			this.innerRadiusField = innerRadius;
-			this.innerRadiusSpecifiedField = innerRadiusSpecified;
-			this.startParamField = startParam;
-			this.startParamSpecifiedField = startParamSpecified;
-			this.endParamField = endParam;
-			this.endParamSpecifiedField = endParamSpecified;
+			this.Directrix = directrix;
+			this.Radius = radius;
+			this.RadiusSpecified = radiusSpecified;
+			this.InnerRadius = innerRadius;
+			this.InnerRadiusSpecified = innerRadiusSpecified;
+			this.StartParam = startParam;
+			this.StartParamSpecified = startParamSpecified;
+			this.EndParam = endParam;
+			this.EndParamSpecified = endParamSpecified;
 		}
 	}
 }

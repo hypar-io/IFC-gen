@@ -22,17 +22,17 @@ namespace IFC4
 				IfcArithmeticOperatorEnum arithmeticOperator,
 				Boolean arithmeticOperatorSpecified) : base()
 		{
-			this.appliedValueField = appliedValue;
-			this.unitBasisField = unitBasis;
-			this.componentsField = components;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.applicableDateField = applicableDate;
-			this.fixedUntilDateField = fixedUntilDate;
-			this.categoryField = category;
-			this.conditionField = condition;
-			this.arithmeticOperatorField = arithmeticOperator;
-			this.arithmeticOperatorSpecifiedField = arithmeticOperatorSpecified;
+			this.AppliedValue = appliedValue;
+			this.UnitBasis = unitBasis;
+			this.Components = components;
+			this.Name = name;
+			this.Description = description;
+			this.ApplicableDate = applicableDate;
+			this.FixedUntilDate = fixedUntilDate;
+			this.Category = category;
+			this.Condition = condition;
+			this.ArithmeticOperator = arithmeticOperator;
+			this.ArithmeticOperatorSpecified = arithmeticOperatorSpecified;
 		}
 	}
 }

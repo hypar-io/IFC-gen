@@ -14,8 +14,8 @@ namespace IFC4
 				IfcVector dir,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.pntField = pnt;
-			this.dirField = dir;
+			this.Pnt = pnt;
+			this.Dir = dir;
 		}
 	}
 }

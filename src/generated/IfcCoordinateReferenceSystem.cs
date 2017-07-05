@@ -15,10 +15,10 @@ namespace IFC4
 				String geodeticDatum,
 				String verticalDatum) : base()
 		{
-			this.nameField = name;
-			this.descriptionField = description;
-			this.geodeticDatumField = geodeticDatum;
-			this.verticalDatumField = verticalDatum;
+			this.Name = name;
+			this.Description = description;
+			this.GeodeticDatum = geodeticDatum;
+			this.VerticalDatum = verticalDatum;
 		}
 	}
 }

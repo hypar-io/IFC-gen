@@ -15,7 +15,7 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(location,
 				styledByItem)
 		{
-			this.axisField = axis;
+			this.Axis = axis;
 		}
 	}
 }

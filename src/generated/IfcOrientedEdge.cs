@@ -19,9 +19,9 @@ namespace IFC4
 				edgeEnd,
 				styledByItem)
 		{
-			this.edgeElementField = edgeElement;
-			this.orientationField = orientation;
-			this.orientationSpecifiedField = orientationSpecified;
+			this.EdgeElement = edgeElement;
+			this.Orientation = orientation;
+			this.OrientationSpecified = orientationSpecified;
 		}
 	}
 }

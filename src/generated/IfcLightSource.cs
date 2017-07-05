@@ -18,12 +18,12 @@ namespace IFC4
 				Boolean intensitySpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.lightColourField = lightColour;
-			this.nameField = name;
-			this.ambientIntensityField = ambientIntensity;
-			this.ambientIntensitySpecifiedField = ambientIntensitySpecified;
-			this.intensityField = intensity;
-			this.intensitySpecifiedField = intensitySpecified;
+			this.LightColour = lightColour;
+			this.Name = name;
+			this.AmbientIntensity = ambientIntensity;
+			this.AmbientIntensitySpecified = ambientIntensitySpecified;
+			this.Intensity = intensity;
+			this.IntensitySpecified = intensitySpecified;
 		}
 	}
 }

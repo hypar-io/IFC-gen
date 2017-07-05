@@ -20,8 +20,8 @@ namespace IFC4
 				relatedObjectsType,
 				relatedObjectsTypeSpecified)
 		{
-			this.factorField = factor;
-			this.factorSpecifiedField = factorSpecified;
+			this.Factor = factor;
+			this.FactorSpecified = factorSpecified;
 		}
 	}
 }

@@ -25,7 +25,7 @@ namespace IFC4
 				supportedLength,
 				supportedLengthSpecified)
 		{
-			this.connectionConstraintField = connectionConstraint;
+			this.ConnectionConstraint = connectionConstraint;
 		}
 	}
 }

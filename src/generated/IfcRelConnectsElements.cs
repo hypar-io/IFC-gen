@@ -14,9 +14,9 @@ namespace IFC4
 				IfcElement relatingElement,
 				IfcElement relatedElement) : base()
 		{
-			this.connectionGeometryField = connectionGeometry;
-			this.relatingElementField = relatingElement;
-			this.relatedElementField = relatedElement;
+			this.ConnectionGeometry = connectionGeometry;
+			this.RelatingElement = relatingElement;
+			this.RelatedElement = relatedElement;
 		}
 	}
 }

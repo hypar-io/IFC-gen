@@ -20,15 +20,15 @@ namespace IFC4
 				String level,
 				String qualifier) : base()
 		{
-			this.requestingApprovalField = requestingApproval;
-			this.givingApprovalField = givingApproval;
-			this.identifierField = identifier;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.timeOfApprovalField = timeOfApproval;
-			this.statusField = status;
-			this.levelField = level;
-			this.qualifierField = qualifier;
+			this.RequestingApproval = requestingApproval;
+			this.GivingApproval = givingApproval;
+			this.Identifier = identifier;
+			this.Name = name;
+			this.Description = description;
+			this.TimeOfApproval = timeOfApproval;
+			this.Status = status;
+			this.Level = level;
+			this.Qualifier = qualifier;
 		}
 	}
 }

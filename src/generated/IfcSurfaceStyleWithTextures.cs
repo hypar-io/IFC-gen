@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcSurfaceStyleWithTextures(IfcSurfaceStyleWithTexturesTextures textures) : base()
 		{
-			this.texturesField = textures;
+			this.Textures = textures;
 		}
 	}
 }

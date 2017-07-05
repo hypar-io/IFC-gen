@@ -31,13 +31,13 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.operationTypeField = operationType;
-			this.operationTypeSpecifiedField = operationTypeSpecified;
-			this.parameterTakesPrecedenceField = parameterTakesPrecedence;
-			this.parameterTakesPrecedenceSpecifiedField = parameterTakesPrecedenceSpecified;
-			this.userDefinedOperationTypeField = userDefinedOperationType;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.OperationType = operationType;
+			this.OperationTypeSpecified = operationTypeSpecified;
+			this.ParameterTakesPrecedence = parameterTakesPrecedence;
+			this.ParameterTakesPrecedenceSpecified = parameterTakesPrecedenceSpecified;
+			this.UserDefinedOperationType = userDefinedOperationType;
 		}
 	}
 }

@@ -13,8 +13,8 @@ namespace IFC4
 		public hexBinary(String extraBits,
 				Byte[] value) : base()
 		{
-			this.extraBitsField = extraBits;
-			this.valueField = value;
+			this.extraBits = extraBits;
+			this.Value = value;
 		}
 	}
 }

@@ -35,9 +35,9 @@ namespace IFC4
 				prioritySpecified,
 				hasProperties)
 		{
-			this.offsetDirectionField = offsetDirection;
-			this.offsetDirectionSpecifiedField = offsetDirectionSpecified;
-			this.offsetValuesField = offsetValues;
+			this.OffsetDirection = offsetDirection;
+			this.OffsetDirectionSpecified = offsetDirectionSpecified;
+			this.OffsetValues = offsetValues;
 		}
 	}
 }

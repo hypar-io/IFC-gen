@@ -16,11 +16,11 @@ namespace IFC4
 				String name,
 				String description) : base()
 		{
-			this.rolesField = roles;
-			this.addressesField = addresses;
-			this.identificationField = identification;
-			this.nameField = name;
-			this.descriptionField = description;
+			this.Roles = roles;
+			this.Addresses = addresses;
+			this.Identification = identification;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

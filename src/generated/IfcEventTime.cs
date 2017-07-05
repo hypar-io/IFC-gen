@@ -22,10 +22,10 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.actualDateField = actualDate;
-			this.earlyDateField = earlyDate;
-			this.lateDateField = lateDate;
-			this.scheduleDateField = scheduleDate;
+			this.ActualDate = actualDate;
+			this.EarlyDate = earlyDate;
+			this.LateDate = lateDate;
+			this.ScheduleDate = scheduleDate;
 		}
 	}
 }

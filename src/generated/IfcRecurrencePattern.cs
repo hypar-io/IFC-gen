@@ -23,18 +23,18 @@ namespace IFC4
 				Int64 occurrences,
 				Boolean occurrencesSpecified) : base()
 		{
-			this.timePeriodsField = timePeriods;
-			this.recurrenceTypeField = recurrenceType;
-			this.recurrenceTypeSpecifiedField = recurrenceTypeSpecified;
-			this.dayComponentField = dayComponent;
-			this.weekdayComponentField = weekdayComponent;
-			this.monthComponentField = monthComponent;
-			this.positionField = position;
-			this.positionSpecifiedField = positionSpecified;
-			this.intervalField = interval;
-			this.intervalSpecifiedField = intervalSpecified;
-			this.occurrencesField = occurrences;
-			this.occurrencesSpecifiedField = occurrencesSpecified;
+			this.TimePeriods = timePeriods;
+			this.RecurrenceType = recurrenceType;
+			this.RecurrenceTypeSpecified = recurrenceTypeSpecified;
+			this.DayComponent = dayComponent;
+			this.WeekdayComponent = weekdayComponent;
+			this.MonthComponent = monthComponent;
+			this.Position = position;
+			this.PositionSpecified = positionSpecified;
+			this.Interval = interval;
+			this.IntervalSpecified = intervalSpecified;
+			this.Occurrences = occurrences;
+			this.OccurrencesSpecified = occurrencesSpecified;
 		}
 	}
 }

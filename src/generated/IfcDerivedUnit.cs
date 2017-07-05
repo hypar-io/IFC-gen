@@ -15,10 +15,10 @@ namespace IFC4
 				Boolean unitTypeSpecified,
 				String userDefinedType) : base()
 		{
-			this.elementsField = elements;
-			this.unitTypeField = unitType;
-			this.unitTypeSpecifiedField = unitTypeSpecified;
-			this.userDefinedTypeField = userDefinedType;
+			this.Elements = elements;
+			this.UnitType = unitType;
+			this.UnitTypeSpecified = unitTypeSpecified;
+			this.UserDefinedType = userDefinedType;
 		}
 	}
 }

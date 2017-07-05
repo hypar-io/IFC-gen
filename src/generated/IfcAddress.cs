@@ -15,10 +15,10 @@ namespace IFC4
 				String description,
 				String userDefinedPurpose) : base()
 		{
-			this.purposeField = purpose;
-			this.purposeSpecifiedField = purposeSpecified;
-			this.descriptionField = description;
-			this.userDefinedPurposeField = userDefinedPurpose;
+			this.Purpose = purpose;
+			this.PurposeSpecified = purposeSpecified;
+			this.Description = description;
+			this.UserDefinedPurpose = userDefinedPurpose;
 		}
 	}
 }

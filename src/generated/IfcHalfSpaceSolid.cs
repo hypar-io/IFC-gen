@@ -15,9 +15,9 @@ namespace IFC4
 				Boolean agreementFlagSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.baseSurfaceField = baseSurface;
-			this.agreementFlagField = agreementFlag;
-			this.agreementFlagSpecifiedField = agreementFlagSpecified;
+			this.BaseSurface = baseSurface;
+			this.AgreementFlag = agreementFlag;
+			this.AgreementFlagSpecified = agreementFlagSpecified;
 		}
 	}
 }

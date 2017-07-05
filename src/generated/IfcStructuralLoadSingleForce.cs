@@ -24,18 +24,18 @@ namespace IFC4
 				Boolean momentZSpecified,
 				String name) : base(name)
 		{
-			this.forceXField = forceX;
-			this.forceXSpecifiedField = forceXSpecified;
-			this.forceYField = forceY;
-			this.forceYSpecifiedField = forceYSpecified;
-			this.forceZField = forceZ;
-			this.forceZSpecifiedField = forceZSpecified;
-			this.momentXField = momentX;
-			this.momentXSpecifiedField = momentXSpecified;
-			this.momentYField = momentY;
-			this.momentYSpecifiedField = momentYSpecified;
-			this.momentZField = momentZ;
-			this.momentZSpecifiedField = momentZSpecified;
+			this.ForceX = forceX;
+			this.ForceXSpecified = forceXSpecified;
+			this.ForceY = forceY;
+			this.ForceYSpecified = forceYSpecified;
+			this.ForceZ = forceZ;
+			this.ForceZSpecified = forceZSpecified;
+			this.MomentX = momentX;
+			this.MomentXSpecified = momentXSpecified;
+			this.MomentY = momentY;
+			this.MomentYSpecified = momentYSpecified;
+			this.MomentZ = momentZ;
+			this.MomentZSpecified = momentZSpecified;
 		}
 	}
 }

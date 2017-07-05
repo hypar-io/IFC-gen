@@ -25,7 +25,7 @@ namespace IFC4
 				internalOrExternalBoundary,
 				internalOrExternalBoundarySpecified)
 		{
-			this.parentBoundaryField = parentBoundary;
+			this.ParentBoundary = parentBoundary;
 		}
 	}
 }

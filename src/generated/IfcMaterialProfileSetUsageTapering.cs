@@ -23,9 +23,9 @@ namespace IFC4
 				referenceExtent,
 				referenceExtentSpecified)
 		{
-			this.forProfileEndSetField = forProfileEndSet;
-			this.cardinalEndPointField = cardinalEndPoint;
-			this.cardinalEndPointSpecifiedField = cardinalEndPointSpecified;
+			this.ForProfileEndSet = forProfileEndSet;
+			this.CardinalEndPoint = cardinalEndPoint;
+			this.CardinalEndPointSpecified = cardinalEndPointSpecified;
 		}
 	}
 }

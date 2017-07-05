@@ -16,11 +16,11 @@ namespace IFC4
 				Double referenceExtent,
 				Boolean referenceExtentSpecified) : base()
 		{
-			this.forProfileSetField = forProfileSet;
-			this.cardinalPointField = cardinalPoint;
-			this.cardinalPointSpecifiedField = cardinalPointSpecified;
-			this.referenceExtentField = referenceExtent;
-			this.referenceExtentSpecifiedField = referenceExtentSpecified;
+			this.ForProfileSet = forProfileSet;
+			this.CardinalPoint = cardinalPoint;
+			this.CardinalPointSpecified = cardinalPointSpecified;
+			this.ReferenceExtent = referenceExtent;
+			this.ReferenceExtentSpecified = referenceExtentSpecified;
 		}
 	}
 }

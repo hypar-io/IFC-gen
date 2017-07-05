@@ -38,12 +38,12 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.nominalDiameterField = nominalDiameter;
-			this.nominalDiameterSpecifiedField = nominalDiameterSpecified;
-			this.nominalLengthField = nominalLength;
-			this.nominalLengthSpecifiedField = nominalLengthSpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.NominalDiameter = nominalDiameter;
+			this.NominalDiameterSpecified = nominalDiameterSpecified;
+			this.NominalLength = nominalLength;
+			this.NominalLengthSpecified = nominalLengthSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

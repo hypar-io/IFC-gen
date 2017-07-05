@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelProjectsElement(IfcFeatureElementAddition relatedFeatureElement) : base()
 		{
-			this.relatedFeatureElementField = relatedFeatureElement;
+			this.RelatedFeatureElement = relatedFeatureElement;
 		}
 	}
 }

@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcMeasureWithUnit(IfcMeasureWithUnitValueComponent valueComponent,
 				IfcMeasureWithUnitUnitComponent unitComponent) : base()
 		{
-			this.valueComponentField = valueComponent;
-			this.unitComponentField = unitComponent;
+			this.ValueComponent = valueComponent;
+			this.UnitComponent = unitComponent;
 		}
 	}
 }

@@ -15,9 +15,9 @@ namespace IFC4
 				Boolean modelorDraughtingSpecified,
 				String name) : base(name)
 		{
-			this.fillStylesField = fillStyles;
-			this.modelorDraughtingField = modelorDraughting;
-			this.modelorDraughtingSpecifiedField = modelorDraughtingSpecified;
+			this.FillStyles = fillStyles;
+			this.ModelorDraughting = modelorDraughting;
+			this.ModelorDraughtingSpecified = modelorDraughtingSpecified;
 		}
 	}
 }

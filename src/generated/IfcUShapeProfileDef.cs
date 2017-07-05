@@ -34,20 +34,20 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.depthField = depth;
-			this.depthSpecifiedField = depthSpecified;
-			this.flangeWidthField = flangeWidth;
-			this.flangeWidthSpecifiedField = flangeWidthSpecified;
-			this.webThicknessField = webThickness;
-			this.webThicknessSpecifiedField = webThicknessSpecified;
-			this.flangeThicknessField = flangeThickness;
-			this.flangeThicknessSpecifiedField = flangeThicknessSpecified;
-			this.filletRadiusField = filletRadius;
-			this.filletRadiusSpecifiedField = filletRadiusSpecified;
-			this.edgeRadiusField = edgeRadius;
-			this.edgeRadiusSpecifiedField = edgeRadiusSpecified;
-			this.flangeSlopeField = flangeSlope;
-			this.flangeSlopeSpecifiedField = flangeSlopeSpecified;
+			this.Depth = depth;
+			this.DepthSpecified = depthSpecified;
+			this.FlangeWidth = flangeWidth;
+			this.FlangeWidthSpecified = flangeWidthSpecified;
+			this.WebThickness = webThickness;
+			this.WebThicknessSpecified = webThicknessSpecified;
+			this.FlangeThickness = flangeThickness;
+			this.FlangeThicknessSpecified = flangeThicknessSpecified;
+			this.FilletRadius = filletRadius;
+			this.FilletRadiusSpecified = filletRadiusSpecified;
+			this.EdgeRadius = edgeRadius;
+			this.EdgeRadiusSpecified = edgeRadiusSpecified;
+			this.FlangeSlope = flangeSlope;
+			this.FlangeSlopeSpecified = flangeSlopeSpecified;
 		}
 	}
 }

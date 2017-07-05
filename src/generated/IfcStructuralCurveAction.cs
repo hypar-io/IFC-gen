@@ -40,10 +40,10 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.projectedOrTrueField = projectedOrTrue;
-			this.projectedOrTrueSpecifiedField = projectedOrTrueSpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.ProjectedOrTrue = projectedOrTrue;
+			this.ProjectedOrTrueSpecified = projectedOrTrueSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

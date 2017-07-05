@@ -21,13 +21,13 @@ namespace IFC4
 				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isNestedBy,
 				isDecomposedBy)
 		{
-			this.representationContextsField = representationContexts;
-			this.unitsInContextField = unitsInContext;
-			this.isDefinedByField = isDefinedBy;
-			this.declaresField = declares;
-			this.objectTypeField = objectType;
-			this.longNameField = longName;
-			this.phaseField = phase;
+			this.RepresentationContexts = representationContexts;
+			this.UnitsInContext = unitsInContext;
+			this.IsDefinedBy = isDefinedBy;
+			this.Declares = declares;
+			this.ObjectType = objectType;
+			this.LongName = longName;
+			this.Phase = phase;
 		}
 	}
 }

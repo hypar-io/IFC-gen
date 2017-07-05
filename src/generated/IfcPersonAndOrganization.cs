@@ -14,9 +14,9 @@ namespace IFC4
 				IfcOrganization theOrganization,
 				IfcPersonAndOrganizationRoles roles) : base()
 		{
-			this.thePersonField = thePerson;
-			this.theOrganizationField = theOrganization;
-			this.rolesField = roles;
+			this.ThePerson = thePerson;
+			this.TheOrganization = theOrganization;
+			this.Roles = roles;
 		}
 	}
 }

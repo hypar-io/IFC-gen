@@ -38,8 +38,8 @@ namespace IFC4
 				momentZSpecified,
 				name)
 		{
-			this.warpingMomentField = warpingMoment;
-			this.warpingMomentSpecifiedField = warpingMomentSpecified;
+			this.WarpingMoment = warpingMoment;
+			this.WarpingMomentSpecified = warpingMomentSpecified;
 		}
 	}
 }

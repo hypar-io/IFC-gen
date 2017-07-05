@@ -17,12 +17,12 @@ namespace IFC4
 				String location,
 				String description) : base()
 		{
-			this.publisherField = publisher;
-			this.nameField = name;
-			this.versionField = version;
-			this.versionDateField = versionDate;
-			this.locationField = location;
-			this.descriptionField = description;
+			this.Publisher = publisher;
+			this.Name = name;
+			this.Version = version;
+			this.VersionDate = versionDate;
+			this.Location = location;
+			this.Description = description;
 		}
 	}
 }

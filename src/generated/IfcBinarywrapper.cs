@@ -17,9 +17,9 @@ namespace IFC4
 				Byte[] value) : base(extraBits,
 				value)
 		{
-			this.idField = id;
-			this.pathField = path;
-			this.posField = pos;
+			this.id = id;
+			this.path = path;
+			this.pos = pos;
 		}
 	}
 }

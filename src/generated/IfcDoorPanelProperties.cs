@@ -20,15 +20,15 @@ namespace IFC4
 				IfcDoorPanelPositionEnum panelPosition,
 				Boolean panelPositionSpecified) : base()
 		{
-			this.shapeAspectStyleField = shapeAspectStyle;
-			this.panelDepthField = panelDepth;
-			this.panelDepthSpecifiedField = panelDepthSpecified;
-			this.panelOperationField = panelOperation;
-			this.panelOperationSpecifiedField = panelOperationSpecified;
-			this.panelWidthField = panelWidth;
-			this.panelWidthSpecifiedField = panelWidthSpecified;
-			this.panelPositionField = panelPosition;
-			this.panelPositionSpecifiedField = panelPositionSpecified;
+			this.ShapeAspectStyle = shapeAspectStyle;
+			this.PanelDepth = panelDepth;
+			this.PanelDepthSpecified = panelDepthSpecified;
+			this.PanelOperation = panelOperation;
+			this.PanelOperationSpecified = panelOperationSpecified;
+			this.PanelWidth = panelWidth;
+			this.PanelWidthSpecified = panelWidthSpecified;
+			this.PanelPosition = panelPosition;
+			this.PanelPositionSpecified = panelPositionSpecified;
 		}
 	}
 }

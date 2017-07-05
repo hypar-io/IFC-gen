@@ -17,7 +17,7 @@ namespace IFC4
 				position,
 				styledByItem)
 		{
-			this.axisPositionField = axisPosition;
+			this.AxisPosition = axisPosition;
 		}
 	}
 }

@@ -38,26 +38,26 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.durationTypeField = durationType;
-			this.durationTypeSpecifiedField = durationTypeSpecified;
-			this.scheduleDurationField = scheduleDuration;
-			this.scheduleStartField = scheduleStart;
-			this.scheduleFinishField = scheduleFinish;
-			this.earlyStartField = earlyStart;
-			this.earlyFinishField = earlyFinish;
-			this.lateStartField = lateStart;
-			this.lateFinishField = lateFinish;
-			this.freeFloatField = freeFloat;
-			this.totalFloatField = totalFloat;
-			this.isCriticalField = isCritical;
-			this.isCriticalSpecifiedField = isCriticalSpecified;
-			this.statusTimeField = statusTime;
-			this.actualDurationField = actualDuration;
-			this.actualStartField = actualStart;
-			this.actualFinishField = actualFinish;
-			this.remainingTimeField = remainingTime;
-			this.completionField = completion;
-			this.completionSpecifiedField = completionSpecified;
+			this.DurationType = durationType;
+			this.DurationTypeSpecified = durationTypeSpecified;
+			this.ScheduleDuration = scheduleDuration;
+			this.ScheduleStart = scheduleStart;
+			this.ScheduleFinish = scheduleFinish;
+			this.EarlyStart = earlyStart;
+			this.EarlyFinish = earlyFinish;
+			this.LateStart = lateStart;
+			this.LateFinish = lateFinish;
+			this.FreeFloat = freeFloat;
+			this.TotalFloat = totalFloat;
+			this.IsCritical = isCritical;
+			this.IsCriticalSpecified = isCriticalSpecified;
+			this.StatusTime = statusTime;
+			this.ActualDuration = actualDuration;
+			this.ActualStart = actualStart;
+			this.ActualFinish = actualFinish;
+			this.RemainingTime = remainingTime;
+			this.Completion = completion;
+			this.CompletionSpecified = completionSpecified;
 		}
 	}
 }

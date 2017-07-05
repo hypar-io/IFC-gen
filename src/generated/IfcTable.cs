@@ -14,9 +14,9 @@ namespace IFC4
 				IfcTableColumns columns,
 				String name) : base()
 		{
-			this.rowsField = rows;
-			this.columnsField = columns;
-			this.nameField = name;
+			this.Rows = rows;
+			this.Columns = columns;
+			this.Name = name;
 		}
 	}
 }

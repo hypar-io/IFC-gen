@@ -15,10 +15,10 @@ namespace IFC4
 				IfcComplexPropertyTemplateTypeEnum templateType,
 				Boolean templateTypeSpecified) : base()
 		{
-			this.hasPropertyTemplatesField = hasPropertyTemplates;
-			this.usageNameField = usageName;
-			this.templateTypeField = templateType;
-			this.templateTypeSpecifiedField = templateTypeSpecified;
+			this.HasPropertyTemplates = hasPropertyTemplates;
+			this.UsageName = usageName;
+			this.TemplateType = templateType;
+			this.TemplateTypeSpecified = templateTypeSpecified;
 		}
 	}
 }

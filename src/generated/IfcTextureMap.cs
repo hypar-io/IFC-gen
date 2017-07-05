@@ -14,8 +14,8 @@ namespace IFC4
 				IfcFace mappedTo,
 				IfcTextureCoordinateMaps maps) : base(maps)
 		{
-			this.verticesField = vertices;
-			this.mappedToField = mappedTo;
+			this.Vertices = vertices;
+			this.MappedTo = mappedTo;
 		}
 	}
 }

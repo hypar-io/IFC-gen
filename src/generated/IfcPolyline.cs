@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcPolyline(IfcPolylinePoints points,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.pointsField = points;
+			this.Points = points;
 		}
 	}
 }

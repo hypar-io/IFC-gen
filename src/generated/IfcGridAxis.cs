@@ -15,10 +15,10 @@ namespace IFC4
 				Boolean sameSense,
 				Boolean sameSenseSpecified) : base()
 		{
-			this.axisCurveField = axisCurve;
-			this.axisTagField = axisTag;
-			this.sameSenseField = sameSense;
-			this.sameSenseSpecifiedField = sameSenseSpecified;
+			this.AxisCurve = axisCurve;
+			this.AxisTag = axisTag;
+			this.SameSense = sameSense;
+			this.SameSenseSpecified = sameSenseSpecified;
 		}
 	}
 }

@@ -15,10 +15,10 @@ namespace IFC4
 				Double curveFontScaling,
 				Boolean curveFontScalingSpecified) : base()
 		{
-			this.curveFontField = curveFont;
-			this.nameField = name;
-			this.curveFontScalingField = curveFontScaling;
-			this.curveFontScalingSpecifiedField = curveFontScalingSpecified;
+			this.CurveFont = curveFont;
+			this.Name = name;
+			this.CurveFontScaling = curveFontScaling;
+			this.CurveFontScalingSpecified = curveFontScalingSpecified;
 		}
 	}
 }

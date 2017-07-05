@@ -17,9 +17,9 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.dependingPropertyField = dependingProperty;
-			this.dependantPropertyField = dependantProperty;
-			this.expressionField = expression;
+			this.DependingProperty = dependingProperty;
+			this.DependantProperty = dependantProperty;
+			this.Expression = expression;
 		}
 	}
 }

@@ -17,7 +17,7 @@ namespace IFC4
 				unitType,
 				unitTypeSpecified)
 		{
-			this.nameField = name;
+			this.Name = name;
 		}
 	}
 }

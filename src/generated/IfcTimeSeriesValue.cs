@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcTimeSeriesValue(IfcTimeSeriesValueListValues listValues) : base()
 		{
-			this.listValuesField = listValues;
+			this.ListValues = listValues;
 		}
 	}
 }

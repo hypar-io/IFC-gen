@@ -30,14 +30,14 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.constructionTypeField = constructionType;
-			this.constructionTypeSpecifiedField = constructionTypeSpecified;
-			this.operationTypeField = operationType;
-			this.operationTypeSpecifiedField = operationTypeSpecified;
-			this.parameterTakesPrecedenceField = parameterTakesPrecedence;
-			this.parameterTakesPrecedenceSpecifiedField = parameterTakesPrecedenceSpecified;
-			this.sizeableField = sizeable;
-			this.sizeableSpecifiedField = sizeableSpecified;
+			this.ConstructionType = constructionType;
+			this.ConstructionTypeSpecified = constructionTypeSpecified;
+			this.OperationType = operationType;
+			this.OperationTypeSpecified = operationTypeSpecified;
+			this.ParameterTakesPrecedence = parameterTakesPrecedence;
+			this.ParameterTakesPrecedenceSpecified = parameterTakesPrecedenceSpecified;
+			this.Sizeable = sizeable;
+			this.SizeableSpecified = sizeableSpecified;
 		}
 	}
 }

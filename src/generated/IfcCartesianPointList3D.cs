@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcCartesianPointList3D(Double[] coordList,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.coordListField = coordList;
+			this.CoordList = coordList;
 		}
 	}
 }

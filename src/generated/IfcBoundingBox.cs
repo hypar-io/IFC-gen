@@ -19,13 +19,13 @@ namespace IFC4
 				Boolean zDimSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.cornerField = corner;
-			this.xDimField = xDim;
-			this.xDimSpecifiedField = xDimSpecified;
-			this.yDimField = yDim;
-			this.yDimSpecifiedField = yDimSpecified;
-			this.zDimField = zDim;
-			this.zDimSpecifiedField = zDimSpecified;
+			this.Corner = corner;
+			this.XDim = xDim;
+			this.XDimSpecified = xDimSpecified;
+			this.YDim = yDim;
+			this.YDimSpecified = yDimSpecified;
+			this.ZDim = zDim;
+			this.ZDimSpecified = zDimSpecified;
 		}
 	}
 }

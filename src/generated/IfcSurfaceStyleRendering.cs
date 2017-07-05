@@ -24,14 +24,14 @@ namespace IFC4
 				transparency,
 				transparencySpecified)
 		{
-			this.diffuseColourField = diffuseColour;
-			this.transmissionColourField = transmissionColour;
-			this.diffuseTransmissionColourField = diffuseTransmissionColour;
-			this.reflectionColourField = reflectionColour;
-			this.specularColourField = specularColour;
-			this.specularHighlightField = specularHighlight;
-			this.reflectanceMethodField = reflectanceMethod;
-			this.reflectanceMethodSpecifiedField = reflectanceMethodSpecified;
+			this.DiffuseColour = diffuseColour;
+			this.TransmissionColour = transmissionColour;
+			this.DiffuseTransmissionColour = diffuseTransmissionColour;
+			this.ReflectionColour = reflectionColour;
+			this.SpecularColour = specularColour;
+			this.SpecularHighlight = specularHighlight;
+			this.ReflectanceMethod = reflectanceMethod;
+			this.ReflectanceMethodSpecified = reflectanceMethodSpecified;
 		}
 	}
 }

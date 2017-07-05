@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcEdgeLoop(IfcEdgeLoopEdgeList edgeList,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.edgeListField = edgeList;
+			this.EdgeList = edgeList;
 		}
 	}
 }

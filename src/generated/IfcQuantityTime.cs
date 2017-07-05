@@ -19,9 +19,9 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.timeValueField = timeValue;
-			this.timeValueSpecifiedField = timeValueSpecified;
-			this.formulaField = formula;
+			this.TimeValue = timeValue;
+			this.TimeValueSpecified = timeValueSpecified;
+			this.Formula = formula;
 		}
 	}
 }

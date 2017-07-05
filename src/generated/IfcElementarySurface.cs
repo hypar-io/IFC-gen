@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcElementarySurface(IfcAxis2Placement3D position,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.positionField = position;
+			this.Position = position;
 		}
 	}
 }

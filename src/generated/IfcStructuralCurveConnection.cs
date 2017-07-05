@@ -29,7 +29,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.axisField = axis;
+			this.Axis = axis;
 		}
 	}
 }

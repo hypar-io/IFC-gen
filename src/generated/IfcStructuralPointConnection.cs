@@ -29,7 +29,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.conditionCoordinateSystemField = conditionCoordinateSystem;
+			this.ConditionCoordinateSystem = conditionCoordinateSystem;
 		}
 	}
 }

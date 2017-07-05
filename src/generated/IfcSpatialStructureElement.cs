@@ -34,8 +34,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.compositionTypeField = compositionType;
-			this.compositionTypeSpecifiedField = compositionTypeSpecified;
+			this.CompositionType = compositionType;
+			this.CompositionTypeSpecified = compositionTypeSpecified;
 		}
 	}
 }

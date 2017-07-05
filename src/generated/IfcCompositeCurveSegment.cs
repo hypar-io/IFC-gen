@@ -17,11 +17,11 @@ namespace IFC4
 				Boolean sameSenseSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.parentCurveField = parentCurve;
-			this.transitionField = transition;
-			this.transitionSpecifiedField = transitionSpecified;
-			this.sameSenseField = sameSense;
-			this.sameSenseSpecifiedField = sameSenseSpecified;
+			this.ParentCurve = parentCurve;
+			this.Transition = transition;
+			this.TransitionSpecified = transitionSpecified;
+			this.SameSense = sameSense;
+			this.SameSenseSpecified = sameSenseSpecified;
 		}
 	}
 }

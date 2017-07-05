@@ -39,7 +39,7 @@ namespace IFC4
 				selfIntersectSpecified,
 				styledByItem)
 		{
-			this.weightsDataField = weightsData;
+			this.WeightsData = weightsData;
 		}
 	}
 }

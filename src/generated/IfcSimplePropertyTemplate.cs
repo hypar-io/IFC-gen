@@ -21,16 +21,16 @@ namespace IFC4
 				IfcStateEnum accessState,
 				Boolean accessStateSpecified) : base()
 		{
-			this.enumeratorsField = enumerators;
-			this.primaryUnitField = primaryUnit;
-			this.secondaryUnitField = secondaryUnit;
-			this.templateTypeField = templateType;
-			this.templateTypeSpecifiedField = templateTypeSpecified;
-			this.primaryMeasureTypeField = primaryMeasureType;
-			this.secondaryMeasureTypeField = secondaryMeasureType;
-			this.expressionField = expression;
-			this.accessStateField = accessState;
-			this.accessStateSpecifiedField = accessStateSpecified;
+			this.Enumerators = enumerators;
+			this.PrimaryUnit = primaryUnit;
+			this.SecondaryUnit = secondaryUnit;
+			this.TemplateType = templateType;
+			this.TemplateTypeSpecified = templateTypeSpecified;
+			this.PrimaryMeasureType = primaryMeasureType;
+			this.SecondaryMeasureType = secondaryMeasureType;
+			this.Expression = expression;
+			this.AccessState = accessState;
+			this.AccessStateSpecified = accessStateSpecified;
 		}
 	}
 }

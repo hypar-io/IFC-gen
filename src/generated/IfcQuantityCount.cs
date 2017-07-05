@@ -19,9 +19,9 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.countValueField = countValue;
-			this.countValueSpecifiedField = countValueSpecified;
-			this.formulaField = formula;
+			this.CountValue = countValue;
+			this.CountValueSpecified = countValueSpecified;
+			this.Formula = formula;
 		}
 	}
 }

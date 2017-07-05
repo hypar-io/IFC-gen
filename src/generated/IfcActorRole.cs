@@ -15,10 +15,10 @@ namespace IFC4
 				String userDefinedRole,
 				String description) : base()
 		{
-			this.roleField = role;
-			this.roleSpecifiedField = roleSpecified;
-			this.userDefinedRoleField = userDefinedRole;
-			this.descriptionField = description;
+			this.Role = role;
+			this.RoleSpecified = roleSpecified;
+			this.UserDefinedRole = userDefinedRole;
+			this.Description = description;
 		}
 	}
 }

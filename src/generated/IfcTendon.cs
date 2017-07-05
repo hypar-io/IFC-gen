@@ -50,22 +50,22 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.nominalDiameterField = nominalDiameter;
-			this.nominalDiameterSpecifiedField = nominalDiameterSpecified;
-			this.crossSectionAreaField = crossSectionArea;
-			this.crossSectionAreaSpecifiedField = crossSectionAreaSpecified;
-			this.tensionForceField = tensionForce;
-			this.tensionForceSpecifiedField = tensionForceSpecified;
-			this.preStressField = preStress;
-			this.preStressSpecifiedField = preStressSpecified;
-			this.frictionCoefficientField = frictionCoefficient;
-			this.frictionCoefficientSpecifiedField = frictionCoefficientSpecified;
-			this.anchorageSlipField = anchorageSlip;
-			this.anchorageSlipSpecifiedField = anchorageSlipSpecified;
-			this.minCurvatureRadiusField = minCurvatureRadius;
-			this.minCurvatureRadiusSpecifiedField = minCurvatureRadiusSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.NominalDiameter = nominalDiameter;
+			this.NominalDiameterSpecified = nominalDiameterSpecified;
+			this.CrossSectionArea = crossSectionArea;
+			this.CrossSectionAreaSpecified = crossSectionAreaSpecified;
+			this.TensionForce = tensionForce;
+			this.TensionForceSpecified = tensionForceSpecified;
+			this.PreStress = preStress;
+			this.PreStressSpecified = preStressSpecified;
+			this.FrictionCoefficient = frictionCoefficient;
+			this.FrictionCoefficientSpecified = frictionCoefficientSpecified;
+			this.AnchorageSlip = anchorageSlip;
+			this.AnchorageSlipSpecified = anchorageSlipSpecified;
+			this.MinCurvatureRadius = minCurvatureRadius;
+			this.MinCurvatureRadiusSpecified = minCurvatureRadiusSpecified;
 		}
 	}
 }

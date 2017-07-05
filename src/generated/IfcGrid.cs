@@ -31,11 +31,11 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.uAxesField = uAxes;
-			this.vAxesField = vAxes;
-			this.wAxesField = wAxes;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.UAxes = uAxes;
+			this.VAxes = vAxes;
+			this.WAxes = wAxes;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

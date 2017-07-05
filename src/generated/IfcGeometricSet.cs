@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcGeometricSet(IfcGeometricSetElements elements,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.elementsField = elements;
+			this.Elements = elements;
 		}
 	}
 }

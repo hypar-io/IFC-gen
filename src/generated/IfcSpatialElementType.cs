@@ -23,7 +23,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.elementTypeField = elementType;
+			this.ElementType = elementType;
 		}
 	}
 }

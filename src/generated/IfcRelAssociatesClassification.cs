@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcRelAssociatesClassification(IfcRelAssociatesClassificationRelatingClassification relatingClassification,
 				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
-			this.relatingClassificationField = relatingClassification;
+			this.RelatingClassification = relatingClassification;
 		}
 	}
 }

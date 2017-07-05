@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcShellBasedSurfaceModel(IfcShellBasedSurfaceModelSbsmBoundary sbsmBoundary,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.sbsmBoundaryField = sbsmBoundary;
+			this.SbsmBoundary = sbsmBoundary;
 		}
 	}
 }

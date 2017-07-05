@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcSimplePropertyTemplatePrimaryUnit(Entity item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

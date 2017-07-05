@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcRelAssociatesLibrary(IfcRelAssociatesLibraryRelatingLibrary relatingLibrary,
 				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
-			this.relatingLibraryField = relatingLibrary;
+			this.RelatingLibrary = relatingLibrary;
 		}
 	}
 }

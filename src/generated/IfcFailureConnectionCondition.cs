@@ -24,18 +24,18 @@ namespace IFC4
 				Boolean compressionFailureZSpecified,
 				String name) : base(name)
 		{
-			this.tensionFailureXField = tensionFailureX;
-			this.tensionFailureXSpecifiedField = tensionFailureXSpecified;
-			this.tensionFailureYField = tensionFailureY;
-			this.tensionFailureYSpecifiedField = tensionFailureYSpecified;
-			this.tensionFailureZField = tensionFailureZ;
-			this.tensionFailureZSpecifiedField = tensionFailureZSpecified;
-			this.compressionFailureXField = compressionFailureX;
-			this.compressionFailureXSpecifiedField = compressionFailureXSpecified;
-			this.compressionFailureYField = compressionFailureY;
-			this.compressionFailureYSpecifiedField = compressionFailureYSpecified;
-			this.compressionFailureZField = compressionFailureZ;
-			this.compressionFailureZSpecifiedField = compressionFailureZSpecified;
+			this.TensionFailureX = tensionFailureX;
+			this.TensionFailureXSpecified = tensionFailureXSpecified;
+			this.TensionFailureY = tensionFailureY;
+			this.TensionFailureYSpecified = tensionFailureYSpecified;
+			this.TensionFailureZ = tensionFailureZ;
+			this.TensionFailureZSpecified = tensionFailureZSpecified;
+			this.CompressionFailureX = compressionFailureX;
+			this.CompressionFailureXSpecified = compressionFailureXSpecified;
+			this.CompressionFailureY = compressionFailureY;
+			this.CompressionFailureYSpecified = compressionFailureYSpecified;
+			this.CompressionFailureZ = compressionFailureZ;
+			this.CompressionFailureZSpecified = compressionFailureZSpecified;
 		}
 	}
 }

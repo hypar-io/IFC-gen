@@ -34,20 +34,20 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.overallWidthField = overallWidth;
-			this.overallWidthSpecifiedField = overallWidthSpecified;
-			this.overallDepthField = overallDepth;
-			this.overallDepthSpecifiedField = overallDepthSpecified;
-			this.webThicknessField = webThickness;
-			this.webThicknessSpecifiedField = webThicknessSpecified;
-			this.flangeThicknessField = flangeThickness;
-			this.flangeThicknessSpecifiedField = flangeThicknessSpecified;
-			this.filletRadiusField = filletRadius;
-			this.filletRadiusSpecifiedField = filletRadiusSpecified;
-			this.flangeEdgeRadiusField = flangeEdgeRadius;
-			this.flangeEdgeRadiusSpecifiedField = flangeEdgeRadiusSpecified;
-			this.flangeSlopeField = flangeSlope;
-			this.flangeSlopeSpecifiedField = flangeSlopeSpecified;
+			this.OverallWidth = overallWidth;
+			this.OverallWidthSpecified = overallWidthSpecified;
+			this.OverallDepth = overallDepth;
+			this.OverallDepthSpecified = overallDepthSpecified;
+			this.WebThickness = webThickness;
+			this.WebThicknessSpecified = webThicknessSpecified;
+			this.FlangeThickness = flangeThickness;
+			this.FlangeThicknessSpecified = flangeThicknessSpecified;
+			this.FilletRadius = filletRadius;
+			this.FilletRadiusSpecified = filletRadiusSpecified;
+			this.FlangeEdgeRadius = flangeEdgeRadius;
+			this.FlangeEdgeRadiusSpecified = flangeEdgeRadiusSpecified;
+			this.FlangeSlope = flangeSlope;
+			this.FlangeSlopeSpecified = flangeSlopeSpecified;
 		}
 	}
 }

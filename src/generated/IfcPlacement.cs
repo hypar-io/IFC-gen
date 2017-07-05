@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcPlacement(IfcCartesianPoint location,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.locationField = location;
+			this.Location = location;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcBoundaryNodeConditionRotationalStiffnessZ(Object item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

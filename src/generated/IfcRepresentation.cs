@@ -15,10 +15,10 @@ namespace IFC4
 				String representationIdentifier,
 				String representationType) : base()
 		{
-			this.contextOfItemsField = contextOfItems;
-			this.itemsField = items;
-			this.representationIdentifierField = representationIdentifier;
-			this.representationTypeField = representationType;
+			this.ContextOfItems = contextOfItems;
+			this.Items = items;
+			this.RepresentationIdentifier = representationIdentifier;
+			this.RepresentationType = representationType;
 		}
 	}
 }

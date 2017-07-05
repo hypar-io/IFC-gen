@@ -18,12 +18,12 @@ namespace IFC4
 				IfcBoundaryNodeConditionRotationalStiffnessZ rotationalStiffnessZ,
 				String name) : base(name)
 		{
-			this.translationalStiffnessXField = translationalStiffnessX;
-			this.translationalStiffnessYField = translationalStiffnessY;
-			this.translationalStiffnessZField = translationalStiffnessZ;
-			this.rotationalStiffnessXField = rotationalStiffnessX;
-			this.rotationalStiffnessYField = rotationalStiffnessY;
-			this.rotationalStiffnessZField = rotationalStiffnessZ;
+			this.TranslationalStiffnessX = translationalStiffnessX;
+			this.TranslationalStiffnessY = translationalStiffnessY;
+			this.TranslationalStiffnessZ = translationalStiffnessZ;
+			this.RotationalStiffnessX = rotationalStiffnessX;
+			this.RotationalStiffnessY = rotationalStiffnessY;
+			this.RotationalStiffnessZ = rotationalStiffnessZ;
 		}
 	}
 }

@@ -18,8 +18,8 @@ namespace IFC4
 				relatedObjectsType,
 				relatedObjectsTypeSpecified)
 		{
-			this.relatingActorField = relatingActor;
-			this.actingRoleField = actingRole;
+			this.RelatingActor = relatingActor;
+			this.ActingRole = actingRole;
 		}
 	}
 }

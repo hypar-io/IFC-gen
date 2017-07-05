@@ -27,7 +27,7 @@ namespace IFC4
 				internalOrExternalBoundary,
 				internalOrExternalBoundarySpecified)
 		{
-			this.correspondingBoundaryField = correspondingBoundary;
+			this.CorrespondingBoundary = correspondingBoundary;
 		}
 	}
 }

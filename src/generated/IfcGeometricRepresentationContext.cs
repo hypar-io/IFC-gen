@@ -22,14 +22,14 @@ namespace IFC4
 				String contextType) : base(contextIdentifier,
 				contextType)
 		{
-			this.worldCoordinateSystemField = worldCoordinateSystem;
-			this.trueNorthField = trueNorth;
-			this.hasSubContextsField = hasSubContexts;
-			this.hasCoordinateOperationField = hasCoordinateOperation;
-			this.coordinateSpaceDimensionField = coordinateSpaceDimension;
-			this.coordinateSpaceDimensionSpecifiedField = coordinateSpaceDimensionSpecified;
-			this.precisionField = precision;
-			this.precisionSpecifiedField = precisionSpecified;
+			this.WorldCoordinateSystem = worldCoordinateSystem;
+			this.TrueNorth = trueNorth;
+			this.HasSubContexts = hasSubContexts;
+			this.HasCoordinateOperation = hasCoordinateOperation;
+			this.CoordinateSpaceDimension = coordinateSpaceDimension;
+			this.CoordinateSpaceDimensionSpecified = coordinateSpaceDimensionSpecified;
+			this.Precision = precision;
+			this.PrecisionSpecified = precisionSpecified;
 		}
 	}
 }

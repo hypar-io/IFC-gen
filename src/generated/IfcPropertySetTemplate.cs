@@ -15,10 +15,10 @@ namespace IFC4
 				Boolean templateTypeSpecified,
 				String applicableEntity) : base()
 		{
-			this.hasPropertyTemplatesField = hasPropertyTemplates;
-			this.templateTypeField = templateType;
-			this.templateTypeSpecifiedField = templateTypeSpecified;
-			this.applicableEntityField = applicableEntity;
+			this.HasPropertyTemplates = hasPropertyTemplates;
+			this.TemplateType = templateType;
+			this.TemplateTypeSpecified = templateTypeSpecified;
+			this.ApplicableEntity = applicableEntity;
 		}
 	}
 }

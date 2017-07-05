@@ -18,8 +18,8 @@ namespace IFC4
 				relatingElement,
 				relatedElement)
 		{
-			this.realizingElementsField = realizingElements;
-			this.connectionTypeField = connectionType;
+			this.RealizingElements = realizingElements;
+			this.ConnectionType = connectionType;
 		}
 	}
 }

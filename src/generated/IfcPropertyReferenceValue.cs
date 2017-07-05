@@ -16,8 +16,8 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.propertyReferenceField = propertyReference;
-			this.usageNameField = usageName;
+			this.PropertyReference = propertyReference;
+			this.UsageName = usageName;
 		}
 	}
 }

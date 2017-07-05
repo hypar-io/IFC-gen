@@ -15,7 +15,7 @@ namespace IFC4
 				IfcTextureCoordinateMaps maps) : base(texCoords,
 				maps)
 		{
-			this.texCoordIndexField = texCoordIndex;
+			this.TexCoordIndex = texCoordIndex;
 		}
 	}
 }

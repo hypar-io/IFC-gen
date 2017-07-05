@@ -27,11 +27,11 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.resultForLoadGroupField = resultForLoadGroup;
-			this.theoryTypeField = theoryType;
-			this.theoryTypeSpecifiedField = theoryTypeSpecified;
-			this.isLinearField = isLinear;
-			this.isLinearSpecifiedField = isLinearSpecified;
+			this.ResultForLoadGroup = resultForLoadGroup;
+			this.TheoryType = theoryType;
+			this.TheoryTypeSpecified = theoryTypeSpecified;
+			this.IsLinear = isLinear;
+			this.IsLinearSpecified = isLinearSpecified;
 		}
 	}
 }

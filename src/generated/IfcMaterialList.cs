@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcMaterialList(IfcMaterialListMaterials materials) : base()
 		{
-			this.materialsField = materials;
+			this.Materials = materials;
 		}
 	}
 }

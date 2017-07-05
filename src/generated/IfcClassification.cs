@@ -19,14 +19,14 @@ namespace IFC4
 				String description,
 				String location) : base()
 		{
-			this.referenceTokensField = referenceTokens;
-			this.hasReferencesField = hasReferences;
-			this.sourceField = source;
-			this.editionField = edition;
-			this.editionDateField = editionDate;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.locationField = location;
+			this.ReferenceTokens = referenceTokens;
+			this.HasReferences = hasReferences;
+			this.Source = source;
+			this.Edition = edition;
+			this.EditionDate = editionDate;
+			this.Name = name;
+			this.Description = description;
+			this.Location = location;
 		}
 	}
 }

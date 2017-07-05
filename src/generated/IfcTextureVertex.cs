@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcTextureVertex(Double[] coordinates) : base()
 		{
-			this.coordinatesField = coordinates;
+			this.Coordinates = coordinates;
 		}
 	}
 }

@@ -14,8 +14,8 @@ namespace IFC4
 				IfcVertex edgeEnd,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.edgeStartField = edgeStart;
-			this.edgeEndField = edgeEnd;
+			this.EdgeStart = edgeStart;
+			this.EdgeEnd = edgeEnd;
 		}
 	}
 }

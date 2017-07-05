@@ -16,8 +16,8 @@ namespace IFC4
 				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isNestedBy,
 				isDecomposedBy)
 		{
-			this.hasPropertySetsField = hasPropertySets;
-			this.applicableOccurrenceField = applicableOccurrence;
+			this.HasPropertySets = hasPropertySets;
+			this.ApplicableOccurrence = applicableOccurrence;
 		}
 	}
 }

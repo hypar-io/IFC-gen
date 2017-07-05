@@ -15,10 +15,10 @@ namespace IFC4
 				String[] express,
 				String[] configuration) : base()
 		{
-			this.headerField = header;
-			this.idField = id;
-			this.expressField = express;
-			this.configurationField = configuration;
+			this.header = header;
+			this.id = id;
+			this.express = express;
+			this.configuration = configuration;
 		}
 	}
 }

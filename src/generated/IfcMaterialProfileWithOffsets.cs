@@ -27,7 +27,7 @@ namespace IFC4
 				category,
 				hasProperties)
 		{
-			this.offsetValuesField = offsetValues;
+			this.OffsetValues = offsetValues;
 		}
 	}
 }

@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean pathSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.placementField = placement;
-			this.literalField = literal;
-			this.pathField = path;
-			this.pathSpecifiedField = pathSpecified;
+			this.Placement = placement;
+			this.Literal = literal;
+			this.Path = path;
+			this.PathSpecified = pathSpecified;
 		}
 	}
 }

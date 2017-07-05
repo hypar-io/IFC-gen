@@ -21,9 +21,9 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.parentProfileField = parentProfile;
-			this.opField = op;
-			this.labelField = label;
+			this.ParentProfile = parentProfile;
+			this.Operator = op;
+			this.Label = label;
 		}
 	}
 }

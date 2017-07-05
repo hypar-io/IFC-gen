@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcTextureCoordinate(IfcTextureCoordinateMaps maps) : base()
 		{
-			this.mapsField = maps;
+			this.Maps = maps;
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcIndexedTextureMap(IfcTextureVertexList texCoords,
 				IfcTextureCoordinateMaps maps) : base(maps)
 		{
-			this.texCoordsField = texCoords;
+			this.TexCoords = texCoords;
 		}
 	}
 }

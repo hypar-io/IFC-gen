@@ -18,12 +18,12 @@ namespace IFC4
 				Boolean hatchLineAngleSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.hatchLineAppearanceField = hatchLineAppearance;
-			this.startOfNextHatchLineField = startOfNextHatchLine;
-			this.pointOfReferenceHatchLineField = pointOfReferenceHatchLine;
-			this.patternStartField = patternStart;
-			this.hatchLineAngleField = hatchLineAngle;
-			this.hatchLineAngleSpecifiedField = hatchLineAngleSpecified;
+			this.HatchLineAppearance = hatchLineAppearance;
+			this.StartOfNextHatchLine = startOfNextHatchLine;
+			this.PointOfReferenceHatchLine = pointOfReferenceHatchLine;
+			this.PatternStart = patternStart;
+			this.HatchLineAngle = hatchLineAngle;
+			this.HatchLineAngleSpecified = hatchLineAngleSpecified;
 		}
 	}
 }

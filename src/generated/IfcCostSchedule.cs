@@ -29,11 +29,11 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.statusField = status;
-			this.submittedOnField = submittedOn;
-			this.updateDateField = updateDate;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.Status = status;
+			this.SubmittedOn = submittedOn;
+			this.UpdateDate = updateDate;
 		}
 	}
 }

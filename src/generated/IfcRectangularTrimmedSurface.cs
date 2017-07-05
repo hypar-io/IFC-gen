@@ -25,19 +25,19 @@ namespace IFC4
 				Boolean vsenseSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisSurfaceField = basisSurface;
-			this.u1Field = u1;
-			this.u1SpecifiedField = u1Specified;
-			this.v1Field = v1;
-			this.v1SpecifiedField = v1Specified;
-			this.u2Field = u2;
-			this.u2SpecifiedField = u2Specified;
-			this.v2Field = v2;
-			this.v2SpecifiedField = v2Specified;
-			this.usenseField = usense;
-			this.usenseSpecifiedField = usenseSpecified;
-			this.vsenseField = vsense;
-			this.vsenseSpecifiedField = vsenseSpecified;
+			this.BasisSurface = basisSurface;
+			this.U1 = u1;
+			this.U1Specified = u1Specified;
+			this.V1 = v1;
+			this.V1Specified = v1Specified;
+			this.U2 = u2;
+			this.U2Specified = u2Specified;
+			this.V2 = v2;
+			this.V2Specified = v2Specified;
+			this.Usense = usense;
+			this.UsenseSpecified = usenseSpecified;
+			this.Vsense = vsense;
+			this.VsenseSpecified = vsenseSpecified;
 		}
 	}
 }

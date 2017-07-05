@@ -20,12 +20,12 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(position,
 				styledByItem)
 		{
-			this.xLengthField = xLength;
-			this.xLengthSpecifiedField = xLengthSpecified;
-			this.yLengthField = yLength;
-			this.yLengthSpecifiedField = yLengthSpecified;
-			this.heightField = height;
-			this.heightSpecifiedField = heightSpecified;
+			this.XLength = xLength;
+			this.XLengthSpecified = xLengthSpecified;
+			this.YLength = yLength;
+			this.YLengthSpecified = yLengthSpecified;
+			this.Height = height;
+			this.HeightSpecified = heightSpecified;
 		}
 	}
 }

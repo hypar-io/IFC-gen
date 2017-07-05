@@ -38,8 +38,8 @@ namespace IFC4
 				rotationalDisplacementRZSpecified,
 				name)
 		{
-			this.distortionField = distortion;
-			this.distortionSpecifiedField = distortionSpecified;
+			this.Distortion = distortion;
+			this.DistortionSpecified = distortionSpecified;
 		}
 	}
 }

@@ -25,19 +25,19 @@ namespace IFC4
 				Boolean selfIntersectSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.controlPointsListField = controlPointsList;
-			this.uDegreeField = uDegree;
-			this.uDegreeSpecifiedField = uDegreeSpecified;
-			this.vDegreeField = vDegree;
-			this.vDegreeSpecifiedField = vDegreeSpecified;
-			this.surfaceFormField = surfaceForm;
-			this.surfaceFormSpecifiedField = surfaceFormSpecified;
-			this.uClosedField = uClosed;
-			this.uClosedSpecifiedField = uClosedSpecified;
-			this.vClosedField = vClosed;
-			this.vClosedSpecifiedField = vClosedSpecified;
-			this.selfIntersectField = selfIntersect;
-			this.selfIntersectSpecifiedField = selfIntersectSpecified;
+			this.ControlPointsList = controlPointsList;
+			this.UDegree = uDegree;
+			this.UDegreeSpecified = uDegreeSpecified;
+			this.VDegree = vDegree;
+			this.VDegreeSpecified = vDegreeSpecified;
+			this.SurfaceForm = surfaceForm;
+			this.SurfaceFormSpecified = surfaceFormSpecified;
+			this.UClosed = uClosed;
+			this.UClosedSpecified = uClosedSpecified;
+			this.VClosed = vClosed;
+			this.VClosedSpecified = vClosedSpecified;
+			this.SelfIntersect = selfIntersect;
+			this.SelfIntersectSpecified = selfIntersectSpecified;
 		}
 	}
 }

@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean implicitOuterSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisSurfaceField = basisSurface;
-			this.boundariesField = boundaries;
-			this.implicitOuterField = implicitOuter;
-			this.implicitOuterSpecifiedField = implicitOuterSpecified;
+			this.BasisSurface = basisSurface;
+			this.Boundaries = boundaries;
+			this.ImplicitOuter = implicitOuter;
+			this.ImplicitOuterSpecified = implicitOuterSpecified;
 		}
 	}
 }

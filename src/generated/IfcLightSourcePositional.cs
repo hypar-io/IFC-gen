@@ -33,15 +33,15 @@ namespace IFC4
 				intensitySpecified,
 				styledByItem)
 		{
-			this.positionField = position;
-			this.radiusField = radius;
-			this.radiusSpecifiedField = radiusSpecified;
-			this.constantAttenuationField = constantAttenuation;
-			this.constantAttenuationSpecifiedField = constantAttenuationSpecified;
-			this.distanceAttenuationField = distanceAttenuation;
-			this.distanceAttenuationSpecifiedField = distanceAttenuationSpecified;
-			this.quadricAttenuationField = quadricAttenuation;
-			this.quadricAttenuationSpecifiedField = quadricAttenuationSpecified;
+			this.Position = position;
+			this.Radius = radius;
+			this.RadiusSpecified = radiusSpecified;
+			this.ConstantAttenuation = constantAttenuation;
+			this.ConstantAttenuationSpecified = constantAttenuationSpecified;
+			this.DistanceAttenuation = distanceAttenuation;
+			this.DistanceAttenuationSpecified = distanceAttenuationSpecified;
+			this.QuadricAttenuation = quadricAttenuation;
+			this.QuadricAttenuationSpecified = quadricAttenuationSpecified;
 		}
 	}
 }

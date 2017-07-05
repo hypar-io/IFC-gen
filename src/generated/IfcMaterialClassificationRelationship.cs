@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcMaterialClassificationRelationship(IfcMaterialClassificationRelationshipMaterialClassifications materialClassifications,
 				IfcMaterial classifiedMaterial) : base()
 		{
-			this.materialClassificationsField = materialClassifications;
-			this.classifiedMaterialField = classifiedMaterial;
+			this.MaterialClassifications = materialClassifications;
+			this.ClassifiedMaterial = classifiedMaterial;
 		}
 	}
 }

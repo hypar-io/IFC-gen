@@ -18,13 +18,13 @@ namespace IFC4
 				Double supportedLength,
 				Boolean supportedLengthSpecified) : base()
 		{
-			this.relatingStructuralMemberField = relatingStructuralMember;
-			this.relatedStructuralConnectionField = relatedStructuralConnection;
-			this.appliedConditionField = appliedCondition;
-			this.additionalConditionsField = additionalConditions;
-			this.conditionCoordinateSystemField = conditionCoordinateSystem;
-			this.supportedLengthField = supportedLength;
-			this.supportedLengthSpecifiedField = supportedLengthSpecified;
+			this.RelatingStructuralMember = relatingStructuralMember;
+			this.RelatedStructuralConnection = relatedStructuralConnection;
+			this.AppliedCondition = appliedCondition;
+			this.AdditionalConditions = additionalConditions;
+			this.ConditionCoordinateSystem = conditionCoordinateSystem;
+			this.SupportedLength = supportedLength;
+			this.SupportedLengthSpecified = supportedLengthSpecified;
 		}
 	}
 }

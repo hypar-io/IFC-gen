@@ -19,7 +19,7 @@ namespace IFC4
 				agreementFlagSpecified,
 				styledByItem)
 		{
-			this.enclosureField = enclosure;
+			this.Enclosure = enclosure;
 		}
 	}
 }

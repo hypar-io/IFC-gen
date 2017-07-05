@@ -16,8 +16,8 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.relatingApprovalField = relatingApproval;
-			this.relatedApprovalsField = relatedApprovals;
+			this.RelatingApproval = relatingApproval;
+			this.RelatedApprovals = relatedApprovals;
 		}
 	}
 }

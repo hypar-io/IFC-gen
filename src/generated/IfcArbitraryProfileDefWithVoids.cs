@@ -21,7 +21,7 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.innerCurvesField = innerCurves;
+			this.InnerCurves = innerCurves;
 		}
 	}
 }

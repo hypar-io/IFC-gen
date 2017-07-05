@@ -32,12 +32,12 @@ namespace IFC4
 				creationTime,
 				userDefinedGrade)
 		{
-			this.benchmarkValuesField = benchmarkValues;
-			this.logicalAggregatorField = logicalAggregator;
-			this.logicalAggregatorSpecifiedField = logicalAggregatorSpecified;
-			this.objectiveQualifierField = objectiveQualifier;
-			this.objectiveQualifierSpecifiedField = objectiveQualifierSpecified;
-			this.userDefinedQualifierField = userDefinedQualifier;
+			this.BenchmarkValues = benchmarkValues;
+			this.LogicalAggregator = logicalAggregator;
+			this.LogicalAggregatorSpecified = logicalAggregatorSpecified;
+			this.ObjectiveQualifier = objectiveQualifier;
+			this.ObjectiveQualifierSpecified = objectiveQualifierSpecified;
+			this.UserDefinedQualifier = userDefinedQualifier;
 		}
 	}
 }

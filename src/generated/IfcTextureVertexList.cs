@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcTextureVertexList(Double[] texCoordsList) : base()
 		{
-			this.texCoordsListField = texCoordsList;
+			this.TexCoordsList = texCoordsList;
 		}
 	}
 }

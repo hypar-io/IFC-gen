@@ -15,9 +15,9 @@ namespace IFC4
 				Boolean orientationSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.boundField = bound;
-			this.orientationField = orientation;
-			this.orientationSpecifiedField = orientationSpecified;
+			this.Bound = bound;
+			this.Orientation = orientation;
+			this.OrientationSpecified = orientationSpecified;
 		}
 	}
 }

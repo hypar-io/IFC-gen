@@ -16,10 +16,10 @@ namespace IFC4
 				String category,
 				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
-			this.hasRepresentationField = hasRepresentation;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.categoryField = category;
+			this.HasRepresentation = hasRepresentation;
+			this.Name = name;
+			this.Description = description;
+			this.Category = category;
 		}
 	}
 }

@@ -41,15 +41,15 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.overallHeightField = overallHeight;
-			this.overallHeightSpecifiedField = overallHeightSpecified;
-			this.overallWidthField = overallWidth;
-			this.overallWidthSpecifiedField = overallWidthSpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.partitioningTypeField = partitioningType;
-			this.partitioningTypeSpecifiedField = partitioningTypeSpecified;
-			this.userDefinedPartitioningTypeField = userDefinedPartitioningType;
+			this.OverallHeight = overallHeight;
+			this.OverallHeightSpecified = overallHeightSpecified;
+			this.OverallWidth = overallWidth;
+			this.OverallWidthSpecified = overallWidthSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.PartitioningType = partitioningType;
+			this.PartitioningTypeSpecified = partitioningTypeSpecified;
+			this.UserDefinedPartitioningType = userDefinedPartitioningType;
 		}
 	}
 }

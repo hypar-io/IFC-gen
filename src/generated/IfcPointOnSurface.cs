@@ -17,11 +17,11 @@ namespace IFC4
 				Boolean pointParameterVSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisSurfaceField = basisSurface;
-			this.pointParameterUField = pointParameterU;
-			this.pointParameterUSpecifiedField = pointParameterUSpecified;
-			this.pointParameterVField = pointParameterV;
-			this.pointParameterVSpecifiedField = pointParameterVSpecified;
+			this.BasisSurface = basisSurface;
+			this.PointParameterU = pointParameterU;
+			this.PointParameterUSpecified = pointParameterUSpecified;
+			this.PointParameterV = pointParameterV;
+			this.PointParameterVSpecified = pointParameterVSpecified;
 		}
 	}
 }

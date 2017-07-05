@@ -36,18 +36,18 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.bendingParametersField = bendingParameters;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.nominalDiameterField = nominalDiameter;
-			this.nominalDiameterSpecifiedField = nominalDiameterSpecified;
-			this.crossSectionAreaField = crossSectionArea;
-			this.crossSectionAreaSpecifiedField = crossSectionAreaSpecified;
-			this.barLengthField = barLength;
-			this.barLengthSpecifiedField = barLengthSpecified;
-			this.barSurfaceField = barSurface;
-			this.barSurfaceSpecifiedField = barSurfaceSpecified;
-			this.bendingShapeCodeField = bendingShapeCode;
+			this.BendingParameters = bendingParameters;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.NominalDiameter = nominalDiameter;
+			this.NominalDiameterSpecified = nominalDiameterSpecified;
+			this.CrossSectionArea = crossSectionArea;
+			this.CrossSectionAreaSpecified = crossSectionAreaSpecified;
+			this.BarLength = barLength;
+			this.BarLengthSpecified = barLengthSpecified;
+			this.BarSurface = barSurface;
+			this.BarSurfaceSpecified = barSurfaceSpecified;
+			this.BendingShapeCode = bendingShapeCode;
 		}
 	}
 }

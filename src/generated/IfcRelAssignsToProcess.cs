@@ -18,8 +18,8 @@ namespace IFC4
 				relatedObjectsType,
 				relatedObjectsTypeSpecified)
 		{
-			this.relatingProcessField = relatingProcess;
-			this.quantityInProcessField = quantityInProcess;
+			this.RelatingProcess = relatingProcess;
+			this.QuantityInProcess = quantityInProcess;
 		}
 	}
 }

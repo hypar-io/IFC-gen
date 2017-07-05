@@ -38,8 +38,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.elevationField = elevation;
-			this.elevationSpecifiedField = elevationSpecified;
+			this.Elevation = elevation;
+			this.ElevationSpecified = elevationSpecified;
 		}
 	}
 }

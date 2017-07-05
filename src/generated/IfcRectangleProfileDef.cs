@@ -24,10 +24,10 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.xDimField = xDim;
-			this.xDimSpecifiedField = xDimSpecified;
-			this.yDimField = yDim;
-			this.yDimSpecifiedField = yDimSpecified;
+			this.XDim = xDim;
+			this.XDimSpecified = xDimSpecified;
+			this.YDim = yDim;
+			this.YDimSpecified = yDimSpecified;
 		}
 	}
 }

@@ -18,12 +18,12 @@ namespace IFC4
 				Boolean planarForceZSpecified,
 				String name) : base(name)
 		{
-			this.planarForceXField = planarForceX;
-			this.planarForceXSpecifiedField = planarForceXSpecified;
-			this.planarForceYField = planarForceY;
-			this.planarForceYSpecifiedField = planarForceYSpecified;
-			this.planarForceZField = planarForceZ;
-			this.planarForceZSpecifiedField = planarForceZSpecified;
+			this.PlanarForceX = planarForceX;
+			this.PlanarForceXSpecified = planarForceXSpecified;
+			this.PlanarForceY = planarForceY;
+			this.PlanarForceYSpecified = planarForceYSpecified;
+			this.PlanarForceZ = planarForceZ;
+			this.PlanarForceZSpecified = planarForceZSpecified;
 		}
 	}
 }

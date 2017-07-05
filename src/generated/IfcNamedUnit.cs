@@ -14,9 +14,9 @@ namespace IFC4
 				IfcUnitEnum unitType,
 				Boolean unitTypeSpecified) : base()
 		{
-			this.dimensionsField = dimensions;
-			this.unitTypeField = unitType;
-			this.unitTypeSpecifiedField = unitTypeSpecified;
+			this.Dimensions = dimensions;
+			this.UnitType = unitType;
+			this.UnitTypeSpecified = unitTypeSpecified;
 		}
 	}
 }

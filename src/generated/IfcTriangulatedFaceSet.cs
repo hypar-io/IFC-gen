@@ -23,11 +23,11 @@ namespace IFC4
 				hasTextures,
 				styledByItem)
 		{
-			this.normalsField = normals;
-			this.closedField = closed;
-			this.closedSpecifiedField = closedSpecified;
-			this.coordIndexField = coordIndex;
-			this.pnIndexField = pnIndex;
+			this.Normals = normals;
+			this.Closed = closed;
+			this.ClosedSpecified = closedSpecified;
+			this.CoordIndex = coordIndex;
+			this.PnIndex = pnIndex;
 		}
 	}
 }

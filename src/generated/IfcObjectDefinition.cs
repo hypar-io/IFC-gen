@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcObjectDefinition(IfcObjectDefinitionIsNestedBy isNestedBy,
 				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base()
 		{
-			this.isNestedByField = isNestedBy;
-			this.isDecomposedByField = isDecomposedBy;
+			this.IsNestedBy = isNestedBy;
+			this.IsDecomposedBy = isDecomposedBy;
 		}
 	}
 }

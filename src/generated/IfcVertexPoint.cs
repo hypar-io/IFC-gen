@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcVertexPoint(IfcPoint vertexGeometry,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.vertexGeometryField = vertexGeometry;
+			this.VertexGeometry = vertexGeometry;
 		}
 	}
 }

@@ -24,18 +24,18 @@ namespace IFC4
 				Boolean scaleSpecified,
 				IfcCoordinateReferenceSystem targetCRS) : base(targetCRS)
 		{
-			this.eastingsField = eastings;
-			this.eastingsSpecifiedField = eastingsSpecified;
-			this.northingsField = northings;
-			this.northingsSpecifiedField = northingsSpecified;
-			this.orthogonalHeightField = orthogonalHeight;
-			this.orthogonalHeightSpecifiedField = orthogonalHeightSpecified;
-			this.xAxisAbscissaField = xAxisAbscissa;
-			this.xAxisAbscissaSpecifiedField = xAxisAbscissaSpecified;
-			this.xAxisOrdinateField = xAxisOrdinate;
-			this.xAxisOrdinateSpecifiedField = xAxisOrdinateSpecified;
-			this.scaleField = scale;
-			this.scaleSpecifiedField = scaleSpecified;
+			this.Eastings = eastings;
+			this.EastingsSpecified = eastingsSpecified;
+			this.Northings = northings;
+			this.NorthingsSpecified = northingsSpecified;
+			this.OrthogonalHeight = orthogonalHeight;
+			this.OrthogonalHeightSpecified = orthogonalHeightSpecified;
+			this.XAxisAbscissa = xAxisAbscissa;
+			this.XAxisAbscissaSpecified = xAxisAbscissaSpecified;
+			this.XAxisOrdinate = xAxisOrdinate;
+			this.XAxisOrdinateSpecified = xAxisOrdinateSpecified;
+			this.Scale = scale;
+			this.ScaleSpecified = scaleSpecified;
 		}
 	}
 }

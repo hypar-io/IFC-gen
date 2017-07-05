@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcLocalPlacement(IfcObjectPlacement placementRelTo,
 				IfcLocalPlacementRelativePlacement relativePlacement) : base()
 		{
-			this.placementRelToField = placementRelTo;
-			this.relativePlacementField = relativePlacement;
+			this.PlacementRelTo = placementRelTo;
+			this.RelativePlacement = relativePlacement;
 		}
 	}
 }

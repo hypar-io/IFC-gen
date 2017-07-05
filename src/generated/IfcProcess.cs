@@ -24,8 +24,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.identificationField = identification;
-			this.longDescriptionField = longDescription;
+			this.Identification = identification;
+			this.LongDescription = longDescription;
 		}
 	}
 }

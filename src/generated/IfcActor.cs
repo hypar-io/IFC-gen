@@ -23,7 +23,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.theActorField = theActor;
+			this.TheActor = theActor;
 		}
 	}
 }

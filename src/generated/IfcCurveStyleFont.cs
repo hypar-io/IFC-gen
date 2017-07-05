@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcCurveStyleFont(IfcCurveStyleFontPatternList patternList,
 				String name) : base()
 		{
-			this.patternListField = patternList;
-			this.nameField = name;
+			this.PatternList = patternList;
+			this.Name = name;
 		}
 	}
 }

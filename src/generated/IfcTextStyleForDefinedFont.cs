@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcTextStyleForDefinedFont(IfcTextStyleForDefinedFontColour colour,
 				IfcTextStyleForDefinedFontBackgroundColour backgroundColour) : base()
 		{
-			this.colourField = colour;
-			this.backgroundColourField = backgroundColour;
+			this.Colour = colour;
+			this.BackgroundColour = backgroundColour;
 		}
 	}
 }

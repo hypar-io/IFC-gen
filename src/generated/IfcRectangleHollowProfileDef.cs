@@ -34,12 +34,12 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.wallThicknessField = wallThickness;
-			this.wallThicknessSpecifiedField = wallThicknessSpecified;
-			this.innerFilletRadiusField = innerFilletRadius;
-			this.innerFilletRadiusSpecifiedField = innerFilletRadiusSpecified;
-			this.outerFilletRadiusField = outerFilletRadius;
-			this.outerFilletRadiusSpecifiedField = outerFilletRadiusSpecified;
+			this.WallThickness = wallThickness;
+			this.WallThicknessSpecified = wallThicknessSpecified;
+			this.InnerFilletRadius = innerFilletRadius;
+			this.InnerFilletRadiusSpecified = innerFilletRadiusSpecified;
+			this.OuterFilletRadius = outerFilletRadius;
+			this.OuterFilletRadiusSpecified = outerFilletRadiusSpecified;
 		}
 	}
 }

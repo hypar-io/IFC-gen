@@ -41,11 +41,11 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.buildingAddressField = buildingAddress;
-			this.elevationOfRefHeightField = elevationOfRefHeight;
-			this.elevationOfRefHeightSpecifiedField = elevationOfRefHeightSpecified;
-			this.elevationOfTerrainField = elevationOfTerrain;
-			this.elevationOfTerrainSpecifiedField = elevationOfTerrainSpecified;
+			this.BuildingAddress = buildingAddress;
+			this.ElevationOfRefHeight = elevationOfRefHeight;
+			this.ElevationOfRefHeightSpecified = elevationOfRefHeightSpecified;
+			this.ElevationOfTerrain = elevationOfTerrain;
+			this.ElevationOfTerrainSpecified = elevationOfTerrainSpecified;
 		}
 	}
 }

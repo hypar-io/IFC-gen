@@ -19,9 +19,9 @@ namespace IFC4
 				position,
 				styledByItem)
 		{
-			this.axisField = axis;
-			this.angleField = angle;
-			this.angleSpecifiedField = angleSpecified;
+			this.Axis = axis;
+			this.Angle = angle;
+			this.AngleSpecified = angleSpecified;
 		}
 	}
 }

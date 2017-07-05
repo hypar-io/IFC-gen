@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcConnectionPointGeometry(IfcConnectionPointGeometryPointOnRelatingElement pointOnRelatingElement,
 				IfcConnectionPointGeometryPointOnRelatedElement pointOnRelatedElement) : base()
 		{
-			this.pointOnRelatingElementField = pointOnRelatingElement;
-			this.pointOnRelatedElementField = pointOnRelatedElement;
+			this.PointOnRelatingElement = pointOnRelatingElement;
+			this.PointOnRelatedElement = pointOnRelatedElement;
 		}
 	}
 }

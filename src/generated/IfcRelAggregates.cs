@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelAggregates(IfcRelAggregatesRelatedObjects relatedObjects) : base()
 		{
-			this.relatedObjectsField = relatedObjects;
+			this.RelatedObjects = relatedObjects;
 		}
 	}
 }

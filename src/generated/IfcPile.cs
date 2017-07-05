@@ -36,10 +36,10 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.constructionTypeField = constructionType;
-			this.constructionTypeSpecifiedField = constructionTypeSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.ConstructionType = constructionType;
+			this.ConstructionTypeSpecified = constructionTypeSpecified;
 		}
 	}
 }

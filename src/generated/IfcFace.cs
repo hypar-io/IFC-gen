@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcFace(IfcFaceBounds bounds,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.boundsField = bounds;
+			this.Bounds = bounds;
 		}
 	}
 }

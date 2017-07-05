@@ -24,8 +24,8 @@ namespace IFC4
 				sameSenseSpecified,
 				styledByItem)
 		{
-			this.paramLengthField = paramLength;
-			this.paramLengthSpecifiedField = paramLengthSpecified;
+			this.ParamLength = paramLength;
+			this.ParamLengthSpecified = paramLengthSpecified;
 		}
 	}
 }

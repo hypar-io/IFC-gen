@@ -15,9 +15,9 @@ namespace IFC4
 				Boolean sideSpecified,
 				String name) : base(name)
 		{
-			this.stylesField = styles;
-			this.sideField = side;
-			this.sideSpecifiedField = sideSpecified;
+			this.Styles = styles;
+			this.Side = side;
+			this.SideSpecified = sideSpecified;
 		}
 	}
 }

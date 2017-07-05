@@ -29,9 +29,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.containsElementsField = containsElements;
-			this.referencesElementsField = referencesElements;
-			this.longNameField = longName;
+			this.ContainsElements = containsElements;
+			this.ReferencesElements = referencesElements;
+			this.LongName = longName;
 		}
 	}
 }

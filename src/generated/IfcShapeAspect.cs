@@ -16,11 +16,11 @@ namespace IFC4
 				IfcLogical productDefinitional,
 				Boolean productDefinitionalSpecified) : base()
 		{
-			this.shapeRepresentationsField = shapeRepresentations;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.productDefinitionalField = productDefinitional;
-			this.productDefinitionalSpecifiedField = productDefinitionalSpecified;
+			this.ShapeRepresentations = shapeRepresentations;
+			this.Name = name;
+			this.Description = description;
+			this.ProductDefinitional = productDefinitional;
+			this.ProductDefinitionalSpecified = productDefinitionalSpecified;
 		}
 	}
 }

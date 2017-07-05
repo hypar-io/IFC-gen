@@ -44,26 +44,26 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.bendingParametersField = bendingParameters;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.meshLengthField = meshLength;
-			this.meshLengthSpecifiedField = meshLengthSpecified;
-			this.meshWidthField = meshWidth;
-			this.meshWidthSpecifiedField = meshWidthSpecified;
-			this.longitudinalBarNominalDiameterField = longitudinalBarNominalDiameter;
-			this.longitudinalBarNominalDiameterSpecifiedField = longitudinalBarNominalDiameterSpecified;
-			this.transverseBarNominalDiameterField = transverseBarNominalDiameter;
-			this.transverseBarNominalDiameterSpecifiedField = transverseBarNominalDiameterSpecified;
-			this.longitudinalBarCrossSectionAreaField = longitudinalBarCrossSectionArea;
-			this.longitudinalBarCrossSectionAreaSpecifiedField = longitudinalBarCrossSectionAreaSpecified;
-			this.transverseBarCrossSectionAreaField = transverseBarCrossSectionArea;
-			this.transverseBarCrossSectionAreaSpecifiedField = transverseBarCrossSectionAreaSpecified;
-			this.longitudinalBarSpacingField = longitudinalBarSpacing;
-			this.longitudinalBarSpacingSpecifiedField = longitudinalBarSpacingSpecified;
-			this.transverseBarSpacingField = transverseBarSpacing;
-			this.transverseBarSpacingSpecifiedField = transverseBarSpacingSpecified;
-			this.bendingShapeCodeField = bendingShapeCode;
+			this.BendingParameters = bendingParameters;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.MeshLength = meshLength;
+			this.MeshLengthSpecified = meshLengthSpecified;
+			this.MeshWidth = meshWidth;
+			this.MeshWidthSpecified = meshWidthSpecified;
+			this.LongitudinalBarNominalDiameter = longitudinalBarNominalDiameter;
+			this.LongitudinalBarNominalDiameterSpecified = longitudinalBarNominalDiameterSpecified;
+			this.TransverseBarNominalDiameter = transverseBarNominalDiameter;
+			this.TransverseBarNominalDiameterSpecified = transverseBarNominalDiameterSpecified;
+			this.LongitudinalBarCrossSectionArea = longitudinalBarCrossSectionArea;
+			this.LongitudinalBarCrossSectionAreaSpecified = longitudinalBarCrossSectionAreaSpecified;
+			this.TransverseBarCrossSectionArea = transverseBarCrossSectionArea;
+			this.TransverseBarCrossSectionAreaSpecified = transverseBarCrossSectionAreaSpecified;
+			this.LongitudinalBarSpacing = longitudinalBarSpacing;
+			this.LongitudinalBarSpacingSpecified = longitudinalBarSpacingSpecified;
+			this.TransverseBarSpacing = transverseBarSpacing;
+			this.TransverseBarSpacingSpecified = transverseBarSpacingSpecified;
+			this.BendingShapeCode = bendingShapeCode;
 		}
 	}
 }

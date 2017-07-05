@@ -15,7 +15,7 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(outer,
 				styledByItem)
 		{
-			this.voidsField = voids;
+			this.Voids = voids;
 		}
 	}
 }

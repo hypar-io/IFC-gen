@@ -33,7 +33,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.steelGradeField = steelGrade;
+			this.SteelGrade = steelGrade;
 		}
 	}
 }

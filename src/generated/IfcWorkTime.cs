@@ -21,9 +21,9 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.recurrencePatternField = recurrencePattern;
-			this.startField = start;
-			this.finishField = finish;
+			this.RecurrencePattern = recurrencePattern;
+			this.Start = start;
+			this.Finish = finish;
 		}
 	}
 }

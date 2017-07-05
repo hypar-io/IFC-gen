@@ -15,7 +15,7 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.unitField = unit;
+			this.Unit = unit;
 		}
 	}
 }

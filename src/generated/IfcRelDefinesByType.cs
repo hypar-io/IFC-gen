@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelDefinesByType(IfcTypeObject relatingType) : base()
 		{
-			this.relatingTypeField = relatingType;
+			this.RelatingType = relatingType;
 		}
 	}
 }

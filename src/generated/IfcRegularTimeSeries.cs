@@ -33,9 +33,9 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.valuesField = values;
-			this.timeStepField = timeStep;
-			this.timeStepSpecifiedField = timeStepSpecified;
+			this.Values = values;
+			this.TimeStep = timeStep;
+			this.TimeStepSpecified = timeStepSpecified;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelDefinesByProperties(IfcRelDefinesByPropertiesRelatingPropertyDefinition relatingPropertyDefinition) : base()
 		{
-			this.relatingPropertyDefinitionField = relatingPropertyDefinition;
+			this.RelatingPropertyDefinition = relatingPropertyDefinition;
 		}
 	}
 }

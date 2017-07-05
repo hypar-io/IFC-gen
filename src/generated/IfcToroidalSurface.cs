@@ -18,10 +18,10 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(position,
 				styledByItem)
 		{
-			this.majorRadiusField = majorRadius;
-			this.majorRadiusSpecifiedField = majorRadiusSpecified;
-			this.minorRadiusField = minorRadius;
-			this.minorRadiusSpecifiedField = minorRadiusSpecified;
+			this.MajorRadius = majorRadius;
+			this.MajorRadiusSpecified = majorRadiusSpecified;
+			this.MinorRadius = minorRadius;
+			this.MinorRadiusSpecified = minorRadiusSpecified;
 		}
 	}
 }

@@ -20,8 +20,8 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.representationMapsField = representationMaps;
-			this.tagField = tag;
+			this.RepresentationMaps = representationMaps;
+			this.Tag = tag;
 		}
 	}
 }

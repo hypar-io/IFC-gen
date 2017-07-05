@@ -59,7 +59,7 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.recurrenceField = recurrence;
+			this.Recurrence = recurrence;
 		}
 	}
 }

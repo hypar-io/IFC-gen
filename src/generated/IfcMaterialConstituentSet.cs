@@ -15,9 +15,9 @@ namespace IFC4
 				String description,
 				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
-			this.materialConstituentsField = materialConstituents;
-			this.nameField = name;
-			this.descriptionField = description;
+			this.MaterialConstituents = materialConstituents;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

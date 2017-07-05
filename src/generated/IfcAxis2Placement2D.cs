@@ -15,7 +15,7 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(location,
 				styledByItem)
 		{
-			this.refDirectionField = refDirection;
+			this.RefDirection = refDirection;
 		}
 	}
 }

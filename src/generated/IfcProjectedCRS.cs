@@ -21,9 +21,9 @@ namespace IFC4
 				geodeticDatum,
 				verticalDatum)
 		{
-			this.mapUnitField = mapUnit;
-			this.mapProjectionField = mapProjection;
-			this.mapZoneField = mapZone;
+			this.MapUnit = mapUnit;
+			this.MapProjection = mapProjection;
+			this.MapZone = mapZone;
 		}
 	}
 }

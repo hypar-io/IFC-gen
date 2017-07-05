@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelFillsElement(IfcElement relatedBuildingElement) : base()
 		{
-			this.relatedBuildingElementField = relatedBuildingElement;
+			this.RelatedBuildingElement = relatedBuildingElement;
 		}
 	}
 }

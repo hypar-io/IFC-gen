@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcUnitAssignment(IfcUnitAssignmentUnits units) : base()
 		{
-			this.unitsField = units;
+			this.Units = units;
 		}
 	}
 }

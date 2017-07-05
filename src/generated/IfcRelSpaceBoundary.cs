@@ -18,13 +18,13 @@ namespace IFC4
 				IfcInternalOrExternalEnum internalOrExternalBoundary,
 				Boolean internalOrExternalBoundarySpecified) : base()
 		{
-			this.relatingSpaceField = relatingSpace;
-			this.relatedBuildingElementField = relatedBuildingElement;
-			this.connectionGeometryField = connectionGeometry;
-			this.physicalOrVirtualBoundaryField = physicalOrVirtualBoundary;
-			this.physicalOrVirtualBoundarySpecifiedField = physicalOrVirtualBoundarySpecified;
-			this.internalOrExternalBoundaryField = internalOrExternalBoundary;
-			this.internalOrExternalBoundarySpecifiedField = internalOrExternalBoundarySpecified;
+			this.RelatingSpace = relatingSpace;
+			this.RelatedBuildingElement = relatedBuildingElement;
+			this.ConnectionGeometry = connectionGeometry;
+			this.PhysicalOrVirtualBoundary = physicalOrVirtualBoundary;
+			this.PhysicalOrVirtualBoundarySpecified = physicalOrVirtualBoundarySpecified;
+			this.InternalOrExternalBoundary = internalOrExternalBoundary;
+			this.InternalOrExternalBoundarySpecified = internalOrExternalBoundarySpecified;
 		}
 	}
 }

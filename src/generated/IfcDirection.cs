@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcDirection(Double[] directionRatios,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.directionRatiosField = directionRatios;
+			this.DirectionRatios = directionRatios;
 		}
 	}
 }

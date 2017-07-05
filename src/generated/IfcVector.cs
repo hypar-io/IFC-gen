@@ -15,9 +15,9 @@ namespace IFC4
 				Boolean magnitudeSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.orientationField = orientation;
-			this.magnitudeField = magnitude;
-			this.magnitudeSpecifiedField = magnitudeSpecified;
+			this.Orientation = orientation;
+			this.Magnitude = magnitude;
+			this.MagnitudeSpecified = magnitudeSpecified;
 		}
 	}
 }

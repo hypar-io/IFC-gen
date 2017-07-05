@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcRelAssociatesMaterial(IfcRelAssociatesMaterialRelatingMaterial relatingMaterial,
 				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
-			this.relatingMaterialField = relatingMaterial;
+			this.RelatingMaterial = relatingMaterial;
 		}
 	}
 }

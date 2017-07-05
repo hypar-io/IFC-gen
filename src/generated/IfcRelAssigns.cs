@@ -14,9 +14,9 @@ namespace IFC4
 				IfcObjectTypeEnum relatedObjectsType,
 				Boolean relatedObjectsTypeSpecified) : base()
 		{
-			this.relatedObjectsField = relatedObjects;
-			this.relatedObjectsTypeField = relatedObjectsType;
-			this.relatedObjectsTypeSpecifiedField = relatedObjectsTypeSpecified;
+			this.RelatedObjects = relatedObjects;
+			this.RelatedObjectsType = relatedObjectsType;
+			this.RelatedObjectsTypeSpecified = relatedObjectsTypeSpecified;
 		}
 	}
 }

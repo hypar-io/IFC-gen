@@ -31,7 +31,7 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.valuesField = values;
+			this.Values = values;
 		}
 	}
 }

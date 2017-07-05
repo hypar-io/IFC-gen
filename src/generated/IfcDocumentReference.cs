@@ -18,8 +18,8 @@ namespace IFC4
 				identification,
 				name)
 		{
-			this.referencedDocumentField = referencedDocument;
-			this.descriptionField = description;
+			this.ReferencedDocument = referencedDocument;
+			this.Description = description;
 		}
 	}
 }

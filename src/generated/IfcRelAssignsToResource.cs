@@ -17,7 +17,7 @@ namespace IFC4
 				relatedObjectsType,
 				relatedObjectsTypeSpecified)
 		{
-			this.relatingResourceField = relatingResource;
+			this.RelatingResource = relatingResource;
 		}
 	}
 }

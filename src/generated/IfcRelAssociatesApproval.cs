@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcRelAssociatesApproval(IfcApproval relatingApproval,
 				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
-			this.relatingApprovalField = relatingApproval;
+			this.RelatingApproval = relatingApproval;
 		}
 	}
 }

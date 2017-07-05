@@ -44,30 +44,30 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.bottomFlangeWidthField = bottomFlangeWidth;
-			this.bottomFlangeWidthSpecifiedField = bottomFlangeWidthSpecified;
-			this.overallDepthField = overallDepth;
-			this.overallDepthSpecifiedField = overallDepthSpecified;
-			this.webThicknessField = webThickness;
-			this.webThicknessSpecifiedField = webThicknessSpecified;
-			this.bottomFlangeThicknessField = bottomFlangeThickness;
-			this.bottomFlangeThicknessSpecifiedField = bottomFlangeThicknessSpecified;
-			this.bottomFlangeFilletRadiusField = bottomFlangeFilletRadius;
-			this.bottomFlangeFilletRadiusSpecifiedField = bottomFlangeFilletRadiusSpecified;
-			this.topFlangeWidthField = topFlangeWidth;
-			this.topFlangeWidthSpecifiedField = topFlangeWidthSpecified;
-			this.topFlangeThicknessField = topFlangeThickness;
-			this.topFlangeThicknessSpecifiedField = topFlangeThicknessSpecified;
-			this.topFlangeFilletRadiusField = topFlangeFilletRadius;
-			this.topFlangeFilletRadiusSpecifiedField = topFlangeFilletRadiusSpecified;
-			this.bottomFlangeEdgeRadiusField = bottomFlangeEdgeRadius;
-			this.bottomFlangeEdgeRadiusSpecifiedField = bottomFlangeEdgeRadiusSpecified;
-			this.bottomFlangeSlopeField = bottomFlangeSlope;
-			this.bottomFlangeSlopeSpecifiedField = bottomFlangeSlopeSpecified;
-			this.topFlangeEdgeRadiusField = topFlangeEdgeRadius;
-			this.topFlangeEdgeRadiusSpecifiedField = topFlangeEdgeRadiusSpecified;
-			this.topFlangeSlopeField = topFlangeSlope;
-			this.topFlangeSlopeSpecifiedField = topFlangeSlopeSpecified;
+			this.BottomFlangeWidth = bottomFlangeWidth;
+			this.BottomFlangeWidthSpecified = bottomFlangeWidthSpecified;
+			this.OverallDepth = overallDepth;
+			this.OverallDepthSpecified = overallDepthSpecified;
+			this.WebThickness = webThickness;
+			this.WebThicknessSpecified = webThicknessSpecified;
+			this.BottomFlangeThickness = bottomFlangeThickness;
+			this.BottomFlangeThicknessSpecified = bottomFlangeThicknessSpecified;
+			this.BottomFlangeFilletRadius = bottomFlangeFilletRadius;
+			this.BottomFlangeFilletRadiusSpecified = bottomFlangeFilletRadiusSpecified;
+			this.TopFlangeWidth = topFlangeWidth;
+			this.TopFlangeWidthSpecified = topFlangeWidthSpecified;
+			this.TopFlangeThickness = topFlangeThickness;
+			this.TopFlangeThicknessSpecified = topFlangeThicknessSpecified;
+			this.TopFlangeFilletRadius = topFlangeFilletRadius;
+			this.TopFlangeFilletRadiusSpecified = topFlangeFilletRadiusSpecified;
+			this.BottomFlangeEdgeRadius = bottomFlangeEdgeRadius;
+			this.BottomFlangeEdgeRadiusSpecified = bottomFlangeEdgeRadiusSpecified;
+			this.BottomFlangeSlope = bottomFlangeSlope;
+			this.BottomFlangeSlopeSpecified = bottomFlangeSlopeSpecified;
+			this.TopFlangeEdgeRadius = topFlangeEdgeRadius;
+			this.TopFlangeEdgeRadiusSpecified = topFlangeEdgeRadiusSpecified;
+			this.TopFlangeSlope = topFlangeSlope;
+			this.TopFlangeSlopeSpecified = topFlangeSlopeSpecified;
 		}
 	}
 }

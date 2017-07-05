@@ -15,10 +15,10 @@ namespace IFC4
 				Boolean opacitySpecified,
 				Int64[] colourIndex) : base()
 		{
-			this.coloursField = colours;
-			this.opacityField = opacity;
-			this.opacitySpecifiedField = opacitySpecified;
-			this.colourIndexField = colourIndex;
+			this.Colours = colours;
+			this.Opacity = opacity;
+			this.OpacitySpecified = opacitySpecified;
+			this.ColourIndex = colourIndex;
 		}
 	}
 }

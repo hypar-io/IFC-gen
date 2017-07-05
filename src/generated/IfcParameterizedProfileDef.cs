@@ -19,7 +19,7 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.positionField = position;
+			this.Position = position;
 		}
 	}
 }

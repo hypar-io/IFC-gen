@@ -32,8 +32,8 @@ namespace IFC4
 				endParamSpecified,
 				styledByItem)
 		{
-			this.filletRadiusField = filletRadius;
-			this.filletRadiusSpecifiedField = filletRadiusSpecified;
+			this.FilletRadius = filletRadius;
+			this.FilletRadiusSpecified = filletRadiusSpecified;
 		}
 	}
 }

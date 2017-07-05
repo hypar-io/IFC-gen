@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcVirtualGridIntersection(IfcVirtualGridIntersectionIntersectingAxes intersectingAxes,
 				Double[] offsetDistances) : base()
 		{
-			this.intersectingAxesField = intersectingAxes;
-			this.offsetDistancesField = offsetDistances;
+			this.IntersectingAxes = intersectingAxes;
+			this.OffsetDistances = offsetDistances;
 		}
 	}
 }

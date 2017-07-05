@@ -16,10 +16,10 @@ namespace IFC4
 				String description,
 				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
-			this.materialProfilesField = materialProfiles;
-			this.compositeProfileField = compositeProfile;
-			this.nameField = name;
-			this.descriptionField = description;
+			this.MaterialProfiles = materialProfiles;
+			this.CompositeProfile = compositeProfile;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

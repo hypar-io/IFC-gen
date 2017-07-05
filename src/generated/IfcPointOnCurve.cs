@@ -15,9 +15,9 @@ namespace IFC4
 				Boolean pointParameterSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisCurveField = basisCurve;
-			this.pointParameterField = pointParameter;
-			this.pointParameterSpecifiedField = pointParameterSpecified;
+			this.BasisCurve = basisCurve;
+			this.PointParameter = pointParameter;
+			this.PointParameterSpecified = pointParameterSpecified;
 		}
 	}
 }

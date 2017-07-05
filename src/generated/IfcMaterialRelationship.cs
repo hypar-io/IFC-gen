@@ -17,9 +17,9 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.relatingMaterialField = relatingMaterial;
-			this.relatedMaterialsField = relatedMaterials;
-			this.expressionField = expression;
+			this.RelatingMaterial = relatingMaterial;
+			this.RelatedMaterials = relatedMaterials;
+			this.Expression = expression;
 		}
 	}
 }

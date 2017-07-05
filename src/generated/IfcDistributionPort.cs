@@ -32,12 +32,12 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.flowDirectionField = flowDirection;
-			this.flowDirectionSpecifiedField = flowDirectionSpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.systemTypeField = systemType;
-			this.systemTypeSpecifiedField = systemTypeSpecified;
+			this.FlowDirection = flowDirection;
+			this.FlowDirectionSpecified = flowDirectionSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.SystemType = systemType;
+			this.SystemTypeSpecified = systemTypeSpecified;
 		}
 	}
 }

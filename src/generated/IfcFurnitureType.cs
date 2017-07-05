@@ -28,10 +28,10 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.assemblyPlaceField = assemblyPlace;
-			this.assemblyPlaceSpecifiedField = assemblyPlaceSpecified;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.AssemblyPlace = assemblyPlace;
+			this.AssemblyPlaceSpecified = assemblyPlaceSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

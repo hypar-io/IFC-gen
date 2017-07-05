@@ -14,8 +14,8 @@ namespace IFC4
 				IfcAnnotationFillAreaInnerBoundaries innerBoundaries,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.outerBoundaryField = outerBoundary;
-			this.innerBoundariesField = innerBoundaries;
+			this.OuterBoundary = outerBoundary;
+			this.InnerBoundaries = innerBoundaries;
 		}
 	}
 }

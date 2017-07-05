@@ -25,13 +25,13 @@ namespace IFC4
 				description,
 				identifier)
 		{
-			this.layerStylesField = layerStyles;
-			this.layerOnField = layerOn;
-			this.layerOnSpecifiedField = layerOnSpecified;
-			this.layerFrozenField = layerFrozen;
-			this.layerFrozenSpecifiedField = layerFrozenSpecified;
-			this.layerBlockedField = layerBlocked;
-			this.layerBlockedSpecifiedField = layerBlockedSpecified;
+			this.LayerStyles = layerStyles;
+			this.LayerOn = layerOn;
+			this.LayerOnSpecified = layerOnSpecified;
+			this.LayerFrozen = layerFrozen;
+			this.LayerFrozenSpecified = layerFrozenSpecified;
+			this.LayerBlocked = layerBlocked;
+			this.LayerBlockedSpecified = layerBlockedSpecified;
 		}
 	}
 }

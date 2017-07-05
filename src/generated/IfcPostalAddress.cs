@@ -25,13 +25,13 @@ namespace IFC4
 				description,
 				userDefinedPurpose)
 		{
-			this.addressLinesField = addressLines;
-			this.internalLocationField = internalLocation;
-			this.postalBoxField = postalBox;
-			this.townField = town;
-			this.regionField = region;
-			this.postalCodeField = postalCode;
-			this.countryField = country;
+			this.AddressLines = addressLines;
+			this.InternalLocation = internalLocation;
+			this.PostalBox = postalBox;
+			this.Town = town;
+			this.Region = region;
+			this.PostalCode = postalCode;
+			this.Country = country;
 		}
 	}
 }

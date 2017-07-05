@@ -16,8 +16,8 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.relatingOrganizationField = relatingOrganization;
-			this.relatedOrganizationsField = relatedOrganizations;
+			this.RelatingOrganization = relatingOrganization;
+			this.RelatedOrganizations = relatedOrganizations;
 		}
 	}
 }

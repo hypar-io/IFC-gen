@@ -25,7 +25,7 @@ namespace IFC4
 				intensitySpecified,
 				styledByItem)
 		{
-			this.orientationField = orientation;
+			this.Orientation = orientation;
 		}
 	}
 }

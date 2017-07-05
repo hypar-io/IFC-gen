@@ -18,8 +18,8 @@ namespace IFC4
 				unitType,
 				unitTypeSpecified)
 		{
-			this.conversionFactorField = conversionFactor;
-			this.nameField = name;
+			this.ConversionFactor = conversionFactor;
+			this.Name = name;
 		}
 	}
 }

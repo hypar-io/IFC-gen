@@ -36,31 +36,31 @@ namespace IFC4
 				Double liningToPanelOffsetY,
 				Boolean liningToPanelOffsetYSpecified) : base()
 		{
-			this.shapeAspectStyleField = shapeAspectStyle;
-			this.liningDepthField = liningDepth;
-			this.liningDepthSpecifiedField = liningDepthSpecified;
-			this.liningThicknessField = liningThickness;
-			this.liningThicknessSpecifiedField = liningThicknessSpecified;
-			this.thresholdDepthField = thresholdDepth;
-			this.thresholdDepthSpecifiedField = thresholdDepthSpecified;
-			this.thresholdThicknessField = thresholdThickness;
-			this.thresholdThicknessSpecifiedField = thresholdThicknessSpecified;
-			this.transomThicknessField = transomThickness;
-			this.transomThicknessSpecifiedField = transomThicknessSpecified;
-			this.transomOffsetField = transomOffset;
-			this.transomOffsetSpecifiedField = transomOffsetSpecified;
-			this.liningOffsetField = liningOffset;
-			this.liningOffsetSpecifiedField = liningOffsetSpecified;
-			this.thresholdOffsetField = thresholdOffset;
-			this.thresholdOffsetSpecifiedField = thresholdOffsetSpecified;
-			this.casingThicknessField = casingThickness;
-			this.casingThicknessSpecifiedField = casingThicknessSpecified;
-			this.casingDepthField = casingDepth;
-			this.casingDepthSpecifiedField = casingDepthSpecified;
-			this.liningToPanelOffsetXField = liningToPanelOffsetX;
-			this.liningToPanelOffsetXSpecifiedField = liningToPanelOffsetXSpecified;
-			this.liningToPanelOffsetYField = liningToPanelOffsetY;
-			this.liningToPanelOffsetYSpecifiedField = liningToPanelOffsetYSpecified;
+			this.ShapeAspectStyle = shapeAspectStyle;
+			this.LiningDepth = liningDepth;
+			this.LiningDepthSpecified = liningDepthSpecified;
+			this.LiningThickness = liningThickness;
+			this.LiningThicknessSpecified = liningThicknessSpecified;
+			this.ThresholdDepth = thresholdDepth;
+			this.ThresholdDepthSpecified = thresholdDepthSpecified;
+			this.ThresholdThickness = thresholdThickness;
+			this.ThresholdThicknessSpecified = thresholdThicknessSpecified;
+			this.TransomThickness = transomThickness;
+			this.TransomThicknessSpecified = transomThicknessSpecified;
+			this.TransomOffset = transomOffset;
+			this.TransomOffsetSpecified = transomOffsetSpecified;
+			this.LiningOffset = liningOffset;
+			this.LiningOffsetSpecified = liningOffsetSpecified;
+			this.ThresholdOffset = thresholdOffset;
+			this.ThresholdOffsetSpecified = thresholdOffsetSpecified;
+			this.CasingThickness = casingThickness;
+			this.CasingThicknessSpecified = casingThicknessSpecified;
+			this.CasingDepth = casingDepth;
+			this.CasingDepthSpecified = casingDepthSpecified;
+			this.LiningToPanelOffsetX = liningToPanelOffsetX;
+			this.LiningToPanelOffsetXSpecified = liningToPanelOffsetXSpecified;
+			this.LiningToPanelOffsetY = liningToPanelOffsetY;
+			this.LiningToPanelOffsetYSpecified = liningToPanelOffsetYSpecified;
 		}
 	}
 }

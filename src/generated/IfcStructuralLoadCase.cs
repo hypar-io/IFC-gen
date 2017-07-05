@@ -41,7 +41,7 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.selfWeightCoefficientsField = selfWeightCoefficients;
+			this.SelfWeightCoefficients = selfWeightCoefficients;
 		}
 	}
 }

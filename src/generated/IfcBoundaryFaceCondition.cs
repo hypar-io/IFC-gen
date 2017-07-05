@@ -15,9 +15,9 @@ namespace IFC4
 				IfcBoundaryFaceConditionTranslationalStiffnessByAreaZ translationalStiffnessByAreaZ,
 				String name) : base(name)
 		{
-			this.translationalStiffnessByAreaXField = translationalStiffnessByAreaX;
-			this.translationalStiffnessByAreaYField = translationalStiffnessByAreaY;
-			this.translationalStiffnessByAreaZField = translationalStiffnessByAreaZ;
+			this.TranslationalStiffnessByAreaX = translationalStiffnessByAreaX;
+			this.TranslationalStiffnessByAreaY = translationalStiffnessByAreaY;
+			this.TranslationalStiffnessByAreaZ = translationalStiffnessByAreaZ;
 		}
 	}
 }

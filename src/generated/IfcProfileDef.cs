@@ -15,10 +15,10 @@ namespace IFC4
 				Boolean profileTypeSpecified,
 				String profileName) : base()
 		{
-			this.hasPropertiesField = hasProperties;
-			this.profileTypeField = profileType;
-			this.profileTypeSpecifiedField = profileTypeSpecified;
-			this.profileNameField = profileName;
+			this.HasProperties = hasProperties;
+			this.ProfileType = profileType;
+			this.ProfileTypeSpecified = profileTypeSpecified;
+			this.ProfileName = profileName;
 		}
 	}
 }

@@ -16,8 +16,8 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(location,
 				styledByItem)
 		{
-			this.axisField = axis;
-			this.refDirectionField = refDirection;
+			this.Axis = axis;
+			this.RefDirection = refDirection;
 		}
 	}
 }

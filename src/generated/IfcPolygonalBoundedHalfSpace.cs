@@ -20,8 +20,8 @@ namespace IFC4
 				agreementFlagSpecified,
 				styledByItem)
 		{
-			this.positionField = position;
-			this.polygonalBoundaryField = polygonalBoundary;
+			this.Position = position;
+			this.PolygonalBoundary = polygonalBoundary;
 		}
 	}
 }

@@ -15,10 +15,10 @@ namespace IFC4
 				String[] arraySize,
 				Double[] text) : base()
 		{
-			this.itemTypeField = itemType;
-			this.cTypeField = cType;
-			this.arraySizeField = arraySize;
-			this.textField = text;
+			this.itemType = itemType;
+			this.cType = cType;
+			this.arraySize = arraySize;
+			this.Text = text;
 		}
 	}
 }

@@ -19,9 +19,9 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.areaValueField = areaValue;
-			this.areaValueSpecifiedField = areaValueSpecified;
-			this.formulaField = formula;
+			this.AreaValue = areaValue;
+			this.AreaValueSpecified = areaValueSpecified;
+			this.Formula = formula;
 		}
 	}
 }

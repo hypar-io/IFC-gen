@@ -20,12 +20,12 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.relatingMonetaryUnitField = relatingMonetaryUnit;
-			this.relatedMonetaryUnitField = relatedMonetaryUnit;
-			this.rateSourceField = rateSource;
-			this.exchangeRateField = exchangeRate;
-			this.exchangeRateSpecifiedField = exchangeRateSpecified;
-			this.rateDateTimeField = rateDateTime;
+			this.RelatingMonetaryUnit = relatingMonetaryUnit;
+			this.RelatedMonetaryUnit = relatedMonetaryUnit;
+			this.RateSource = rateSource;
+			this.ExchangeRate = exchangeRate;
+			this.ExchangeRateSpecified = exchangeRateSpecified;
+			this.RateDateTime = rateDateTime;
 		}
 	}
 }

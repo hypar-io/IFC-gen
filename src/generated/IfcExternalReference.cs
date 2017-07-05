@@ -14,9 +14,9 @@ namespace IFC4
 				String identification,
 				String name) : base()
 		{
-			this.locationField = location;
-			this.identificationField = identification;
-			this.nameField = name;
+			this.Location = location;
+			this.Identification = identification;
+			this.Name = name;
 		}
 	}
 }

@@ -19,9 +19,9 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.weightValueField = weightValue;
-			this.weightValueSpecifiedField = weightValueSpecified;
-			this.formulaField = formula;
+			this.WeightValue = weightValue;
+			this.WeightValueSpecified = weightValueSpecified;
+			this.Formula = formula;
 		}
 	}
 }

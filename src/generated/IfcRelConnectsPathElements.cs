@@ -22,12 +22,12 @@ namespace IFC4
 				relatingElement,
 				relatedElement)
 		{
-			this.relatingPrioritiesField = relatingPriorities;
-			this.relatedPrioritiesField = relatedPriorities;
-			this.relatedConnectionTypeField = relatedConnectionType;
-			this.relatedConnectionTypeSpecifiedField = relatedConnectionTypeSpecified;
-			this.relatingConnectionTypeField = relatingConnectionType;
-			this.relatingConnectionTypeSpecifiedField = relatingConnectionTypeSpecified;
+			this.RelatingPriorities = relatingPriorities;
+			this.RelatedPriorities = relatedPriorities;
+			this.RelatedConnectionType = relatedConnectionType;
+			this.RelatedConnectionTypeSpecified = relatedConnectionTypeSpecified;
+			this.RelatingConnectionType = relatingConnectionType;
+			this.RelatingConnectionTypeSpecified = relatingConnectionTypeSpecified;
 		}
 	}
 }

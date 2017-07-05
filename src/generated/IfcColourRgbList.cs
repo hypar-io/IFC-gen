@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcColourRgbList(Double[] colourList) : base()
 		{
-			this.colourListField = colourList;
+			this.ColourList = colourList;
 		}
 	}
 }

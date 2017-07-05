@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcCsgSolidTreeRootExpression(IfcGeometricRepresentationItem item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

@@ -15,10 +15,10 @@ namespace IFC4
 				Double dispersionFactor,
 				Boolean dispersionFactorSpecified) : base()
 		{
-			this.refractionIndexField = refractionIndex;
-			this.refractionIndexSpecifiedField = refractionIndexSpecified;
-			this.dispersionFactorField = dispersionFactor;
-			this.dispersionFactorSpecifiedField = dispersionFactorSpecified;
+			this.RefractionIndex = refractionIndex;
+			this.RefractionIndexSpecified = refractionIndexSpecified;
+			this.DispersionFactor = dispersionFactor;
+			this.DispersionFactorSpecified = dispersionFactorSpecified;
 		}
 	}
 }

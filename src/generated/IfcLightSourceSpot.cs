@@ -49,13 +49,13 @@ namespace IFC4
 				intensitySpecified,
 				styledByItem)
 		{
-			this.orientationField = orientation;
-			this.concentrationExponentField = concentrationExponent;
-			this.concentrationExponentSpecifiedField = concentrationExponentSpecified;
-			this.spreadAngleField = spreadAngle;
-			this.spreadAngleSpecifiedField = spreadAngleSpecified;
-			this.beamWidthAngleField = beamWidthAngle;
-			this.beamWidthAngleSpecifiedField = beamWidthAngleSpecified;
+			this.Orientation = orientation;
+			this.ConcentrationExponent = concentrationExponent;
+			this.ConcentrationExponentSpecified = concentrationExponentSpecified;
+			this.SpreadAngle = spreadAngle;
+			this.SpreadAngleSpecified = spreadAngleSpecified;
+			this.BeamWidthAngle = beamWidthAngle;
+			this.BeamWidthAngleSpecified = beamWidthAngleSpecified;
 		}
 	}
 }

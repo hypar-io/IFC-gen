@@ -28,10 +28,10 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.costValuesField = costValues;
-			this.costQuantitiesField = costQuantities;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.CostValues = costValues;
+			this.CostQuantities = costQuantities;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

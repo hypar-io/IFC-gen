@@ -24,18 +24,18 @@ namespace IFC4
 				Boolean linearMomentZSpecified,
 				String name) : base(name)
 		{
-			this.linearForceXField = linearForceX;
-			this.linearForceXSpecifiedField = linearForceXSpecified;
-			this.linearForceYField = linearForceY;
-			this.linearForceYSpecifiedField = linearForceYSpecified;
-			this.linearForceZField = linearForceZ;
-			this.linearForceZSpecifiedField = linearForceZSpecified;
-			this.linearMomentXField = linearMomentX;
-			this.linearMomentXSpecifiedField = linearMomentXSpecified;
-			this.linearMomentYField = linearMomentY;
-			this.linearMomentYSpecifiedField = linearMomentYSpecified;
-			this.linearMomentZField = linearMomentZ;
-			this.linearMomentZSpecifiedField = linearMomentZSpecified;
+			this.LinearForceX = linearForceX;
+			this.LinearForceXSpecified = linearForceXSpecified;
+			this.LinearForceY = linearForceY;
+			this.LinearForceYSpecified = linearForceYSpecified;
+			this.LinearForceZ = linearForceZ;
+			this.LinearForceZSpecified = linearForceZSpecified;
+			this.LinearMomentX = linearMomentX;
+			this.LinearMomentXSpecified = linearMomentXSpecified;
+			this.LinearMomentY = linearMomentY;
+			this.LinearMomentYSpecified = linearMomentYSpecified;
+			this.LinearMomentZ = linearMomentZ;
+			this.LinearMomentZSpecified = linearMomentZSpecified;
 		}
 	}
 }

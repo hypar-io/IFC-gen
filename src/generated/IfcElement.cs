@@ -29,9 +29,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.hasProjectionsField = hasProjections;
-			this.hasOpeningsField = hasOpenings;
-			this.tagField = tag;
+			this.HasProjections = hasProjections;
+			this.HasOpenings = hasOpenings;
+			this.Tag = tag;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcPresentationStyleAssignment(IfcPresentationStyleAssignmentStyles styles) : base()
 		{
-			this.stylesField = styles;
+			this.Styles = styles;
 		}
 	}
 }

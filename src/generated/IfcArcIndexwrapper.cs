@@ -21,9 +21,9 @@ namespace IFC4
 				arraySize,
 				text)
 		{
-			this.idField = id;
-			this.pathField = path;
-			this.posField = pos;
+			this.id = id;
+			this.path = path;
+			this.pos = pos;
 		}
 	}
 }

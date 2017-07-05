@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcMeasureWithUnitValueComponent(Object item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

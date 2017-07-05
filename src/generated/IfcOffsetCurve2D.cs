@@ -17,11 +17,11 @@ namespace IFC4
 				Boolean selfIntersectSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisCurveField = basisCurve;
-			this.distanceField = distance;
-			this.distanceSpecifiedField = distanceSpecified;
-			this.selfIntersectField = selfIntersect;
-			this.selfIntersectSpecifiedField = selfIntersectSpecified;
+			this.BasisCurve = basisCurve;
+			this.Distance = distance;
+			this.DistanceSpecified = distanceSpecified;
+			this.SelfIntersect = selfIntersect;
+			this.SelfIntersectSpecified = selfIntersectSpecified;
 		}
 	}
 }

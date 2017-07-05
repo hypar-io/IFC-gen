@@ -31,13 +31,13 @@ namespace IFC4
 				mode,
 				parameter)
 		{
-			this.widthField = width;
-			this.widthSpecifiedField = widthSpecified;
-			this.heightField = height;
-			this.heightSpecifiedField = heightSpecified;
-			this.colourComponentsField = colourComponents;
-			this.colourComponentsSpecifiedField = colourComponentsSpecified;
-			this.pixelField = pixel;
+			this.Width = width;
+			this.WidthSpecified = widthSpecified;
+			this.Height = height;
+			this.HeightSpecified = heightSpecified;
+			this.ColourComponents = colourComponents;
+			this.ColourComponentsSpecified = colourComponentsSpecified;
+			this.Pixel = pixel;
 		}
 	}
 }

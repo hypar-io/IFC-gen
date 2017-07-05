@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean operatorSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.firstOperandField = firstOperand;
-			this.secondOperandField = secondOperand;
-			this.opField = op;
-			this.operatorSpecifiedField = operatorSpecified;
+			this.FirstOperand = firstOperand;
+			this.SecondOperand = secondOperand;
+			this.Operator = op;
+			this.OperatorSpecified = operatorSpecified;
 		}
 	}
 }

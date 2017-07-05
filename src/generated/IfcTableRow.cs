@@ -14,9 +14,9 @@ namespace IFC4
 				Boolean isHeading,
 				Boolean isHeadingSpecified) : base()
 		{
-			this.rowCellsField = rowCells;
-			this.isHeadingField = isHeading;
-			this.isHeadingSpecifiedField = isHeadingSpecified;
+			this.RowCells = rowCells;
+			this.IsHeading = isHeading;
+			this.IsHeadingSpecified = isHeadingSpecified;
 		}
 	}
 }

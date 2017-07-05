@@ -19,13 +19,13 @@ namespace IFC4
 				Boolean masterRepresentationSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisCurveField = basisCurve;
-			this.trim1Field = trim1;
-			this.trim2Field = trim2;
-			this.senseAgreementField = senseAgreement;
-			this.senseAgreementSpecifiedField = senseAgreementSpecified;
-			this.masterRepresentationField = masterRepresentation;
-			this.masterRepresentationSpecifiedField = masterRepresentationSpecified;
+			this.BasisCurve = basisCurve;
+			this.Trim1 = trim1;
+			this.Trim2 = trim2;
+			this.SenseAgreement = senseAgreement;
+			this.SenseAgreementSpecified = senseAgreementSpecified;
+			this.MasterRepresentation = masterRepresentation;
+			this.MasterRepresentationSpecified = masterRepresentationSpecified;
 		}
 	}
 }

@@ -30,25 +30,25 @@ namespace IFC4
 				IfcDocumentStatusEnum status,
 				Boolean statusSpecified) : base()
 		{
-			this.documentOwnerField = documentOwner;
-			this.editorsField = editors;
-			this.identificationField = identification;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.locationField = location;
-			this.purposeField = purpose;
-			this.intendedUseField = intendedUse;
-			this.scopeField = scope;
-			this.revisionField = revision;
-			this.creationTimeField = creationTime;
-			this.lastRevisionTimeField = lastRevisionTime;
-			this.electronicFormatField = electronicFormat;
-			this.validFromField = validFrom;
-			this.validUntilField = validUntil;
-			this.confidentialityField = confidentiality;
-			this.confidentialitySpecifiedField = confidentialitySpecified;
-			this.statusField = status;
-			this.statusSpecifiedField = statusSpecified;
+			this.DocumentOwner = documentOwner;
+			this.Editors = editors;
+			this.Identification = identification;
+			this.Name = name;
+			this.Description = description;
+			this.Location = location;
+			this.Purpose = purpose;
+			this.IntendedUse = intendedUse;
+			this.Scope = scope;
+			this.Revision = revision;
+			this.CreationTime = creationTime;
+			this.LastRevisionTime = lastRevisionTime;
+			this.ElectronicFormat = electronicFormat;
+			this.ValidFrom = validFrom;
+			this.ValidUntil = validUntil;
+			this.Confidentiality = confidentiality;
+			this.ConfidentialitySpecified = confidentialitySpecified;
+			this.Status = status;
+			this.StatusSpecified = statusSpecified;
 		}
 	}
 }

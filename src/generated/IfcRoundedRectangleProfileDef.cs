@@ -30,8 +30,8 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.roundingRadiusField = roundingRadius;
-			this.roundingRadiusSpecifiedField = roundingRadiusSpecified;
+			this.RoundingRadius = roundingRadius;
+			this.RoundingRadiusSpecified = roundingRadiusSpecified;
 		}
 	}
 }

@@ -15,9 +15,9 @@ namespace IFC4
 				IfcCurveBoundedPlaneInnerBoundaries innerBoundaries,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.basisSurfaceField = basisSurface;
-			this.outerBoundaryField = outerBoundary;
-			this.innerBoundariesField = innerBoundaries;
+			this.BasisSurface = basisSurface;
+			this.OuterBoundary = outerBoundary;
+			this.InnerBoundaries = innerBoundaries;
 		}
 	}
 }

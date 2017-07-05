@@ -18,13 +18,13 @@ namespace IFC4
 				String textDecoration,
 				String textTransform) : base()
 		{
-			this.textIndentField = textIndent;
-			this.letterSpacingField = letterSpacing;
-			this.wordSpacingField = wordSpacing;
-			this.lineHeightField = lineHeight;
-			this.textAlignField = textAlign;
-			this.textDecorationField = textDecoration;
-			this.textTransformField = textTransform;
+			this.TextIndent = textIndent;
+			this.LetterSpacing = letterSpacing;
+			this.WordSpacing = wordSpacing;
+			this.LineHeight = lineHeight;
+			this.TextAlign = textAlign;
+			this.TextDecoration = textDecoration;
+			this.TextTransform = textTransform;
 		}
 	}
 }

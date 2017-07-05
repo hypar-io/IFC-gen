@@ -31,11 +31,11 @@ namespace IFC4
 				creationTime,
 				userDefinedGrade)
 		{
-			this.dataValueField = dataValue;
-			this.referencePathField = referencePath;
-			this.benchmarkField = benchmark;
-			this.benchmarkSpecifiedField = benchmarkSpecified;
-			this.valueSourceField = valueSource;
+			this.DataValue = dataValue;
+			this.ReferencePath = referencePath;
+			this.Benchmark = benchmark;
+			this.BenchmarkSpecified = benchmarkSpecified;
+			this.ValueSource = valueSource;
 		}
 	}
 }

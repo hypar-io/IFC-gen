@@ -21,16 +21,16 @@ namespace IFC4
 				Boolean dataOriginSpecified,
 				String userDefinedDataOrigin) : base()
 		{
-			this.unitField = unit;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.startTimeField = startTime;
-			this.endTimeField = endTime;
-			this.timeSeriesDataTypeField = timeSeriesDataType;
-			this.timeSeriesDataTypeSpecifiedField = timeSeriesDataTypeSpecified;
-			this.dataOriginField = dataOrigin;
-			this.dataOriginSpecifiedField = dataOriginSpecified;
-			this.userDefinedDataOriginField = userDefinedDataOrigin;
+			this.Unit = unit;
+			this.Name = name;
+			this.Description = description;
+			this.StartTime = startTime;
+			this.EndTime = endTime;
+			this.TimeSeriesDataType = timeSeriesDataType;
+			this.TimeSeriesDataTypeSpecified = timeSeriesDataTypeSpecified;
+			this.DataOrigin = dataOrigin;
+			this.DataOriginSpecified = dataOriginSpecified;
+			this.UserDefinedDataOrigin = userDefinedDataOrigin;
 		}
 	}
 }

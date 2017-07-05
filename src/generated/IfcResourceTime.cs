@@ -38,26 +38,26 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.scheduleWorkField = scheduleWork;
-			this.scheduleUsageField = scheduleUsage;
-			this.scheduleUsageSpecifiedField = scheduleUsageSpecified;
-			this.scheduleStartField = scheduleStart;
-			this.scheduleFinishField = scheduleFinish;
-			this.scheduleContourField = scheduleContour;
-			this.levelingDelayField = levelingDelay;
-			this.isOverAllocatedField = isOverAllocated;
-			this.isOverAllocatedSpecifiedField = isOverAllocatedSpecified;
-			this.statusTimeField = statusTime;
-			this.actualWorkField = actualWork;
-			this.actualUsageField = actualUsage;
-			this.actualUsageSpecifiedField = actualUsageSpecified;
-			this.actualStartField = actualStart;
-			this.actualFinishField = actualFinish;
-			this.remainingWorkField = remainingWork;
-			this.remainingUsageField = remainingUsage;
-			this.remainingUsageSpecifiedField = remainingUsageSpecified;
-			this.completionField = completion;
-			this.completionSpecifiedField = completionSpecified;
+			this.ScheduleWork = scheduleWork;
+			this.ScheduleUsage = scheduleUsage;
+			this.ScheduleUsageSpecified = scheduleUsageSpecified;
+			this.ScheduleStart = scheduleStart;
+			this.ScheduleFinish = scheduleFinish;
+			this.ScheduleContour = scheduleContour;
+			this.LevelingDelay = levelingDelay;
+			this.IsOverAllocated = isOverAllocated;
+			this.IsOverAllocatedSpecified = isOverAllocatedSpecified;
+			this.StatusTime = statusTime;
+			this.ActualWork = actualWork;
+			this.ActualUsage = actualUsage;
+			this.ActualUsageSpecified = actualUsageSpecified;
+			this.ActualStart = actualStart;
+			this.ActualFinish = actualFinish;
+			this.RemainingWork = remainingWork;
+			this.RemainingUsage = remainingUsage;
+			this.RemainingUsageSpecified = remainingUsageSpecified;
+			this.Completion = completion;
+			this.CompletionSpecified = completionSpecified;
 		}
 	}
 }

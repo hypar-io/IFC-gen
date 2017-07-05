@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelContainedInSpatialStructure(IfcRelContainedInSpatialStructureRelatedElements relatedElements) : base()
 		{
-			this.relatedElementsField = relatedElements;
+			this.RelatedElements = relatedElements;
 		}
 	}
 }

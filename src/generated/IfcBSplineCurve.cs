@@ -21,15 +21,15 @@ namespace IFC4
 				Boolean selfIntersectSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.controlPointsListField = controlPointsList;
-			this.degreeField = degree;
-			this.degreeSpecifiedField = degreeSpecified;
-			this.curveFormField = curveForm;
-			this.curveFormSpecifiedField = curveFormSpecified;
-			this.closedCurveField = closedCurve;
-			this.closedCurveSpecifiedField = closedCurveSpecified;
-			this.selfIntersectField = selfIntersect;
-			this.selfIntersectSpecifiedField = selfIntersectSpecified;
+			this.ControlPointsList = controlPointsList;
+			this.Degree = degree;
+			this.DegreeSpecified = degreeSpecified;
+			this.CurveForm = curveForm;
+			this.CurveFormSpecified = curveFormSpecified;
+			this.ClosedCurve = closedCurve;
+			this.ClosedCurveSpecified = closedCurveSpecified;
+			this.SelfIntersect = selfIntersect;
+			this.SelfIntersectSpecified = selfIntersectSpecified;
 		}
 	}
 }

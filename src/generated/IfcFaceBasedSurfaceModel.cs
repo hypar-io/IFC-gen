@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcFaceBasedSurfaceModel(IfcFaceBasedSurfaceModelFbsmFaces fbsmFaces,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.fbsmFacesField = fbsmFaces;
+			this.FbsmFaces = fbsmFaces;
 		}
 	}
 }

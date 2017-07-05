@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRepresentationMap(IfcRepresentationMapMappingOrigin mappingOrigin,
 				IfcRepresentation mappedRepresentation) : base()
 		{
-			this.mappingOriginField = mappingOrigin;
-			this.mappedRepresentationField = mappedRepresentation;
+			this.MappingOrigin = mappingOrigin;
+			this.MappedRepresentation = mappedRepresentation;
 		}
 	}
 }

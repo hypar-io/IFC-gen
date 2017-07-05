@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcElementQuantity(IfcElementQuantityQuantities quantities,
 				String methodOfMeasurement) : base()
 		{
-			this.quantitiesField = quantities;
-			this.methodOfMeasurementField = methodOfMeasurement;
+			this.Quantities = quantities;
+			this.MethodOfMeasurement = methodOfMeasurement;
 		}
 	}
 }

@@ -27,9 +27,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.lifeCyclePhaseField = lifeCyclePhase;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.LifeCyclePhase = lifeCyclePhase;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

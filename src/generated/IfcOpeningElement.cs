@@ -35,9 +35,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.hasFillingsField = hasFillings;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.HasFillings = hasFillings;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

@@ -26,8 +26,8 @@ namespace IFC4
 				mode,
 				parameter)
 		{
-			this.rasterCodeField = rasterCode;
-			this.rasterFormatField = rasterFormat;
+			this.RasterCode = rasterCode;
+			this.RasterFormat = rasterFormat;
 		}
 	}
 }

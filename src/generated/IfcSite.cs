@@ -42,12 +42,12 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.siteAddressField = siteAddress;
-			this.refLatitudeField = refLatitude;
-			this.refLongitudeField = refLongitude;
-			this.refElevationField = refElevation;
-			this.refElevationSpecifiedField = refElevationSpecified;
-			this.landTitleNumberField = landTitleNumber;
+			this.SiteAddress = siteAddress;
+			this.RefLatitude = refLatitude;
+			this.RefLongitude = refLongitude;
+			this.RefElevation = refElevation;
+			this.RefElevationSpecified = refElevationSpecified;
+			this.LandTitleNumber = landTitleNumber;
 		}
 	}
 }

@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcPolyLoop(IfcPolyLoopPolygon polygon,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.polygonField = polygon;
+			this.Polygon = polygon;
 		}
 	}
 }

@@ -14,8 +14,8 @@ namespace IFC4
 				String name,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.stylesField = styles;
-			this.nameField = name;
+			this.Styles = styles;
+			this.Name = name;
 		}
 	}
 }

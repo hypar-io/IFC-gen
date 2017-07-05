@@ -15,10 +15,10 @@ namespace IFC4
 				Double[] secondaryPlaneAngle,
 				Double[] luminousIntensity) : base()
 		{
-			this.mainPlaneAngleField = mainPlaneAngle;
-			this.mainPlaneAngleSpecifiedField = mainPlaneAngleSpecified;
-			this.secondaryPlaneAngleField = secondaryPlaneAngle;
-			this.luminousIntensityField = luminousIntensity;
+			this.MainPlaneAngle = mainPlaneAngle;
+			this.MainPlaneAngleSpecified = mainPlaneAngleSpecified;
+			this.SecondaryPlaneAngle = secondaryPlaneAngle;
+			this.LuminousIntensity = luminousIntensity;
 		}
 	}
 }

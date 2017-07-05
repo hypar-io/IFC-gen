@@ -14,9 +14,9 @@ namespace IFC4
 				IfcPropertyEnumerationUnit unit,
 				String name) : base()
 		{
-			this.enumerationValuesField = enumerationValues;
-			this.unitField = unit;
-			this.nameField = name;
+			this.EnumerationValues = enumerationValues;
+			this.Unit = unit;
+			this.Name = name;
 		}
 	}
 }

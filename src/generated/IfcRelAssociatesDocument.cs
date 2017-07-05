@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcRelAssociatesDocument(IfcRelAssociatesDocumentRelatingDocument relatingDocument,
 				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
-			this.relatingDocumentField = relatingDocument;
+			this.RelatingDocument = relatingDocument;
 		}
 	}
 }

@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean tilingScaleSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.tilingPatternField = tilingPattern;
-			this.tilesField = tiles;
-			this.tilingScaleField = tilingScale;
-			this.tilingScaleSpecifiedField = tilingScaleSpecified;
+			this.TilingPattern = tilingPattern;
+			this.Tiles = tiles;
+			this.TilingScale = tilingScale;
+			this.TilingScaleSpecified = tilingScaleSpecified;
 		}
 	}
 }

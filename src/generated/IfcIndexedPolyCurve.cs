@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean selfIntersectSpecified,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.pointsField = points;
-			this.segmentsField = segments;
-			this.selfIntersectField = selfIntersect;
-			this.selfIntersectSpecifiedField = selfIntersectSpecified;
+			this.Points = points;
+			this.Segments = segments;
+			this.SelfIntersect = selfIntersect;
+			this.SelfIntersectSpecified = selfIntersectSpecified;
 		}
 	}
 }

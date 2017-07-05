@@ -17,7 +17,7 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.hasShapeAspectsField = hasShapeAspects;
+			this.HasShapeAspects = hasShapeAspects;
 		}
 	}
 }

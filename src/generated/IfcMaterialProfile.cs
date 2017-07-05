@@ -19,13 +19,13 @@ namespace IFC4
 				String category,
 				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
-			this.materialField = material;
-			this.profileField = profile;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.priorityField = priority;
-			this.prioritySpecifiedField = prioritySpecified;
-			this.categoryField = category;
+			this.Material = material;
+			this.Profile = profile;
+			this.Name = name;
+			this.Description = description;
+			this.Priority = priority;
+			this.PrioritySpecified = prioritySpecified;
+			this.Category = category;
 		}
 	}
 }

@@ -22,8 +22,8 @@ namespace IFC4
 				pathSpecified,
 				styledByItem)
 		{
-			this.extentField = extent;
-			this.boxAlignmentField = boxAlignment;
+			this.Extent = extent;
+			this.BoxAlignment = boxAlignment;
 		}
 	}
 }

@@ -20,15 +20,15 @@ namespace IFC4
 				Double frameThickness,
 				Boolean frameThicknessSpecified) : base()
 		{
-			this.shapeAspectStyleField = shapeAspectStyle;
-			this.operationTypeField = operationType;
-			this.operationTypeSpecifiedField = operationTypeSpecified;
-			this.panelPositionField = panelPosition;
-			this.panelPositionSpecifiedField = panelPositionSpecified;
-			this.frameDepthField = frameDepth;
-			this.frameDepthSpecifiedField = frameDepthSpecified;
-			this.frameThicknessField = frameThickness;
-			this.frameThicknessSpecifiedField = frameThicknessSpecified;
+			this.ShapeAspectStyle = shapeAspectStyle;
+			this.OperationType = operationType;
+			this.OperationTypeSpecified = operationTypeSpecified;
+			this.PanelPosition = panelPosition;
+			this.PanelPositionSpecified = panelPositionSpecified;
+			this.FrameDepth = frameDepth;
+			this.FrameDepthSpecified = frameDepthSpecified;
+			this.FrameThickness = frameThickness;
+			this.FrameThicknessSpecified = frameThicknessSpecified;
 		}
 	}
 }

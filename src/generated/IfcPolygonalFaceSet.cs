@@ -22,10 +22,10 @@ namespace IFC4
 				hasTextures,
 				styledByItem)
 		{
-			this.facesField = faces;
-			this.closedField = closed;
-			this.closedSpecifiedField = closedSpecified;
-			this.pnIndexField = pnIndex;
+			this.Faces = faces;
+			this.Closed = closed;
+			this.ClosedSpecified = closedSpecified;
+			this.PnIndex = pnIndex;
 		}
 	}
 }

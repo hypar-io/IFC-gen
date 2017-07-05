@@ -14,8 +14,8 @@ namespace IFC4
 				String intent,
 				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
-			this.relatingConstraintField = relatingConstraint;
-			this.intentField = intent;
+			this.RelatingConstraint = relatingConstraint;
+			this.Intent = intent;
 		}
 	}
 }

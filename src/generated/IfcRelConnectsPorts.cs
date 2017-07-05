@@ -14,9 +14,9 @@ namespace IFC4
 				IfcPort relatedPort,
 				IfcElement realizingElement) : base()
 		{
-			this.relatingPortField = relatingPort;
-			this.relatedPortField = relatedPort;
-			this.realizingElementField = realizingElement;
+			this.RelatingPort = relatingPort;
+			this.RelatedPort = relatedPort;
+			this.RealizingElement = realizingElement;
 		}
 	}
 }

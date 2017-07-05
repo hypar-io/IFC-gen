@@ -17,7 +17,7 @@ namespace IFC4
 				relatedObjectsType,
 				relatedObjectsTypeSpecified)
 		{
-			this.relatingControlField = relatingControl;
+			this.RelatingControl = relatingControl;
 		}
 	}
 }

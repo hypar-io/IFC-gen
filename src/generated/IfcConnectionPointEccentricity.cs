@@ -20,12 +20,12 @@ namespace IFC4
 				IfcConnectionPointGeometryPointOnRelatedElement pointOnRelatedElement) : base(pointOnRelatingElement,
 				pointOnRelatedElement)
 		{
-			this.eccentricityInXField = eccentricityInX;
-			this.eccentricityInXSpecifiedField = eccentricityInXSpecified;
-			this.eccentricityInYField = eccentricityInY;
-			this.eccentricityInYSpecifiedField = eccentricityInYSpecified;
-			this.eccentricityInZField = eccentricityInZ;
-			this.eccentricityInZSpecifiedField = eccentricityInZSpecified;
+			this.EccentricityInX = eccentricityInX;
+			this.EccentricityInXSpecified = eccentricityInXSpecified;
+			this.EccentricityInY = eccentricityInY;
+			this.EccentricityInYSpecified = eccentricityInYSpecified;
+			this.EccentricityInZ = eccentricityInZ;
+			this.EccentricityInZSpecified = eccentricityInZSpecified;
 		}
 	}
 }

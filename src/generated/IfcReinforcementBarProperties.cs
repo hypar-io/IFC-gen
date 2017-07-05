@@ -22,17 +22,17 @@ namespace IFC4
 				Double barCount,
 				Boolean barCountSpecified) : base()
 		{
-			this.totalCrossSectionAreaField = totalCrossSectionArea;
-			this.totalCrossSectionAreaSpecifiedField = totalCrossSectionAreaSpecified;
-			this.steelGradeField = steelGrade;
-			this.barSurfaceField = barSurface;
-			this.barSurfaceSpecifiedField = barSurfaceSpecified;
-			this.effectiveDepthField = effectiveDepth;
-			this.effectiveDepthSpecifiedField = effectiveDepthSpecified;
-			this.nominalBarDiameterField = nominalBarDiameter;
-			this.nominalBarDiameterSpecifiedField = nominalBarDiameterSpecified;
-			this.barCountField = barCount;
-			this.barCountSpecifiedField = barCountSpecified;
+			this.TotalCrossSectionArea = totalCrossSectionArea;
+			this.TotalCrossSectionAreaSpecified = totalCrossSectionAreaSpecified;
+			this.SteelGrade = steelGrade;
+			this.BarSurface = barSurface;
+			this.BarSurfaceSpecified = barSurfaceSpecified;
+			this.EffectiveDepth = effectiveDepth;
+			this.EffectiveDepthSpecified = effectiveDepthSpecified;
+			this.NominalBarDiameter = nominalBarDiameter;
+			this.NominalBarDiameterSpecified = nominalBarDiameterSpecified;
+			this.BarCount = barCount;
+			this.BarCountSpecified = barCountSpecified;
 		}
 	}
 }

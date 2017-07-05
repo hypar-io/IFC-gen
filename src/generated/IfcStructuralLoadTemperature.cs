@@ -18,12 +18,12 @@ namespace IFC4
 				Boolean deltaTZSpecified,
 				String name) : base(name)
 		{
-			this.deltaTConstantField = deltaTConstant;
-			this.deltaTConstantSpecifiedField = deltaTConstantSpecified;
-			this.deltaTYField = deltaTY;
-			this.deltaTYSpecifiedField = deltaTYSpecified;
-			this.deltaTZField = deltaTZ;
-			this.deltaTZSpecifiedField = deltaTZSpecified;
+			this.DeltaTConstant = deltaTConstant;
+			this.DeltaTConstantSpecified = deltaTConstantSpecified;
+			this.DeltaTY = deltaTY;
+			this.DeltaTYSpecified = deltaTYSpecified;
+			this.DeltaTZ = deltaTZ;
+			this.DeltaTZSpecified = deltaTZSpecified;
 		}
 	}
 }

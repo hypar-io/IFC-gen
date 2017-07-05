@@ -19,7 +19,7 @@ namespace IFC4
 				express,
 				configuration)
 		{
-			this.itemsField = items;
+			this.Items = items;
 		}
 	}
 }

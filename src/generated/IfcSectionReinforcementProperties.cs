@@ -21,16 +21,16 @@ namespace IFC4
 				IfcReinforcingBarRoleEnum reinforcementRole,
 				Boolean reinforcementRoleSpecified) : base()
 		{
-			this.sectionDefinitionField = sectionDefinition;
-			this.crossSectionReinforcementDefinitionsField = crossSectionReinforcementDefinitions;
-			this.longitudinalStartPositionField = longitudinalStartPosition;
-			this.longitudinalStartPositionSpecifiedField = longitudinalStartPositionSpecified;
-			this.longitudinalEndPositionField = longitudinalEndPosition;
-			this.longitudinalEndPositionSpecifiedField = longitudinalEndPositionSpecified;
-			this.transversePositionField = transversePosition;
-			this.transversePositionSpecifiedField = transversePositionSpecified;
-			this.reinforcementRoleField = reinforcementRole;
-			this.reinforcementRoleSpecifiedField = reinforcementRoleSpecified;
+			this.SectionDefinition = sectionDefinition;
+			this.CrossSectionReinforcementDefinitions = crossSectionReinforcementDefinitions;
+			this.LongitudinalStartPosition = longitudinalStartPosition;
+			this.LongitudinalStartPositionSpecified = longitudinalStartPositionSpecified;
+			this.LongitudinalEndPosition = longitudinalEndPosition;
+			this.LongitudinalEndPositionSpecified = longitudinalEndPositionSpecified;
+			this.TransversePosition = transversePosition;
+			this.TransversePositionSpecified = transversePositionSpecified;
+			this.ReinforcementRole = reinforcementRole;
+			this.ReinforcementRoleSpecified = reinforcementRoleSpecified;
 		}
 	}
 }

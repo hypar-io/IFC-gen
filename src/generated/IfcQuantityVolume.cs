@@ -19,9 +19,9 @@ namespace IFC4
 				name,
 				description)
 		{
-			this.volumeValueField = volumeValue;
-			this.volumeValueSpecifiedField = volumeValueSpecified;
-			this.formulaField = formula;
+			this.VolumeValue = volumeValue;
+			this.VolumeValueSpecified = volumeValueSpecified;
+			this.Formula = formula;
 		}
 	}
 }

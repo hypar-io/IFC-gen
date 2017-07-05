@@ -31,15 +31,15 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.originalValueField = originalValue;
-			this.currentValueField = currentValue;
-			this.totalReplacementCostField = totalReplacementCost;
-			this.ownerField = owner;
-			this.userField = user;
-			this.responsiblePersonField = responsiblePerson;
-			this.depreciatedValueField = depreciatedValue;
-			this.identificationField = identification;
-			this.incorporationDateField = incorporationDate;
+			this.OriginalValue = originalValue;
+			this.CurrentValue = currentValue;
+			this.TotalReplacementCost = totalReplacementCost;
+			this.Owner = owner;
+			this.User = user;
+			this.ResponsiblePerson = responsiblePerson;
+			this.DepreciatedValue = depreciatedValue;
+			this.Identification = identification;
+			this.IncorporationDate = incorporationDate;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRelVoidsElement(IfcFeatureElementSubtraction relatedOpeningElement) : base()
 		{
-			this.relatedOpeningElementField = relatedOpeningElement;
+			this.RelatedOpeningElement = relatedOpeningElement;
 		}
 	}
 }

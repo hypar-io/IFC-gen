@@ -18,10 +18,10 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(position,
 				styledByItem)
 		{
-			this.heightField = height;
-			this.heightSpecifiedField = heightSpecified;
-			this.bottomRadiusField = bottomRadius;
-			this.bottomRadiusSpecifiedField = bottomRadiusSpecified;
+			this.Height = height;
+			this.HeightSpecified = heightSpecified;
+			this.BottomRadius = bottomRadius;
+			this.BottomRadiusSpecified = bottomRadiusSpecified;
 		}
 	}
 }

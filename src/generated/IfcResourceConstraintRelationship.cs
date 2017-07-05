@@ -16,8 +16,8 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.relatingConstraintField = relatingConstraint;
-			this.relatedResourceObjectsField = relatedResourceObjects;
+			this.RelatingConstraint = relatingConstraint;
+			this.RelatedResourceObjects = relatedResourceObjects;
 		}
 	}
 }

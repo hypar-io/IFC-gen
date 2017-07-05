@@ -24,8 +24,8 @@ namespace IFC4
 				scaleSpecified,
 				styledByItem)
 		{
-			this.scale2Field = scale2;
-			this.scale2SpecifiedField = scale2Specified;
+			this.Scale2 = scale2;
+			this.Scale2Specified = scale2Specified;
 		}
 	}
 }

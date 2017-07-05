@@ -18,10 +18,10 @@ namespace IFC4
 				String description) : base(name,
 				description)
 		{
-			this.upperBoundValueField = upperBoundValue;
-			this.lowerBoundValueField = lowerBoundValue;
-			this.unitField = unit;
-			this.setPointValueField = setPointValue;
+			this.UpperBoundValue = upperBoundValue;
+			this.LowerBoundValue = lowerBoundValue;
+			this.Unit = unit;
+			this.SetPointValue = setPointValue;
 		}
 	}
 }

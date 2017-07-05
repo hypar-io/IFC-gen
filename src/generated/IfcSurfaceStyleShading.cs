@@ -14,9 +14,9 @@ namespace IFC4
 				Double transparency,
 				Boolean transparencySpecified) : base()
 		{
-			this.surfaceColourField = surfaceColour;
-			this.transparencyField = transparency;
-			this.transparencySpecifiedField = transparencySpecified;
+			this.SurfaceColour = surfaceColour;
+			this.Transparency = transparency;
+			this.TransparencySpecified = transparencySpecified;
 		}
 	}
 }

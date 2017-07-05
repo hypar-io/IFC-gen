@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcConnectionCurveGeometry(IfcConnectionCurveGeometryCurveOnRelatingElement curveOnRelatingElement,
 				IfcConnectionCurveGeometryCurveOnRelatedElement curveOnRelatedElement) : base()
 		{
-			this.curveOnRelatingElementField = curveOnRelatingElement;
-			this.curveOnRelatedElementField = curveOnRelatedElement;
+			this.CurveOnRelatingElement = curveOnRelatingElement;
+			this.CurveOnRelatedElement = curveOnRelatedElement;
 		}
 	}
 }

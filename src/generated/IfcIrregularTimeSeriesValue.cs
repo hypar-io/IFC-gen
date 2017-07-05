@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcIrregularTimeSeriesValue(IfcIrregularTimeSeriesValueListValues listValues,
 				String timeStamp) : base()
 		{
-			this.listValuesField = listValues;
-			this.timeStampField = timeStamp;
+			this.ListValues = listValues;
+			this.TimeStamp = timeStamp;
 		}
 	}
 }

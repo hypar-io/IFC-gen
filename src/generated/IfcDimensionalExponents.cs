@@ -25,20 +25,20 @@ namespace IFC4
 				Int64 luminousIntensityExponent,
 				Boolean luminousIntensityExponentSpecified) : base()
 		{
-			this.lengthExponentField = lengthExponent;
-			this.lengthExponentSpecifiedField = lengthExponentSpecified;
-			this.massExponentField = massExponent;
-			this.massExponentSpecifiedField = massExponentSpecified;
-			this.timeExponentField = timeExponent;
-			this.timeExponentSpecifiedField = timeExponentSpecified;
-			this.electricCurrentExponentField = electricCurrentExponent;
-			this.electricCurrentExponentSpecifiedField = electricCurrentExponentSpecified;
-			this.thermodynamicTemperatureExponentField = thermodynamicTemperatureExponent;
-			this.thermodynamicTemperatureExponentSpecifiedField = thermodynamicTemperatureExponentSpecified;
-			this.amountOfSubstanceExponentField = amountOfSubstanceExponent;
-			this.amountOfSubstanceExponentSpecifiedField = amountOfSubstanceExponentSpecified;
-			this.luminousIntensityExponentField = luminousIntensityExponent;
-			this.luminousIntensityExponentSpecifiedField = luminousIntensityExponentSpecified;
+			this.LengthExponent = lengthExponent;
+			this.LengthExponentSpecified = lengthExponentSpecified;
+			this.MassExponent = massExponent;
+			this.MassExponentSpecified = massExponentSpecified;
+			this.TimeExponent = timeExponent;
+			this.TimeExponentSpecified = timeExponentSpecified;
+			this.ElectricCurrentExponent = electricCurrentExponent;
+			this.ElectricCurrentExponentSpecified = electricCurrentExponentSpecified;
+			this.ThermodynamicTemperatureExponent = thermodynamicTemperatureExponent;
+			this.ThermodynamicTemperatureExponentSpecified = thermodynamicTemperatureExponentSpecified;
+			this.AmountOfSubstanceExponent = amountOfSubstanceExponent;
+			this.AmountOfSubstanceExponentSpecified = amountOfSubstanceExponentSpecified;
+			this.LuminousIntensityExponent = luminousIntensityExponent;
+			this.LuminousIntensityExponentSpecified = luminousIntensityExponentSpecified;
 		}
 	}
 }

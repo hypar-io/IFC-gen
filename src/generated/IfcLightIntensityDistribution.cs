@@ -14,9 +14,9 @@ namespace IFC4
 				IfcLightDistributionCurveEnum lightDistributionCurve,
 				Boolean lightDistributionCurveSpecified) : base()
 		{
-			this.distributionDataField = distributionData;
-			this.lightDistributionCurveField = lightDistributionCurve;
-			this.lightDistributionCurveSpecifiedField = lightDistributionCurveSpecified;
+			this.DistributionData = distributionData;
+			this.LightDistributionCurve = lightDistributionCurve;
+			this.LightDistributionCurveSpecified = lightDistributionCurveSpecified;
 		}
 	}
 }

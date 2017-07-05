@@ -30,10 +30,10 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.thicknessField = thickness;
-			this.thicknessSpecifiedField = thicknessSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.Thickness = thickness;
+			this.ThicknessSpecified = thicknessSpecified;
 		}
 	}
 }

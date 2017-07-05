@@ -16,10 +16,10 @@ namespace IFC4
 				Boolean shearReinforcementSpecified,
 				String name) : base(name)
 		{
-			this.surfaceReinforcement1Field = surfaceReinforcement1;
-			this.surfaceReinforcement2Field = surfaceReinforcement2;
-			this.shearReinforcementField = shearReinforcement;
-			this.shearReinforcementSpecifiedField = shearReinforcementSpecified;
+			this.SurfaceReinforcement1 = surfaceReinforcement1;
+			this.SurfaceReinforcement2 = surfaceReinforcement2;
+			this.ShearReinforcement = shearReinforcement;
+			this.ShearReinforcementSpecified = shearReinforcementSpecified;
 		}
 	}
 }

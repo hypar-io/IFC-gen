@@ -22,8 +22,8 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.thicknessField = thickness;
-			this.thicknessSpecifiedField = thicknessSpecified;
+			this.Thickness = thickness;
+			this.ThicknessSpecified = thicknessSpecified;
 		}
 	}
 }

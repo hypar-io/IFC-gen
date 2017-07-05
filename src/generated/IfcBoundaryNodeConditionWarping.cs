@@ -25,7 +25,7 @@ namespace IFC4
 				rotationalStiffnessZ,
 				name)
 		{
-			this.warpingStiffnessField = warpingStiffness;
+			this.WarpingStiffness = warpingStiffness;
 		}
 	}
 }

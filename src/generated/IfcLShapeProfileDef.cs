@@ -32,18 +32,18 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.depthField = depth;
-			this.depthSpecifiedField = depthSpecified;
-			this.widthField = width;
-			this.widthSpecifiedField = widthSpecified;
-			this.thicknessField = thickness;
-			this.thicknessSpecifiedField = thicknessSpecified;
-			this.filletRadiusField = filletRadius;
-			this.filletRadiusSpecifiedField = filletRadiusSpecified;
-			this.edgeRadiusField = edgeRadius;
-			this.edgeRadiusSpecifiedField = edgeRadiusSpecified;
-			this.legSlopeField = legSlope;
-			this.legSlopeSpecifiedField = legSlopeSpecified;
+			this.Depth = depth;
+			this.DepthSpecified = depthSpecified;
+			this.Width = width;
+			this.WidthSpecified = widthSpecified;
+			this.Thickness = thickness;
+			this.ThicknessSpecified = thicknessSpecified;
+			this.FilletRadius = filletRadius;
+			this.FilletRadiusSpecified = filletRadiusSpecified;
+			this.EdgeRadius = edgeRadius;
+			this.EdgeRadiusSpecified = edgeRadiusSpecified;
+			this.LegSlope = legSlope;
+			this.LegSlopeSpecified = legSlopeSpecified;
 		}
 	}
 }

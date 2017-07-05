@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcRepresentationItem(IfcStyledItem styledByItem) : base()
 		{
-			this.styledByItemField = styledByItem;
+			this.StyledByItem = styledByItem;
 		}
 	}
 }

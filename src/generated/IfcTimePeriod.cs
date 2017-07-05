@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcTimePeriod(String startTime,
 				String endTime) : base()
 		{
-			this.startTimeField = startTime;
-			this.endTimeField = endTime;
+			this.StartTime = startTime;
+			this.EndTime = endTime;
 		}
 	}
 }

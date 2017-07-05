@@ -20,8 +20,8 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.profilesField = profiles;
-			this.labelField = label;
+			this.Profiles = profiles;
+			this.Label = label;
 		}
 	}
 }

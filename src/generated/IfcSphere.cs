@@ -16,8 +16,8 @@ namespace IFC4
 				IfcStyledItem styledByItem) : base(position,
 				styledByItem)
 		{
-			this.radiusField = radius;
-			this.radiusSpecifiedField = radiusSpecified;
+			this.Radius = radius;
+			this.RadiusSpecified = radiusSpecified;
 		}
 	}
 }

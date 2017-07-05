@@ -17,11 +17,11 @@ namespace IFC4
 				String fontWeight,
 				String name) : base(name)
 		{
-			this.fontFamilyField = fontFamily;
-			this.fontSizeField = fontSize;
-			this.fontStyleField = fontStyle;
-			this.fontVariantField = fontVariant;
-			this.fontWeightField = fontWeight;
+			this.FontFamily = fontFamily;
+			this.FontSize = fontSize;
+			this.FontStyle = fontStyle;
+			this.FontVariant = fontVariant;
+			this.FontWeight = fontWeight;
 		}
 	}
 }

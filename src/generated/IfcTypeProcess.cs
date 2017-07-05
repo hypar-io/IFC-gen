@@ -21,9 +21,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.identificationField = identification;
-			this.longDescriptionField = longDescription;
-			this.processTypeField = processType;
+			this.Identification = identification;
+			this.LongDescription = longDescription;
+			this.ProcessType = processType;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcMaterialDefinition(IfcMaterialDefinitionHasProperties hasProperties) : base()
 		{
-			this.hasPropertiesField = hasProperties;
+			this.HasProperties = hasProperties;
 		}
 	}
 }

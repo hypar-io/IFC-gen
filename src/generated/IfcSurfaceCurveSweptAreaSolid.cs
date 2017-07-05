@@ -22,12 +22,12 @@ namespace IFC4
 				position,
 				styledByItem)
 		{
-			this.directrixField = directrix;
-			this.referenceSurfaceField = referenceSurface;
-			this.startParamField = startParam;
-			this.startParamSpecifiedField = startParamSpecified;
-			this.endParamField = endParam;
-			this.endParamSpecifiedField = endParamSpecified;
+			this.Directrix = directrix;
+			this.ReferenceSurface = referenceSurface;
+			this.StartParam = startParam;
+			this.StartParamSpecified = startParamSpecified;
+			this.EndParam = endParam;
+			this.EndParamSpecified = endParamSpecified;
 		}
 	}
 }

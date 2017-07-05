@@ -18,12 +18,12 @@ namespace IFC4
 				IfcBoundaryEdgeConditionRotationalStiffnessByLengthZ rotationalStiffnessByLengthZ,
 				String name) : base(name)
 		{
-			this.translationalStiffnessByLengthXField = translationalStiffnessByLengthX;
-			this.translationalStiffnessByLengthYField = translationalStiffnessByLengthY;
-			this.translationalStiffnessByLengthZField = translationalStiffnessByLengthZ;
-			this.rotationalStiffnessByLengthXField = rotationalStiffnessByLengthX;
-			this.rotationalStiffnessByLengthYField = rotationalStiffnessByLengthY;
-			this.rotationalStiffnessByLengthZField = rotationalStiffnessByLengthZ;
+			this.TranslationalStiffnessByLengthX = translationalStiffnessByLengthX;
+			this.TranslationalStiffnessByLengthY = translationalStiffnessByLengthY;
+			this.TranslationalStiffnessByLengthZ = translationalStiffnessByLengthZ;
+			this.RotationalStiffnessByLengthX = rotationalStiffnessByLengthX;
+			this.RotationalStiffnessByLengthY = rotationalStiffnessByLengthY;
+			this.RotationalStiffnessByLengthZ = rotationalStiffnessByLengthZ;
 		}
 	}
 }

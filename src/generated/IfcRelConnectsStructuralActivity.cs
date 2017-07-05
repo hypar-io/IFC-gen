@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcRelConnectsStructuralActivity(IfcRelConnectsStructuralActivityRelatingElement relatingElement,
 				IfcStructuralActivity relatedStructuralActivity) : base()
 		{
-			this.relatingElementField = relatingElement;
-			this.relatedStructuralActivityField = relatedStructuralActivity;
+			this.RelatingElement = relatingElement;
+			this.RelatedStructuralActivity = relatedStructuralActivity;
 		}
 	}
 }

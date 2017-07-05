@@ -23,7 +23,7 @@ namespace IFC4
 				position,
 				styledByItem)
 		{
-			this.endSweptAreaField = endSweptArea;
+			this.EndSweptArea = endSweptArea;
 		}
 	}
 }

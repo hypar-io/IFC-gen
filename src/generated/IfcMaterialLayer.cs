@@ -22,16 +22,16 @@ namespace IFC4
 				Boolean prioritySpecified,
 				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
-			this.materialField = material;
-			this.layerThicknessField = layerThickness;
-			this.layerThicknessSpecifiedField = layerThicknessSpecified;
-			this.isVentilatedField = isVentilated;
-			this.isVentilatedSpecifiedField = isVentilatedSpecified;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.categoryField = category;
-			this.priorityField = priority;
-			this.prioritySpecifiedField = prioritySpecified;
+			this.Material = material;
+			this.LayerThickness = layerThickness;
+			this.LayerThicknessSpecified = layerThicknessSpecified;
+			this.IsVentilated = isVentilated;
+			this.IsVentilatedSpecified = isVentilatedSpecified;
+			this.Name = name;
+			this.Description = description;
+			this.Category = category;
+			this.Priority = priority;
+			this.PrioritySpecified = prioritySpecified;
 		}
 	}
 }

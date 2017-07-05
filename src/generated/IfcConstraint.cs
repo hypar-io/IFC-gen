@@ -19,14 +19,14 @@ namespace IFC4
 				String creationTime,
 				String userDefinedGrade) : base()
 		{
-			this.creatingActorField = creatingActor;
-			this.nameField = name;
-			this.descriptionField = description;
-			this.constraintGradeField = constraintGrade;
-			this.constraintGradeSpecifiedField = constraintGradeSpecified;
-			this.constraintSourceField = constraintSource;
-			this.creationTimeField = creationTime;
-			this.userDefinedGradeField = userDefinedGrade;
+			this.CreatingActor = creatingActor;
+			this.Name = name;
+			this.Description = description;
+			this.ConstraintGrade = constraintGrade;
+			this.ConstraintGradeSpecified = constraintGradeSpecified;
+			this.ConstraintSource = constraintSource;
+			this.CreationTime = creationTime;
+			this.UserDefinedGrade = userDefinedGrade;
 		}
 	}
 }

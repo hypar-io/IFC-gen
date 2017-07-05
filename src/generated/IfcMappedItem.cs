@@ -14,8 +14,8 @@ namespace IFC4
 				IfcCartesianTransformationOperator mappingTarget,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.mappingSourceField = mappingSource;
-			this.mappingTargetField = mappingTarget;
+			this.MappingSource = mappingSource;
+			this.MappingTarget = mappingTarget;
 		}
 	}
 }

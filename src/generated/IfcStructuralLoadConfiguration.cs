@@ -14,8 +14,8 @@ namespace IFC4
 				IfcStructuralLoadConfigurationLocations locations,
 				String name) : base(name)
 		{
-			this.valuesField = values;
-			this.locationsField = locations;
+			this.Values = values;
+			this.Locations = locations;
 		}
 	}
 }

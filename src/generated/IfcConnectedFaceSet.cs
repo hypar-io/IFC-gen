@@ -13,7 +13,7 @@ namespace IFC4
 		public IfcConnectedFaceSet(IfcConnectedFaceSetCfsFaces cfsFaces,
 				IfcStyledItem styledByItem) : base(styledByItem)
 		{
-			this.cfsFacesField = cfsFaces;
+			this.CfsFaces = cfsFaces;
 		}
 	}
 }

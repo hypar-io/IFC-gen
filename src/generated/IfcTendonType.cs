@@ -32,14 +32,14 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
-			this.nominalDiameterField = nominalDiameter;
-			this.nominalDiameterSpecifiedField = nominalDiameterSpecified;
-			this.crossSectionAreaField = crossSectionArea;
-			this.crossSectionAreaSpecifiedField = crossSectionAreaSpecified;
-			this.sheathDiameterField = sheathDiameter;
-			this.sheathDiameterSpecifiedField = sheathDiameterSpecified;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
+			this.NominalDiameter = nominalDiameter;
+			this.NominalDiameterSpecified = nominalDiameterSpecified;
+			this.CrossSectionArea = crossSectionArea;
+			this.CrossSectionAreaSpecified = crossSectionAreaSpecified;
+			this.SheathDiameter = sheathDiameter;
+			this.SheathDiameterSpecified = sheathDiameterSpecified;
 		}
 	}
 }

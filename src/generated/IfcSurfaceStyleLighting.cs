@@ -15,10 +15,10 @@ namespace IFC4
 				IfcColourRgb transmissionColour,
 				IfcColourRgb reflectanceColour) : base()
 		{
-			this.diffuseTransmissionColourField = diffuseTransmissionColour;
-			this.diffuseReflectionColourField = diffuseReflectionColour;
-			this.transmissionColourField = transmissionColour;
-			this.reflectanceColourField = reflectanceColour;
+			this.DiffuseTransmissionColour = diffuseTransmissionColour;
+			this.DiffuseReflectionColour = diffuseReflectionColour;
+			this.TransmissionColour = transmissionColour;
+			this.ReflectanceColour = reflectanceColour;
 		}
 	}
 }

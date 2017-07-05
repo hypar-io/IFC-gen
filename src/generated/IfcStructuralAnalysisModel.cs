@@ -28,12 +28,12 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.orientationOf2DPlaneField = orientationOf2DPlane;
-			this.loadedByField = loadedBy;
-			this.hasResultsField = hasResults;
-			this.sharedPlacementField = sharedPlacement;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.OrientationOf2DPlane = orientationOf2DPlane;
+			this.LoadedBy = loadedBy;
+			this.HasResults = hasResults;
+			this.SharedPlacement = sharedPlacement;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

@@ -25,7 +25,7 @@ namespace IFC4
 				mode,
 				parameter)
 		{
-			this.uRLReferenceField = uRLReference;
+			this.URLReference = uRLReference;
 		}
 	}
 }

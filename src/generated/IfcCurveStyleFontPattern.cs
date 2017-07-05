@@ -15,10 +15,10 @@ namespace IFC4
 				Double invisibleSegmentLength,
 				Boolean invisibleSegmentLengthSpecified) : base()
 		{
-			this.visibleSegmentLengthField = visibleSegmentLength;
-			this.visibleSegmentLengthSpecifiedField = visibleSegmentLengthSpecified;
-			this.invisibleSegmentLengthField = invisibleSegmentLength;
-			this.invisibleSegmentLengthSpecifiedField = invisibleSegmentLengthSpecified;
+			this.VisibleSegmentLength = visibleSegmentLength;
+			this.VisibleSegmentLengthSpecified = visibleSegmentLengthSpecified;
+			this.InvisibleSegmentLength = invisibleSegmentLength;
+			this.InvisibleSegmentLengthSpecified = invisibleSegmentLengthSpecified;
 		}
 	}
 }

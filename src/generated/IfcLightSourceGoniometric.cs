@@ -33,15 +33,15 @@ namespace IFC4
 				intensitySpecified,
 				styledByItem)
 		{
-			this.positionField = position;
-			this.colourAppearanceField = colourAppearance;
-			this.lightDistributionDataSourceField = lightDistributionDataSource;
-			this.colourTemperatureField = colourTemperature;
-			this.colourTemperatureSpecifiedField = colourTemperatureSpecified;
-			this.luminousFluxField = luminousFlux;
-			this.luminousFluxSpecifiedField = luminousFluxSpecified;
-			this.lightEmissionSourceField = lightEmissionSource;
-			this.lightEmissionSourceSpecifiedField = lightEmissionSourceSpecified;
+			this.Position = position;
+			this.ColourAppearance = colourAppearance;
+			this.LightDistributionDataSource = lightDistributionDataSource;
+			this.ColourTemperature = colourTemperature;
+			this.ColourTemperatureSpecified = colourTemperatureSpecified;
+			this.LuminousFlux = luminousFlux;
+			this.LuminousFluxSpecified = luminousFluxSpecified;
+			this.LightEmissionSource = lightEmissionSource;
+			this.LightEmissionSourceSpecified = lightEmissionSourceSpecified;
 		}
 	}
 }

@@ -19,7 +19,7 @@ namespace IFC4
 				profileTypeSpecified,
 				profileName)
 		{
-			this.curveField = curve;
+			this.Curve = curve;
 		}
 	}
 }

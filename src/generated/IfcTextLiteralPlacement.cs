@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcTextLiteralPlacement(IfcPlacement item) : base()
 		{
-			this.itemField = item;
+			this.Item = item;
 		}
 	}
 }

@@ -12,7 +12,7 @@ namespace IFC4
 	{
 		public IfcMonetaryUnit(String currency) : base()
 		{
-			this.currencyField = currency;
+			this.Currency = currency;
 		}
 	}
 }

@@ -20,15 +20,15 @@ namespace IFC4
 				Double referenceExtent,
 				Boolean referenceExtentSpecified) : base()
 		{
-			this.forLayerSetField = forLayerSet;
-			this.layerSetDirectionField = layerSetDirection;
-			this.layerSetDirectionSpecifiedField = layerSetDirectionSpecified;
-			this.directionSenseField = directionSense;
-			this.directionSenseSpecifiedField = directionSenseSpecified;
-			this.offsetFromReferenceLineField = offsetFromReferenceLine;
-			this.offsetFromReferenceLineSpecifiedField = offsetFromReferenceLineSpecified;
-			this.referenceExtentField = referenceExtent;
-			this.referenceExtentSpecifiedField = referenceExtentSpecified;
+			this.ForLayerSet = forLayerSet;
+			this.LayerSetDirection = layerSetDirection;
+			this.LayerSetDirectionSpecified = layerSetDirectionSpecified;
+			this.DirectionSense = directionSense;
+			this.DirectionSenseSpecified = directionSenseSpecified;
+			this.OffsetFromReferenceLine = offsetFromReferenceLine;
+			this.OffsetFromReferenceLineSpecified = offsetFromReferenceLineSpecified;
+			this.ReferenceExtent = referenceExtent;
+			this.ReferenceExtentSpecified = referenceExtentSpecified;
 		}
 	}
 }

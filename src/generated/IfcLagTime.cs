@@ -21,9 +21,9 @@ namespace IFC4
 				dataOriginSpecified,
 				userDefinedDataOrigin)
 		{
-			this.lagValueField = lagValue;
-			this.durationTypeField = durationType;
-			this.durationTypeSpecifiedField = durationTypeSpecified;
+			this.LagValue = lagValue;
+			this.DurationType = durationType;
+			this.DurationTypeSpecified = durationTypeSpecified;
 		}
 	}
 }

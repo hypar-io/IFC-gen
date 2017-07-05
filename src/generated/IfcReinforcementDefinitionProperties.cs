@@ -13,8 +13,8 @@ namespace IFC4
 		public IfcReinforcementDefinitionProperties(IfcReinforcementDefinitionPropertiesReinforcementSectionDefinitions reinforcementSectionDefinitions,
 				String definitionType) : base()
 		{
-			this.reinforcementSectionDefinitionsField = reinforcementSectionDefinitions;
-			this.definitionTypeField = definitionType;
+			this.ReinforcementSectionDefinitions = reinforcementSectionDefinitions;
+			this.DefinitionType = definitionType;
 		}
 	}
 }

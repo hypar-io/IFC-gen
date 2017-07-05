@@ -29,9 +29,9 @@ namespace IFC4
 				isNestedBy,
 				isDecomposedBy)
 		{
-			this.axisField = axis;
-			this.predefinedTypeField = predefinedType;
-			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;
+			this.Axis = axis;
+			this.PredefinedType = predefinedType;
+			this.PredefinedTypeSpecified = predefinedTypeSpecified;
 		}
 	}
 }

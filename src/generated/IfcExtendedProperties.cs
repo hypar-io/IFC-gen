@@ -14,9 +14,9 @@ namespace IFC4
 				String name,
 				String description) : base()
 		{
-			this.propertiesField = properties;
-			this.nameField = name;
-			this.descriptionField = description;
+			this.Properties = properties;
+			this.Name = name;
+			this.Description = description;
 		}
 	}
 }

@@ -17,11 +17,11 @@ namespace IFC4
 				Boolean modelOrDraughtingSpecified,
 				String name) : base(name)
 		{
-			this.textCharacterAppearanceField = textCharacterAppearance;
-			this.textStyleField = textStyle;
-			this.textFontStyleField = textFontStyle;
-			this.modelOrDraughtingField = modelOrDraughting;
-			this.modelOrDraughtingSpecifiedField = modelOrDraughtingSpecified;
+			this.TextCharacterAppearance = textCharacterAppearance;
+			this.TextStyle = textStyle;
+			this.TextFontStyle = textFontStyle;
+			this.ModelOrDraughting = modelOrDraughting;
+			this.ModelOrDraughtingSpecified = modelOrDraughtingSpecified;
 		}
 	}
 }

@@ -18,12 +18,12 @@ namespace IFC4
 				Boolean slippageZSpecified,
 				String name) : base(name)
 		{
-			this.slippageXField = slippageX;
-			this.slippageXSpecifiedField = slippageXSpecified;
-			this.slippageYField = slippageY;
-			this.slippageYSpecifiedField = slippageYSpecified;
-			this.slippageZField = slippageZ;
-			this.slippageZSpecifiedField = slippageZSpecified;
+			this.SlippageX = slippageX;
+			this.SlippageXSpecified = slippageXSpecified;
+			this.SlippageY = slippageY;
+			this.SlippageYSpecified = slippageYSpecified;
+			this.SlippageZ = slippageZ;
+			this.SlippageZSpecified = slippageZSpecified;
 		}
 	}
 }
