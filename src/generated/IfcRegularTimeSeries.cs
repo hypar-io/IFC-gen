@@ -22,12 +22,7 @@ namespace IFC4
 				Boolean timeSeriesDataTypeSpecified,
 				IfcDataOriginEnum dataOrigin,
 				Boolean dataOriginSpecified,
-				String userDefinedDataOrigin,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(unit,
+				String userDefinedDataOrigin) : base(unit,
 				name,
 				description,
 				startTime,
@@ -36,12 +31,7 @@ namespace IFC4
 				timeSeriesDataTypeSpecified,
 				dataOrigin,
 				dataOriginSpecified,
-				userDefinedDataOrigin,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				userDefinedDataOrigin)
 		{
 			this.valuesField = values;
 			this.timeStepField = timeStep;

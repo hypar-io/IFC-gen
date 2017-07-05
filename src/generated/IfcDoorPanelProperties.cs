@@ -18,24 +18,7 @@ namespace IFC4
 				Double panelWidth,
 				Boolean panelWidthSpecified,
 				IfcDoorPanelPositionEnum panelPosition,
-				Boolean panelPositionSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean panelPositionSpecified) : base()
 		{
 			this.shapeAspectStyleField = shapeAspectStyle;
 			this.panelDepthField = panelDepth;

@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcStructuralLoadConfiguration(IfcStructuralLoadConfigurationValues values,
 				IfcStructuralLoadConfigurationLocations locations,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.valuesField = values;
 			this.locationsField = locations;

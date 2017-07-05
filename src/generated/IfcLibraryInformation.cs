@@ -15,16 +15,7 @@ namespace IFC4
 				String version,
 				String versionDate,
 				String location,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.publisherField = publisher;
 			this.nameField = name;

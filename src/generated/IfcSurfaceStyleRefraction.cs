@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcSurfaceStyleRefraction(Double refractionIndex,
 				Boolean refractionIndexSpecified,
 				Double dispersionFactor,
-				Boolean dispersionFactorSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean dispersionFactorSpecified) : base()
 		{
 			this.refractionIndexField = refractionIndex;
 			this.refractionIndexSpecifiedField = refractionIndexSpecified;

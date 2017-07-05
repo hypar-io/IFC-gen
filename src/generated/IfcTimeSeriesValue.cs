@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcTimeSeriesValue : Entity 
 	{
-		public IfcTimeSeriesValue(IfcTimeSeriesValueListValues listValues,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcTimeSeriesValue(IfcTimeSeriesValueListValues listValues) : base()
 		{
 			this.listValuesField = listValues;
 		}

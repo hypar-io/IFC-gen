@@ -15,19 +15,9 @@ namespace IFC4
 				Boolean angleSpecified,
 				IfcProfileDef sweptArea,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(sweptArea,
+				IfcStyledItem styledByItem) : base(sweptArea,
 				position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.axisField = axis;
 			this.angleField = angle;

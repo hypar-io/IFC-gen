@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcCompositeCurve(IfcCompositeCurveSegments segments,
 				IfcLogical selfIntersect,
 				Boolean selfIntersectSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.segmentsField = segments;
 			this.selfIntersectField = selfIntersect;

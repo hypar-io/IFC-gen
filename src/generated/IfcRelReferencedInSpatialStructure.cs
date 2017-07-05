@@ -10,24 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcRelReferencedInSpatialStructure : IfcRelConnects 
 	{
-		public IfcRelReferencedInSpatialStructure(IfcRelReferencedInSpatialStructureRelatedElements relatedElements,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcRelReferencedInSpatialStructure(IfcRelReferencedInSpatialStructureRelatedElements relatedElements) : base()
 		{
 			this.relatedElementsField = relatedElements;
 		}

@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcConnectionPointGeometry : IfcConnectionGeometry 
 	{
 		public IfcConnectionPointGeometry(IfcConnectionPointGeometryPointOnRelatingElement pointOnRelatingElement,
-				IfcConnectionPointGeometryPointOnRelatedElement pointOnRelatedElement,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcConnectionPointGeometryPointOnRelatedElement pointOnRelatedElement) : base()
 		{
 			this.pointOnRelatingElementField = pointOnRelatingElement;
 			this.pointOnRelatedElementField = pointOnRelatedElement;

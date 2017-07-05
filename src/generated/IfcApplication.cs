@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcApplication(IfcOrganization applicationDeveloper,
 				String version,
 				String applicationFullName,
-				String applicationIdentifier,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String applicationIdentifier) : base()
 		{
 			this.applicationDeveloperField = applicationDeveloper;
 			this.versionField = version;

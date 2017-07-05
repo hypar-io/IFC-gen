@@ -11,18 +11,8 @@ namespace IFC4
 	public partial class IfcGeometricCurveSet : IfcGeometricSet 
 	{
 		public IfcGeometricCurveSet(IfcGeometricSetElements elements,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(elements,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(elements,
+				styledByItem)
 		{
 ;
 		}

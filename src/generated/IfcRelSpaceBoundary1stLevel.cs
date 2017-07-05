@@ -17,31 +17,13 @@ namespace IFC4
 				IfcPhysicalOrVirtualEnum physicalOrVirtualBoundary,
 				Boolean physicalOrVirtualBoundarySpecified,
 				IfcInternalOrExternalEnum internalOrExternalBoundary,
-				Boolean internalOrExternalBoundarySpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(relatingSpace,
+				Boolean internalOrExternalBoundarySpecified) : base(relatingSpace,
 				relatedBuildingElement,
 				connectionGeometry,
 				physicalOrVirtualBoundary,
 				physicalOrVirtualBoundarySpecified,
 				internalOrExternalBoundary,
-				internalOrExternalBoundarySpecified,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				internalOrExternalBoundarySpecified)
 		{
 			this.parentBoundaryField = parentBoundary;
 		}

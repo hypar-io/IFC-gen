@@ -11,17 +11,7 @@ namespace IFC4
 	public partial class IfcIndexedPolygonalFace : IfcTessellatedItem 
 	{
 		public IfcIndexedPolygonalFace(Int64[] coordIndex,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.coordIndexField = coordIndex;
 		}

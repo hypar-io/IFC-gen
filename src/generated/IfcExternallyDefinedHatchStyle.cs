@@ -12,19 +12,9 @@ namespace IFC4
 	{
 		public IfcExternallyDefinedHatchStyle(String location,
 				String identification,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(location,
+				String name) : base(location,
 				identification,
-				name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				name)
 		{
 ;
 		}

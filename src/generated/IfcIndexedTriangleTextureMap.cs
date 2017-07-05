@@ -12,18 +12,8 @@ namespace IFC4
 	{
 		public IfcIndexedTriangleTextureMap(Int64[] texCoordIndex,
 				IfcTextureVertexList texCoords,
-				IfcTextureCoordinateMaps maps,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(texCoords,
-				maps,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcTextureCoordinateMaps maps) : base(texCoords,
+				maps)
 		{
 			this.texCoordIndexField = texCoordIndex;
 		}

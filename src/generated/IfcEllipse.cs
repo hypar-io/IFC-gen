@@ -15,18 +15,8 @@ namespace IFC4
 				Double semiAxis2,
 				Boolean semiAxis2Specified,
 				IfcConicPosition position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(position,
+				styledByItem)
 		{
 			this.semiAxis1Field = semiAxis1;
 			this.semiAxis1SpecifiedField = semiAxis1Specified;

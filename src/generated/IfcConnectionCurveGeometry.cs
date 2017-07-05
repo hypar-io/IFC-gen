@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcConnectionCurveGeometry : IfcConnectionGeometry 
 	{
 		public IfcConnectionCurveGeometry(IfcConnectionCurveGeometryCurveOnRelatingElement curveOnRelatingElement,
-				IfcConnectionCurveGeometryCurveOnRelatedElement curveOnRelatedElement,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcConnectionCurveGeometryCurveOnRelatedElement curveOnRelatedElement) : base()
 		{
 			this.curveOnRelatingElementField = curveOnRelatingElement;
 			this.curveOnRelatedElementField = curveOnRelatedElement;

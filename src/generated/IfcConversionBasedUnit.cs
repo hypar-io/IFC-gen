@@ -14,19 +14,9 @@ namespace IFC4
 				String name,
 				IfcDimensionalExponents dimensions,
 				IfcUnitEnum unitType,
-				Boolean unitTypeSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(dimensions,
+				Boolean unitTypeSpecified) : base(dimensions,
 				unitType,
-				unitTypeSpecified,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				unitTypeSpecified)
 		{
 			this.conversionFactorField = conversionFactor;
 			this.nameField = name;

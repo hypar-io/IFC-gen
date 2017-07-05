@@ -16,28 +16,10 @@ namespace IFC4
 				IfcTypeObjectHasPropertySets hasPropertySets,
 				String applicableOccurrence,
 				IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasPropertySets,
+				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(hasPropertySets,
 				applicableOccurrence,
 				isNestedBy,
-				isDecomposedBy,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				isDecomposedBy)
 		{
 			this.identificationField = identification;
 			this.longDescriptionField = longDescription;

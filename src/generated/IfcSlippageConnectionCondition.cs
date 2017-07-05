@@ -16,17 +16,7 @@ namespace IFC4
 				Boolean slippageYSpecified,
 				Double slippageZ,
 				Boolean slippageZSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.slippageXField = slippageX;
 			this.slippageXSpecifiedField = slippageXSpecified;

@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcProfileDef(IfcProfileDefHasProperties hasProperties,
 				IfcProfileTypeEnum profileType,
 				Boolean profileTypeSpecified,
-				String profileName,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String profileName) : base()
 		{
 			this.hasPropertiesField = hasProperties;
 			this.profileTypeField = profileType;

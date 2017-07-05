@@ -22,17 +22,7 @@ namespace IFC4
 				Boolean xAxisOrdinateSpecified,
 				Double scale,
 				Boolean scaleSpecified,
-				IfcCoordinateReferenceSystem targetCRS,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(targetCRS,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcCoordinateReferenceSystem targetCRS) : base(targetCRS)
 		{
 			this.eastingsField = eastings;
 			this.eastingsSpecifiedField = eastingsSpecified;

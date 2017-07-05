@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcColourSpecification : IfcPresentationItem 
 	{
-		public IfcColourSpecification(String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcColourSpecification(String name) : base()
 		{
 			this.nameField = name;
 		}

@@ -23,23 +23,13 @@ namespace IFC4
 				Boolean repeatT,
 				Boolean repeatTSpecified,
 				String mode,
-				String[] parameter,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(textureTransform,
+				String[] parameter) : base(textureTransform,
 				repeatS,
 				repeatSSpecified,
 				repeatT,
 				repeatTSpecified,
 				mode,
-				parameter,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				parameter)
 		{
 			this.widthField = width;
 			this.widthSpecifiedField = widthSpecified;

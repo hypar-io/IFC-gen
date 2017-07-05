@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcElementQuantity : IfcQuantitySet 
 	{
 		public IfcElementQuantity(IfcElementQuantityQuantities quantities,
-				String methodOfMeasurement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String methodOfMeasurement) : base()
 		{
 			this.quantitiesField = quantities;
 			this.methodOfMeasurementField = methodOfMeasurement;

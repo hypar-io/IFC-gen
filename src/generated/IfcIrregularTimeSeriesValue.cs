@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcIrregularTimeSeriesValue : Entity 
 	{
 		public IfcIrregularTimeSeriesValue(IfcIrregularTimeSeriesValueListValues listValues,
-				String timeStamp,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String timeStamp) : base()
 		{
 			this.listValuesField = listValues;
 			this.timeStampField = timeStamp;

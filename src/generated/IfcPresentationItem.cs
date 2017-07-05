@@ -10,15 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPresentationItem : Entity 
 	{
-		public IfcPresentationItem(String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPresentationItem() : base()
 		{
 ;
 		}

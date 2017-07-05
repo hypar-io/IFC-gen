@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcRepresentationContext : Entity 
 	{
 		public IfcRepresentationContext(String contextIdentifier,
-				String contextType,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String contextType) : base()
 		{
 			this.contextIdentifierField = contextIdentifier;
 			this.contextTypeField = contextType;

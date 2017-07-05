@@ -17,22 +17,12 @@ namespace IFC4
 				Boolean transitionSpecified,
 				Boolean sameSense,
 				Boolean sameSenseSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(parentCurve,
+				IfcStyledItem styledByItem) : base(parentCurve,
 				transition,
 				transitionSpecified,
 				sameSense,
 				sameSenseSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.paramLengthField = paramLength;
 			this.paramLengthSpecifiedField = paramLengthSpecified;

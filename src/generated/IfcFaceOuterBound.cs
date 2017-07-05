@@ -13,20 +13,10 @@ namespace IFC4
 		public IfcFaceOuterBound(IfcLoop bound,
 				Boolean orientation,
 				Boolean orientationSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(bound,
+				IfcStyledItem styledByItem) : base(bound,
 				orientation,
 				orientationSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 ;
 		}

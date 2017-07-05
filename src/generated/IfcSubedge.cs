@@ -13,19 +13,9 @@ namespace IFC4
 		public IfcSubedge(IfcEdge parentEdge,
 				IfcVertex edgeStart,
 				IfcVertex edgeEnd,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(edgeStart,
+				IfcStyledItem styledByItem) : base(edgeStart,
 				edgeEnd,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.parentEdgeField = parentEdge;
 		}

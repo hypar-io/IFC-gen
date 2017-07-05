@@ -15,28 +15,10 @@ namespace IFC4
 				IfcGroup relatingGroup,
 				IfcRelAssignsRelatedObjects relatedObjects,
 				IfcObjectTypeEnum relatedObjectsType,
-				Boolean relatedObjectsTypeSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(relatingGroup,
+				Boolean relatedObjectsTypeSpecified) : base(relatingGroup,
 				relatedObjects,
 				relatedObjectsType,
-				relatedObjectsTypeSpecified,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				relatedObjectsTypeSpecified)
 		{
 			this.factorField = factor;
 			this.factorSpecifiedField = factorSpecified;

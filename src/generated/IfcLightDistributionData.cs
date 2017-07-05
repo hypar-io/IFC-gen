@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcLightDistributionData(Double mainPlaneAngle,
 				Boolean mainPlaneAngleSpecified,
 				Double[] secondaryPlaneAngle,
-				Double[] luminousIntensity,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Double[] luminousIntensity) : base()
 		{
 			this.mainPlaneAngleField = mainPlaneAngle;
 			this.mainPlaneAngleSpecifiedField = mainPlaneAngleSpecified;

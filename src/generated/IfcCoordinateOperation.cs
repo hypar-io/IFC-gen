@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcCoordinateOperation : Entity 
 	{
-		public IfcCoordinateOperation(IfcCoordinateReferenceSystem targetCRS,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcCoordinateOperation(IfcCoordinateReferenceSystem targetCRS) : base()
 		{
 			this.targetCRSField = targetCRS;
 		}

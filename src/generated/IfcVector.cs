@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcVector(IfcDirection orientation,
 				Double magnitude,
 				Boolean magnitudeSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.orientationField = orientation;
 			this.magnitudeField = magnitude;

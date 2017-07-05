@@ -21,16 +21,7 @@ namespace IFC4
 				Int64 interval,
 				Boolean intervalSpecified,
 				Int64 occurrences,
-				Boolean occurrencesSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean occurrencesSpecified) : base()
 		{
 			this.timePeriodsField = timePeriods;
 			this.recurrenceTypeField = recurrenceType;

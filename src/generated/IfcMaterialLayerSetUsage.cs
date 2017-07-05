@@ -18,16 +18,7 @@ namespace IFC4
 				Double offsetFromReferenceLine,
 				Boolean offsetFromReferenceLineSpecified,
 				Double referenceExtent,
-				Boolean referenceExtentSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean referenceExtentSpecified) : base()
 		{
 			this.forLayerSetField = forLayerSet;
 			this.layerSetDirectionField = layerSetDirection;

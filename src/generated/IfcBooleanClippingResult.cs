@@ -14,21 +14,11 @@ namespace IFC4
 				IfcBooleanResultSecondOperand secondOperand,
 				IfcBooleanOperator op,
 				Boolean operatorSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(firstOperand,
+				IfcStyledItem styledByItem) : base(firstOperand,
 				secondOperand,
 				op,
 				operatorSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 ;
 		}

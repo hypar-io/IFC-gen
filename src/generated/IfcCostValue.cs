@@ -20,12 +20,7 @@ namespace IFC4
 				String category,
 				String condition,
 				IfcArithmeticOperatorEnum arithmeticOperator,
-				Boolean arithmeticOperatorSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(appliedValue,
+				Boolean arithmeticOperatorSpecified) : base(appliedValue,
 				unitBasis,
 				components,
 				name,
@@ -35,12 +30,7 @@ namespace IFC4
 				category,
 				condition,
 				arithmeticOperator,
-				arithmeticOperatorSpecified,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				arithmeticOperatorSpecified)
 		{
 ;
 		}

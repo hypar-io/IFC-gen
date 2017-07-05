@@ -16,17 +16,7 @@ namespace IFC4
 				Boolean greenSpecified,
 				Double blue,
 				Boolean blueSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.redField = red;
 			this.redSpecifiedField = redSpecified;

@@ -12,19 +12,9 @@ namespace IFC4
 	{
 		public IfcProfileProperties(IfcExtendedPropertiesProperties properties,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(properties,
+				String description) : base(properties,
 				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				description)
 		{
 ;
 		}

@@ -13,20 +13,10 @@ namespace IFC4
 		public IfcShapeRepresentation(IfcRepresentationContext contextOfItems,
 				IfcRepresentationItems items,
 				String representationIdentifier,
-				String representationType,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(contextOfItems,
+				String representationType) : base(contextOfItems,
 				items,
 				representationIdentifier,
-				representationType,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				representationType)
 		{
 ;
 		}

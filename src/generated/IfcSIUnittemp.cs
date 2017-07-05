@@ -12,19 +12,9 @@ namespace IFC4
 	{
 		public IfcSIUnittemp(IfcDimensionalExponents dimensions,
 				IfcUnitEnum unitType,
-				Boolean unitTypeSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(dimensions,
+				Boolean unitTypeSpecified) : base(dimensions,
 				unitType,
-				unitTypeSpecified,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				unitTypeSpecified)
 		{
 ;
 		}

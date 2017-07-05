@@ -23,12 +23,7 @@ namespace IFC4
 				String category,
 				Int64 priority,
 				Boolean prioritySpecified,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(material,
+				IfcMaterialDefinitionHasProperties hasProperties) : base(material,
 				layerThickness,
 				layerThicknessSpecified,
 				isVentilated,
@@ -38,12 +33,7 @@ namespace IFC4
 				category,
 				priority,
 				prioritySpecified,
-				hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				hasProperties)
 		{
 			this.offsetDirectionField = offsetDirection;
 			this.offsetDirectionSpecifiedField = offsetDirectionSpecified;

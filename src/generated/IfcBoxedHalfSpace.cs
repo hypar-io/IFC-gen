@@ -14,20 +14,10 @@ namespace IFC4
 				IfcSurface baseSurface,
 				Boolean agreementFlag,
 				Boolean agreementFlagSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(baseSurface,
+				IfcStyledItem styledByItem) : base(baseSurface,
 				agreementFlag,
 				agreementFlagSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.enclosureField = enclosure;
 		}

@@ -17,18 +17,8 @@ namespace IFC4
 				Double eccentricityInZ,
 				Boolean eccentricityInZSpecified,
 				IfcConnectionPointGeometryPointOnRelatingElement pointOnRelatingElement,
-				IfcConnectionPointGeometryPointOnRelatedElement pointOnRelatedElement,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(pointOnRelatingElement,
-				pointOnRelatedElement,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcConnectionPointGeometryPointOnRelatedElement pointOnRelatedElement) : base(pointOnRelatingElement,
+				pointOnRelatedElement)
 		{
 			this.eccentricityInXField = eccentricityInX;
 			this.eccentricityInXSpecifiedField = eccentricityInXSpecified;

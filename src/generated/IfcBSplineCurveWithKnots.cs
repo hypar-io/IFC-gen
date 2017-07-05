@@ -23,12 +23,7 @@ namespace IFC4
 				Boolean closedCurveSpecified,
 				IfcLogical selfIntersect,
 				Boolean selfIntersectSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(controlPointsList,
+				IfcStyledItem styledByItem) : base(controlPointsList,
 				degree,
 				degreeSpecified,
 				curveForm,
@@ -37,12 +32,7 @@ namespace IFC4
 				closedCurveSpecified,
 				selfIntersect,
 				selfIntersectSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.knotMultiplicitiesField = knotMultiplicities;
 			this.knotsField = knots;

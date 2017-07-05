@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcAnnotationFillArea(IfcCurve outerBoundary,
 				IfcAnnotationFillAreaInnerBoundaries innerBoundaries,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.outerBoundaryField = outerBoundary;
 			this.innerBoundariesField = innerBoundaries;

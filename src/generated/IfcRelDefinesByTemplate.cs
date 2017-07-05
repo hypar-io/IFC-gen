@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcRelDefinesByTemplate : IfcRelDefines 
 	{
 		public IfcRelDefinesByTemplate(IfcRelDefinesByTemplateRelatedPropertySets relatedPropertySets,
-				IfcPropertySetTemplate relatingTemplate,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcPropertySetTemplate relatingTemplate) : base()
 		{
 			this.relatedPropertySetsField = relatedPropertySets;
 			this.relatingTemplateField = relatingTemplate;

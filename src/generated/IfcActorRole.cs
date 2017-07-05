@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcActorRole(IfcRoleEnum role,
 				Boolean roleSpecified,
 				String userDefinedRole,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.roleField = role;
 			this.roleSpecifiedField = roleSpecified;

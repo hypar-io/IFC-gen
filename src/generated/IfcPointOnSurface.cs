@@ -15,17 +15,7 @@ namespace IFC4
 				Boolean pointParameterUSpecified,
 				Double pointParameterV,
 				Boolean pointParameterVSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.basisSurfaceField = basisSurface;
 			this.pointParameterUField = pointParameterU;

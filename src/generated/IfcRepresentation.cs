@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcRepresentation(IfcRepresentationContext contextOfItems,
 				IfcRepresentationItems items,
 				String representationIdentifier,
-				String representationType,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String representationType) : base()
 		{
 			this.contextOfItemsField = contextOfItems;
 			this.itemsField = items;

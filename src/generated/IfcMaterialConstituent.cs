@@ -16,17 +16,7 @@ namespace IFC4
 				Double fraction,
 				Boolean fractionSpecified,
 				String category,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.materialField = material;
 			this.nameField = name;

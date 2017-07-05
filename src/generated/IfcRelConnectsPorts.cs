@@ -12,24 +12,7 @@ namespace IFC4
 	{
 		public IfcRelConnectsPorts(IfcPort relatingPort,
 				IfcPort relatedPort,
-				IfcElement realizingElement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcElement realizingElement) : base()
 		{
 			this.relatingPortField = relatingPort;
 			this.relatedPortField = relatedPort;

@@ -15,19 +15,9 @@ namespace IFC4
 				String formula,
 				IfcNamedUnit unit,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(unit,
+				String description) : base(unit,
 				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				description)
 		{
 			this.weightValueField = weightValue;
 			this.weightValueSpecifiedField = weightValueSpecified;

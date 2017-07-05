@@ -14,21 +14,11 @@ namespace IFC4
 				IfcSurfaceCurveAssociatedGeometry associatedGeometry,
 				IfcPreferredSurfaceCurveRepresentation masterRepresentation,
 				Boolean masterRepresentationSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(curve3D,
+				IfcStyledItem styledByItem) : base(curve3D,
 				associatedGeometry,
 				masterRepresentation,
 				masterRepresentationSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 ;
 		}

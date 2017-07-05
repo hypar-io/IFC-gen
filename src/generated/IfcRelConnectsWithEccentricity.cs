@@ -17,31 +17,13 @@ namespace IFC4
 				IfcStructuralConnectionCondition additionalConditions,
 				IfcAxis2Placement3D conditionCoordinateSystem,
 				Double supportedLength,
-				Boolean supportedLengthSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(relatingStructuralMember,
+				Boolean supportedLengthSpecified) : base(relatingStructuralMember,
 				relatedStructuralConnection,
 				appliedCondition,
 				additionalConditions,
 				conditionCoordinateSystem,
 				supportedLength,
-				supportedLengthSpecified,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				supportedLengthSpecified)
 		{
 			this.connectionConstraintField = connectionConstraint;
 		}

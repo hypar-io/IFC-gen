@@ -10,17 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPreDefinedTextFont : IfcPreDefinedItem 
 	{
-		public IfcPreDefinedTextFont(String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPreDefinedTextFont(String name) : base(name)
 		{
 ;
 		}

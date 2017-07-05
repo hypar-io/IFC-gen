@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcProductRepresentation(IfcProductRepresentationRepresentations representations,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.representationsField = representations;
 			this.nameField = name;

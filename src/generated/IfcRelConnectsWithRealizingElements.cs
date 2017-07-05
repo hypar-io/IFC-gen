@@ -14,27 +14,9 @@ namespace IFC4
 				String connectionType,
 				IfcConnectionGeometry connectionGeometry,
 				IfcElement relatingElement,
-				IfcElement relatedElement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(connectionGeometry,
+				IfcElement relatedElement) : base(connectionGeometry,
 				relatingElement,
-				relatedElement,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				relatedElement)
 		{
 			this.realizingElementsField = realizingElements;
 			this.connectionTypeField = connectionType;

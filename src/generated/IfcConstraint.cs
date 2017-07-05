@@ -17,16 +17,7 @@ namespace IFC4
 				Boolean constraintGradeSpecified,
 				String constraintSource,
 				String creationTime,
-				String userDefinedGrade,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String userDefinedGrade) : base()
 		{
 			this.creatingActorField = creatingActor;
 			this.nameField = name;

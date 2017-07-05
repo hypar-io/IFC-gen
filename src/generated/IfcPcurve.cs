@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcPcurve(IfcSurface basisSurface,
 				IfcCurve referenceCurve,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.basisSurfaceField = basisSurface;
 			this.referenceCurveField = referenceCurve;

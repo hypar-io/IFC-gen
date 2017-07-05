@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcTextureVertexList : IfcPresentationItem 
 	{
-		public IfcTextureVertexList(Double[] texCoordsList,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcTextureVertexList(Double[] texCoordsList) : base()
 		{
 			this.texCoordsListField = texCoordsList;
 		}

@@ -11,18 +11,8 @@ namespace IFC4
 	public partial class IfcFacetedBrep : IfcManifoldSolidBrep 
 	{
 		public IfcFacetedBrep(IfcClosedShell outer,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(outer,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(outer,
+				styledByItem)
 		{
 ;
 		}

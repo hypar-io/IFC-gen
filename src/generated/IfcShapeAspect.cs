@@ -14,16 +14,7 @@ namespace IFC4
 				String name,
 				String description,
 				IfcLogical productDefinitional,
-				Boolean productDefinitionalSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean productDefinitionalSpecified) : base()
 		{
 			this.shapeRepresentationsField = shapeRepresentations;
 			this.nameField = name;

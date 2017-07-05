@@ -22,24 +22,14 @@ namespace IFC4
 				Boolean constraintGradeSpecified,
 				String constraintSource,
 				String creationTime,
-				String userDefinedGrade,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(creatingActor,
+				String userDefinedGrade) : base(creatingActor,
 				name,
 				description,
 				constraintGrade,
 				constraintGradeSpecified,
 				constraintSource,
 				creationTime,
-				userDefinedGrade,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				userDefinedGrade)
 		{
 			this.dataValueField = dataValue;
 			this.referencePathField = referencePath;

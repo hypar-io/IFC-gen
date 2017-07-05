@@ -20,19 +20,9 @@ namespace IFC4
 				Boolean reflectanceMethodSpecified,
 				IfcColourRgb surfaceColour,
 				Double transparency,
-				Boolean transparencySpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(surfaceColour,
+				Boolean transparencySpecified) : base(surfaceColour,
 				transparency,
-				transparencySpecified,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				transparencySpecified)
 		{
 			this.diffuseColourField = diffuseColour;
 			this.transmissionColourField = transmissionColour;

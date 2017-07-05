@@ -12,18 +12,8 @@ namespace IFC4
 	{
 		public IfcIndexedPolygonalFaceWithVoids(Int64[] innerCoordIndices,
 				Int64[] coordIndex,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(coordIndex,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(coordIndex,
+				styledByItem)
 		{
 			this.innerCoordIndicesField = innerCoordIndices;
 		}

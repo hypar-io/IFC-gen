@@ -17,18 +17,8 @@ namespace IFC4
 				Boolean exchangeRateSpecified,
 				String rateDateTime,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.relatingMonetaryUnitField = relatingMonetaryUnit;
 			this.relatedMonetaryUnitField = relatedMonetaryUnit;

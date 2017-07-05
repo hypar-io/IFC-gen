@@ -16,16 +16,7 @@ namespace IFC4
 				IfcTextStyleTextModelLineHeight lineHeight,
 				String textAlign,
 				String textDecoration,
-				String textTransform,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String textTransform) : base()
 		{
 			this.textIndentField = textIndent;
 			this.letterSpacingField = letterSpacing;

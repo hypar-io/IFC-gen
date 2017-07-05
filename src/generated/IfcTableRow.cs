@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcTableRow(IfcTableRowRowCells rowCells,
 				Boolean isHeading,
-				Boolean isHeadingSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean isHeadingSpecified) : base()
 		{
 			this.rowCellsField = rowCells;
 			this.isHeadingField = isHeading;

@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcMaterialList : Entity 
 	{
-		public IfcMaterialList(IfcMaterialListMaterials materials,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcMaterialList(IfcMaterialListMaterials materials) : base()
 		{
 			this.materialsField = materials;
 		}

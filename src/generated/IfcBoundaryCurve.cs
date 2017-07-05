@@ -13,20 +13,10 @@ namespace IFC4
 		public IfcBoundaryCurve(IfcCompositeCurveSegments segments,
 				IfcLogical selfIntersect,
 				Boolean selfIntersectSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(segments,
+				IfcStyledItem styledByItem) : base(segments,
 				selfIntersect,
 				selfIntersectSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 ;
 		}

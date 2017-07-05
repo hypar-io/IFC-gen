@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPreDefinedItem : IfcPresentationItem 
 	{
-		public IfcPreDefinedItem(String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPreDefinedItem(String name) : base()
 		{
 			this.nameField = name;
 		}

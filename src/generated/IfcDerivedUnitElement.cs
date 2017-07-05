@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcDerivedUnitElement(IfcNamedUnit unit,
 				Int64 exponent,
-				Boolean exponentSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean exponentSpecified) : base()
 		{
 			this.unitField = unit;
 			this.exponentField = exponent;

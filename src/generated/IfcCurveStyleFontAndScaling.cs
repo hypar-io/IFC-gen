@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcCurveStyleFontAndScaling(IfcCurveStyleFontAndScalingCurveFont curveFont,
 				String name,
 				Double curveFontScaling,
-				Boolean curveFontScalingSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean curveFontScalingSpecified) : base()
 		{
 			this.curveFontField = curveFont;
 			this.nameField = name;

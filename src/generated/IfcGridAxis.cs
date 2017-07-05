@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcGridAxis(IfcCurve axisCurve,
 				String axisTag,
 				Boolean sameSense,
-				Boolean sameSenseSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean sameSenseSpecified) : base()
 		{
 			this.axisCurveField = axisCurve;
 			this.axisTagField = axisTag;

@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcRelServicesBuildings : IfcRelConnects 
 	{
 		public IfcRelServicesBuildings(IfcSystem relatingSystem,
-				IfcRelServicesBuildingsRelatedBuildings relatedBuildings,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcRelServicesBuildingsRelatedBuildings relatedBuildings) : base()
 		{
 			this.relatingSystemField = relatingSystem;
 			this.relatedBuildingsField = relatedBuildings;

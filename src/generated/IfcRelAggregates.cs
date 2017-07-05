@@ -10,24 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcRelAggregates : IfcRelDecomposes 
 	{
-		public IfcRelAggregates(IfcRelAggregatesRelatedObjects relatedObjects,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcRelAggregates(IfcRelAggregatesRelatedObjects relatedObjects) : base()
 		{
 			this.relatedObjectsField = relatedObjects;
 		}

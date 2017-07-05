@@ -15,19 +15,9 @@ namespace IFC4
 				Boolean depthSpecified,
 				IfcProfileDef sweptArea,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(sweptArea,
+				IfcStyledItem styledByItem) : base(sweptArea,
 				position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.extrudedDirectionField = extrudedDirection;
 			this.depthField = depth;

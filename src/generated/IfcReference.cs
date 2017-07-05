@@ -14,16 +14,7 @@ namespace IFC4
 				String typeIdentifier,
 				String attributeIdentifier,
 				String instanceName,
-				Int64[] listPositions,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Int64[] listPositions) : base()
 		{
 			this.innerReferenceField = innerReference;
 			this.typeIdentifierField = typeIdentifier;

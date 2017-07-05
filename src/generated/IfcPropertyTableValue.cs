@@ -18,18 +18,8 @@ namespace IFC4
 				IfcCurveInterpolationEnum curveInterpolation,
 				Boolean curveInterpolationSpecified,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.definingValuesField = definingValues;
 			this.definedValuesField = definedValues;

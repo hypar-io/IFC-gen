@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcSweptAreaSolid(IfcProfileDef sweptArea,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.sweptAreaField = sweptArea;
 			this.positionField = position;

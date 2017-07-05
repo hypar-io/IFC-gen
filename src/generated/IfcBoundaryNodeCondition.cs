@@ -16,17 +16,7 @@ namespace IFC4
 				IfcBoundaryNodeConditionRotationalStiffnessX rotationalStiffnessX,
 				IfcBoundaryNodeConditionRotationalStiffnessY rotationalStiffnessY,
 				IfcBoundaryNodeConditionRotationalStiffnessZ rotationalStiffnessZ,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.translationalStiffnessXField = translationalStiffnessX;
 			this.translationalStiffnessYField = translationalStiffnessY;

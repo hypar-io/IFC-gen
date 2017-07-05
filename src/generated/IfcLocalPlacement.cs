@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcLocalPlacement : IfcObjectPlacement 
 	{
 		public IfcLocalPlacement(IfcObjectPlacement placementRelTo,
-				IfcLocalPlacementRelativePlacement relativePlacement,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcLocalPlacementRelativePlacement relativePlacement) : base()
 		{
 			this.placementRelToField = placementRelTo;
 			this.relativePlacementField = relativePlacement;

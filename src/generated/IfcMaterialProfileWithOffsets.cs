@@ -18,24 +18,14 @@ namespace IFC4
 				Int64 priority,
 				Boolean prioritySpecified,
 				String category,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(material,
+				IfcMaterialDefinitionHasProperties hasProperties) : base(material,
 				profile,
 				name,
 				description,
 				priority,
 				prioritySpecified,
 				category,
-				hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				hasProperties)
 		{
 			this.offsetValuesField = offsetValues;
 		}

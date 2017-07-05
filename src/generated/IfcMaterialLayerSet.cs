@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcMaterialLayerSet(IfcMaterialLayerSetMaterialLayers materialLayers,
 				String layerSetName,
 				String description,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.materialLayersField = materialLayers;
 			this.layerSetNameField = layerSetName;

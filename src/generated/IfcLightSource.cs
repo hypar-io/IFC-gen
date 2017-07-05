@@ -16,17 +16,7 @@ namespace IFC4
 				Boolean ambientIntensitySpecified,
 				Double intensity,
 				Boolean intensitySpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.lightColourField = lightColour;
 			this.nameField = name;

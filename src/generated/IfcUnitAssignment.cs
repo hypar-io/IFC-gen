@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcUnitAssignment : Entity 
 	{
-		public IfcUnitAssignment(IfcUnitAssignmentUnits units,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcUnitAssignment(IfcUnitAssignmentUnits units) : base()
 		{
 			this.unitsField = units;
 		}

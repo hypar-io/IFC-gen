@@ -12,24 +12,7 @@ namespace IFC4
 	{
 		public IfcRelConnectsElements(IfcConnectionGeometry connectionGeometry,
 				IfcElement relatingElement,
-				IfcElement relatedElement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcElement relatedElement) : base()
 		{
 			this.connectionGeometryField = connectionGeometry;
 			this.relatingElementField = relatingElement;

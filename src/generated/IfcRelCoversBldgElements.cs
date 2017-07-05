@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcRelCoversBldgElements : IfcRelConnects 
 	{
 		public IfcRelCoversBldgElements(IfcElement relatingBuildingElement,
-				IfcRelCoversBldgElementsRelatedCoverings relatedCoverings,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcRelCoversBldgElementsRelatedCoverings relatedCoverings) : base()
 		{
 			this.relatingBuildingElementField = relatingBuildingElement;
 			this.relatedCoveringsField = relatedCoverings;

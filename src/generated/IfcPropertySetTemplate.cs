@@ -13,24 +13,7 @@ namespace IFC4
 		public IfcPropertySetTemplate(IfcPropertySetTemplateHasPropertyTemplates hasPropertyTemplates,
 				IfcPropertySetTemplateTypeEnum templateType,
 				Boolean templateTypeSpecified,
-				String applicableEntity,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String applicableEntity) : base()
 		{
 			this.hasPropertyTemplatesField = hasPropertyTemplates;
 			this.templateTypeField = templateType;

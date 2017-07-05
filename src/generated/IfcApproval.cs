@@ -18,16 +18,7 @@ namespace IFC4
 				String timeOfApproval,
 				String status,
 				String level,
-				String qualifier,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String qualifier) : base()
 		{
 			this.requestingApprovalField = requestingApproval;
 			this.givingApprovalField = givingApproval;

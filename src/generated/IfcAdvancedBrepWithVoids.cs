@@ -12,18 +12,8 @@ namespace IFC4
 	{
 		public IfcAdvancedBrepWithVoids(IfcAdvancedBrepWithVoidsVoids voids,
 				IfcClosedShell outer,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(outer,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(outer,
+				styledByItem)
 		{
 			this.voidsField = voids;
 		}

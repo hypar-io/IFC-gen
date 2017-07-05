@@ -14,17 +14,7 @@ namespace IFC4
 				String name,
 				String description,
 				String category,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.hasRepresentationField = hasRepresentation;
 			this.nameField = name;

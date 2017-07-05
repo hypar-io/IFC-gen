@@ -10,15 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcConnectionGeometry : Entity 
 	{
-		public IfcConnectionGeometry(String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcConnectionGeometry() : base()
 		{
 ;
 		}

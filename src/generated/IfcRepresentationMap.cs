@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcRepresentationMap : Entity 
 	{
 		public IfcRepresentationMap(IfcRepresentationMapMappingOrigin mappingOrigin,
-				IfcRepresentation mappedRepresentation,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcRepresentation mappedRepresentation) : base()
 		{
 			this.mappingOriginField = mappingOrigin;
 			this.mappedRepresentationField = mappedRepresentation;

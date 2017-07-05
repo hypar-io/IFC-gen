@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcCurveBoundedPlane(IfcPlane basisSurface,
 				IfcCurve outerBoundary,
 				IfcCurveBoundedPlaneInnerBoundaries innerBoundaries,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.basisSurfaceField = basisSurface;
 			this.outerBoundaryField = outerBoundary;

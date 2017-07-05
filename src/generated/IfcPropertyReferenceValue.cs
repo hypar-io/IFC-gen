@@ -13,18 +13,8 @@ namespace IFC4
 		public IfcPropertyReferenceValue(IfcPropertyReferenceValuePropertyReference propertyReference,
 				String usageName,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.propertyReferenceField = propertyReference;
 			this.usageNameField = usageName;

@@ -11,17 +11,7 @@ namespace IFC4
 	public partial class IfcCartesianPointList3D : IfcCartesianPointList 
 	{
 		public IfcCartesianPointList3D(Double[] coordList,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.coordListField = coordList;
 		}

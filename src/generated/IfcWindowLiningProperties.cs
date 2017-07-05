@@ -32,24 +32,7 @@ namespace IFC4
 				Double liningToPanelOffsetX,
 				Boolean liningToPanelOffsetXSpecified,
 				Double liningToPanelOffsetY,
-				Boolean liningToPanelOffsetYSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean liningToPanelOffsetYSpecified) : base()
 		{
 			this.shapeAspectStyleField = shapeAspectStyle;
 			this.liningDepthField = liningDepth;

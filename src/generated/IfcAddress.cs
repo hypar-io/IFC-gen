@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcAddress(IfcAddressTypeEnum purpose,
 				Boolean purposeSpecified,
 				String description,
-				String userDefinedPurpose,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String userDefinedPurpose) : base()
 		{
 			this.purposeField = purpose;
 			this.purposeSpecifiedField = purposeSpecified;

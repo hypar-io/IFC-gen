@@ -19,18 +19,8 @@ namespace IFC4
 				Double precision,
 				Boolean precisionSpecified,
 				String contextIdentifier,
-				String contextType,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(contextIdentifier,
-				contextType,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String contextType) : base(contextIdentifier,
+				contextType)
 		{
 			this.worldCoordinateSystemField = worldCoordinateSystem;
 			this.trueNorthField = trueNorth;

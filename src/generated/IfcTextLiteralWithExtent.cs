@@ -16,21 +16,11 @@ namespace IFC4
 				String literal,
 				IfcTextPath path,
 				Boolean pathSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(placement,
+				IfcStyledItem styledByItem) : base(placement,
 				literal,
 				path,
 				pathSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.extentField = extent;
 			this.boxAlignmentField = boxAlignment;

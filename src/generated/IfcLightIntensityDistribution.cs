@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcLightIntensityDistribution(IfcLightIntensityDistributionDistributionData distributionData,
 				IfcLightDistributionCurveEnum lightDistributionCurve,
-				Boolean lightDistributionCurveSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean lightDistributionCurveSpecified) : base()
 		{
 			this.distributionDataField = distributionData;
 			this.lightDistributionCurveField = lightDistributionCurve;

@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcMeasureWithUnit : Entity 
 	{
 		public IfcMeasureWithUnit(IfcMeasureWithUnitValueComponent valueComponent,
-				IfcMeasureWithUnitUnitComponent unitComponent,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMeasureWithUnitUnitComponent unitComponent) : base()
 		{
 			this.valueComponentField = valueComponent;
 			this.unitComponentField = unitComponent;

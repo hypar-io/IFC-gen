@@ -32,12 +32,7 @@ namespace IFC4
 				Boolean ambientIntensitySpecified,
 				Double intensity,
 				Boolean intensitySpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
+				IfcStyledItem styledByItem) : base(position,
 				radius,
 				radiusSpecified,
 				constantAttenuation,
@@ -52,12 +47,7 @@ namespace IFC4
 				ambientIntensitySpecified,
 				intensity,
 				intensitySpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.orientationField = orientation;
 			this.concentrationExponentField = concentrationExponent;

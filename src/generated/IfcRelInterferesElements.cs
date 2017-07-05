@@ -15,24 +15,7 @@ namespace IFC4
 				IfcConnectionGeometry interferenceGeometry,
 				String interferenceType,
 				IfcLogical impliedOrder,
-				Boolean impliedOrderSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean impliedOrderSpecified) : base()
 		{
 			this.relatingElementField = relatingElement;
 			this.relatedElementField = relatedElement;

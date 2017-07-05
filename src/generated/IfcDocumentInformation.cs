@@ -28,16 +28,7 @@ namespace IFC4
 				IfcDocumentConfidentialityEnum confidentiality,
 				Boolean confidentialitySpecified,
 				IfcDocumentStatusEnum status,
-				Boolean statusSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean statusSpecified) : base()
 		{
 			this.documentOwnerField = documentOwner;
 			this.editorsField = editors;

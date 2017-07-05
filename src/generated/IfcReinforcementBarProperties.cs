@@ -20,16 +20,7 @@ namespace IFC4
 				Double nominalBarDiameter,
 				Boolean nominalBarDiameterSpecified,
 				Double barCount,
-				Boolean barCountSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean barCountSpecified) : base()
 		{
 			this.totalCrossSectionAreaField = totalCrossSectionArea;
 			this.totalCrossSectionAreaSpecifiedField = totalCrossSectionAreaSpecified;

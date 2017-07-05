@@ -15,19 +15,9 @@ namespace IFC4
 				String sort,
 				String location,
 				String identification,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(location,
+				String name) : base(location,
 				identification,
-				name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				name)
 		{
 			this.hasReferencesField = hasReferences;
 			this.descriptionField = description;

@@ -14,17 +14,7 @@ namespace IFC4
 				IfcSurfaceCurveAssociatedGeometry associatedGeometry,
 				IfcPreferredSurfaceCurveRepresentation masterRepresentation,
 				Boolean masterRepresentationSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.curve3DField = curve3D;
 			this.associatedGeometryField = associatedGeometry;

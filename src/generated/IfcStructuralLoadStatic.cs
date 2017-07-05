@@ -10,17 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcStructuralLoadStatic : IfcStructuralLoadOrResult 
 	{
-		public IfcStructuralLoadStatic(String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcStructuralLoadStatic(String name) : base(name)
 		{
 ;
 		}

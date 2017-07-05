@@ -17,16 +17,7 @@ namespace IFC4
 				String editionDate,
 				String name,
 				String description,
-				String location,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String location) : base()
 		{
 			this.referenceTokensField = referenceTokens;
 			this.hasReferencesField = hasReferences;

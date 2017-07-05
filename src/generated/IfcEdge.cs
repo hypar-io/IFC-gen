@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcEdge(IfcVertex edgeStart,
 				IfcVertex edgeEnd,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.edgeStartField = edgeStart;
 			this.edgeEndField = edgeEnd;

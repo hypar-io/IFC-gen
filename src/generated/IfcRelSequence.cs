@@ -15,24 +15,7 @@ namespace IFC4
 				IfcLagTime timeLag,
 				IfcSequenceEnum sequenceType,
 				Boolean sequenceTypeSpecified,
-				String userDefinedSequenceType,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String userDefinedSequenceType) : base()
 		{
 			this.relatingProcessField = relatingProcess;
 			this.relatedProcessField = relatedProcess;

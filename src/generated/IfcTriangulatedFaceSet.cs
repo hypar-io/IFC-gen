@@ -18,20 +18,10 @@ namespace IFC4
 				IfcCartesianPointList3D coordinates,
 				IfcIndexedColourMap hasColours,
 				IfcTessellatedFaceSetHasTextures hasTextures,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(coordinates,
+				IfcStyledItem styledByItem) : base(coordinates,
 				hasColours,
 				hasTextures,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.normalsField = normals;
 			this.closedField = closed;

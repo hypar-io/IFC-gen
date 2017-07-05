@@ -20,16 +20,7 @@ namespace IFC4
 				String category,
 				String condition,
 				IfcArithmeticOperatorEnum arithmeticOperator,
-				Boolean arithmeticOperatorSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean arithmeticOperatorSpecified) : base()
 		{
 			this.appliedValueField = appliedValue;
 			this.unitBasisField = unitBasis;

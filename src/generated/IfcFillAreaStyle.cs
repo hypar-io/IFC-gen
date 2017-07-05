@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcFillAreaStyle(IfcFillAreaStyleFillStyles fillStyles,
 				Boolean modelorDraughting,
 				Boolean modelorDraughtingSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.fillStylesField = fillStyles;
 			this.modelorDraughtingField = modelorDraughting;

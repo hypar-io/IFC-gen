@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcBoundaryFaceCondition(IfcBoundaryFaceConditionTranslationalStiffnessByAreaX translationalStiffnessByAreaX,
 				IfcBoundaryFaceConditionTranslationalStiffnessByAreaY translationalStiffnessByAreaY,
 				IfcBoundaryFaceConditionTranslationalStiffnessByAreaZ translationalStiffnessByAreaZ,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.translationalStiffnessByAreaXField = translationalStiffnessByAreaX;
 			this.translationalStiffnessByAreaYField = translationalStiffnessByAreaY;

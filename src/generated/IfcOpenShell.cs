@@ -11,18 +11,8 @@ namespace IFC4
 	public partial class IfcOpenShell : IfcConnectedFaceSet 
 	{
 		public IfcOpenShell(IfcConnectedFaceSetCfsFaces cfsFaces,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(cfsFaces,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(cfsFaces,
+				styledByItem)
 		{
 ;
 		}

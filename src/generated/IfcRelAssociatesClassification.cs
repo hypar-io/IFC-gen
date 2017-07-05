@@ -11,25 +11,7 @@ namespace IFC4
 	public partial class IfcRelAssociatesClassification : IfcRelAssociates 
 	{
 		public IfcRelAssociatesClassification(IfcRelAssociatesClassificationRelatingClassification relatingClassification,
-				IfcRelAssociatesRelatedObjects relatedObjects,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(relatedObjects,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcRelAssociatesRelatedObjects relatedObjects) : base(relatedObjects)
 		{
 			this.relatingClassificationField = relatingClassification;
 		}

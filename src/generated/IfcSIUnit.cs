@@ -16,19 +16,9 @@ namespace IFC4
 				Boolean nameSpecified,
 				IfcDimensionalExponents dimensions,
 				IfcUnitEnum unitType,
-				Boolean unitTypeSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(dimensions,
+				Boolean unitTypeSpecified) : base(dimensions,
 				unitType,
-				unitTypeSpecified,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				unitTypeSpecified)
 		{
 			this.prefixField = prefix;
 			this.prefixSpecifiedField = prefixSpecified;

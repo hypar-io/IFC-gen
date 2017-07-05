@@ -11,18 +11,8 @@ namespace IFC4
 	public partial class IfcSimpleProperty : IfcProperty 
 	{
 		public IfcSimpleProperty(String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 ;
 		}

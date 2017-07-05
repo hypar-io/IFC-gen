@@ -25,16 +25,7 @@ namespace IFC4
 				IfcObjectIsDefinedBy isDefinedBy,
 				String objectType,
 				IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(creators,
+				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(creators,
 				creationDate,
 				purpose,
 				duration,
@@ -47,16 +38,7 @@ namespace IFC4
 				isDefinedBy,
 				objectType,
 				isNestedBy,
-				isDecomposedBy,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				isDecomposedBy)
 		{
 			this.predefinedTypeField = predefinedType;
 			this.predefinedTypeSpecifiedField = predefinedTypeSpecified;

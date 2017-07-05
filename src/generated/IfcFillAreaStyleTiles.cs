@@ -14,17 +14,7 @@ namespace IFC4
 				IfcFillAreaStyleTilesTiles tiles,
 				Double tilingScale,
 				Boolean tilingScaleSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.tilingPatternField = tilingPattern;
 			this.tilesField = tiles;

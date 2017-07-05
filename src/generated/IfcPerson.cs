@@ -17,16 +17,7 @@ namespace IFC4
 				String givenName,
 				String[] middleNames,
 				String[] prefixTitles,
-				String[] suffixTitles,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String[] suffixTitles) : base()
 		{
 			this.rolesField = roles;
 			this.addressesField = addresses;

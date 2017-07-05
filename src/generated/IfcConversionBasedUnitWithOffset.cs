@@ -16,21 +16,11 @@ namespace IFC4
 				String name,
 				IfcDimensionalExponents dimensions,
 				IfcUnitEnum unitType,
-				Boolean unitTypeSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(conversionFactor,
+				Boolean unitTypeSpecified) : base(conversionFactor,
 				name,
 				dimensions,
 				unitType,
-				unitTypeSpecified,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				unitTypeSpecified)
 		{
 			this.conversionOffsetField = conversionOffset;
 			this.conversionOffsetSpecifiedField = conversionOffsetSpecified;

@@ -20,20 +20,10 @@ namespace IFC4
 				IfcPresentationLayerAssignmentAssignedItems assignedItems,
 				String name,
 				String description,
-				String identifier,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(assignedItems,
+				String identifier) : base(assignedItems,
 				name,
 				description,
-				identifier,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				identifier)
 		{
 			this.layerStylesField = layerStyles;
 			this.layerOnField = layerOn;

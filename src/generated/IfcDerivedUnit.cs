@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcDerivedUnit(IfcDerivedUnitElements elements,
 				IfcDerivedUnitEnum unitType,
 				Boolean unitTypeSpecified,
-				String userDefinedType,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String userDefinedType) : base()
 		{
 			this.elementsField = elements;
 			this.unitTypeField = unitType;

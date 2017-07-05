@@ -16,20 +16,10 @@ namespace IFC4
 				IfcProfileDefHasProperties hasProperties,
 				IfcProfileTypeEnum profileType,
 				Boolean profileTypeSpecified,
-				String profileName,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
+				String profileName) : base(hasProperties,
 				profileType,
 				profileTypeSpecified,
-				profileName,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				profileName)
 		{
 			this.parentProfileField = parentProfile;
 			this.opField = op;

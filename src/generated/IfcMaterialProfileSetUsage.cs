@@ -14,16 +14,7 @@ namespace IFC4
 				Int64 cardinalPoint,
 				Boolean cardinalPointSpecified,
 				Double referenceExtent,
-				Boolean referenceExtentSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean referenceExtentSpecified) : base()
 		{
 			this.forProfileSetField = forProfileSet;
 			this.cardinalPointField = cardinalPoint;

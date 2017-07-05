@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcObjectDefinition : IfcRoot 
 	{
 		public IfcObjectDefinition(IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base()
 		{
 			this.isNestedByField = isNestedBy;
 			this.isDecomposedByField = isDecomposedBy;

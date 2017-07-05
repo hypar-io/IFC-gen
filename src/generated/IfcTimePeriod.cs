@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcTimePeriod : Entity 
 	{
 		public IfcTimePeriod(String startTime,
-				String endTime,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String endTime) : base()
 		{
 			this.startTimeField = startTime;
 			this.endTimeField = endTime;

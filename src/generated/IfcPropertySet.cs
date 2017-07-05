@@ -10,24 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPropertySet : IfcPropertySetDefinition 
 	{
-		public IfcPropertySet(IfcPropertySetHasProperties hasProperties,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPropertySet(IfcPropertySetHasProperties hasProperties) : base()
 		{
 			this.hasPropertiesField = hasProperties;
 		}

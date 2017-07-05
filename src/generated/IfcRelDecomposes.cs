@@ -10,23 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcRelDecomposes : IfcRelationship 
 	{
-		public IfcRelDecomposes(IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcRelDecomposes() : base()
 		{
 ;
 		}

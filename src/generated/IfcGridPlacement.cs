@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcGridPlacement : IfcObjectPlacement 
 	{
 		public IfcGridPlacement(IfcVirtualGridIntersection placementLocation,
-				IfcGridPlacementPlacementRefDirection placementRefDirection,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcGridPlacementPlacementRefDirection placementRefDirection) : base()
 		{
 			this.placementLocationField = placementLocation;
 			this.placementRefDirectionField = placementRefDirection;

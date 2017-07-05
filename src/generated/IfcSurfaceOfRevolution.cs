@@ -13,19 +13,9 @@ namespace IFC4
 		public IfcSurfaceOfRevolution(IfcAxis1Placement axisPosition,
 				IfcProfileDef sweptCurve,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(sweptCurve,
+				IfcStyledItem styledByItem) : base(sweptCurve,
 				position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.axisPositionField = axisPosition;
 		}

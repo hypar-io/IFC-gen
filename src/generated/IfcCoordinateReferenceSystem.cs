@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcCoordinateReferenceSystem(String name,
 				String description,
 				String geodeticDatum,
-				String verticalDatum,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String verticalDatum) : base()
 		{
 			this.nameField = name;
 			this.descriptionField = description;

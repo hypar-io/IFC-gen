@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcSurfaceStyleLighting(IfcColourRgb diffuseTransmissionColour,
 				IfcColourRgb diffuseReflectionColour,
 				IfcColourRgb transmissionColour,
-				IfcColourRgb reflectanceColour,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcColourRgb reflectanceColour) : base()
 		{
 			this.diffuseTransmissionColourField = diffuseTransmissionColour;
 			this.diffuseReflectionColourField = diffuseReflectionColour;

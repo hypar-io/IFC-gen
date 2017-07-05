@@ -17,17 +17,7 @@ namespace IFC4
 				Boolean yDimSpecified,
 				Double zDim,
 				Boolean zDimSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.cornerField = corner;
 			this.xDimField = xDim;

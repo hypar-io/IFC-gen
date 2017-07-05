@@ -14,16 +14,7 @@ namespace IFC4
 				IfcReference referencePath,
 				String identifier,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.unitField = unit;
 			this.referencePathField = referencePath;

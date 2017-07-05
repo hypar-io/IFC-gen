@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcSectionedSpine(IfcCompositeCurve spineCurve,
 				IfcSectionedSpineCrossSections crossSections,
 				IfcSectionedSpineCrossSectionPositions crossSectionPositions,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.spineCurveField = spineCurve;
 			this.crossSectionsField = crossSections;

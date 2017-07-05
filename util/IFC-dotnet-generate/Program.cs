@@ -153,9 +153,13 @@ namespace IFC4
 			var types = asm.GetTypes().Where(t=>t.IsPublic && t.IsClass);
 			foreach (var t in types)
 			{
+				if(t.Name == "Entity" || t.Name == "IfcRoot")
+				{
+					continue;
+				}
+
 				var classInfo = GenerateClassInfo(t);
 				var classStr = classInfo.ToClassDefinition();
-				//Console.WriteLine(classStr);
 				var csPath = Path.Combine(args[1], $"{t.Name}.cs");
 
 				File.WriteAllText(csPath, classStr);
@@ -168,6 +172,11 @@ namespace IFC4
 
 			foreach(var p in t.GetProperties())
 			{
+				if(p.DeclaringType.Name == "Entity" || p.DeclaringType.Name == "IfcRoot")
+				{
+					continue;
+				}
+
 				var pName = p.Name.First().ToString().ToLower() + String.Join("", p.Name.Skip(1));
 				
 				// Avoid properties named with reserved words.

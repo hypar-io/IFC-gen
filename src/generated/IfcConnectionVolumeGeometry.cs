@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcConnectionVolumeGeometry : IfcConnectionGeometry 
 	{
 		public IfcConnectionVolumeGeometry(IfcConnectionVolumeGeometryVolumeOnRelatingElement volumeOnRelatingElement,
-				IfcConnectionVolumeGeometryVolumeOnRelatedElement volumeOnRelatedElement,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcConnectionVolumeGeometryVolumeOnRelatedElement volumeOnRelatedElement) : base()
 		{
 			this.volumeOnRelatingElementField = volumeOnRelatingElement;
 			this.volumeOnRelatedElementField = volumeOnRelatedElement;

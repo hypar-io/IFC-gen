@@ -29,12 +29,7 @@ namespace IFC4
 				Boolean vClosedSpecified,
 				IfcLogical selfIntersect,
 				Boolean selfIntersectSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(controlPointsList,
+				IfcStyledItem styledByItem) : base(controlPointsList,
 				uDegree,
 				uDegreeSpecified,
 				vDegree,
@@ -47,12 +42,7 @@ namespace IFC4
 				vClosedSpecified,
 				selfIntersect,
 				selfIntersectSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.uMultiplicitiesField = uMultiplicities;
 			this.vMultiplicitiesField = vMultiplicities;

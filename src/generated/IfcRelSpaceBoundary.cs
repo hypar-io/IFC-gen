@@ -16,24 +16,7 @@ namespace IFC4
 				IfcPhysicalOrVirtualEnum physicalOrVirtualBoundary,
 				Boolean physicalOrVirtualBoundarySpecified,
 				IfcInternalOrExternalEnum internalOrExternalBoundary,
-				Boolean internalOrExternalBoundarySpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean internalOrExternalBoundarySpecified) : base()
 		{
 			this.relatingSpaceField = relatingSpace;
 			this.relatedBuildingElementField = relatedBuildingElement;

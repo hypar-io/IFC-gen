@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcExtendedProperties(IfcExtendedPropertiesProperties properties,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.propertiesField = properties;
 			this.nameField = name;

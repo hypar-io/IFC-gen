@@ -14,18 +14,8 @@ namespace IFC4
 				IfcDocumentInformationRelationshipRelatedDocuments relatedDocuments,
 				String relationshipType,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.relatingDocumentField = relatingDocument;
 			this.relatedDocumentsField = relatedDocuments;

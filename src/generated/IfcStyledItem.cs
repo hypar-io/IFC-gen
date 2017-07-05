@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcStyledItem(IfcStyledItemStyles styles,
 				String name,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.stylesField = styles;
 			this.nameField = name;

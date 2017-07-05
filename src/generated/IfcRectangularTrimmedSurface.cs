@@ -23,17 +23,7 @@ namespace IFC4
 				Boolean usenseSpecified,
 				Boolean vsense,
 				Boolean vsenseSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.basisSurfaceField = basisSurface;
 			this.u1Field = u1;

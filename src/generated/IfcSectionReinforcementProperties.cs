@@ -19,16 +19,7 @@ namespace IFC4
 				Double transversePosition,
 				Boolean transversePositionSpecified,
 				IfcReinforcingBarRoleEnum reinforcementRole,
-				Boolean reinforcementRoleSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean reinforcementRoleSpecified) : base()
 		{
 			this.sectionDefinitionField = sectionDefinition;
 			this.crossSectionReinforcementDefinitionsField = crossSectionReinforcementDefinitions;

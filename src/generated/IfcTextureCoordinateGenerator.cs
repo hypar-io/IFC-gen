@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcTextureCoordinateGenerator(String mode,
 				Double[] parameter,
-				IfcTextureCoordinateMaps maps,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(maps,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcTextureCoordinateMaps maps) : base(maps)
 		{
 			this.modeField = mode;
 			this.parameterField = parameter;

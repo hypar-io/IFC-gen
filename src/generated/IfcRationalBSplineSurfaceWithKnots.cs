@@ -30,12 +30,7 @@ namespace IFC4
 				Boolean vClosedSpecified,
 				IfcLogical selfIntersect,
 				Boolean selfIntersectSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(uMultiplicities,
+				IfcStyledItem styledByItem) : base(uMultiplicities,
 				vMultiplicities,
 				uKnots,
 				vKnots,
@@ -54,12 +49,7 @@ namespace IFC4
 				vClosedSpecified,
 				selfIntersect,
 				selfIntersectSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.weightsDataField = weightsData;
 		}

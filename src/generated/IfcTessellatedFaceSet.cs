@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcTessellatedFaceSet(IfcCartesianPointList3D coordinates,
 				IfcIndexedColourMap hasColours,
 				IfcTessellatedFaceSetHasTextures hasTextures,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.coordinatesField = coordinates;
 			this.hasColoursField = hasColours;

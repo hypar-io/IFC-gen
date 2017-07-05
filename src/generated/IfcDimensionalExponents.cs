@@ -23,16 +23,7 @@ namespace IFC4
 				Int64 amountOfSubstanceExponent,
 				Boolean amountOfSubstanceExponentSpecified,
 				Int64 luminousIntensityExponent,
-				Boolean luminousIntensityExponentSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean luminousIntensityExponentSpecified) : base()
 		{
 			this.lengthExponentField = lengthExponent;
 			this.lengthExponentSpecifiedField = lengthExponentSpecified;

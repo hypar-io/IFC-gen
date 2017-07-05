@@ -10,17 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcSurface : IfcGeometricRepresentationItem 
 	{
-		public IfcSurface(IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcSurface(IfcStyledItem styledByItem) : base(styledByItem)
 		{
 ;
 		}

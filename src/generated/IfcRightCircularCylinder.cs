@@ -15,18 +15,8 @@ namespace IFC4
 				Double radius,
 				Boolean radiusSpecified,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(position,
+				styledByItem)
 		{
 			this.heightField = height;
 			this.heightSpecifiedField = heightSpecified;

@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcConnectionSurfaceGeometry : IfcConnectionGeometry 
 	{
 		public IfcConnectionSurfaceGeometry(IfcConnectionSurfaceGeometrySurfaceOnRelatingElement surfaceOnRelatingElement,
-				IfcConnectionSurfaceGeometrySurfaceOnRelatedElement surfaceOnRelatedElement,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcConnectionSurfaceGeometrySurfaceOnRelatedElement surfaceOnRelatedElement) : base()
 		{
 			this.surfaceOnRelatingElementField = surfaceOnRelatingElement;
 			this.surfaceOnRelatedElementField = surfaceOnRelatedElement;

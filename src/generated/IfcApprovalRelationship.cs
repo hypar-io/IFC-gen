@@ -13,18 +13,8 @@ namespace IFC4
 		public IfcApprovalRelationship(IfcApproval relatingApproval,
 				IfcApprovalRelationshipRelatedApprovals relatedApprovals,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.relatingApprovalField = relatingApproval;
 			this.relatedApprovalsField = relatedApprovals;

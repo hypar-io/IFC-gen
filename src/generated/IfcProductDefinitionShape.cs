@@ -13,19 +13,9 @@ namespace IFC4
 		public IfcProductDefinitionShape(IfcProductDefinitionShapeHasShapeAspects hasShapeAspects,
 				IfcProductRepresentationRepresentations representations,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(representations,
+				String description) : base(representations,
 				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				description)
 		{
 			this.hasShapeAspectsField = hasShapeAspects;
 		}

@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcMaterialDefinition : Entity 
 	{
-		public IfcMaterialDefinition(IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcMaterialDefinition(IfcMaterialDefinitionHasProperties hasProperties) : base()
 		{
 			this.hasPropertiesField = hasProperties;
 		}

@@ -16,22 +16,12 @@ namespace IFC4
 				Boolean angleSpecified,
 				IfcProfileDef sweptArea,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(axis,
+				IfcStyledItem styledByItem) : base(axis,
 				angle,
 				angleSpecified,
 				sweptArea,
 				position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.endSweptAreaField = endSweptArea;
 		}

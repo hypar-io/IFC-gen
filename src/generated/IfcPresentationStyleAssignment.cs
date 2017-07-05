@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPresentationStyleAssignment : Entity 
 	{
-		public IfcPresentationStyleAssignment(IfcPresentationStyleAssignmentStyles styles,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPresentationStyleAssignment(IfcPresentationStyleAssignmentStyles styles) : base()
 		{
 			this.stylesField = styles;
 		}

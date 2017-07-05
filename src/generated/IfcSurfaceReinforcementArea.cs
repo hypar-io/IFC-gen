@@ -14,17 +14,7 @@ namespace IFC4
 				Double[] surfaceReinforcement2,
 				Double shearReinforcement,
 				Boolean shearReinforcementSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.surfaceReinforcement1Field = surfaceReinforcement1;
 			this.surfaceReinforcement2Field = surfaceReinforcement2;

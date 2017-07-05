@@ -38,21 +38,11 @@ namespace IFC4
 				IfcProfileDefHasProperties hasProperties,
 				IfcProfileTypeEnum profileType,
 				Boolean profileTypeSpecified,
-				String profileName,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
+				String profileName) : base(position,
 				hasProperties,
 				profileType,
 				profileTypeSpecified,
-				profileName,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				profileName)
 		{
 			this.bottomFlangeWidthField = bottomFlangeWidth;
 			this.bottomFlangeWidthSpecifiedField = bottomFlangeWidthSpecified;

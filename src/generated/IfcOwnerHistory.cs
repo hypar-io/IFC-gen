@@ -21,16 +21,7 @@ namespace IFC4
 				Int64 lastModifiedDate,
 				Boolean lastModifiedDateSpecified,
 				Int64 creationDate,
-				Boolean creationDateSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean creationDateSpecified) : base()
 		{
 			this.owningUserField = owningUser;
 			this.owningApplicationField = owningApplication;

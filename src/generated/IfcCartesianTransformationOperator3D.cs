@@ -16,22 +16,12 @@ namespace IFC4
 				IfcCartesianPoint localOrigin,
 				Double scale,
 				Boolean scaleSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(axis1,
+				IfcStyledItem styledByItem) : base(axis1,
 				axis2,
 				localOrigin,
 				scale,
 				scaleSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.axis3Field = axis3;
 		}

@@ -24,12 +24,7 @@ namespace IFC4
 				Boolean closedCurveSpecified,
 				IfcLogical selfIntersect,
 				Boolean selfIntersectSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(knotMultiplicities,
+				IfcStyledItem styledByItem) : base(knotMultiplicities,
 				knots,
 				knotSpec,
 				knotSpecSpecified,
@@ -42,12 +37,7 @@ namespace IFC4
 				closedCurveSpecified,
 				selfIntersect,
 				selfIntersectSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.weightsDataField = weightsData;
 		}

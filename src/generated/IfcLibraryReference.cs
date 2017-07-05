@@ -15,19 +15,9 @@ namespace IFC4
 				String language,
 				String location,
 				String identification,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(location,
+				String name) : base(location,
 				identification,
-				name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				name)
 		{
 			this.referencedLibraryField = referencedLibrary;
 			this.descriptionField = description;

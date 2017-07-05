@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcTextStyleForDefinedFont : IfcPresentationItem 
 	{
 		public IfcTextStyleForDefinedFont(IfcTextStyleForDefinedFontColour colour,
-				IfcTextStyleForDefinedFontBackgroundColour backgroundColour,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcTextStyleForDefinedFontBackgroundColour backgroundColour) : base()
 		{
 			this.colourField = colour;
 			this.backgroundColourField = backgroundColour;

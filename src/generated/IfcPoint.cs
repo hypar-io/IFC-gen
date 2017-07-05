@@ -10,17 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPoint : IfcGeometricRepresentationItem 
 	{
-		public IfcPoint(IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPoint(IfcStyledItem styledByItem) : base(styledByItem)
 		{
 ;
 		}

@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcIndexedColourMap(IfcColourRgbList colours,
 				Double opacity,
 				Boolean opacitySpecified,
-				Int64[] colourIndex,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Int64[] colourIndex) : base()
 		{
 			this.coloursField = colours;
 			this.opacityField = opacity;

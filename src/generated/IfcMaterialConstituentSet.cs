@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcMaterialConstituentSet(IfcMaterialConstituentSetMaterialConstituents materialConstituents,
 				String name,
 				String description,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.materialConstituentsField = materialConstituents;
 			this.nameField = name;

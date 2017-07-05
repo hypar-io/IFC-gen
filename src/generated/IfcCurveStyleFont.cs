@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcCurveStyleFont : IfcPresentationItem 
 	{
 		public IfcCurveStyleFont(IfcCurveStyleFontPatternList patternList,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base()
 		{
 			this.patternListField = patternList;
 			this.nameField = name;

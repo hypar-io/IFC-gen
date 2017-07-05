@@ -16,20 +16,10 @@ namespace IFC4
 				String name,
 				String description,
 				String geodeticDatum,
-				String verticalDatum,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
+				String verticalDatum) : base(name,
 				description,
 				geodeticDatum,
-				verticalDatum,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				verticalDatum)
 		{
 			this.mapUnitField = mapUnit;
 			this.mapProjectionField = mapProjection;

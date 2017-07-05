@@ -15,17 +15,7 @@ namespace IFC4
 				IfcTextStyleTextFontStyle textFontStyle,
 				Boolean modelOrDraughting,
 				Boolean modelOrDraughtingSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.textCharacterAppearanceField = textCharacterAppearance;
 			this.textStyleField = textStyle;

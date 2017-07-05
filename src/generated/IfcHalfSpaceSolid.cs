@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcHalfSpaceSolid(IfcSurface baseSurface,
 				Boolean agreementFlag,
 				Boolean agreementFlagSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.baseSurfaceField = baseSurface;
 			this.agreementFlagField = agreementFlag;

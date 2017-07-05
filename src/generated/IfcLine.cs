@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcLine(IfcCartesianPoint pnt,
 				IfcVector dir,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.pntField = pnt;
 			this.dirField = dir;

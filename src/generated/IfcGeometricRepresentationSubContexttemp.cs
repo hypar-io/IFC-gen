@@ -19,12 +19,7 @@ namespace IFC4
 				Double precision,
 				Boolean precisionSpecified,
 				String contextIdentifier,
-				String contextType,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(worldCoordinateSystem,
+				String contextType) : base(worldCoordinateSystem,
 				trueNorth,
 				hasSubContexts,
 				hasCoordinateOperation,
@@ -33,12 +28,7 @@ namespace IFC4
 				precision,
 				precisionSpecified,
 				contextIdentifier,
-				contextType,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				contextType)
 		{
 ;
 		}

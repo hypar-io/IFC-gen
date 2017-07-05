@@ -13,18 +13,8 @@ namespace IFC4
 		public IfcResourceConstraintRelationship(IfcConstraint relatingConstraint,
 				IfcResourceConstraintRelationshipRelatedResourceObjects relatedResourceObjects,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.relatingConstraintField = relatingConstraint;
 			this.relatedResourceObjectsField = relatedResourceObjects;

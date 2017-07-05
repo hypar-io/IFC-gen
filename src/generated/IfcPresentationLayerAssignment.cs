@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcPresentationLayerAssignment(IfcPresentationLayerAssignmentAssignedItems assignedItems,
 				String name,
 				String description,
-				String identifier,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String identifier) : base()
 		{
 			this.assignedItemsField = assignedItems;
 			this.nameField = name;

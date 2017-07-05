@@ -14,16 +14,7 @@ namespace IFC4
 				IfcOrganizationAddresses addresses,
 				String identification,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.rolesField = roles;
 			this.addressesField = addresses;

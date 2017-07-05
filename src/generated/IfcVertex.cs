@@ -10,17 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcVertex : IfcTopologicalRepresentationItem 
 	{
-		public IfcVertex(IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcVertex(IfcStyledItem styledByItem) : base(styledByItem)
 		{
 ;
 		}

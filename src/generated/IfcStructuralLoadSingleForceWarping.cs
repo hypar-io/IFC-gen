@@ -24,12 +24,7 @@ namespace IFC4
 				Boolean momentYSpecified,
 				Double momentZ,
 				Boolean momentZSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(forceX,
+				String name) : base(forceX,
 				forceXSpecified,
 				forceY,
 				forceYSpecified,
@@ -41,12 +36,7 @@ namespace IFC4
 				momentYSpecified,
 				momentZ,
 				momentZSpecified,
-				name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				name)
 		{
 			this.warpingMomentField = warpingMoment;
 			this.warpingMomentSpecifiedField = warpingMomentSpecified;

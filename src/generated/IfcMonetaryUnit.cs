@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcMonetaryUnit : Entity 
 	{
-		public IfcMonetaryUnit(String currency,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcMonetaryUnit(String currency) : base()
 		{
 			this.currencyField = currency;
 		}

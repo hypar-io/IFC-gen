@@ -12,17 +12,7 @@ namespace IFC4
 	{
 		public IfcTextureMap(IfcTextureMapVertices vertices,
 				IfcFace mappedTo,
-				IfcTextureCoordinateMaps maps,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(maps,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcTextureCoordinateMaps maps) : base(maps)
 		{
 			this.verticesField = vertices;
 			this.mappedToField = mappedTo;

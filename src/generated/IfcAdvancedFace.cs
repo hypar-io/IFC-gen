@@ -14,21 +14,11 @@ namespace IFC4
 				Boolean sameSense,
 				Boolean sameSenseSpecified,
 				IfcFaceBounds bounds,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(faceSurface,
+				IfcStyledItem styledByItem) : base(faceSurface,
 				sameSense,
 				sameSenseSpecified,
 				bounds,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 ;
 		}

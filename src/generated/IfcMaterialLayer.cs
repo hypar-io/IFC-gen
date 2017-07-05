@@ -20,17 +20,7 @@ namespace IFC4
 				String category,
 				Int64 priority,
 				Boolean prioritySpecified,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.materialField = material;
 			this.layerThicknessField = layerThickness;

@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcRelFlowControlElements : IfcRelConnects 
 	{
 		public IfcRelFlowControlElements(IfcRelFlowControlElementsRelatedControlElements relatedControlElements,
-				IfcDistributionFlowElement relatingFlowElement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcDistributionFlowElement relatingFlowElement) : base()
 		{
 			this.relatedControlElementsField = relatedControlElements;
 			this.relatingFlowElementField = relatingFlowElement;

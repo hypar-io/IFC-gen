@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcColourRgbList : IfcPresentationItem 
 	{
-		public IfcColourRgbList(Double[] colourList,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcColourRgbList(Double[] colourList) : base()
 		{
 			this.colourListField = colourList;
 		}

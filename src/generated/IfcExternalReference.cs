@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcExternalReference(String location,
 				String identification,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base()
 		{
 			this.locationField = location;
 			this.identificationField = identification;

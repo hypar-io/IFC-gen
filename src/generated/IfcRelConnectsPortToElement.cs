@@ -11,24 +11,7 @@ namespace IFC4
 	public partial class IfcRelConnectsPortToElement : IfcRelConnects 
 	{
 		public IfcRelConnectsPortToElement(IfcPort relatingPort,
-				IfcDistributionElement relatedElement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcDistributionElement relatedElement) : base()
 		{
 			this.relatingPortField = relatingPort;
 			this.relatedElementField = relatedElement;

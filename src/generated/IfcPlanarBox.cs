@@ -15,21 +15,11 @@ namespace IFC4
 				Boolean sizeInXSpecified,
 				Double sizeInY,
 				Boolean sizeInYSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(sizeInX,
+				IfcStyledItem styledByItem) : base(sizeInX,
 				sizeInXSpecified,
 				sizeInY,
 				sizeInYSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.placementField = placement;
 		}

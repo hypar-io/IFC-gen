@@ -15,18 +15,8 @@ namespace IFC4
 				Double minorRadius,
 				Boolean minorRadiusSpecified,
 				IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(position,
+				styledByItem)
 		{
 			this.majorRadiusField = majorRadius;
 			this.majorRadiusSpecifiedField = majorRadiusSpecified;

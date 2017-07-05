@@ -14,18 +14,8 @@ namespace IFC4
 				IfcMaterialRelationshipRelatedMaterials relatedMaterials,
 				String expression,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.relatingMaterialField = relatingMaterial;
 			this.relatedMaterialsField = relatedMaterials;

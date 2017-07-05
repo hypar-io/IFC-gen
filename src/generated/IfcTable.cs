@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcTable(IfcTableRows rows,
 				IfcTableColumns columns,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base()
 		{
 			this.rowsField = rows;
 			this.columnsField = columns;

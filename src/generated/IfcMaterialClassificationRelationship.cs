@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcMaterialClassificationRelationship : Entity 
 	{
 		public IfcMaterialClassificationRelationship(IfcMaterialClassificationRelationshipMaterialClassifications materialClassifications,
-				IfcMaterial classifiedMaterial,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterial classifiedMaterial) : base()
 		{
 			this.materialClassificationsField = materialClassifications;
 			this.classifiedMaterialField = classifiedMaterial;

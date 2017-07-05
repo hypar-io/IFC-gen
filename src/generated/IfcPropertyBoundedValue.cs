@@ -15,18 +15,8 @@ namespace IFC4
 				IfcPropertyBoundedValueUnit unit,
 				IfcPropertyBoundedValueSetPointValue setPointValue,
 				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base(name,
+				description)
 		{
 			this.upperBoundValueField = upperBoundValue;
 			this.lowerBoundValueField = lowerBoundValue;

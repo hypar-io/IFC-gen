@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcSurfaceStyleShading(IfcColourRgb surfaceColour,
 				Double transparency,
-				Boolean transparencySpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean transparencySpecified) : base()
 		{
 			this.surfaceColourField = surfaceColour;
 			this.transparencyField = transparency;

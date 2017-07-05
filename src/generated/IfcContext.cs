@@ -18,26 +18,8 @@ namespace IFC4
 				String longName,
 				String phase,
 				IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(isNestedBy,
-				isDecomposedBy,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isNestedBy,
+				isDecomposedBy)
 		{
 			this.representationContextsField = representationContexts;
 			this.unitsInContextField = unitsInContext;

@@ -9,7 +9,6 @@ namespace IFC4
 	{
 		public Entity() : base()
 		{
-			this.idField = Guid.NewGuid().ToString();
 		}
 	}
 }

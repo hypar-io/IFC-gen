@@ -14,18 +14,8 @@ namespace IFC4
 				Boolean sameSense,
 				Boolean sameSenseSpecified,
 				IfcFaceBounds bounds,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(bounds,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(bounds,
+				styledByItem)
 		{
 			this.faceSurfaceField = faceSurface;
 			this.sameSenseField = sameSense;

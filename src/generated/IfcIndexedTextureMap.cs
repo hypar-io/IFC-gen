@@ -11,17 +11,7 @@ namespace IFC4
 	public partial class IfcIndexedTextureMap : IfcTextureCoordinate 
 	{
 		public IfcIndexedTextureMap(IfcTextureVertexList texCoords,
-				IfcTextureCoordinateMaps maps,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(maps,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcTextureCoordinateMaps maps) : base(maps)
 		{
 			this.texCoordsField = texCoords;
 		}

@@ -14,27 +14,9 @@ namespace IFC4
 				IfcMeasureWithUnit quantityInProcess,
 				IfcRelAssignsRelatedObjects relatedObjects,
 				IfcObjectTypeEnum relatedObjectsType,
-				Boolean relatedObjectsTypeSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(relatedObjects,
+				Boolean relatedObjectsTypeSpecified) : base(relatedObjects,
 				relatedObjectsType,
-				relatedObjectsTypeSpecified,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				relatedObjectsTypeSpecified)
 		{
 			this.relatingProcessField = relatingProcess;
 			this.quantityInProcessField = quantityInProcess;

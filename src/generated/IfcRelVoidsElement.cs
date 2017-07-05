@@ -10,24 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcRelVoidsElement : IfcRelDecomposes 
 	{
-		public IfcRelVoidsElement(IfcFeatureElementSubtraction relatedOpeningElement,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcRelVoidsElement(IfcFeatureElementSubtraction relatedOpeningElement) : base()
 		{
 			this.relatedOpeningElementField = relatedOpeningElement;
 		}

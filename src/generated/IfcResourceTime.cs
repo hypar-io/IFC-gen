@@ -33,20 +33,10 @@ namespace IFC4
 				String name,
 				IfcDataOriginEnum dataOrigin,
 				Boolean dataOriginSpecified,
-				String userDefinedDataOrigin,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
+				String userDefinedDataOrigin) : base(name,
 				dataOrigin,
 				dataOriginSpecified,
-				userDefinedDataOrigin,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				userDefinedDataOrigin)
 		{
 			this.scheduleWorkField = scheduleWork;
 			this.scheduleUsageField = scheduleUsage;

@@ -14,17 +14,7 @@ namespace IFC4
 				IfcCurveBoundedSurfaceBoundaries boundaries,
 				Boolean implicitOuter,
 				Boolean implicitOuterSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.basisSurfaceField = basisSurface;
 			this.boundariesField = boundaries;

@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcRepresentationItem : Entity 
 	{
-		public IfcRepresentationItem(IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcRepresentationItem(IfcStyledItem styledByItem) : base()
 		{
 			this.styledByItemField = styledByItem;
 		}

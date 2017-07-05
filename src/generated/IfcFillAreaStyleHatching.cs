@@ -16,17 +16,7 @@ namespace IFC4
 				IfcCartesianPoint patternStart,
 				Double hatchLineAngle,
 				Boolean hatchLineAngleSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(styledByItem)
 		{
 			this.hatchLineAppearanceField = hatchLineAppearance;
 			this.startOfNextHatchLineField = startOfNextHatchLine;

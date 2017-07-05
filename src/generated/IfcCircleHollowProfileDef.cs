@@ -18,23 +18,13 @@ namespace IFC4
 				IfcProfileDefHasProperties hasProperties,
 				IfcProfileTypeEnum profileType,
 				Boolean profileTypeSpecified,
-				String profileName,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(radius,
+				String profileName) : base(radius,
 				radiusSpecified,
 				position,
 				hasProperties,
 				profileType,
 				profileTypeSpecified,
-				profileName,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				profileName)
 		{
 			this.wallThicknessField = wallThickness;
 			this.wallThicknessSpecifiedField = wallThicknessSpecified;

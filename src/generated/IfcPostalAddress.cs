@@ -20,20 +20,10 @@ namespace IFC4
 				IfcAddressTypeEnum purpose,
 				Boolean purposeSpecified,
 				String description,
-				String userDefinedPurpose,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(purpose,
+				String userDefinedPurpose) : base(purpose,
 				purposeSpecified,
 				description,
-				userDefinedPurpose,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				userDefinedPurpose)
 		{
 			this.addressLinesField = addressLines;
 			this.internalLocationField = internalLocation;

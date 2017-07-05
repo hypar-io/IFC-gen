@@ -13,18 +13,8 @@ namespace IFC4
 		public IfcCircle(Double radius,
 				Boolean radiusSpecified,
 				IfcConicPosition position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(position,
+				styledByItem)
 		{
 			this.radiusField = radius;
 			this.radiusSpecifiedField = radiusSpecified;

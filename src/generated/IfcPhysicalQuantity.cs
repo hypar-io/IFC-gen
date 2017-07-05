@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcPhysicalQuantity : Entity 
 	{
 		public IfcPhysicalQuantity(String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String description) : base()
 		{
 			this.nameField = name;
 			this.descriptionField = description;

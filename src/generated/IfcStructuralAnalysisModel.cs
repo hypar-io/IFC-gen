@@ -21,30 +21,12 @@ namespace IFC4
 				IfcObjectIsDefinedBy isDefinedBy,
 				String objectType,
 				IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(isDeclaredBy,
+				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isDeclaredBy,
 				isTypedBy,
 				isDefinedBy,
 				objectType,
 				isNestedBy,
-				isDecomposedBy,
-				ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				isDecomposedBy)
 		{
 			this.orientationOf2DPlaneField = orientationOf2DPlane;
 			this.loadedByField = loadedBy;

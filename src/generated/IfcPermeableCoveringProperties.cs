@@ -18,24 +18,7 @@ namespace IFC4
 				Double frameDepth,
 				Boolean frameDepthSpecified,
 				Double frameThickness,
-				Boolean frameThicknessSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean frameThicknessSpecified) : base()
 		{
 			this.shapeAspectStyleField = shapeAspectStyle;
 			this.operationTypeField = operationType;

@@ -14,17 +14,7 @@ namespace IFC4
 				IfcCompositeProfileDef compositeProfile,
 				String name,
 				String description,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.materialProfilesField = materialProfiles;
 			this.compositeProfileField = compositeProfile;

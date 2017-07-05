@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcStructuralConnectionCondition : Entity 
 	{
-		public IfcStructuralConnectionCondition(String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcStructuralConnectionCondition(String name) : base()
 		{
 			this.nameField = name;
 		}

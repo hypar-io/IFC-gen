@@ -19,24 +19,7 @@ namespace IFC4
 				String secondaryMeasureType,
 				String expression,
 				IfcStateEnum accessState,
-				Boolean accessStateSpecified,
-				IfcOwnerHistory ownerHistory,
-				String globalId,
-				String name,
-				String description,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(ownerHistory,
-				globalId,
-				name,
-				description,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean accessStateSpecified) : base()
 		{
 			this.enumeratorsField = enumerators;
 			this.primaryUnitField = primaryUnit;

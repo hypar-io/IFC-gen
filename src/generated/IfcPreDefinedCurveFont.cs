@@ -10,17 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcPreDefinedCurveFont : IfcPreDefinedItem 
 	{
-		public IfcPreDefinedCurveFont(String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcPreDefinedCurveFont(String name) : base(name)
 		{
 ;
 		}

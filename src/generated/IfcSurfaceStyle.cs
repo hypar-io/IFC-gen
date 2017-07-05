@@ -13,17 +13,7 @@ namespace IFC4
 		public IfcSurfaceStyle(IfcSurfaceStyleStyles styles,
 				IfcSurfaceSide side,
 				Boolean sideSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.stylesField = styles;
 			this.sideField = side;

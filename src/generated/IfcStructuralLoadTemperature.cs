@@ -16,17 +16,7 @@ namespace IFC4
 				Boolean deltaTYSpecified,
 				Double deltaTZ,
 				Boolean deltaTZSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.deltaTConstantField = deltaTConstant;
 			this.deltaTConstantSpecifiedField = deltaTConstantSpecified;

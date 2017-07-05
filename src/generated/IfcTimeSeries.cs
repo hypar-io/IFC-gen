@@ -19,16 +19,7 @@ namespace IFC4
 				Boolean timeSeriesDataTypeSpecified,
 				IfcDataOriginEnum dataOrigin,
 				Boolean dataOriginSpecified,
-				String userDefinedDataOrigin,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String userDefinedDataOrigin) : base()
 		{
 			this.unitField = unit;
 			this.nameField = name;

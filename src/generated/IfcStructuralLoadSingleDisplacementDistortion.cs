@@ -24,12 +24,7 @@ namespace IFC4
 				Boolean rotationalDisplacementRYSpecified,
 				Double rotationalDisplacementRZ,
 				Boolean rotationalDisplacementRZSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(displacementX,
+				String name) : base(displacementX,
 				displacementXSpecified,
 				displacementY,
 				displacementYSpecified,
@@ -41,12 +36,7 @@ namespace IFC4
 				rotationalDisplacementRYSpecified,
 				rotationalDisplacementRZ,
 				rotationalDisplacementRZSpecified,
-				name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				name)
 		{
 			this.distortionField = distortion;
 			this.distortionSpecifiedField = distortionSpecified;

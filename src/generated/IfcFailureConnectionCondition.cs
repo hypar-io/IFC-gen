@@ -22,17 +22,7 @@ namespace IFC4
 				Boolean compressionFailureYSpecified,
 				Double compressionFailureZ,
 				Boolean compressionFailureZSpecified,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base(name)
 		{
 			this.tensionFailureXField = tensionFailureX;
 			this.tensionFailureXSpecifiedField = tensionFailureXSpecified;

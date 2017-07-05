@@ -17,17 +17,7 @@ namespace IFC4
 				Int64 priority,
 				Boolean prioritySpecified,
 				String category,
-				IfcMaterialDefinitionHasProperties hasProperties,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(hasProperties,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcMaterialDefinitionHasProperties hasProperties) : base(hasProperties)
 		{
 			this.materialField = material;
 			this.profileField = profile;

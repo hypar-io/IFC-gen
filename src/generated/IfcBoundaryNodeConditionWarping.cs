@@ -17,23 +17,13 @@ namespace IFC4
 				IfcBoundaryNodeConditionRotationalStiffnessX rotationalStiffnessX,
 				IfcBoundaryNodeConditionRotationalStiffnessY rotationalStiffnessY,
 				IfcBoundaryNodeConditionRotationalStiffnessZ rotationalStiffnessZ,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(translationalStiffnessX,
+				String name) : base(translationalStiffnessX,
 				translationalStiffnessY,
 				translationalStiffnessZ,
 				rotationalStiffnessX,
 				rotationalStiffnessY,
 				rotationalStiffnessZ,
-				name,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				name)
 		{
 			this.warpingStiffnessField = warpingStiffness;
 		}

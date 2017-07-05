@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcCurveStyleFontPattern(Double visibleSegmentLength,
 				Boolean visibleSegmentLengthSpecified,
 				Double invisibleSegmentLength,
-				Boolean invisibleSegmentLengthSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean invisibleSegmentLengthSpecified) : base()
 		{
 			this.visibleSegmentLengthField = visibleSegmentLength;
 			this.visibleSegmentLengthSpecifiedField = visibleSegmentLengthSpecified;

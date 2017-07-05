@@ -11,16 +11,7 @@ namespace IFC4
 	public partial class IfcVirtualGridIntersection : Entity 
 	{
 		public IfcVirtualGridIntersection(IfcVirtualGridIntersectionIntersectingAxes intersectingAxes,
-				Double[] offsetDistances,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Double[] offsetDistances) : base()
 		{
 			this.intersectingAxesField = intersectingAxes;
 			this.offsetDistancesField = offsetDistances;

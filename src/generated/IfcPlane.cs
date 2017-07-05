@@ -11,18 +11,8 @@ namespace IFC4
 	public partial class IfcPlane : IfcElementarySurface 
 	{
 		public IfcPlane(IfcAxis2Placement3D position,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(position,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcStyledItem styledByItem) : base(position,
+				styledByItem)
 		{
 ;
 		}

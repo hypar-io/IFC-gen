@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcPersonAndOrganization(IfcPerson thePerson,
 				IfcOrganization theOrganization,
-				IfcPersonAndOrganizationRoles roles,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				IfcPersonAndOrganizationRoles roles) : base()
 		{
 			this.thePersonField = thePerson;
 			this.theOrganizationField = theOrganization;

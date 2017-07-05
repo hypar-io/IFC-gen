@@ -10,16 +10,7 @@ namespace IFC4
 	/// </summary>
 	public partial class IfcTextureVertex : IfcPresentationItem 
 	{
-		public IfcTextureVertex(Double[] coordinates,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+		public IfcTextureVertex(Double[] coordinates) : base()
 		{
 			this.coordinatesField = coordinates;
 		}

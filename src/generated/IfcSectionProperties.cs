@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcSectionProperties(IfcProfileDef startProfile,
 				IfcProfileDef endProfile,
 				IfcSectionTypeEnum sectionType,
-				Boolean sectionTypeSpecified,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				Boolean sectionTypeSpecified) : base()
 		{
 			this.startProfileField = startProfile;
 			this.endProfileField = endProfile;

@@ -21,12 +21,7 @@ namespace IFC4
 				Boolean startParamSpecified,
 				Double endParam,
 				Boolean endParamSpecified,
-				IfcStyledItem styledByItem,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(directrix,
+				IfcStyledItem styledByItem) : base(directrix,
 				radius,
 				radiusSpecified,
 				innerRadius,
@@ -35,12 +30,7 @@ namespace IFC4
 				startParamSpecified,
 				endParam,
 				endParamSpecified,
-				styledByItem,
-				href,
-				reference,
-				id,
-				path,
-				pos)
+				styledByItem)
 		{
 			this.filletRadiusField = filletRadius;
 			this.filletRadiusSpecifiedField = filletRadiusSpecified;

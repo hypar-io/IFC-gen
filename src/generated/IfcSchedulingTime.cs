@@ -13,16 +13,7 @@ namespace IFC4
 		public IfcSchedulingTime(String name,
 				IfcDataOriginEnum dataOrigin,
 				Boolean dataOriginSpecified,
-				String userDefinedDataOrigin,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String userDefinedDataOrigin) : base()
 		{
 			this.nameField = name;
 			this.dataOriginField = dataOrigin;

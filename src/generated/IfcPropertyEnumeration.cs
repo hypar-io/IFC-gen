@@ -12,16 +12,7 @@ namespace IFC4
 	{
 		public IfcPropertyEnumeration(IfcPropertyEnumerationEnumerationValues enumerationValues,
 				IfcPropertyEnumerationUnit unit,
-				String name,
-				String href,
-				String reference,
-				String id,
-				String path,
-				String[] pos) : base(href,
-				reference,
-				id,
-				path,
-				pos)
+				String name) : base()
 		{
 			this.enumerationValuesField = enumerationValues;
 			this.unitField = unit;
