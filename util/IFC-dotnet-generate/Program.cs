@@ -1,111 +1,190 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using System.IO;
 using System.Linq;
 
 namespace IFC_dotnet_generate
 {
-    class ParameterInfo
-    {
-        public Type Type{get;set;}
-        public string Name{get;set;}
-        public bool Inherited{get;set;}
-    }
+	class ParameterInfo
+	{
+		public string TypeName {get;set;}
 
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            if(args.Length != 2)
-            {
-                Console.WriteLine("Usage: IFC-dotnet-generate.exe <path to IFC dll> <output directory>");
-                return;
-            }
+		public string Name {get;set;}
 
-            if(!File.Exists(args[0]))
-            {
-                Console.WriteLine("The specified file does not exist.");
-                return;
-            }
+		public bool IsInherited {get;set;}
 
-            if(!Directory.Exists(args[1]))
-            {
-                Console.WriteLine("The specified output directory does not exist.");
-            }
+		public ParameterInfo(string typeName, string name, bool isInherited)
+		{
+			TypeName = typeName;
+			Name = name;
+			IsInherited = isInherited;
+		}
+	}
 
-            var asm = Assembly.LoadFrom(args[0]);
-            var classes = asm.GetTypes().Where(t=>t.IsPublic && t.IsClass);
-            foreach (var c in classes)
-            {
-                var paramStr = "";
-                var paramSetStr = "";
+	class ClassInfo
+	{
+		public string ClassName{get;set;}
 
-                foreach(var p in c.GetProperties()){
-                    var pi = new ParameterInfo();
-                    pi.Type = p.PropertyType;
-                    pi.Name = p.Name.First().ToString().ToLower() + String.Join("", p.Name.Skip(1));
-                }
-                // Create a constructor which takes this type's properties as inputs.
-                foreach(var p in c.GetProperties().Where(pr=>pr.DeclaringType == c))
-                {
-                    var pName = p.Name.First().ToString().ToLower() + String.Join("", p.Name.Skip(1));
-                    var fieldName = $"{pName}Field";
+		public string BaseClassName{get;set;}
 
-                    if(pName == "ref")
-                    {
-                        pName = "reference";
-                    }
+		public bool IsInherited{get;set;}
 
-                    if(pName == "operator"){
-                        pName = "op";
-                    }
+		public List<ParameterInfo> Parameters {get;set;}
 
-                    // Create parameter names using the property name converted to camel case
-                    paramStr += $"{p.PropertyType.Name} {pName}, ";
+		public ClassInfo(Type classType ){
+			ClassName = classType.Name;
+			IsInherited = classType.BaseType != null;
+			if(IsInherited){
+				BaseClassName = classType.BaseType.Name;
+			}
+			Parameters = new List<ParameterInfo>();
+		}
 
-                    if(p.Name == "ref"){
-                        paramSetStr += $"\t\t\tthis.@{p.Name} = {pName};\n";
-                    }else{
-                        paramSetStr += $"\t\t\tthis.{p.Name} = {pName};\n";
-                    }
-                }
+		/// <summary>
+		/// Create a string containing the parameters.
+		/// </summary>
+		/// <returns></returns>
+		private string ToParameterString(){
+			return string.Join(",\n\t\t\t\t", Parameters.Select(i=>$"{i.TypeName} {i.Name}"));
+		}
 
-                var baseParamStr = "";
+		/// <summary>
+		/// Create a string containing the inherited parameters.
+		/// </summary>
+		/// <returns></returns>
+		private string ToInheritedParameterString(){
+			if(!IsInherited){
+				return string.Empty;
+			}
+			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited).Select(i=>$"{i.TypeName} {i.Name}"));
+		}
 
-                foreach(var bp in c.BaseType.GetProperties().Where(pr=>pr.DeclaringType == c.BaseType))
-                {
-                    var pName = bp.Name.First().ToString().ToLower() + String.Join("", bp.Name.Skip(1));
-                    
-                    if(pName == "ref")
-                    {
-                        pName = "reference";
-                    }
+		/// <summary>
+		/// Create a string containing the parameters to the base type constructor.
+		/// </summary>
+		/// <returns></returns>
+		private string ToBaseParameterString(){
+			if(!IsInherited){
+				return string.Empty;
+			}
+			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited).Select(i=>$"{i.Name}"));
+		}
 
-                    if(pName == "operator"){
-                        pName = "op";
-                    }
+		/// <summary>
+		/// Create a multi-line string assigning parameters to properties.
+		/// </summary>
+		/// <returns></returns>
+		private string ToFieldAssignmentString(){
+			var fieldAssignments = string.Join(";\n", Parameters.Where(p=>!p.IsInherited).Select(i=>$"\t\t\tthis.{i.Name}Field = {i.Name}"));
+			return fieldAssignments + ";";
+		}
 
-                    paramStr += $"{bp.PropertyType.Name} {pName}, ";
-                    baseParamStr += $"{pName}, ";
-                }
+		/// <summary>
+		/// Create a string representing the definition of the class.
+		/// </summary>
+		/// <returns></returns>
+		public string ToClassDefinition(){
 
-                paramStr = paramStr.TrimEnd(new char[]{' ',','});
-                baseParamStr = baseParamStr.TrimEnd(new char[]{' ',','});
+			var classSignature = IsInherited?
+				$"{ClassName} : {BaseClassName}":
+				$"{ClassName}";
 
-                var classStr = "using System;\n\n" + 
-                "namespace IFC4\n" +
-                "{\n" +
-                "\tpublic partial class " + c.Name + "\n" +
-                "\t{\n" + 
-                "\t\tpublic " + c.Name + "(" + paramStr + ")" + (!string.IsNullOrEmpty(baseParamStr)?":base("+baseParamStr+")":"") + "\n" +
-                "\t\t{\n" + 
-                paramSetStr +
-                "\t\t}\n" +
-                "\t}\n" +
-                "}";
-                var csPath = Path.Combine(args[1], $"{c.Name}.cs");
-                File.WriteAllText(csPath, classStr);
-            }
-        }
-    }
+			string inheritedParameterString = ToInheritedParameterString();
+			var parameterString = IsInherited?
+				ToParameterString():
+				$"{ToParameterString()}, {ToInheritedParameterString()}";
+			
+			var constructorSignature = IsInherited?
+				$"({parameterString}) : base({ToBaseParameterString()})":
+				$"({parameterString})";
+			
+			var classStr = 
+$@"/*
+This code was generated by a tool. DO NOT MODIFY this code manually, unless you really know what you are doing.
+ */
+using System;
+				
+namespace IFC4
+{{
+	/// <summary>
+	/// 
+	/// </summary>
+	public partial class {classSignature} 
+	{{
+		public {ClassName}{constructorSignature}
+		{{
+{ToFieldAssignmentString()}
+		}}
+	}}
+}}";
+			return classStr;
+		}
+
+		public string ToComments()
+		{
+			//http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcproductextension/lexical/ifcbuilding.htm
+			return string.Empty;
+		}
+	}
+
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			if(args.Length != 2)
+			{
+				Console.WriteLine("Usage: IFC-dotnet-generate.exe <path to IFC dll> <output directory>");
+				return;
+			}
+
+			if(!File.Exists(args[0]))
+			{
+				Console.WriteLine("The specified file does not exist.");
+				return;
+			}
+
+			if(!Directory.Exists(args[1]))
+			{
+				Console.WriteLine("The specified output directory does not exist.");
+			}
+
+			var asm = Assembly.LoadFrom(args[0]);
+			var types = asm.GetTypes().Where(t=>t.IsPublic && t.IsClass);
+			foreach (var t in types)
+			{
+				var classInfo = GenerateClassInfo(t);
+				var classStr = classInfo.ToClassDefinition();
+				//Console.WriteLine(classStr);
+				var csPath = Path.Combine(args[1], $"{t.Name}.cs");
+
+				File.WriteAllText(csPath, classStr);
+			}
+		}
+
+		private static ClassInfo GenerateClassInfo(Type t)
+		{
+			var classInfo = new ClassInfo(t);
+
+			foreach(var p in t.GetProperties())
+			{
+				var pName = p.Name.First().ToString().ToLower() + String.Join("", p.Name.Skip(1));
+				
+				// Avoid properties named with reserved words.
+				if(pName == "ref")
+				{
+					pName = "reference";
+				}
+
+				if(pName == "operator")
+				{
+					pName = "op";
+				}
+
+				classInfo.Parameters.Add(new ParameterInfo(p.PropertyType.Name, pName, p.DeclaringType != t));
+			}
+
+			return classInfo;
+		}
+	}
 }
