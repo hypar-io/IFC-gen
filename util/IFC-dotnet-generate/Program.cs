@@ -19,6 +19,9 @@ namespace IFC_dotnet_generate
 		public ParameterInfo(string typeName, string name, string correspondingPropertyName, bool isInherited)
 		{
 			TypeName = typeName;
+			if(TypeName.StartsWith("Ifc") && TypeName != "IfcSystem"){
+				TypeName = TypeName.Remove(0,3);
+			}
 			Name = name;
 			CorrespondingPropertyName = correspondingPropertyName;
 			IsInherited = isInherited;
@@ -37,9 +40,15 @@ namespace IFC_dotnet_generate
 
 		public ClassInfo(Type classType ){
 			ClassName = classType.Name;
+			if(ClassName.StartsWith("Ifc") && ClassName != "IfcSystem"){
+				ClassName = ClassName.Remove(0,3);
+			}
 			IsInherited = classType.BaseType != null;
 			if(IsInherited){
 				BaseClassName = classType.BaseType.Name;
+				if(BaseClassName.StartsWith("Ifc") && BaseClassName != "IfcSystem"){
+					BaseClassName = BaseClassName.Remove(0,3);
+				}
 			}
 			Parameters = new List<ParameterInfo>();
 		}
@@ -163,7 +172,7 @@ namespace IFC4
 
 				var classInfo = GenerateClassInfo(t);
 				var classStr = classInfo.ToClassDefinition();
-				var csPath = Path.Combine(args[1], $"{t.Name}.cs");
+				var csPath = Path.Combine(args[1], $"{classInfo.ClassName}.cs");
 
 				File.WriteAllText(csPath, classStr);
 			}
