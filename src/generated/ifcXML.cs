@@ -8,8 +8,10 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class ifcXML : uos 
+	public class ifcXML : uos 
 	{
+		public Entity[] Items {get;set;}
+
 		public ifcXML(Entity[] items,
 				uosHeader header,
 				String id,

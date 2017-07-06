@@ -8,8 +8,16 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class uos : Object 
+	public class uos : Object 
 	{
+		public uosHeader header {get;set;}
+
+		public String id {get;set;}
+
+		public String[] express {get;set;}
+
+		public String[] configuration {get;set;}
+
 		public uos(uosHeader header,
 				String id,
 				String[] express,

@@ -26,6 +26,11 @@ namespace IFC_dotnet_generate
 			CorrespondingPropertyName = correspondingPropertyName;
 			IsInherited = isInherited;
 		}
+
+		internal string ToPropertyDeclaration(){
+			var propertyDecl = $"\t\tpublic {TypeName} {CorrespondingPropertyName} {{get;set;}}";
+			return propertyDecl;
+		}
 	}
 
 	class ClassInfo
@@ -40,13 +45,13 @@ namespace IFC_dotnet_generate
 
 		public ClassInfo(Type classType ){
 			ClassName = classType.Name;
-			if(ClassName.StartsWith("Ifc") && ClassName != "IfcSystem"){
+			if(ClassName.StartsWith("Ifc") && ClassName != "IfcSystem" && ClassName != "IfcObject"){
 				ClassName = ClassName.Remove(0,3);
 			}
 			IsInherited = classType.BaseType != null;
 			if(IsInherited){
 				BaseClassName = classType.BaseType.Name;
-				if(BaseClassName.StartsWith("Ifc") && BaseClassName != "IfcSystem"){
+				if(BaseClassName.StartsWith("Ifc") && BaseClassName != "IfcSystem" && BaseClassName != "IfcObject"){
 					BaseClassName = BaseClassName.Remove(0,3);
 				}
 			}
@@ -69,7 +74,7 @@ namespace IFC_dotnet_generate
 			if(!IsInherited){
 				return string.Empty;
 			}
-			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited).Select(i=>$"{i.TypeName} {i.Name}"));
+			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>$"{i.TypeName} {i.Name}"));
 		}
 
 		/// <summary>
@@ -80,7 +85,7 @@ namespace IFC_dotnet_generate
 			if(!IsInherited){
 				return string.Empty;
 			}
-			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited).Select(i=>$"{i.Name}"));
+			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>$"{i.Name}"));
 		}
 
 		/// <summary>
@@ -88,8 +93,13 @@ namespace IFC_dotnet_generate
 		/// </summary>
 		/// <returns></returns>
 		private string ToFieldAssignmentString(){
-			var fieldAssignments = string.Join(";\n", Parameters.Where(p=>!p.IsInherited).Select(i=>$"\t\t\tthis.{i.CorrespondingPropertyName} = {i.Name}"));
+			var fieldAssignments = string.Join(";\n", Parameters.Where(p=>!p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>$"\t\t\tthis.{i.CorrespondingPropertyName} = {i.Name}"));
 			return fieldAssignments + ";";
+		}
+
+		private string ToPropertiesString(){
+			var propertiesString = string.Join("\n\n", Parameters.Where(p=>!p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>i.ToPropertyDeclaration()));
+			return propertiesString;
 		}
 
 		/// <summary>
@@ -101,7 +111,7 @@ namespace IFC_dotnet_generate
 			var classSignature = IsInherited?
 				$"{ClassName} : {BaseClassName}":
 				$"{ClassName}";
-
+			
 			string inheritedParameterString = ToInheritedParameterString();
 			var parameterString = IsInherited?
 				ToParameterString():
@@ -122,8 +132,10 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class {classSignature} 
+	public class {classSignature} 
 	{{
+{ToPropertiesString()}
+
 		public {ClassName}{constructorSignature}
 		{{
 {ToFieldAssignmentString()}

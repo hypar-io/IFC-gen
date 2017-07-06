@@ -8,8 +8,24 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class uosHeader : Object 
+	public class uosHeader : Object 
 	{
+		public String name {get;set;}
+
+		public DateTime time_stamp {get;set;}
+
+		public String author {get;set;}
+
+		public String organization {get;set;}
+
+		public String preprocessor_version {get;set;}
+
+		public String originating_system {get;set;}
+
+		public String authorization {get;set;}
+
+		public String documentation {get;set;}
+
 		public uosHeader(String name,
 				DateTime time_stamp,
 				Boolean time_stampSpecified,
@@ -22,7 +38,6 @@ namespace IFC4
 		{
 			this.name = name;
 			this.time_stamp = time_stamp;
-			this.time_stampSpecified = time_stampSpecified;
 			this.author = author;
 			this.organization = organization;
 			this.preprocessor_version = preprocessor_version;

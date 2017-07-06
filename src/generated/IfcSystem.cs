@@ -8,14 +8,16 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class IfcSystem : IfcGroup 
+	public class IfcSystem : Group 
 	{
-		public IfcSystem(IfcRelDefinesByObject isDeclaredBy,
-				IfcRelDefinesByType isTypedBy,
-				IfcObjectIsDefinedBy isDefinedBy,
+
+
+		public IfcSystem(RelDefinesByObject isDeclaredBy,
+				RelDefinesByType isTypedBy,
+				ObjectIsDefinedBy isDefinedBy,
 				String objectType,
-				IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isDeclaredBy,
+				ObjectDefinitionIsNestedBy isNestedBy,
+				ObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isDeclaredBy,
 				isTypedBy,
 				isDefinedBy,
 				objectType,

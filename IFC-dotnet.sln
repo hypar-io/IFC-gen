@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet-test", "test\IFC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "util", "util", "{7AB9E80E-EB83-491A-BFBF-BFF6101344FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet-generate", "util\IFC-dotnet-generate\IFC-dotnet-generate.csproj", "{926BA380-B4ED-4F4D-8DB6-0BD39EE3C676}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet-generate", "util\IFC-gen\IFC-gen.csproj", "{926BA380-B4ED-4F4D-8DB6-0BD39EE3C676}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

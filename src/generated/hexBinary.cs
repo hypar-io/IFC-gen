@@ -8,8 +8,12 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class hexBinary : Object 
+	public class hexBinary : Object 
 	{
+		public String extraBits {get;set;}
+
+		public Byte[] Value {get;set;}
+
 		public hexBinary(String extraBits,
 				Byte[] value) : base()
 		{

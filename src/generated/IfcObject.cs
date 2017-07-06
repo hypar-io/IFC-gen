@@ -8,14 +8,22 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	public partial class IfcObject : IfcObjectDefinition 
+	public class IfcObject : ObjectDefinition 
 	{
-		public IfcObject(IfcRelDefinesByObject isDeclaredBy,
-				IfcRelDefinesByType isTypedBy,
-				IfcObjectIsDefinedBy isDefinedBy,
+		public RelDefinesByObject IsDeclaredBy {get;set;}
+
+		public RelDefinesByType IsTypedBy {get;set;}
+
+		public ObjectIsDefinedBy IsDefinedBy {get;set;}
+
+		public String ObjectType {get;set;}
+
+		public IfcObject(RelDefinesByObject isDeclaredBy,
+				RelDefinesByType isTypedBy,
+				ObjectIsDefinedBy isDefinedBy,
 				String objectType,
-				IfcObjectDefinitionIsNestedBy isNestedBy,
-				IfcObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isNestedBy,
+				ObjectDefinitionIsNestedBy isNestedBy,
+				ObjectDefinitionIsDecomposedBy isDecomposedBy) : base(isNestedBy,
 				isDecomposedBy)
 		{
 			this.IsDeclaredBy = isDeclaredBy;
