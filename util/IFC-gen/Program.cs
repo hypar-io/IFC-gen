@@ -6,121 +6,134 @@ using System.Linq;
 
 namespace IFC_dotnet_generate
 {
-	class ParameterInfo
-	{
-		public string TypeName {get;set;}
 
-		public string Name {get;set;}
-
-		public string CorrespondingPropertyName{get;set;}
-
-		public bool IsInherited {get;set;}
-
-		public ParameterInfo(string typeName, string name, string correspondingPropertyName, bool isInherited)
-		{
-			TypeName = typeName;
-			if(TypeName.StartsWith("Ifc") && TypeName != "IfcSystem"){
-				TypeName = TypeName.Remove(0,3);
+	internal static class TypeExtensions{
+		internal static string ValidTypeName(this Type t){
+			string result = t.Name;
+			if(t.Name.StartsWith("Ifc") && (t.Name != "IfcSystem" || t.Name != "IfcObject")){
+				result = t.Name.Remove(0,3);
 			}
-			Name = name;
-			CorrespondingPropertyName = correspondingPropertyName;
-			IsInherited = isInherited;
+			return result;
 		}
 
-		internal string ToPropertyDeclaration(){
-			var propertyDecl = $"\t\tpublic {TypeName} {CorrespondingPropertyName} {{get;set;}}";
-			return propertyDecl;
+		internal static string ValidParameterName(this string s){
+			var result = s.First().ToString().ToLower() + String.Join("", s.Skip(1));
+				
+			// Avoid properties named with reserved words.
+			if(result == "ref")
+			{
+				result = "reference";
+			}
+
+			if(result == "operator")
+			{
+				result = "op";
+			}
+
+			return result;
 		}
-	}
 
-	class ClassInfo
-	{
-		public string ClassName{get;set;}
-
-		public string BaseClassName{get;set;}
-
-		public bool IsInherited{get;set;}
-
-		public List<ParameterInfo> Parameters {get;set;}
-
-		public ClassInfo(Type classType ){
-			ClassName = classType.Name;
-			if(ClassName.StartsWith("Ifc") && ClassName != "IfcSystem" && ClassName != "IfcObject"){
-				ClassName = ClassName.Remove(0,3);
+		internal static string ValidPropertyName(this PropertyInfo pi){
+			if(pi.DeclaringType.ValidTypeName() == pi.Name){
+				return pi.Name + "Property";
 			}
-			IsInherited = classType.BaseType != null;
-			if(IsInherited){
-				BaseClassName = classType.BaseType.Name;
-				if(BaseClassName.StartsWith("Ifc") && BaseClassName != "IfcSystem" && BaseClassName != "IfcObject"){
-					BaseClassName = BaseClassName.Remove(0,3);
-				}
-			}
-			Parameters = new List<ParameterInfo>();
+			return pi.Name;
 		}
 
 		/// <summary>
-		/// Create a string containing the parameters.
+		/// Create a string containing the parameters to the base type constructor for a Type.
 		/// </summary>
 		/// <returns></returns>
-		private string ToParameterString(){
-			return string.Join(",\n\t\t\t\t", Parameters.Select(i=>$"{i.TypeName} {i.Name}"));
+		internal static string BaseParameterString(this Type t){
+			if(t.BaseType == null){
+				return string.Empty;
+			}
+			return string.Join(",\n\t\t\t\t", t.ValidBaseProperties().Select(p=>$"{p.Name.ValidParameterName()}"));
+		}
+
+		/// <summary>
+		/// Create a string containing the parameters for a Type.
+		/// </summary>
+		/// <returns></returns>
+		internal static string ParameterString(this Type t){
+			return string.Join(",\n\t\t\t\t", t.ValidProperties().Concat(t.ValidBaseProperties()).Select(i=>$"{i.PropertyType.ValidTypeName()} {i.Name.ValidParameterName()}"));
+		}
+
+		internal static PropertyInfo[] ValidProperties(this Type t){
+			return t.GetProperties().Where(p=> p.DeclaringType == t && !p.Name.EndsWith("Specified")).ToArray();
+		}
+
+		internal static PropertyInfo[] ValidBaseProperties(this Type t){
+			return t.GetProperties().Where(p=> p.DeclaringType != t && 
+						p.DeclaringType.Name != "Entity" &&
+						p.DeclaringType.Name != "IfcRoot" && 
+						!p.Name.EndsWith("Specified")).ToArray();
 		}
 
 		/// <summary>
 		/// Create a string containing the inherited parameters.
 		/// </summary>
 		/// <returns></returns>
-		private string ToInheritedParameterString(){
-			if(!IsInherited){
+		internal static string InheritedParameterString(this Type t){
+			if(t.BaseType == null){
 				return string.Empty;
 			}
-			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>$"{i.TypeName} {i.Name}"));
+			return string.Join(",\n\t\t\t\t", t.ValidBaseProperties().Select(i=>$"{i.PropertyType.ValidTypeName()} {i.Name.ValidParameterName()}"));
 		}
 
-		/// <summary>
-		/// Create a string containing the parameters to the base type constructor.
-		/// </summary>
-		/// <returns></returns>
-		private string ToBaseParameterString(){
-			if(!IsInherited){
-				return string.Empty;
-			}
-			return string.Join(",\n\t\t\t\t", Parameters.Where(p=>p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>$"{i.Name}"));
-		}
-
-		/// <summary>
+				/// <summary>
 		/// Create a multi-line string assigning parameters to properties.
 		/// </summary>
 		/// <returns></returns>
-		private string ToFieldAssignmentString(){
-			var fieldAssignments = string.Join(";\n", Parameters.Where(p=>!p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>$"\t\t\tthis.{i.CorrespondingPropertyName} = {i.Name}"));
+		internal static string FieldAssignments(this Type t){
+			var fieldAssignments = string.Join(";\n", t.ValidProperties().Select(i=>$"\t\t\tthis.{i.ValidPropertyName()} = {i.Name.ValidParameterName()}"));
 			return fieldAssignments + ";";
 		}
 
-		private string ToPropertiesString(){
-			var propertiesString = string.Join("\n\n", Parameters.Where(p=>!p.IsInherited && !p.Name.EndsWith("Specified")).Select(i=>i.ToPropertyDeclaration()));
-			return propertiesString;
+		internal static string CapitalizeFirstLetter(this string s){
+			return s.First().ToString().ToUpper() + String.Join("", s.Skip(1));
+		}
+
+		internal static string PropertiesString(this Type t){
+			return string.Join("\n\n", t.ValidProperties().Select(i=>i.ToPropertyDeclaration()));
+		}
+
+		internal static string ToPropertyDeclaration(this PropertyInfo p){
+			var propertyDecl = $"\t\tpublic {p.PropertyType.ValidTypeName()} {p.ValidPropertyName()} {{get;set;}}";
+			return propertyDecl;
+		}
+
+		internal static Type[] ValidClasses(this Assembly asm){
+			return asm.GetTypes().Where(t=>t.IsPublic && t.IsClass && t.Name != "Entity" && t.Name != "IfcRoot").ToArray();
+		}
+
+		internal static bool IsRelationship(this PropertyInfo pi){
+			return pi.Name.StartsWith("Rel") || 
+			pi.Name.EndsWith("By");
 		}
 
 		/// <summary>
 		/// Create a string representing the definition of the class.
 		/// </summary>
 		/// <returns></returns>
-		public string ToClassDefinition(){
+		internal static string CSharpClassDefinition(this Type t){
+			
+			var isInherited = t.BaseType != null;
 
-			var classSignature = IsInherited?
-				$"{ClassName} : {BaseClassName}":
-				$"{ClassName}";
+			var classSignature = isInherited?
+				$"{t.ValidTypeName()} : {t.BaseType.ValidTypeName()}":
+				$"{t.ValidTypeName()}";
 			
-			string inheritedParameterString = ToInheritedParameterString();
-			var parameterString = IsInherited?
-				ToParameterString():
-				$"{ToParameterString()}, {ToInheritedParameterString()}";
+			var parameterString = isInherited?
+				t.ParameterString():
+				$"{t.ParameterString()}, {t.InheritedParameterString()}";
 			
-			var constructorSignature = IsInherited?
-				$"({parameterString}) : base({ToBaseParameterString()})":
+			var constructorSignature = t.BaseType != null?
+				$"({parameterString}) : base({t.BaseParameterString()})":
 				$"({parameterString})";
 			
+			var classModifier = t.IsAbstract? "abstract" : string.Empty;
+
 			var classStr = 
 $@"/*
 This code was generated by a tool. DO NOT MODIFY this code manually, unless you really know what you are doing.
@@ -130,25 +143,42 @@ using System;
 namespace IFC4
 {{
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{t.Name.ToLower()}.htm
 	/// </summary>
-	public class {classSignature} 
+	internal {classModifier} partial class {classSignature} 
 	{{
-{ToPropertiesString()}
+{t.PropertiesString()}
 
-		public {ClassName}{constructorSignature}
+		public {t.ValidTypeName()}{constructorSignature}
 		{{
-{ToFieldAssignmentString()}
+{t.FieldAssignments()}
 		}}
 	}}
 }}";
 			return classStr;
 		}
 
-		public string ToComments()
-		{
-			//http://www.buildingsmart-tech.org/ifc/IFC4/final/html/schema/ifcproductextension/lexical/ifcbuilding.htm
-			return string.Empty;
+		internal static string CSharpEnumDefinition(this Type t){
+			
+			var enumNames = string.Join(",\n\t\t",t.GetEnumNames().Select(n=>n.ToUpper()));
+			var enumStr =
+$@"/*
+This code was generated by a tool. DO NOT MODIFY this code manually, unless you really know what you are doing.
+ */
+using System;
+				
+namespace IFC4
+{{
+	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{t.Name.ToLower()}.htm
+	/// </summary>
+	internal enum {t.ValidTypeName()} 
+	{{
+		{enumNames}
+	}}
+}}";
+		return enumStr;
+
 		}
 	}
 
@@ -175,49 +205,11 @@ namespace IFC4
 
 			var asm = Assembly.LoadFrom(args[0]);
 			var types = asm.GetTypes().Where(t=>t.IsPublic && t.IsClass);
-			foreach (var t in types)
+			foreach (var t in asm.ValidClasses())
 			{
-				if(t.Name == "Entity" || t.Name == "IfcRoot")
-				{
-					continue;
-				}
-
-				var classInfo = GenerateClassInfo(t);
-				var classStr = classInfo.ToClassDefinition();
-				var csPath = Path.Combine(args[1], $"{classInfo.ClassName}.cs");
-
-				File.WriteAllText(csPath, classStr);
+				var csPath = Path.Combine(args[1], $"{t.ValidTypeName()}.cs");
+				File.WriteAllText(csPath, t.IsEnum? t.CSharpEnumDefinition() : t.CSharpClassDefinition());
 			}
-		}
-
-		private static ClassInfo GenerateClassInfo(Type t)
-		{
-			var classInfo = new ClassInfo(t);
-
-			foreach(var p in t.GetProperties())
-			{
-				if(p.DeclaringType.Name == "Entity" || p.DeclaringType.Name == "IfcRoot")
-				{
-					continue;
-				}
-
-				var pName = p.Name.First().ToString().ToLower() + String.Join("", p.Name.Skip(1));
-				
-				// Avoid properties named with reserved words.
-				if(pName == "ref")
-				{
-					pName = "reference";
-				}
-
-				if(pName == "operator")
-				{
-					pName = "op";
-				}
-
-				classInfo.Parameters.Add(new ParameterInfo(p.PropertyType.Name, pName, p.Name, p.DeclaringType != t));
-			}
-
-			return classInfo;
 		}
 	}
 }
