@@ -11,14 +11,6 @@ namespace test
 		[Fact]
 		public void CreateWall()
 		{
-			var building = new IfcBuilding();
-			building.Name = "Ifc Test Building";
-			
-			var project = new IfcProject();
-			project.Name = "Ifc Test Project";
-			project.UnitsInContext = new IfcUnitAssignment();
-			project.UnitsInContext.Units = new IfcUnitAssignmentUnits();
-
 		}
 	}
 }

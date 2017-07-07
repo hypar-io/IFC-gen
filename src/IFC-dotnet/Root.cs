@@ -3,21 +3,27 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroot.htm
 	/// </summary>
-	public partial class Root : Entity 
+	internal abstract partial class Root : Entity 
 	{
-		public Root(string name, string description)
+		public string GlobalId {get;set;}
+		public string Name {get;set;}
+		public string Description {get;set;}
+		public OwnerHistory OwnerHistory {get;set;}
+
+		public Root(string name, string description, OwnerHistory ownerHistory)
 		{
-			this.globalIdField = Guid.NewGuid().ToString();
-			this.nameField = name;
-			this.descriptionField = description;
+			this.GlobalId = Guid.NewGuid().ToString();
+			this.Name = name;
+			this.Description = description;
+			this.OwnerHistory = ownerHistory;
 		}
 
 		public Root() : base()
 		{
-			this.globalIdField = Guid.NewGuid().ToString();
-			this.id = this.globalIdField;
+			this.GlobalId = Guid.NewGuid().ToString();
+			this.id = this.GlobalId;
 		}
 	}
 }

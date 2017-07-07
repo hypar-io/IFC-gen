@@ -10,13 +10,16 @@ namespace IFC_dotnet_generate
 	internal static class TypeExtensions{
 		internal static string ValidTypeName(this Type t){
 			string result = t.Name;
-			if(t.Name.StartsWith("Ifc") && t.Name != "IfcSystem" && t.Name != "IfcObject"){
+			if((t.Name.StartsWith("Ifc") || t.Name.StartsWith("ifc")) && t.Name != "IfcSystem" && t.Name != "IfcObject"){
 				result = t.Name.Remove(0,3);
 			}
 
-			if(t.Name.EndsWith("wrapper")){
+			/*if(t.Name.EndsWith("wrapper")){
 				result = result.Remove(result.Length-7);
 			}
+			if(t.Name.EndsWith("wrapper[]")){
+				result = result.Remove(result.Length-9);
+			}*/
 			return result;
 		}
 
@@ -34,14 +37,25 @@ namespace IFC_dotnet_generate
 				result = "op";
 			}
 
+			/*if(result.EndsWith("wrapper")){
+				result = result.Remove(result.Length-7);
+			}*/
+
 			return result;
 		}
 
 		internal static string ValidPropertyName(this PropertyInfo pi){
-			if(pi.DeclaringType.ValidTypeName() == pi.Name){
-				return pi.Name + "Property";
+
+			var result = pi.Name;
+
+			/*if(result.EndsWith("wrapper")){
+				result = result.Remove(result.Length-7);
+			}*/
+
+			if(pi.DeclaringType.ValidTypeName() == result){
+				return result + "Property";
 			}
-			return pi.Name;
+			return result;
 		}
 
 		/// <summary>

@@ -6,30 +6,27 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionsetwrapper.htm
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionset.htm
 	/// </summary>
-	internal  partial class PropertySetDefinitionSet : PropertySetDefinitionSet 
+	internal  partial class PropertySetDefinitionSet 
 	{
-		public String id {get;set;}
+		public PropertySet[] Items {get;set;}
 
-		public String path {get;set;}
+		public String[] itemType {get;set;}
 
-		public String[] pos {get;set;}
+		public aggregateType[] cType {get;set;}
 
-		public PropertySetDefinitionSet(String id,
-				String path,
-				String[] pos,
-				PropertySet[] items,
+		public String[] arraySize {get;set;}
+
+		public PropertySetDefinitionSet(PropertySet[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base(items,
-				itemType,
-				cType,
-				arraySize)
+				String[] arraySize)
 		{
-			this.id = id;
-			this.path = path;
-			this.pos = pos;
+			this.Items = items;
+			this.itemType = itemType;
+			this.cType = cType;
+			this.arraySize = arraySize;
 		}
 	}
 }

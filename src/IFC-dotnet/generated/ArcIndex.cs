@@ -6,30 +6,27 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarcindexwrapper.htm
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarcindex.htm
 	/// </summary>
-	internal  partial class ArcIndex : ArcIndex 
+	internal  partial class ArcIndex 
 	{
-		public String id {get;set;}
+		public String[] itemType {get;set;}
 
-		public String path {get;set;}
+		public aggregateType[] cType {get;set;}
 
-		public String[] pos {get;set;}
+		public String[] arraySize {get;set;}
 
-		public ArcIndex(String id,
-				String path,
-				String[] pos,
-				String[] itemType,
+		public Int64[] Text {get;set;}
+
+		public ArcIndex(String[] itemType,
 				aggregateType[] cType,
 				String[] arraySize,
-				Int64[] text) : base(itemType,
-				cType,
-				arraySize,
-				text)
+				Int64[] text)
 		{
-			this.id = id;
-			this.path = path;
-			this.pos = pos;
+			this.itemType = itemType;
+			this.cType = cType;
+			this.arraySize = arraySize;
+			this.Text = text;
 		}
 	}
 }
