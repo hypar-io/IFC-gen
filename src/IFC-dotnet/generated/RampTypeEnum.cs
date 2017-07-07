@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramptypeenum.htm
 	/// </summary>
-	public enum RampTypeEnum 
+	internal enum RampTypeEnum 
 	{
 		STRAIGHT_RUN_RAMP,
 		TWO_STRAIGHT_RUN_RAMP,

@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobject.htm
 	/// </summary>
-	public abstract partial class IfcObject : ObjectDefinition 
+	internal abstract partial class IfcObject : ObjectDefinition 
 	{
 		public RelDefinesByObject IsDeclaredBy {get;set;}
 

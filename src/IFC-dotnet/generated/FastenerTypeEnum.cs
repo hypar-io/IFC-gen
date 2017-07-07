@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastenertypeenum.htm
 	/// </summary>
-	public enum FastenerTypeEnum 
+	internal enum FastenerTypeEnum 
 	{
 		GLUE,
 		MORTAR,

@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassemblytypeenum.htm
 	/// </summary>
-	public enum ElementAssemblyTypeEnum 
+	internal enum ElementAssemblyTypeEnum 
 	{
 		ACCESSORY_ASSEMBLY,
 		ARCH,

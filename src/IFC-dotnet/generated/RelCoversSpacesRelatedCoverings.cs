@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelcoversspacesrelatedcoverings.htm
 	/// </summary>
-	internal  partial class RelCoversSpacesRelatedCoverings : Object 
+	internal  partial class RelCoversSpacesRelatedCoverings 
 	{
 		public Covering[] IfcCovering {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public RelCoversSpacesRelatedCoverings(Covering[] ifcCovering,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcCovering = ifcCovering;
 			this.itemType = itemType;

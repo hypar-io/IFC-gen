@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyreferencevaluepropertyreference.htm
 	/// </summary>
-	internal  partial class PropertyReferenceValuePropertyReference : Object 
+	internal  partial class PropertyReferenceValuePropertyReference 
 	{
 		public Entity Item {get;set;}
 
-		public PropertyReferenceValuePropertyReference(Entity item) : base()
+		public PropertyReferenceValuePropertyReference(Entity item)
 		{
 			this.Item = item;
 		}

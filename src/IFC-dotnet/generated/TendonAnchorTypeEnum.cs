@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchortypeenum.htm
 	/// </summary>
-	public enum TendonAnchorTypeEnum 
+	internal enum TendonAnchorTypeEnum 
 	{
 		COUPLER,
 		FIXED_END,

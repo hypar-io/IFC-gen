@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightintensitydistributiondistributiondata.htm
 	/// </summary>
-	internal  partial class LightIntensityDistributionDistributionData : Object 
+	internal  partial class LightIntensityDistributionDistributionData 
 	{
 		public LightDistributionData[] IfcLightDistributionData {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public LightIntensityDistributionDistributionData(LightDistributionData[] ifcLightDistributionData,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcLightDistributionData = ifcLightDistributionData;
 			this.itemType = itemType;

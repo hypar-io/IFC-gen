@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystemtypeenum.htm
 	/// </summary>
-	public enum BuildingSystemTypeEnum 
+	internal enum BuildingSystemTypeEnum 
 	{
 		FENESTRATION,
 		FOUNDATION,

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociateslibraryrelatinglibrary.htm
 	/// </summary>
-	internal  partial class RelAssociatesLibraryRelatingLibrary : Object 
+	internal  partial class RelAssociatesLibraryRelatingLibrary 
 	{
 		public Entity Item {get;set;}
 
-		public RelAssociatesLibraryRelatingLibrary(Entity item) : base()
+		public RelAssociatesLibraryRelatingLibrary(Entity item)
 		{
 			this.Item = item;
 		}

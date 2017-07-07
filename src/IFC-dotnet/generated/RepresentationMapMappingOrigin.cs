@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrepresentationmapmappingorigin.htm
 	/// </summary>
-	internal  partial class RepresentationMapMappingOrigin : Object 
+	internal  partial class RepresentationMapMappingOrigin 
 	{
 		public Placement Item {get;set;}
 
-		public RepresentationMapMappingOrigin(Placement item) : base()
+		public RepresentationMapMappingOrigin(Placement item)
 		{
 			this.Item = item;
 		}

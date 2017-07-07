@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastylefillstyles.htm
 	/// </summary>
-	internal  partial class FillAreaStyleFillStyles : Object 
+	internal  partial class FillAreaStyleFillStyles 
 	{
 		public Entity[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public FillAreaStyleFillStyles(Entity[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

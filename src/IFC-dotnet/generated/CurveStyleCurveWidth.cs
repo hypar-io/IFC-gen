@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylecurvewidth.htm
 	/// </summary>
-	internal  partial class CurveStyleCurveWidth : Object 
+	internal  partial class CurveStyleCurveWidth 
 	{
 		public Object Item {get;set;}
 
-		public CurveStyleCurveWidth(Object item) : base()
+		public CurveStyleCurveWidth(Object item)
 		{
 			this.Item = item;
 		}

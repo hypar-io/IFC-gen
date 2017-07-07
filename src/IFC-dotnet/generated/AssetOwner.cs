@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcassetowner.htm
 	/// </summary>
-	internal  partial class AssetOwner : Object 
+	internal  partial class AssetOwner 
 	{
 		public Entity Item {get;set;}
 
-		public AssetOwner(Entity item) : base()
+		public AssetOwner(Entity item)
 		{
 			this.Item = item;
 		}

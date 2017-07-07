@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralanalysismodelhasresults.htm
 	/// </summary>
-	internal  partial class StructuralAnalysisModelHasResults : Object 
+	internal  partial class StructuralAnalysisModelHasResults 
 	{
 		public StructuralResultGroup[] IfcStructuralResultGroup {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public StructuralAnalysisModelHasResults(StructuralResultGroup[] ifcStructuralResultGroup,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcStructuralResultGroup = ifcStructuralResultGroup;
 			this.itemType = itemType;

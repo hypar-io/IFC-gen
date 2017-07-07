@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralanalysismodel.htm
 	/// </summary>
-	internal  partial class StructuralAnalysisModel : System 
+	internal  partial class StructuralAnalysisModel : IfcSystem 
 	{
 		public Axis2Placement3D OrientationOf2DPlane {get;set;}
 

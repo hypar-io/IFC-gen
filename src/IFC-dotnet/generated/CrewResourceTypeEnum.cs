@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresourcetypeenum.htm
 	/// </summary>
-	public enum CrewResourceTypeEnum 
+	internal enum CrewResourceTypeEnum 
 	{
 		OFFICE,
 		SITE,

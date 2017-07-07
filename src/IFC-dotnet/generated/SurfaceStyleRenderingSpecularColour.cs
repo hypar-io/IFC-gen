@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerenderingspecularcolour.htm
 	/// </summary>
-	internal  partial class SurfaceStyleRenderingSpecularColour : Object 
+	internal  partial class SurfaceStyleRenderingSpecularColour 
 	{
 		public Object Item {get;set;}
 
-		public SurfaceStyleRenderingSpecularColour(Object item) : base()
+		public SurfaceStyleRenderingSpecularColour(Object item)
 		{
 			this.Item = item;
 		}

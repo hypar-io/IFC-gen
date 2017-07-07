@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairtypeenum.htm
 	/// </summary>
-	public enum StairTypeEnum 
+	internal enum StairTypeEnum 
 	{
 		STRAIGHT_RUN_STAIR,
 		TWO_STRAIGHT_RUN_STAIR,

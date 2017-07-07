@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesdocumentrelatingdocument.htm
 	/// </summary>
-	internal  partial class RelAssociatesDocumentRelatingDocument : Object 
+	internal  partial class RelAssociatesDocumentRelatingDocument 
 	{
 		public Entity Item {get;set;}
 
-		public RelAssociatesDocumentRelatingDocument(Entity item) : base()
+		public RelAssociatesDocumentRelatingDocument(Entity item)
 		{
 			this.Item = item;
 		}

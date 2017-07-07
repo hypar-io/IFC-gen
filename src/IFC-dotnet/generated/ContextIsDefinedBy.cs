@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontextisdefinedby.htm
 	/// </summary>
-	internal  partial class ContextIsDefinedBy : Object 
+	internal  partial class ContextIsDefinedBy 
 	{
 		public RelDefinesByProperties[] IfcRelDefinesByProperties {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ContextIsDefinedBy(RelDefinesByProperties[] ifcRelDefinesByProperties,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRelDefinesByProperties = ifcRelDefinesByProperties;
 			this.itemType = itemType;

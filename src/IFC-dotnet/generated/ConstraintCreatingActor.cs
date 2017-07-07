@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstraintcreatingactor.htm
 	/// </summary>
-	internal  partial class ConstraintCreatingActor : Object 
+	internal  partial class ConstraintCreatingActor 
 	{
 		public Entity Item {get;set;}
 
-		public ConstraintCreatingActor(Entity item) : base()
+		public ConstraintCreatingActor(Entity item)
 		{
 			this.Item = item;
 		}

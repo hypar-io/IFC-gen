@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsequenceenum.htm
 	/// </summary>
-	public enum SequenceEnum 
+	internal enum SequenceEnum 
 	{
 		START_START,
 		START_FINISH,

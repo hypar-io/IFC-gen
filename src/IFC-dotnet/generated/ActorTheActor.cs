@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactortheactor.htm
 	/// </summary>
-	internal  partial class ActorTheActor : Object 
+	internal  partial class ActorTheActor 
 	{
 		public Entity Item {get;set;}
 
-		public ActorTheActor(Entity item) : base()
+		public ActorTheActor(Entity item)
 		{
 			this.Item = item;
 		}

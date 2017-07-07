@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectivebenchmarkvalues.htm
 	/// </summary>
-	internal  partial class ObjectiveBenchmarkValues : Object 
+	internal  partial class ObjectiveBenchmarkValues 
 	{
 		public Constraint[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ObjectiveBenchmarkValues(Constraint[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

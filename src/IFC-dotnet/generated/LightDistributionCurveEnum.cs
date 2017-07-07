@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributioncurveenum.htm
 	/// </summary>
-	public enum LightDistributionCurveEnum 
+	internal enum LightDistributionCurveEnum 
 	{
 		TYPE_A,
 		TYPE_B,

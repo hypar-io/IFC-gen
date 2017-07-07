@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertytablevaluedefinedvalues.htm
 	/// </summary>
-	internal  partial class PropertyTableValueDefinedValues : Object 
+	internal  partial class PropertyTableValueDefinedValues 
 	{
 		public Object[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PropertyTableValueDefinedValues(Object[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransitioncode.htm
 	/// </summary>
-	public enum TransitionCode 
+	internal enum TransitionCode 
 	{
 		DISCONTINUOUS,
 		CONTINUOUS,

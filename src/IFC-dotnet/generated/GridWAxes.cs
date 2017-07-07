@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridwaxes.htm
 	/// </summary>
-	internal  partial class GridWAxes : Object 
+	internal  partial class GridWAxes 
 	{
 		public GridAxis[] IfcGridAxis {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public GridWAxes(GridAxis[] ifcGridAxis,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcGridAxis = ifcGridAxis;
 			this.itemType = itemType;

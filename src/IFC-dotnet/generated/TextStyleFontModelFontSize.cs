@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefontmodelfontsize.htm
 	/// </summary>
-	internal  partial class TextStyleFontModelFontSize : Object 
+	internal  partial class TextStyleFontModelFontSize 
 	{
 		public Object Item {get;set;}
 
-		public TextStyleFontModelFontSize(Object item) : base()
+		public TextStyleFontModelFontSize(Object item)
 		{
 			this.Item = item;
 		}

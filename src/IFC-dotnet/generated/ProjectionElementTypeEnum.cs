@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectionelementtypeenum.htm
 	/// </summary>
-	public enum ProjectionElementTypeEnum 
+	internal enum ProjectionElementTypeEnum 
 	{
 		USERDEFINED,
 		NOTDEFINED

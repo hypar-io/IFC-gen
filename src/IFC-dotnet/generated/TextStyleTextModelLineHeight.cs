@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyletextmodellineheight.htm
 	/// </summary>
-	internal  partial class TextStyleTextModelLineHeight : Object 
+	internal  partial class TextStyleTextModelLineHeight 
 	{
 		public Object Item {get;set;}
 
-		public TextStyleTextModelLineHeight(Object item) : base()
+		public TextStyleTextModelLineHeight(Object item)
 		{
 			this.Item = item;
 		}

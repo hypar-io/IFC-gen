@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystem.htm
 	/// </summary>
-	internal  partial class BuildingSystem : System 
+	internal  partial class BuildingSystem : IfcSystem 
 	{
 		public BuildingSystemTypeEnum PredefinedType {get;set;}
 

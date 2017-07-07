@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextliteralplacement.htm
 	/// </summary>
-	internal  partial class TextLiteralPlacement : Object 
+	internal  partial class TextLiteralPlacement 
 	{
 		public Placement Item {get;set;}
 
-		public TextLiteralPlacement(Placement item) : base()
+		public TextLiteralPlacement(Placement item)
 		{
 			this.Item = item;
 		}

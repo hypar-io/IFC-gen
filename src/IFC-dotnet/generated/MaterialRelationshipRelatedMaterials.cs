@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialrelationshiprelatedmaterials.htm
 	/// </summary>
-	internal  partial class MaterialRelationshipRelatedMaterials : Object 
+	internal  partial class MaterialRelationshipRelatedMaterials 
 	{
 		public Material[] IfcMaterial {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public MaterialRelationshipRelatedMaterials(Material[] ifcMaterial,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcMaterial = ifcMaterial;
 			this.itemType = itemType;

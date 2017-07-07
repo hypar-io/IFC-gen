@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompoundplaneanglemeasure.htm
 	/// </summary>
-	internal  partial class CompoundPlaneAngleMeasure : Object 
+	internal  partial class CompoundPlaneAngleMeasure 
 	{
 		public String[] itemType {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public CompoundPlaneAngleMeasure(String[] itemType,
 				aggregateType[] cType,
 				String[] arraySize,
-				Int64[] text) : base()
+				Int64[] text)
 		{
 			this.itemType = itemType;
 			this.cType = cType;

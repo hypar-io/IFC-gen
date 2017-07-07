@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctablecolumns.htm
 	/// </summary>
-	internal  partial class TableColumns : Object 
+	internal  partial class TableColumns 
 	{
 		public TableColumn[] IfcTableColumn {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TableColumns(TableColumn[] ifcTableColumn,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcTableColumn = ifcTableColumn;
 			this.itemType = itemType;

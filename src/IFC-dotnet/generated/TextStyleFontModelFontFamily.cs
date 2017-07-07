@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefontmodelfontfamily.htm
 	/// </summary>
-	internal  partial class TextStyleFontModelFontFamily : Object 
+	internal  partial class TextStyleFontModelFontFamily 
 	{
 		public TextFontNamewrapper[] IfcTextFontNamewrapper {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TextStyleFontModelFontFamily(TextFontNamewrapper[] ifcTextFontNamewrapper,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcTextFontNamewrapper = ifcTextFontNamewrapper;
 			this.itemType = itemType;

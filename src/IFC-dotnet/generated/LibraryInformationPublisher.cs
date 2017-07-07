@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryinformationpublisher.htm
 	/// </summary>
-	internal  partial class LibraryInformationPublisher : Object 
+	internal  partial class LibraryInformationPublisher 
 	{
 		public Entity Item {get;set;}
 
-		public LibraryInformationPublisher(Entity item) : base()
+		public LibraryInformationPublisher(Entity item)
 		{
 			this.Item = item;
 		}

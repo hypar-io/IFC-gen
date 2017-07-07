@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionresourcebasecosts.htm
 	/// </summary>
-	internal  partial class ConstructionResourceBaseCosts : Object 
+	internal  partial class ConstructionResourceBaseCosts 
 	{
 		public AppliedValue[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ConstructionResourceBaseCosts(AppliedValue[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

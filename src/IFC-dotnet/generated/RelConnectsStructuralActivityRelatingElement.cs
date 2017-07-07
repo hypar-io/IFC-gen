@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsstructuralactivityrelatingelement.htm
 	/// </summary>
-	internal  partial class RelConnectsStructuralActivityRelatingElement : Object 
+	internal  partial class RelConnectsStructuralActivityRelatingElement 
 	{
 		public Product Item {get;set;}
 
-		public RelConnectsStructuralActivityRelatingElement(Product item) : base()
+		public RelConnectsStructuralActivityRelatingElement(Product item)
 		{
 			this.Item = item;
 		}

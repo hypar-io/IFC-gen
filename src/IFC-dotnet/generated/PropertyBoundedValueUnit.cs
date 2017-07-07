@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyboundedvalueunit.htm
 	/// </summary>
-	internal  partial class PropertyBoundedValueUnit : Object 
+	internal  partial class PropertyBoundedValueUnit 
 	{
 		public Entity Item {get;set;}
 
-		public PropertyBoundedValueUnit(Entity item) : base()
+		public PropertyBoundedValueUnit(Entity item)
 		{
 			this.Item = item;
 		}

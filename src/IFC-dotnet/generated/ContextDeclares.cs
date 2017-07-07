@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontextdeclares.htm
 	/// </summary>
-	internal  partial class ContextDeclares : Object 
+	internal  partial class ContextDeclares 
 	{
 		public RelDeclares[] IfcRelDeclares {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ContextDeclares(RelDeclares[] ifcRelDeclares,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRelDeclares = ifcRelDeclares;
 			this.itemType = itemType;

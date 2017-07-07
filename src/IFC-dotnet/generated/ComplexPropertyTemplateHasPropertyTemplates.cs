@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexpropertytemplatehaspropertytemplates.htm
 	/// </summary>
-	internal  partial class ComplexPropertyTemplateHasPropertyTemplates : Object 
+	internal  partial class ComplexPropertyTemplateHasPropertyTemplates 
 	{
 		public PropertyTemplate[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ComplexPropertyTemplateHasPropertyTemplates(PropertyTemplate[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

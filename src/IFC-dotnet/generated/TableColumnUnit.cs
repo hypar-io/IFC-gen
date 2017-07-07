@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctablecolumnunit.htm
 	/// </summary>
-	internal  partial class TableColumnUnit : Object 
+	internal  partial class TableColumnUnit 
 	{
 		public Entity Item {get;set;}
 
-		public TableColumnUnit(Entity item) : base()
+		public TableColumnUnit(Entity item)
 		{
 			this.Item = item;
 		}

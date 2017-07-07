@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocess.htm
 	/// </summary>
-	internal abstract partial class Process : Object 
+	internal abstract partial class Process : IfcObject 
 	{
 		public String Identification {get;set;}
 

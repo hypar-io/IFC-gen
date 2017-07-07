@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveboundedsurfaceboundaries.htm
 	/// </summary>
-	internal  partial class CurveBoundedSurfaceBoundaries : Object 
+	internal  partial class CurveBoundedSurfaceBoundaries 
 	{
 		public BoundaryCurve[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public CurveBoundedSurfaceBoundaries(BoundaryCurve[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

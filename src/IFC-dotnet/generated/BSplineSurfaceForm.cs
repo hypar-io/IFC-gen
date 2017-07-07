@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurfaceform.htm
 	/// </summary>
-	public enum BSplineSurfaceForm 
+	internal enum BSplineSurfaceForm 
 	{
 		PLANE_SURF,
 		CYLINDRICAL_SURF,

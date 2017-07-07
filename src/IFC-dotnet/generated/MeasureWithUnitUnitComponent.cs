@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmeasurewithunitunitcomponent.htm
 	/// </summary>
-	internal  partial class MeasureWithUnitUnitComponent : Object 
+	internal  partial class MeasureWithUnitUnitComponent 
 	{
 		public Entity Item {get;set;}
 
-		public MeasureWithUnitUnitComponent(Entity item) : base()
+		public MeasureWithUnitUnitComponent(Entity item)
 		{
 			this.Item = item;
 		}

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoproductrelatingproduct.htm
 	/// </summary>
-	internal  partial class RelAssignsToProductRelatingProduct : Object 
+	internal  partial class RelAssignsToProductRelatingProduct 
 	{
 		public ObjectDefinition Item {get;set;}
 
-		public RelAssignsToProductRelatingProduct(ObjectDefinition item) : base()
+		public RelAssignsToProductRelatingProduct(ObjectDefinition item)
 		{
 			this.Item = item;
 		}

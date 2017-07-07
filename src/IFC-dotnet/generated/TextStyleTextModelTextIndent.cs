@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyletextmodeltextindent.htm
 	/// </summary>
-	internal  partial class TextStyleTextModelTextIndent : Object 
+	internal  partial class TextStyleTextModelTextIndent 
 	{
 		public Object Item {get;set;}
 
-		public TextStyleTextModelTextIndent(Object item) : base()
+		public TextStyleTextModelTextIndent(Object item)
 		{
 			this.Item = item;
 		}

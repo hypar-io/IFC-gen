@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductrepresentationrepresentations.htm
 	/// </summary>
-	internal  partial class ProductRepresentationRepresentations : Object 
+	internal  partial class ProductRepresentationRepresentations 
 	{
 		public Representation[] IfcRepresentation {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ProductRepresentationRepresentations(Representation[] ifcRepresentation,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRepresentation = ifcRepresentation;
 			this.itemType = itemType;

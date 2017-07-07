@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectdefinitionisnestedby.htm
 	/// </summary>
-	internal  partial class ObjectDefinitionIsNestedBy : Object 
+	internal  partial class ObjectDefinitionIsNestedBy 
 	{
 		public RelNests[] IfcRelNests {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ObjectDefinitionIsNestedBy(RelNests[] ifcRelNests,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRelNests = ifcRelNests;
 			this.itemType = itemType;

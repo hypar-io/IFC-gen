@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelementtypeenum.htm
 	/// </summary>
-	public enum ExternalSpatialElementTypeEnum 
+	internal enum ExternalSpatialElementTypeEnum 
 	{
 		EXTERNAL,
 		EXTERNAL_EARTH,

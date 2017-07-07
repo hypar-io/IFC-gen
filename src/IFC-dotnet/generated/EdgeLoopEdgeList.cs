@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgeloopedgelist.htm
 	/// </summary>
-	internal  partial class EdgeLoopEdgeList : Object 
+	internal  partial class EdgeLoopEdgeList 
 	{
 		public OrientedEdge[] IfcOrientedEdge {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public EdgeLoopEdgeList(OrientedEdge[] ifcOrientedEdge,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcOrientedEdge = ifcOrientedEdge;
 			this.itemType = itemType;

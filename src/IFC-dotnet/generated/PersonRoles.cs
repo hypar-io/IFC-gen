@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpersonroles.htm
 	/// </summary>
-	internal  partial class PersonRoles : Object 
+	internal  partial class PersonRoles 
 	{
 		public ActorRole[] IfcActorRole {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PersonRoles(ActorRole[] ifcActorRole,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcActorRole = ifcActorRole;
 			this.itemType = itemType;

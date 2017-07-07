@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcglobalorlocalenum.htm
 	/// </summary>
-	public enum GlobalOrLocalEnum 
+	internal enum GlobalOrLocalEnum 
 	{
 		GLOBAL_COORDS,
 		LOCAL_COORDS

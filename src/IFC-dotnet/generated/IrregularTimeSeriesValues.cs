@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcirregulartimeseriesvalues.htm
 	/// </summary>
-	internal  partial class IrregularTimeSeriesValues : Object 
+	internal  partial class IrregularTimeSeriesValues 
 	{
 		public IrregularTimeSeriesValue[] IfcIrregularTimeSeriesValue {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public IrregularTimeSeriesValues(IrregularTimeSeriesValue[] ifcIrregularTimeSeriesValue,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcIrregularTimeSeriesValue = ifcIrregularTimeSeriesValue;
 			this.itemType = itemType;

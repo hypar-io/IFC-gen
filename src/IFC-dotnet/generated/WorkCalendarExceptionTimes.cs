@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcalendarexceptiontimes.htm
 	/// </summary>
-	internal  partial class WorkCalendarExceptionTimes : Object 
+	internal  partial class WorkCalendarExceptionTimes 
 	{
 		public WorkTime[] IfcWorkTime {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public WorkCalendarExceptionTimes(WorkTime[] ifcWorkTime,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcWorkTime = ifcWorkTime;
 			this.itemType = itemType;

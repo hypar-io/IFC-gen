@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysinglevaluenominalvalue.htm
 	/// </summary>
-	internal  partial class PropertySingleValueNominalValue : Object 
+	internal  partial class PropertySingleValueNominalValue 
 	{
 		public Object Item {get;set;}
 
-		public PropertySingleValueNominalValue(Object item) : base()
+		public PropertySingleValueNominalValue(Object item)
 		{
 			this.Item = item;
 		}

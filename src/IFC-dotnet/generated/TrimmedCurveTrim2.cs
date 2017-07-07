@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmedcurvetrim2.htm
 	/// </summary>
-	internal  partial class TrimmedCurveTrim2 : Object 
+	internal  partial class TrimmedCurveTrim2 
 	{
 		public Object[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TrimmedCurveTrim2(Object[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

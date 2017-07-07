@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcontrolcreators.htm
 	/// </summary>
-	internal  partial class WorkControlCreators : Object 
+	internal  partial class WorkControlCreators 
 	{
 		public Person[] IfcPerson {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public WorkControlCreators(Person[] ifcPerson,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcPerson = ifcPerson;
 			this.itemType = itemType;

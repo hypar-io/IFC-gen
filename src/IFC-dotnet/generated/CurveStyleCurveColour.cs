@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylecurvecolour.htm
 	/// </summary>
-	internal  partial class CurveStyleCurveColour : Object 
+	internal  partial class CurveStyleCurveColour 
 	{
 		public PresentationItem Item {get;set;}
 
-		public CurveStyleCurveColour(PresentationItem item) : base()
+		public CurveStyleCurveColour(PresentationItem item)
 		{
 			this.Item = item;
 		}

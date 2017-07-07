@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/uosheader.htm
 	/// </summary>
-	internal  partial class uosHeader : Object 
+	internal  partial class uosHeader 
 	{
 		public String name {get;set;}
 
@@ -33,7 +33,7 @@ namespace IFC4
 				String preprocessor_version,
 				String originating_system,
 				String authorization,
-				String documentation) : base()
+				String documentation)
 		{
 			this.name = name;
 			this.time_stamp = time_stamp;

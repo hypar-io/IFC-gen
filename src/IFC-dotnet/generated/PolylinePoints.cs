@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolylinepoints.htm
 	/// </summary>
-	internal  partial class PolylinePoints : Object 
+	internal  partial class PolylinePoints 
 	{
 		public CartesianPoint[] IfcCartesianPoint {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PolylinePoints(CartesianPoint[] ifcCartesianPoint,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcCartesianPoint = ifcCartesianPoint;
 			this.itemType = itemType;

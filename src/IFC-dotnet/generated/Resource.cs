@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresource.htm
 	/// </summary>
-	internal abstract partial class Resource : Object 
+	internal abstract partial class Resource : IfcObject 
 	{
 		public String Identification {get;set;}
 

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentinformationdocumentowner.htm
 	/// </summary>
-	internal  partial class DocumentInformationDocumentOwner : Object 
+	internal  partial class DocumentInformationDocumentOwner 
 	{
 		public Entity Item {get;set;}
 
-		public DocumentInformationDocumentOwner(Entity item) : base()
+		public DocumentInformationDocumentOwner(Entity item)
 		{
 			this.Item = item;
 		}

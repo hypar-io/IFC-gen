@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproduct.htm
 	/// </summary>
-	internal abstract partial class Product : Object 
+	internal abstract partial class Product : IfcObject 
 	{
 		public ObjectPlacement ObjectPlacement {get;set;}
 

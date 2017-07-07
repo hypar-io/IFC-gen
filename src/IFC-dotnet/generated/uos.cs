@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/uos.htm
 	/// </summary>
-	internal abstract partial class uos : Object 
+	internal abstract partial class uos 
 	{
 		public uosHeader header {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public uos(uosHeader header,
 				String id,
 				String[] express,
-				String[] configuration) : base()
+				String[] configuration)
 		{
 			this.header = header;
 			this.id = id;

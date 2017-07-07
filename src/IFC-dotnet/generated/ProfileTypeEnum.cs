@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofiletypeenum.htm
 	/// </summary>
-	public enum ProfileTypeEnum 
+	internal enum ProfileTypeEnum 
 	{
 		CURVE,
 		AREA

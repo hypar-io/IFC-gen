@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastylehatchingstartofnexthatchline.htm
 	/// </summary>
-	internal  partial class FillAreaStyleHatchingStartOfNextHatchLine : Object 
+	internal  partial class FillAreaStyleHatchingStartOfNextHatchLine 
 	{
 		public Object Item {get;set;}
 
-		public FillAreaStyleHatchingStartOfNextHatchLine(Object item) : base()
+		public FillAreaStyleHatchingStartOfNextHatchLine(Object item)
 		{
 			this.Item = item;
 		}

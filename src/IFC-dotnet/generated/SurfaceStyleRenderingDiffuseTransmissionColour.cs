@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerenderingdiffusetransmissioncolour.htm
 	/// </summary>
-	internal  partial class SurfaceStyleRenderingDiffuseTransmissionColour : Object 
+	internal  partial class SurfaceStyleRenderingDiffuseTransmissionColour 
 	{
 		public Object Item {get;set;}
 
-		public SurfaceStyleRenderingDiffuseTransmissionColour(Object item) : base()
+		public SurfaceStyleRenderingDiffuseTransmissionColour(Object item)
 		{
 			this.Item = item;
 		}

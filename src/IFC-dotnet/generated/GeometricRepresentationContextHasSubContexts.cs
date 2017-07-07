@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationcontexthassubcontexts.htm
 	/// </summary>
-	internal  partial class GeometricRepresentationContextHasSubContexts : Object 
+	internal  partial class GeometricRepresentationContextHasSubContexts 
 	{
 		public GeometricRepresentationSubContext[] IfcGeometricRepresentationSubContext {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public GeometricRepresentationContextHasSubContexts(GeometricRepresentationSubContext[] ifcGeometricRepresentationSubContext,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcGeometricRepresentationSubContext = ifcGeometricRepresentationSubContext;
 			this.itemType = itemType;

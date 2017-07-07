@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyboundedvaluesetpointvalue.htm
 	/// </summary>
-	internal  partial class PropertyBoundedValueSetPointValue : Object 
+	internal  partial class PropertyBoundedValueSetPointValue 
 	{
 		public Object Item {get;set;}
 
-		public PropertyBoundedValueSetPointValue(Object item) : base()
+		public PropertyBoundedValueSetPointValue(Object item)
 		{
 			this.Item = item;
 		}

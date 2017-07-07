@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaddresstypeenum.htm
 	/// </summary>
-	public enum AddressTypeEnum 
+	internal enum AddressTypeEnum 
 	{
 		OFFICE,
 		SITE,

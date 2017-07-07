@@ -8,14 +8,14 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/hexbinary.htm
 	/// </summary>
-	internal  partial class hexBinary : Object 
+	internal  partial class hexBinary 
 	{
 		public String extraBits {get;set;}
 
 		public Byte[] Value {get;set;}
 
 		public hexBinary(String extraBits,
-				Byte[] value) : base()
+				Byte[] value)
 		{
 			this.extraBits = extraBits;
 			this.Value = value;

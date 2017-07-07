@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgroup.htm
 	/// </summary>
-	internal  partial class Group : Object 
+	internal  partial class Group : IfcObject 
 	{
 
 

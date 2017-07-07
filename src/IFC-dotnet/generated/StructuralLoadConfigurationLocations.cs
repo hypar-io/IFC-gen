@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadconfigurationlocations.htm
 	/// </summary>
-	internal  partial class StructuralLoadConfigurationLocations : Object 
+	internal  partial class StructuralLoadConfigurationLocations 
 	{
 		public LengthMeasurewrapper[] IfcLengthMeasurewrapper {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public StructuralLoadConfigurationLocations(LengthMeasurewrapper[] ifcLengthMeasurewrapper,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcLengthMeasurewrapper = ifcLengthMeasurewrapper;
 			this.itemType = itemType;

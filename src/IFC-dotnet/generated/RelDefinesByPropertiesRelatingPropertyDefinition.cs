@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbypropertiesrelatingpropertydefinition.htm
 	/// </summary>
-	internal  partial class RelDefinesByPropertiesRelatingPropertyDefinition : Object 
+	internal  partial class RelDefinesByPropertiesRelatingPropertyDefinition 
 	{
 		public Object Item {get;set;}
 
-		public RelDefinesByPropertiesRelatingPropertyDefinition(Object item) : base()
+		public RelDefinesByPropertiesRelatingPropertyDefinition(Object item)
 		{
 			this.Item = item;
 		}

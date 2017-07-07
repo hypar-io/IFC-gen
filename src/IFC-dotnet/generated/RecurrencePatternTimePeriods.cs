@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencepatterntimeperiods.htm
 	/// </summary>
-	internal  partial class RecurrencePatternTimePeriods : Object 
+	internal  partial class RecurrencePatternTimePeriods 
 	{
 		public TimePeriod[] IfcTimePeriod {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public RecurrencePatternTimePeriods(TimePeriod[] ifcTimePeriod,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcTimePeriod = ifcTimePeriod;
 			this.itemType = itemType;

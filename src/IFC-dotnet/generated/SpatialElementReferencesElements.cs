@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialelementreferenceselements.htm
 	/// </summary>
-	internal  partial class SpatialElementReferencesElements : Object 
+	internal  partial class SpatialElementReferencesElements 
 	{
 		public RelReferencedInSpatialStructure[] IfcRelReferencedInSpatialStructure {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public SpatialElementReferencesElements(RelReferencedInSpatialStructure[] ifcRelReferencedInSpatialStructure,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRelReferencedInSpatialStructure = ifcRelReferencedInSpatialStructure;
 			this.itemType = itemType;

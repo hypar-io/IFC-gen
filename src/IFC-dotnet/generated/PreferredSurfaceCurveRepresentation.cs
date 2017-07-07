@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpreferredsurfacecurverepresentation.htm
 	/// </summary>
-	public enum PreferredSurfaceCurveRepresentation 
+	internal enum PreferredSurfaceCurveRepresentation 
 	{
 		CURVE3D,
 		PCURVE_S1,

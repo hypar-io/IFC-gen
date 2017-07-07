@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpostaladdressaddresslines.htm
 	/// </summary>
-	internal  partial class PostalAddressAddressLines : Object 
+	internal  partial class PostalAddressAddressLines 
 	{
 		public Labelwrapper[] IfcLabelwrapper {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PostalAddressAddressLines(Labelwrapper[] ifcLabelwrapper,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcLabelwrapper = ifcLabelwrapper;
 			this.itemType = itemType;

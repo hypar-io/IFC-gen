@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionsourcetypeenum.htm
 	/// </summary>
-	public enum ActionSourceTypeEnum 
+	internal enum ActionSourceTypeEnum 
 	{
 		DEAD_LOAD_G,
 		COMPLETION_G1,

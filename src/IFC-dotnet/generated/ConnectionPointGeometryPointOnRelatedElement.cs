@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionpointgeometrypointonrelatedelement.htm
 	/// </summary>
-	internal  partial class ConnectionPointGeometryPointOnRelatedElement : Object 
+	internal  partial class ConnectionPointGeometryPointOnRelatedElement 
 	{
 		public RepresentationItem Item {get;set;}
 
-		public ConnectionPointGeometryPointOnRelatedElement(RepresentationItem item) : base()
+		public ConnectionPointGeometryPointOnRelatedElement(RepresentationItem item)
 		{
 			this.Item = item;
 		}

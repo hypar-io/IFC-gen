@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationlayerassignmentassigneditems.htm
 	/// </summary>
-	internal  partial class PresentationLayerAssignmentAssignedItems : Object 
+	internal  partial class PresentationLayerAssignmentAssignedItems 
 	{
 		public Entity[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PresentationLayerAssignmentAssignedItems(Entity[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

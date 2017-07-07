@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialelementcontainselements.htm
 	/// </summary>
-	internal  partial class SpatialElementContainsElements : Object 
+	internal  partial class SpatialElementContainsElements 
 	{
 		public RelContainedInSpatialStructure[] IfcRelContainedInSpatialStructure {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public SpatialElementContainsElements(RelContainedInSpatialStructure[] ifcRelContainedInSpatialStructure,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRelContainedInSpatialStructure = ifcRelContainedInSpatialStructure;
 			this.itemType = itemType;

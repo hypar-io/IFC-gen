@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyenumerationunit.htm
 	/// </summary>
-	internal  partial class PropertyEnumerationUnit : Object 
+	internal  partial class PropertyEnumerationUnit 
 	{
 		public Entity Item {get;set;}
 
-		public PropertyEnumerationUnit(Entity item) : base()
+		public PropertyEnumerationUnit(Entity item)
 		{
 			this.Item = item;
 		}

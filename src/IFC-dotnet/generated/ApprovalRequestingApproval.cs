@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcapprovalrequestingapproval.htm
 	/// </summary>
-	internal  partial class ApprovalRequestingApproval : Object 
+	internal  partial class ApprovalRequestingApproval 
 	{
 		public Entity Item {get;set;}
 
-		public ApprovalRequestingApproval(Entity item) : base()
+		public ApprovalRequestingApproval(Entity item)
 		{
 			this.Item = item;
 		}

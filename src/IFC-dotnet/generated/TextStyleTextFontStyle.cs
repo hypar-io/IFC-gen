@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyletextfontstyle.htm
 	/// </summary>
-	internal  partial class TextStyleTextFontStyle : Object 
+	internal  partial class TextStyleTextFontStyle 
 	{
 		public Entity Item {get;set;}
 
-		public TextStyleTextFontStyle(Entity item) : base()
+		public TextStyleTextFontStyle(Entity item)
 		{
 			this.Item = item;
 		}

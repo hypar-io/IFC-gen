@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyletilestilingpattern.htm
 	/// </summary>
-	internal  partial class FillAreaStyleTilesTilingPattern : Object 
+	internal  partial class FillAreaStyleTilesTilingPattern 
 	{
 		public Vector[] IfcVector {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public FillAreaStyleTilesTilingPattern(Vector[] ifcVector,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcVector = ifcVector;
 			this.itemType = itemType;

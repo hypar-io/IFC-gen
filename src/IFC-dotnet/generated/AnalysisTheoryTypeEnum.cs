@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysistheorytypeenum.htm
 	/// </summary>
-	public enum AnalysisTheoryTypeEnum 
+	internal enum AnalysisTheoryTypeEnum 
 	{
 		FIRST_ORDER_THEORY,
 		SECOND_ORDER_THEORY,

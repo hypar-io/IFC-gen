@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeobjecthaspropertysets.htm
 	/// </summary>
-	internal  partial class TypeObjectHasPropertySets : Object 
+	internal  partial class TypeObjectHasPropertySets 
 	{
 		public PropertySet[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TypeObjectHasPropertySets(PropertySet[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

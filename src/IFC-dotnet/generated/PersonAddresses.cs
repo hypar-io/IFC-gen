@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpersonaddresses.htm
 	/// </summary>
-	internal  partial class PersonAddresses : Object 
+	internal  partial class PersonAddresses 
 	{
 		public Address[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PersonAddresses(Address[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

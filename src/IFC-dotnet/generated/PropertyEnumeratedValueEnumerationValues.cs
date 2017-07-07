@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyenumeratedvalueenumerationvalues.htm
 	/// </summary>
-	internal  partial class PropertyEnumeratedValueEnumerationValues : Object 
+	internal  partial class PropertyEnumeratedValueEnumerationValues 
 	{
 		public Object[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public PropertyEnumeratedValueEnumerationValues(Object[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

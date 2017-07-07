@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretypeenum.htm
 	/// </summary>
-	public enum ProcedureTypeEnum 
+	internal enum ProcedureTypeEnum 
 	{
 		ADVICE_CAUTION,
 		ADVICE_NOTE,

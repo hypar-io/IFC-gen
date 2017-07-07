@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoprocessrelatingprocess.htm
 	/// </summary>
-	internal  partial class RelAssignsToProcessRelatingProcess : Object 
+	internal  partial class RelAssignsToProcessRelatingProcess 
 	{
 		public ObjectDefinition Item {get;set;}
 
-		public RelAssignsToProcessRelatingProcess(ObjectDefinition item) : base()
+		public RelAssignsToProcessRelatingProcess(ObjectDefinition item)
 		{
 			this.Item = item;
 		}

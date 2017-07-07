@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectdefinitionisdecomposedby.htm
 	/// </summary>
-	internal  partial class ObjectDefinitionIsDecomposedBy : Object 
+	internal  partial class ObjectDefinitionIsDecomposedBy 
 	{
 		public RelAggregates[] IfcRelAggregates {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ObjectDefinitionIsDecomposedBy(RelAggregates[] ifcRelAggregates,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRelAggregates = ifcRelAggregates;
 			this.itemType = itemType;

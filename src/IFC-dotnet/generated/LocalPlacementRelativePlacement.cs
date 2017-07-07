@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclocalplacementrelativeplacement.htm
 	/// </summary>
-	internal  partial class LocalPlacementRelativePlacement : Object 
+	internal  partial class LocalPlacementRelativePlacement 
 	{
 		public Placement Item {get;set;}
 
-		public LocalPlacementRelativePlacement(Placement item) : base()
+		public LocalPlacementRelativePlacement(Placement item)
 		{
 			this.Item = item;
 		}

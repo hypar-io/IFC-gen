@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturemapvertices.htm
 	/// </summary>
-	internal  partial class TextureMapVertices : Object 
+	internal  partial class TextureMapVertices 
 	{
 		public TextureVertex[] IfcTextureVertex {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TextureMapVertices(TextureVertex[] ifcTextureVertex,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcTextureVertex = ifcTextureVertex;
 			this.itemType = itemType;

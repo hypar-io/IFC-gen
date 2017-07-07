@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelservicesbuildingsrelatedbuildings.htm
 	/// </summary>
-	internal  partial class RelServicesBuildingsRelatedBuildings : Object 
+	internal  partial class RelServicesBuildingsRelatedBuildings 
 	{
 		public SpatialZone[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public RelServicesBuildingsRelatedBuildings(SpatialZone[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

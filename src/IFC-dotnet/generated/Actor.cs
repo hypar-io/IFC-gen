@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactor.htm
 	/// </summary>
-	internal  partial class Actor : Object 
+	internal  partial class Actor : IfcObject 
 	{
 		public ActorTheActor TheActor {get;set;}
 

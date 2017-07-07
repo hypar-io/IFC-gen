@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplateprimaryunit.htm
 	/// </summary>
-	internal  partial class SimplePropertyTemplatePrimaryUnit : Object 
+	internal  partial class SimplePropertyTemplatePrimaryUnit 
 	{
 		public Entity Item {get;set;}
 
-		public SimplePropertyTemplatePrimaryUnit(Entity item) : base()
+		public SimplePropertyTemplatePrimaryUnit(Entity item)
 		{
 			this.Item = item;
 		}

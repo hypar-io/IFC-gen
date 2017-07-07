@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationreferencehasreferences.htm
 	/// </summary>
-	internal  partial class ClassificationReferenceHasReferences : Object 
+	internal  partial class ClassificationReferenceHasReferences 
 	{
 		public ClassificationReference[] IfcClassificationReference {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ClassificationReferenceHasReferences(ClassificationReference[] ifcClassificationReference,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcClassificationReference = ifcClassificationReference;
 			this.itemType = itemType;

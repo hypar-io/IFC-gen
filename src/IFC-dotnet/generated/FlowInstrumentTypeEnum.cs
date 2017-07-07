@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrumenttypeenum.htm
 	/// </summary>
-	public enum FlowInstrumentTypeEnum 
+	internal enum FlowInstrumentTypeEnum 
 	{
 		PRESSUREGAUGE,
 		THERMOMETER,

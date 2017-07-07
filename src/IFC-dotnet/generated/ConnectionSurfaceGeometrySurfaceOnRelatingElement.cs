@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionsurfacegeometrysurfaceonrelatingelement.htm
 	/// </summary>
-	internal  partial class ConnectionSurfaceGeometrySurfaceOnRelatingElement : Object 
+	internal  partial class ConnectionSurfaceGeometrySurfaceOnRelatingElement 
 	{
 		public RepresentationItem Item {get;set;}
 
-		public ConnectionSurfaceGeometrySurfaceOnRelatingElement(RepresentationItem item) : base()
+		public ConnectionSurfaceGeometrySurfaceOnRelatingElement(RepresentationItem item)
 		{
 			this.Item = item;
 		}

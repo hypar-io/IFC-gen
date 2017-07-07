@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialdefinitionhasproperties.htm
 	/// </summary>
-	internal  partial class MaterialDefinitionHasProperties : Object 
+	internal  partial class MaterialDefinitionHasProperties 
 	{
 		public MaterialProperties[] IfcMaterialProperties {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public MaterialDefinitionHasProperties(MaterialProperties[] ifcMaterialProperties,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcMaterialProperties = ifcMaterialProperties;
 			this.itemType = itemType;

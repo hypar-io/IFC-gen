@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyletilestiles.htm
 	/// </summary>
-	internal  partial class FillAreaStyleTilesTiles : Object 
+	internal  partial class FillAreaStyleTilesTiles 
 	{
 		public StyledItem[] IfcStyledItem {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public FillAreaStyleTilesTiles(StyledItem[] ifcStyledItem,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcStyledItem = ifcStyledItem;
 			this.itemType = itemType;

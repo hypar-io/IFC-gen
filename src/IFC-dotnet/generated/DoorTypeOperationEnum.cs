@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeoperationenum.htm
 	/// </summary>
-	public enum DoorTypeOperationEnum 
+	internal enum DoorTypeOperationEnum 
 	{
 		SINGLE_SWING_LEFT,
 		SINGLE_SWING_RIGHT,

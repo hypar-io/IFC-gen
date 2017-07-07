@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclagtimelagvalue.htm
 	/// </summary>
-	internal  partial class LagTimeLagValue : Object 
+	internal  partial class LagTimeLagValue 
 	{
 		public Object Item {get;set;}
 
-		public LagTimeLagValue(Object item) : base()
+		public LagTimeLagValue(Object item)
 		{
 			this.Item = item;
 		}

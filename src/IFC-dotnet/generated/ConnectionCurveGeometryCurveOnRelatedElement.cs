@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectioncurvegeometrycurveonrelatedelement.htm
 	/// </summary>
-	internal  partial class ConnectionCurveGeometryCurveOnRelatedElement : Object 
+	internal  partial class ConnectionCurveGeometryCurveOnRelatedElement 
 	{
 		public RepresentationItem Item {get;set;}
 
-		public ConnectionCurveGeometryCurveOnRelatedElement(RepresentationItem item) : base()
+		public ConnectionCurveGeometryCurveOnRelatedElement(RepresentationItem item)
 		{
 			this.Item = item;
 		}

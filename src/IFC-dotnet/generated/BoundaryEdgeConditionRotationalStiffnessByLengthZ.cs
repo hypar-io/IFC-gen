@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryedgeconditionrotationalstiffnessbylengthz.htm
 	/// </summary>
-	internal  partial class BoundaryEdgeConditionRotationalStiffnessByLengthZ : Object 
+	internal  partial class BoundaryEdgeConditionRotationalStiffnessByLengthZ 
 	{
 		public Object Item {get;set;}
 
-		public BoundaryEdgeConditionRotationalStiffnessByLengthZ(Object item) : base()
+		public BoundaryEdgeConditionRotationalStiffnessByLengthZ(Object item)
 		{
 			this.Item = item;
 		}

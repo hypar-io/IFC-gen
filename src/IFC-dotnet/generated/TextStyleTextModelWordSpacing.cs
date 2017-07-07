@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyletextmodelwordspacing.htm
 	/// </summary>
-	internal  partial class TextStyleTextModelWordSpacing : Object 
+	internal  partial class TextStyleTextModelWordSpacing 
 	{
 		public Object Item {get;set;}
 
-		public TextStyleTextModelWordSpacing(Object item) : base()
+		public TextStyleTextModelWordSpacing(Object item)
 		{
 			this.Item = item;
 		}

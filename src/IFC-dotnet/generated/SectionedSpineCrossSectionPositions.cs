@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionedspinecrosssectionpositions.htm
 	/// </summary>
-	internal  partial class SectionedSpineCrossSectionPositions : Object 
+	internal  partial class SectionedSpineCrossSectionPositions 
 	{
 		public Axis2Placement3D[] IfcAxis2Placement3D {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public SectionedSpineCrossSectionPositions(Axis2Placement3D[] ifcAxis2Placement3D,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcAxis2Placement3D = ifcAxis2Placement3D;
 			this.itemType = itemType;

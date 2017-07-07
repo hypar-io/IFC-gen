@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptortypeenum.htm
 	/// </summary>
-	public enum InterceptorTypeEnum 
+	internal enum InterceptorTypeEnum 
 	{
 		CYCLONIC,
 		GREASE,

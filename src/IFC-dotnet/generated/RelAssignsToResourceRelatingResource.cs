@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoresourcerelatingresource.htm
 	/// </summary>
-	internal  partial class RelAssignsToResourceRelatingResource : Object 
+	internal  partial class RelAssignsToResourceRelatingResource 
 	{
 		public ObjectDefinition Item {get;set;}
 
-		public RelAssignsToResourceRelatingResource(ObjectDefinition item) : base()
+		public RelAssignsToResourceRelatingResource(ObjectDefinition item)
 		{
 			this.Item = item;
 		}

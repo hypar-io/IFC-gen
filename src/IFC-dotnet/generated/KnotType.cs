@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcknottype.htm
 	/// </summary>
-	public enum KnotType 
+	internal enum KnotType 
 	{
 		UNIFORM_KNOTS,
 		QUASI_UNIFORM_KNOTS,

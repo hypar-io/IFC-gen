@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgsolidtreerootexpression.htm
 	/// </summary>
-	internal  partial class CsgSolidTreeRootExpression : Object 
+	internal  partial class CsgSolidTreeRootExpression 
 	{
 		public GeometricRepresentationItem Item {get;set;}
 
-		public CsgSolidTreeRootExpression(GeometricRepresentationItem item) : base()
+		public CsgSolidTreeRootExpression(GeometricRepresentationItem item)
 		{
 			this.Item = item;
 		}

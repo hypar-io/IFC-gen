@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundarynodeconditionrotationalstiffnessz.htm
 	/// </summary>
-	internal  partial class BoundaryNodeConditionRotationalStiffnessZ : Object 
+	internal  partial class BoundaryNodeConditionRotationalStiffnessZ 
 	{
 		public Object Item {get;set;}
 
-		public BoundaryNodeConditionRotationalStiffnessZ(Object item) : base()
+		public BoundaryNodeConditionRotationalStiffnessZ(Object item)
 		{
 			this.Item = item;
 		}

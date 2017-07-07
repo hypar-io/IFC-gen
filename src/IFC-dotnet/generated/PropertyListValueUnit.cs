@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertylistvalueunit.htm
 	/// </summary>
-	internal  partial class PropertyListValueUnit : Object 
+	internal  partial class PropertyListValueUnit 
 	{
 		public Entity Item {get;set;}
 
-		public PropertyListValueUnit(Entity item) : base()
+		public PropertyListValueUnit(Entity item)
 		{
 			this.Item = item;
 		}

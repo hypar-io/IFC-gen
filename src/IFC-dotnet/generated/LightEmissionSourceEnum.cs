@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightemissionsourceenum.htm
 	/// </summary>
-	public enum LightEmissionSourceEnum 
+	internal enum LightEmissionSourceEnum 
 	{
 		COMPACTFLUORESCENT,
 		FLUORESCENT,

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesclassificationrelatingclassification.htm
 	/// </summary>
-	internal  partial class RelAssociatesClassificationRelatingClassification : Object 
+	internal  partial class RelAssociatesClassificationRelatingClassification 
 	{
 		public Entity Item {get;set;}
 
-		public RelAssociatesClassificationRelatingClassification(Entity item) : base()
+		public RelAssociatesClassificationRelatingClassification(Entity item)
 		{
 			this.Item = item;
 		}

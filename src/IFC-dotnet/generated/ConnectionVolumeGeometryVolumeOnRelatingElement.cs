@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionvolumegeometryvolumeonrelatingelement.htm
 	/// </summary>
-	internal  partial class ConnectionVolumeGeometryVolumeOnRelatingElement : Object 
+	internal  partial class ConnectionVolumeGeometryVolumeOnRelatingElement 
 	{
 		public RepresentationItem Item {get;set;}
 
-		public ConnectionVolumeGeometryVolumeOnRelatingElement(RepresentationItem item) : base()
+		public ConnectionVolumeGeometryVolumeOnRelatingElement(RepresentationItem item)
 		{
 			this.Item = item;
 		}

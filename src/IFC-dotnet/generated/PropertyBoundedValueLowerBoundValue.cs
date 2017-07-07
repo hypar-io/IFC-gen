@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyboundedvaluelowerboundvalue.htm
 	/// </summary>
-	internal  partial class PropertyBoundedValueLowerBoundValue : Object 
+	internal  partial class PropertyBoundedValueLowerBoundValue 
 	{
 		public Object Item {get;set;}
 
-		public PropertyBoundedValueLowerBoundValue(Object item) : base()
+		public PropertyBoundedValueLowerBoundValue(Object item)
 		{
 			this.Item = item;
 		}

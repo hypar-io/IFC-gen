@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefittingtypeenum.htm
 	/// </summary>
-	public enum CableFittingTypeEnum 
+	internal enum CableFittingTypeEnum 
 	{
 		CONNECTOR,
 		ENTRY,

@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventoryresponsiblepersons.htm
 	/// </summary>
-	internal  partial class InventoryResponsiblePersons : Object 
+	internal  partial class InventoryResponsiblePersons 
 	{
 		public Person[] IfcPerson {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public InventoryResponsiblePersons(Person[] ifcPerson,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcPerson = ifcPerson;
 			this.itemType = itemType;

@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplatetypeenum.htm
 	/// </summary>
-	public enum PropertySetTemplateTypeEnum 
+	internal enum PropertySetTemplateTypeEnum 
 	{
 		PSET_TYPEDRIVENONLY,
 		PSET_TYPEDRIVENOVERRIDE,

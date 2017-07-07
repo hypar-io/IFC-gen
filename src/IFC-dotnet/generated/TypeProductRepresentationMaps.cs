@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeproductrepresentationmaps.htm
 	/// </summary>
-	internal  partial class TypeProductRepresentationMaps : Object 
+	internal  partial class TypeProductRepresentationMaps 
 	{
 		public RepresentationMap[] IfcRepresentationMap {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TypeProductRepresentationMaps(RepresentationMap[] ifcRepresentationMap,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRepresentationMap = ifcRepresentationMap;
 			this.itemType = itemType;

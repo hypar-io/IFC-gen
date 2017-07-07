@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseriesunit.htm
 	/// </summary>
-	internal  partial class TimeSeriesUnit : Object 
+	internal  partial class TimeSeriesUnit 
 	{
 		public Entity Item {get;set;}
 
-		public TimeSeriesUnit(Entity item) : base()
+		public TimeSeriesUnit(Entity item)
 		{
 			this.Item = item;
 		}

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcegoniometriclightdistributiondatasource.htm
 	/// </summary>
-	internal  partial class LightSourceGoniometricLightDistributionDataSource : Object 
+	internal  partial class LightSourceGoniometricLightDistributionDataSource 
 	{
 		public Entity Item {get;set;}
 
-		public LightSourceGoniometricLightDistributionDataSource(Entity item) : base()
+		public LightSourceGoniometricLightDistributionDataSource(Entity item)
 		{
 			this.Item = item;
 		}

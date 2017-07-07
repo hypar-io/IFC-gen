@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrationalbsplinesurfacewithknotsweightsdata.htm
 	/// </summary>
-	internal  partial class RationalBSplineSurfaceWithKnotsWeightsData : Object 
+	internal  partial class RationalBSplineSurfaceWithKnotsWeightsData 
 	{
 		public Realwrapper[] IfcRealwrapper {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public RationalBSplineSurfaceWithKnotsWeightsData(Realwrapper[] ifcRealwrapper,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcRealwrapper = ifcRealwrapper;
 			this.itemType = itemType;

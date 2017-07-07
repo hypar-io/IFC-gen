@@ -10,8 +10,12 @@ namespace IFC_dotnet_generate
 	internal static class TypeExtensions{
 		internal static string ValidTypeName(this Type t){
 			string result = t.Name;
-			if(t.Name.StartsWith("Ifc") && (t.Name != "IfcSystem" || t.Name != "IfcObject")){
+			if(t.Name.StartsWith("Ifc") && t.Name != "IfcSystem" && t.Name != "IfcObject"){
 				result = t.Name.Remove(0,3);
+			}
+
+			if(t.Name.EndsWith("wrapper")){
+				result = result.Remove(result.Length-7);
 			}
 			return result;
 		}
@@ -103,8 +107,8 @@ namespace IFC_dotnet_generate
 			return propertyDecl;
 		}
 
-		internal static Type[] ValidClasses(this Assembly asm){
-			return asm.GetTypes().Where(t=>t.IsPublic && t.IsClass && t.Name != "Entity" && t.Name != "IfcRoot").ToArray();
+		internal static Type[] ValidTypes(this Assembly asm){
+			return asm.GetTypes().Where(t=>t.IsPublic && t.Name != "Entity" && t.Name != "IfcRoot").ToArray();
 		}
 
 		internal static bool IsRelationship(this PropertyInfo pi){
@@ -120,7 +124,7 @@ namespace IFC_dotnet_generate
 			
 			var isInherited = t.BaseType != null;
 
-			var classSignature = isInherited?
+			var classSignature = isInherited && t.BaseType != typeof(object)?
 				$"{t.ValidTypeName()} : {t.BaseType.ValidTypeName()}":
 				$"{t.ValidTypeName()}";
 			
@@ -128,7 +132,7 @@ namespace IFC_dotnet_generate
 				t.ParameterString():
 				$"{t.ParameterString()}, {t.InheritedParameterString()}";
 			
-			var constructorSignature = t.BaseType != null?
+			var constructorSignature = t.BaseType != null && t.BaseType != typeof(object)?
 				$"({parameterString}) : base({t.BaseParameterString()})":
 				$"({parameterString})";
 			
@@ -204,8 +208,8 @@ namespace IFC4
 			}
 
 			var asm = Assembly.LoadFrom(args[0]);
-			var types = asm.GetTypes().Where(t=>t.IsPublic && t.IsClass);
-			foreach (var t in asm.ValidClasses())
+			var types = asm.GetTypes().Where(t=>t.IsPublic);
+			foreach (var t in asm.ValidTypes())
 			{
 				var csPath = Path.Combine(args[1], $"{t.ValidTypeName()}.cs");
 				File.WriteAllText(csPath, t.IsEnum? t.CSharpEnumDefinition() : t.CSharpClassDefinition());

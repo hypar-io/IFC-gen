@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplatetypeenum.htm
 	/// </summary>
-	public enum SimplePropertyTemplateTypeEnum 
+	internal enum SimplePropertyTemplateTypeEnum 
 	{
 		P_SINGLEVALUE,
 		P_ENUMERATEDVALUE,

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationcontextworldcoordinatesystem.htm
 	/// </summary>
-	internal  partial class GeometricRepresentationContextWorldCoordinateSystem : Object 
+	internal  partial class GeometricRepresentationContextWorldCoordinateSystem 
 	{
 		public Placement Item {get;set;}
 
-		public GeometricRepresentationContextWorldCoordinateSystem(Placement item) : base()
+		public GeometricRepresentationContextWorldCoordinateSystem(Placement item)
 		{
 			this.Item = item;
 		}

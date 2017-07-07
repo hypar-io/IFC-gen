@@ -10,11 +10,11 @@ namespace IFC4
 	/// </summary>
 	internal  partial class RelServicesBuildings : RelConnects 
 	{
-		public System RelatingSystem {get;set;}
+		public IfcSystem RelatingSystem {get;set;}
 
 		public RelServicesBuildingsRelatedBuildings RelatedBuildings {get;set;}
 
-		public RelServicesBuildings(System relatingSystem,
+		public RelServicesBuildings(IfcSystem relatingSystem,
 				RelServicesBuildingsRelatedBuildings relatedBuildings) : base()
 		{
 			this.RelatingSystem = relatingSystem;

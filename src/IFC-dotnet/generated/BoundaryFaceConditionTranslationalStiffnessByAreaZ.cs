@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryfaceconditiontranslationalstiffnessbyareaz.htm
 	/// </summary>
-	internal  partial class BoundaryFaceConditionTranslationalStiffnessByAreaZ : Object 
+	internal  partial class BoundaryFaceConditionTranslationalStiffnessByAreaZ 
 	{
 		public Object Item {get;set;}
 
-		public BoundaryFaceConditionTranslationalStiffnessByAreaZ(Object item) : base()
+		public BoundaryFaceConditionTranslationalStiffnessByAreaZ(Object item)
 		{
 			this.Item = item;
 		}

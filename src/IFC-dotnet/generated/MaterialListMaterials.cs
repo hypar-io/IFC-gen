@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallistmaterials.htm
 	/// </summary>
-	internal  partial class MaterialListMaterials : Object 
+	internal  partial class MaterialListMaterials 
 	{
 		public Material[] IfcMaterial {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public MaterialListMaterials(Material[] ifcMaterial,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcMaterial = ifcMaterial;
 			this.itemType = itemType;

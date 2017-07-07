@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundarynodeconditionwarpingwarpingstiffness.htm
 	/// </summary>
-	internal  partial class BoundaryNodeConditionWarpingWarpingStiffness : Object 
+	internal  partial class BoundaryNodeConditionWarpingWarpingStiffness 
 	{
 		public Object Item {get;set;}
 
-		public BoundaryNodeConditionWarpingWarpingStiffness(Object item) : base()
+		public BoundaryNodeConditionWarpingWarpingStiffness(Object item)
 		{
 			this.Item = item;
 		}

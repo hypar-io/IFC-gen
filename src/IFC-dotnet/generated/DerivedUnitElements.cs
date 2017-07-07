@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunitelements.htm
 	/// </summary>
-	internal  partial class DerivedUnitElements : Object 
+	internal  partial class DerivedUnitElements 
 	{
 		public DerivedUnitElement[] IfcDerivedUnitElement {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public DerivedUnitElements(DerivedUnitElement[] ifcDerivedUnitElement,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcDerivedUnitElement = ifcDerivedUnitElement;
 			this.itemType = itemType;

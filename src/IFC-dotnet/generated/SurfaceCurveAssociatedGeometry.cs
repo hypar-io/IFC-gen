@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacecurveassociatedgeometry.htm
 	/// </summary>
-	internal  partial class SurfaceCurveAssociatedGeometry : Object 
+	internal  partial class SurfaceCurveAssociatedGeometry 
 	{
 		public Pcurve[] IfcPcurve {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public SurfaceCurveAssociatedGeometry(Pcurve[] ifcPcurve,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcPcurve = ifcPcurve;
 			this.itemType = itemType;

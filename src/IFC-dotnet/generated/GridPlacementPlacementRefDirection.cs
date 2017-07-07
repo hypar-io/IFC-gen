@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacementplacementrefdirection.htm
 	/// </summary>
-	internal  partial class GridPlacementPlacementRefDirection : Object 
+	internal  partial class GridPlacementPlacementRefDirection 
 	{
 		public Entity Item {get;set;}
 
-		public GridPlacementPlacementRefDirection(Entity item) : base()
+		public GridPlacementPlacementRefDirection(Entity item)
 		{
 			this.Item = item;
 		}

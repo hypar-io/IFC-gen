@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarboxplacement.htm
 	/// </summary>
-	internal  partial class PlanarBoxPlacement : Object 
+	internal  partial class PlanarBoxPlacement 
 	{
 		public Placement Item {get;set;}
 
-		public PlanarBoxPlacement(Placement item) : base()
+		public PlanarBoxPlacement(Placement item)
 		{
 			this.Item = item;
 		}

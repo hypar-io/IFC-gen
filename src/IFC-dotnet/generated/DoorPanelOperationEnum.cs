@@ -6,9 +6,9 @@ using System;
 namespace IFC4
 {
 	/// <summary>
-	/// 
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpaneloperationenum.htm
 	/// </summary>
-	public enum DoorPanelOperationEnum 
+	internal enum DoorPanelOperationEnum 
 	{
 		SWINGING,
 		DOUBLE_ACTING,

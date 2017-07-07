@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontandscalingcurvefont.htm
 	/// </summary>
-	internal  partial class CurveStyleFontAndScalingCurveFont : Object 
+	internal  partial class CurveStyleFontAndScalingCurveFont 
 	{
 		public PresentationItem Item {get;set;}
 
-		public CurveStyleFontAndScalingCurveFont(PresentationItem item) : base()
+		public CurveStyleFontAndScalingCurveFont(PresentationItem item)
 		{
 			this.Item = item;
 		}

@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextendedpropertiesproperties.htm
 	/// </summary>
-	internal  partial class ExtendedPropertiesProperties : Object 
+	internal  partial class ExtendedPropertiesProperties 
 	{
 		public ComplexProperty[] Items {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ExtendedPropertiesProperties(ComplexProperty[] items,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.Items = items;
 			this.itemType = itemType;

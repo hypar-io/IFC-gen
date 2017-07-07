@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostitemcostvalues.htm
 	/// </summary>
-	internal  partial class CostItemCostValues : Object 
+	internal  partial class CostItemCostValues 
 	{
 		public CostValue[] IfcCostValue {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public CostItemCostValues(CostValue[] ifcCostValue,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcCostValue = ifcCostValue;
 			this.itemType = itemType;

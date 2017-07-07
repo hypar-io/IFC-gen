@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexnumber.htm
 	/// </summary>
-	internal  partial class ComplexNumber : Object 
+	internal  partial class ComplexNumber 
 	{
 		public String[] itemType {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public ComplexNumber(String[] itemType,
 				aggregateType[] cType,
 				String[] arraySize,
-				Double[] text) : base()
+				Double[] text)
 		{
 			this.itemType = itemType;
 			this.cType = cType;

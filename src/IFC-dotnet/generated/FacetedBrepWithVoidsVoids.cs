@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacetedbrepwithvoidsvoids.htm
 	/// </summary>
-	internal  partial class FacetedBrepWithVoidsVoids : Object 
+	internal  partial class FacetedBrepWithVoidsVoids 
 	{
 		public ClosedShell[] IfcClosedShell {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public FacetedBrepWithVoidsVoids(ClosedShell[] ifcClosedShell,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcClosedShell = ifcClosedShell;
 			this.itemType = itemType;

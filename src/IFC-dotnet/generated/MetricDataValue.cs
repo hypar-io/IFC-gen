@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetricdatavalue.htm
 	/// </summary>
-	internal  partial class MetricDataValue : Object 
+	internal  partial class MetricDataValue 
 	{
 		public Object Item {get;set;}
 
-		public MetricDataValue(Object item) : base()
+		public MetricDataValue(Object item)
 		{
 			this.Item = item;
 		}

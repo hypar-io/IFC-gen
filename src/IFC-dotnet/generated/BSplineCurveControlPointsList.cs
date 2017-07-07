@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurvecontrolpointslist.htm
 	/// </summary>
-	internal  partial class BSplineCurveControlPointsList : Object 
+	internal  partial class BSplineCurveControlPointsList 
 	{
 		public CartesianPoint[] IfcCartesianPoint {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public BSplineCurveControlPointsList(CartesianPoint[] ifcCartesianPoint,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcCartesianPoint = ifcCartesianPoint;
 			this.itemType = itemType;

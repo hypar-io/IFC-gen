@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconicposition.htm
 	/// </summary>
-	internal  partial class ConicPosition : Object 
+	internal  partial class ConicPosition 
 	{
 		public Placement Item {get;set;}
 
-		public ConicPosition(Placement item) : base()
+		public ConicPosition(Placement item)
 		{
 			this.Item = item;
 		}

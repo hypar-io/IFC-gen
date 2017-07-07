@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelspaceboundaryrelatingspace.htm
 	/// </summary>
-	internal  partial class RelSpaceBoundaryRelatingSpace : Object 
+	internal  partial class RelSpaceBoundaryRelatingSpace 
 	{
 		public SpatialElement Item {get;set;}
 
-		public RelSpaceBoundaryRelatingSpace(SpatialElement item) : base()
+		public RelSpaceBoundaryRelatingSpace(SpatialElement item)
 		{
 			this.Item = item;
 		}

@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionsystem.htm
 	/// </summary>
-	internal  partial class DistributionSystem : System 
+	internal  partial class DistributionSystem : IfcSystem 
 	{
 		public String LongName {get;set;}
 

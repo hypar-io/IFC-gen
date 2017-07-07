@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionreinforcementpropertiescrosssectionreinforcementdefinitions.htm
 	/// </summary>
-	internal  partial class SectionReinforcementPropertiesCrossSectionReinforcementDefinitions : Object 
+	internal  partial class SectionReinforcementPropertiesCrossSectionReinforcementDefinitions 
 	{
 		public ReinforcementBarProperties[] IfcReinforcementBarProperties {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public SectionReinforcementPropertiesCrossSectionReinforcementDefinitions(ReinforcementBarProperties[] ifcReinforcementBarProperties,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcReinforcementBarProperties = ifcReinforcementBarProperties;
 			this.itemType = itemType;

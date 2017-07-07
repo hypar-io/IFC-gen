@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefordefinedfontbackgroundcolour.htm
 	/// </summary>
-	internal  partial class TextStyleForDefinedFontBackgroundColour : Object 
+	internal  partial class TextStyleForDefinedFontBackgroundColour 
 	{
 		public PresentationItem Item {get;set;}
 
-		public TextStyleForDefinedFontBackgroundColour(PresentationItem item) : base()
+		public TextStyleForDefinedFontBackgroundColour(PresentationItem item)
 		{
 			this.Item = item;
 		}

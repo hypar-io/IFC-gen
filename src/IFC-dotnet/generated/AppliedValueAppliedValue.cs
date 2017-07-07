@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcappliedvalueappliedvalue.htm
 	/// </summary>
-	internal  partial class AppliedValueAppliedValue : Object 
+	internal  partial class AppliedValueAppliedValue 
 	{
 		public Object Item {get;set;}
 
-		public AppliedValueAppliedValue(Object item) : base()
+		public AppliedValueAppliedValue(Object item)
 		{
 			this.Item = item;
 		}

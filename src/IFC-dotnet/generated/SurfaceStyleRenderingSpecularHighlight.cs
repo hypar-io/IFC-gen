@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerenderingspecularhighlight.htm
 	/// </summary>
-	internal  partial class SurfaceStyleRenderingSpecularHighlight : Object 
+	internal  partial class SurfaceStyleRenderingSpecularHighlight 
 	{
 		public Object Item {get;set;}
 
-		public SurfaceStyleRenderingSpecularHighlight(Object item) : base()
+		public SurfaceStyleRenderingSpecularHighlight(Object item)
 		{
 			this.Item = item;
 		}

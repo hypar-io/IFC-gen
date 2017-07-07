@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorganizationrelationshiprelatedorganizations.htm
 	/// </summary>
-	internal  partial class OrganizationRelationshipRelatedOrganizations : Object 
+	internal  partial class OrganizationRelationshipRelatedOrganizations 
 	{
 		public Organization[] IfcOrganization {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public OrganizationRelationshipRelatedOrganizations(Organization[] ifcOrganization,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcOrganization = ifcOrganization;
 			this.itemType = itemType;

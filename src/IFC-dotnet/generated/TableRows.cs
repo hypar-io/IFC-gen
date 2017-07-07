@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctablerows.htm
 	/// </summary>
-	internal  partial class TableRows : Object 
+	internal  partial class TableRows 
 	{
 		public TableRow[] IfcTableRow {get;set;}
 
@@ -21,7 +21,7 @@ namespace IFC4
 		public TableRows(TableRow[] ifcTableRow,
 				String[] itemType,
 				aggregateType[] cType,
-				String[] arraySize) : base()
+				String[] arraySize)
 		{
 			this.IfcTableRow = ifcTableRow;
 			this.itemType = itemType;

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventoryjurisdiction.htm
 	/// </summary>
-	internal  partial class InventoryJurisdiction : Object 
+	internal  partial class InventoryJurisdiction 
 	{
 		public Entity Item {get;set;}
 
-		public InventoryJurisdiction(Entity item) : base()
+		public InventoryJurisdiction(Entity item)
 		{
 			this.Item = item;
 		}

@@ -8,11 +8,11 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanresultsecondoperand.htm
 	/// </summary>
-	internal  partial class BooleanResultSecondOperand : Object 
+	internal  partial class BooleanResultSecondOperand 
 	{
 		public GeometricRepresentationItem Item {get;set;}
 
-		public BooleanResultSecondOperand(GeometricRepresentationItem item) : base()
+		public BooleanResultSecondOperand(GeometricRepresentationItem item)
 		{
 			this.Item = item;
 		}

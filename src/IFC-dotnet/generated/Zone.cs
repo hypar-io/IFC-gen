@@ -8,7 +8,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifczone.htm
 	/// </summary>
-	internal  partial class Zone : System 
+	internal  partial class Zone : IfcSystem 
 	{
 		public String LongName {get;set;}
 
