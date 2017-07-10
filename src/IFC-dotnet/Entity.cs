@@ -5,7 +5,7 @@ namespace IFC4
 	/// <summary>
 	/// 
 	/// </summary>
-	internal partial class Entity 
+	public partial class Entity 
 	{
 		public string @ref {get;set;}
         

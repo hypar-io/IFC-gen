@@ -42,3 +42,7 @@ dotnet run <root>\src\IFC\bin\Debug\netstandard2.0\IFC.dll <root>\src\generated
 - Generate code comments from IFC docs.
 - Investigate use of [ANTLR Express Grammar](https://github.com/opensourceBIM/BuildingSMARTLibrary/blob/master/BuildingSMARTLibrary/src/net/sourceforge/osexpress/parser/express.g) for parsing EXPRESS.
 - Convert all properties ending in Specified to null checks.
+
+### Generate and Test Grammar
+A script is available to generate the parser and lexer using the EXPRESS grammar. From `./src/IFC-gen` run:  
+```. ./generate_and_test.sh```

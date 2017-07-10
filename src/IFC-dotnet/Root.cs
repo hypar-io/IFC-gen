@@ -5,7 +5,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroot.htm
 	/// </summary>
-	internal abstract partial class Root : Entity 
+	public abstract partial class Root : Entity 
 	{
 		public string GlobalId {get;set;}
 		public string Name {get;set;}
