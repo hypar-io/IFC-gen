@@ -14,7 +14,17 @@ value_type
 	| REAL
 	| STRING
 	| STRING_FIXED
+	| set_declaration
+	| list_declaration
 	| Identifier
+	;
+
+set_declaration
+	: SET '[' Integer COLON (Integer|'?') ']' OF Identifier (FOR Identifier)?
+	;
+
+list_declaration
+	: LIST '[' Integer COLON (Integer|'?') ']' OF Identifier
 	;
 
 enumeration
@@ -30,37 +40,64 @@ enum_id_list
 	;
 
 type_declaration_body 
-	: condition_declaration ;
-
-condition_declaration : 'WHERE' NOT? condition+ ';' ;
-
-condition 
-	: Identifier COLON SELF operator Float
-	| Identifier COLON LB Float operator SELF operator Float RB
-	| Identifier COLON SELF IN string_array
-	| EXISTS '('self_property')'
-	| Identifier COLON query
-	| query_statement((AND|OR)query_statement)* 
+	: rule_declaration 
 	;
 
-set_declaration
-	: SET '[' Integer COLON (Integer|'?') ']' OF Identifier FOR Identifier
+rule_declaration : 'WHERE' rule+ ;
+
+rule 
+	: Identifier COLON expr ';'
 	;
 
-list_declaration
-	: LIST '[' Integer COLON (Integer|'?') ']' OF Identifier
+expr
+	: func_call_expr
+	| bool_expr
+	| LB bool_expr RB
+	; 
+
+func_call_expr
+	: (EXISTS|SIZEOF|TYPEOF|QUERY|Identifier)'(' func_parameters ')'
+	;
+
+func_parameters
+	: atom(','atom)*
+	;
+
+query_expr
+	: Identifier INIT (Identifier|QualifiedIdentifier) PIPE bool_expr
+	;
+
+bool_expr
+	: atom((LT|GT|LTE|GTE|EQ|NEQ|AND|OR)atom)*
+	| (QualifiedIdentifier|QuotedIdentifier) IN func_call_expr
+	;
+
+equation_expr
+	: (mult_expr|div_expr) ((ADD|SUB)(mult_expr|div_expr))*
+	;
+
+mult_expr
+	: atom (MUL atom)*
+	;
+
+div_expr
+	: atom (DIV atom)*
+	;
+
+atom 
+	: SELF
+	| Integer 
+	| Float
+	| QualifiedIdentifier
+	| Identifier
+	| '[' id_list ']'
+	| query_expr
+	| func_call_expr
+	| '('NOT? expr ')'
 	;
 
 self_property
 	: SELF '.' Identifier
-	;
-
-string_array
-	: '[' id_list ']' 
-	;
-
-operator
-	: (LT|GT|LTE|LTE)
 	;
 
 entity_declaration
@@ -68,7 +105,7 @@ entity_declaration
 	;
 
 entity_declaration_body
-	: supertype_declaration? subtype_declaration? inverse_declaration? condition_declaration? unique_declaration? 
+	: supertype_declaration? subtype_declaration? inverse_declaration? derive_declaration? rule_declaration? unique_declaration? 
 	;
 
 supertype_declaration 
@@ -80,23 +117,31 @@ subtype_declaration
 	;
 
 attribute
-	: Identifier COLON OPTIONAL? (Identifier|set_declaration|list_declaration) ';'
+	: Identifier COLON OPTIONAL? value_type definition? ';'
 	;
 
+definition
+	: DEF expr;
+
 one_of 
-: ONEOF LP id_list RP 
+	: ONEOF LP id_list RP 
 	;
 
 inverse_declaration
-	: 'INVERSE' attribute+ 
+	: INVERSE attribute+ 
+	;
+
+derive_declaration
+	: DERIVE attribute+
 	;
 
 unique_declaration
-	: 'UNIQUE' unique_statement+ 
+	: UNIQUE unique_statement+ 
 	;
 
 unique_statement
-	: Identifier ':' .*? ';' ;
+	: Identifier COLON .*? ';' 
+	;
 
 function_declaration 
 	: 'FUNCTION' function_declaration_body 'END_FUNCTION' ;
@@ -106,39 +151,46 @@ function_declaration_body
 
 // Lexer
 
-// Keywords
-
-ABSTRACT : 'ABSTRACT' ;
-AND : 'AND' ;
+//Base Types
 BOOLEAN : 'BOOLEAN' ;
-ENTITY : 'ENTITY' ;
-END_ENTITY : 'END_ENTITY' ;
-ENUMERATION : 'ENUMERATION' ;
-EXISTS : 'EXISTS' ;
 FIXED : 'FIXED' ;
-FOR : 'FOR' ;
-IN : 'IN' ;
 INTEGER : 'INTEGER' ;
 LIST : 'LIST';
 LOGICAL : 'LOGICAL' ;
-NOT : 'NOT';
+REAL : 'REAL' ;
+SET : 'SET' ;
+STRING_FIXED : 'STRING(' Integer ') FIXED' ;
+STRING : 'STRING' ;
+
+// Keywords
+ABSTRACT : 'ABSTRACT' ;
+AND : 'AND' ;
+DERIVE : 'DERIVE' ;
+ENTITY : 'ENTITY' ;
+END_ENTITY : 'END_ENTITY' ;
+ENUMERATION : 'ENUMERATION' ;
+FOR : 'FOR' ;
+IN : 'IN' ;
+INVERSE : 'INVERSE';
 OF : 'OF';
 ONEOF : 'ONEOF' ;
 OPTIONAL : 'OPTIONAL' ;
 OR : 'OR' ;
-REAL : 'REAL' ;
 SCHEMA : 'SCHEMA' ;
 END_SCHEMA : 'END_SCHEMA';
 SELF : 'SELF' ;
-SET : 'SET' ;
-SIZEOF : 'SIZE' ;
-STRING_FIXED : 'STRING(' Integer ') FIXED' ;
-STRING : 'STRING' ;
 SUBTYPE : 'SUBTYPE' ;
 SUPERTYPE : 'SUPERTYPE' ;
 TYPE : 'TYPE' ;
-END_TYPE : 'END_TYPE';
+END_TYPE : 'END_TYPE' ;
+UNIQUE : 'UNIQUE' ;
 WHERE : 'WHERE' ;
+
+// Functions
+EXISTS : 'EXISTS' ;
+SIZEOF : 'SIZEOF' ;
+QUERY : 'QUERY' ;
+TYPEOF : 'TYPEOF' ;
 
 Version 
 	: 'IFC' Integer
@@ -154,21 +206,38 @@ RP : ')' ;
 LB : '{' ;
 RB : '}' ;
 COLON : ':' ;
+PIPE : '|' ;
 
+// Operators
+NOT : 'NOT';
 EQ : '=' ;
 GT : '>' ;
 LT : '<' ;
 GTE : '>=' ;
 LTE : '<=' ;
 NEQ  : '<>' ;
+MUL : '*' ;
+DIV : '/' ;
+ADD : '+' ;
+SUB : '-' ;
+DEF : ':=' ;
+INIT : '<*' ;
 
 Float
 	: Digit+ '.' Digit*
 	| '.' Digit+
 	;
 
+SetAccesor
+	: Identifier '[' (Integer|Identifier) ']'
+	;
+
+QuotedIdentifier
+	: '\'' QualifiedIdentifier '\''
+	;
+
 QualifiedIdentifier
-	: Identifier('.'Identifier)+
+	: (SELF'\\')? (SetAccesor|Identifier)('.'Identifier)+
 	;
 
 Identifier 
@@ -200,5 +269,11 @@ NL
 
 Comments 
 	: '(*' .*? '*)' -> skip ;
+
+Rules
+	: 'RULE' .*? 'END_RULE;' -> skip ;
+
+Functions
+	: 'FUNCTION' .*? 'END_FUNCTION;' -> skip ;
 
 

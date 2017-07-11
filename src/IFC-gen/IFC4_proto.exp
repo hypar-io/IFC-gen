@@ -80,4 +80,77 @@ ENTITY IfcBoundaryEdgeCondition
 	RotationalStiffnessByLengthZ : OPTIONAL IfcModulusOfRotationalSubgradeReactionSelect;
 END_ENTITY;
 
+ENTITY IfcStructuralCurveAction
+ SUPERTYPE OF (ONEOF
+	(IfcStructuralLinearAction))
+ SUBTYPE OF (IfcStructuralAction);
+	ProjectedOrTrue : OPTIONAL IfcProjectedOrTrueLengthEnum;
+	PredefinedType : IfcStructuralCurveActivityTypeEnum;
+ WHERE
+	ProjectedIsGlobal : (NOT EXISTS(ProjectedOrTrue)) OR
+                               ((ProjectedOrTrue <> PROJECTED_LENGTH) OR
+                                (SELF\IfcStructuralActivity.GlobalOrLocal = GLOBAL_COORDS));
+	HasObjectType : (PredefinedType <> IfcStructuralCurveActivityTypeEnum.USERDEFINED) OR EXISTS(SELF\IfcObject.ObjectType);
+	SuitablePredefinedType : PredefinedType <> IfcStructuralCurveActivityTypeEnum.EQUIDISTANT;
+END_ENTITY;
+
+ENTITY IfcCompositeCurve
+ SUPERTYPE OF (ONEOF
+	(IfcCompositeCurveOnSurface))
+ SUBTYPE OF (IfcBoundedCurve);
+	Segments : LIST [1:?] OF IfcCompositeCurveSegment;
+	SelfIntersect : LOGICAL;
+ DERIVE
+	NSegments : INTEGER := SIZEOF(Segments);
+	ClosedCurve : LOGICAL := Segments[NSegments].Transition <> Discontinuous;
+ WHERE
+	CurveContinuous : ((NOT ClosedCurve) AND (SIZEOF(QUERY(Temp <* Segments | Temp.Transition = Discontinuous)) = 1)) OR ((ClosedCurve) AND (SIZEOF(QUERY(Temp <* Segments | Temp.Transition = Discontinuous)) = 0));
+	SameDim : SIZEOF( QUERY( Temp <* Segments | Temp.Dim <> Segments[1].Dim)) = 0;
+END_ENTITY;
+
+ENTITY IfcArbitraryProfileDefWithVoids
+ SUBTYPE OF (IfcArbitraryClosedProfileDef);
+	InnerCurves : SET [1:?] OF IfcCurve;
+ WHERE
+	WR1 : SELF\IfcProfileDef.ProfileType = AREA;
+	WR2 : SIZEOF(QUERY(temp <* InnerCurves | temp.Dim <> 2)) = 0;
+	WR3 : SIZEOF(QUERY(temp <* InnerCurves | 'IFC4.IFCLINE' IN TYPEOF(temp))) = 0;
+END_ENTITY;
+
+RULE IfcRepresentationContextSameWCS FOR 
+	(IfcGeometricRepresentationContext);
+    LOCAL
+      IsDifferent  : LOGICAL := FALSE;
+    END_LOCAL;
+      IF (SIZEOF(IfcGeometricRepresentationContext) > 1)
+      THEN
+        REPEAT i := 2 TO HIINDEX(IfcGeometricRepresentationContext);
+          IF (IfcGeometricRepresentationContext[1].WorldCoordinateSystem :<>: IfcGeometricRepresentationContext[i].WorldCoordinateSystem)
+          THEN
+            IsDifferent := (NOT(IfcSameValidPrecision(IfcGeometricRepresentationContext[1].Precision,
+                                                      IfcGeometricRepresentationContext[i].Precision)))
+                        OR (NOT(IfcSameAxis2Placement(IfcGeometricRepresentationContext[1].WorldCoordinateSystem,
+                                                      IfcGeometricRepresentationContext[i].WorldCoordinateSystem,
+                                                      IfcGeometricRepresentationContext[1].Precision)));
+            IF (IsDifferent = TRUE) THEN
+              ESCAPE;
+            END_IF;
+          END_IF;
+        END_REPEAT;
+      END_IF;
+    WHERE
+      WR1 : IsDifferent = FALSE;
+END_RULE;
+
+FUNCTION IfcBooleanChoose
+	(B : BOOLEAN ;
+       Choice1, Choice2 : Generic : Item)
+	: Generic : Item;
+    IF B THEN
+       RETURN (Choice1);
+    ELSE
+       RETURN (Choice2);
+    END_IF;
+END_FUNCTION;
+
 END_SCHEMA;
