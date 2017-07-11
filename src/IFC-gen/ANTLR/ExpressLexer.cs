@@ -41,7 +41,7 @@ public partial class ExpressLexer : Lexer {
 		SELF=32, SET=33, SIZEOF=34, STRING_FIXED=35, STRING=36, SUBTYPE=37, SUPERTYPE=38, 
 		TYPE=39, END_TYPE=40, WHERE=41, Version=42, Integer=43, LP=44, RP=45, 
 		LB=46, RB=47, COLON=48, EQ=49, GT=50, LT=51, GTE=52, LTE=53, NEQ=54, Float=55, 
-		QualifiedIdentifier=56, Identifier=57, WS=58, Newline=59, Comments=60;
+		QualifiedIdentifier=56, Identifier=57, WS=58, NL=59, Comments=60;
 	public static string[] channelNames = {
 		"DEFAULT_TOKEN_CHANNEL", "HIDDEN"
 	};
@@ -58,7 +58,7 @@ public partial class ExpressLexer : Lexer {
 		"SIZEOF", "STRING_FIXED", "STRING", "SUBTYPE", "SUPERTYPE", "TYPE", "END_TYPE", 
 		"WHERE", "Version", "Digit", "Integer", "LP", "RP", "LB", "RB", "COLON", 
 		"EQ", "GT", "LT", "GTE", "LTE", "NEQ", "Float", "QualifiedIdentifier", 
-		"Identifier", "IdLetter", "CapitalLetter", "LowercaseLetter", "WS", "Newline", 
+		"Identifier", "IdLetter", "CapitalLetter", "LowercaseLetter", "WS", "NL", 
 		"Comments"
 	};
 
@@ -89,8 +89,7 @@ public partial class ExpressLexer : Lexer {
 		"OR", "REAL", "SCHEMA", "END_SCHEMA", "SELF", "SET", "SIZEOF", "STRING_FIXED", 
 		"STRING", "SUBTYPE", "SUPERTYPE", "TYPE", "END_TYPE", "WHERE", "Version", 
 		"Integer", "LP", "RP", "LB", "RB", "COLON", "EQ", "GT", "LT", "GTE", "LTE", 
-		"NEQ", "Float", "QualifiedIdentifier", "Identifier", "WS", "Newline", 
-		"Comments"
+		"NEQ", "Float", "QualifiedIdentifier", "Identifier", "WS", "NL", "Comments"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 

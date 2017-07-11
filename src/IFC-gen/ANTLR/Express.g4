@@ -39,6 +39,8 @@ condition
 	| Identifier COLON LB Float operator SELF operator Float RB
 	| Identifier COLON SELF IN string_array
 	| EXISTS '('self_property')'
+	| Identifier COLON query
+	| query_statement((AND|OR)query_statement)* 
 	;
 
 set_declaration
