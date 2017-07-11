@@ -4,7 +4,7 @@ schema_declaration
 	: 'SCHEMA IFC' Integer ';' type_declaration* entity_declaration* function_declaration* 'END_SCHEMA;' EOF;
 
 type_declaration 
-	: 'TYPE' Identifier '=' (value_type|enumeration) ';' type_declaration_body? 'END_TYPE;' ;
+	: 'TYPE' Identifier EQ (value_type|enumeration) ';' type_declaration_body? 'END_TYPE;' ;
 
 value_type 
 	: BOOLEAN
@@ -14,10 +14,11 @@ value_type
 	| REAL
 	| STRING
 	| STRING_FIXED
+	| Identifier
 	;
 
 enumeration
-	: ENUMERATION LP enum_id_list RP 
+	: ENUMERATION OF LP enum_id_list RP 
 	;
 
 id_list
@@ -25,39 +26,72 @@ id_list
 	;
 
 enum_id_list
-	: EnumIdentifier(','EnumIdentifier)*
+	: Identifier(','Identifier)*
 	;
 
 type_declaration_body 
-	: where_declaration ;
+	: condition_declaration ;
 
-where_declaration : 'WHERE' where_statement+ ;
+condition_declaration : 'WHERE' NOT? condition+ ';' ;
 
-where_statement : .*? ':' .*? ';' ;
+condition 
+	: Identifier COLON SELF operator Float
+	| Identifier COLON LB Float operator SELF operator Float RB
+	| Identifier COLON SELF IN string_array
+	| EXISTS '('self_property')'
+	;
+
+set_declaration
+	: SET '[' Integer COLON (Integer|'?') ']' OF Identifier FOR Identifier
+	;
+
+list_declaration
+	: LIST '[' Integer COLON (Integer|'?') ']' OF Identifier
+	;
+
+self_property
+	: SELF '.' Identifier
+	;
+
+string_array
+	: '[' id_list ']' 
+	;
+
+operator
+	: (LT|GT|LTE|LTE)
+	;
 
 entity_declaration
-	: 'ENTITY' entity_declaration_body 'END_ENTITY;' ;
+	: 'ENTITY' Identifier entity_declaration_body 'END_ENTITY;' 
+	;
 
 entity_declaration_body
-	: subtype_declaration? supertype_declaration? inverse_declaration? where_declaration? unique_declaration? ;
-
-subtype_declaration 
-	: 'SUBTYPE OF' RP (one_of | Identifier) RP ';' ;
-
-one_of 
-	: 'ONE OF' LP id_list RP ';' ;
+	: supertype_declaration? subtype_declaration? inverse_declaration? condition_declaration? unique_declaration? 
+	;
 
 supertype_declaration 
-	:  ('ABSTRACT')? 'SUPERTYPE OF' LP (one_of | Identifier) RP ';' ;
+	:  ABSTRACT? SUPERTYPE OF LP (one_of | Identifier) RP ';'? attribute* 
+	;
+
+subtype_declaration 
+	: SUBTYPE OF LP (one_of | Identifier) RP ';' attribute* 
+	;
+
+attribute
+	: Identifier COLON OPTIONAL? (Identifier|set_declaration|list_declaration) ';'
+	;
+
+one_of 
+: ONEOF LP id_list RP 
+	;
 
 inverse_declaration
-	: 'INVERSE' inverse_statement+ ;
-
-inverse_statement
-	: Identifier ':' .*? ';' ;
+	: 'INVERSE' attribute+ 
+	;
 
 unique_declaration
-	: 'UNIQUE' unique_statement+ ;
+	: 'UNIQUE' unique_statement+ 
+	;
 
 unique_statement
 	: Identifier ':' .*? ';' ;
@@ -70,14 +104,32 @@ function_declaration_body
 
 // Lexer
 
+// Keywords
+
+ABSTRACT : 'ABSTRACT' ;
+AND : 'AND' ;
 BOOLEAN : 'BOOLEAN' ;
-ENUMERATION : 'ENUMERATION OF' ;
+ENUMERATION : 'ENUMERATION' ;
+EXISTS : 'EXISTS' ;
 FIXED : 'FIXED' ;
+FOR : 'FOR' ;
+IN : 'IN' ;
 INTEGER : 'INTEGER' ;
+LIST : 'LIST';
 LOGICAL : 'LOGICAL' ;
+NOT : 'NOT';
+OF : 'OF';
+ONEOF : 'ONEOF' ;
+OPTIONAL : 'OPTIONAL' ;
+OR : 'OR' ;
 REAL : 'REAL' ;
+SELF : 'SELF' ;
+SET : 'SET' ;
+SIZEOF : 'SIZE' ;
 STRING_FIXED : 'STRING(' Integer ') FIXED' ;
 STRING : 'STRING' ;
+SUBTYPE : 'SUBTYPE' ;
+SUPERTYPE : 'SUPERTYPE' ;
 
 fragment
 Digit : '0'..'9' ; 
@@ -86,14 +138,24 @@ Integer : Digit+;
 
 LP : '(' ;
 RP : ')' ;
+LB : '{' ;
+RB : '}' ;
+COLON : ':' ;
+
+EQ : '=' ;
+GT : '>' ;
+LT : '<' ;
+GTE : '>=' ;
+LTE : '<=' ;
+NEQ  : '<>' ;
 
 Float
 	: Digit+ '.' Digit*
 	| '.' Digit+
 	;
 
-EnumIdentifier
-	: (CapitalLetter|'_'|Digit)+
+QualifiedIdentifier
+	: Identifier('.'Identifier)+
 	;
 
 Identifier 

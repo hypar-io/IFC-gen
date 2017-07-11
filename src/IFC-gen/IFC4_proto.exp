@@ -9,6 +9,11 @@ END_TYPE;
 TYPE IfcGloballyUniqueId = STRING(22) FIXED;
 END_TYPE;
 
+TYPE IfcNormalisedRatioMeasure = IfcRatioMeasure;
+ WHERE
+	WR1 : {0.0 <= SELF <= 1.0};
+END_TYPE;
+
 TYPE IfcActionSourceTypeEnum = ENUMERATION OF
 	(DEAD_LOAD_G
 	,COMPLETION_G1
@@ -38,5 +43,41 @@ TYPE IfcActionSourceTypeEnum = ENUMERATION OF
 	,USERDEFINED
 	,NOTDEFINED);
 END_TYPE;
+
+ENTITY IfcActor
+ SUPERTYPE OF (ONEOF
+	(IfcOccupant))
+ SUBTYPE OF (IfcObject);
+	TheActor : IfcActorSelect;
+ INVERSE
+	IsActingUpon : SET [0:?] OF IfcRelAssignsToActor FOR RelatingActor;
+END_ENTITY;
+
+ENTITY IfcAppliedValue
+ SUPERTYPE OF (ONEOF
+	(IfcCostValue));
+	Name : OPTIONAL IfcLabel;
+	Description : OPTIONAL IfcText;
+	AppliedValue : OPTIONAL IfcAppliedValueSelect;
+	UnitBasis : OPTIONAL IfcMeasureWithUnit;
+	ApplicableDate : OPTIONAL IfcDate;
+	FixedUntilDate : OPTIONAL IfcDate;
+	Category : OPTIONAL IfcLabel;
+	Condition : OPTIONAL IfcLabel;
+	ArithmeticOperator : OPTIONAL IfcArithmeticOperatorEnum;
+	Components : OPTIONAL LIST [1:?] OF IfcAppliedValue;
+ INVERSE
+	HasExternalReference : SET [0:?] OF IfcExternalReferenceRelationship FOR RelatedResourceObjects;
+END_ENTITY;
+
+ENTITY IfcBoundaryEdgeCondition
+ SUBTYPE OF (IfcBoundaryCondition);
+	TranslationalStiffnessByLengthX : OPTIONAL IfcModulusOfTranslationalSubgradeReactionSelect;
+	TranslationalStiffnessByLengthY : OPTIONAL IfcModulusOfTranslationalSubgradeReactionSelect;
+	TranslationalStiffnessByLengthZ : OPTIONAL IfcModulusOfTranslationalSubgradeReactionSelect;
+	RotationalStiffnessByLengthX : OPTIONAL IfcModulusOfRotationalSubgradeReactionSelect;
+	RotationalStiffnessByLengthY : OPTIONAL IfcModulusOfRotationalSubgradeReactionSelect;
+	RotationalStiffnessByLengthZ : OPTIONAL IfcModulusOfRotationalSubgradeReactionSelect;
+END_ENTITY;
 
 END_SCHEMA;

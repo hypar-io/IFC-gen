@@ -102,25 +102,75 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitType_declaration_body([NotNull] ExpressParser.Type_declaration_bodyContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.where_declaration"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.condition_declaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterWhere_declaration([NotNull] ExpressParser.Where_declarationContext context);
+	void EnterCondition_declaration([NotNull] ExpressParser.Condition_declarationContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.where_declaration"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.condition_declaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitWhere_declaration([NotNull] ExpressParser.Where_declarationContext context);
+	void ExitCondition_declaration([NotNull] ExpressParser.Condition_declarationContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.where_statement"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.condition"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterWhere_statement([NotNull] ExpressParser.Where_statementContext context);
+	void EnterCondition([NotNull] ExpressParser.ConditionContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.where_statement"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.condition"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitWhere_statement([NotNull] ExpressParser.Where_statementContext context);
+	void ExitCondition([NotNull] ExpressParser.ConditionContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.set_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSet_declaration([NotNull] ExpressParser.Set_declarationContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.set_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSet_declaration([NotNull] ExpressParser.Set_declarationContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.list_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterList_declaration([NotNull] ExpressParser.List_declarationContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.list_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitList_declaration([NotNull] ExpressParser.List_declarationContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.self_property"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSelf_property([NotNull] ExpressParser.Self_propertyContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.self_property"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSelf_property([NotNull] ExpressParser.Self_propertyContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.string_array"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterString_array([NotNull] ExpressParser.String_arrayContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.string_array"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitString_array([NotNull] ExpressParser.String_arrayContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.operator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterOperator([NotNull] ExpressParser.OperatorContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.operator"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitOperator([NotNull] ExpressParser.OperatorContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.entity_declaration"/>.
 	/// </summary>
@@ -142,6 +192,16 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitEntity_declaration_body([NotNull] ExpressParser.Entity_declaration_bodyContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.supertype_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterSupertype_declaration([NotNull] ExpressParser.Supertype_declarationContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.supertype_declaration"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitSupertype_declaration([NotNull] ExpressParser.Supertype_declarationContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.subtype_declaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -151,6 +211,16 @@ public interface IExpressListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitSubtype_declaration([NotNull] ExpressParser.Subtype_declarationContext context);
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.attribute"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAttribute([NotNull] ExpressParser.AttributeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.attribute"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAttribute([NotNull] ExpressParser.AttributeContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.one_of"/>.
 	/// </summary>
@@ -162,16 +232,6 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitOne_of([NotNull] ExpressParser.One_ofContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.supertype_declaration"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSupertype_declaration([NotNull] ExpressParser.Supertype_declarationContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.supertype_declaration"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSupertype_declaration([NotNull] ExpressParser.Supertype_declarationContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.inverse_declaration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -181,16 +241,6 @@ public interface IExpressListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitInverse_declaration([NotNull] ExpressParser.Inverse_declarationContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.inverse_statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterInverse_statement([NotNull] ExpressParser.Inverse_statementContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.inverse_statement"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitInverse_statement([NotNull] ExpressParser.Inverse_statementContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.unique_declaration"/>.
 	/// </summary>
