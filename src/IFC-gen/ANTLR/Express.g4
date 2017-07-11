@@ -1,10 +1,10 @@
 grammar Express;
 
 schema_declaration
-	: 'SCHEMA IFC' Integer ';' type_declaration* entity_declaration* function_declaration* 'END_SCHEMA;' EOF;
+	: SCHEMA Version ';' type_declaration* entity_declaration* function_declaration*  END_SCHEMA';' EOF;
 
 type_declaration 
-	: 'TYPE' Identifier EQ (value_type|enumeration) ';' type_declaration_body? 'END_TYPE;' ;
+	: TYPE Identifier EQ (value_type|enumeration) ';' type_declaration_body? END_TYPE ';' ;
 
 value_type 
 	: BOOLEAN
@@ -62,7 +62,7 @@ operator
 	;
 
 entity_declaration
-	: 'ENTITY' Identifier entity_declaration_body 'END_ENTITY;' 
+	: ENTITY Identifier entity_declaration_body END_ENTITY ';' 
 	;
 
 entity_declaration_body
@@ -109,6 +109,8 @@ function_declaration_body
 ABSTRACT : 'ABSTRACT' ;
 AND : 'AND' ;
 BOOLEAN : 'BOOLEAN' ;
+ENTITY : 'ENTITY' ;
+END_ENTITY : 'END_ENTITY' ;
 ENUMERATION : 'ENUMERATION' ;
 EXISTS : 'EXISTS' ;
 FIXED : 'FIXED' ;
@@ -123,6 +125,8 @@ ONEOF : 'ONEOF' ;
 OPTIONAL : 'OPTIONAL' ;
 OR : 'OR' ;
 REAL : 'REAL' ;
+SCHEMA : 'SCHEMA' ;
+END_SCHEMA : 'END_SCHEMA';
 SELF : 'SELF' ;
 SET : 'SET' ;
 SIZEOF : 'SIZE' ;
@@ -130,6 +134,13 @@ STRING_FIXED : 'STRING(' Integer ') FIXED' ;
 STRING : 'STRING' ;
 SUBTYPE : 'SUBTYPE' ;
 SUPERTYPE : 'SUPERTYPE' ;
+TYPE : 'TYPE' ;
+END_TYPE : 'END_TYPE';
+WHERE : 'WHERE' ;
+
+Version 
+	: 'IFC' Integer
+	; 
 
 fragment
 Digit : '0'..'9' ; 
@@ -182,7 +193,7 @@ LowercaseLetter
 WS 
 	: [ \t\n\r]+ -> skip ;
 
-Newline 
+NL 
 	: ('\r'? '\n' | '\r')+ -> skip ;
 
 Comments 
