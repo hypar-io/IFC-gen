@@ -64,12 +64,12 @@ func_parameters
 	;
 
 query_expr
-	: Identifier INIT (Identifier|QualifiedIdentifier) PIPE bool_expr
+	: Identifier INIT (Identifier|PropertyAccessor) PIPE bool_expr
 	;
 
 bool_expr
 	: atom((LT|GT|LTE|GTE|EQ|NEQ|AND|OR)atom)*
-	| (QualifiedIdentifier|QuotedIdentifier) IN func_call_expr
+	| (IfcType|PropertyAccessor|Identifier|SELF) IN (func_call_expr|'['id_list']')
 	;
 
 equation_expr
@@ -88,8 +88,8 @@ atom
 	: SELF
 	| Integer 
 	| Float
-	| QualifiedIdentifier
 	| Identifier
+	| PropertyAccessor
 	| '[' id_list ']'
 	| query_expr
 	| func_call_expr
@@ -192,6 +192,10 @@ SIZEOF : 'SIZEOF' ;
 QUERY : 'QUERY' ;
 TYPEOF : 'TYPEOF' ;
 
+IfcType
+	: '\'' Version '.' Identifier '\''
+	;
+
 Version 
 	: 'IFC' Integer
 	; 
@@ -232,16 +236,13 @@ SetAccesor
 	: Identifier '[' (Integer|Identifier) ']'
 	;
 
-QuotedIdentifier
-	: '\'' QualifiedIdentifier '\''
-	;
-
-QualifiedIdentifier
+PropertyAccessor
 	: (SELF'\\')? (SetAccesor|Identifier)('.'Identifier)+
 	;
 
 Identifier 
-	: IdLetter (IdLetter | Digit)* 
+	: IdLetter (IdLetter | Digit)*
+	| '\'' IdLetter (IdLetter | Digit)* '\''
 	;
 
 fragment
@@ -249,6 +250,7 @@ IdLetter
 	: CapitalLetter
 	| LowercaseLetter
 	| '_' 
+	| '-'
 	;
 
 fragment

@@ -44,6 +44,11 @@ TYPE IfcActionSourceTypeEnum = ENUMERATION OF
 	,NOTDEFINED);
 END_TYPE;
 
+TYPE IfcBoxAlignment = IfcLabel;
+ WHERE
+	WR1 : SELF IN ['top-left', 'top-middle', 'top-right', 'middle-left', 'center', 'middle-right', 'bottom-left', 'bottom-middle', 'bottom-right'];
+END_TYPE;
+
 ENTITY IfcActor
  SUPERTYPE OF (ONEOF
 	(IfcOccupant))
