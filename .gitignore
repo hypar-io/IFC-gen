@@ -295,3 +295,4 @@ __pycache__/
 *.xsd.cs
 
 doc/IFC4/
+tokens.txt

@@ -44,6 +44,20 @@ TYPE IfcActionSourceTypeEnum = ENUMERATION OF
 	,NOTDEFINED);
 END_TYPE;
 
+TYPE IfcBSplineSurfaceForm = ENUMERATION OF
+	(PLANE_SURF
+	,CYLINDRICAL_SURF
+	,CONICAL_SURF
+	,SPHERICAL_SURF
+	,TOROIDAL_SURF
+	,SURF_OF_REVOLUTION
+	,RULED_SURF
+	,GENERALISED_CONE
+	,QUADRIC_SURF
+	,SURF_OF_LINEAR_EXTRUSION
+	,UNSPECIFIED);
+END_TYPE;
+
 TYPE IfcBoxAlignment = IfcLabel;
  WHERE
 	WR1 : SELF IN ['top-left', 'top-middle', 'top-right', 'middle-left', 'center', 'middle-right', 'bottom-left', 'bottom-middle', 'bottom-right'];
@@ -120,6 +134,56 @@ ENTITY IfcArbitraryProfileDefWithVoids
 	WR1 : SELF\IfcProfileDef.ProfileType = AREA;
 	WR2 : SIZEOF(QUERY(temp <* InnerCurves | temp.Dim <> 2)) = 0;
 	WR3 : SIZEOF(QUERY(temp <* InnerCurves | 'IFC4.IFCLINE' IN TYPEOF(temp))) = 0;
+END_ENTITY;
+
+ENTITY IfcActor
+ SUPERTYPE OF (ONEOF
+	(IfcOccupant))
+ SUBTYPE OF (IfcObject);
+	TheActor : IfcActorSelect;
+ INVERSE
+	IsActingUpon : SET [0:?] OF IfcRelAssignsToActor FOR RelatingActor;
+END_ENTITY;
+
+ENTITY IfcActorRole;
+	Role : IfcRoleEnum;
+	UserDefinedRole : OPTIONAL IfcLabel;
+	Description : OPTIONAL IfcText;
+ INVERSE
+	HasExternalReference : SET [0:?] OF IfcExternalReferenceRelationship FOR RelatedResourceObjects;
+ WHERE
+	WR1 : (Role <> IfcRoleEnum.USERDEFINED) OR
+            ((Role = IfcRoleEnum.USERDEFINED) AND
+              EXISTS(SELF.UserDefinedRole));
+END_ENTITY;
+
+ENTITY IfcAdvancedFace
+ SUBTYPE OF (IfcFaceSurface);
+ WHERE
+	ApplicableSurface : SIZEOF (
+                             ['IFC4.IFCELEMENTARYSURFACE',
+                              'IFC4.IFCSWEPTSURFACE',
+                              'IFC4.IFCBSPLINESURFACE'] *
+                             TYPEOF(SELF\IfcFaceSurface.FaceSurface)) = 1;
+	RequiresEdgeCurve : SIZEOF(QUERY (ElpFbnds <* 
+                               QUERY (Bnds <* SELF\IfcFace.Bounds |
+                                 'IFC4.IFCEDGELOOP' IN TYPEOF(Bnds.Bound)) |
+                                  NOT (SIZEOF (QUERY (Oe <* ElpFbnds.Bound\IfcEdgeLoop.EdgeList |
+                                    NOT('IFC4.IFCEDGECURVE' IN 
+                                    TYPEOF(Oe\IfcOrientedEdge.EdgeElement)
+                               ))) = 0
+                             ))) = 0;
+	ApplicableEdgeCurves : SIZEOF(QUERY (ElpFbnds <* 
+                               QUERY (Bnds <* SELF\IfcFace.Bounds |
+                                 'IFC4.IFCEDGELOOP' IN TYPEOF(Bnds.Bound)) |
+                                  NOT (SIZEOF (QUERY (Oe <* ElpFbnds.Bound\IfcEdgeLoop.EdgeList |
+                                    NOT (SIZEOF (['IFC4.IFCLINE',
+                                                  'IFC4.IFCCONIC',
+                                                  'IFC4.IFCPOLYLINE',
+                                                  'IFC4.IFCBSPLINECURVE'] *
+                                      TYPEOF(Oe\IfcOrientedEdge.EdgeElement\IfcEdgeCurve.EdgeGeometry)) = 1 )
+                               )) = 0
+                             ))) = 0;
 END_ENTITY;
 
 RULE IfcRepresentationContextSameWCS FOR 

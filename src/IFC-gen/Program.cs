@@ -249,10 +249,14 @@ namespace IFC4
 
 				var tree = parser.schema_declaration();
 
+				var sb = new System.Text.StringBuilder();
 				foreach(var t in tokens.GetTokens())
 				{
-					Console.WriteLine($"{t.ToString()}");
+					sb.AppendLine($"{t.ToString()}");
 				}
+				
+				File.WriteAllText("tokens.txt",sb.ToString());
+
 				//var walker = new ParseTreeWalker();
 				//var listener = new Express.ExpressListener();
 				//walker.Walk(listener, tree);

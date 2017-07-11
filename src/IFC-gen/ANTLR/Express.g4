@@ -4,35 +4,44 @@ schema_declaration
 	: SCHEMA Version ';' type_declaration* entity_declaration* function_declaration*  END_SCHEMA';' EOF;
 
 type_declaration 
-	: TYPE Identifier EQ (value_type|enumeration) ';' type_declaration_body? END_TYPE ';' ;
+	: TYPE Identifier EQ (value_type|enumeration|select) FIXED? ';' type_declaration_body? END_TYPE ';' ;
 
 value_type 
 	: BOOLEAN
-	| FIXED
 	| INTEGER
 	| LOGICAL
 	| REAL
 	| STRING
-	| STRING_FIXED
+	| STRING_SIZED
 	| set_declaration
 	| list_declaration
+	| array_declaration
 	| Identifier
 	;
 
 set_declaration
-	: SET '[' Integer COLON (Integer|'?') ']' OF Identifier (FOR Identifier)?
+	: SET '[' Integer COLON (Integer|'?') ']' OF value_type (FOR Identifier)?
 	;
 
 list_declaration
-	: LIST '[' Integer COLON (Integer|'?') ']' OF Identifier
+	: LIST '[' Integer COLON (Integer|'?') ']' OF value_type
+	;
+
+array_declaration
+	: ARRAY '[' Integer COLON (Integer|'?') ']' OF value_type
 	;
 
 enumeration
 	: ENUMERATION OF LP enum_id_list RP 
 	;
 
+select
+	: SELECT LP enum_id_list RP
+	;
+
 id_list
 	: Identifier(','Identifier)*
+	| IfcType(','IfcType)*
 	;
 
 enum_id_list
@@ -56,32 +65,25 @@ expr
 	; 
 
 func_call_expr
-	: (EXISTS|SIZEOF|TYPEOF|QUERY|Identifier)'(' func_parameters ')'
+	: (EXISTS|SIZEOF|TYPEOF|QUERY|ABS|Identifier)'(' func_parameters ')'
 	;
 
 func_parameters
 	: atom(','atom)*
+	| formula_expr
 	;
 
 query_expr
-	: Identifier INIT (Identifier|PropertyAccessor) PIPE bool_expr
+	: Identifier INIT (Identifier|Path|PropertyAccessor|func_call_expr) PIPE bool_expr
 	;
 
 bool_expr
 	: atom((LT|GT|LTE|GTE|EQ|NEQ|AND|OR)atom)*
-	| (IfcType|PropertyAccessor|Identifier|SELF) IN (func_call_expr|'['id_list']')
+	| (IfcType|Path|PropertyAccessor|Identifier|SELF) IN (func_call_expr|'['id_list']')
 	;
 
-equation_expr
-	: (mult_expr|div_expr) ((ADD|SUB)(mult_expr|div_expr))*
-	;
-
-mult_expr
-	: atom (MUL atom)*
-	;
-
-div_expr
-	: atom (DIV atom)*
+formula_expr
+	: atom((ADD|SUB|MUL|DIV)atom)+
 	;
 
 atom 
@@ -89,11 +91,14 @@ atom
 	| Integer 
 	| Float
 	| Identifier
+	| Path
 	| PropertyAccessor
+	| SetAccessor
 	| '[' id_list ']'
 	| query_expr
 	| func_call_expr
 	| '('NOT? expr ')'
+	| NOT?'('expr')'
 	;
 
 self_property
@@ -101,11 +106,11 @@ self_property
 	;
 
 entity_declaration
-	: ENTITY Identifier entity_declaration_body END_ENTITY ';' 
+	: ENTITY Identifier ';'? entity_declaration_body END_ENTITY ';' 
 	;
 
 entity_declaration_body
-	: supertype_declaration? subtype_declaration? inverse_declaration? derive_declaration? rule_declaration? unique_declaration? 
+	: attribute* supertype_declaration? subtype_declaration? inverse_declaration? derive_declaration? rule_declaration? unique_declaration? 
 	;
 
 supertype_declaration 
@@ -153,14 +158,15 @@ function_declaration_body
 
 //Base Types
 BOOLEAN : 'BOOLEAN' ;
-FIXED : 'FIXED' ;
 INTEGER : 'INTEGER' ;
 LIST : 'LIST';
 LOGICAL : 'LOGICAL' ;
 REAL : 'REAL' ;
 SET : 'SET' ;
-STRING_FIXED : 'STRING(' Integer ') FIXED' ;
+STRING_SIZED : 'STRING(' Integer ')';
+FIXED : 'FIXED';
 STRING : 'STRING' ;
+ARRAY : 'ARRAY' ;
 
 // Keywords
 ABSTRACT : 'ABSTRACT' ;
@@ -177,20 +183,22 @@ ONEOF : 'ONEOF' ;
 OPTIONAL : 'OPTIONAL' ;
 OR : 'OR' ;
 SCHEMA : 'SCHEMA' ;
-END_SCHEMA : 'END_SCHEMA';
+END_SCHEMA : 'END_SCHEMA' ;
+SELECT : 'SELECT' ;
 SELF : 'SELF' ;
 SUBTYPE : 'SUBTYPE' ;
 SUPERTYPE : 'SUPERTYPE' ;
 TYPE : 'TYPE' ;
 END_TYPE : 'END_TYPE' ;
 UNIQUE : 'UNIQUE' ;
-WHERE : 'WHERE' ;
+//WHERE : 'WHERE' ;
 
 // Functions
 EXISTS : 'EXISTS' ;
 SIZEOF : 'SIZEOF' ;
 QUERY : 'QUERY' ;
 TYPEOF : 'TYPEOF' ;
+ABS : 'ABS' ;
 
 IfcType
 	: '\'' Version '.' Identifier '\''
@@ -232,17 +240,22 @@ Float
 	| '.' Digit+
 	;
 
-SetAccesor
+SetAccessor
 	: Identifier '[' (Integer|Identifier) ']'
+	| SELF '[' (Integer|Identifier) ']'
+	;
+
+Path
+	: (SELF'\\')? (Identifier|PropertyAccessor)('\\'(Identifier|PropertyAccessor))+
 	;
 
 PropertyAccessor
-	: (SELF'\\')? (SetAccesor|Identifier)('.'Identifier)+
+	:  (SetAccessor|Identifier)('.'(SetAccessor|Identifier))+
 	;
 
 Identifier 
 	: IdLetter (IdLetter | Digit)*
-	| '\'' IdLetter (IdLetter | Digit)* '\''
+	| '\'' (IdLetter|Digit) (IdLetter|Digit)* '\''
 	;
 
 fragment
@@ -263,19 +276,18 @@ LowercaseLetter
 	: 'a'..'z'
 	;
 
-WS 
-	: [ \t\n\r]+ -> skip ;
+Rules
+	: 'RULE ' Identifier .*? 'END_RULE;' -> skip ;
 
-NL 
-	: ('\r'? '\n' | '\r')+ -> skip ;
+Functions
+	: 'FUNCTION ' Identifier .*? 'END_FUNCTION;' -> skip ;
+
+WS 
+	: [ \t\r\n\u000c]+ -> skip ;
 
 Comments 
 	: '(*' .*? '*)' -> skip ;
 
-Rules
-	: 'RULE' .*? 'END_RULE;' -> skip ;
 
-Functions
-	: 'FUNCTION' .*? 'END_FUNCTION;' -> skip ;
 
 
