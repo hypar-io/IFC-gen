@@ -65,7 +65,7 @@ expr
 	; 
 
 func_call_expr
-	: (EXISTS|SIZEOF|TYPEOF|QUERY|ABS|Identifier)'(' func_parameters ')'
+	: (EXISTS|SIZEOF|TYPEOF|QUERY|ABS|USEDIN|Identifier)'(' func_parameters ')'
 	;
 
 func_parameters
@@ -88,6 +88,7 @@ formula_expr
 
 atom 
 	: SELF
+	| IfcType
 	| Integer 
 	| Float
 	| Identifier
@@ -199,9 +200,10 @@ SIZEOF : 'SIZEOF' ;
 QUERY : 'QUERY' ;
 TYPEOF : 'TYPEOF' ;
 ABS : 'ABS' ;
+USEDIN : 'USEDIN' ;
 
 IfcType
-	: '\'' Version '.' Identifier '\''
+	: '\'' Version ('.'Identifier)+ '\''
 	;
 
 Version 
@@ -255,7 +257,7 @@ PropertyAccessor
 
 Identifier 
 	: IdLetter (IdLetter | Digit)*
-	| '\'' (IdLetter|Digit) (IdLetter|Digit)* '\''
+	| '\'' (IdLetter|Digit) (IdLetter|Digit|' ')* '\''
 	;
 
 fragment

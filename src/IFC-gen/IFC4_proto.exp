@@ -186,6 +186,15 @@ ENTITY IfcAdvancedFace
                              ))) = 0;
 END_ENTITY;
 
+ENTITY IfcBeamStandardCase
+ SUBTYPE OF (IfcBeam);
+ WHERE
+	HasMaterialProfileSetUsage : SIZEOF (QUERY(temp <* USEDIN(SELF, 'IFC4.IFCRELASSOCIATES.RELATEDOBJECTS') |
+                                                 ('IFC4.IFCRELASSOCIATESMATERIAL' IN TYPEOF(temp)) AND
+                                                 ('IFC4.IFCMATERIALPROFILESETUSAGE' IN TYPEOF(temp.RelatingMaterial))
+                                                 )) = 1;
+END_ENTITY;
+
 RULE IfcRepresentationContextSameWCS FOR 
 	(IfcGeometricRepresentationContext);
     LOCAL
