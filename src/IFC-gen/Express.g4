@@ -1,108 +1,108 @@
 grammar Express;
 
-schema_declaration
-	: SCHEMA Version ';' type_declaration* entity_declaration* function_declaration*  END_SCHEMA';' EOF;
+schemaDeclaration
+	: SCHEMA Version ';' typeDeclaration* entityDeclaration* functionDeclaration*  END_SCHEMA';' EOF;
 
-type_declaration 
-	: TYPE type_name EQ (value_type|enumeration|select) FIXED? ';' type_declaration_body? END_TYPE ';' ;
+typeDeclaration 
+	: TYPE typeName EQ (valueType|enumeration|select) FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
 
-type_name	
+typeName	
 	: Identifier
 	;
 
-value_type 
+valueType 
 	: BOOLEAN
 	| INTEGER
 	| LOGICAL
 	| REAL
 	| STRING
 	| STRING_SIZED
-	| set_declaration
-	| list_declaration
-	| array_declaration
+	| setDeclaration
+	| listDeclaration
+	| arrayDeclaration
 	| Identifier
 	;
 
-set_declaration
-	: SET '[' Integer COLON (set_size|'?') ']' OF value_type (FOR Identifier)?
+setDeclaration
+	: SET '[' Integer COLON (setSize|'?') ']' OF valueType (FOR Identifier)?
 	;
 
-set_size
+setSize
 	: Integer
 	;
 
-list_declaration
-	: LIST '[' Integer COLON (list_size|'?') ']' OF value_type
+listDeclaration
+	: LIST '[' Integer COLON (listSize|'?') ']' OF valueType
 	;
 
-list_size
+listSize
 	: Integer
 	;
 
-array_declaration
-	: ARRAY '[' Integer COLON (array_size|'?') ']' OF value_type
+arrayDeclaration
+	: ARRAY '[' Integer COLON (arraySize|'?') ']' OF valueType
 	;
 
-array_size
+arraySize
 	: Integer
 	;
 
 enumeration
-	: ENUMERATION OF LP enum_id_list RP 
+	: ENUMERATION OF LP enumIdList RP 
 	;
 
-enum_id_list
-	: id_list
+enumIdList
+	: idList
 	;
 
 select
-	: SELECT LP select_id_list RP
+	: SELECT LP selectIdList RP
 	;
 
-select_id_list
-	: id_list
+selectIdList
+	: idList
 	;
 
-id_list
+idList
 	: Identifier(','Identifier)*
 	| IfcType(','IfcType)*
 	;
 
-type_declaration_body 
-	: rule_declaration 
+typeDeclarationBody 
+	: ruleDeclaration 
 	;
 
-rule_declaration : 'WHERE' rule+ ;
+ruleDeclaration : 'WHERE' rule+ ;
 
 rule 
 	: Identifier COLON expr ';'
 	;
 
 expr
-	: func_call_expr
-	| bool_expr
-	| LB bool_expr RB
+	: funcCallExpr
+	| boolExpr
+	| LB boolExpr RB
 	; 
 
-func_call_expr
-	: (EXISTS|SIZEOF|TYPEOF|QUERY|ABS|USEDIN|Identifier)'(' func_parameters ')'
+funcCallExpr
+	: (EXISTS|SIZEOF|TYPEOF|QUERY|ABS|USEDIN|Identifier)'(' funcParameters ')'
 	;
 
-func_parameters
+funcParameters
 	: atom(','atom)*
-	| formula_expr
+	| formulaExpr
 	;
 
-query_expr
-	: Identifier INIT (Identifier|Path|PropertyAccessor|func_call_expr) PIPE bool_expr
+queryExpr
+	: Identifier INIT (Identifier|Path|PropertyAccessor|funcCallExpr) PIPE boolExpr
 	;
 
-bool_expr
+boolExpr
 	: atom((LT|GT|LTE|GTE|EQ|NEQ|AND|OR)atom)*
-	| (IfcType|Path|PropertyAccessor|Identifier|SELF) IN (func_call_expr|'['id_list']')
+	| (IfcType|Path|PropertyAccessor|Identifier|SELF) IN (funcCallExpr|'['idList']')
 	;
 
-formula_expr
+formulaExpr
 	: atom((ADD|SUB|MUL|DIV)atom)+
 	;
 
@@ -115,80 +115,80 @@ atom
 	| Path
 	| PropertyAccessor
 	| SetAccessor
-	| '[' id_list ']'
-	| query_expr
-	| func_call_expr
+	| '[' idList ']'
+	| queryExpr
+	| funcCallExpr
 	| '('NOT? expr ')'
 	| NOT?'('expr')'
 	;
 
-self_property
+selfProperty
 	: SELF '.' Identifier
 	;
 
-entity_declaration
-	: ENTITY entity_name ';'? entity_declaration_body END_ENTITY ';' 
+entityDeclaration
+	: ENTITY entityName ';'? entityDeclarationBody END_ENTITY ';' 
 	;
 
-entity_name
+entityName
 	: Identifier
 	;
 
-entity_declaration_body
-	: attribute* supertype_declaration? subtype_declaration? inverse_declaration? derive_declaration? rule_declaration? unique_declaration? 
+entityDeclarationBody
+	: attribute* supertypeDeclaration? subtypeDeclaration? inverseDeclaration? deriveDeclaration? ruleDeclaration? uniqueDeclaration? 
 	;
 
-supertype_declaration 
-	:  ABSTRACT? SUPERTYPE OF LP (one_of | supertype_name) RP ';'? attribute* 
+supertypeDeclaration 
+	:  ABSTRACT? SUPERTYPE OF LP (oneOf | supertypeName) RP ';'? attribute* 
 	;
 
-supertype_name
+supertypeName
 	: Identifier
 	;
 
-subtype_declaration 
-	: SUBTYPE OF LP (one_of | subtype_name) RP ';' attribute* 
+subtypeDeclaration 
+	: SUBTYPE OF LP (oneOf | subtypeName) RP ';' attribute* 
 	;
 
-subtype_name
+subtypeName
 	: Identifier
 	;
 
 attribute
-	: attribute_name COLON OPTIONAL? value_type definition? ';'
+	: attributeName COLON OPTIONAL? valueType definition? ';'
 	;
 
-attribute_name
+attributeName
 	: Identifier
 	;
 
 definition
 	: DEF expr;
 
-one_of 
-	: ONEOF LP id_list RP 
+oneOf 
+	: ONEOF LP idList RP 
 	;
 
-inverse_declaration
+inverseDeclaration
 	: INVERSE attribute+ 
 	;
 
-derive_declaration
+deriveDeclaration
 	: DERIVE attribute+
 	;
 
-unique_declaration
-	: UNIQUE unique_statement+ 
+uniqueDeclaration
+	: UNIQUE uniqueStatement+ 
 	;
 
-unique_statement
+uniqueStatement
 	: Identifier COLON .*? ';' 
 	;
 
-function_declaration 
-	: 'FUNCTION' function_declaration_body 'END_FUNCTION' ;
+functionDeclaration 
+	: 'FUNCTION' functionDeclarationBody 'END_FUNCTION' ;
 
-function_declaration_body
+functionDeclarationBody
 	: .*? ;
 
 // Lexer
