@@ -249,7 +249,7 @@ namespace IFC4
 
 				var tree = parser.schema_declaration();
 				var walker = new ParseTreeWalker();
-				walker.Walk(new Express.IFCListener(), tree);
+				walker.Walk(new Express.ExpressListener(), tree);
 
 				/*
 				var sb = new System.Text.StringBuilder();

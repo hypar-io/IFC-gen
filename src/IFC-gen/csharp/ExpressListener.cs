@@ -5,10 +5,10 @@ using Antlr4.Runtime.Misc;
 
 namespace Express
 {
-	class ClassInfo
+	public class ClassInfo
 	{
 		public string Name {get;set;}
-		public Type BaseType {get;set;}
+		public string BaseType {get;set;}
 		public Dictionary<string,Type> Properties{get;set;}
 		public ClassInfo(string name)
 		{
@@ -17,7 +17,7 @@ namespace Express
 		}
 	}
 
-	class EnumInfo
+	public class EnumInfo
 	{
 		public string Name{get;set;}
 		public List<string> Values{get;set;}
@@ -28,7 +28,7 @@ namespace Express
 		}
 	}
 
-	public class IFCListener : ExpressBaseListener
+	public class ExpressListener : ExpressBaseListener
 	{
 		public Dictionary<string, ClassInfo> ClassInfoMap {get;set;}
 		public Dictionary<string, EnumInfo> EnumInfoMap {get;set;}
@@ -36,7 +36,7 @@ namespace Express
 		private ClassInfo currentClassInfo;
 		private EnumInfo currentEnumInfo;
 
-		public IFCListener()
+		public ExpressListener()
 		{
 			ClassInfoMap = new Dictionary<string, ClassInfo>();
 			EnumInfoMap = new Dictionary<string, EnumInfo>();
