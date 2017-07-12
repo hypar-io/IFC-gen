@@ -4,7 +4,11 @@ schema_declaration
 	: SCHEMA Version ';' type_declaration* entity_declaration* function_declaration*  END_SCHEMA';' EOF;
 
 type_declaration 
-	: TYPE Identifier EQ (value_type|enumeration|select) FIXED? ';' type_declaration_body? END_TYPE ';' ;
+	: TYPE type_name EQ (value_type|enumeration|select) FIXED? ';' type_declaration_body? END_TYPE ';' ;
+
+type_name	
+	: Identifier
+	;
 
 value_type 
 	: BOOLEAN
@@ -20,32 +24,48 @@ value_type
 	;
 
 set_declaration
-	: SET '[' Integer COLON (Integer|'?') ']' OF value_type (FOR Identifier)?
+	: SET '[' Integer COLON (set_size|'?') ']' OF value_type (FOR Identifier)?
+	;
+
+set_size
+	: Integer
 	;
 
 list_declaration
-	: LIST '[' Integer COLON (Integer|'?') ']' OF value_type
+	: LIST '[' Integer COLON (list_size|'?') ']' OF value_type
+	;
+
+list_size
+	: Integer
 	;
 
 array_declaration
-	: ARRAY '[' Integer COLON (Integer|'?') ']' OF value_type
+	: ARRAY '[' Integer COLON (array_size|'?') ']' OF value_type
+	;
+
+array_size
+	: Integer
 	;
 
 enumeration
 	: ENUMERATION OF LP enum_id_list RP 
 	;
 
+enum_id_list
+	: id_list
+	;
+
 select
-	: SELECT LP enum_id_list RP
+	: SELECT LP select_id_list RP
+	;
+
+select_id_list
+	: id_list
 	;
 
 id_list
 	: Identifier(','Identifier)*
 	| IfcType(','IfcType)*
-	;
-
-enum_id_list
-	: Identifier(','Identifier)*
 	;
 
 type_declaration_body 
@@ -107,7 +127,11 @@ self_property
 	;
 
 entity_declaration
-	: ENTITY Identifier ';'? entity_declaration_body END_ENTITY ';' 
+	: ENTITY entity_name ';'? entity_declaration_body END_ENTITY ';' 
+	;
+
+entity_name
+	: Identifier
 	;
 
 entity_declaration_body
@@ -115,15 +139,27 @@ entity_declaration_body
 	;
 
 supertype_declaration 
-	:  ABSTRACT? SUPERTYPE OF LP (one_of | Identifier) RP ';'? attribute* 
+	:  ABSTRACT? SUPERTYPE OF LP (one_of | supertype_name) RP ';'? attribute* 
+	;
+
+supertype_name
+	: Identifier
 	;
 
 subtype_declaration 
-	: SUBTYPE OF LP (one_of | Identifier) RP ';' attribute* 
+	: SUBTYPE OF LP (one_of | subtype_name) RP ';' attribute* 
+	;
+
+subtype_name
+	: Identifier
 	;
 
 attribute
-	: Identifier COLON OPTIONAL? value_type definition? ';'
+	: attribute_name COLON OPTIONAL? value_type definition? ';'
+	;
+
+attribute_name
+	: Identifier
 	;
 
 definition

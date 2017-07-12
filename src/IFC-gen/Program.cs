@@ -248,7 +248,10 @@ namespace IFC4
 				parser.BuildParseTree = true;
 
 				var tree = parser.schema_declaration();
+				var walker = new ParseTreeWalker();
+				walker.Walk(new Express.IFCListener(), tree);
 
+				/*
 				var sb = new System.Text.StringBuilder();
 				foreach(var t in tokens.GetTokens())
 				{
@@ -256,10 +259,7 @@ namespace IFC4
 				}
 				
 				File.WriteAllText("tokens.txt",sb.ToString());
-
-				//var walker = new ParseTreeWalker();
-				//var listener = new Express.ExpressListener();
-				//walker.Walk(listener, tree);
+				*/
 			}
 			
 		}
