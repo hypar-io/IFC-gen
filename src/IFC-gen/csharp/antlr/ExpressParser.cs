@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from ./ANTLR/Express.g4 by ANTLR 4.7
+// Generated from Express.g4 by ANTLR 4.7
 
 // Unreachable code detected
 #pragma warning disable 0162
@@ -49,30 +49,29 @@ public partial class ExpressParser : Parser {
 		SetAccessor=71, Path=72, PropertyAccessor=73, Identifier=74, Rules=75, 
 		Functions=76, WS=77, Comments=78;
 	public const int
-		RULE_schema_declaration = 0, RULE_type_declaration = 1, RULE_type_name = 2, 
-		RULE_value_type = 3, RULE_set_declaration = 4, RULE_set_size = 5, RULE_list_declaration = 6, 
-		RULE_list_size = 7, RULE_array_declaration = 8, RULE_array_size = 9, RULE_enumeration = 10, 
-		RULE_enum_id_list = 11, RULE_select = 12, RULE_select_id_list = 13, RULE_id_list = 14, 
-		RULE_type_declaration_body = 15, RULE_rule_declaration = 16, RULE_rule = 17, 
-		RULE_expr = 18, RULE_func_call_expr = 19, RULE_func_parameters = 20, RULE_query_expr = 21, 
-		RULE_bool_expr = 22, RULE_formula_expr = 23, RULE_atom = 24, RULE_self_property = 25, 
-		RULE_entity_declaration = 26, RULE_entity_name = 27, RULE_entity_declaration_body = 28, 
-		RULE_supertype_declaration = 29, RULE_supertype_name = 30, RULE_subtype_declaration = 31, 
-		RULE_subtype_name = 32, RULE_attribute = 33, RULE_attribute_name = 34, 
-		RULE_definition = 35, RULE_one_of = 36, RULE_inverse_declaration = 37, 
-		RULE_derive_declaration = 38, RULE_unique_declaration = 39, RULE_unique_statement = 40, 
-		RULE_function_declaration = 41, RULE_function_declaration_body = 42;
+		RULE_schemaDeclaration = 0, RULE_typeDeclaration = 1, RULE_typeName = 2, 
+		RULE_valueType = 3, RULE_setDeclaration = 4, RULE_setSize = 5, RULE_listDeclaration = 6, 
+		RULE_listSize = 7, RULE_arrayDeclaration = 8, RULE_arraySize = 9, RULE_enumeration = 10, 
+		RULE_enumIdList = 11, RULE_select = 12, RULE_selectIdList = 13, RULE_idList = 14, 
+		RULE_typeDeclarationBody = 15, RULE_ruleDeclaration = 16, RULE_rule = 17, 
+		RULE_expr = 18, RULE_funcCallExpr = 19, RULE_funcParameters = 20, RULE_queryExpr = 21, 
+		RULE_boolExpr = 22, RULE_formulaExpr = 23, RULE_atom = 24, RULE_selfProperty = 25, 
+		RULE_entityDeclaration = 26, RULE_entityName = 27, RULE_entityDeclarationBody = 28, 
+		RULE_supertypeDeclaration = 29, RULE_supertypeName = 30, RULE_subtypeDeclaration = 31, 
+		RULE_subtypeName = 32, RULE_attribute = 33, RULE_attributeName = 34, RULE_definition = 35, 
+		RULE_oneOf = 36, RULE_inverseDeclaration = 37, RULE_deriveDeclaration = 38, 
+		RULE_uniqueDeclaration = 39, RULE_uniqueStatement = 40, RULE_functionDeclaration = 41, 
+		RULE_functionDeclarationBody = 42;
 	public static readonly string[] ruleNames = {
-		"schema_declaration", "type_declaration", "type_name", "value_type", "set_declaration", 
-		"set_size", "list_declaration", "list_size", "array_declaration", "array_size", 
-		"enumeration", "enum_id_list", "select", "select_id_list", "id_list", 
-		"type_declaration_body", "rule_declaration", "rule", "expr", "func_call_expr", 
-		"func_parameters", "query_expr", "bool_expr", "formula_expr", "atom", 
-		"self_property", "entity_declaration", "entity_name", "entity_declaration_body", 
-		"supertype_declaration", "supertype_name", "subtype_declaration", "subtype_name", 
-		"attribute", "attribute_name", "definition", "one_of", "inverse_declaration", 
-		"derive_declaration", "unique_declaration", "unique_statement", "function_declaration", 
-		"function_declaration_body"
+		"schemaDeclaration", "typeDeclaration", "typeName", "valueType", "setDeclaration", 
+		"setSize", "listDeclaration", "listSize", "arrayDeclaration", "arraySize", 
+		"enumeration", "enumIdList", "select", "selectIdList", "idList", "typeDeclarationBody", 
+		"ruleDeclaration", "rule", "expr", "funcCallExpr", "funcParameters", "queryExpr", 
+		"boolExpr", "formulaExpr", "atom", "selfProperty", "entityDeclaration", 
+		"entityName", "entityDeclarationBody", "supertypeDeclaration", "supertypeName", 
+		"subtypeDeclaration", "subtypeName", "attribute", "attributeName", "definition", 
+		"oneOf", "inverseDeclaration", "deriveDeclaration", "uniqueDeclaration", 
+		"uniqueStatement", "functionDeclaration", "functionDeclarationBody"
 	};
 
 	private static readonly string[] _LiteralNames = {
@@ -130,48 +129,48 @@ public partial class ExpressParser : Parser {
 	{
 		Interpreter = new ParserATNSimulator(this, _ATN, decisionToDFA, sharedContextCache);
 	}
-	public partial class Schema_declarationContext : ParserRuleContext {
+	public partial class SchemaDeclarationContext : ParserRuleContext {
 		public ITerminalNode SCHEMA() { return GetToken(ExpressParser.SCHEMA, 0); }
 		public ITerminalNode Version() { return GetToken(ExpressParser.Version, 0); }
 		public ITerminalNode END_SCHEMA() { return GetToken(ExpressParser.END_SCHEMA, 0); }
 		public ITerminalNode Eof() { return GetToken(ExpressParser.Eof, 0); }
-		public Type_declarationContext[] type_declaration() {
-			return GetRuleContexts<Type_declarationContext>();
+		public TypeDeclarationContext[] typeDeclaration() {
+			return GetRuleContexts<TypeDeclarationContext>();
 		}
-		public Type_declarationContext type_declaration(int i) {
-			return GetRuleContext<Type_declarationContext>(i);
+		public TypeDeclarationContext typeDeclaration(int i) {
+			return GetRuleContext<TypeDeclarationContext>(i);
 		}
-		public Entity_declarationContext[] entity_declaration() {
-			return GetRuleContexts<Entity_declarationContext>();
+		public EntityDeclarationContext[] entityDeclaration() {
+			return GetRuleContexts<EntityDeclarationContext>();
 		}
-		public Entity_declarationContext entity_declaration(int i) {
-			return GetRuleContext<Entity_declarationContext>(i);
+		public EntityDeclarationContext entityDeclaration(int i) {
+			return GetRuleContext<EntityDeclarationContext>(i);
 		}
-		public Function_declarationContext[] function_declaration() {
-			return GetRuleContexts<Function_declarationContext>();
+		public FunctionDeclarationContext[] functionDeclaration() {
+			return GetRuleContexts<FunctionDeclarationContext>();
 		}
-		public Function_declarationContext function_declaration(int i) {
-			return GetRuleContext<Function_declarationContext>(i);
+		public FunctionDeclarationContext functionDeclaration(int i) {
+			return GetRuleContext<FunctionDeclarationContext>(i);
 		}
-		public Schema_declarationContext(ParserRuleContext parent, int invokingState)
+		public SchemaDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_schema_declaration; } }
+		public override int RuleIndex { get { return RULE_schemaDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSchema_declaration(this);
+			if (typedListener != null) typedListener.EnterSchemaDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSchema_declaration(this);
+			if (typedListener != null) typedListener.ExitSchemaDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Schema_declarationContext schema_declaration() {
-		Schema_declarationContext _localctx = new Schema_declarationContext(Context, State);
-		EnterRule(_localctx, 0, RULE_schema_declaration);
+	public SchemaDeclarationContext schemaDeclaration() {
+		SchemaDeclarationContext _localctx = new SchemaDeclarationContext(Context, State);
+		EnterRule(_localctx, 0, RULE_schemaDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -185,7 +184,7 @@ public partial class ExpressParser : Parser {
 			while (_la==TYPE) {
 				{
 				{
-				State = 89; type_declaration();
+				State = 89; typeDeclaration();
 				}
 				}
 				State = 94;
@@ -198,7 +197,7 @@ public partial class ExpressParser : Parser {
 			while (_la==ENTITY) {
 				{
 				{
-				State = 95; entity_declaration();
+				State = 95; entityDeclaration();
 				}
 				}
 				State = 100;
@@ -211,7 +210,7 @@ public partial class ExpressParser : Parser {
 			while (_la==T__7) {
 				{
 				{
-				State = 101; function_declaration();
+				State = 101; functionDeclaration();
 				}
 				}
 				State = 106;
@@ -234,15 +233,15 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Type_declarationContext : ParserRuleContext {
+	public partial class TypeDeclarationContext : ParserRuleContext {
 		public ITerminalNode TYPE() { return GetToken(ExpressParser.TYPE, 0); }
-		public Type_nameContext type_name() {
-			return GetRuleContext<Type_nameContext>(0);
+		public TypeNameContext typeName() {
+			return GetRuleContext<TypeNameContext>(0);
 		}
 		public ITerminalNode EQ() { return GetToken(ExpressParser.EQ, 0); }
 		public ITerminalNode END_TYPE() { return GetToken(ExpressParser.END_TYPE, 0); }
-		public Value_typeContext value_type() {
-			return GetRuleContext<Value_typeContext>(0);
+		public ValueTypeContext valueType() {
+			return GetRuleContext<ValueTypeContext>(0);
 		}
 		public EnumerationContext enumeration() {
 			return GetRuleContext<EnumerationContext>(0);
@@ -251,34 +250,34 @@ public partial class ExpressParser : Parser {
 			return GetRuleContext<SelectContext>(0);
 		}
 		public ITerminalNode FIXED() { return GetToken(ExpressParser.FIXED, 0); }
-		public Type_declaration_bodyContext type_declaration_body() {
-			return GetRuleContext<Type_declaration_bodyContext>(0);
+		public TypeDeclarationBodyContext typeDeclarationBody() {
+			return GetRuleContext<TypeDeclarationBodyContext>(0);
 		}
-		public Type_declarationContext(ParserRuleContext parent, int invokingState)
+		public TypeDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_type_declaration; } }
+		public override int RuleIndex { get { return RULE_typeDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterType_declaration(this);
+			if (typedListener != null) typedListener.EnterTypeDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitType_declaration(this);
+			if (typedListener != null) typedListener.ExitTypeDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Type_declarationContext type_declaration() {
-		Type_declarationContext _localctx = new Type_declarationContext(Context, State);
-		EnterRule(_localctx, 2, RULE_type_declaration);
+	public TypeDeclarationContext typeDeclaration() {
+		TypeDeclarationContext _localctx = new TypeDeclarationContext(Context, State);
+		EnterRule(_localctx, 2, RULE_typeDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 111; Match(TYPE);
-			State = 112; type_name();
+			State = 112; typeName();
 			State = 113; Match(EQ);
 			State = 117;
 			ErrorHandler.Sync(this);
@@ -294,7 +293,7 @@ public partial class ExpressParser : Parser {
 			case ARRAY:
 			case Identifier:
 				{
-				State = 114; value_type();
+				State = 114; valueType();
 				}
 				break;
 			case ENUMERATION:
@@ -325,7 +324,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==T__5) {
 				{
-				State = 123; type_declaration_body();
+				State = 123; typeDeclarationBody();
 				}
 			}
 
@@ -344,27 +343,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Type_nameContext : ParserRuleContext {
+	public partial class TypeNameContext : ParserRuleContext {
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Type_nameContext(ParserRuleContext parent, int invokingState)
+		public TypeNameContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_type_name; } }
+		public override int RuleIndex { get { return RULE_typeName; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterType_name(this);
+			if (typedListener != null) typedListener.EnterTypeName(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitType_name(this);
+			if (typedListener != null) typedListener.ExitTypeName(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Type_nameContext type_name() {
-		Type_nameContext _localctx = new Type_nameContext(Context, State);
-		EnterRule(_localctx, 4, RULE_type_name);
+	public TypeNameContext typeName() {
+		TypeNameContext _localctx = new TypeNameContext(Context, State);
+		EnterRule(_localctx, 4, RULE_typeName);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -382,42 +381,42 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Value_typeContext : ParserRuleContext {
+	public partial class ValueTypeContext : ParserRuleContext {
 		public ITerminalNode BOOLEAN() { return GetToken(ExpressParser.BOOLEAN, 0); }
 		public ITerminalNode INTEGER() { return GetToken(ExpressParser.INTEGER, 0); }
 		public ITerminalNode LOGICAL() { return GetToken(ExpressParser.LOGICAL, 0); }
 		public ITerminalNode REAL() { return GetToken(ExpressParser.REAL, 0); }
 		public ITerminalNode STRING() { return GetToken(ExpressParser.STRING, 0); }
 		public ITerminalNode STRING_SIZED() { return GetToken(ExpressParser.STRING_SIZED, 0); }
-		public Set_declarationContext set_declaration() {
-			return GetRuleContext<Set_declarationContext>(0);
+		public SetDeclarationContext setDeclaration() {
+			return GetRuleContext<SetDeclarationContext>(0);
 		}
-		public List_declarationContext list_declaration() {
-			return GetRuleContext<List_declarationContext>(0);
+		public ListDeclarationContext listDeclaration() {
+			return GetRuleContext<ListDeclarationContext>(0);
 		}
-		public Array_declarationContext array_declaration() {
-			return GetRuleContext<Array_declarationContext>(0);
+		public ArrayDeclarationContext arrayDeclaration() {
+			return GetRuleContext<ArrayDeclarationContext>(0);
 		}
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Value_typeContext(ParserRuleContext parent, int invokingState)
+		public ValueTypeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_value_type; } }
+		public override int RuleIndex { get { return RULE_valueType; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterValue_type(this);
+			if (typedListener != null) typedListener.EnterValueType(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitValue_type(this);
+			if (typedListener != null) typedListener.ExitValueType(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Value_typeContext value_type() {
-		Value_typeContext _localctx = new Value_typeContext(Context, State);
-		EnterRule(_localctx, 6, RULE_value_type);
+	public ValueTypeContext valueType() {
+		ValueTypeContext _localctx = new ValueTypeContext(Context, State);
+		EnterRule(_localctx, 6, RULE_valueType);
 		try {
 			State = 141;
 			ErrorHandler.Sync(this);
@@ -461,19 +460,19 @@ public partial class ExpressParser : Parser {
 			case SET:
 				EnterOuterAlt(_localctx, 7);
 				{
-				State = 137; set_declaration();
+				State = 137; setDeclaration();
 				}
 				break;
 			case LIST:
 				EnterOuterAlt(_localctx, 8);
 				{
-				State = 138; list_declaration();
+				State = 138; listDeclaration();
 				}
 				break;
 			case ARRAY:
 				EnterOuterAlt(_localctx, 9);
 				{
-				State = 139; array_declaration();
+				State = 139; arrayDeclaration();
 				}
 				break;
 			case Identifier:
@@ -497,38 +496,38 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Set_declarationContext : ParserRuleContext {
+	public partial class SetDeclarationContext : ParserRuleContext {
 		public ITerminalNode SET() { return GetToken(ExpressParser.SET, 0); }
 		public ITerminalNode Integer() { return GetToken(ExpressParser.Integer, 0); }
 		public ITerminalNode COLON() { return GetToken(ExpressParser.COLON, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
-		public Value_typeContext value_type() {
-			return GetRuleContext<Value_typeContext>(0);
+		public ValueTypeContext valueType() {
+			return GetRuleContext<ValueTypeContext>(0);
 		}
-		public Set_sizeContext set_size() {
-			return GetRuleContext<Set_sizeContext>(0);
+		public SetSizeContext setSize() {
+			return GetRuleContext<SetSizeContext>(0);
 		}
 		public ITerminalNode FOR() { return GetToken(ExpressParser.FOR, 0); }
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Set_declarationContext(ParserRuleContext parent, int invokingState)
+		public SetDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_set_declaration; } }
+		public override int RuleIndex { get { return RULE_setDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSet_declaration(this);
+			if (typedListener != null) typedListener.EnterSetDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSet_declaration(this);
+			if (typedListener != null) typedListener.ExitSetDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Set_declarationContext set_declaration() {
-		Set_declarationContext _localctx = new Set_declarationContext(Context, State);
-		EnterRule(_localctx, 8, RULE_set_declaration);
+	public SetDeclarationContext setDeclaration() {
+		SetDeclarationContext _localctx = new SetDeclarationContext(Context, State);
+		EnterRule(_localctx, 8, RULE_setDeclaration);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -541,7 +540,7 @@ public partial class ExpressParser : Parser {
 			switch (TokenStream.LA(1)) {
 			case Integer:
 				{
-				State = 147; set_size();
+				State = 147; setSize();
 				}
 				break;
 			case T__2:
@@ -554,7 +553,7 @@ public partial class ExpressParser : Parser {
 			}
 			State = 151; Match(T__3);
 			State = 152; Match(OF);
-			State = 153; value_type();
+			State = 153; valueType();
 			State = 156;
 			ErrorHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(TokenStream,8,Context) ) {
@@ -578,27 +577,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Set_sizeContext : ParserRuleContext {
+	public partial class SetSizeContext : ParserRuleContext {
 		public ITerminalNode Integer() { return GetToken(ExpressParser.Integer, 0); }
-		public Set_sizeContext(ParserRuleContext parent, int invokingState)
+		public SetSizeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_set_size; } }
+		public override int RuleIndex { get { return RULE_setSize; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSet_size(this);
+			if (typedListener != null) typedListener.EnterSetSize(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSet_size(this);
+			if (typedListener != null) typedListener.ExitSetSize(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Set_sizeContext set_size() {
-		Set_sizeContext _localctx = new Set_sizeContext(Context, State);
-		EnterRule(_localctx, 10, RULE_set_size);
+	public SetSizeContext setSize() {
+		SetSizeContext _localctx = new SetSizeContext(Context, State);
+		EnterRule(_localctx, 10, RULE_setSize);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -616,36 +615,36 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class List_declarationContext : ParserRuleContext {
+	public partial class ListDeclarationContext : ParserRuleContext {
 		public ITerminalNode LIST() { return GetToken(ExpressParser.LIST, 0); }
 		public ITerminalNode Integer() { return GetToken(ExpressParser.Integer, 0); }
 		public ITerminalNode COLON() { return GetToken(ExpressParser.COLON, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
-		public Value_typeContext value_type() {
-			return GetRuleContext<Value_typeContext>(0);
+		public ValueTypeContext valueType() {
+			return GetRuleContext<ValueTypeContext>(0);
 		}
-		public List_sizeContext list_size() {
-			return GetRuleContext<List_sizeContext>(0);
+		public ListSizeContext listSize() {
+			return GetRuleContext<ListSizeContext>(0);
 		}
-		public List_declarationContext(ParserRuleContext parent, int invokingState)
+		public ListDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_list_declaration; } }
+		public override int RuleIndex { get { return RULE_listDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterList_declaration(this);
+			if (typedListener != null) typedListener.EnterListDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitList_declaration(this);
+			if (typedListener != null) typedListener.ExitListDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public List_declarationContext list_declaration() {
-		List_declarationContext _localctx = new List_declarationContext(Context, State);
-		EnterRule(_localctx, 12, RULE_list_declaration);
+	public ListDeclarationContext listDeclaration() {
+		ListDeclarationContext _localctx = new ListDeclarationContext(Context, State);
+		EnterRule(_localctx, 12, RULE_listDeclaration);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -658,7 +657,7 @@ public partial class ExpressParser : Parser {
 			switch (TokenStream.LA(1)) {
 			case Integer:
 				{
-				State = 164; list_size();
+				State = 164; listSize();
 				}
 				break;
 			case T__2:
@@ -671,7 +670,7 @@ public partial class ExpressParser : Parser {
 			}
 			State = 168; Match(T__3);
 			State = 169; Match(OF);
-			State = 170; value_type();
+			State = 170; valueType();
 			}
 		}
 		catch (RecognitionException re) {
@@ -685,27 +684,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class List_sizeContext : ParserRuleContext {
+	public partial class ListSizeContext : ParserRuleContext {
 		public ITerminalNode Integer() { return GetToken(ExpressParser.Integer, 0); }
-		public List_sizeContext(ParserRuleContext parent, int invokingState)
+		public ListSizeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_list_size; } }
+		public override int RuleIndex { get { return RULE_listSize; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterList_size(this);
+			if (typedListener != null) typedListener.EnterListSize(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitList_size(this);
+			if (typedListener != null) typedListener.ExitListSize(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public List_sizeContext list_size() {
-		List_sizeContext _localctx = new List_sizeContext(Context, State);
-		EnterRule(_localctx, 14, RULE_list_size);
+	public ListSizeContext listSize() {
+		ListSizeContext _localctx = new ListSizeContext(Context, State);
+		EnterRule(_localctx, 14, RULE_listSize);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -723,36 +722,36 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Array_declarationContext : ParserRuleContext {
+	public partial class ArrayDeclarationContext : ParserRuleContext {
 		public ITerminalNode ARRAY() { return GetToken(ExpressParser.ARRAY, 0); }
 		public ITerminalNode Integer() { return GetToken(ExpressParser.Integer, 0); }
 		public ITerminalNode COLON() { return GetToken(ExpressParser.COLON, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
-		public Value_typeContext value_type() {
-			return GetRuleContext<Value_typeContext>(0);
+		public ValueTypeContext valueType() {
+			return GetRuleContext<ValueTypeContext>(0);
 		}
-		public Array_sizeContext array_size() {
-			return GetRuleContext<Array_sizeContext>(0);
+		public ArraySizeContext arraySize() {
+			return GetRuleContext<ArraySizeContext>(0);
 		}
-		public Array_declarationContext(ParserRuleContext parent, int invokingState)
+		public ArrayDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_array_declaration; } }
+		public override int RuleIndex { get { return RULE_arrayDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterArray_declaration(this);
+			if (typedListener != null) typedListener.EnterArrayDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitArray_declaration(this);
+			if (typedListener != null) typedListener.ExitArrayDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Array_declarationContext array_declaration() {
-		Array_declarationContext _localctx = new Array_declarationContext(Context, State);
-		EnterRule(_localctx, 16, RULE_array_declaration);
+	public ArrayDeclarationContext arrayDeclaration() {
+		ArrayDeclarationContext _localctx = new ArrayDeclarationContext(Context, State);
+		EnterRule(_localctx, 16, RULE_arrayDeclaration);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -765,7 +764,7 @@ public partial class ExpressParser : Parser {
 			switch (TokenStream.LA(1)) {
 			case Integer:
 				{
-				State = 178; array_size();
+				State = 178; arraySize();
 				}
 				break;
 			case T__2:
@@ -778,7 +777,7 @@ public partial class ExpressParser : Parser {
 			}
 			State = 182; Match(T__3);
 			State = 183; Match(OF);
-			State = 184; value_type();
+			State = 184; valueType();
 			}
 		}
 		catch (RecognitionException re) {
@@ -792,27 +791,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Array_sizeContext : ParserRuleContext {
+	public partial class ArraySizeContext : ParserRuleContext {
 		public ITerminalNode Integer() { return GetToken(ExpressParser.Integer, 0); }
-		public Array_sizeContext(ParserRuleContext parent, int invokingState)
+		public ArraySizeContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_array_size; } }
+		public override int RuleIndex { get { return RULE_arraySize; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterArray_size(this);
+			if (typedListener != null) typedListener.EnterArraySize(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitArray_size(this);
+			if (typedListener != null) typedListener.ExitArraySize(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Array_sizeContext array_size() {
-		Array_sizeContext _localctx = new Array_sizeContext(Context, State);
-		EnterRule(_localctx, 18, RULE_array_size);
+	public ArraySizeContext arraySize() {
+		ArraySizeContext _localctx = new ArraySizeContext(Context, State);
+		EnterRule(_localctx, 18, RULE_arraySize);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -834,8 +833,8 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode ENUMERATION() { return GetToken(ExpressParser.ENUMERATION, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
-		public Enum_id_listContext enum_id_list() {
-			return GetRuleContext<Enum_id_listContext>(0);
+		public EnumIdListContext enumIdList() {
+			return GetRuleContext<EnumIdListContext>(0);
 		}
 		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
 		public EnumerationContext(ParserRuleContext parent, int invokingState)
@@ -863,7 +862,7 @@ public partial class ExpressParser : Parser {
 			State = 188; Match(ENUMERATION);
 			State = 189; Match(OF);
 			State = 190; Match(LP);
-			State = 191; enum_id_list();
+			State = 191; enumIdList();
 			State = 192; Match(RP);
 			}
 		}
@@ -878,33 +877,33 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Enum_id_listContext : ParserRuleContext {
-		public Id_listContext id_list() {
-			return GetRuleContext<Id_listContext>(0);
+	public partial class EnumIdListContext : ParserRuleContext {
+		public IdListContext idList() {
+			return GetRuleContext<IdListContext>(0);
 		}
-		public Enum_id_listContext(ParserRuleContext parent, int invokingState)
+		public EnumIdListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_enum_id_list; } }
+		public override int RuleIndex { get { return RULE_enumIdList; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterEnum_id_list(this);
+			if (typedListener != null) typedListener.EnterEnumIdList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitEnum_id_list(this);
+			if (typedListener != null) typedListener.ExitEnumIdList(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Enum_id_listContext enum_id_list() {
-		Enum_id_listContext _localctx = new Enum_id_listContext(Context, State);
-		EnterRule(_localctx, 22, RULE_enum_id_list);
+	public EnumIdListContext enumIdList() {
+		EnumIdListContext _localctx = new EnumIdListContext(Context, State);
+		EnterRule(_localctx, 22, RULE_enumIdList);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 194; id_list();
+			State = 194; idList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -921,8 +920,8 @@ public partial class ExpressParser : Parser {
 	public partial class SelectContext : ParserRuleContext {
 		public ITerminalNode SELECT() { return GetToken(ExpressParser.SELECT, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
-		public Select_id_listContext select_id_list() {
-			return GetRuleContext<Select_id_listContext>(0);
+		public SelectIdListContext selectIdList() {
+			return GetRuleContext<SelectIdListContext>(0);
 		}
 		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
 		public SelectContext(ParserRuleContext parent, int invokingState)
@@ -949,7 +948,7 @@ public partial class ExpressParser : Parser {
 			{
 			State = 196; Match(SELECT);
 			State = 197; Match(LP);
-			State = 198; select_id_list();
+			State = 198; selectIdList();
 			State = 199; Match(RP);
 			}
 		}
@@ -964,33 +963,33 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Select_id_listContext : ParserRuleContext {
-		public Id_listContext id_list() {
-			return GetRuleContext<Id_listContext>(0);
+	public partial class SelectIdListContext : ParserRuleContext {
+		public IdListContext idList() {
+			return GetRuleContext<IdListContext>(0);
 		}
-		public Select_id_listContext(ParserRuleContext parent, int invokingState)
+		public SelectIdListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_select_id_list; } }
+		public override int RuleIndex { get { return RULE_selectIdList; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSelect_id_list(this);
+			if (typedListener != null) typedListener.EnterSelectIdList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSelect_id_list(this);
+			if (typedListener != null) typedListener.ExitSelectIdList(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Select_id_listContext select_id_list() {
-		Select_id_listContext _localctx = new Select_id_listContext(Context, State);
-		EnterRule(_localctx, 26, RULE_select_id_list);
+	public SelectIdListContext selectIdList() {
+		SelectIdListContext _localctx = new SelectIdListContext(Context, State);
+		EnterRule(_localctx, 26, RULE_selectIdList);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 201; id_list();
+			State = 201; idList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1004,7 +1003,7 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Id_listContext : ParserRuleContext {
+	public partial class IdListContext : ParserRuleContext {
 		public ITerminalNode[] Identifier() { return GetTokens(ExpressParser.Identifier); }
 		public ITerminalNode Identifier(int i) {
 			return GetToken(ExpressParser.Identifier, i);
@@ -1013,25 +1012,25 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode IfcType(int i) {
 			return GetToken(ExpressParser.IfcType, i);
 		}
-		public Id_listContext(ParserRuleContext parent, int invokingState)
+		public IdListContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_id_list; } }
+		public override int RuleIndex { get { return RULE_idList; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterId_list(this);
+			if (typedListener != null) typedListener.EnterIdList(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitId_list(this);
+			if (typedListener != null) typedListener.ExitIdList(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Id_listContext id_list() {
-		Id_listContext _localctx = new Id_listContext(Context, State);
-		EnterRule(_localctx, 28, RULE_id_list);
+	public IdListContext idList() {
+		IdListContext _localctx = new IdListContext(Context, State);
+		EnterRule(_localctx, 28, RULE_idList);
 		int _la;
 		try {
 			State = 219;
@@ -1092,33 +1091,33 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Type_declaration_bodyContext : ParserRuleContext {
-		public Rule_declarationContext rule_declaration() {
-			return GetRuleContext<Rule_declarationContext>(0);
+	public partial class TypeDeclarationBodyContext : ParserRuleContext {
+		public RuleDeclarationContext ruleDeclaration() {
+			return GetRuleContext<RuleDeclarationContext>(0);
 		}
-		public Type_declaration_bodyContext(ParserRuleContext parent, int invokingState)
+		public TypeDeclarationBodyContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_type_declaration_body; } }
+		public override int RuleIndex { get { return RULE_typeDeclarationBody; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterType_declaration_body(this);
+			if (typedListener != null) typedListener.EnterTypeDeclarationBody(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitType_declaration_body(this);
+			if (typedListener != null) typedListener.ExitTypeDeclarationBody(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Type_declaration_bodyContext type_declaration_body() {
-		Type_declaration_bodyContext _localctx = new Type_declaration_bodyContext(Context, State);
-		EnterRule(_localctx, 30, RULE_type_declaration_body);
+	public TypeDeclarationBodyContext typeDeclarationBody() {
+		TypeDeclarationBodyContext _localctx = new TypeDeclarationBodyContext(Context, State);
+		EnterRule(_localctx, 30, RULE_typeDeclarationBody);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 221; rule_declaration();
+			State = 221; ruleDeclaration();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1132,32 +1131,32 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Rule_declarationContext : ParserRuleContext {
+	public partial class RuleDeclarationContext : ParserRuleContext {
 		public RuleContext[] rule() {
 			return GetRuleContexts<RuleContext>();
 		}
 		public RuleContext rule(int i) {
 			return GetRuleContext<RuleContext>(i);
 		}
-		public Rule_declarationContext(ParserRuleContext parent, int invokingState)
+		public RuleDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_rule_declaration; } }
+		public override int RuleIndex { get { return RULE_ruleDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterRule_declaration(this);
+			if (typedListener != null) typedListener.EnterRuleDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitRule_declaration(this);
+			if (typedListener != null) typedListener.ExitRuleDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Rule_declarationContext rule_declaration() {
-		Rule_declarationContext _localctx = new Rule_declarationContext(Context, State);
-		EnterRule(_localctx, 32, RULE_rule_declaration);
+	public RuleDeclarationContext ruleDeclaration() {
+		RuleDeclarationContext _localctx = new RuleDeclarationContext(Context, State);
+		EnterRule(_localctx, 32, RULE_ruleDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1235,11 +1234,11 @@ public partial class ExpressParser : Parser {
 	}
 
 	public partial class ExprContext : ParserRuleContext {
-		public Func_call_exprContext func_call_expr() {
-			return GetRuleContext<Func_call_exprContext>(0);
+		public FuncCallExprContext funcCallExpr() {
+			return GetRuleContext<FuncCallExprContext>(0);
 		}
-		public Bool_exprContext bool_expr() {
-			return GetRuleContext<Bool_exprContext>(0);
+		public BoolExprContext boolExpr() {
+			return GetRuleContext<BoolExprContext>(0);
 		}
 		public ITerminalNode LB() { return GetToken(ExpressParser.LB, 0); }
 		public ITerminalNode RB() { return GetToken(ExpressParser.RB, 0); }
@@ -1269,20 +1268,20 @@ public partial class ExpressParser : Parser {
 			case 1:
 				EnterOuterAlt(_localctx, 1);
 				{
-				State = 234; func_call_expr();
+				State = 234; funcCallExpr();
 				}
 				break;
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 235; bool_expr();
+				State = 235; boolExpr();
 				}
 				break;
 			case 3:
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 236; Match(LB);
-				State = 237; bool_expr();
+				State = 237; boolExpr();
 				State = 238; Match(RB);
 				}
 				break;
@@ -1299,9 +1298,9 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Func_call_exprContext : ParserRuleContext {
-		public Func_parametersContext func_parameters() {
-			return GetRuleContext<Func_parametersContext>(0);
+	public partial class FuncCallExprContext : ParserRuleContext {
+		public FuncParametersContext funcParameters() {
+			return GetRuleContext<FuncParametersContext>(0);
 		}
 		public ITerminalNode EXISTS() { return GetToken(ExpressParser.EXISTS, 0); }
 		public ITerminalNode SIZEOF() { return GetToken(ExpressParser.SIZEOF, 0); }
@@ -1310,25 +1309,25 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode ABS() { return GetToken(ExpressParser.ABS, 0); }
 		public ITerminalNode USEDIN() { return GetToken(ExpressParser.USEDIN, 0); }
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Func_call_exprContext(ParserRuleContext parent, int invokingState)
+		public FuncCallExprContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_func_call_expr; } }
+		public override int RuleIndex { get { return RULE_funcCallExpr; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterFunc_call_expr(this);
+			if (typedListener != null) typedListener.EnterFuncCallExpr(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitFunc_call_expr(this);
+			if (typedListener != null) typedListener.ExitFuncCallExpr(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Func_call_exprContext func_call_expr() {
-		Func_call_exprContext _localctx = new Func_call_exprContext(Context, State);
-		EnterRule(_localctx, 38, RULE_func_call_expr);
+	public FuncCallExprContext funcCallExpr() {
+		FuncCallExprContext _localctx = new FuncCallExprContext(Context, State);
+		EnterRule(_localctx, 38, RULE_funcCallExpr);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1343,7 +1342,7 @@ public partial class ExpressParser : Parser {
 			    Consume();
 			}
 			State = 243; Match(LP);
-			State = 244; func_parameters();
+			State = 244; funcParameters();
 			State = 245; Match(RP);
 			}
 		}
@@ -1358,35 +1357,35 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Func_parametersContext : ParserRuleContext {
+	public partial class FuncParametersContext : ParserRuleContext {
 		public AtomContext[] atom() {
 			return GetRuleContexts<AtomContext>();
 		}
 		public AtomContext atom(int i) {
 			return GetRuleContext<AtomContext>(i);
 		}
-		public Formula_exprContext formula_expr() {
-			return GetRuleContext<Formula_exprContext>(0);
+		public FormulaExprContext formulaExpr() {
+			return GetRuleContext<FormulaExprContext>(0);
 		}
-		public Func_parametersContext(ParserRuleContext parent, int invokingState)
+		public FuncParametersContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_func_parameters; } }
+		public override int RuleIndex { get { return RULE_funcParameters; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterFunc_parameters(this);
+			if (typedListener != null) typedListener.EnterFuncParameters(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitFunc_parameters(this);
+			if (typedListener != null) typedListener.ExitFuncParameters(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Func_parametersContext func_parameters() {
-		Func_parametersContext _localctx = new Func_parametersContext(Context, State);
-		EnterRule(_localctx, 40, RULE_func_parameters);
+	public FuncParametersContext funcParameters() {
+		FuncParametersContext _localctx = new FuncParametersContext(Context, State);
+		EnterRule(_localctx, 40, RULE_funcParameters);
 		int _la;
 		try {
 			State = 256;
@@ -1415,7 +1414,7 @@ public partial class ExpressParser : Parser {
 			case 2:
 				EnterOuterAlt(_localctx, 2);
 				{
-				State = 255; formula_expr();
+				State = 255; formulaExpr();
 				}
 				break;
 			}
@@ -1431,40 +1430,40 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Query_exprContext : ParserRuleContext {
+	public partial class QueryExprContext : ParserRuleContext {
 		public ITerminalNode[] Identifier() { return GetTokens(ExpressParser.Identifier); }
 		public ITerminalNode Identifier(int i) {
 			return GetToken(ExpressParser.Identifier, i);
 		}
 		public ITerminalNode INIT() { return GetToken(ExpressParser.INIT, 0); }
 		public ITerminalNode PIPE() { return GetToken(ExpressParser.PIPE, 0); }
-		public Bool_exprContext bool_expr() {
-			return GetRuleContext<Bool_exprContext>(0);
+		public BoolExprContext boolExpr() {
+			return GetRuleContext<BoolExprContext>(0);
 		}
 		public ITerminalNode Path() { return GetToken(ExpressParser.Path, 0); }
 		public ITerminalNode PropertyAccessor() { return GetToken(ExpressParser.PropertyAccessor, 0); }
-		public Func_call_exprContext func_call_expr() {
-			return GetRuleContext<Func_call_exprContext>(0);
+		public FuncCallExprContext funcCallExpr() {
+			return GetRuleContext<FuncCallExprContext>(0);
 		}
-		public Query_exprContext(ParserRuleContext parent, int invokingState)
+		public QueryExprContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_query_expr; } }
+		public override int RuleIndex { get { return RULE_queryExpr; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterQuery_expr(this);
+			if (typedListener != null) typedListener.EnterQueryExpr(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitQuery_expr(this);
+			if (typedListener != null) typedListener.ExitQueryExpr(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Query_exprContext query_expr() {
-		Query_exprContext _localctx = new Query_exprContext(Context, State);
-		EnterRule(_localctx, 42, RULE_query_expr);
+	public QueryExprContext queryExpr() {
+		QueryExprContext _localctx = new QueryExprContext(Context, State);
+		EnterRule(_localctx, 42, RULE_queryExpr);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -1490,12 +1489,12 @@ public partial class ExpressParser : Parser {
 				break;
 			case 4:
 				{
-				State = 263; func_call_expr();
+				State = 263; funcCallExpr();
 				}
 				break;
 			}
 			State = 266; Match(PIPE);
-			State = 267; bool_expr();
+			State = 267; boolExpr();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1509,7 +1508,7 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Bool_exprContext : ParserRuleContext {
+	public partial class BoolExprContext : ParserRuleContext {
 		public AtomContext[] atom() {
 			return GetRuleContexts<AtomContext>();
 		}
@@ -1554,31 +1553,31 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode PropertyAccessor() { return GetToken(ExpressParser.PropertyAccessor, 0); }
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
 		public ITerminalNode SELF() { return GetToken(ExpressParser.SELF, 0); }
-		public Func_call_exprContext func_call_expr() {
-			return GetRuleContext<Func_call_exprContext>(0);
+		public FuncCallExprContext funcCallExpr() {
+			return GetRuleContext<FuncCallExprContext>(0);
 		}
-		public Id_listContext id_list() {
-			return GetRuleContext<Id_listContext>(0);
+		public IdListContext idList() {
+			return GetRuleContext<IdListContext>(0);
 		}
-		public Bool_exprContext(ParserRuleContext parent, int invokingState)
+		public BoolExprContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_bool_expr; } }
+		public override int RuleIndex { get { return RULE_boolExpr; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterBool_expr(this);
+			if (typedListener != null) typedListener.EnterBoolExpr(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitBool_expr(this);
+			if (typedListener != null) typedListener.ExitBoolExpr(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Bool_exprContext bool_expr() {
-		Bool_exprContext _localctx = new Bool_exprContext(Context, State);
-		EnterRule(_localctx, 44, RULE_bool_expr);
+	public BoolExprContext boolExpr() {
+		BoolExprContext _localctx = new BoolExprContext(Context, State);
+		EnterRule(_localctx, 44, RULE_boolExpr);
 		int _la;
 		try {
 			int _alt;
@@ -1639,13 +1638,13 @@ public partial class ExpressParser : Parser {
 				case USEDIN:
 				case Identifier:
 					{
-					State = 279; func_call_expr();
+					State = 279; funcCallExpr();
 					}
 					break;
 				case T__1:
 					{
 					State = 280; Match(T__1);
-					State = 281; id_list();
+					State = 281; idList();
 					State = 282; Match(T__3);
 					}
 					break;
@@ -1667,7 +1666,7 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Formula_exprContext : ParserRuleContext {
+	public partial class FormulaExprContext : ParserRuleContext {
 		public AtomContext[] atom() {
 			return GetRuleContexts<AtomContext>();
 		}
@@ -1690,25 +1689,25 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode DIV(int i) {
 			return GetToken(ExpressParser.DIV, i);
 		}
-		public Formula_exprContext(ParserRuleContext parent, int invokingState)
+		public FormulaExprContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_formula_expr; } }
+		public override int RuleIndex { get { return RULE_formulaExpr; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterFormula_expr(this);
+			if (typedListener != null) typedListener.EnterFormulaExpr(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitFormula_expr(this);
+			if (typedListener != null) typedListener.ExitFormulaExpr(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Formula_exprContext formula_expr() {
-		Formula_exprContext _localctx = new Formula_exprContext(Context, State);
-		EnterRule(_localctx, 46, RULE_formula_expr);
+	public FormulaExprContext formulaExpr() {
+		FormulaExprContext _localctx = new FormulaExprContext(Context, State);
+		EnterRule(_localctx, 46, RULE_formulaExpr);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -1758,14 +1757,14 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode Path() { return GetToken(ExpressParser.Path, 0); }
 		public ITerminalNode PropertyAccessor() { return GetToken(ExpressParser.PropertyAccessor, 0); }
 		public ITerminalNode SetAccessor() { return GetToken(ExpressParser.SetAccessor, 0); }
-		public Id_listContext id_list() {
-			return GetRuleContext<Id_listContext>(0);
+		public IdListContext idList() {
+			return GetRuleContext<IdListContext>(0);
 		}
-		public Query_exprContext query_expr() {
-			return GetRuleContext<Query_exprContext>(0);
+		public QueryExprContext queryExpr() {
+			return GetRuleContext<QueryExprContext>(0);
 		}
-		public Func_call_exprContext func_call_expr() {
-			return GetRuleContext<Func_call_exprContext>(0);
+		public FuncCallExprContext funcCallExpr() {
+			return GetRuleContext<FuncCallExprContext>(0);
 		}
 		public ExprContext expr() {
 			return GetRuleContext<ExprContext>(0);
@@ -1847,20 +1846,20 @@ public partial class ExpressParser : Parser {
 				EnterOuterAlt(_localctx, 9);
 				{
 				State = 303; Match(T__1);
-				State = 304; id_list();
+				State = 304; idList();
 				State = 305; Match(T__3);
 				}
 				break;
 			case 10:
 				EnterOuterAlt(_localctx, 10);
 				{
-				State = 307; query_expr();
+				State = 307; queryExpr();
 				}
 				break;
 			case 11:
 				EnterOuterAlt(_localctx, 11);
 				{
-				State = 308; func_call_expr();
+				State = 308; funcCallExpr();
 				}
 				break;
 			case 12:
@@ -1910,28 +1909,28 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Self_propertyContext : ParserRuleContext {
+	public partial class SelfPropertyContext : ParserRuleContext {
 		public ITerminalNode SELF() { return GetToken(ExpressParser.SELF, 0); }
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Self_propertyContext(ParserRuleContext parent, int invokingState)
+		public SelfPropertyContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_self_property; } }
+		public override int RuleIndex { get { return RULE_selfProperty; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSelf_property(this);
+			if (typedListener != null) typedListener.EnterSelfProperty(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSelf_property(this);
+			if (typedListener != null) typedListener.ExitSelfProperty(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Self_propertyContext self_property() {
-		Self_propertyContext _localctx = new Self_propertyContext(Context, State);
-		EnterRule(_localctx, 50, RULE_self_property);
+	public SelfPropertyContext selfProperty() {
+		SelfPropertyContext _localctx = new SelfPropertyContext(Context, State);
+		EnterRule(_localctx, 50, RULE_selfProperty);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -1951,40 +1950,40 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Entity_declarationContext : ParserRuleContext {
+	public partial class EntityDeclarationContext : ParserRuleContext {
 		public ITerminalNode ENTITY() { return GetToken(ExpressParser.ENTITY, 0); }
-		public Entity_nameContext entity_name() {
-			return GetRuleContext<Entity_nameContext>(0);
+		public EntityNameContext entityName() {
+			return GetRuleContext<EntityNameContext>(0);
 		}
-		public Entity_declaration_bodyContext entity_declaration_body() {
-			return GetRuleContext<Entity_declaration_bodyContext>(0);
+		public EntityDeclarationBodyContext entityDeclarationBody() {
+			return GetRuleContext<EntityDeclarationBodyContext>(0);
 		}
 		public ITerminalNode END_ENTITY() { return GetToken(ExpressParser.END_ENTITY, 0); }
-		public Entity_declarationContext(ParserRuleContext parent, int invokingState)
+		public EntityDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_entity_declaration; } }
+		public override int RuleIndex { get { return RULE_entityDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterEntity_declaration(this);
+			if (typedListener != null) typedListener.EnterEntityDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitEntity_declaration(this);
+			if (typedListener != null) typedListener.ExitEntityDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Entity_declarationContext entity_declaration() {
-		Entity_declarationContext _localctx = new Entity_declarationContext(Context, State);
-		EnterRule(_localctx, 52, RULE_entity_declaration);
+	public EntityDeclarationContext entityDeclaration() {
+		EntityDeclarationContext _localctx = new EntityDeclarationContext(Context, State);
+		EnterRule(_localctx, 52, RULE_entityDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 329; Match(ENTITY);
-			State = 330; entity_name();
+			State = 330; entityName();
 			State = 332;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
@@ -1994,7 +1993,7 @@ public partial class ExpressParser : Parser {
 				}
 			}
 
-			State = 334; entity_declaration_body();
+			State = 334; entityDeclarationBody();
 			State = 335; Match(END_ENTITY);
 			State = 336; Match(T__0);
 			}
@@ -2010,27 +2009,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Entity_nameContext : ParserRuleContext {
+	public partial class EntityNameContext : ParserRuleContext {
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Entity_nameContext(ParserRuleContext parent, int invokingState)
+		public EntityNameContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_entity_name; } }
+		public override int RuleIndex { get { return RULE_entityName; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterEntity_name(this);
+			if (typedListener != null) typedListener.EnterEntityName(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitEntity_name(this);
+			if (typedListener != null) typedListener.ExitEntityName(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Entity_nameContext entity_name() {
-		Entity_nameContext _localctx = new Entity_nameContext(Context, State);
-		EnterRule(_localctx, 54, RULE_entity_name);
+	public EntityNameContext entityName() {
+		EntityNameContext _localctx = new EntityNameContext(Context, State);
+		EnterRule(_localctx, 54, RULE_entityName);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -2048,50 +2047,50 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Entity_declaration_bodyContext : ParserRuleContext {
+	public partial class EntityDeclarationBodyContext : ParserRuleContext {
 		public AttributeContext[] attribute() {
 			return GetRuleContexts<AttributeContext>();
 		}
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public Supertype_declarationContext supertype_declaration() {
-			return GetRuleContext<Supertype_declarationContext>(0);
+		public SupertypeDeclarationContext supertypeDeclaration() {
+			return GetRuleContext<SupertypeDeclarationContext>(0);
 		}
-		public Subtype_declarationContext subtype_declaration() {
-			return GetRuleContext<Subtype_declarationContext>(0);
+		public SubtypeDeclarationContext subtypeDeclaration() {
+			return GetRuleContext<SubtypeDeclarationContext>(0);
 		}
-		public Inverse_declarationContext inverse_declaration() {
-			return GetRuleContext<Inverse_declarationContext>(0);
+		public InverseDeclarationContext inverseDeclaration() {
+			return GetRuleContext<InverseDeclarationContext>(0);
 		}
-		public Derive_declarationContext derive_declaration() {
-			return GetRuleContext<Derive_declarationContext>(0);
+		public DeriveDeclarationContext deriveDeclaration() {
+			return GetRuleContext<DeriveDeclarationContext>(0);
 		}
-		public Rule_declarationContext rule_declaration() {
-			return GetRuleContext<Rule_declarationContext>(0);
+		public RuleDeclarationContext ruleDeclaration() {
+			return GetRuleContext<RuleDeclarationContext>(0);
 		}
-		public Unique_declarationContext unique_declaration() {
-			return GetRuleContext<Unique_declarationContext>(0);
+		public UniqueDeclarationContext uniqueDeclaration() {
+			return GetRuleContext<UniqueDeclarationContext>(0);
 		}
-		public Entity_declaration_bodyContext(ParserRuleContext parent, int invokingState)
+		public EntityDeclarationBodyContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_entity_declaration_body; } }
+		public override int RuleIndex { get { return RULE_entityDeclarationBody; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterEntity_declaration_body(this);
+			if (typedListener != null) typedListener.EnterEntityDeclarationBody(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitEntity_declaration_body(this);
+			if (typedListener != null) typedListener.ExitEntityDeclarationBody(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Entity_declaration_bodyContext entity_declaration_body() {
-		Entity_declaration_bodyContext _localctx = new Entity_declaration_bodyContext(Context, State);
-		EnterRule(_localctx, 56, RULE_entity_declaration_body);
+	public EntityDeclarationBodyContext entityDeclarationBody() {
+		EntityDeclarationBodyContext _localctx = new EntityDeclarationBodyContext(Context, State);
+		EnterRule(_localctx, 56, RULE_entityDeclarationBody);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2114,7 +2113,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==ABSTRACT || _la==SUPERTYPE) {
 				{
-				State = 346; supertype_declaration();
+				State = 346; supertypeDeclaration();
 				}
 			}
 
@@ -2123,7 +2122,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==SUBTYPE) {
 				{
-				State = 349; subtype_declaration();
+				State = 349; subtypeDeclaration();
 				}
 			}
 
@@ -2132,7 +2131,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==INVERSE) {
 				{
-				State = 352; inverse_declaration();
+				State = 352; inverseDeclaration();
 				}
 			}
 
@@ -2141,7 +2140,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==DERIVE) {
 				{
-				State = 355; derive_declaration();
+				State = 355; deriveDeclaration();
 				}
 			}
 
@@ -2150,7 +2149,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==T__5) {
 				{
-				State = 358; rule_declaration();
+				State = 358; ruleDeclaration();
 				}
 			}
 
@@ -2159,7 +2158,7 @@ public partial class ExpressParser : Parser {
 			_la = TokenStream.LA(1);
 			if (_la==UNIQUE) {
 				{
-				State = 361; unique_declaration();
+				State = 361; uniqueDeclaration();
 				}
 			}
 
@@ -2176,16 +2175,16 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Supertype_declarationContext : ParserRuleContext {
+	public partial class SupertypeDeclarationContext : ParserRuleContext {
 		public ITerminalNode SUPERTYPE() { return GetToken(ExpressParser.SUPERTYPE, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
 		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
-		public One_ofContext one_of() {
-			return GetRuleContext<One_ofContext>(0);
+		public OneOfContext oneOf() {
+			return GetRuleContext<OneOfContext>(0);
 		}
-		public Supertype_nameContext supertype_name() {
-			return GetRuleContext<Supertype_nameContext>(0);
+		public SupertypeNameContext supertypeName() {
+			return GetRuleContext<SupertypeNameContext>(0);
 		}
 		public ITerminalNode ABSTRACT() { return GetToken(ExpressParser.ABSTRACT, 0); }
 		public AttributeContext[] attribute() {
@@ -2194,25 +2193,25 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public Supertype_declarationContext(ParserRuleContext parent, int invokingState)
+		public SupertypeDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_supertype_declaration; } }
+		public override int RuleIndex { get { return RULE_supertypeDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSupertype_declaration(this);
+			if (typedListener != null) typedListener.EnterSupertypeDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSupertype_declaration(this);
+			if (typedListener != null) typedListener.ExitSupertypeDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Supertype_declarationContext supertype_declaration() {
-		Supertype_declarationContext _localctx = new Supertype_declarationContext(Context, State);
-		EnterRule(_localctx, 58, RULE_supertype_declaration);
+	public SupertypeDeclarationContext supertypeDeclaration() {
+		SupertypeDeclarationContext _localctx = new SupertypeDeclarationContext(Context, State);
+		EnterRule(_localctx, 58, RULE_supertypeDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2234,12 +2233,12 @@ public partial class ExpressParser : Parser {
 			switch (TokenStream.LA(1)) {
 			case ONEOF:
 				{
-				State = 370; one_of();
+				State = 370; oneOf();
 				}
 				break;
 			case Identifier:
 				{
-				State = 371; supertype_name();
+				State = 371; supertypeName();
 				}
 				break;
 			default:
@@ -2281,27 +2280,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Supertype_nameContext : ParserRuleContext {
+	public partial class SupertypeNameContext : ParserRuleContext {
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Supertype_nameContext(ParserRuleContext parent, int invokingState)
+		public SupertypeNameContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_supertype_name; } }
+		public override int RuleIndex { get { return RULE_supertypeName; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSupertype_name(this);
+			if (typedListener != null) typedListener.EnterSupertypeName(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSupertype_name(this);
+			if (typedListener != null) typedListener.ExitSupertypeName(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Supertype_nameContext supertype_name() {
-		Supertype_nameContext _localctx = new Supertype_nameContext(Context, State);
-		EnterRule(_localctx, 60, RULE_supertype_name);
+	public SupertypeNameContext supertypeName() {
+		SupertypeNameContext _localctx = new SupertypeNameContext(Context, State);
+		EnterRule(_localctx, 60, RULE_supertypeName);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -2319,16 +2318,16 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Subtype_declarationContext : ParserRuleContext {
+	public partial class SubtypeDeclarationContext : ParserRuleContext {
 		public ITerminalNode SUBTYPE() { return GetToken(ExpressParser.SUBTYPE, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
 		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
-		public One_ofContext one_of() {
-			return GetRuleContext<One_ofContext>(0);
+		public OneOfContext oneOf() {
+			return GetRuleContext<OneOfContext>(0);
 		}
-		public Subtype_nameContext subtype_name() {
-			return GetRuleContext<Subtype_nameContext>(0);
+		public SubtypeNameContext subtypeName() {
+			return GetRuleContext<SubtypeNameContext>(0);
 		}
 		public AttributeContext[] attribute() {
 			return GetRuleContexts<AttributeContext>();
@@ -2336,25 +2335,25 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public Subtype_declarationContext(ParserRuleContext parent, int invokingState)
+		public SubtypeDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_subtype_declaration; } }
+		public override int RuleIndex { get { return RULE_subtypeDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSubtype_declaration(this);
+			if (typedListener != null) typedListener.EnterSubtypeDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSubtype_declaration(this);
+			if (typedListener != null) typedListener.ExitSubtypeDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Subtype_declarationContext subtype_declaration() {
-		Subtype_declarationContext _localctx = new Subtype_declarationContext(Context, State);
-		EnterRule(_localctx, 62, RULE_subtype_declaration);
+	public SubtypeDeclarationContext subtypeDeclaration() {
+		SubtypeDeclarationContext _localctx = new SubtypeDeclarationContext(Context, State);
+		EnterRule(_localctx, 62, RULE_subtypeDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2367,12 +2366,12 @@ public partial class ExpressParser : Parser {
 			switch (TokenStream.LA(1)) {
 			case ONEOF:
 				{
-				State = 389; one_of();
+				State = 389; oneOf();
 				}
 				break;
 			case Identifier:
 				{
-				State = 390; subtype_name();
+				State = 390; subtypeName();
 				}
 				break;
 			default:
@@ -2406,27 +2405,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Subtype_nameContext : ParserRuleContext {
+	public partial class SubtypeNameContext : ParserRuleContext {
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Subtype_nameContext(ParserRuleContext parent, int invokingState)
+		public SubtypeNameContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_subtype_name; } }
+		public override int RuleIndex { get { return RULE_subtypeName; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSubtype_name(this);
+			if (typedListener != null) typedListener.EnterSubtypeName(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSubtype_name(this);
+			if (typedListener != null) typedListener.ExitSubtypeName(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Subtype_nameContext subtype_name() {
-		Subtype_nameContext _localctx = new Subtype_nameContext(Context, State);
-		EnterRule(_localctx, 64, RULE_subtype_name);
+	public SubtypeNameContext subtypeName() {
+		SubtypeNameContext _localctx = new SubtypeNameContext(Context, State);
+		EnterRule(_localctx, 64, RULE_subtypeName);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -2445,12 +2444,12 @@ public partial class ExpressParser : Parser {
 	}
 
 	public partial class AttributeContext : ParserRuleContext {
-		public Attribute_nameContext attribute_name() {
-			return GetRuleContext<Attribute_nameContext>(0);
+		public AttributeNameContext attributeName() {
+			return GetRuleContext<AttributeNameContext>(0);
 		}
 		public ITerminalNode COLON() { return GetToken(ExpressParser.COLON, 0); }
-		public Value_typeContext value_type() {
-			return GetRuleContext<Value_typeContext>(0);
+		public ValueTypeContext valueType() {
+			return GetRuleContext<ValueTypeContext>(0);
 		}
 		public ITerminalNode OPTIONAL() { return GetToken(ExpressParser.OPTIONAL, 0); }
 		public DefinitionContext definition() {
@@ -2479,7 +2478,7 @@ public partial class ExpressParser : Parser {
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
-			State = 403; attribute_name();
+			State = 403; attributeName();
 			State = 404; Match(COLON);
 			State = 406;
 			ErrorHandler.Sync(this);
@@ -2490,7 +2489,7 @@ public partial class ExpressParser : Parser {
 				}
 			}
 
-			State = 408; value_type();
+			State = 408; valueType();
 			State = 410;
 			ErrorHandler.Sync(this);
 			_la = TokenStream.LA(1);
@@ -2514,27 +2513,27 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Attribute_nameContext : ParserRuleContext {
+	public partial class AttributeNameContext : ParserRuleContext {
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public Attribute_nameContext(ParserRuleContext parent, int invokingState)
+		public AttributeNameContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_attribute_name; } }
+		public override int RuleIndex { get { return RULE_attributeName; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterAttribute_name(this);
+			if (typedListener != null) typedListener.EnterAttributeName(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitAttribute_name(this);
+			if (typedListener != null) typedListener.ExitAttributeName(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Attribute_nameContext attribute_name() {
-		Attribute_nameContext _localctx = new Attribute_nameContext(Context, State);
-		EnterRule(_localctx, 68, RULE_attribute_name);
+	public AttributeNameContext attributeName() {
+		AttributeNameContext _localctx = new AttributeNameContext(Context, State);
+		EnterRule(_localctx, 68, RULE_attributeName);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
@@ -2594,38 +2593,38 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class One_ofContext : ParserRuleContext {
+	public partial class OneOfContext : ParserRuleContext {
 		public ITerminalNode ONEOF() { return GetToken(ExpressParser.ONEOF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
-		public Id_listContext id_list() {
-			return GetRuleContext<Id_listContext>(0);
+		public IdListContext idList() {
+			return GetRuleContext<IdListContext>(0);
 		}
 		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
-		public One_ofContext(ParserRuleContext parent, int invokingState)
+		public OneOfContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_one_of; } }
+		public override int RuleIndex { get { return RULE_oneOf; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterOne_of(this);
+			if (typedListener != null) typedListener.EnterOneOf(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitOne_of(this);
+			if (typedListener != null) typedListener.ExitOneOf(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public One_ofContext one_of() {
-		One_ofContext _localctx = new One_ofContext(Context, State);
-		EnterRule(_localctx, 72, RULE_one_of);
+	public OneOfContext oneOf() {
+		OneOfContext _localctx = new OneOfContext(Context, State);
+		EnterRule(_localctx, 72, RULE_oneOf);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 419; Match(ONEOF);
 			State = 420; Match(LP);
-			State = 421; id_list();
+			State = 421; idList();
 			State = 422; Match(RP);
 			}
 		}
@@ -2640,7 +2639,7 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Inverse_declarationContext : ParserRuleContext {
+	public partial class InverseDeclarationContext : ParserRuleContext {
 		public ITerminalNode INVERSE() { return GetToken(ExpressParser.INVERSE, 0); }
 		public AttributeContext[] attribute() {
 			return GetRuleContexts<AttributeContext>();
@@ -2648,25 +2647,25 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public Inverse_declarationContext(ParserRuleContext parent, int invokingState)
+		public InverseDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_inverse_declaration; } }
+		public override int RuleIndex { get { return RULE_inverseDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterInverse_declaration(this);
+			if (typedListener != null) typedListener.EnterInverseDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitInverse_declaration(this);
+			if (typedListener != null) typedListener.ExitInverseDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Inverse_declarationContext inverse_declaration() {
-		Inverse_declarationContext _localctx = new Inverse_declarationContext(Context, State);
-		EnterRule(_localctx, 74, RULE_inverse_declaration);
+	public InverseDeclarationContext inverseDeclaration() {
+		InverseDeclarationContext _localctx = new InverseDeclarationContext(Context, State);
+		EnterRule(_localctx, 74, RULE_inverseDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2698,7 +2697,7 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Derive_declarationContext : ParserRuleContext {
+	public partial class DeriveDeclarationContext : ParserRuleContext {
 		public ITerminalNode DERIVE() { return GetToken(ExpressParser.DERIVE, 0); }
 		public AttributeContext[] attribute() {
 			return GetRuleContexts<AttributeContext>();
@@ -2706,25 +2705,25 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public Derive_declarationContext(ParserRuleContext parent, int invokingState)
+		public DeriveDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_derive_declaration; } }
+		public override int RuleIndex { get { return RULE_deriveDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterDerive_declaration(this);
+			if (typedListener != null) typedListener.EnterDeriveDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitDerive_declaration(this);
+			if (typedListener != null) typedListener.ExitDeriveDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Derive_declarationContext derive_declaration() {
-		Derive_declarationContext _localctx = new Derive_declarationContext(Context, State);
-		EnterRule(_localctx, 76, RULE_derive_declaration);
+	public DeriveDeclarationContext deriveDeclaration() {
+		DeriveDeclarationContext _localctx = new DeriveDeclarationContext(Context, State);
+		EnterRule(_localctx, 76, RULE_deriveDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2756,33 +2755,33 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Unique_declarationContext : ParserRuleContext {
+	public partial class UniqueDeclarationContext : ParserRuleContext {
 		public ITerminalNode UNIQUE() { return GetToken(ExpressParser.UNIQUE, 0); }
-		public Unique_statementContext[] unique_statement() {
-			return GetRuleContexts<Unique_statementContext>();
+		public UniqueStatementContext[] uniqueStatement() {
+			return GetRuleContexts<UniqueStatementContext>();
 		}
-		public Unique_statementContext unique_statement(int i) {
-			return GetRuleContext<Unique_statementContext>(i);
+		public UniqueStatementContext uniqueStatement(int i) {
+			return GetRuleContext<UniqueStatementContext>(i);
 		}
-		public Unique_declarationContext(ParserRuleContext parent, int invokingState)
+		public UniqueDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_unique_declaration; } }
+		public override int RuleIndex { get { return RULE_uniqueDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterUnique_declaration(this);
+			if (typedListener != null) typedListener.EnterUniqueDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitUnique_declaration(this);
+			if (typedListener != null) typedListener.ExitUniqueDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Unique_declarationContext unique_declaration() {
-		Unique_declarationContext _localctx = new Unique_declarationContext(Context, State);
-		EnterRule(_localctx, 78, RULE_unique_declaration);
+	public UniqueDeclarationContext uniqueDeclaration() {
+		UniqueDeclarationContext _localctx = new UniqueDeclarationContext(Context, State);
+		EnterRule(_localctx, 78, RULE_uniqueDeclaration);
 		int _la;
 		try {
 			EnterOuterAlt(_localctx, 1);
@@ -2794,7 +2793,7 @@ public partial class ExpressParser : Parser {
 			do {
 				{
 				{
-				State = 437; unique_statement();
+				State = 437; uniqueStatement();
 				}
 				}
 				State = 440;
@@ -2814,28 +2813,28 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Unique_statementContext : ParserRuleContext {
+	public partial class UniqueStatementContext : ParserRuleContext {
 		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
 		public ITerminalNode COLON() { return GetToken(ExpressParser.COLON, 0); }
-		public Unique_statementContext(ParserRuleContext parent, int invokingState)
+		public UniqueStatementContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_unique_statement; } }
+		public override int RuleIndex { get { return RULE_uniqueStatement; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterUnique_statement(this);
+			if (typedListener != null) typedListener.EnterUniqueStatement(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitUnique_statement(this);
+			if (typedListener != null) typedListener.ExitUniqueStatement(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Unique_statementContext unique_statement() {
-		Unique_statementContext _localctx = new Unique_statementContext(Context, State);
-		EnterRule(_localctx, 80, RULE_unique_statement);
+	public UniqueStatementContext uniqueStatement() {
+		UniqueStatementContext _localctx = new UniqueStatementContext(Context, State);
+		EnterRule(_localctx, 80, RULE_uniqueStatement);
 		try {
 			int _alt;
 			EnterOuterAlt(_localctx, 1);
@@ -2872,34 +2871,34 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Function_declarationContext : ParserRuleContext {
-		public Function_declaration_bodyContext function_declaration_body() {
-			return GetRuleContext<Function_declaration_bodyContext>(0);
+	public partial class FunctionDeclarationContext : ParserRuleContext {
+		public FunctionDeclarationBodyContext functionDeclarationBody() {
+			return GetRuleContext<FunctionDeclarationBodyContext>(0);
 		}
-		public Function_declarationContext(ParserRuleContext parent, int invokingState)
+		public FunctionDeclarationContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_function_declaration; } }
+		public override int RuleIndex { get { return RULE_functionDeclaration; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterFunction_declaration(this);
+			if (typedListener != null) typedListener.EnterFunctionDeclaration(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitFunction_declaration(this);
+			if (typedListener != null) typedListener.ExitFunctionDeclaration(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Function_declarationContext function_declaration() {
-		Function_declarationContext _localctx = new Function_declarationContext(Context, State);
-		EnterRule(_localctx, 82, RULE_function_declaration);
+	public FunctionDeclarationContext functionDeclaration() {
+		FunctionDeclarationContext _localctx = new FunctionDeclarationContext(Context, State);
+		EnterRule(_localctx, 82, RULE_functionDeclaration);
 		try {
 			EnterOuterAlt(_localctx, 1);
 			{
 			State = 452; Match(T__7);
-			State = 453; function_declaration_body();
+			State = 453; functionDeclarationBody();
 			State = 454; Match(T__8);
 			}
 		}
@@ -2914,26 +2913,26 @@ public partial class ExpressParser : Parser {
 		return _localctx;
 	}
 
-	public partial class Function_declaration_bodyContext : ParserRuleContext {
-		public Function_declaration_bodyContext(ParserRuleContext parent, int invokingState)
+	public partial class FunctionDeclarationBodyContext : ParserRuleContext {
+		public FunctionDeclarationBodyContext(ParserRuleContext parent, int invokingState)
 			: base(parent, invokingState)
 		{
 		}
-		public override int RuleIndex { get { return RULE_function_declaration_body; } }
+		public override int RuleIndex { get { return RULE_functionDeclarationBody; } }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterFunction_declaration_body(this);
+			if (typedListener != null) typedListener.EnterFunctionDeclarationBody(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitFunction_declaration_body(this);
+			if (typedListener != null) typedListener.ExitFunctionDeclarationBody(this);
 		}
 	}
 
 	[RuleVersion(0)]
-	public Function_declaration_bodyContext function_declaration_body() {
-		Function_declaration_bodyContext _localctx = new Function_declaration_bodyContext(Context, State);
-		EnterRule(_localctx, 84, RULE_function_declaration_body);
+	public FunctionDeclarationBodyContext functionDeclarationBody() {
+		FunctionDeclarationBodyContext _localctx = new FunctionDeclarationBodyContext(Context, State);
+		EnterRule(_localctx, 84, RULE_functionDeclarationBody);
 		try {
 			int _alt;
 			EnterOuterAlt(_localctx, 1);

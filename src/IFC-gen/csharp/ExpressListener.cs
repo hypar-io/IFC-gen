@@ -42,52 +42,52 @@ namespace Express
 			EnumInfoMap = new Dictionary<string, EnumInfo>();
 		}
 
-		public override void EnterType_name(ExpressParser.Type_nameContext context){
+		public override void EnterTypeName(ExpressParser.TypeNameContext context){
 			Console.Write(context.GetText());
 		}
 
-		public override void EnterValue_type([NotNull] ExpressParser.Value_typeContext context) 
+		public override void EnterValueType([NotNull] ExpressParser.ValueTypeContext context) 
 		{ 	
 			Console.WriteLine(" : " + context.GetText());
 		}
 
-		public override void ExitValue_type(ExpressParser.Value_typeContext context)
+		public override void ExitValueType(ExpressParser.ValueTypeContext context)
 		{
 			Console.WriteLine();
 		}
 
-		public override void EnterEnum_id_list(ExpressParser.Enum_id_listContext context)
+		public override void EnterEnumIdList(ExpressParser.EnumIdListContext context)
 		{
 			Console.WriteLine("\t" + context.GetText());
 		}
 
-		public override void EnterSelect_id_list(ExpressParser.Select_id_listContext context)
+		public override void EnterSelectIdList(ExpressParser.SelectIdListContext context)
 		{
 			Console.WriteLine("\t" + context.GetText());
 		}
 
-		public override void ExitType_declaration(ExpressParser.Type_declarationContext context)
+		public override void ExitTypeDeclaration(ExpressParser.TypeDeclarationContext context)
 		{
 			Console.WriteLine();
 		}
 
-		public override void EnterEntity_name(ExpressParser.Entity_nameContext context)
+		public override void EnterEntityName(ExpressParser.EntityNameContext context)
 		{
 			currentClassInfo = new ClassInfo(context.GetText());
 			ClassInfoMap.Add(currentClassInfo.Name, currentClassInfo);
 		}
 
-		public override void EnterAttribute_name(ExpressParser.Attribute_nameContext context) 
+		public override void EnterAttributeName(ExpressParser.AttributeNameContext context) 
 		{ 
 			Console.Write("\t" + context.GetText());
 		}
 
-		public override void EnterSupertype_name(ExpressParser.Supertype_nameContext context)
+		public override void EnterSupertypeName(ExpressParser.SupertypeNameContext context)
 		{
 			//Console.Write(" : " + context.GetText());
 		}
 
-		public override void EnterSubtype_name(ExpressParser.Subtype_nameContext context)
+		public override void EnterSubtypeName(ExpressParser.SubtypeNameContext context)
 		{
 			currentClassInfo.BaseType = context.GetText();
 		}

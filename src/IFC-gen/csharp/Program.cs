@@ -247,7 +247,7 @@ namespace IFC4
 				var parser = new Express.ExpressParser(tokens);
 				parser.BuildParseTree = true;
 
-				var tree = parser.schema_declaration();
+				var tree = parser.schemaDeclaration();
 				var walker = new ParseTreeWalker();
 				walker.Walk(new Express.ExpressListener(), tree);
 

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from ./ANTLR/Express.g4 by ANTLR 4.7
+// Generated from Express.g4 by ANTLR 4.7
 
 // Unreachable code detected
 #pragma warning disable 0162
