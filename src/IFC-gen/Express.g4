@@ -42,7 +42,7 @@ arrayDeclaration
 
 listDeclaration
 	: LIST setParameters OF UNIQUE? atomicValueType
-	| LIST setParameters (OF LIST setParameters)+ OF atomicValueType
+	| LIST setParameters (OF UNIQUE? LIST setParameters)+ OF atomicValueType
 	;
 
 setParameters
@@ -117,7 +117,7 @@ boolExpr
 	| (atom|funcCallExpr|mulDivExpr|addSubExpr) (LT|GT|LTE|GTE|EQ|NEQ|SAME|NOT_SAME) (atom|funcCallExpr|mulDivExpr|addSubExpr)
 	| LB atom((LT|GT|LTE|GTE|EQ|SAME|NOT_SAME)atom)* RB
 	| NOT? (atom|funcCallExpr) ((AND|OR|XOR) NOT? (atom|funcCallExpr))* 
-	| (IfcType|path|propertyAccessor|Identifier|SELF) IN (funcCallExpr|'['idList']')
+	| (IfcType|path|propertyAccessor|Identifier|SELF) IN (funcCallExpr|'['idList']'|propertyAccessor)
 	;
 
 funcCallExpr
