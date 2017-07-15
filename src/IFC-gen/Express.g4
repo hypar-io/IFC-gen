@@ -4,47 +4,54 @@ schemaDeclaration
 	: SCHEMA Version ';' typeDeclaration* entityDeclaration* functionDeclaration*  END_SCHEMA';' EOF;
 
 typeDeclaration 
-	: TYPE typeName EQ (valueType|enumeration|select) FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
+	: TYPE typeName EQ valueType FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
 
 typeName	
 	: Identifier
 	;
 
-valueType 
-	: BOOLEAN
+atomicValueType
+	: BINARY_SIZED
+	| BOOLEAN
 	| INTEGER
 	| LOGICAL
 	| REAL
 	| STRING
 	| STRING_SIZED
-	| setDeclaration
-	| listDeclaration
-	| arrayDeclaration
 	| Identifier
 	;
 
+valueType 
+	: atomicValueType
+	| enumeration
+	| select
+	| setDeclaration
+	| arrayDeclaration
+	| listDeclaration
+	;
+	
 setDeclaration
-	: SET '[' Integer COLON (setSize|'?') ']' OF valueType (FOR Identifier)?
+	: SET setParameters OF UNIQUE? atomicValueType
+	| SET setParameters (OF SET setParameters)+ OF atomicValueType
+	;
+
+arrayDeclaration
+	: ARRAY setParameters OF UNIQUE? atomicValueType
+	| ARRAY setParameters (OF ARRAY setParameters)+ OF atomicValueType
+	;
+
+listDeclaration
+	: LIST setParameters OF UNIQUE? atomicValueType
+	| LIST setParameters (OF LIST setParameters)+ OF atomicValueType
+	;
+
+setParameters
+	: '[' Integer COLON (setSize|'?') ']'
 	;
 
 setSize
 	: Integer
-	;
-
-listDeclaration
-	: LIST '[' Integer COLON (listSize|'?') ']' OF valueType
-	;
-
-listSize
-	: Integer
-	;
-
-arrayDeclaration
-	: ARRAY '[' Integer COLON (arraySize|'?') ']' OF valueType
-	;
-
-arraySize
-	: Integer
+	| Identifier
 	;
 
 enumeration
@@ -75,55 +82,64 @@ typeDeclarationBody
 ruleDeclaration : 'WHERE' rule+ ;
 
 rule 
-	: Identifier COLON expr ';'
+	: Identifier COLON boolExpr ';'
 	;
 
 expr
 	: funcCallExpr
+	| mulDivExpr
+	| addSubExpr
 	| boolExpr
-	| LB boolExpr RB
-	; 
-
-funcCallExpr
-	: (EXISTS|SIZEOF|TYPEOF|QUERY|ABS|USEDIN|Identifier)'(' funcParameters ')'
-	;
-
-funcParameters
-	: atom(','atom)*
-	| formulaExpr
-	;
-
-queryExpr
-	: Identifier INIT (Identifier|Path|PropertyAccessor|funcCallExpr) PIPE boolExpr
-	;
-
-boolExpr
-	: atom((LT|GT|LTE|GTE|EQ|NEQ|AND|OR)atom)*
-	| (IfcType|Path|PropertyAccessor|Identifier|SELF) IN (funcCallExpr|'['idList']')
-	;
-
-formulaExpr
-	: atom((ADD|SUB|MUL|DIV)atom)+
 	;
 
 atom 
-	: SELF
+	: LP NOT? expr RP
+	| NOT? LP expr RP
+	| SELF
 	| IfcType
 	| Integer 
 	| Float
+	| Scientific
 	| Identifier
-	| Path
-	| PropertyAccessor
-	| SetAccessor
+	| path
+	| propertyAccessor
+	| setAccessor
 	| '[' idList ']'
-	| queryExpr
+	| '[' Float(','Float)+ ']'
 	| funcCallExpr
-	| '('NOT? expr ')'
-	| NOT?'('expr')'
+	| funcCallExpr(LOR funcCallExpr)+ // a || b || c
+	| '?' // See line 4028
 	;
 
-selfProperty
-	: SELF '.' Identifier
+boolExpr
+	: atom MOD atom EQ atom
+	| SIZEOF LP mulDivExpr RP EQ atom //See line 3231
+	| (atom|funcCallExpr|mulDivExpr|addSubExpr) (LT|GT|LTE|GTE|EQ|NEQ|SAME|NOT_SAME) (atom|funcCallExpr|mulDivExpr|addSubExpr)
+	| LB atom((LT|GT|LTE|GTE|EQ|SAME|NOT_SAME)atom)* RB
+	| NOT? (atom|funcCallExpr) ((AND|OR|XOR) NOT? (atom|funcCallExpr))* 
+	| (IfcType|path|propertyAccessor|Identifier|SELF) IN (funcCallExpr|'['idList']')
+	;
+
+funcCallExpr
+	: (EXISTS|SIZEOF|TYPEOF|ABS|USEDIN|Identifier)LP funcParameters RP
+	| (EXISTS|SIZEOF|TYPEOF|ABS|USEDIN|Identifier)LP RP // A function call with no parameters.
+	;
+
+funcParameters
+	: queryExpr
+	| atom(','atom)*
+	;
+
+queryExpr
+	: QUERY LP Identifier INIT (Identifier|path|propertyAccessor|funcCallExpr|queryExpr) PIPE boolExpr RP
+	;
+
+mulDivExpr
+	: (atom|addSubExpr)((MUL|DIV)(atom|addSubExpr))+
+	; 
+
+addSubExpr
+	: atom((ADD|SUB)atom)+
 	;
 
 entityDeclaration
@@ -135,11 +151,15 @@ entityName
 	;
 
 entityDeclarationBody
-	: attribute* supertypeDeclaration? subtypeDeclaration? inverseDeclaration? deriveDeclaration? ruleDeclaration? uniqueDeclaration? 
+	: attribute* supertypeDeclaration? subtypeDeclaration? deriveDeclaration? inverseDeclaration? uniqueDeclaration? ruleDeclaration? 
 	;
 
 supertypeDeclaration 
-	:  ABSTRACT? SUPERTYPE OF LP (oneOf | supertypeName) RP ';'? attribute* 
+	: abstract SUPERTYPE OF LP (oneOf | supertypeName) RP ';'? attribute* 
+	;
+
+abstract
+	: ABSTRACT?
 	;
 
 supertypeName
@@ -155,22 +175,31 @@ subtypeName
 	;
 
 attribute
-	: attributeName COLON OPTIONAL? valueType definition? ';'
+	: attributeName COLON optional valueType definition? ';'
+	;
+
+optional
+	: OPTIONAL?
 	;
 
 attributeName
 	: Identifier
+	| path
 	;
 
 definition
-	: DEF expr;
+	: DEF (atom|expr);
 
 oneOf 
 	: ONEOF LP idList RP 
 	;
 
 inverseDeclaration
-	: INVERSE attribute+ 
+	: INVERSE inverseExpression+
+	;
+
+inverseExpression
+	: Identifier COLON (Identifier|setDeclaration|arrayDeclaration|listDeclaration) FOR Identifier ';'
 	;
 
 deriveDeclaration
@@ -182,7 +211,7 @@ uniqueDeclaration
 	;
 
 uniqueStatement
-	: Identifier COLON .*? ';' 
+	: Identifier COLON (Identifier|idList) ';' 
 	;
 
 functionDeclaration 
@@ -191,9 +220,22 @@ functionDeclaration
 functionDeclarationBody
 	: .*? ;
 
+path
+	: (SELF'\\')? (Identifier|propertyAccessor)('\\'(Identifier|propertyAccessor))*
+	;
+
+propertyAccessor
+	:  (setAccessor|Identifier|funcCallExpr|SELF)('.'(setAccessor|Identifier))+
+	;
+
+setAccessor
+	: Identifier '[' (Integer|Identifier) ']'
+	| SELF '[' (Integer|Identifier) ']'
+	;
 // Lexer
 
 //Base Types
+BINARY_SIZED : 'BINARY(' Integer ')';
 BOOLEAN : 'BOOLEAN' ;
 INTEGER : 'INTEGER' ;
 LIST : 'LIST';
@@ -215,6 +257,7 @@ ENUMERATION : 'ENUMERATION' ;
 FOR : 'FOR' ;
 IN : 'IN' ;
 INVERSE : 'INVERSE';
+MOD : 'MOD' ;
 OF : 'OF';
 ONEOF : 'ONEOF' ;
 OPTIONAL : 'OPTIONAL' ;
@@ -228,7 +271,8 @@ SUPERTYPE : 'SUPERTYPE' ;
 TYPE : 'TYPE' ;
 END_TYPE : 'END_TYPE' ;
 UNIQUE : 'UNIQUE' ;
-//WHERE : 'WHERE' ;
+WHERE : 'WHERE' ;
+XOR : 'XOR' ;
 
 // Functions
 EXISTS : 'EXISTS' ;
@@ -249,7 +293,7 @@ Version
 fragment
 Digit : '0'..'9' ; 
 
-Integer : Digit+;
+Integer : '-'? Digit+;
 
 LP : '(' ;
 RP : ')' ;
@@ -271,24 +315,20 @@ DIV : '/' ;
 ADD : '+' ;
 SUB : '-' ;
 DEF : ':=' ;
+SAME : ':=:' ;
+NOT_SAME : ':<>:' ;
 INIT : '<*' ;
+LAND : '&&' ;
+LOR : '||' ;
+
+Scientific
+	: Float 'E' '-'? Integer
+	;
 
 Float
-	: Digit+ '.' Digit*
-	| '.' Digit+
-	;
-
-SetAccessor
-	: Identifier '[' (Integer|Identifier) ']'
-	| SELF '[' (Integer|Identifier) ']'
-	;
-
-Path
-	: (SELF'\\')? (Identifier|PropertyAccessor)('\\'(Identifier|PropertyAccessor))+
-	;
-
-PropertyAccessor
-	:  (SetAccessor|Identifier)('.'(SetAccessor|Identifier))+
+	: '-'? Digit+ '.' Digit*
+	| '-'? Digit+ '.' //See line 3460
+	| '-'? '.' Digit*
 	;
 
 Identifier 

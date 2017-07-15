@@ -72,6 +72,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitTypeName([NotNull] ExpressParser.TypeNameContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.atomicValueType"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAtomicValueType([NotNull] ExpressParser.AtomicValueTypeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.atomicValueType"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAtomicValueType([NotNull] ExpressParser.AtomicValueTypeContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.valueType"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -96,17 +108,17 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSetDeclaration([NotNull] ExpressParser.SetDeclarationContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.setSize"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.arrayDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSetSize([NotNull] ExpressParser.SetSizeContext context) { }
+	public virtual void EnterArrayDeclaration([NotNull] ExpressParser.ArrayDeclarationContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.setSize"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.arrayDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSetSize([NotNull] ExpressParser.SetSizeContext context) { }
+	public virtual void ExitArrayDeclaration([NotNull] ExpressParser.ArrayDeclarationContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.listDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -120,41 +132,29 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitListDeclaration([NotNull] ExpressParser.ListDeclarationContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.listSize"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.setParameters"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterListSize([NotNull] ExpressParser.ListSizeContext context) { }
+	public virtual void EnterSetParameters([NotNull] ExpressParser.SetParametersContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.listSize"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.setParameters"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitListSize([NotNull] ExpressParser.ListSizeContext context) { }
+	public virtual void ExitSetParameters([NotNull] ExpressParser.SetParametersContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.arrayDeclaration"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.setSize"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterArrayDeclaration([NotNull] ExpressParser.ArrayDeclarationContext context) { }
+	public virtual void EnterSetSize([NotNull] ExpressParser.SetSizeContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.arrayDeclaration"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.setSize"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitArrayDeclaration([NotNull] ExpressParser.ArrayDeclarationContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.arraySize"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterArraySize([NotNull] ExpressParser.ArraySizeContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.arraySize"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitArraySize([NotNull] ExpressParser.ArraySizeContext context) { }
+	public virtual void ExitSetSize([NotNull] ExpressParser.SetSizeContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.enumeration"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -264,6 +264,30 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitExpr([NotNull] ExpressParser.ExprContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.atom"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAtom([NotNull] ExpressParser.AtomContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.atom"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAtom([NotNull] ExpressParser.AtomContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.boolExpr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterBoolExpr([NotNull] ExpressParser.BoolExprContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.boolExpr"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitBoolExpr([NotNull] ExpressParser.BoolExprContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.funcCallExpr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -300,53 +324,29 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitQueryExpr([NotNull] ExpressParser.QueryExprContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.boolExpr"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.mulDivExpr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterBoolExpr([NotNull] ExpressParser.BoolExprContext context) { }
+	public virtual void EnterMulDivExpr([NotNull] ExpressParser.MulDivExprContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.boolExpr"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.mulDivExpr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitBoolExpr([NotNull] ExpressParser.BoolExprContext context) { }
+	public virtual void ExitMulDivExpr([NotNull] ExpressParser.MulDivExprContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.formulaExpr"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.addSubExpr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterFormulaExpr([NotNull] ExpressParser.FormulaExprContext context) { }
+	public virtual void EnterAddSubExpr([NotNull] ExpressParser.AddSubExprContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.formulaExpr"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.addSubExpr"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitFormulaExpr([NotNull] ExpressParser.FormulaExprContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.atom"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterAtom([NotNull] ExpressParser.AtomContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.atom"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitAtom([NotNull] ExpressParser.AtomContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.selfProperty"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSelfProperty([NotNull] ExpressParser.SelfPropertyContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.selfProperty"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSelfProperty([NotNull] ExpressParser.SelfPropertyContext context) { }
+	public virtual void ExitAddSubExpr([NotNull] ExpressParser.AddSubExprContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.entityDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -396,6 +396,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSupertypeDeclaration([NotNull] ExpressParser.SupertypeDeclarationContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.abstract"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAbstract([NotNull] ExpressParser.AbstractContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.abstract"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAbstract([NotNull] ExpressParser.AbstractContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.supertypeName"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -444,6 +456,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAttribute([NotNull] ExpressParser.AttributeContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.optional"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterOptional([NotNull] ExpressParser.OptionalContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.optional"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitOptional([NotNull] ExpressParser.OptionalContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.attributeName"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -491,6 +515,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitInverseDeclaration([NotNull] ExpressParser.InverseDeclarationContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.inverseExpression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterInverseExpression([NotNull] ExpressParser.InverseExpressionContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.inverseExpression"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitInverseExpression([NotNull] ExpressParser.InverseExpressionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.deriveDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>
@@ -551,6 +587,42 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFunctionDeclarationBody([NotNull] ExpressParser.FunctionDeclarationBodyContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.path"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPath([NotNull] ExpressParser.PathContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.path"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPath([NotNull] ExpressParser.PathContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.propertyAccessor"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterPropertyAccessor([NotNull] ExpressParser.PropertyAccessorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.propertyAccessor"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitPropertyAccessor([NotNull] ExpressParser.PropertyAccessorContext context) { }
+	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.setAccessor"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterSetAccessor([NotNull] ExpressParser.SetAccessorContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.setAccessor"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitSetAccessor([NotNull] ExpressParser.SetAccessorContext context) { }
 
 	/// <inheritdoc/>
 	/// <remarks>The default implementation does nothing.</remarks>
