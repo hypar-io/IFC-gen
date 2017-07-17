@@ -23,13 +23,15 @@ namespace IFC.Generate
 			var expressPath = args[0];
 			if(!File.Exists(expressPath))
 			{
-				Console.WriteLine("The specified express file path does not exist.");
+				Console.WriteLine($"The specified express file path, {expressPath}, does not exist.");
+				return;
 			}
 
 			var outputDir = args[1];
 			if(!Directory.Exists(outputDir))
 			{
-				Console.WriteLine("The specified output directory does not exist.");
+				Console.WriteLine($"The specified output directory, {outputDir}, does not exist.");
+				return;
 			}
 
 			using (FileStream fs = new FileStream(expressPath, FileMode.Open))

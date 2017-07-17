@@ -55,6 +55,11 @@ $@"
 	public {Modifier} partial class {Name}{supertype}
 	{{
 {propStringBuilder.ToString()}
+
+		public {Name}()
+		{{
+
+		}}
 	}}
 	";
 			return classStr;

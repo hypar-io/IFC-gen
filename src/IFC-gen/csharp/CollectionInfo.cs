@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Express
 {
-		public abstract class CollectionInfo
+	public abstract class CollectionInfo
 	{
 		public string Name{get;set;}
 		public string Type{get;set;}
@@ -19,7 +19,7 @@ namespace Express
 	{
 		public override string ToString()
 		{
-			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{Type}{string.Join("",Enumerable.Repeat(">",Rank))}";
+			return $"{string.Join("",Enumerable.Repeat("List<",Rank))} {Type}{string.Join("",Enumerable.Repeat(">",Rank))}";
 		}
 	}
 

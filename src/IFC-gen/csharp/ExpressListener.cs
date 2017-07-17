@@ -118,6 +118,10 @@ namespace Express
 		{
 			currentTypeInfo = new AttributeInfo(context.Identifier()[0].GetText());
 			currentEntityInfo.Attributes.Add((AttributeInfo)currentTypeInfo);
+			if(context.Identifier().Length == 2)
+			{
+				currentTypeInfo.Type = context.Identifier()[1].GetText();
+			}
 		}
 
 		public override void EnterAttribute(ExpressParser.AttributeContext context)
