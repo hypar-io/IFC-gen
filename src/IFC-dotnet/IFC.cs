@@ -14,7 +14,7 @@ namespace IFC4
 	using IfcBoolean = bool;
 	using IfcBoxAlignment = IfcLabel;
 	using IfcCardinalPointReference = int;
-	using IfcComplexNumber = REAL[1];
+	using IfcComplexNumber = {Type}[REAL];
 	using IfcCompoundPlaneAngleMeasure = List<INTEGER>;
 	using IfcContextDependentMeasure = double;
 	using IfcCountMeasure = double;
@@ -2442,7 +2442,7 @@ namespace IFC4
 		public bool? ClosedCurve {get;set;}
 		public bool? SelfIntersect {get;set;}
 		public int UpperIndexOnControlPoints {get;set;}
-		public IfcCartesianPoint[0] ControlPoints {get;set;}
+		public {Type}[IfcCartesianPoint] ControlPoints {get;set;}
 
 	}
 	
@@ -2465,14 +2465,14 @@ namespace IFC4
 	{
 		public int UDegree {get;set;}
 		public int VDegree {get;set;}
-		public LIST[2:?]OFLIST[2:?]OFIfcCartesianPoint ControlPointsList {get;set;}
+		public List<List<IfcCartesianPoint>> ControlPointsList {get;set;}
 		public IfcBSplineSurfaceForm SurfaceForm {get;set;}
 		public bool? UClosed {get;set;}
 		public bool? VClosed {get;set;}
 		public bool? SelfIntersect {get;set;}
 		public int UUpper {get;set;}
 		public int VUpper {get;set;}
-		public ARRAY[0:UUpper]OFARRAY[0:VUpper]OFIfcCartesianPoint ControlPoints {get;set;}
+		public {Type}[{Type}[IfcCartesianPoint]] ControlPoints {get;set;}
 
 	}
 	
@@ -2887,7 +2887,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianPointList3D : IfcCartesianPointList
 	{
-		public LIST[1:?]OFLIST[3:3]OFIfcLengthMeasure CoordList {get;set;}
+		public List<List<IfcLengthMeasure>> CoordList {get;set;}
 
 	}
 	
@@ -3106,7 +3106,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcColourRgbList : IfcPresentationItem
 	{
-		public LIST[1:?]OFLIST[3:3]OFIfcNormalisedRatioMeasure ColourList {get;set;}
+		public List<List<IfcNormalisedRatioMeasure>> ColourList {get;set;}
 
 	}
 	
@@ -5248,7 +5248,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcIndexedTriangleTextureMap : IfcIndexedTextureMap
 	{
-		public LIST[1:?]OFLIST[3:3]OFINTEGER TexCoordIndex {get;set;}
+		public List<List<INTEGER>> TexCoordIndex {get;set;}
 
 	}
 	
@@ -5693,7 +5693,7 @@ namespace IFC4
 	public  partial class IfcMaterialLayerWithOffsets : IfcMaterialLayer
 	{
 		public IfcLayerSetDirectionEnum OffsetDirection {get;set;}
-		public IfcLengthMeasure[1] OffsetValues {get;set;}
+		public {Type}[IfcLengthMeasure] OffsetValues {get;set;}
 
 	}
 	
@@ -5759,7 +5759,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMaterialProfileWithOffsets : IfcMaterialProfile
 	{
-		public IfcLengthMeasure[1] OffsetValues {get;set;}
+		public {Type}[IfcLengthMeasure] OffsetValues {get;set;}
 
 	}
 	
@@ -7045,7 +7045,7 @@ namespace IFC4
 	public  partial class IfcRationalBSplineCurveWithKnots : IfcBSplineCurveWithKnots
 	{
 		public List<REAL> WeightsData {get;set;}
-		public REAL[0] Weights {get;set;}
+		public {Type}[REAL] Weights {get;set;}
 
 	}
 	
@@ -7054,8 +7054,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRationalBSplineSurfaceWithKnots : IfcBSplineSurfaceWithKnots
 	{
-		public LIST[2:?]OFLIST[2:?]OFREAL WeightsData {get;set;}
-		public ARRAY[0:UUpper]OFARRAY[0:VUpper]OFREAL Weights {get;set;}
+		public List<List<REAL>> WeightsData {get;set;}
+		public {Type}[{Type}[REAL]] Weights {get;set;}
 
 	}
 	
@@ -8492,7 +8492,7 @@ namespace IFC4
 	public  partial class IfcStructuralLoadConfiguration : IfcStructuralLoad
 	{
 		public List<IfcStructuralLoadOrResult> Values {get;set;}
-		public LIST[1:?]OFUNIQUELIST[1:2]OFIfcLengthMeasure Locations {get;set;}
+		public List<List<IfcLengthMeasure>> Locations {get;set;}
 
 	}
 	
@@ -9197,7 +9197,7 @@ namespace IFC4
 	public abstract partial class IfcTessellatedFaceSet : IfcTessellatedItem
 	{
 		public IfcCartesianPointList3D Coordinates {get;set;}
-		public LIST[1:?]OFLIST[3:3]OFIfcParameterValue Normals {get;set;}
+		public List<List<IfcParameterValue>> Normals {get;set;}
 		public bool Closed {get;set;}
 		public List<IfcIndexedColourMap> HasColours {get;set;}
 		public List<IfcIndexedTextureMap> HasTextures {get;set;}
@@ -9326,7 +9326,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTextureVertexList : IfcPresentationItem
 	{
-		public LIST[1:?]OFLIST[2:2]OFIfcParameterValue TexCoordsList {get;set;}
+		public List<List<IfcParameterValue>> TexCoordsList {get;set;}
 
 	}
 	
@@ -9435,8 +9435,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTriangulatedFaceSet : IfcTessellatedFaceSet
 	{
-		public LIST[1:?]OFLIST[3:3]OFINTEGER CoordIndex {get;set;}
-		public LIST[1:?]OFLIST[3:3]OFINTEGER NormalIndex {get;set;}
+		public List<List<INTEGER>> CoordIndex {get;set;}
+		public List<List<INTEGER>> NormalIndex {get;set;}
 		public int NumberOfTriangles {get;set;}
 
 	}

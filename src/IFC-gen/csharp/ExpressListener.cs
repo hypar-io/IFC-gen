@@ -13,6 +13,7 @@ namespace Express
 		public List<TypeInfo> Types{get;set;}
 
 		private EntityInfo currentEntityInfo;
+		private CollectionInfo currentCollectionInfo;
 
 		// The cursor to the type currently being parsed.
 		// This may be a defined type or an attribute.
@@ -41,28 +42,51 @@ namespace Express
 			currentTypeInfo.Type = new AtomicTypeInfo(context.GetText());
 		}
 
+		public override void ExitCollectionDeclaration(ExpressParser.CollectionDeclarationContext context)
+		{
+			((CollectionInfo)currentTypeInfo.Type).Type = context.collectionValueType().GetText();
+		}
+
 		public override void EnterArrayDecl(ExpressParser.ArrayDeclContext context)
 		{
-			var ai = new ArrayInfo();
-			currentTypeInfo.Type = ai;
-			ai.Size = int.Parse(context.setParameters().Integer()[0].GetText());
-			ai.Type = context.collectionValueType().GetText();
+			if(currentTypeInfo.Type is ArrayInfo)
+			{
+				((ArrayInfo)currentTypeInfo.Type).Rank++;
+			}
+			else
+			{
+				var ai = new ArrayInfo();
+				currentTypeInfo.Type = ai;
+				ai.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			}
 		}
 
 		public override void EnterSetDecl(ExpressParser.SetDeclContext context)
 		{
-			var si = new SetInfo();
-			currentTypeInfo.Type = si;
-			si.Size = int.Parse(context.setParameters().Integer()[0].GetText());
-			si.Type = context.collectionValueType().GetText();
+			if(currentTypeInfo.Type is SetInfo)
+			{
+				((SetInfo)currentTypeInfo.Type).Rank++;
+			}
+			else
+			{
+				var si = new SetInfo();
+				currentTypeInfo.Type = si;
+				si.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			}
 		}
 
 		public override void EnterListDecl(ExpressParser.ListDeclContext context)
 		{
-			var li = new ListInfo();
-			currentTypeInfo.Type = li;
-			li.Size = int.Parse(context.setParameters().Integer()[0].GetText());
-			li.Type = context.collectionValueType().GetText();
+			if(currentTypeInfo.Type is ListInfo)
+			{
+				((ListInfo)currentTypeInfo.Type).Rank++;
+			}
+			else
+			{
+				var li = new ListInfo();
+				currentTypeInfo.Type = li;
+				li.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			}
 		}
 
 		public override void EnterEnumeration(ExpressParser.EnumerationContext context)

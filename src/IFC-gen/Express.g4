@@ -36,12 +36,13 @@ collectionValueType
 	;
 
 collectionDeclaration
-	: ARRAY setParameters OF UNIQUE? collectionValueType							# ArrayDecl
-	| SET setParameters OF UNIQUE? collectionValueType								# SetDecl	
-	| LIST setParameters OF UNIQUE? collectionValueType								# ListDecl
-	| ARRAY setParameters (OF ARRAY setParameters)+ OF collectionValueType 			# ArrayOfArrayDecl
-	| SET setParameters (OF SET setParameters)+ OF collectionValueType 				# SetOfSetsDecl
-	| LIST setParameters (OF UNIQUE? LIST setParameters)+ OF collectionValueType 	# ListOfListsDecl
+	: collectionParameters (OF UNIQUE? collectionParameters)* OF UNIQUE? collectionValueType
+	;
+
+collectionParameters
+	: ARRAY setParameters	# ArrayDecl
+	| SET setParameters		# SetDecl
+	| LIST setParameters	# ListDecl
 	;
 
 setParameters
