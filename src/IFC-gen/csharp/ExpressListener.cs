@@ -75,7 +75,7 @@ namespace Express
 		public override void EnterSelect(ExpressParser.SelectContext context)
 		{
 			var selectInfo = new SelectInfo();
-			selectInfo.Values = context.GetText();
+			selectInfo.Values = context.idList().GetText();
 			currentTypeInfo.Type = selectInfo;
 		}
 

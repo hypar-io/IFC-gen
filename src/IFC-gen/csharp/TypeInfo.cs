@@ -35,7 +35,7 @@ $@"	/// <summary>
 $@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
 	/// </summary>
-	public Select<T> {Name} where T : {s.Values} {{}}
+	public class {Name}<T> : Select<T> where T : {s.Values} {{}}
 
 ";
 

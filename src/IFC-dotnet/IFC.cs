@@ -1782,297 +1782,297 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorselect.htm
 	/// </summary>
-	public Select<T> IfcActorSelect where T : SELECT(IfcOrganization,IfcPerson,IfcPersonAndOrganization) {}
+	public class IfcActorSelect<T> : Select<T> where T : IfcOrganization,IfcPerson,IfcPersonAndOrganization {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcappliedvalueselect.htm
 	/// </summary>
-	public Select<T> IfcAppliedValueSelect where T : SELECT(IfcMeasureWithUnit,IfcReference,IfcValue) {}
+	public class IfcAppliedValueSelect<T> : Select<T> where T : IfcMeasureWithUnit,IfcReference,IfcValue {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement.htm
 	/// </summary>
-	public Select<T> IfcAxis2Placement where T : SELECT(IfcAxis2Placement2D,IfcAxis2Placement3D) {}
+	public class IfcAxis2Placement<T> : Select<T> where T : IfcAxis2Placement2D,IfcAxis2Placement3D {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbendingparameterselect.htm
 	/// </summary>
-	public Select<T> IfcBendingParameterSelect where T : SELECT(IfcLengthMeasure,IfcPlaneAngleMeasure) {}
+	public class IfcBendingParameterSelect<T> : Select<T> where T : IfcLengthMeasure,IfcPlaneAngleMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperand.htm
 	/// </summary>
-	public Select<T> IfcBooleanOperand where T : SELECT(IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel) {}
+	public class IfcBooleanOperand<T> : Select<T> where T : IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationreferenceselect.htm
 	/// </summary>
-	public Select<T> IfcClassificationReferenceSelect where T : SELECT(IfcClassification,IfcClassificationReference) {}
+	public class IfcClassificationReferenceSelect<T> : Select<T> where T : IfcClassification,IfcClassificationReference {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationselect.htm
 	/// </summary>
-	public Select<T> IfcClassificationSelect where T : SELECT(IfcClassification,IfcClassificationReference) {}
+	public class IfcClassificationSelect<T> : Select<T> where T : IfcClassification,IfcClassificationReference {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolour.htm
 	/// </summary>
-	public Select<T> IfcColour where T : SELECT(IfcColourSpecification,IfcPreDefinedColour) {}
+	public class IfcColour<T> : Select<T> where T : IfcColourSpecification,IfcPreDefinedColour {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourorfactor.htm
 	/// </summary>
-	public Select<T> IfcColourOrFactor where T : SELECT(IfcColourRgb,IfcNormalisedRatioMeasure) {}
+	public class IfcColourOrFactor<T> : Select<T> where T : IfcColourRgb,IfcNormalisedRatioMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinatereferencesystemselect.htm
 	/// </summary>
-	public Select<T> IfcCoordinateReferenceSystemSelect where T : SELECT(IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext) {}
+	public class IfcCoordinateReferenceSystemSelect<T> : Select<T> where T : IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgselect.htm
 	/// </summary>
-	public Select<T> IfcCsgSelect where T : SELECT(IfcBooleanResult,IfcCsgPrimitive3D) {}
+	public class IfcCsgSelect<T> : Select<T> where T : IfcBooleanResult,IfcCsgPrimitive3D {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvefontorscaledcurvefontselect.htm
 	/// </summary>
-	public Select<T> IfcCurveFontOrScaledCurveFontSelect where T : SELECT(IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect) {}
+	public class IfcCurveFontOrScaledCurveFontSelect<T> : Select<T> where T : IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveonsurface.htm
 	/// </summary>
-	public Select<T> IfcCurveOnSurface where T : SELECT(IfcCompositeCurveOnSurface,IfcPcurve) {}
+	public class IfcCurveOnSurface<T> : Select<T> where T : IfcCompositeCurveOnSurface,IfcPcurve {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveoredgecurve.htm
 	/// </summary>
-	public Select<T> IfcCurveOrEdgeCurve where T : SELECT(IfcBoundedCurve,IfcEdgeCurve) {}
+	public class IfcCurveOrEdgeCurve<T> : Select<T> where T : IfcBoundedCurve,IfcEdgeCurve {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontselect.htm
 	/// </summary>
-	public Select<T> IfcCurveStyleFontSelect where T : SELECT(IfcCurveStyleFont,IfcPreDefinedCurveFont) {}
+	public class IfcCurveStyleFontSelect<T> : Select<T> where T : IfcCurveStyleFont,IfcPreDefinedCurveFont {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdefinitionselect.htm
 	/// </summary>
-	public Select<T> IfcDefinitionSelect where T : SELECT(IfcObjectDefinition,IfcPropertyDefinition) {}
+	public class IfcDefinitionSelect<T> : Select<T> where T : IfcObjectDefinition,IfcPropertyDefinition {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedmeasurevalue.htm
 	/// </summary>
-	public Select<T> IfcDerivedMeasureValue where T : SELECT(IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure) {}
+	public class IfcDerivedMeasureValue<T> : Select<T> where T : IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentselect.htm
 	/// </summary>
-	public Select<T> IfcDocumentSelect where T : SELECT(IfcDocumentInformation,IfcDocumentReference) {}
+	public class IfcDocumentSelect<T> : Select<T> where T : IfcDocumentInformation,IfcDocumentReference {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillstyleselect.htm
 	/// </summary>
-	public Select<T> IfcFillStyleSelect where T : SELECT(IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles) {}
+	public class IfcFillStyleSelect<T> : Select<T> where T : IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricsetselect.htm
 	/// </summary>
-	public Select<T> IfcGeometricSetSelect where T : SELECT(IfcCurve,IfcPoint,IfcSurface) {}
+	public class IfcGeometricSetSelect<T> : Select<T> where T : IfcCurve,IfcPoint,IfcSurface {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacementdirectionselect.htm
 	/// </summary>
-	public Select<T> IfcGridPlacementDirectionSelect where T : SELECT(IfcDirection,IfcVirtualGridIntersection) {}
+	public class IfcGridPlacementDirectionSelect<T> : Select<T> where T : IfcDirection,IfcVirtualGridIntersection {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchatchlinedistanceselect.htm
 	/// </summary>
-	public Select<T> IfcHatchLineDistanceSelect where T : SELECT(IfcPositiveLengthMeasure,IfcVector) {}
+	public class IfcHatchLineDistanceSelect<T> : Select<T> where T : IfcPositiveLengthMeasure,IfcVector {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayereditem.htm
 	/// </summary>
-	public Select<T> IfcLayeredItem where T : SELECT(IfcRepresentation,IfcRepresentationItem) {}
+	public class IfcLayeredItem<T> : Select<T> where T : IfcRepresentation,IfcRepresentationItem {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryselect.htm
 	/// </summary>
-	public Select<T> IfcLibrarySelect where T : SELECT(IfcLibraryInformation,IfcLibraryReference) {}
+	public class IfcLibrarySelect<T> : Select<T> where T : IfcLibraryInformation,IfcLibraryReference {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondatasourceselect.htm
 	/// </summary>
-	public Select<T> IfcLightDistributionDataSourceSelect where T : SELECT(IfcExternalReference,IfcLightIntensityDistribution) {}
+	public class IfcLightDistributionDataSourceSelect<T> : Select<T> where T : IfcExternalReference,IfcLightIntensityDistribution {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialselect.htm
 	/// </summary>
-	public Select<T> IfcMaterialSelect where T : SELECT(IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition) {}
+	public class IfcMaterialSelect<T> : Select<T> where T : IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmeasurevalue.htm
 	/// </summary>
-	public Select<T> IfcMeasureValue where T : SELECT(IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure) {}
+	public class IfcMeasureValue<T> : Select<T> where T : IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetricvalueselect.htm
 	/// </summary>
-	public Select<T> IfcMetricValueSelect where T : SELECT(IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue) {}
+	public class IfcMetricValueSelect<T> : Select<T> where T : IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofrotationalsubgradereactionselect.htm
 	/// </summary>
-	public Select<T> IfcModulusOfRotationalSubgradeReactionSelect where T : SELECT(IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure) {}
+	public class IfcModulusOfRotationalSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofsubgradereactionselect.htm
 	/// </summary>
-	public Select<T> IfcModulusOfSubgradeReactionSelect where T : SELECT(IfcBoolean,IfcModulusOfSubgradeReactionMeasure) {}
+	public class IfcModulusOfSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfSubgradeReactionMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusoftranslationalsubgradereactionselect.htm
 	/// </summary>
-	public Select<T> IfcModulusOfTranslationalSubgradeReactionSelect where T : SELECT(IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure) {}
+	public class IfcModulusOfTranslationalSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectreferenceselect.htm
 	/// </summary>
-	public Select<T> IfcObjectReferenceSelect where T : SELECT(IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries) {}
+	public class IfcObjectReferenceSelect<T> : Select<T> where T : IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointorvertexpoint.htm
 	/// </summary>
-	public Select<T> IfcPointOrVertexPoint where T : SELECT(IfcPoint,IfcVertexPoint) {}
+	public class IfcPointOrVertexPoint<T> : Select<T> where T : IfcPoint,IfcVertexPoint {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationstyleselect.htm
 	/// </summary>
-	public Select<T> IfcPresentationStyleSelect where T : SELECT(IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle) {}
+	public class IfcPresentationStyleSelect<T> : Select<T> where T : IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocessselect.htm
 	/// </summary>
-	public Select<T> IfcProcessSelect where T : SELECT(IfcProcess,IfcTypeProcess) {}
+	public class IfcProcessSelect<T> : Select<T> where T : IfcProcess,IfcTypeProcess {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductrepresentationselect.htm
 	/// </summary>
-	public Select<T> IfcProductRepresentationSelect where T : SELECT(IfcProductDefinitionShape,IfcRepresentationMap) {}
+	public class IfcProductRepresentationSelect<T> : Select<T> where T : IfcProductDefinitionShape,IfcRepresentationMap {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductselect.htm
 	/// </summary>
-	public Select<T> IfcProductSelect where T : SELECT(IfcProduct,IfcTypeProduct) {}
+	public class IfcProductSelect<T> : Select<T> where T : IfcProduct,IfcTypeProduct {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionselect.htm
 	/// </summary>
-	public Select<T> IfcPropertySetDefinitionSelect where T : SELECT(IfcPropertySetDefinition,IfcPropertySetDefinitionSet) {}
+	public class IfcPropertySetDefinitionSelect<T> : Select<T> where T : IfcPropertySetDefinition,IfcPropertySetDefinitionSet {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceobjectselect.htm
 	/// </summary>
-	public Select<T> IfcResourceObjectSelect where T : SELECT(IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries) {}
+	public class IfcResourceObjectSelect<T> : Select<T> where T : IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceselect.htm
 	/// </summary>
-	public Select<T> IfcResourceSelect where T : SELECT(IfcResource,IfcTypeResource) {}
+	public class IfcResourceSelect<T> : Select<T> where T : IfcResource,IfcTypeResource {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalstiffnessselect.htm
 	/// </summary>
-	public Select<T> IfcRotationalStiffnessSelect where T : SELECT(IfcBoolean,IfcRotationalStiffnessMeasure) {}
+	public class IfcRotationalStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcRotationalStiffnessMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshell.htm
 	/// </summary>
-	public Select<T> IfcShell where T : SELECT(IfcClosedShell,IfcOpenShell) {}
+	public class IfcShell<T> : Select<T> where T : IfcClosedShell,IfcOpenShell {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplevalue.htm
 	/// </summary>
-	public Select<T> IfcSimpleValue where T : SELECT(IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp) {}
+	public class IfcSimpleValue<T> : Select<T> where T : IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsizeselect.htm
 	/// </summary>
-	public Select<T> IfcSizeSelect where T : SELECT(IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure) {}
+	public class IfcSizeSelect<T> : Select<T> where T : IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidorshell.htm
 	/// </summary>
-	public Select<T> IfcSolidOrShell where T : SELECT(IfcClosedShell,IfcSolidModel) {}
+	public class IfcSolidOrShell<T> : Select<T> where T : IfcClosedShell,IfcSolidModel {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceboundaryselect.htm
 	/// </summary>
-	public Select<T> IfcSpaceBoundarySelect where T : SELECT(IfcExternalSpatialElement,IfcSpace) {}
+	public class IfcSpaceBoundarySelect<T> : Select<T> where T : IfcExternalSpatialElement,IfcSpace {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularhighlightselect.htm
 	/// </summary>
-	public Select<T> IfcSpecularHighlightSelect where T : SELECT(IfcSpecularExponent,IfcSpecularRoughness) {}
+	public class IfcSpecularHighlightSelect<T> : Select<T> where T : IfcSpecularExponent,IfcSpecularRoughness {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivityassignmentselect.htm
 	/// </summary>
-	public Select<T> IfcStructuralActivityAssignmentSelect where T : SELECT(IfcElement,IfcStructuralItem) {}
+	public class IfcStructuralActivityAssignmentSelect<T> : Select<T> where T : IfcElement,IfcStructuralItem {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyleassignmentselect.htm
 	/// </summary>
-	public Select<T> IfcStyleAssignmentSelect where T : SELECT(IfcPresentationStyle,IfcPresentationStyleAssignment) {}
+	public class IfcStyleAssignmentSelect<T> : Select<T> where T : IfcPresentationStyle,IfcPresentationStyleAssignment {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceorfacesurface.htm
 	/// </summary>
-	public Select<T> IfcSurfaceOrFaceSurface where T : SELECT(IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface) {}
+	public class IfcSurfaceOrFaceSurface<T> : Select<T> where T : IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyleelementselect.htm
 	/// </summary>
-	public Select<T> IfcSurfaceStyleElementSelect where T : SELECT(IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures) {}
+	public class IfcSurfaceStyleElementSelect<T> : Select<T> where T : IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextfontselect.htm
 	/// </summary>
-	public Select<T> IfcTextFontSelect where T : SELECT(IfcExternallyDefinedTextFont,IfcPreDefinedTextFont) {}
+	public class IfcTextFontSelect<T> : Select<T> where T : IfcExternallyDefinedTextFont,IfcPreDefinedTextFont {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeorratioselect.htm
 	/// </summary>
-	public Select<T> IfcTimeOrRatioSelect where T : SELECT(IfcDuration,IfcRatioMeasure) {}
+	public class IfcTimeOrRatioSelect<T> : Select<T> where T : IfcDuration,IfcRatioMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctranslationalstiffnessselect.htm
 	/// </summary>
-	public Select<T> IfcTranslationalStiffnessSelect where T : SELECT(IfcBoolean,IfcLinearStiffnessMeasure) {}
+	public class IfcTranslationalStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcLinearStiffnessMeasure {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingselect.htm
 	/// </summary>
-	public Select<T> IfcTrimmingSelect where T : SELECT(IfcCartesianPoint,IfcParameterValue) {}
+	public class IfcTrimmingSelect<T> : Select<T> where T : IfcCartesianPoint,IfcParameterValue {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunit.htm
 	/// </summary>
-	public Select<T> IfcUnit where T : SELECT(IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit) {}
+	public class IfcUnit<T> : Select<T> where T : IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalue.htm
 	/// </summary>
-	public Select<T> IfcValue where T : SELECT(IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue) {}
+	public class IfcValue<T> : Select<T> where T : IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvectorordirection.htm
 	/// </summary>
-	public Select<T> IfcVectorOrDirection where T : SELECT(IfcDirection,IfcVector) {}
+	public class IfcVectorOrDirection<T> : Select<T> where T : IfcDirection,IfcVector {}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingstiffnessselect.htm
 	/// </summary>
-	public Select<T> IfcWarpingStiffnessSelect where T : SELECT(IfcBoolean,IfcWarpingMomentMeasure) {}
+	public class IfcWarpingStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcWarpingMomentMeasure {}
 
 
 	/// <summary>
