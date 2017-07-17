@@ -122,11 +122,6 @@ namespace Express
 			((AttributeInfo)currentTypeInfo).IsOptional = true;
 		}
 
-		public override void EnterSupertypeDeclaration(ExpressParser.SupertypeDeclarationContext context)
-		{
-			Console.WriteLine("Boo!");
-		}
-
 		public override void EnterSupertypeDecl(ExpressParser.SupertypeDeclContext context)
 		{
 			if(context.ABSTRACT() != null)

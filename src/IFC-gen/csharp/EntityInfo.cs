@@ -41,12 +41,10 @@ namespace Express
 				propStringBuilder.AppendLine(a.ToString());
 			}
 
-			// Supporting multiple inheritance in C# needs to be done
-			// through interfaces.
 			var supertype = string.Empty;
 			if(SubtypeOf.Any())
 			{
-				var interfaces = " : " + string.Join(",",SubtypeOf.Select(s=>"I" + s));
+				supertype = " : " + string.Join(",",SubtypeOf);
 			}
 
 			var classStr =

@@ -2078,7 +2078,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequest.htm"/>
 	/// </summary>
-	public  partial class IfcActionRequest
+	public  partial class IfcActionRequest : IfcControl
 	{
 		public IfcActionRequestTypeEnum PredefinedType {get;set;}
 		public IfcLabel Status {get;set;}
@@ -2089,7 +2089,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactor.htm"/>
 	/// </summary>
-	public  partial class IfcActor
+	public  partial class IfcActor : IfcObject
 	{
 		public IfcActorSelect TheActor {get;set;}
 
@@ -2109,7 +2109,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactuator.htm"/>
 	/// </summary>
-	public  partial class IfcActuator
+	public  partial class IfcActuator : IfcDistributionControlElement
 	{
 		public IfcActuatorTypeEnum PredefinedType {get;set;}
 
@@ -2118,7 +2118,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactuatortype.htm"/>
 	/// </summary>
-	public  partial class IfcActuatorType
+	public  partial class IfcActuatorType : IfcDistributionControlElementType
 	{
 		public IfcActuatorTypeEnum PredefinedType {get;set;}
 
@@ -2138,7 +2138,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcadvancedbrep.htm"/>
 	/// </summary>
-	public  partial class IfcAdvancedBrep
+	public  partial class IfcAdvancedBrep : IfcManifoldSolidBrep
 	{
 
 	}
@@ -2146,7 +2146,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcadvancedbrepwithvoids.htm"/>
 	/// </summary>
-	public  partial class IfcAdvancedBrepWithVoids
+	public  partial class IfcAdvancedBrepWithVoids : IfcAdvancedBrep
 	{
 		public SET[1:?]OFIfcClosedShell Voids {get;set;}
 
@@ -2155,7 +2155,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcadvancedface.htm"/>
 	/// </summary>
-	public  partial class IfcAdvancedFace
+	public  partial class IfcAdvancedFace : IfcFaceSurface
 	{
 
 	}
@@ -2163,7 +2163,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminal.htm"/>
 	/// </summary>
-	public  partial class IfcAirTerminal
+	public  partial class IfcAirTerminal : IfcFlowTerminal
 	{
 		public IfcAirTerminalTypeEnum PredefinedType {get;set;}
 
@@ -2172,7 +2172,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminalbox.htm"/>
 	/// </summary>
-	public  partial class IfcAirTerminalBox
+	public  partial class IfcAirTerminalBox : IfcFlowController
 	{
 		public IfcAirTerminalBoxTypeEnum PredefinedType {get;set;}
 
@@ -2181,7 +2181,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminalboxtype.htm"/>
 	/// </summary>
-	public  partial class IfcAirTerminalBoxType
+	public  partial class IfcAirTerminalBoxType : IfcFlowControllerType
 	{
 		public IfcAirTerminalBoxTypeEnum PredefinedType {get;set;}
 
@@ -2190,7 +2190,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminaltype.htm"/>
 	/// </summary>
-	public  partial class IfcAirTerminalType
+	public  partial class IfcAirTerminalType : IfcFlowTerminalType
 	{
 		public IfcAirTerminalTypeEnum PredefinedType {get;set;}
 
@@ -2199,7 +2199,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairtoairheatrecovery.htm"/>
 	/// </summary>
-	public  partial class IfcAirToAirHeatRecovery
+	public  partial class IfcAirToAirHeatRecovery : IfcEnergyConversionDevice
 	{
 		public IfcAirToAirHeatRecoveryTypeEnum PredefinedType {get;set;}
 
@@ -2208,7 +2208,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairtoairheatrecoverytype.htm"/>
 	/// </summary>
-	public  partial class IfcAirToAirHeatRecoveryType
+	public  partial class IfcAirToAirHeatRecoveryType : IfcEnergyConversionDeviceType
 	{
 		public IfcAirToAirHeatRecoveryTypeEnum PredefinedType {get;set;}
 
@@ -2217,7 +2217,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcalarm.htm"/>
 	/// </summary>
-	public  partial class IfcAlarm
+	public  partial class IfcAlarm : IfcDistributionControlElement
 	{
 		public IfcAlarmTypeEnum PredefinedType {get;set;}
 
@@ -2226,7 +2226,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcalarmtype.htm"/>
 	/// </summary>
-	public  partial class IfcAlarmType
+	public  partial class IfcAlarmType : IfcDistributionControlElementType
 	{
 		public IfcAlarmTypeEnum PredefinedType {get;set;}
 
@@ -2235,7 +2235,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcannotation.htm"/>
 	/// </summary>
-	public  partial class IfcAnnotation
+	public  partial class IfcAnnotation : IfcProduct
 	{
 
 	}
@@ -2243,7 +2243,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcannotationfillarea.htm"/>
 	/// </summary>
-	public  partial class IfcAnnotationFillArea
+	public  partial class IfcAnnotationFillArea : IfcGeometricRepresentationItem
 	{
 		public IfcCurve OuterBoundary {get;set;}
 		public SET[1:?]OFIfcCurve InnerBoundaries {get;set;}
@@ -2300,7 +2300,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcapprovalrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcApprovalRelationship
+	public  partial class IfcApprovalRelationship : IfcResourceLevelRelationship
 	{
 		public IfcApproval RelatingApproval {get;set;}
 		public SET[1:?]OFIfcApproval RelatedApprovals {get;set;}
@@ -2310,7 +2310,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryclosedprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcArbitraryClosedProfileDef
+	public  partial class IfcArbitraryClosedProfileDef : IfcProfileDef
 	{
 		public IfcCurve OuterCurve {get;set;}
 
@@ -2319,7 +2319,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryopenprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcArbitraryOpenProfileDef
+	public  partial class IfcArbitraryOpenProfileDef : IfcProfileDef
 	{
 		public IfcBoundedCurve Curve {get;set;}
 
@@ -2328,7 +2328,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryprofiledefwithvoids.htm"/>
 	/// </summary>
-	public  partial class IfcArbitraryProfileDefWithVoids
+	public  partial class IfcArbitraryProfileDefWithVoids : IfcArbitraryClosedProfileDef
 	{
 		public SET[1:?]OFIfcCurve InnerCurves {get;set;}
 
@@ -2337,7 +2337,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcasset.htm"/>
 	/// </summary>
-	public  partial class IfcAsset
+	public  partial class IfcAsset : IfcGroup
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcCostValue OriginalValue {get;set;}
@@ -2354,7 +2354,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcasymmetricishapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcAsymmetricIShapeProfileDef
+	public  partial class IfcAsymmetricIShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure BottomFlangeWidth {get;set;}
 		public IfcPositiveLengthMeasure OverallDepth {get;set;}
@@ -2374,7 +2374,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaudiovisualappliance.htm"/>
 	/// </summary>
-	public  partial class IfcAudioVisualAppliance
+	public  partial class IfcAudioVisualAppliance : IfcFlowTerminal
 	{
 		public IfcAudioVisualApplianceTypeEnum PredefinedType {get;set;}
 
@@ -2383,7 +2383,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaudiovisualappliancetype.htm"/>
 	/// </summary>
-	public  partial class IfcAudioVisualApplianceType
+	public  partial class IfcAudioVisualApplianceType : IfcFlowTerminalType
 	{
 		public IfcAudioVisualApplianceTypeEnum PredefinedType {get;set;}
 
@@ -2392,7 +2392,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis1placement.htm"/>
 	/// </summary>
-	public  partial class IfcAxis1Placement
+	public  partial class IfcAxis1Placement : IfcPlacement
 	{
 		public IfcDirection Axis {get;set;}
 		public IfcDirection Z {get;set;}
@@ -2402,7 +2402,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement2d.htm"/>
 	/// </summary>
-	public  partial class IfcAxis2Placement2D
+	public  partial class IfcAxis2Placement2D : IfcPlacement
 	{
 		public IfcDirection RefDirection {get;set;}
 		public LIST[2:2]OFIfcDirection P {get;set;}
@@ -2412,7 +2412,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement3d.htm"/>
 	/// </summary>
-	public  partial class IfcAxis2Placement3D
+	public  partial class IfcAxis2Placement3D : IfcPlacement
 	{
 		public IfcDirection Axis {get;set;}
 		public IfcDirection RefDirection {get;set;}
@@ -2423,7 +2423,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurve.htm"/>
 	/// </summary>
-	public abstract partial class IfcBSplineCurve
+	public abstract partial class IfcBSplineCurve : IfcBoundedCurve
 	{
 		public int Degree {get;set;}
 		public LIST[2:?]OFIfcCartesianPoint ControlPointsList {get;set;}
@@ -2438,7 +2438,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurvewithknots.htm"/>
 	/// </summary>
-	public  partial class IfcBSplineCurveWithKnots
+	public  partial class IfcBSplineCurveWithKnots : IfcBSplineCurve
 	{
 		public LIST[2:?]OFINTEGER KnotMultiplicities {get;set;}
 		public LIST[2:?]OFIfcParameterValue Knots {get;set;}
@@ -2450,7 +2450,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurface.htm"/>
 	/// </summary>
-	public abstract partial class IfcBSplineSurface
+	public abstract partial class IfcBSplineSurface : IfcBoundedSurface
 	{
 		public int UDegree {get;set;}
 		public int VDegree {get;set;}
@@ -2468,7 +2468,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurfacewithknots.htm"/>
 	/// </summary>
-	public  partial class IfcBSplineSurfaceWithKnots
+	public  partial class IfcBSplineSurfaceWithKnots : IfcBSplineSurface
 	{
 		public LIST[2:?]OFINTEGER UMultiplicities {get;set;}
 		public LIST[2:?]OFINTEGER VMultiplicities {get;set;}
@@ -2483,7 +2483,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeam.htm"/>
 	/// </summary>
-	public  partial class IfcBeam
+	public  partial class IfcBeam : IfcBuildingElement
 	{
 		public IfcBeamTypeEnum PredefinedType {get;set;}
 
@@ -2492,7 +2492,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeamstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcBeamStandardCase
+	public  partial class IfcBeamStandardCase : IfcBeam
 	{
 
 	}
@@ -2500,7 +2500,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeamtype.htm"/>
 	/// </summary>
-	public  partial class IfcBeamType
+	public  partial class IfcBeamType : IfcBuildingElementType
 	{
 		public IfcBeamTypeEnum PredefinedType {get;set;}
 
@@ -2509,7 +2509,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcblobtexture.htm"/>
 	/// </summary>
-	public  partial class IfcBlobTexture
+	public  partial class IfcBlobTexture : IfcSurfaceTexture
 	{
 		public IfcIdentifier RasterFormat {get;set;}
 		public BINARY RasterCode {get;set;}
@@ -2519,7 +2519,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcblock.htm"/>
 	/// </summary>
-	public  partial class IfcBlock
+	public  partial class IfcBlock : IfcCsgPrimitive3D
 	{
 		public IfcPositiveLengthMeasure XLength {get;set;}
 		public IfcPositiveLengthMeasure YLength {get;set;}
@@ -2530,7 +2530,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboiler.htm"/>
 	/// </summary>
-	public  partial class IfcBoiler
+	public  partial class IfcBoiler : IfcEnergyConversionDevice
 	{
 		public IfcBoilerTypeEnum PredefinedType {get;set;}
 
@@ -2539,7 +2539,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboilertype.htm"/>
 	/// </summary>
-	public  partial class IfcBoilerType
+	public  partial class IfcBoilerType : IfcEnergyConversionDeviceType
 	{
 		public IfcBoilerTypeEnum PredefinedType {get;set;}
 
@@ -2548,7 +2548,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanclippingresult.htm"/>
 	/// </summary>
-	public  partial class IfcBooleanClippingResult
+	public  partial class IfcBooleanClippingResult : IfcBooleanResult
 	{
 
 	}
@@ -2556,7 +2556,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanresult.htm"/>
 	/// </summary>
-	public  partial class IfcBooleanResult
+	public  partial class IfcBooleanResult : IfcGeometricRepresentationItem
 	{
 		public IfcBooleanOperator Operator {get;set;}
 		public IfcBooleanOperand FirstOperand {get;set;}
@@ -2577,7 +2577,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundarycurve.htm"/>
 	/// </summary>
-	public  partial class IfcBoundaryCurve
+	public  partial class IfcBoundaryCurve : IfcCompositeCurveOnSurface
 	{
 
 	}
@@ -2585,7 +2585,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryedgecondition.htm"/>
 	/// </summary>
-	public  partial class IfcBoundaryEdgeCondition
+	public  partial class IfcBoundaryEdgeCondition : IfcBoundaryCondition
 	{
 		public IfcModulusOfTranslationalSubgradeReactionSelect TranslationalStiffnessByLengthX {get;set;}
 		public IfcModulusOfTranslationalSubgradeReactionSelect TranslationalStiffnessByLengthY {get;set;}
@@ -2599,7 +2599,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryfacecondition.htm"/>
 	/// </summary>
-	public  partial class IfcBoundaryFaceCondition
+	public  partial class IfcBoundaryFaceCondition : IfcBoundaryCondition
 	{
 		public IfcModulusOfSubgradeReactionSelect TranslationalStiffnessByAreaX {get;set;}
 		public IfcModulusOfSubgradeReactionSelect TranslationalStiffnessByAreaY {get;set;}
@@ -2610,7 +2610,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundarynodecondition.htm"/>
 	/// </summary>
-	public  partial class IfcBoundaryNodeCondition
+	public  partial class IfcBoundaryNodeCondition : IfcBoundaryCondition
 	{
 		public IfcTranslationalStiffnessSelect TranslationalStiffnessX {get;set;}
 		public IfcTranslationalStiffnessSelect TranslationalStiffnessY {get;set;}
@@ -2624,7 +2624,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundarynodeconditionwarping.htm"/>
 	/// </summary>
-	public  partial class IfcBoundaryNodeConditionWarping
+	public  partial class IfcBoundaryNodeConditionWarping : IfcBoundaryNodeCondition
 	{
 		public IfcWarpingStiffnessSelect WarpingStiffness {get;set;}
 
@@ -2633,7 +2633,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundedcurve.htm"/>
 	/// </summary>
-	public abstract partial class IfcBoundedCurve
+	public abstract partial class IfcBoundedCurve : IfcCurve
 	{
 
 	}
@@ -2641,7 +2641,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundedsurface.htm"/>
 	/// </summary>
-	public abstract partial class IfcBoundedSurface
+	public abstract partial class IfcBoundedSurface : IfcSurface
 	{
 
 	}
@@ -2649,7 +2649,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundingbox.htm"/>
 	/// </summary>
-	public  partial class IfcBoundingBox
+	public  partial class IfcBoundingBox : IfcGeometricRepresentationItem
 	{
 		public IfcCartesianPoint Corner {get;set;}
 		public IfcPositiveLengthMeasure XDim {get;set;}
@@ -2662,7 +2662,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboxedhalfspace.htm"/>
 	/// </summary>
-	public  partial class IfcBoxedHalfSpace
+	public  partial class IfcBoxedHalfSpace : IfcHalfSpaceSolid
 	{
 		public IfcBoundingBox Enclosure {get;set;}
 
@@ -2671,7 +2671,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuilding.htm"/>
 	/// </summary>
-	public  partial class IfcBuilding
+	public  partial class IfcBuilding : IfcSpatialStructureElement
 	{
 		public IfcLengthMeasure ElevationOfRefHeight {get;set;}
 		public IfcLengthMeasure ElevationOfTerrain {get;set;}
@@ -2682,7 +2682,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcBuildingElement
+	public abstract partial class IfcBuildingElement : IfcElement
 	{
 
 	}
@@ -2690,7 +2690,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementpart.htm"/>
 	/// </summary>
-	public  partial class IfcBuildingElementPart
+	public  partial class IfcBuildingElementPart : IfcElementComponent
 	{
 		public IfcBuildingElementPartTypeEnum PredefinedType {get;set;}
 
@@ -2699,7 +2699,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementparttype.htm"/>
 	/// </summary>
-	public  partial class IfcBuildingElementPartType
+	public  partial class IfcBuildingElementPartType : IfcElementComponentType
 	{
 		public IfcBuildingElementPartTypeEnum PredefinedType {get;set;}
 
@@ -2708,7 +2708,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxy.htm"/>
 	/// </summary>
-	public  partial class IfcBuildingElementProxy
+	public  partial class IfcBuildingElementProxy : IfcBuildingElement
 	{
 		public IfcBuildingElementProxyTypeEnum PredefinedType {get;set;}
 
@@ -2717,7 +2717,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxytype.htm"/>
 	/// </summary>
-	public  partial class IfcBuildingElementProxyType
+	public  partial class IfcBuildingElementProxyType : IfcBuildingElementType
 	{
 		public IfcBuildingElementProxyTypeEnum PredefinedType {get;set;}
 
@@ -2726,7 +2726,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcBuildingElementType
+	public abstract partial class IfcBuildingElementType : IfcElementType
 	{
 
 	}
@@ -2734,7 +2734,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingstorey.htm"/>
 	/// </summary>
-	public  partial class IfcBuildingStorey
+	public  partial class IfcBuildingStorey : IfcSpatialStructureElement
 	{
 		public IfcLengthMeasure Elevation {get;set;}
 
@@ -2743,7 +2743,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystem.htm"/>
 	/// </summary>
-	public  partial class IfcBuildingSystem
+	public  partial class IfcBuildingSystem : IfcSystem
 	{
 		public IfcBuildingSystemTypeEnum PredefinedType {get;set;}
 
@@ -2752,7 +2752,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcburner.htm"/>
 	/// </summary>
-	public  partial class IfcBurner
+	public  partial class IfcBurner : IfcEnergyConversionDevice
 	{
 		public IfcBurnerTypeEnum PredefinedType {get;set;}
 
@@ -2761,7 +2761,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcburnertype.htm"/>
 	/// </summary>
-	public  partial class IfcBurnerType
+	public  partial class IfcBurnerType : IfcEnergyConversionDeviceType
 	{
 		public IfcBurnerTypeEnum PredefinedType {get;set;}
 
@@ -2770,7 +2770,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccshapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcCShapeProfileDef
+	public  partial class IfcCShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure Depth {get;set;}
 		public IfcPositiveLengthMeasure Width {get;set;}
@@ -2783,7 +2783,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarrierfitting.htm"/>
 	/// </summary>
-	public  partial class IfcCableCarrierFitting
+	public  partial class IfcCableCarrierFitting : IfcFlowFitting
 	{
 		public IfcCableCarrierFittingTypeEnum PredefinedType {get;set;}
 
@@ -2792,7 +2792,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarrierfittingtype.htm"/>
 	/// </summary>
-	public  partial class IfcCableCarrierFittingType
+	public  partial class IfcCableCarrierFittingType : IfcFlowFittingType
 	{
 		public IfcCableCarrierFittingTypeEnum PredefinedType {get;set;}
 
@@ -2801,7 +2801,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarriersegment.htm"/>
 	/// </summary>
-	public  partial class IfcCableCarrierSegment
+	public  partial class IfcCableCarrierSegment : IfcFlowSegment
 	{
 		public IfcCableCarrierSegmentTypeEnum PredefinedType {get;set;}
 
@@ -2810,7 +2810,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarriersegmenttype.htm"/>
 	/// </summary>
-	public  partial class IfcCableCarrierSegmentType
+	public  partial class IfcCableCarrierSegmentType : IfcFlowSegmentType
 	{
 		public IfcCableCarrierSegmentTypeEnum PredefinedType {get;set;}
 
@@ -2819,7 +2819,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefitting.htm"/>
 	/// </summary>
-	public  partial class IfcCableFitting
+	public  partial class IfcCableFitting : IfcFlowFitting
 	{
 		public IfcCableFittingTypeEnum PredefinedType {get;set;}
 
@@ -2828,7 +2828,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefittingtype.htm"/>
 	/// </summary>
-	public  partial class IfcCableFittingType
+	public  partial class IfcCableFittingType : IfcFlowFittingType
 	{
 		public IfcCableFittingTypeEnum PredefinedType {get;set;}
 
@@ -2837,7 +2837,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablesegment.htm"/>
 	/// </summary>
-	public  partial class IfcCableSegment
+	public  partial class IfcCableSegment : IfcFlowSegment
 	{
 		public IfcCableSegmentTypeEnum PredefinedType {get;set;}
 
@@ -2846,7 +2846,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablesegmenttype.htm"/>
 	/// </summary>
-	public  partial class IfcCableSegmentType
+	public  partial class IfcCableSegmentType : IfcFlowSegmentType
 	{
 		public IfcCableSegmentTypeEnum PredefinedType {get;set;}
 
@@ -2855,7 +2855,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpoint.htm"/>
 	/// </summary>
-	public  partial class IfcCartesianPoint
+	public  partial class IfcCartesianPoint : IfcPoint
 	{
 		public LIST[1:3]OFIfcLengthMeasure Coordinates {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -2865,7 +2865,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist.htm"/>
 	/// </summary>
-	public abstract partial class IfcCartesianPointList
+	public abstract partial class IfcCartesianPointList : IfcGeometricRepresentationItem
 	{
 
 	}
@@ -2873,7 +2873,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist3d.htm"/>
 	/// </summary>
-	public  partial class IfcCartesianPointList3D
+	public  partial class IfcCartesianPointList3D : IfcCartesianPointList
 	{
 		public LIST[1:?]OFLIST[3:3]OFIfcLengthMeasure CoordList {get;set;}
 
@@ -2882,7 +2882,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesiantransformationoperator.htm"/>
 	/// </summary>
-	public abstract partial class IfcCartesianTransformationOperator
+	public abstract partial class IfcCartesianTransformationOperator : IfcGeometricRepresentationItem
 	{
 		public IfcDirection Axis1 {get;set;}
 		public IfcDirection Axis2 {get;set;}
@@ -2896,7 +2896,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesiantransformationoperator2d.htm"/>
 	/// </summary>
-	public  partial class IfcCartesianTransformationOperator2D
+	public  partial class IfcCartesianTransformationOperator2D : IfcCartesianTransformationOperator
 	{
 		public LIST[2:2]OFIfcDirection U {get;set;}
 
@@ -2905,7 +2905,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesiantransformationoperator2dnonuniform.htm"/>
 	/// </summary>
-	public  partial class IfcCartesianTransformationOperator2DnonUniform
+	public  partial class IfcCartesianTransformationOperator2DnonUniform : IfcCartesianTransformationOperator2D
 	{
 		public double Scale2 {get;set;}
 		public double Scl2 {get;set;}
@@ -2915,7 +2915,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesiantransformationoperator3d.htm"/>
 	/// </summary>
-	public  partial class IfcCartesianTransformationOperator3D
+	public  partial class IfcCartesianTransformationOperator3D : IfcCartesianTransformationOperator
 	{
 		public IfcDirection Axis3 {get;set;}
 		public LIST[3:3]OFIfcDirection U {get;set;}
@@ -2925,7 +2925,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesiantransformationoperator3dnonuniform.htm"/>
 	/// </summary>
-	public  partial class IfcCartesianTransformationOperator3DnonUniform
+	public  partial class IfcCartesianTransformationOperator3DnonUniform : IfcCartesianTransformationOperator3D
 	{
 		public double Scale2 {get;set;}
 		public double Scale3 {get;set;}
@@ -2937,7 +2937,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccenterlineprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcCenterLineProfileDef
+	public  partial class IfcCenterLineProfileDef : IfcArbitraryOpenProfileDef
 	{
 		public IfcPositiveLengthMeasure Thickness {get;set;}
 
@@ -2946,7 +2946,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchiller.htm"/>
 	/// </summary>
-	public  partial class IfcChiller
+	public  partial class IfcChiller : IfcEnergyConversionDevice
 	{
 		public IfcChillerTypeEnum PredefinedType {get;set;}
 
@@ -2955,7 +2955,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchillertype.htm"/>
 	/// </summary>
-	public  partial class IfcChillerType
+	public  partial class IfcChillerType : IfcEnergyConversionDeviceType
 	{
 		public IfcChillerTypeEnum PredefinedType {get;set;}
 
@@ -2964,7 +2964,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchimney.htm"/>
 	/// </summary>
-	public  partial class IfcChimney
+	public  partial class IfcChimney : IfcBuildingElement
 	{
 		public IfcChimneyTypeEnum PredefinedType {get;set;}
 
@@ -2973,7 +2973,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchimneytype.htm"/>
 	/// </summary>
-	public  partial class IfcChimneyType
+	public  partial class IfcChimneyType : IfcBuildingElementType
 	{
 		public IfcChimneyTypeEnum PredefinedType {get;set;}
 
@@ -2982,7 +2982,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccircle.htm"/>
 	/// </summary>
-	public  partial class IfcCircle
+	public  partial class IfcCircle : IfcConic
 	{
 		public IfcPositiveLengthMeasure Radius {get;set;}
 
@@ -2991,7 +2991,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccirclehollowprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcCircleHollowProfileDef
+	public  partial class IfcCircleHollowProfileDef : IfcCircleProfileDef
 	{
 		public IfcPositiveLengthMeasure WallThickness {get;set;}
 
@@ -3000,7 +3000,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccircleprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcCircleProfileDef
+	public  partial class IfcCircleProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure Radius {get;set;}
 
@@ -3009,7 +3009,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccivilelement.htm"/>
 	/// </summary>
-	public  partial class IfcCivilElement
+	public  partial class IfcCivilElement : IfcElement
 	{
 
 	}
@@ -3017,7 +3017,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccivilelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcCivilElementType
+	public  partial class IfcCivilElementType : IfcElementType
 	{
 
 	}
@@ -3025,7 +3025,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassification.htm"/>
 	/// </summary>
-	public  partial class IfcClassification
+	public  partial class IfcClassification : IfcExternalInformation
 	{
 		public IfcLabel Source {get;set;}
 		public IfcLabel Edition {get;set;}
@@ -3040,7 +3040,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationreference.htm"/>
 	/// </summary>
-	public  partial class IfcClassificationReference
+	public  partial class IfcClassificationReference : IfcExternalReference
 	{
 		public IfcClassificationReferenceSelect ReferencedSource {get;set;}
 		public IfcText Description {get;set;}
@@ -3051,7 +3051,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclosedshell.htm"/>
 	/// </summary>
-	public  partial class IfcClosedShell
+	public  partial class IfcClosedShell : IfcConnectedFaceSet
 	{
 
 	}
@@ -3059,7 +3059,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoil.htm"/>
 	/// </summary>
-	public  partial class IfcCoil
+	public  partial class IfcCoil : IfcEnergyConversionDevice
 	{
 		public IfcCoilTypeEnum PredefinedType {get;set;}
 
@@ -3068,7 +3068,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoiltype.htm"/>
 	/// </summary>
-	public  partial class IfcCoilType
+	public  partial class IfcCoilType : IfcEnergyConversionDeviceType
 	{
 		public IfcCoilTypeEnum PredefinedType {get;set;}
 
@@ -3077,7 +3077,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgb.htm"/>
 	/// </summary>
-	public  partial class IfcColourRgb
+	public  partial class IfcColourRgb : IfcColourSpecification
 	{
 		public IfcNormalisedRatioMeasure Red {get;set;}
 		public IfcNormalisedRatioMeasure Green {get;set;}
@@ -3088,7 +3088,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgblist.htm"/>
 	/// </summary>
-	public  partial class IfcColourRgbList
+	public  partial class IfcColourRgbList : IfcPresentationItem
 	{
 		public LIST[1:?]OFLIST[3:3]OFIfcNormalisedRatioMeasure ColourList {get;set;}
 
@@ -3097,7 +3097,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourspecification.htm"/>
 	/// </summary>
-	public abstract partial class IfcColourSpecification
+	public abstract partial class IfcColourSpecification : IfcPresentationItem
 	{
 		public IfcLabel Name {get;set;}
 
@@ -3106,7 +3106,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumn.htm"/>
 	/// </summary>
-	public  partial class IfcColumn
+	public  partial class IfcColumn : IfcBuildingElement
 	{
 		public IfcColumnTypeEnum PredefinedType {get;set;}
 
@@ -3115,7 +3115,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumnstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcColumnStandardCase
+	public  partial class IfcColumnStandardCase : IfcColumn
 	{
 
 	}
@@ -3123,7 +3123,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumntype.htm"/>
 	/// </summary>
-	public  partial class IfcColumnType
+	public  partial class IfcColumnType : IfcBuildingElementType
 	{
 		public IfcColumnTypeEnum PredefinedType {get;set;}
 
@@ -3132,7 +3132,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccommunicationsappliance.htm"/>
 	/// </summary>
-	public  partial class IfcCommunicationsAppliance
+	public  partial class IfcCommunicationsAppliance : IfcFlowTerminal
 	{
 		public IfcCommunicationsApplianceTypeEnum PredefinedType {get;set;}
 
@@ -3141,7 +3141,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccommunicationsappliancetype.htm"/>
 	/// </summary>
-	public  partial class IfcCommunicationsApplianceType
+	public  partial class IfcCommunicationsApplianceType : IfcFlowTerminalType
 	{
 		public IfcCommunicationsApplianceTypeEnum PredefinedType {get;set;}
 
@@ -3150,7 +3150,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexproperty.htm"/>
 	/// </summary>
-	public  partial class IfcComplexProperty
+	public  partial class IfcComplexProperty : IfcProperty
 	{
 		public IfcIdentifier UsageName {get;set;}
 		public SET[1:?]OFIfcProperty HasProperties {get;set;}
@@ -3160,7 +3160,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexpropertytemplate.htm"/>
 	/// </summary>
-	public  partial class IfcComplexPropertyTemplate
+	public  partial class IfcComplexPropertyTemplate : IfcPropertyTemplate
 	{
 		public IfcLabel UsageName {get;set;}
 		public IfcComplexPropertyTemplateTypeEnum TemplateType {get;set;}
@@ -3171,7 +3171,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurve.htm"/>
 	/// </summary>
-	public  partial class IfcCompositeCurve
+	public  partial class IfcCompositeCurve : IfcBoundedCurve
 	{
 		public LIST[1:?]OFIfcCompositeCurveSegment Segments {get;set;}
 		public bool? SelfIntersect {get;set;}
@@ -3183,7 +3183,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurveonsurface.htm"/>
 	/// </summary>
-	public  partial class IfcCompositeCurveOnSurface
+	public  partial class IfcCompositeCurveOnSurface : IfcCompositeCurve
 	{
 		public SET[0:1]OFIfcSurface BasisSurface {get;set;}
 
@@ -3192,7 +3192,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurvesegment.htm"/>
 	/// </summary>
-	public  partial class IfcCompositeCurveSegment
+	public  partial class IfcCompositeCurveSegment : IfcGeometricRepresentationItem
 	{
 		public IfcTransitionCode Transition {get;set;}
 		public bool SameSense {get;set;}
@@ -3204,7 +3204,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcCompositeProfileDef
+	public  partial class IfcCompositeProfileDef : IfcProfileDef
 	{
 		public SET[2:?]OFIfcProfileDef Profiles {get;set;}
 		public IfcLabel Label {get;set;}
@@ -3214,7 +3214,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompressor.htm"/>
 	/// </summary>
-	public  partial class IfcCompressor
+	public  partial class IfcCompressor : IfcFlowMovingDevice
 	{
 		public IfcCompressorTypeEnum PredefinedType {get;set;}
 
@@ -3223,7 +3223,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompressortype.htm"/>
 	/// </summary>
-	public  partial class IfcCompressorType
+	public  partial class IfcCompressorType : IfcFlowMovingDeviceType
 	{
 		public IfcCompressorTypeEnum PredefinedType {get;set;}
 
@@ -3232,7 +3232,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccondenser.htm"/>
 	/// </summary>
-	public  partial class IfcCondenser
+	public  partial class IfcCondenser : IfcEnergyConversionDevice
 	{
 		public IfcCondenserTypeEnum PredefinedType {get;set;}
 
@@ -3241,7 +3241,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccondensertype.htm"/>
 	/// </summary>
-	public  partial class IfcCondenserType
+	public  partial class IfcCondenserType : IfcEnergyConversionDeviceType
 	{
 		public IfcCondenserTypeEnum PredefinedType {get;set;}
 
@@ -3250,7 +3250,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconic.htm"/>
 	/// </summary>
-	public abstract partial class IfcConic
+	public abstract partial class IfcConic : IfcCurve
 	{
 		public IfcAxis2Placement Position {get;set;}
 
@@ -3259,7 +3259,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectedfaceset.htm"/>
 	/// </summary>
-	public  partial class IfcConnectedFaceSet
+	public  partial class IfcConnectedFaceSet : IfcTopologicalRepresentationItem
 	{
 		public SET[1:?]OFIfcFace CfsFaces {get;set;}
 
@@ -3268,7 +3268,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectioncurvegeometry.htm"/>
 	/// </summary>
-	public  partial class IfcConnectionCurveGeometry
+	public  partial class IfcConnectionCurveGeometry : IfcConnectionGeometry
 	{
 		public IfcCurveOrEdgeCurve CurveOnRelatingElement {get;set;}
 		public IfcCurveOrEdgeCurve CurveOnRelatedElement {get;set;}
@@ -3286,7 +3286,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionpointeccentricity.htm"/>
 	/// </summary>
-	public  partial class IfcConnectionPointEccentricity
+	public  partial class IfcConnectionPointEccentricity : IfcConnectionPointGeometry
 	{
 		public IfcLengthMeasure EccentricityInX {get;set;}
 		public IfcLengthMeasure EccentricityInY {get;set;}
@@ -3297,7 +3297,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionpointgeometry.htm"/>
 	/// </summary>
-	public  partial class IfcConnectionPointGeometry
+	public  partial class IfcConnectionPointGeometry : IfcConnectionGeometry
 	{
 		public IfcPointOrVertexPoint PointOnRelatingElement {get;set;}
 		public IfcPointOrVertexPoint PointOnRelatedElement {get;set;}
@@ -3307,7 +3307,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionsurfacegeometry.htm"/>
 	/// </summary>
-	public  partial class IfcConnectionSurfaceGeometry
+	public  partial class IfcConnectionSurfaceGeometry : IfcConnectionGeometry
 	{
 		public IfcSurfaceOrFaceSurface SurfaceOnRelatingElement {get;set;}
 		public IfcSurfaceOrFaceSurface SurfaceOnRelatedElement {get;set;}
@@ -3317,7 +3317,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionvolumegeometry.htm"/>
 	/// </summary>
-	public  partial class IfcConnectionVolumeGeometry
+	public  partial class IfcConnectionVolumeGeometry : IfcConnectionGeometry
 	{
 		public IfcSolidOrShell VolumeOnRelatingElement {get;set;}
 		public IfcSolidOrShell VolumeOnRelatedElement {get;set;}
@@ -3342,7 +3342,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionequipmentresource.htm"/>
 	/// </summary>
-	public  partial class IfcConstructionEquipmentResource
+	public  partial class IfcConstructionEquipmentResource : IfcConstructionResource
 	{
 		public IfcConstructionEquipmentResourceTypeEnum PredefinedType {get;set;}
 
@@ -3351,7 +3351,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionequipmentresourcetype.htm"/>
 	/// </summary>
-	public  partial class IfcConstructionEquipmentResourceType
+	public  partial class IfcConstructionEquipmentResourceType : IfcConstructionResourceType
 	{
 		public IfcConstructionEquipmentResourceTypeEnum PredefinedType {get;set;}
 
@@ -3360,7 +3360,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionmaterialresource.htm"/>
 	/// </summary>
-	public  partial class IfcConstructionMaterialResource
+	public  partial class IfcConstructionMaterialResource : IfcConstructionResource
 	{
 		public IfcConstructionMaterialResourceTypeEnum PredefinedType {get;set;}
 
@@ -3369,7 +3369,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionmaterialresourcetype.htm"/>
 	/// </summary>
-	public  partial class IfcConstructionMaterialResourceType
+	public  partial class IfcConstructionMaterialResourceType : IfcConstructionResourceType
 	{
 		public IfcConstructionMaterialResourceTypeEnum PredefinedType {get;set;}
 
@@ -3378,7 +3378,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionproductresource.htm"/>
 	/// </summary>
-	public  partial class IfcConstructionProductResource
+	public  partial class IfcConstructionProductResource : IfcConstructionResource
 	{
 		public IfcConstructionProductResourceTypeEnum PredefinedType {get;set;}
 
@@ -3387,7 +3387,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionproductresourcetype.htm"/>
 	/// </summary>
-	public  partial class IfcConstructionProductResourceType
+	public  partial class IfcConstructionProductResourceType : IfcConstructionResourceType
 	{
 		public IfcConstructionProductResourceTypeEnum PredefinedType {get;set;}
 
@@ -3396,7 +3396,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionresource.htm"/>
 	/// </summary>
-	public abstract partial class IfcConstructionResource
+	public abstract partial class IfcConstructionResource : IfcResource
 	{
 		public IfcResourceTime Usage {get;set;}
 		public LIST[1:?]OFIfcAppliedValue BaseCosts {get;set;}
@@ -3407,7 +3407,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionresourcetype.htm"/>
 	/// </summary>
-	public abstract partial class IfcConstructionResourceType
+	public abstract partial class IfcConstructionResourceType : IfcTypeResource
 	{
 		public LIST[1:?]OFIfcAppliedValue BaseCosts {get;set;}
 		public IfcPhysicalQuantity BaseQuantity {get;set;}
@@ -3417,7 +3417,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontext.htm"/>
 	/// </summary>
-	public abstract partial class IfcContext
+	public abstract partial class IfcContext : IfcObjectDefinition
 	{
 		public IfcLabel ObjectType {get;set;}
 		public IfcLabel LongName {get;set;}
@@ -3430,7 +3430,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontextdependentunit.htm"/>
 	/// </summary>
-	public  partial class IfcContextDependentUnit
+	public  partial class IfcContextDependentUnit : IfcNamedUnit
 	{
 		public IfcLabel Name {get;set;}
 
@@ -3439,7 +3439,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrol.htm"/>
 	/// </summary>
-	public abstract partial class IfcControl
+	public abstract partial class IfcControl : IfcObject
 	{
 		public IfcIdentifier Identification {get;set;}
 
@@ -3448,7 +3448,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontroller.htm"/>
 	/// </summary>
-	public  partial class IfcController
+	public  partial class IfcController : IfcDistributionControlElement
 	{
 		public IfcControllerTypeEnum PredefinedType {get;set;}
 
@@ -3457,7 +3457,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrollertype.htm"/>
 	/// </summary>
-	public  partial class IfcControllerType
+	public  partial class IfcControllerType : IfcDistributionControlElementType
 	{
 		public IfcControllerTypeEnum PredefinedType {get;set;}
 
@@ -3466,7 +3466,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconversionbasedunit.htm"/>
 	/// </summary>
-	public  partial class IfcConversionBasedUnit
+	public  partial class IfcConversionBasedUnit : IfcNamedUnit
 	{
 		public IfcLabel Name {get;set;}
 		public IfcMeasureWithUnit ConversionFactor {get;set;}
@@ -3476,7 +3476,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconversionbasedunitwithoffset.htm"/>
 	/// </summary>
-	public  partial class IfcConversionBasedUnitWithOffset
+	public  partial class IfcConversionBasedUnitWithOffset : IfcConversionBasedUnit
 	{
 		public IfcReal ConversionOffset {get;set;}
 
@@ -3485,7 +3485,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccooledbeam.htm"/>
 	/// </summary>
-	public  partial class IfcCooledBeam
+	public  partial class IfcCooledBeam : IfcEnergyConversionDevice
 	{
 		public IfcCooledBeamTypeEnum PredefinedType {get;set;}
 
@@ -3494,7 +3494,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccooledbeamtype.htm"/>
 	/// </summary>
-	public  partial class IfcCooledBeamType
+	public  partial class IfcCooledBeamType : IfcEnergyConversionDeviceType
 	{
 		public IfcCooledBeamTypeEnum PredefinedType {get;set;}
 
@@ -3503,7 +3503,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoolingtower.htm"/>
 	/// </summary>
-	public  partial class IfcCoolingTower
+	public  partial class IfcCoolingTower : IfcEnergyConversionDevice
 	{
 		public IfcCoolingTowerTypeEnum PredefinedType {get;set;}
 
@@ -3512,7 +3512,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoolingtowertype.htm"/>
 	/// </summary>
-	public  partial class IfcCoolingTowerType
+	public  partial class IfcCoolingTowerType : IfcEnergyConversionDeviceType
 	{
 		public IfcCoolingTowerTypeEnum PredefinedType {get;set;}
 
@@ -3543,7 +3543,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostitem.htm"/>
 	/// </summary>
-	public  partial class IfcCostItem
+	public  partial class IfcCostItem : IfcControl
 	{
 		public IfcCostItemTypeEnum PredefinedType {get;set;}
 		public LIST[1:?]OFIfcCostValue CostValues {get;set;}
@@ -3554,7 +3554,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostschedule.htm"/>
 	/// </summary>
-	public  partial class IfcCostSchedule
+	public  partial class IfcCostSchedule : IfcControl
 	{
 		public IfcCostScheduleTypeEnum PredefinedType {get;set;}
 		public IfcLabel Status {get;set;}
@@ -3566,7 +3566,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostvalue.htm"/>
 	/// </summary>
-	public  partial class IfcCostValue
+	public  partial class IfcCostValue : IfcAppliedValue
 	{
 
 	}
@@ -3574,7 +3574,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccovering.htm"/>
 	/// </summary>
-	public  partial class IfcCovering
+	public  partial class IfcCovering : IfcBuildingElement
 	{
 		public IfcCoveringTypeEnum PredefinedType {get;set;}
 
@@ -3583,7 +3583,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoveringtype.htm"/>
 	/// </summary>
-	public  partial class IfcCoveringType
+	public  partial class IfcCoveringType : IfcBuildingElementType
 	{
 		public IfcCoveringTypeEnum PredefinedType {get;set;}
 
@@ -3592,7 +3592,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresource.htm"/>
 	/// </summary>
-	public  partial class IfcCrewResource
+	public  partial class IfcCrewResource : IfcConstructionResource
 	{
 		public IfcCrewResourceTypeEnum PredefinedType {get;set;}
 
@@ -3601,7 +3601,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresourcetype.htm"/>
 	/// </summary>
-	public  partial class IfcCrewResourceType
+	public  partial class IfcCrewResourceType : IfcConstructionResourceType
 	{
 		public IfcCrewResourceTypeEnum PredefinedType {get;set;}
 
@@ -3610,7 +3610,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgprimitive3d.htm"/>
 	/// </summary>
-	public abstract partial class IfcCsgPrimitive3D
+	public abstract partial class IfcCsgPrimitive3D : IfcGeometricRepresentationItem
 	{
 		public IfcAxis2Placement3D Position {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -3620,7 +3620,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgsolid.htm"/>
 	/// </summary>
-	public  partial class IfcCsgSolid
+	public  partial class IfcCsgSolid : IfcSolidModel
 	{
 		public IfcCsgSelect TreeRootExpression {get;set;}
 
@@ -3629,7 +3629,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurrencyrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcCurrencyRelationship
+	public  partial class IfcCurrencyRelationship : IfcResourceLevelRelationship
 	{
 		public IfcMonetaryUnit RelatingMonetaryUnit {get;set;}
 		public IfcMonetaryUnit RelatedMonetaryUnit {get;set;}
@@ -3642,7 +3642,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurtainwall.htm"/>
 	/// </summary>
-	public  partial class IfcCurtainWall
+	public  partial class IfcCurtainWall : IfcBuildingElement
 	{
 		public IfcCurtainWallTypeEnum PredefinedType {get;set;}
 
@@ -3651,7 +3651,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurtainwalltype.htm"/>
 	/// </summary>
-	public  partial class IfcCurtainWallType
+	public  partial class IfcCurtainWallType : IfcBuildingElementType
 	{
 		public IfcCurtainWallTypeEnum PredefinedType {get;set;}
 
@@ -3660,7 +3660,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurve.htm"/>
 	/// </summary>
-	public abstract partial class IfcCurve
+	public abstract partial class IfcCurve : IfcGeometricRepresentationItem
 	{
 		public IfcDimensionCount Dim {get;set;}
 
@@ -3669,7 +3669,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveboundedplane.htm"/>
 	/// </summary>
-	public  partial class IfcCurveBoundedPlane
+	public  partial class IfcCurveBoundedPlane : IfcBoundedSurface
 	{
 		public IfcPlane BasisSurface {get;set;}
 		public IfcCurve OuterBoundary {get;set;}
@@ -3680,7 +3680,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveboundedsurface.htm"/>
 	/// </summary>
-	public  partial class IfcCurveBoundedSurface
+	public  partial class IfcCurveBoundedSurface : IfcBoundedSurface
 	{
 		public IfcSurface BasisSurface {get;set;}
 		public SET[1:?]OFIfcBoundaryCurve Boundaries {get;set;}
@@ -3691,7 +3691,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestyle.htm"/>
 	/// </summary>
-	public  partial class IfcCurveStyle
+	public  partial class IfcCurveStyle : IfcPresentationStyle
 	{
 		public IfcCurveFontOrScaledCurveFontSelect CurveFont {get;set;}
 		public IfcSizeSelect CurveWidth {get;set;}
@@ -3703,7 +3703,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefont.htm"/>
 	/// </summary>
-	public  partial class IfcCurveStyleFont
+	public  partial class IfcCurveStyleFont : IfcPresentationItem
 	{
 		public IfcLabel Name {get;set;}
 		public LIST[1:?]OFIfcCurveStyleFontPattern PatternList {get;set;}
@@ -3713,7 +3713,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontandscaling.htm"/>
 	/// </summary>
-	public  partial class IfcCurveStyleFontAndScaling
+	public  partial class IfcCurveStyleFontAndScaling : IfcPresentationItem
 	{
 		public IfcLabel Name {get;set;}
 		public IfcCurveStyleFontSelect CurveFont {get;set;}
@@ -3724,7 +3724,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontpattern.htm"/>
 	/// </summary>
-	public  partial class IfcCurveStyleFontPattern
+	public  partial class IfcCurveStyleFontPattern : IfcPresentationItem
 	{
 		public IfcLengthMeasure VisibleSegmentLength {get;set;}
 		public IfcPositiveLengthMeasure InvisibleSegmentLength {get;set;}
@@ -3734,7 +3734,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccylindricalsurface.htm"/>
 	/// </summary>
-	public  partial class IfcCylindricalSurface
+	public  partial class IfcCylindricalSurface : IfcElementarySurface
 	{
 		public IfcPositiveLengthMeasure Radius {get;set;}
 
@@ -3743,7 +3743,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdamper.htm"/>
 	/// </summary>
-	public  partial class IfcDamper
+	public  partial class IfcDamper : IfcFlowController
 	{
 		public IfcDamperTypeEnum PredefinedType {get;set;}
 
@@ -3752,7 +3752,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdampertype.htm"/>
 	/// </summary>
-	public  partial class IfcDamperType
+	public  partial class IfcDamperType : IfcFlowControllerType
 	{
 		public IfcDamperTypeEnum PredefinedType {get;set;}
 
@@ -3761,7 +3761,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcDerivedProfileDef
+	public  partial class IfcDerivedProfileDef : IfcProfileDef
 	{
 		public IfcProfileDef ParentProfile {get;set;}
 		public IfcCartesianTransformationOperator2D Operator {get;set;}
@@ -3809,7 +3809,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdirection.htm"/>
 	/// </summary>
-	public  partial class IfcDirection
+	public  partial class IfcDirection : IfcGeometricRepresentationItem
 	{
 		public LIST[2:3]OFREAL DirectionRatios {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -3819,7 +3819,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdiscreteaccessory.htm"/>
 	/// </summary>
-	public  partial class IfcDiscreteAccessory
+	public  partial class IfcDiscreteAccessory : IfcElementComponent
 	{
 		public IfcDiscreteAccessoryTypeEnum PredefinedType {get;set;}
 
@@ -3828,7 +3828,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdiscreteaccessorytype.htm"/>
 	/// </summary>
-	public  partial class IfcDiscreteAccessoryType
+	public  partial class IfcDiscreteAccessoryType : IfcElementComponentType
 	{
 		public IfcDiscreteAccessoryTypeEnum PredefinedType {get;set;}
 
@@ -3837,7 +3837,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionchamberelement.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionChamberElement
+	public  partial class IfcDistributionChamberElement : IfcDistributionFlowElement
 	{
 		public IfcDistributionChamberElementTypeEnum PredefinedType {get;set;}
 
@@ -3846,7 +3846,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionchamberelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionChamberElementType
+	public  partial class IfcDistributionChamberElementType : IfcDistributionFlowElementType
 	{
 		public IfcDistributionChamberElementTypeEnum PredefinedType {get;set;}
 
@@ -3855,7 +3855,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributioncircuit.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionCircuit
+	public  partial class IfcDistributionCircuit : IfcDistributionSystem
 	{
 
 	}
@@ -3863,7 +3863,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributioncontrolelement.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionControlElement
+	public  partial class IfcDistributionControlElement : IfcDistributionElement
 	{
 
 	}
@@ -3871,7 +3871,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributioncontrolelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcDistributionControlElementType
+	public abstract partial class IfcDistributionControlElementType : IfcDistributionElementType
 	{
 
 	}
@@ -3879,7 +3879,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionelement.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionElement
+	public  partial class IfcDistributionElement : IfcElement
 	{
 
 	}
@@ -3887,7 +3887,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionElementType
+	public  partial class IfcDistributionElementType : IfcElementType
 	{
 
 	}
@@ -3895,7 +3895,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionflowelement.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionFlowElement
+	public  partial class IfcDistributionFlowElement : IfcDistributionElement
 	{
 
 	}
@@ -3903,7 +3903,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionflowelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcDistributionFlowElementType
+	public abstract partial class IfcDistributionFlowElementType : IfcDistributionElementType
 	{
 
 	}
@@ -3911,7 +3911,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionport.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionPort
+	public  partial class IfcDistributionPort : IfcPort
 	{
 		public IfcFlowDirectionEnum FlowDirection {get;set;}
 		public IfcDistributionPortTypeEnum PredefinedType {get;set;}
@@ -3922,7 +3922,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionsystem.htm"/>
 	/// </summary>
-	public  partial class IfcDistributionSystem
+	public  partial class IfcDistributionSystem : IfcSystem
 	{
 		public IfcLabel LongName {get;set;}
 		public IfcDistributionSystemEnum PredefinedType {get;set;}
@@ -3932,7 +3932,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentinformation.htm"/>
 	/// </summary>
-	public  partial class IfcDocumentInformation
+	public  partial class IfcDocumentInformation : IfcExternalInformation
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcLabel Name {get;set;}
@@ -3957,7 +3957,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentinformationrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcDocumentInformationRelationship
+	public  partial class IfcDocumentInformationRelationship : IfcResourceLevelRelationship
 	{
 		public IfcDocumentInformation RelatingDocument {get;set;}
 		public SET[1:?]OFIfcDocumentInformation RelatedDocuments {get;set;}
@@ -3968,7 +3968,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentreference.htm"/>
 	/// </summary>
-	public  partial class IfcDocumentReference
+	public  partial class IfcDocumentReference : IfcExternalReference
 	{
 		public IfcText Description {get;set;}
 		public IfcDocumentInformation ReferencedDocument {get;set;}
@@ -3978,7 +3978,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoor.htm"/>
 	/// </summary>
-	public  partial class IfcDoor
+	public  partial class IfcDoor : IfcBuildingElement
 	{
 		public IfcPositiveLengthMeasure OverallHeight {get;set;}
 		public IfcPositiveLengthMeasure OverallWidth {get;set;}
@@ -3991,7 +3991,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorliningproperties.htm"/>
 	/// </summary>
-	public  partial class IfcDoorLiningProperties
+	public  partial class IfcDoorLiningProperties : IfcPreDefinedPropertySet
 	{
 		public IfcPositiveLengthMeasure LiningDepth {get;set;}
 		public IfcNonNegativeLengthMeasure LiningThickness {get;set;}
@@ -4012,7 +4012,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelproperties.htm"/>
 	/// </summary>
-	public  partial class IfcDoorPanelProperties
+	public  partial class IfcDoorPanelProperties : IfcPreDefinedPropertySet
 	{
 		public IfcPositiveLengthMeasure PanelDepth {get;set;}
 		public IfcDoorPanelOperationEnum PanelOperation {get;set;}
@@ -4025,7 +4025,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcDoorStandardCase
+	public  partial class IfcDoorStandardCase : IfcDoor
 	{
 
 	}
@@ -4033,7 +4033,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyle.htm"/>
 	/// </summary>
-	public  partial class IfcDoorStyle
+	public  partial class IfcDoorStyle : IfcTypeProduct
 	{
 		public IfcDoorStyleOperationEnum OperationType {get;set;}
 		public IfcDoorStyleConstructionEnum ConstructionType {get;set;}
@@ -4045,7 +4045,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortype.htm"/>
 	/// </summary>
-	public  partial class IfcDoorType
+	public  partial class IfcDoorType : IfcBuildingElementType
 	{
 		public IfcDoorTypeEnum PredefinedType {get;set;}
 		public IfcDoorTypeOperationEnum OperationType {get;set;}
@@ -4057,7 +4057,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdraughtingpredefinedcolour.htm"/>
 	/// </summary>
-	public  partial class IfcDraughtingPreDefinedColour
+	public  partial class IfcDraughtingPreDefinedColour : IfcPreDefinedColour
 	{
 
 	}
@@ -4065,7 +4065,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdraughtingpredefinedcurvefont.htm"/>
 	/// </summary>
-	public  partial class IfcDraughtingPreDefinedCurveFont
+	public  partial class IfcDraughtingPreDefinedCurveFont : IfcPreDefinedCurveFont
 	{
 
 	}
@@ -4073,7 +4073,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductfitting.htm"/>
 	/// </summary>
-	public  partial class IfcDuctFitting
+	public  partial class IfcDuctFitting : IfcFlowFitting
 	{
 		public IfcDuctFittingTypeEnum PredefinedType {get;set;}
 
@@ -4082,7 +4082,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductfittingtype.htm"/>
 	/// </summary>
-	public  partial class IfcDuctFittingType
+	public  partial class IfcDuctFittingType : IfcFlowFittingType
 	{
 		public IfcDuctFittingTypeEnum PredefinedType {get;set;}
 
@@ -4091,7 +4091,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsegment.htm"/>
 	/// </summary>
-	public  partial class IfcDuctSegment
+	public  partial class IfcDuctSegment : IfcFlowSegment
 	{
 		public IfcDuctSegmentTypeEnum PredefinedType {get;set;}
 
@@ -4100,7 +4100,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsegmenttype.htm"/>
 	/// </summary>
-	public  partial class IfcDuctSegmentType
+	public  partial class IfcDuctSegmentType : IfcFlowSegmentType
 	{
 		public IfcDuctSegmentTypeEnum PredefinedType {get;set;}
 
@@ -4109,7 +4109,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsilencer.htm"/>
 	/// </summary>
-	public  partial class IfcDuctSilencer
+	public  partial class IfcDuctSilencer : IfcFlowTreatmentDevice
 	{
 		public IfcDuctSilencerTypeEnum PredefinedType {get;set;}
 
@@ -4118,7 +4118,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsilencertype.htm"/>
 	/// </summary>
-	public  partial class IfcDuctSilencerType
+	public  partial class IfcDuctSilencerType : IfcFlowTreatmentDeviceType
 	{
 		public IfcDuctSilencerTypeEnum PredefinedType {get;set;}
 
@@ -4127,7 +4127,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedge.htm"/>
 	/// </summary>
-	public  partial class IfcEdge
+	public  partial class IfcEdge : IfcTopologicalRepresentationItem
 	{
 		public IfcVertex EdgeStart {get;set;}
 		public IfcVertex EdgeEnd {get;set;}
@@ -4137,7 +4137,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgecurve.htm"/>
 	/// </summary>
-	public  partial class IfcEdgeCurve
+	public  partial class IfcEdgeCurve : IfcEdge
 	{
 		public IfcCurve EdgeGeometry {get;set;}
 		public bool SameSense {get;set;}
@@ -4147,7 +4147,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgeloop.htm"/>
 	/// </summary>
-	public  partial class IfcEdgeLoop
+	public  partial class IfcEdgeLoop : IfcLoop
 	{
 		public LIST[1:?]OFIfcOrientedEdge EdgeList {get;set;}
 		public int Ne {get;set;}
@@ -4157,7 +4157,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricappliance.htm"/>
 	/// </summary>
-	public  partial class IfcElectricAppliance
+	public  partial class IfcElectricAppliance : IfcFlowTerminal
 	{
 		public IfcElectricApplianceTypeEnum PredefinedType {get;set;}
 
@@ -4166,7 +4166,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricappliancetype.htm"/>
 	/// </summary>
-	public  partial class IfcElectricApplianceType
+	public  partial class IfcElectricApplianceType : IfcFlowTerminalType
 	{
 		public IfcElectricApplianceTypeEnum PredefinedType {get;set;}
 
@@ -4175,7 +4175,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricdistributionboard.htm"/>
 	/// </summary>
-	public  partial class IfcElectricDistributionBoard
+	public  partial class IfcElectricDistributionBoard : IfcFlowController
 	{
 		public IfcElectricDistributionBoardTypeEnum PredefinedType {get;set;}
 
@@ -4184,7 +4184,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricdistributionboardtype.htm"/>
 	/// </summary>
-	public  partial class IfcElectricDistributionBoardType
+	public  partial class IfcElectricDistributionBoardType : IfcFlowControllerType
 	{
 		public IfcElectricDistributionBoardTypeEnum PredefinedType {get;set;}
 
@@ -4193,7 +4193,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricflowstoragedevice.htm"/>
 	/// </summary>
-	public  partial class IfcElectricFlowStorageDevice
+	public  partial class IfcElectricFlowStorageDevice : IfcFlowStorageDevice
 	{
 		public IfcElectricFlowStorageDeviceTypeEnum PredefinedType {get;set;}
 
@@ -4202,7 +4202,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricflowstoragedevicetype.htm"/>
 	/// </summary>
-	public  partial class IfcElectricFlowStorageDeviceType
+	public  partial class IfcElectricFlowStorageDeviceType : IfcFlowStorageDeviceType
 	{
 		public IfcElectricFlowStorageDeviceTypeEnum PredefinedType {get;set;}
 
@@ -4211,7 +4211,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricgenerator.htm"/>
 	/// </summary>
-	public  partial class IfcElectricGenerator
+	public  partial class IfcElectricGenerator : IfcEnergyConversionDevice
 	{
 		public IfcElectricGeneratorTypeEnum PredefinedType {get;set;}
 
@@ -4220,7 +4220,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricgeneratortype.htm"/>
 	/// </summary>
-	public  partial class IfcElectricGeneratorType
+	public  partial class IfcElectricGeneratorType : IfcEnergyConversionDeviceType
 	{
 		public IfcElectricGeneratorTypeEnum PredefinedType {get;set;}
 
@@ -4229,7 +4229,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricmotor.htm"/>
 	/// </summary>
-	public  partial class IfcElectricMotor
+	public  partial class IfcElectricMotor : IfcEnergyConversionDevice
 	{
 		public IfcElectricMotorTypeEnum PredefinedType {get;set;}
 
@@ -4238,7 +4238,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricmotortype.htm"/>
 	/// </summary>
-	public  partial class IfcElectricMotorType
+	public  partial class IfcElectricMotorType : IfcEnergyConversionDeviceType
 	{
 		public IfcElectricMotorTypeEnum PredefinedType {get;set;}
 
@@ -4247,7 +4247,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectrictimecontrol.htm"/>
 	/// </summary>
-	public  partial class IfcElectricTimeControl
+	public  partial class IfcElectricTimeControl : IfcFlowController
 	{
 		public IfcElectricTimeControlTypeEnum PredefinedType {get;set;}
 
@@ -4256,7 +4256,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectrictimecontroltype.htm"/>
 	/// </summary>
-	public  partial class IfcElectricTimeControlType
+	public  partial class IfcElectricTimeControlType : IfcFlowControllerType
 	{
 		public IfcElectricTimeControlTypeEnum PredefinedType {get;set;}
 
@@ -4265,7 +4265,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcElement
+	public abstract partial class IfcElement : IfcProduct
 	{
 		public IfcIdentifier Tag {get;set;}
 
@@ -4274,7 +4274,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassembly.htm"/>
 	/// </summary>
-	public  partial class IfcElementAssembly
+	public  partial class IfcElementAssembly : IfcElement
 	{
 		public IfcAssemblyPlaceEnum AssemblyPlace {get;set;}
 		public IfcElementAssemblyTypeEnum PredefinedType {get;set;}
@@ -4284,7 +4284,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassemblytype.htm"/>
 	/// </summary>
-	public  partial class IfcElementAssemblyType
+	public  partial class IfcElementAssemblyType : IfcElementType
 	{
 		public IfcElementAssemblyTypeEnum PredefinedType {get;set;}
 
@@ -4293,7 +4293,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcomponent.htm"/>
 	/// </summary>
-	public abstract partial class IfcElementComponent
+	public abstract partial class IfcElementComponent : IfcElement
 	{
 
 	}
@@ -4301,7 +4301,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcomponenttype.htm"/>
 	/// </summary>
-	public abstract partial class IfcElementComponentType
+	public abstract partial class IfcElementComponentType : IfcElementType
 	{
 
 	}
@@ -4309,7 +4309,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementquantity.htm"/>
 	/// </summary>
-	public  partial class IfcElementQuantity
+	public  partial class IfcElementQuantity : IfcQuantitySet
 	{
 		public IfcLabel MethodOfMeasurement {get;set;}
 		public SET[1:?]OFIfcPhysicalQuantity Quantities {get;set;}
@@ -4319,7 +4319,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcElementType
+	public abstract partial class IfcElementType : IfcTypeProduct
 	{
 		public IfcLabel ElementType {get;set;}
 
@@ -4328,7 +4328,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementarysurface.htm"/>
 	/// </summary>
-	public abstract partial class IfcElementarySurface
+	public abstract partial class IfcElementarySurface : IfcSurface
 	{
 		public IfcAxis2Placement3D Position {get;set;}
 
@@ -4337,7 +4337,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcellipse.htm"/>
 	/// </summary>
-	public  partial class IfcEllipse
+	public  partial class IfcEllipse : IfcConic
 	{
 		public IfcPositiveLengthMeasure SemiAxis1 {get;set;}
 		public IfcPositiveLengthMeasure SemiAxis2 {get;set;}
@@ -4347,7 +4347,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcellipseprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcEllipseProfileDef
+	public  partial class IfcEllipseProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure SemiAxis1 {get;set;}
 		public IfcPositiveLengthMeasure SemiAxis2 {get;set;}
@@ -4357,7 +4357,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenergyconversiondevice.htm"/>
 	/// </summary>
-	public  partial class IfcEnergyConversionDevice
+	public  partial class IfcEnergyConversionDevice : IfcDistributionFlowElement
 	{
 
 	}
@@ -4365,7 +4365,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenergyconversiondevicetype.htm"/>
 	/// </summary>
-	public abstract partial class IfcEnergyConversionDeviceType
+	public abstract partial class IfcEnergyConversionDeviceType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4373,7 +4373,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcengine.htm"/>
 	/// </summary>
-	public  partial class IfcEngine
+	public  partial class IfcEngine : IfcEnergyConversionDevice
 	{
 		public IfcEngineTypeEnum PredefinedType {get;set;}
 
@@ -4382,7 +4382,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenginetype.htm"/>
 	/// </summary>
-	public  partial class IfcEngineType
+	public  partial class IfcEngineType : IfcEnergyConversionDeviceType
 	{
 		public IfcEngineTypeEnum PredefinedType {get;set;}
 
@@ -4391,7 +4391,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporativecooler.htm"/>
 	/// </summary>
-	public  partial class IfcEvaporativeCooler
+	public  partial class IfcEvaporativeCooler : IfcEnergyConversionDevice
 	{
 		public IfcEvaporativeCoolerTypeEnum PredefinedType {get;set;}
 
@@ -4400,7 +4400,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporativecoolertype.htm"/>
 	/// </summary>
-	public  partial class IfcEvaporativeCoolerType
+	public  partial class IfcEvaporativeCoolerType : IfcEnergyConversionDeviceType
 	{
 		public IfcEvaporativeCoolerTypeEnum PredefinedType {get;set;}
 
@@ -4409,7 +4409,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporator.htm"/>
 	/// </summary>
-	public  partial class IfcEvaporator
+	public  partial class IfcEvaporator : IfcEnergyConversionDevice
 	{
 		public IfcEvaporatorTypeEnum PredefinedType {get;set;}
 
@@ -4418,7 +4418,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporatortype.htm"/>
 	/// </summary>
-	public  partial class IfcEvaporatorType
+	public  partial class IfcEvaporatorType : IfcEnergyConversionDeviceType
 	{
 		public IfcEvaporatorTypeEnum PredefinedType {get;set;}
 
@@ -4427,7 +4427,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevent.htm"/>
 	/// </summary>
-	public  partial class IfcEvent
+	public  partial class IfcEvent : IfcProcess
 	{
 		public IfcEventTypeEnum PredefinedType {get;set;}
 		public IfcEventTriggerTypeEnum EventTriggerType {get;set;}
@@ -4439,7 +4439,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtime.htm"/>
 	/// </summary>
-	public  partial class IfcEventTime
+	public  partial class IfcEventTime : IfcSchedulingTime
 	{
 		public IfcDateTime ActualDate {get;set;}
 		public IfcDateTime EarlyDate {get;set;}
@@ -4451,7 +4451,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtype.htm"/>
 	/// </summary>
-	public  partial class IfcEventType
+	public  partial class IfcEventType : IfcTypeProcess
 	{
 		public IfcEventTypeEnum PredefinedType {get;set;}
 		public IfcEventTriggerTypeEnum EventTriggerType {get;set;}
@@ -4462,7 +4462,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextendedproperties.htm"/>
 	/// </summary>
-	public abstract partial class IfcExtendedProperties
+	public abstract partial class IfcExtendedProperties : IfcPropertyAbstraction
 	{
 		public IfcIdentifier Name {get;set;}
 		public IfcText Description {get;set;}
@@ -4492,7 +4492,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalreferencerelationship.htm"/>
 	/// </summary>
-	public  partial class IfcExternalReferenceRelationship
+	public  partial class IfcExternalReferenceRelationship : IfcResourceLevelRelationship
 	{
 		public IfcExternalReference RelatingReference {get;set;}
 		public SET[1:?]OFIfcResourceObjectSelect RelatedResourceObjects {get;set;}
@@ -4502,7 +4502,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelement.htm"/>
 	/// </summary>
-	public  partial class IfcExternalSpatialElement
+	public  partial class IfcExternalSpatialElement : IfcExternalSpatialStructureElement
 	{
 		public IfcExternalSpatialElementTypeEnum PredefinedType {get;set;}
 
@@ -4511,7 +4511,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialstructureelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcExternalSpatialStructureElement
+	public abstract partial class IfcExternalSpatialStructureElement : IfcSpatialElement
 	{
 
 	}
@@ -4519,7 +4519,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternallydefinedhatchstyle.htm"/>
 	/// </summary>
-	public  partial class IfcExternallyDefinedHatchStyle
+	public  partial class IfcExternallyDefinedHatchStyle : IfcExternalReference
 	{
 
 	}
@@ -4527,7 +4527,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternallydefinedsurfacestyle.htm"/>
 	/// </summary>
-	public  partial class IfcExternallyDefinedSurfaceStyle
+	public  partial class IfcExternallyDefinedSurfaceStyle : IfcExternalReference
 	{
 
 	}
@@ -4535,7 +4535,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternallydefinedtextfont.htm"/>
 	/// </summary>
-	public  partial class IfcExternallyDefinedTextFont
+	public  partial class IfcExternallyDefinedTextFont : IfcExternalReference
 	{
 
 	}
@@ -4543,7 +4543,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextrudedareasolid.htm"/>
 	/// </summary>
-	public  partial class IfcExtrudedAreaSolid
+	public  partial class IfcExtrudedAreaSolid : IfcSweptAreaSolid
 	{
 		public IfcDirection ExtrudedDirection {get;set;}
 		public IfcPositiveLengthMeasure Depth {get;set;}
@@ -4553,7 +4553,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextrudedareasolidtapered.htm"/>
 	/// </summary>
-	public  partial class IfcExtrudedAreaSolidTapered
+	public  partial class IfcExtrudedAreaSolidTapered : IfcExtrudedAreaSolid
 	{
 		public IfcProfileDef EndSweptArea {get;set;}
 
@@ -4562,7 +4562,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcface.htm"/>
 	/// </summary>
-	public  partial class IfcFace
+	public  partial class IfcFace : IfcTopologicalRepresentationItem
 	{
 		public SET[1:?]OFIfcFaceBound Bounds {get;set;}
 
@@ -4571,7 +4571,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebasedsurfacemodel.htm"/>
 	/// </summary>
-	public  partial class IfcFaceBasedSurfaceModel
+	public  partial class IfcFaceBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
 		public SET[1:?]OFIfcConnectedFaceSet FbsmFaces {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -4581,7 +4581,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebound.htm"/>
 	/// </summary>
-	public  partial class IfcFaceBound
+	public  partial class IfcFaceBound : IfcTopologicalRepresentationItem
 	{
 		public IfcLoop Bound {get;set;}
 		public bool Orientation {get;set;}
@@ -4591,7 +4591,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfaceouterbound.htm"/>
 	/// </summary>
-	public  partial class IfcFaceOuterBound
+	public  partial class IfcFaceOuterBound : IfcFaceBound
 	{
 
 	}
@@ -4599,7 +4599,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacesurface.htm"/>
 	/// </summary>
-	public  partial class IfcFaceSurface
+	public  partial class IfcFaceSurface : IfcFace
 	{
 		public IfcSurface FaceSurface {get;set;}
 		public bool SameSense {get;set;}
@@ -4609,7 +4609,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacetedbrep.htm"/>
 	/// </summary>
-	public  partial class IfcFacetedBrep
+	public  partial class IfcFacetedBrep : IfcManifoldSolidBrep
 	{
 
 	}
@@ -4617,7 +4617,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacetedbrepwithvoids.htm"/>
 	/// </summary>
-	public  partial class IfcFacetedBrepWithVoids
+	public  partial class IfcFacetedBrepWithVoids : IfcFacetedBrep
 	{
 		public SET[1:?]OFIfcClosedShell Voids {get;set;}
 
@@ -4626,7 +4626,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfailureconnectioncondition.htm"/>
 	/// </summary>
-	public  partial class IfcFailureConnectionCondition
+	public  partial class IfcFailureConnectionCondition : IfcStructuralConnectionCondition
 	{
 		public IfcForceMeasure TensionFailureX {get;set;}
 		public IfcForceMeasure TensionFailureY {get;set;}
@@ -4640,7 +4640,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfan.htm"/>
 	/// </summary>
-	public  partial class IfcFan
+	public  partial class IfcFan : IfcFlowMovingDevice
 	{
 		public IfcFanTypeEnum PredefinedType {get;set;}
 
@@ -4649,7 +4649,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfantype.htm"/>
 	/// </summary>
-	public  partial class IfcFanType
+	public  partial class IfcFanType : IfcFlowMovingDeviceType
 	{
 		public IfcFanTypeEnum PredefinedType {get;set;}
 
@@ -4658,7 +4658,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastener.htm"/>
 	/// </summary>
-	public  partial class IfcFastener
+	public  partial class IfcFastener : IfcElementComponent
 	{
 		public IfcFastenerTypeEnum PredefinedType {get;set;}
 
@@ -4667,7 +4667,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastenertype.htm"/>
 	/// </summary>
-	public  partial class IfcFastenerType
+	public  partial class IfcFastenerType : IfcElementComponentType
 	{
 		public IfcFastenerTypeEnum PredefinedType {get;set;}
 
@@ -4676,7 +4676,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcFeatureElement
+	public abstract partial class IfcFeatureElement : IfcElement
 	{
 
 	}
@@ -4684,7 +4684,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelementaddition.htm"/>
 	/// </summary>
-	public abstract partial class IfcFeatureElementAddition
+	public abstract partial class IfcFeatureElementAddition : IfcFeatureElement
 	{
 
 	}
@@ -4692,7 +4692,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelementsubtraction.htm"/>
 	/// </summary>
-	public abstract partial class IfcFeatureElementSubtraction
+	public abstract partial class IfcFeatureElementSubtraction : IfcFeatureElement
 	{
 
 	}
@@ -4700,7 +4700,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyle.htm"/>
 	/// </summary>
-	public  partial class IfcFillAreaStyle
+	public  partial class IfcFillAreaStyle : IfcPresentationStyle
 	{
 		public SET[1:?]OFIfcFillStyleSelect FillStyles {get;set;}
 		public bool ModelorDraughting {get;set;}
@@ -4710,7 +4710,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastylehatching.htm"/>
 	/// </summary>
-	public  partial class IfcFillAreaStyleHatching
+	public  partial class IfcFillAreaStyleHatching : IfcGeometricRepresentationItem
 	{
 		public IfcCurveStyle HatchLineAppearance {get;set;}
 		public IfcHatchLineDistanceSelect StartOfNextHatchLine {get;set;}
@@ -4723,7 +4723,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyletiles.htm"/>
 	/// </summary>
-	public  partial class IfcFillAreaStyleTiles
+	public  partial class IfcFillAreaStyleTiles : IfcGeometricRepresentationItem
 	{
 		public LIST[2:2]OFIfcVector TilingPattern {get;set;}
 		public SET[1:?]OFIfcStyledItem Tiles {get;set;}
@@ -4734,7 +4734,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfilter.htm"/>
 	/// </summary>
-	public  partial class IfcFilter
+	public  partial class IfcFilter : IfcFlowTreatmentDevice
 	{
 		public IfcFilterTypeEnum PredefinedType {get;set;}
 
@@ -4743,7 +4743,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiltertype.htm"/>
 	/// </summary>
-	public  partial class IfcFilterType
+	public  partial class IfcFilterType : IfcFlowTreatmentDeviceType
 	{
 		public IfcFilterTypeEnum PredefinedType {get;set;}
 
@@ -4752,7 +4752,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiresuppressionterminal.htm"/>
 	/// </summary>
-	public  partial class IfcFireSuppressionTerminal
+	public  partial class IfcFireSuppressionTerminal : IfcFlowTerminal
 	{
 		public IfcFireSuppressionTerminalTypeEnum PredefinedType {get;set;}
 
@@ -4761,7 +4761,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiresuppressionterminaltype.htm"/>
 	/// </summary>
-	public  partial class IfcFireSuppressionTerminalType
+	public  partial class IfcFireSuppressionTerminalType : IfcFlowTerminalType
 	{
 		public IfcFireSuppressionTerminalTypeEnum PredefinedType {get;set;}
 
@@ -4770,7 +4770,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfixedreferencesweptareasolid.htm"/>
 	/// </summary>
-	public  partial class IfcFixedReferenceSweptAreaSolid
+	public  partial class IfcFixedReferenceSweptAreaSolid : IfcSweptAreaSolid
 	{
 		public IfcCurve Directrix {get;set;}
 		public IfcParameterValue StartParam {get;set;}
@@ -4782,7 +4782,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowcontroller.htm"/>
 	/// </summary>
-	public  partial class IfcFlowController
+	public  partial class IfcFlowController : IfcDistributionFlowElement
 	{
 
 	}
@@ -4790,7 +4790,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowcontrollertype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowControllerType
+	public abstract partial class IfcFlowControllerType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4798,7 +4798,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowfitting.htm"/>
 	/// </summary>
-	public  partial class IfcFlowFitting
+	public  partial class IfcFlowFitting : IfcDistributionFlowElement
 	{
 
 	}
@@ -4806,7 +4806,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowfittingtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowFittingType
+	public abstract partial class IfcFlowFittingType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4814,7 +4814,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrument.htm"/>
 	/// </summary>
-	public  partial class IfcFlowInstrument
+	public  partial class IfcFlowInstrument : IfcDistributionControlElement
 	{
 		public IfcFlowInstrumentTypeEnum PredefinedType {get;set;}
 
@@ -4823,7 +4823,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrumenttype.htm"/>
 	/// </summary>
-	public  partial class IfcFlowInstrumentType
+	public  partial class IfcFlowInstrumentType : IfcDistributionControlElementType
 	{
 		public IfcFlowInstrumentTypeEnum PredefinedType {get;set;}
 
@@ -4832,7 +4832,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmeter.htm"/>
 	/// </summary>
-	public  partial class IfcFlowMeter
+	public  partial class IfcFlowMeter : IfcFlowController
 	{
 		public IfcFlowMeterTypeEnum PredefinedType {get;set;}
 
@@ -4841,7 +4841,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmetertype.htm"/>
 	/// </summary>
-	public  partial class IfcFlowMeterType
+	public  partial class IfcFlowMeterType : IfcFlowControllerType
 	{
 		public IfcFlowMeterTypeEnum PredefinedType {get;set;}
 
@@ -4850,7 +4850,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmovingdevice.htm"/>
 	/// </summary>
-	public  partial class IfcFlowMovingDevice
+	public  partial class IfcFlowMovingDevice : IfcDistributionFlowElement
 	{
 
 	}
@@ -4858,7 +4858,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmovingdevicetype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowMovingDeviceType
+	public abstract partial class IfcFlowMovingDeviceType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4866,7 +4866,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowsegment.htm"/>
 	/// </summary>
-	public  partial class IfcFlowSegment
+	public  partial class IfcFlowSegment : IfcDistributionFlowElement
 	{
 
 	}
@@ -4874,7 +4874,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowsegmenttype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowSegmentType
+	public abstract partial class IfcFlowSegmentType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4882,7 +4882,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowstoragedevice.htm"/>
 	/// </summary>
-	public  partial class IfcFlowStorageDevice
+	public  partial class IfcFlowStorageDevice : IfcDistributionFlowElement
 	{
 
 	}
@@ -4890,7 +4890,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowstoragedevicetype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowStorageDeviceType
+	public abstract partial class IfcFlowStorageDeviceType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4898,7 +4898,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowterminal.htm"/>
 	/// </summary>
-	public  partial class IfcFlowTerminal
+	public  partial class IfcFlowTerminal : IfcDistributionFlowElement
 	{
 
 	}
@@ -4906,7 +4906,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowterminaltype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowTerminalType
+	public abstract partial class IfcFlowTerminalType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4914,7 +4914,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowtreatmentdevice.htm"/>
 	/// </summary>
-	public  partial class IfcFlowTreatmentDevice
+	public  partial class IfcFlowTreatmentDevice : IfcDistributionFlowElement
 	{
 
 	}
@@ -4922,7 +4922,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowtreatmentdevicetype.htm"/>
 	/// </summary>
-	public abstract partial class IfcFlowTreatmentDeviceType
+	public abstract partial class IfcFlowTreatmentDeviceType : IfcDistributionFlowElementType
 	{
 
 	}
@@ -4930,7 +4930,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfooting.htm"/>
 	/// </summary>
-	public  partial class IfcFooting
+	public  partial class IfcFooting : IfcBuildingElement
 	{
 		public IfcFootingTypeEnum PredefinedType {get;set;}
 
@@ -4939,7 +4939,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfootingtype.htm"/>
 	/// </summary>
-	public  partial class IfcFootingType
+	public  partial class IfcFootingType : IfcBuildingElementType
 	{
 		public IfcFootingTypeEnum PredefinedType {get;set;}
 
@@ -4948,7 +4948,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnishingelement.htm"/>
 	/// </summary>
-	public  partial class IfcFurnishingElement
+	public  partial class IfcFurnishingElement : IfcElement
 	{
 
 	}
@@ -4956,7 +4956,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnishingelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcFurnishingElementType
+	public  partial class IfcFurnishingElementType : IfcElementType
 	{
 
 	}
@@ -4964,7 +4964,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurniture.htm"/>
 	/// </summary>
-	public  partial class IfcFurniture
+	public  partial class IfcFurniture : IfcFurnishingElement
 	{
 		public IfcFurnitureTypeEnum PredefinedType {get;set;}
 
@@ -4973,7 +4973,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretype.htm"/>
 	/// </summary>
-	public  partial class IfcFurnitureType
+	public  partial class IfcFurnitureType : IfcFurnishingElementType
 	{
 		public IfcAssemblyPlaceEnum AssemblyPlace {get;set;}
 		public IfcFurnitureTypeEnum PredefinedType {get;set;}
@@ -4983,7 +4983,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeographicelement.htm"/>
 	/// </summary>
-	public  partial class IfcGeographicElement
+	public  partial class IfcGeographicElement : IfcElement
 	{
 		public IfcGeographicElementTypeEnum PredefinedType {get;set;}
 
@@ -4992,7 +4992,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeographicelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcGeographicElementType
+	public  partial class IfcGeographicElementType : IfcElementType
 	{
 		public IfcGeographicElementTypeEnum PredefinedType {get;set;}
 
@@ -5001,7 +5001,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometriccurveset.htm"/>
 	/// </summary>
-	public  partial class IfcGeometricCurveSet
+	public  partial class IfcGeometricCurveSet : IfcGeometricSet
 	{
 
 	}
@@ -5009,7 +5009,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationcontext.htm"/>
 	/// </summary>
-	public  partial class IfcGeometricRepresentationContext
+	public  partial class IfcGeometricRepresentationContext : IfcRepresentationContext
 	{
 		public IfcDimensionCount CoordinateSpaceDimension {get;set;}
 		public double Precision {get;set;}
@@ -5021,7 +5021,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationitem.htm"/>
 	/// </summary>
-	public abstract partial class IfcGeometricRepresentationItem
+	public abstract partial class IfcGeometricRepresentationItem : IfcRepresentationItem
 	{
 
 	}
@@ -5029,7 +5029,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationsubcontext.htm"/>
 	/// </summary>
-	public  partial class IfcGeometricRepresentationSubContext
+	public  partial class IfcGeometricRepresentationSubContext : IfcGeometricRepresentationContext
 	{
 		public IfcGeometricRepresentationContext ParentContext {get;set;}
 		public IfcPositiveRatioMeasure TargetScale {get;set;}
@@ -5045,7 +5045,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricset.htm"/>
 	/// </summary>
-	public  partial class IfcGeometricSet
+	public  partial class IfcGeometricSet : IfcGeometricRepresentationItem
 	{
 		public SET[1:?]OFIfcGeometricSetSelect Elements {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -5055,7 +5055,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgrid.htm"/>
 	/// </summary>
-	public  partial class IfcGrid
+	public  partial class IfcGrid : IfcProduct
 	{
 		public LIST[1:?]OFUNIQUEIfcGridAxis UAxes {get;set;}
 		public LIST[1:?]OFUNIQUEIfcGridAxis VAxes {get;set;}
@@ -5078,7 +5078,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacement.htm"/>
 	/// </summary>
-	public  partial class IfcGridPlacement
+	public  partial class IfcGridPlacement : IfcObjectPlacement
 	{
 		public IfcVirtualGridIntersection PlacementLocation {get;set;}
 		public IfcGridPlacementDirectionSelect PlacementRefDirection {get;set;}
@@ -5088,7 +5088,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgroup.htm"/>
 	/// </summary>
-	public  partial class IfcGroup
+	public  partial class IfcGroup : IfcObject
 	{
 
 	}
@@ -5096,7 +5096,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchalfspacesolid.htm"/>
 	/// </summary>
-	public  partial class IfcHalfSpaceSolid
+	public  partial class IfcHalfSpaceSolid : IfcGeometricRepresentationItem
 	{
 		public IfcSurface BaseSurface {get;set;}
 		public bool AgreementFlag {get;set;}
@@ -5107,7 +5107,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatexchanger.htm"/>
 	/// </summary>
-	public  partial class IfcHeatExchanger
+	public  partial class IfcHeatExchanger : IfcEnergyConversionDevice
 	{
 		public IfcHeatExchangerTypeEnum PredefinedType {get;set;}
 
@@ -5116,7 +5116,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatexchangertype.htm"/>
 	/// </summary>
-	public  partial class IfcHeatExchangerType
+	public  partial class IfcHeatExchangerType : IfcEnergyConversionDeviceType
 	{
 		public IfcHeatExchangerTypeEnum PredefinedType {get;set;}
 
@@ -5125,7 +5125,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchumidifier.htm"/>
 	/// </summary>
-	public  partial class IfcHumidifier
+	public  partial class IfcHumidifier : IfcEnergyConversionDevice
 	{
 		public IfcHumidifierTypeEnum PredefinedType {get;set;}
 
@@ -5134,7 +5134,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchumidifiertype.htm"/>
 	/// </summary>
-	public  partial class IfcHumidifierType
+	public  partial class IfcHumidifierType : IfcEnergyConversionDeviceType
 	{
 		public IfcHumidifierTypeEnum PredefinedType {get;set;}
 
@@ -5143,7 +5143,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcishapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcIShapeProfileDef
+	public  partial class IfcIShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure OverallWidth {get;set;}
 		public IfcPositiveLengthMeasure OverallDepth {get;set;}
@@ -5158,7 +5158,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcimagetexture.htm"/>
 	/// </summary>
-	public  partial class IfcImageTexture
+	public  partial class IfcImageTexture : IfcSurfaceTexture
 	{
 		public IfcURIReference URLReference {get;set;}
 
@@ -5167,7 +5167,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedcolourmap.htm"/>
 	/// </summary>
-	public  partial class IfcIndexedColourMap
+	public  partial class IfcIndexedColourMap : IfcPresentationItem
 	{
 		public IfcTessellatedFaceSet MappedTo {get;set;}
 		public IfcSurfaceStyleShading Overrides {get;set;}
@@ -5179,7 +5179,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedtexturemap.htm"/>
 	/// </summary>
-	public abstract partial class IfcIndexedTextureMap
+	public abstract partial class IfcIndexedTextureMap : IfcTextureCoordinate
 	{
 		public IfcTessellatedFaceSet MappedTo {get;set;}
 		public IfcTextureVertexList TexCoords {get;set;}
@@ -5189,7 +5189,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedtriangletexturemap.htm"/>
 	/// </summary>
-	public  partial class IfcIndexedTriangleTextureMap
+	public  partial class IfcIndexedTriangleTextureMap : IfcIndexedTextureMap
 	{
 		public LIST[1:?]OFLIST[3:3]OFINTEGER TexCoordIndex {get;set;}
 
@@ -5198,7 +5198,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptor.htm"/>
 	/// </summary>
-	public  partial class IfcInterceptor
+	public  partial class IfcInterceptor : IfcFlowTreatmentDevice
 	{
 		public IfcInterceptorTypeEnum PredefinedType {get;set;}
 
@@ -5207,7 +5207,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptortype.htm"/>
 	/// </summary>
-	public  partial class IfcInterceptorType
+	public  partial class IfcInterceptorType : IfcFlowTreatmentDeviceType
 	{
 		public IfcInterceptorTypeEnum PredefinedType {get;set;}
 
@@ -5216,7 +5216,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventory.htm"/>
 	/// </summary>
-	public  partial class IfcInventory
+	public  partial class IfcInventory : IfcGroup
 	{
 		public IfcInventoryTypeEnum PredefinedType {get;set;}
 		public IfcActorSelect Jurisdiction {get;set;}
@@ -5230,7 +5230,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcirregulartimeseries.htm"/>
 	/// </summary>
-	public  partial class IfcIrregularTimeSeries
+	public  partial class IfcIrregularTimeSeries : IfcTimeSeries
 	{
 		public LIST[1:?]OFIfcIrregularTimeSeriesValue Values {get;set;}
 
@@ -5249,7 +5249,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcjunctionbox.htm"/>
 	/// </summary>
-	public  partial class IfcJunctionBox
+	public  partial class IfcJunctionBox : IfcFlowFitting
 	{
 		public IfcJunctionBoxTypeEnum PredefinedType {get;set;}
 
@@ -5258,7 +5258,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcjunctionboxtype.htm"/>
 	/// </summary>
-	public  partial class IfcJunctionBoxType
+	public  partial class IfcJunctionBoxType : IfcFlowFittingType
 	{
 		public IfcJunctionBoxTypeEnum PredefinedType {get;set;}
 
@@ -5267,7 +5267,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclshapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcLShapeProfileDef
+	public  partial class IfcLShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure Depth {get;set;}
 		public IfcPositiveLengthMeasure Width {get;set;}
@@ -5281,7 +5281,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresource.htm"/>
 	/// </summary>
-	public  partial class IfcLaborResource
+	public  partial class IfcLaborResource : IfcConstructionResource
 	{
 		public IfcLaborResourceTypeEnum PredefinedType {get;set;}
 
@@ -5290,7 +5290,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetype.htm"/>
 	/// </summary>
-	public  partial class IfcLaborResourceType
+	public  partial class IfcLaborResourceType : IfcConstructionResourceType
 	{
 		public IfcLaborResourceTypeEnum PredefinedType {get;set;}
 
@@ -5299,7 +5299,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclagtime.htm"/>
 	/// </summary>
-	public  partial class IfcLagTime
+	public  partial class IfcLagTime : IfcSchedulingTime
 	{
 		public IfcTimeOrRatioSelect LagValue {get;set;}
 		public IfcTaskDurationEnum DurationType {get;set;}
@@ -5309,7 +5309,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclamp.htm"/>
 	/// </summary>
-	public  partial class IfcLamp
+	public  partial class IfcLamp : IfcFlowTerminal
 	{
 		public IfcLampTypeEnum PredefinedType {get;set;}
 
@@ -5318,7 +5318,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclamptype.htm"/>
 	/// </summary>
-	public  partial class IfcLampType
+	public  partial class IfcLampType : IfcFlowTerminalType
 	{
 		public IfcLampTypeEnum PredefinedType {get;set;}
 
@@ -5327,7 +5327,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryinformation.htm"/>
 	/// </summary>
-	public  partial class IfcLibraryInformation
+	public  partial class IfcLibraryInformation : IfcExternalInformation
 	{
 		public IfcLabel Name {get;set;}
 		public IfcLabel Version {get;set;}
@@ -5341,7 +5341,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryreference.htm"/>
 	/// </summary>
-	public  partial class IfcLibraryReference
+	public  partial class IfcLibraryReference : IfcExternalReference
 	{
 		public IfcText Description {get;set;}
 		public IfcLanguageId Language {get;set;}
@@ -5363,7 +5363,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightfixture.htm"/>
 	/// </summary>
-	public  partial class IfcLightFixture
+	public  partial class IfcLightFixture : IfcFlowTerminal
 	{
 		public IfcLightFixtureTypeEnum PredefinedType {get;set;}
 
@@ -5372,7 +5372,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightfixturetype.htm"/>
 	/// </summary>
-	public  partial class IfcLightFixtureType
+	public  partial class IfcLightFixtureType : IfcFlowTerminalType
 	{
 		public IfcLightFixtureTypeEnum PredefinedType {get;set;}
 
@@ -5391,7 +5391,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsource.htm"/>
 	/// </summary>
-	public abstract partial class IfcLightSource
+	public abstract partial class IfcLightSource : IfcGeometricRepresentationItem
 	{
 		public IfcLabel Name {get;set;}
 		public IfcColourRgb LightColour {get;set;}
@@ -5403,7 +5403,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourceambient.htm"/>
 	/// </summary>
-	public  partial class IfcLightSourceAmbient
+	public  partial class IfcLightSourceAmbient : IfcLightSource
 	{
 
 	}
@@ -5411,7 +5411,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcedirectional.htm"/>
 	/// </summary>
-	public  partial class IfcLightSourceDirectional
+	public  partial class IfcLightSourceDirectional : IfcLightSource
 	{
 		public IfcDirection Orientation {get;set;}
 
@@ -5420,7 +5420,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcegoniometric.htm"/>
 	/// </summary>
-	public  partial class IfcLightSourceGoniometric
+	public  partial class IfcLightSourceGoniometric : IfcLightSource
 	{
 		public IfcAxis2Placement3D Position {get;set;}
 		public IfcColourRgb ColourAppearance {get;set;}
@@ -5434,7 +5434,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcepositional.htm"/>
 	/// </summary>
-	public  partial class IfcLightSourcePositional
+	public  partial class IfcLightSourcePositional : IfcLightSource
 	{
 		public IfcCartesianPoint Position {get;set;}
 		public IfcPositiveLengthMeasure Radius {get;set;}
@@ -5447,7 +5447,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcespot.htm"/>
 	/// </summary>
-	public  partial class IfcLightSourceSpot
+	public  partial class IfcLightSourceSpot : IfcLightSourcePositional
 	{
 		public IfcDirection Orientation {get;set;}
 		public IfcReal ConcentrationExponent {get;set;}
@@ -5459,7 +5459,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcline.htm"/>
 	/// </summary>
-	public  partial class IfcLine
+	public  partial class IfcLine : IfcCurve
 	{
 		public IfcCartesianPoint Pnt {get;set;}
 		public IfcVector Dir {get;set;}
@@ -5469,7 +5469,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclocalplacement.htm"/>
 	/// </summary>
-	public  partial class IfcLocalPlacement
+	public  partial class IfcLocalPlacement : IfcObjectPlacement
 	{
 		public IfcObjectPlacement PlacementRelTo {get;set;}
 		public IfcAxis2Placement RelativePlacement {get;set;}
@@ -5479,7 +5479,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcloop.htm"/>
 	/// </summary>
-	public  partial class IfcLoop
+	public  partial class IfcLoop : IfcTopologicalRepresentationItem
 	{
 
 	}
@@ -5487,7 +5487,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmanifoldsolidbrep.htm"/>
 	/// </summary>
-	public abstract partial class IfcManifoldSolidBrep
+	public abstract partial class IfcManifoldSolidBrep : IfcSolidModel
 	{
 		public IfcClosedShell Outer {get;set;}
 
@@ -5496,7 +5496,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmapconversion.htm"/>
 	/// </summary>
-	public  partial class IfcMapConversion
+	public  partial class IfcMapConversion : IfcCoordinateOperation
 	{
 		public IfcLengthMeasure Eastings {get;set;}
 		public IfcLengthMeasure Northings {get;set;}
@@ -5510,7 +5510,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmappeditem.htm"/>
 	/// </summary>
-	public  partial class IfcMappedItem
+	public  partial class IfcMappedItem : IfcRepresentationItem
 	{
 		public IfcRepresentationMap MappingSource {get;set;}
 		public IfcCartesianTransformationOperator MappingTarget {get;set;}
@@ -5520,7 +5520,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterial.htm"/>
 	/// </summary>
-	public  partial class IfcMaterial
+	public  partial class IfcMaterial : IfcMaterialDefinition
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
@@ -5541,7 +5541,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialconstituent.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialConstituent
+	public  partial class IfcMaterialConstituent : IfcMaterialDefinition
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
@@ -5554,7 +5554,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialconstituentset.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialConstituentSet
+	public  partial class IfcMaterialConstituentSet : IfcMaterialDefinition
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
@@ -5573,7 +5573,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialdefinitionrepresentation.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialDefinitionRepresentation
+	public  partial class IfcMaterialDefinitionRepresentation : IfcProductRepresentation
 	{
 		public IfcMaterial RepresentedMaterial {get;set;}
 
@@ -5582,7 +5582,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayer.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialLayer
+	public  partial class IfcMaterialLayer : IfcMaterialDefinition
 	{
 		public IfcMaterial Material {get;set;}
 		public IfcNonNegativeLengthMeasure LayerThickness {get;set;}
@@ -5597,7 +5597,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayerset.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialLayerSet
+	public  partial class IfcMaterialLayerSet : IfcMaterialDefinition
 	{
 		public LIST[1:?]OFIfcMaterialLayer MaterialLayers {get;set;}
 		public IfcLabel LayerSetName {get;set;}
@@ -5609,7 +5609,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayersetusage.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialLayerSetUsage
+	public  partial class IfcMaterialLayerSetUsage : IfcMaterialUsageDefinition
 	{
 		public IfcMaterialLayerSet ForLayerSet {get;set;}
 		public IfcLayerSetDirectionEnum LayerSetDirection {get;set;}
@@ -5622,7 +5622,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayerwithoffsets.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialLayerWithOffsets
+	public  partial class IfcMaterialLayerWithOffsets : IfcMaterialLayer
 	{
 		public IfcLayerSetDirectionEnum OffsetDirection {get;set;}
 		public ARRAY[1:2]OFIfcLengthMeasure OffsetValues {get;set;}
@@ -5641,7 +5641,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofile.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialProfile
+	public  partial class IfcMaterialProfile : IfcMaterialDefinition
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
@@ -5655,7 +5655,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofileset.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialProfileSet
+	public  partial class IfcMaterialProfileSet : IfcMaterialDefinition
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
@@ -5667,7 +5667,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofilesetusage.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialProfileSetUsage
+	public  partial class IfcMaterialProfileSetUsage : IfcMaterialUsageDefinition
 	{
 		public IfcMaterialProfileSet ForProfileSet {get;set;}
 		public IfcCardinalPointReference CardinalPoint {get;set;}
@@ -5678,7 +5678,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofilesetusagetapering.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialProfileSetUsageTapering
+	public  partial class IfcMaterialProfileSetUsageTapering : IfcMaterialProfileSetUsage
 	{
 		public IfcMaterialProfileSet ForProfileEndSet {get;set;}
 		public IfcCardinalPointReference CardinalEndPoint {get;set;}
@@ -5688,7 +5688,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofilewithoffsets.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialProfileWithOffsets
+	public  partial class IfcMaterialProfileWithOffsets : IfcMaterialProfile
 	{
 		public ARRAY[1:2]OFIfcLengthMeasure OffsetValues {get;set;}
 
@@ -5697,7 +5697,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialproperties.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialProperties
+	public  partial class IfcMaterialProperties : IfcExtendedProperties
 	{
 		public IfcMaterialDefinition Material {get;set;}
 
@@ -5706,7 +5706,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcMaterialRelationship
+	public  partial class IfcMaterialRelationship : IfcResourceLevelRelationship
 	{
 		public IfcMaterial RelatingMaterial {get;set;}
 		public SET[1:?]OFIfcMaterial RelatedMaterials {get;set;}
@@ -5735,7 +5735,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastener.htm"/>
 	/// </summary>
-	public  partial class IfcMechanicalFastener
+	public  partial class IfcMechanicalFastener : IfcElementComponent
 	{
 		public IfcPositiveLengthMeasure NominalDiameter {get;set;}
 		public IfcPositiveLengthMeasure NominalLength {get;set;}
@@ -5746,7 +5746,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastenertype.htm"/>
 	/// </summary>
-	public  partial class IfcMechanicalFastenerType
+	public  partial class IfcMechanicalFastenerType : IfcElementComponentType
 	{
 		public IfcMechanicalFastenerTypeEnum PredefinedType {get;set;}
 		public IfcPositiveLengthMeasure NominalDiameter {get;set;}
@@ -5757,7 +5757,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevice.htm"/>
 	/// </summary>
-	public  partial class IfcMedicalDevice
+	public  partial class IfcMedicalDevice : IfcFlowTerminal
 	{
 		public IfcMedicalDeviceTypeEnum PredefinedType {get;set;}
 
@@ -5766,7 +5766,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevicetype.htm"/>
 	/// </summary>
-	public  partial class IfcMedicalDeviceType
+	public  partial class IfcMedicalDeviceType : IfcFlowTerminalType
 	{
 		public IfcMedicalDeviceTypeEnum PredefinedType {get;set;}
 
@@ -5775,7 +5775,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmember.htm"/>
 	/// </summary>
-	public  partial class IfcMember
+	public  partial class IfcMember : IfcBuildingElement
 	{
 		public IfcMemberTypeEnum PredefinedType {get;set;}
 
@@ -5784,7 +5784,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmemberstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcMemberStandardCase
+	public  partial class IfcMemberStandardCase : IfcMember
 	{
 
 	}
@@ -5792,7 +5792,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmembertype.htm"/>
 	/// </summary>
-	public  partial class IfcMemberType
+	public  partial class IfcMemberType : IfcBuildingElementType
 	{
 		public IfcMemberTypeEnum PredefinedType {get;set;}
 
@@ -5801,7 +5801,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetric.htm"/>
 	/// </summary>
-	public  partial class IfcMetric
+	public  partial class IfcMetric : IfcConstraint
 	{
 		public IfcBenchmarkEnum Benchmark {get;set;}
 		public IfcLabel ValueSource {get;set;}
@@ -5813,7 +5813,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmirroredprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcMirroredProfileDef
+	public  partial class IfcMirroredProfileDef : IfcDerivedProfileDef
 	{
 		public IfcCartesianTransformationOperator2D SELF\IfcDerivedProfileDef.Operator {get;set;}
 
@@ -5831,7 +5831,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmotorconnection.htm"/>
 	/// </summary>
-	public  partial class IfcMotorConnection
+	public  partial class IfcMotorConnection : IfcEnergyConversionDevice
 	{
 		public IfcMotorConnectionTypeEnum PredefinedType {get;set;}
 
@@ -5840,7 +5840,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmotorconnectiontype.htm"/>
 	/// </summary>
-	public  partial class IfcMotorConnectionType
+	public  partial class IfcMotorConnectionType : IfcEnergyConversionDeviceType
 	{
 		public IfcMotorConnectionTypeEnum PredefinedType {get;set;}
 
@@ -5859,7 +5859,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobject.htm"/>
 	/// </summary>
-	public abstract partial class IfcObject
+	public abstract partial class IfcObject : IfcObjectDefinition
 	{
 		public IfcLabel ObjectType {get;set;}
 
@@ -5868,7 +5868,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectdefinition.htm"/>
 	/// </summary>
-	public abstract partial class IfcObjectDefinition
+	public abstract partial class IfcObjectDefinition : IfcRoot
 	{
 
 	}
@@ -5884,7 +5884,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjective.htm"/>
 	/// </summary>
-	public  partial class IfcObjective
+	public  partial class IfcObjective : IfcConstraint
 	{
 		public LIST[1:?]OFIfcConstraint BenchmarkValues {get;set;}
 		public IfcLogicalOperatorEnum LogicalAggregator {get;set;}
@@ -5896,7 +5896,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoccupant.htm"/>
 	/// </summary>
-	public  partial class IfcOccupant
+	public  partial class IfcOccupant : IfcActor
 	{
 		public IfcOccupantTypeEnum PredefinedType {get;set;}
 
@@ -5905,7 +5905,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoffsetcurve2d.htm"/>
 	/// </summary>
-	public  partial class IfcOffsetCurve2D
+	public  partial class IfcOffsetCurve2D : IfcCurve
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public IfcLengthMeasure Distance {get;set;}
@@ -5916,7 +5916,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoffsetcurve3d.htm"/>
 	/// </summary>
-	public  partial class IfcOffsetCurve3D
+	public  partial class IfcOffsetCurve3D : IfcCurve
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public IfcLengthMeasure Distance {get;set;}
@@ -5928,7 +5928,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopenshell.htm"/>
 	/// </summary>
-	public  partial class IfcOpenShell
+	public  partial class IfcOpenShell : IfcConnectedFaceSet
 	{
 
 	}
@@ -5936,7 +5936,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopeningelement.htm"/>
 	/// </summary>
-	public  partial class IfcOpeningElement
+	public  partial class IfcOpeningElement : IfcFeatureElementSubtraction
 	{
 		public IfcOpeningElementTypeEnum PredefinedType {get;set;}
 
@@ -5945,7 +5945,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopeningstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcOpeningStandardCase
+	public  partial class IfcOpeningStandardCase : IfcOpeningElement
 	{
 
 	}
@@ -5966,7 +5966,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorganizationrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcOrganizationRelationship
+	public  partial class IfcOrganizationRelationship : IfcResourceLevelRelationship
 	{
 		public IfcOrganization RelatingOrganization {get;set;}
 		public SET[1:?]OFIfcOrganization RelatedOrganizations {get;set;}
@@ -5976,7 +5976,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorientededge.htm"/>
 	/// </summary>
-	public  partial class IfcOrientedEdge
+	public  partial class IfcOrientedEdge : IfcEdge
 	{
 		public IfcEdge EdgeElement {get;set;}
 		public bool Orientation {get;set;}
@@ -5988,7 +5988,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcouterboundarycurve.htm"/>
 	/// </summary>
-	public  partial class IfcOuterBoundaryCurve
+	public  partial class IfcOuterBoundaryCurve : IfcBoundaryCurve
 	{
 
 	}
@@ -5996,7 +5996,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoutlet.htm"/>
 	/// </summary>
-	public  partial class IfcOutlet
+	public  partial class IfcOutlet : IfcFlowTerminal
 	{
 		public IfcOutletTypeEnum PredefinedType {get;set;}
 
@@ -6005,7 +6005,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoutlettype.htm"/>
 	/// </summary>
-	public  partial class IfcOutletType
+	public  partial class IfcOutletType : IfcFlowTerminalType
 	{
 		public IfcOutletTypeEnum PredefinedType {get;set;}
 
@@ -6030,7 +6030,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcparameterizedprofiledef.htm"/>
 	/// </summary>
-	public abstract partial class IfcParameterizedProfileDef
+	public abstract partial class IfcParameterizedProfileDef : IfcProfileDef
 	{
 		public IfcAxis2Placement2D Position {get;set;}
 
@@ -6039,7 +6039,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpath.htm"/>
 	/// </summary>
-	public  partial class IfcPath
+	public  partial class IfcPath : IfcTopologicalRepresentationItem
 	{
 		public LIST[1:?]OFUNIQUEIfcOrientedEdge EdgeList {get;set;}
 
@@ -6048,7 +6048,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpcurve.htm"/>
 	/// </summary>
-	public  partial class IfcPcurve
+	public  partial class IfcPcurve : IfcCurve
 	{
 		public IfcSurface BasisSurface {get;set;}
 		public IfcCurve ReferenceCurve {get;set;}
@@ -6058,7 +6058,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperformancehistory.htm"/>
 	/// </summary>
-	public  partial class IfcPerformanceHistory
+	public  partial class IfcPerformanceHistory : IfcControl
 	{
 		public IfcLabel LifeCyclePhase {get;set;}
 		public IfcPerformanceHistoryTypeEnum PredefinedType {get;set;}
@@ -6068,7 +6068,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermeablecoveringproperties.htm"/>
 	/// </summary>
-	public  partial class IfcPermeableCoveringProperties
+	public  partial class IfcPermeableCoveringProperties : IfcPreDefinedPropertySet
 	{
 		public IfcPermeableCoveringOperationEnum OperationType {get;set;}
 		public IfcWindowPanelPositionEnum PanelPosition {get;set;}
@@ -6081,7 +6081,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermit.htm"/>
 	/// </summary>
-	public  partial class IfcPermit
+	public  partial class IfcPermit : IfcControl
 	{
 		public IfcPermitTypeEnum PredefinedType {get;set;}
 		public IfcLabel Status {get;set;}
@@ -6119,7 +6119,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalcomplexquantity.htm"/>
 	/// </summary>
-	public  partial class IfcPhysicalComplexQuantity
+	public  partial class IfcPhysicalComplexQuantity : IfcPhysicalQuantity
 	{
 		public SET[1:?]OFIfcPhysicalQuantity HasQuantities {get;set;}
 		public IfcLabel Discrimination {get;set;}
@@ -6141,7 +6141,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalsimplequantity.htm"/>
 	/// </summary>
-	public abstract partial class IfcPhysicalSimpleQuantity
+	public abstract partial class IfcPhysicalSimpleQuantity : IfcPhysicalQuantity
 	{
 		public IfcNamedUnit Unit {get;set;}
 
@@ -6150,7 +6150,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpile.htm"/>
 	/// </summary>
-	public  partial class IfcPile
+	public  partial class IfcPile : IfcBuildingElement
 	{
 		public IfcPileTypeEnum PredefinedType {get;set;}
 		public IfcPileConstructionEnum ConstructionType {get;set;}
@@ -6160,7 +6160,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpiletype.htm"/>
 	/// </summary>
-	public  partial class IfcPileType
+	public  partial class IfcPileType : IfcBuildingElementType
 	{
 		public IfcPileTypeEnum PredefinedType {get;set;}
 
@@ -6169,7 +6169,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipefitting.htm"/>
 	/// </summary>
-	public  partial class IfcPipeFitting
+	public  partial class IfcPipeFitting : IfcFlowFitting
 	{
 		public IfcPipeFittingTypeEnum PredefinedType {get;set;}
 
@@ -6178,7 +6178,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipefittingtype.htm"/>
 	/// </summary>
-	public  partial class IfcPipeFittingType
+	public  partial class IfcPipeFittingType : IfcFlowFittingType
 	{
 		public IfcPipeFittingTypeEnum PredefinedType {get;set;}
 
@@ -6187,7 +6187,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipesegment.htm"/>
 	/// </summary>
-	public  partial class IfcPipeSegment
+	public  partial class IfcPipeSegment : IfcFlowSegment
 	{
 		public IfcPipeSegmentTypeEnum PredefinedType {get;set;}
 
@@ -6196,7 +6196,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipesegmenttype.htm"/>
 	/// </summary>
-	public  partial class IfcPipeSegmentType
+	public  partial class IfcPipeSegmentType : IfcFlowSegmentType
 	{
 		public IfcPipeSegmentTypeEnum PredefinedType {get;set;}
 
@@ -6205,7 +6205,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpixeltexture.htm"/>
 	/// </summary>
-	public  partial class IfcPixelTexture
+	public  partial class IfcPixelTexture : IfcSurfaceTexture
 	{
 		public IfcInteger Width {get;set;}
 		public IfcInteger Height {get;set;}
@@ -6217,7 +6217,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplacement.htm"/>
 	/// </summary>
-	public abstract partial class IfcPlacement
+	public abstract partial class IfcPlacement : IfcGeometricRepresentationItem
 	{
 		public IfcCartesianPoint Location {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -6227,7 +6227,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarbox.htm"/>
 	/// </summary>
-	public  partial class IfcPlanarBox
+	public  partial class IfcPlanarBox : IfcPlanarExtent
 	{
 		public IfcAxis2Placement Placement {get;set;}
 
@@ -6236,7 +6236,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarextent.htm"/>
 	/// </summary>
-	public  partial class IfcPlanarExtent
+	public  partial class IfcPlanarExtent : IfcGeometricRepresentationItem
 	{
 		public IfcLengthMeasure SizeInX {get;set;}
 		public IfcLengthMeasure SizeInY {get;set;}
@@ -6246,7 +6246,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplane.htm"/>
 	/// </summary>
-	public  partial class IfcPlane
+	public  partial class IfcPlane : IfcElementarySurface
 	{
 
 	}
@@ -6254,7 +6254,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplate.htm"/>
 	/// </summary>
-	public  partial class IfcPlate
+	public  partial class IfcPlate : IfcBuildingElement
 	{
 		public IfcPlateTypeEnum PredefinedType {get;set;}
 
@@ -6263,7 +6263,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplatestandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcPlateStandardCase
+	public  partial class IfcPlateStandardCase : IfcPlate
 	{
 
 	}
@@ -6271,7 +6271,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplatetype.htm"/>
 	/// </summary>
-	public  partial class IfcPlateType
+	public  partial class IfcPlateType : IfcBuildingElementType
 	{
 		public IfcPlateTypeEnum PredefinedType {get;set;}
 
@@ -6280,7 +6280,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpoint.htm"/>
 	/// </summary>
-	public abstract partial class IfcPoint
+	public abstract partial class IfcPoint : IfcGeometricRepresentationItem
 	{
 
 	}
@@ -6288,7 +6288,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointoncurve.htm"/>
 	/// </summary>
-	public  partial class IfcPointOnCurve
+	public  partial class IfcPointOnCurve : IfcPoint
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public IfcParameterValue PointParameter {get;set;}
@@ -6299,7 +6299,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointonsurface.htm"/>
 	/// </summary>
-	public  partial class IfcPointOnSurface
+	public  partial class IfcPointOnSurface : IfcPoint
 	{
 		public IfcSurface BasisSurface {get;set;}
 		public IfcParameterValue PointParameterU {get;set;}
@@ -6311,7 +6311,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolyloop.htm"/>
 	/// </summary>
-	public  partial class IfcPolyLoop
+	public  partial class IfcPolyLoop : IfcLoop
 	{
 		public LIST[3:?]OFUNIQUEIfcCartesianPoint Polygon {get;set;}
 
@@ -6320,7 +6320,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalboundedhalfspace.htm"/>
 	/// </summary>
-	public  partial class IfcPolygonalBoundedHalfSpace
+	public  partial class IfcPolygonalBoundedHalfSpace : IfcHalfSpaceSolid
 	{
 		public IfcAxis2Placement3D Position {get;set;}
 		public IfcBoundedCurve PolygonalBoundary {get;set;}
@@ -6330,7 +6330,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolyline.htm"/>
 	/// </summary>
-	public  partial class IfcPolyline
+	public  partial class IfcPolyline : IfcBoundedCurve
 	{
 		public LIST[2:?]OFIfcCartesianPoint Points {get;set;}
 
@@ -6339,7 +6339,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcport.htm"/>
 	/// </summary>
-	public abstract partial class IfcPort
+	public abstract partial class IfcPort : IfcProduct
 	{
 
 	}
@@ -6347,7 +6347,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpostaladdress.htm"/>
 	/// </summary>
-	public  partial class IfcPostalAddress
+	public  partial class IfcPostalAddress : IfcAddress
 	{
 		public IfcLabel InternalLocation {get;set;}
 		public LIST[1:?]OFIfcLabel AddressLines {get;set;}
@@ -6362,7 +6362,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefinedcolour.htm"/>
 	/// </summary>
-	public abstract partial class IfcPreDefinedColour
+	public abstract partial class IfcPreDefinedColour : IfcPreDefinedItem
 	{
 
 	}
@@ -6370,7 +6370,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefinedcurvefont.htm"/>
 	/// </summary>
-	public abstract partial class IfcPreDefinedCurveFont
+	public abstract partial class IfcPreDefinedCurveFont : IfcPreDefinedItem
 	{
 
 	}
@@ -6378,7 +6378,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefineditem.htm"/>
 	/// </summary>
-	public abstract partial class IfcPreDefinedItem
+	public abstract partial class IfcPreDefinedItem : IfcPresentationItem
 	{
 		public IfcLabel Name {get;set;}
 
@@ -6387,7 +6387,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefinedproperties.htm"/>
 	/// </summary>
-	public abstract partial class IfcPreDefinedProperties
+	public abstract partial class IfcPreDefinedProperties : IfcPropertyAbstraction
 	{
 
 	}
@@ -6395,7 +6395,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefinedpropertyset.htm"/>
 	/// </summary>
-	public abstract partial class IfcPreDefinedPropertySet
+	public abstract partial class IfcPreDefinedPropertySet : IfcPropertySetDefinition
 	{
 
 	}
@@ -6403,7 +6403,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefinedtextfont.htm"/>
 	/// </summary>
-	public abstract partial class IfcPreDefinedTextFont
+	public abstract partial class IfcPreDefinedTextFont : IfcPreDefinedItem
 	{
 
 	}
@@ -6431,7 +6431,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationlayerwithstyle.htm"/>
 	/// </summary>
-	public  partial class IfcPresentationLayerWithStyle
+	public  partial class IfcPresentationLayerWithStyle : IfcPresentationLayerAssignment
 	{
 		public bool? LayerOn {get;set;}
 		public bool? LayerFrozen {get;set;}
@@ -6461,7 +6461,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocedure.htm"/>
 	/// </summary>
-	public  partial class IfcProcedure
+	public  partial class IfcProcedure : IfcProcess
 	{
 		public IfcProcedureTypeEnum PredefinedType {get;set;}
 
@@ -6470,7 +6470,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretype.htm"/>
 	/// </summary>
-	public  partial class IfcProcedureType
+	public  partial class IfcProcedureType : IfcTypeProcess
 	{
 		public IfcProcedureTypeEnum PredefinedType {get;set;}
 
@@ -6479,7 +6479,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocess.htm"/>
 	/// </summary>
-	public abstract partial class IfcProcess
+	public abstract partial class IfcProcess : IfcObject
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
@@ -6489,7 +6489,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproduct.htm"/>
 	/// </summary>
-	public abstract partial class IfcProduct
+	public abstract partial class IfcProduct : IfcObject
 	{
 		public IfcObjectPlacement ObjectPlacement {get;set;}
 		public IfcProductRepresentation Representation {get;set;}
@@ -6499,7 +6499,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductdefinitionshape.htm"/>
 	/// </summary>
-	public  partial class IfcProductDefinitionShape
+	public  partial class IfcProductDefinitionShape : IfcProductRepresentation
 	{
 
 	}
@@ -6528,7 +6528,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofileproperties.htm"/>
 	/// </summary>
-	public  partial class IfcProfileProperties
+	public  partial class IfcProfileProperties : IfcExtendedProperties
 	{
 		public IfcProfileDef ProfileDefinition {get;set;}
 
@@ -6537,7 +6537,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproject.htm"/>
 	/// </summary>
-	public  partial class IfcProject
+	public  partial class IfcProject : IfcContext
 	{
 
 	}
@@ -6545,7 +6545,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectlibrary.htm"/>
 	/// </summary>
-	public  partial class IfcProjectLibrary
+	public  partial class IfcProjectLibrary : IfcContext
 	{
 
 	}
@@ -6553,7 +6553,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectorder.htm"/>
 	/// </summary>
-	public  partial class IfcProjectOrder
+	public  partial class IfcProjectOrder : IfcControl
 	{
 		public IfcProjectOrderTypeEnum PredefinedType {get;set;}
 		public IfcLabel Status {get;set;}
@@ -6564,7 +6564,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectedcrs.htm"/>
 	/// </summary>
-	public  partial class IfcProjectedCRS
+	public  partial class IfcProjectedCRS : IfcCoordinateReferenceSystem
 	{
 		public IfcIdentifier MapProjection {get;set;}
 		public IfcIdentifier MapZone {get;set;}
@@ -6575,7 +6575,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectionelement.htm"/>
 	/// </summary>
-	public  partial class IfcProjectionElement
+	public  partial class IfcProjectionElement : IfcFeatureElementAddition
 	{
 		public IfcProjectionElementTypeEnum PredefinedType {get;set;}
 
@@ -6584,7 +6584,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproperty.htm"/>
 	/// </summary>
-	public abstract partial class IfcProperty
+	public abstract partial class IfcProperty : IfcPropertyAbstraction
 	{
 		public IfcIdentifier Name {get;set;}
 		public IfcText Description {get;set;}
@@ -6602,7 +6602,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyboundedvalue.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyBoundedValue
+	public  partial class IfcPropertyBoundedValue : IfcSimpleProperty
 	{
 		public IfcValue UpperBoundValue {get;set;}
 		public IfcValue LowerBoundValue {get;set;}
@@ -6614,7 +6614,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertydefinition.htm"/>
 	/// </summary>
-	public abstract partial class IfcPropertyDefinition
+	public abstract partial class IfcPropertyDefinition : IfcRoot
 	{
 
 	}
@@ -6622,7 +6622,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertydependencyrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyDependencyRelationship
+	public  partial class IfcPropertyDependencyRelationship : IfcResourceLevelRelationship
 	{
 		public IfcProperty DependingProperty {get;set;}
 		public IfcProperty DependantProperty {get;set;}
@@ -6633,7 +6633,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyenumeratedvalue.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyEnumeratedValue
+	public  partial class IfcPropertyEnumeratedValue : IfcSimpleProperty
 	{
 		public LIST[1:?]OFIfcValue EnumerationValues {get;set;}
 		public IfcPropertyEnumeration EnumerationReference {get;set;}
@@ -6643,7 +6643,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyenumeration.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyEnumeration
+	public  partial class IfcPropertyEnumeration : IfcPropertyAbstraction
 	{
 		public IfcLabel Name {get;set;}
 		public LIST[1:?]OFUNIQUEIfcValue EnumerationValues {get;set;}
@@ -6654,7 +6654,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertylistvalue.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyListValue
+	public  partial class IfcPropertyListValue : IfcSimpleProperty
 	{
 		public LIST[1:?]OFIfcValue ListValues {get;set;}
 		public IfcUnit Unit {get;set;}
@@ -6664,7 +6664,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyreferencevalue.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyReferenceValue
+	public  partial class IfcPropertyReferenceValue : IfcSimpleProperty
 	{
 		public IfcText UsageName {get;set;}
 		public IfcObjectReferenceSelect PropertyReference {get;set;}
@@ -6674,7 +6674,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyset.htm"/>
 	/// </summary>
-	public  partial class IfcPropertySet
+	public  partial class IfcPropertySet : IfcPropertySetDefinition
 	{
 		public SET[1:?]OFIfcProperty HasProperties {get;set;}
 
@@ -6683,7 +6683,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinition.htm"/>
 	/// </summary>
-	public abstract partial class IfcPropertySetDefinition
+	public abstract partial class IfcPropertySetDefinition : IfcPropertyDefinition
 	{
 
 	}
@@ -6691,7 +6691,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplate.htm"/>
 	/// </summary>
-	public  partial class IfcPropertySetTemplate
+	public  partial class IfcPropertySetTemplate : IfcPropertyTemplateDefinition
 	{
 		public IfcPropertySetTemplateTypeEnum TemplateType {get;set;}
 		public IfcIdentifier ApplicableEntity {get;set;}
@@ -6702,7 +6702,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysinglevalue.htm"/>
 	/// </summary>
-	public  partial class IfcPropertySingleValue
+	public  partial class IfcPropertySingleValue : IfcSimpleProperty
 	{
 		public IfcValue NominalValue {get;set;}
 		public IfcUnit Unit {get;set;}
@@ -6712,7 +6712,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertytablevalue.htm"/>
 	/// </summary>
-	public  partial class IfcPropertyTableValue
+	public  partial class IfcPropertyTableValue : IfcSimpleProperty
 	{
 		public LIST[1:?]OFUNIQUEIfcValue DefiningValues {get;set;}
 		public LIST[1:?]OFIfcValue DefinedValues {get;set;}
@@ -6726,7 +6726,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertytemplate.htm"/>
 	/// </summary>
-	public abstract partial class IfcPropertyTemplate
+	public abstract partial class IfcPropertyTemplate : IfcPropertyTemplateDefinition
 	{
 
 	}
@@ -6734,7 +6734,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertytemplatedefinition.htm"/>
 	/// </summary>
-	public abstract partial class IfcPropertyTemplateDefinition
+	public abstract partial class IfcPropertyTemplateDefinition : IfcPropertyDefinition
 	{
 
 	}
@@ -6742,7 +6742,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevice.htm"/>
 	/// </summary>
-	public  partial class IfcProtectiveDevice
+	public  partial class IfcProtectiveDevice : IfcFlowController
 	{
 		public IfcProtectiveDeviceTypeEnum PredefinedType {get;set;}
 
@@ -6751,7 +6751,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetrippingunit.htm"/>
 	/// </summary>
-	public  partial class IfcProtectiveDeviceTrippingUnit
+	public  partial class IfcProtectiveDeviceTrippingUnit : IfcDistributionControlElement
 	{
 		public IfcProtectiveDeviceTrippingUnitTypeEnum PredefinedType {get;set;}
 
@@ -6760,7 +6760,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetrippingunittype.htm"/>
 	/// </summary>
-	public  partial class IfcProtectiveDeviceTrippingUnitType
+	public  partial class IfcProtectiveDeviceTrippingUnitType : IfcDistributionControlElementType
 	{
 		public IfcProtectiveDeviceTrippingUnitTypeEnum PredefinedType {get;set;}
 
@@ -6769,7 +6769,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetype.htm"/>
 	/// </summary>
-	public  partial class IfcProtectiveDeviceType
+	public  partial class IfcProtectiveDeviceType : IfcFlowControllerType
 	{
 		public IfcProtectiveDeviceTypeEnum PredefinedType {get;set;}
 
@@ -6778,7 +6778,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproxy.htm"/>
 	/// </summary>
-	public  partial class IfcProxy
+	public  partial class IfcProxy : IfcProduct
 	{
 		public IfcObjectTypeEnum ProxyType {get;set;}
 		public IfcLabel Tag {get;set;}
@@ -6788,7 +6788,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpump.htm"/>
 	/// </summary>
-	public  partial class IfcPump
+	public  partial class IfcPump : IfcFlowMovingDevice
 	{
 		public IfcPumpTypeEnum PredefinedType {get;set;}
 
@@ -6797,7 +6797,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpumptype.htm"/>
 	/// </summary>
-	public  partial class IfcPumpType
+	public  partial class IfcPumpType : IfcFlowMovingDeviceType
 	{
 		public IfcPumpTypeEnum PredefinedType {get;set;}
 
@@ -6806,7 +6806,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityarea.htm"/>
 	/// </summary>
-	public  partial class IfcQuantityArea
+	public  partial class IfcQuantityArea : IfcPhysicalSimpleQuantity
 	{
 		public IfcAreaMeasure AreaValue {get;set;}
 		public IfcLabel Formula {get;set;}
@@ -6816,7 +6816,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantitycount.htm"/>
 	/// </summary>
-	public  partial class IfcQuantityCount
+	public  partial class IfcQuantityCount : IfcPhysicalSimpleQuantity
 	{
 		public IfcCountMeasure CountValue {get;set;}
 		public IfcLabel Formula {get;set;}
@@ -6826,7 +6826,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantitylength.htm"/>
 	/// </summary>
-	public  partial class IfcQuantityLength
+	public  partial class IfcQuantityLength : IfcPhysicalSimpleQuantity
 	{
 		public IfcLengthMeasure LengthValue {get;set;}
 		public IfcLabel Formula {get;set;}
@@ -6836,7 +6836,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityset.htm"/>
 	/// </summary>
-	public abstract partial class IfcQuantitySet
+	public abstract partial class IfcQuantitySet : IfcPropertySetDefinition
 	{
 
 	}
@@ -6844,7 +6844,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantitytime.htm"/>
 	/// </summary>
-	public  partial class IfcQuantityTime
+	public  partial class IfcQuantityTime : IfcPhysicalSimpleQuantity
 	{
 		public IfcTimeMeasure TimeValue {get;set;}
 		public IfcLabel Formula {get;set;}
@@ -6854,7 +6854,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityvolume.htm"/>
 	/// </summary>
-	public  partial class IfcQuantityVolume
+	public  partial class IfcQuantityVolume : IfcPhysicalSimpleQuantity
 	{
 		public IfcVolumeMeasure VolumeValue {get;set;}
 		public IfcLabel Formula {get;set;}
@@ -6864,7 +6864,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityweight.htm"/>
 	/// </summary>
-	public  partial class IfcQuantityWeight
+	public  partial class IfcQuantityWeight : IfcPhysicalSimpleQuantity
 	{
 		public IfcMassMeasure WeightValue {get;set;}
 		public IfcLabel Formula {get;set;}
@@ -6874,7 +6874,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrailing.htm"/>
 	/// </summary>
-	public  partial class IfcRailing
+	public  partial class IfcRailing : IfcBuildingElement
 	{
 		public IfcRailingTypeEnum PredefinedType {get;set;}
 
@@ -6883,7 +6883,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrailingtype.htm"/>
 	/// </summary>
-	public  partial class IfcRailingType
+	public  partial class IfcRailingType : IfcBuildingElementType
 	{
 		public IfcRailingTypeEnum PredefinedType {get;set;}
 
@@ -6892,7 +6892,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramp.htm"/>
 	/// </summary>
-	public  partial class IfcRamp
+	public  partial class IfcRamp : IfcBuildingElement
 	{
 		public IfcRampTypeEnum PredefinedType {get;set;}
 
@@ -6901,7 +6901,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrampflight.htm"/>
 	/// </summary>
-	public  partial class IfcRampFlight
+	public  partial class IfcRampFlight : IfcBuildingElement
 	{
 		public IfcRampFlightTypeEnum PredefinedType {get;set;}
 
@@ -6910,7 +6910,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrampflighttype.htm"/>
 	/// </summary>
-	public  partial class IfcRampFlightType
+	public  partial class IfcRampFlightType : IfcBuildingElementType
 	{
 		public IfcRampFlightTypeEnum PredefinedType {get;set;}
 
@@ -6919,7 +6919,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramptype.htm"/>
 	/// </summary>
-	public  partial class IfcRampType
+	public  partial class IfcRampType : IfcBuildingElementType
 	{
 		public IfcRampTypeEnum PredefinedType {get;set;}
 
@@ -6928,7 +6928,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrationalbsplinecurvewithknots.htm"/>
 	/// </summary>
-	public  partial class IfcRationalBSplineCurveWithKnots
+	public  partial class IfcRationalBSplineCurveWithKnots : IfcBSplineCurveWithKnots
 	{
 		public LIST[2:?]OFREAL WeightsData {get;set;}
 		public ARRAY[0:UpperIndexOnControlPoints]OFREAL Weights {get;set;}
@@ -6938,7 +6938,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrationalbsplinesurfacewithknots.htm"/>
 	/// </summary>
-	public  partial class IfcRationalBSplineSurfaceWithKnots
+	public  partial class IfcRationalBSplineSurfaceWithKnots : IfcBSplineSurfaceWithKnots
 	{
 		public LIST[2:?]OFLIST[2:?]OFREAL WeightsData {get;set;}
 		public ARRAY[0:UUpper]OFARRAY[0:VUpper]OFREAL Weights {get;set;}
@@ -6948,7 +6948,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectanglehollowprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcRectangleHollowProfileDef
+	public  partial class IfcRectangleHollowProfileDef : IfcRectangleProfileDef
 	{
 		public IfcPositiveLengthMeasure WallThickness {get;set;}
 		public IfcNonNegativeLengthMeasure InnerFilletRadius {get;set;}
@@ -6959,7 +6959,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangleprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcRectangleProfileDef
+	public  partial class IfcRectangleProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure XDim {get;set;}
 		public IfcPositiveLengthMeasure YDim {get;set;}
@@ -6969,7 +6969,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangularpyramid.htm"/>
 	/// </summary>
-	public  partial class IfcRectangularPyramid
+	public  partial class IfcRectangularPyramid : IfcCsgPrimitive3D
 	{
 		public IfcPositiveLengthMeasure XLength {get;set;}
 		public IfcPositiveLengthMeasure YLength {get;set;}
@@ -6980,7 +6980,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangulartrimmedsurface.htm"/>
 	/// </summary>
-	public  partial class IfcRectangularTrimmedSurface
+	public  partial class IfcRectangularTrimmedSurface : IfcBoundedSurface
 	{
 		public IfcSurface BasisSurface {get;set;}
 		public IfcParameterValue U1 {get;set;}
@@ -7024,7 +7024,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcregulartimeseries.htm"/>
 	/// </summary>
-	public  partial class IfcRegularTimeSeries
+	public  partial class IfcRegularTimeSeries : IfcTimeSeries
 	{
 		public IfcTimeMeasure TimeStep {get;set;}
 		public LIST[1:?]OFIfcTimeSeriesValue Values {get;set;}
@@ -7034,7 +7034,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcementbarproperties.htm"/>
 	/// </summary>
-	public  partial class IfcReinforcementBarProperties
+	public  partial class IfcReinforcementBarProperties : IfcPreDefinedProperties
 	{
 		public IfcAreaMeasure TotalCrossSectionArea {get;set;}
 		public IfcLabel SteelGrade {get;set;}
@@ -7048,7 +7048,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcementdefinitionproperties.htm"/>
 	/// </summary>
-	public  partial class IfcReinforcementDefinitionProperties
+	public  partial class IfcReinforcementDefinitionProperties : IfcPreDefinedPropertySet
 	{
 		public IfcLabel DefinitionType {get;set;}
 		public LIST[1:?]OFIfcSectionReinforcementProperties ReinforcementSectionDefinitions {get;set;}
@@ -7058,7 +7058,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbar.htm"/>
 	/// </summary>
-	public  partial class IfcReinforcingBar
+	public  partial class IfcReinforcingBar : IfcReinforcingElement
 	{
 		public IfcPositiveLengthMeasure NominalDiameter {get;set;}
 		public IfcAreaMeasure CrossSectionArea {get;set;}
@@ -7071,7 +7071,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartype.htm"/>
 	/// </summary>
-	public  partial class IfcReinforcingBarType
+	public  partial class IfcReinforcingBarType : IfcReinforcingElementType
 	{
 		public IfcReinforcingBarTypeEnum PredefinedType {get;set;}
 		public IfcPositiveLengthMeasure NominalDiameter {get;set;}
@@ -7086,7 +7086,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcReinforcingElement
+	public abstract partial class IfcReinforcingElement : IfcElementComponent
 	{
 		public IfcLabel SteelGrade {get;set;}
 
@@ -7095,7 +7095,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcReinforcingElementType
+	public abstract partial class IfcReinforcingElementType : IfcElementComponentType
 	{
 
 	}
@@ -7103,7 +7103,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingmesh.htm"/>
 	/// </summary>
-	public  partial class IfcReinforcingMesh
+	public  partial class IfcReinforcingMesh : IfcReinforcingElement
 	{
 		public IfcPositiveLengthMeasure MeshLength {get;set;}
 		public IfcPositiveLengthMeasure MeshWidth {get;set;}
@@ -7120,7 +7120,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingmeshtype.htm"/>
 	/// </summary>
-	public  partial class IfcReinforcingMeshType
+	public  partial class IfcReinforcingMeshType : IfcReinforcingElementType
 	{
 		public IfcReinforcingMeshTypeEnum PredefinedType {get;set;}
 		public IfcPositiveLengthMeasure MeshLength {get;set;}
@@ -7139,7 +7139,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelaggregates.htm"/>
 	/// </summary>
-	public  partial class IfcRelAggregates
+	public  partial class IfcRelAggregates : IfcRelDecomposes
 	{
 		public IfcObjectDefinition RelatingObject {get;set;}
 		public SET[1:?]OFIfcObjectDefinition RelatedObjects {get;set;}
@@ -7149,7 +7149,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassigns.htm"/>
 	/// </summary>
-	public abstract partial class IfcRelAssigns
+	public abstract partial class IfcRelAssigns : IfcRelationship
 	{
 		public SET[1:?]OFIfcObjectDefinition RelatedObjects {get;set;}
 		public IfcObjectTypeEnum RelatedObjectsType {get;set;}
@@ -7159,7 +7159,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoactor.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToActor
+	public  partial class IfcRelAssignsToActor : IfcRelAssigns
 	{
 		public IfcActor RelatingActor {get;set;}
 		public IfcActorRole ActingRole {get;set;}
@@ -7169,7 +7169,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstocontrol.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToControl
+	public  partial class IfcRelAssignsToControl : IfcRelAssigns
 	{
 		public IfcControl RelatingControl {get;set;}
 
@@ -7178,7 +7178,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstogroup.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToGroup
+	public  partial class IfcRelAssignsToGroup : IfcRelAssigns
 	{
 		public IfcGroup RelatingGroup {get;set;}
 
@@ -7187,7 +7187,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstogroupbyfactor.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToGroupByFactor
+	public  partial class IfcRelAssignsToGroupByFactor : IfcRelAssignsToGroup
 	{
 		public IfcRatioMeasure Factor {get;set;}
 
@@ -7196,7 +7196,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoprocess.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToProcess
+	public  partial class IfcRelAssignsToProcess : IfcRelAssigns
 	{
 		public IfcProcessSelect RelatingProcess {get;set;}
 		public IfcMeasureWithUnit QuantityInProcess {get;set;}
@@ -7206,7 +7206,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoproduct.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToProduct
+	public  partial class IfcRelAssignsToProduct : IfcRelAssigns
 	{
 		public IfcProductSelect RelatingProduct {get;set;}
 
@@ -7215,7 +7215,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoresource.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssignsToResource
+	public  partial class IfcRelAssignsToResource : IfcRelAssigns
 	{
 		public IfcResourceSelect RelatingResource {get;set;}
 
@@ -7224,7 +7224,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociates.htm"/>
 	/// </summary>
-	public abstract partial class IfcRelAssociates
+	public abstract partial class IfcRelAssociates : IfcRelationship
 	{
 		public SET[1:?]OFIfcDefinitionSelect RelatedObjects {get;set;}
 
@@ -7233,7 +7233,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesapproval.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssociatesApproval
+	public  partial class IfcRelAssociatesApproval : IfcRelAssociates
 	{
 		public IfcApproval RelatingApproval {get;set;}
 
@@ -7242,7 +7242,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesclassification.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssociatesClassification
+	public  partial class IfcRelAssociatesClassification : IfcRelAssociates
 	{
 		public IfcClassificationSelect RelatingClassification {get;set;}
 
@@ -7251,7 +7251,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesconstraint.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssociatesConstraint
+	public  partial class IfcRelAssociatesConstraint : IfcRelAssociates
 	{
 		public IfcLabel Intent {get;set;}
 		public IfcConstraint RelatingConstraint {get;set;}
@@ -7261,7 +7261,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesdocument.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssociatesDocument
+	public  partial class IfcRelAssociatesDocument : IfcRelAssociates
 	{
 		public IfcDocumentSelect RelatingDocument {get;set;}
 
@@ -7270,7 +7270,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociateslibrary.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssociatesLibrary
+	public  partial class IfcRelAssociatesLibrary : IfcRelAssociates
 	{
 		public IfcLibrarySelect RelatingLibrary {get;set;}
 
@@ -7279,7 +7279,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesmaterial.htm"/>
 	/// </summary>
-	public  partial class IfcRelAssociatesMaterial
+	public  partial class IfcRelAssociatesMaterial : IfcRelAssociates
 	{
 		public IfcMaterialSelect RelatingMaterial {get;set;}
 
@@ -7288,7 +7288,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnects.htm"/>
 	/// </summary>
-	public abstract partial class IfcRelConnects
+	public abstract partial class IfcRelConnects : IfcRelationship
 	{
 
 	}
@@ -7296,7 +7296,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectselements.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsElements
+	public  partial class IfcRelConnectsElements : IfcRelConnects
 	{
 		public IfcConnectionGeometry ConnectionGeometry {get;set;}
 		public IfcElement RelatingElement {get;set;}
@@ -7307,7 +7307,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectspathelements.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsPathElements
+	public  partial class IfcRelConnectsPathElements : IfcRelConnectsElements
 	{
 		public LIST[0:?]OFNUMBER RelatingPriorities {get;set;}
 		public LIST[0:?]OFNUMBER RelatedPriorities {get;set;}
@@ -7319,7 +7319,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsporttoelement.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsPortToElement
+	public  partial class IfcRelConnectsPortToElement : IfcRelConnects
 	{
 		public IfcPort RelatingPort {get;set;}
 		public IfcDistributionElement RelatedElement {get;set;}
@@ -7329,7 +7329,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsports.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsPorts
+	public  partial class IfcRelConnectsPorts : IfcRelConnects
 	{
 		public IfcPort RelatingPort {get;set;}
 		public IfcPort RelatedPort {get;set;}
@@ -7340,7 +7340,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsstructuralactivity.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsStructuralActivity
+	public  partial class IfcRelConnectsStructuralActivity : IfcRelConnects
 	{
 		public IfcStructuralActivityAssignmentSelect RelatingElement {get;set;}
 		public IfcStructuralActivity RelatedStructuralActivity {get;set;}
@@ -7350,7 +7350,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsstructuralmember.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsStructuralMember
+	public  partial class IfcRelConnectsStructuralMember : IfcRelConnects
 	{
 		public IfcStructuralMember RelatingStructuralMember {get;set;}
 		public IfcStructuralConnection RelatedStructuralConnection {get;set;}
@@ -7364,7 +7364,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectswitheccentricity.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsWithEccentricity
+	public  partial class IfcRelConnectsWithEccentricity : IfcRelConnectsStructuralMember
 	{
 		public IfcConnectionGeometry ConnectionConstraint {get;set;}
 
@@ -7373,7 +7373,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectswithrealizingelements.htm"/>
 	/// </summary>
-	public  partial class IfcRelConnectsWithRealizingElements
+	public  partial class IfcRelConnectsWithRealizingElements : IfcRelConnectsElements
 	{
 		public SET[1:?]OFIfcElement RealizingElements {get;set;}
 		public IfcLabel ConnectionType {get;set;}
@@ -7383,7 +7383,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelcontainedinspatialstructure.htm"/>
 	/// </summary>
-	public  partial class IfcRelContainedInSpatialStructure
+	public  partial class IfcRelContainedInSpatialStructure : IfcRelConnects
 	{
 		public SET[1:?]OFIfcProduct RelatedElements {get;set;}
 		public IfcSpatialElement RelatingStructure {get;set;}
@@ -7393,7 +7393,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelcoversbldgelements.htm"/>
 	/// </summary>
-	public  partial class IfcRelCoversBldgElements
+	public  partial class IfcRelCoversBldgElements : IfcRelConnects
 	{
 		public IfcElement RelatingBuildingElement {get;set;}
 		public SET[1:?]OFIfcCovering RelatedCoverings {get;set;}
@@ -7403,7 +7403,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelcoversspaces.htm"/>
 	/// </summary>
-	public  partial class IfcRelCoversSpaces
+	public  partial class IfcRelCoversSpaces : IfcRelConnects
 	{
 		public IfcSpace RelatingSpace {get;set;}
 		public SET[1:?]OFIfcCovering RelatedCoverings {get;set;}
@@ -7413,7 +7413,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldeclares.htm"/>
 	/// </summary>
-	public  partial class IfcRelDeclares
+	public  partial class IfcRelDeclares : IfcRelationship
 	{
 		public IfcContext RelatingContext {get;set;}
 		public SET[1:?]OFIfcDefinitionSelect RelatedDefinitions {get;set;}
@@ -7423,7 +7423,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldecomposes.htm"/>
 	/// </summary>
-	public abstract partial class IfcRelDecomposes
+	public abstract partial class IfcRelDecomposes : IfcRelationship
 	{
 
 	}
@@ -7431,7 +7431,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefines.htm"/>
 	/// </summary>
-	public abstract partial class IfcRelDefines
+	public abstract partial class IfcRelDefines : IfcRelationship
 	{
 
 	}
@@ -7439,7 +7439,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbyobject.htm"/>
 	/// </summary>
-	public  partial class IfcRelDefinesByObject
+	public  partial class IfcRelDefinesByObject : IfcRelDefines
 	{
 		public SET[1:?]OFIfcObject RelatedObjects {get;set;}
 		public IfcObject RelatingObject {get;set;}
@@ -7449,7 +7449,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbyproperties.htm"/>
 	/// </summary>
-	public  partial class IfcRelDefinesByProperties
+	public  partial class IfcRelDefinesByProperties : IfcRelDefines
 	{
 		public SET[1:1]OFIfcObjectDefinition RelatedObjects {get;set;}
 		public IfcPropertySetDefinitionSelect RelatingPropertyDefinition {get;set;}
@@ -7459,7 +7459,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbytemplate.htm"/>
 	/// </summary>
-	public  partial class IfcRelDefinesByTemplate
+	public  partial class IfcRelDefinesByTemplate : IfcRelDefines
 	{
 		public SET[1:?]OFIfcPropertySetDefinition RelatedPropertySets {get;set;}
 		public IfcPropertySetTemplate RelatingTemplate {get;set;}
@@ -7469,7 +7469,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbytype.htm"/>
 	/// </summary>
-	public  partial class IfcRelDefinesByType
+	public  partial class IfcRelDefinesByType : IfcRelDefines
 	{
 		public SET[1:?]OFIfcObject RelatedObjects {get;set;}
 		public IfcTypeObject RelatingType {get;set;}
@@ -7479,7 +7479,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelfillselement.htm"/>
 	/// </summary>
-	public  partial class IfcRelFillsElement
+	public  partial class IfcRelFillsElement : IfcRelConnects
 	{
 		public IfcOpeningElement RelatingOpeningElement {get;set;}
 		public IfcElement RelatedBuildingElement {get;set;}
@@ -7489,7 +7489,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelflowcontrolelements.htm"/>
 	/// </summary>
-	public  partial class IfcRelFlowControlElements
+	public  partial class IfcRelFlowControlElements : IfcRelConnects
 	{
 		public SET[1:?]OFIfcDistributionControlElement RelatedControlElements {get;set;}
 		public IfcDistributionFlowElement RelatingFlowElement {get;set;}
@@ -7499,7 +7499,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelinterfereselements.htm"/>
 	/// </summary>
-	public  partial class IfcRelInterferesElements
+	public  partial class IfcRelInterferesElements : IfcRelConnects
 	{
 		public IfcElement RelatingElement {get;set;}
 		public IfcElement RelatedElement {get;set;}
@@ -7512,7 +7512,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelnests.htm"/>
 	/// </summary>
-	public  partial class IfcRelNests
+	public  partial class IfcRelNests : IfcRelDecomposes
 	{
 		public IfcObjectDefinition RelatingObject {get;set;}
 		public LIST[1:?]OFIfcObjectDefinition RelatedObjects {get;set;}
@@ -7522,7 +7522,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelprojectselement.htm"/>
 	/// </summary>
-	public  partial class IfcRelProjectsElement
+	public  partial class IfcRelProjectsElement : IfcRelDecomposes
 	{
 		public IfcElement RelatingElement {get;set;}
 		public IfcFeatureElementAddition RelatedFeatureElement {get;set;}
@@ -7532,7 +7532,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelreferencedinspatialstructure.htm"/>
 	/// </summary>
-	public  partial class IfcRelReferencedInSpatialStructure
+	public  partial class IfcRelReferencedInSpatialStructure : IfcRelConnects
 	{
 		public SET[1:?]OFIfcProduct RelatedElements {get;set;}
 		public IfcSpatialElement RelatingStructure {get;set;}
@@ -7542,7 +7542,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelsequence.htm"/>
 	/// </summary>
-	public  partial class IfcRelSequence
+	public  partial class IfcRelSequence : IfcRelConnects
 	{
 		public IfcProcess RelatingProcess {get;set;}
 		public IfcProcess RelatedProcess {get;set;}
@@ -7555,7 +7555,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelservicesbuildings.htm"/>
 	/// </summary>
-	public  partial class IfcRelServicesBuildings
+	public  partial class IfcRelServicesBuildings : IfcRelConnects
 	{
 		public IfcSystem RelatingSystem {get;set;}
 		public SET[1:?]OFIfcSpatialElement RelatedBuildings {get;set;}
@@ -7565,7 +7565,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelspaceboundary.htm"/>
 	/// </summary>
-	public  partial class IfcRelSpaceBoundary
+	public  partial class IfcRelSpaceBoundary : IfcRelConnects
 	{
 		public IfcSpaceBoundarySelect RelatingSpace {get;set;}
 		public IfcElement RelatedBuildingElement {get;set;}
@@ -7578,7 +7578,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelspaceboundary1stlevel.htm"/>
 	/// </summary>
-	public  partial class IfcRelSpaceBoundary1stLevel
+	public  partial class IfcRelSpaceBoundary1stLevel : IfcRelSpaceBoundary
 	{
 		public IfcRelSpaceBoundary1stLevel ParentBoundary {get;set;}
 
@@ -7587,7 +7587,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelspaceboundary2ndlevel.htm"/>
 	/// </summary>
-	public  partial class IfcRelSpaceBoundary2ndLevel
+	public  partial class IfcRelSpaceBoundary2ndLevel : IfcRelSpaceBoundary1stLevel
 	{
 		public IfcRelSpaceBoundary2ndLevel CorrespondingBoundary {get;set;}
 
@@ -7596,7 +7596,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelvoidselement.htm"/>
 	/// </summary>
-	public  partial class IfcRelVoidsElement
+	public  partial class IfcRelVoidsElement : IfcRelDecomposes
 	{
 		public IfcElement RelatingBuildingElement {get;set;}
 		public IfcFeatureElementSubtraction RelatedOpeningElement {get;set;}
@@ -7606,7 +7606,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelationship.htm"/>
 	/// </summary>
-	public abstract partial class IfcRelationship
+	public abstract partial class IfcRelationship : IfcRoot
 	{
 
 	}
@@ -7614,7 +7614,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreparametrisedcompositecurvesegment.htm"/>
 	/// </summary>
-	public  partial class IfcReparametrisedCompositeCurveSegment
+	public  partial class IfcReparametrisedCompositeCurveSegment : IfcCompositeCurveSegment
 	{
 		public IfcParameterValue ParamLength {get;set;}
 
@@ -7663,7 +7663,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresource.htm"/>
 	/// </summary>
-	public abstract partial class IfcResource
+	public abstract partial class IfcResource : IfcObject
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
@@ -7673,7 +7673,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceapprovalrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcResourceApprovalRelationship
+	public  partial class IfcResourceApprovalRelationship : IfcResourceLevelRelationship
 	{
 		public SET[1:?]OFIfcResourceObjectSelect RelatedResourceObjects {get;set;}
 		public IfcApproval RelatingApproval {get;set;}
@@ -7683,7 +7683,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceconstraintrelationship.htm"/>
 	/// </summary>
-	public  partial class IfcResourceConstraintRelationship
+	public  partial class IfcResourceConstraintRelationship : IfcResourceLevelRelationship
 	{
 		public IfcConstraint RelatingConstraint {get;set;}
 		public SET[1:?]OFIfcResourceObjectSelect RelatedResourceObjects {get;set;}
@@ -7703,7 +7703,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourcetime.htm"/>
 	/// </summary>
-	public  partial class IfcResourceTime
+	public  partial class IfcResourceTime : IfcSchedulingTime
 	{
 		public IfcDuration ScheduleWork {get;set;}
 		public IfcPositiveRatioMeasure ScheduleUsage {get;set;}
@@ -7726,7 +7726,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrevolvedareasolid.htm"/>
 	/// </summary>
-	public  partial class IfcRevolvedAreaSolid
+	public  partial class IfcRevolvedAreaSolid : IfcSweptAreaSolid
 	{
 		public IfcAxis1Placement Axis {get;set;}
 		public IfcPlaneAngleMeasure Angle {get;set;}
@@ -7737,7 +7737,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrevolvedareasolidtapered.htm"/>
 	/// </summary>
-	public  partial class IfcRevolvedAreaSolidTapered
+	public  partial class IfcRevolvedAreaSolidTapered : IfcRevolvedAreaSolid
 	{
 		public IfcProfileDef EndSweptArea {get;set;}
 
@@ -7746,7 +7746,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrightcircularcone.htm"/>
 	/// </summary>
-	public  partial class IfcRightCircularCone
+	public  partial class IfcRightCircularCone : IfcCsgPrimitive3D
 	{
 		public IfcPositiveLengthMeasure Height {get;set;}
 		public IfcPositiveLengthMeasure BottomRadius {get;set;}
@@ -7756,7 +7756,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrightcircularcylinder.htm"/>
 	/// </summary>
-	public  partial class IfcRightCircularCylinder
+	public  partial class IfcRightCircularCylinder : IfcCsgPrimitive3D
 	{
 		public IfcPositiveLengthMeasure Height {get;set;}
 		public IfcPositiveLengthMeasure Radius {get;set;}
@@ -7766,7 +7766,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroof.htm"/>
 	/// </summary>
-	public  partial class IfcRoof
+	public  partial class IfcRoof : IfcBuildingElement
 	{
 		public IfcRoofTypeEnum PredefinedType {get;set;}
 
@@ -7775,7 +7775,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrooftype.htm"/>
 	/// </summary>
-	public  partial class IfcRoofType
+	public  partial class IfcRoofType : IfcBuildingElementType
 	{
 		public IfcRoofTypeEnum PredefinedType {get;set;}
 
@@ -7796,7 +7796,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroundedrectangleprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcRoundedRectangleProfileDef
+	public  partial class IfcRoundedRectangleProfileDef : IfcRectangleProfileDef
 	{
 		public IfcPositiveLengthMeasure RoundingRadius {get;set;}
 
@@ -7805,7 +7805,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiunit.htm"/>
 	/// </summary>
-	public  partial class IfcSIUnit
+	public  partial class IfcSIUnit : IfcNamedUnit
 	{
 		public IfcSIPrefix Prefix {get;set;}
 		public IfcSIUnitName Name {get;set;}
@@ -7816,7 +7816,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsanitaryterminal.htm"/>
 	/// </summary>
-	public  partial class IfcSanitaryTerminal
+	public  partial class IfcSanitaryTerminal : IfcFlowTerminal
 	{
 		public IfcSanitaryTerminalTypeEnum PredefinedType {get;set;}
 
@@ -7825,7 +7825,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsanitaryterminaltype.htm"/>
 	/// </summary>
-	public  partial class IfcSanitaryTerminalType
+	public  partial class IfcSanitaryTerminalType : IfcFlowTerminalType
 	{
 		public IfcSanitaryTerminalTypeEnum PredefinedType {get;set;}
 
@@ -7845,7 +7845,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionproperties.htm"/>
 	/// </summary>
-	public  partial class IfcSectionProperties
+	public  partial class IfcSectionProperties : IfcPreDefinedProperties
 	{
 		public IfcSectionTypeEnum SectionType {get;set;}
 		public IfcProfileDef StartProfile {get;set;}
@@ -7856,7 +7856,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionreinforcementproperties.htm"/>
 	/// </summary>
-	public  partial class IfcSectionReinforcementProperties
+	public  partial class IfcSectionReinforcementProperties : IfcPreDefinedProperties
 	{
 		public IfcLengthMeasure LongitudinalStartPosition {get;set;}
 		public IfcLengthMeasure LongitudinalEndPosition {get;set;}
@@ -7870,7 +7870,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionedspine.htm"/>
 	/// </summary>
-	public  partial class IfcSectionedSpine
+	public  partial class IfcSectionedSpine : IfcGeometricRepresentationItem
 	{
 		public IfcCompositeCurve SpineCurve {get;set;}
 		public LIST[2:?]OFIfcProfileDef CrossSections {get;set;}
@@ -7882,7 +7882,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensor.htm"/>
 	/// </summary>
-	public  partial class IfcSensor
+	public  partial class IfcSensor : IfcDistributionControlElement
 	{
 		public IfcSensorTypeEnum PredefinedType {get;set;}
 
@@ -7891,7 +7891,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensortype.htm"/>
 	/// </summary>
-	public  partial class IfcSensorType
+	public  partial class IfcSensorType : IfcDistributionControlElementType
 	{
 		public IfcSensorTypeEnum PredefinedType {get;set;}
 
@@ -7900,7 +7900,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshadingdevice.htm"/>
 	/// </summary>
-	public  partial class IfcShadingDevice
+	public  partial class IfcShadingDevice : IfcBuildingElement
 	{
 		public IfcShadingDeviceTypeEnum PredefinedType {get;set;}
 
@@ -7909,7 +7909,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshadingdevicetype.htm"/>
 	/// </summary>
-	public  partial class IfcShadingDeviceType
+	public  partial class IfcShadingDeviceType : IfcBuildingElementType
 	{
 		public IfcShadingDeviceTypeEnum PredefinedType {get;set;}
 
@@ -7931,7 +7931,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshapemodel.htm"/>
 	/// </summary>
-	public abstract partial class IfcShapeModel
+	public abstract partial class IfcShapeModel : IfcRepresentation
 	{
 
 	}
@@ -7939,7 +7939,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshaperepresentation.htm"/>
 	/// </summary>
-	public  partial class IfcShapeRepresentation
+	public  partial class IfcShapeRepresentation : IfcShapeModel
 	{
 
 	}
@@ -7947,7 +7947,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshellbasedsurfacemodel.htm"/>
 	/// </summary>
-	public  partial class IfcShellBasedSurfaceModel
+	public  partial class IfcShellBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
 		public SET[1:?]OFIfcShell SbsmBoundary {get;set;}
 		public IfcDimensionCount Dim {get;set;}
@@ -7957,7 +7957,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimpleproperty.htm"/>
 	/// </summary>
-	public abstract partial class IfcSimpleProperty
+	public abstract partial class IfcSimpleProperty : IfcProperty
 	{
 
 	}
@@ -7965,7 +7965,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplate.htm"/>
 	/// </summary>
-	public  partial class IfcSimplePropertyTemplate
+	public  partial class IfcSimplePropertyTemplate : IfcPropertyTemplate
 	{
 		public IfcSimplePropertyTemplateTypeEnum TemplateType {get;set;}
 		public IfcLabel PrimaryMeasureType {get;set;}
@@ -7981,7 +7981,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsite.htm"/>
 	/// </summary>
-	public  partial class IfcSite
+	public  partial class IfcSite : IfcSpatialStructureElement
 	{
 		public IfcCompoundPlaneAngleMeasure RefLatitude {get;set;}
 		public IfcCompoundPlaneAngleMeasure RefLongitude {get;set;}
@@ -7994,7 +7994,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslab.htm"/>
 	/// </summary>
-	public  partial class IfcSlab
+	public  partial class IfcSlab : IfcBuildingElement
 	{
 		public IfcSlabTypeEnum PredefinedType {get;set;}
 
@@ -8003,7 +8003,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabelementedcase.htm"/>
 	/// </summary>
-	public  partial class IfcSlabElementedCase
+	public  partial class IfcSlabElementedCase : IfcSlab
 	{
 
 	}
@@ -8011,7 +8011,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcSlabStandardCase
+	public  partial class IfcSlabStandardCase : IfcSlab
 	{
 
 	}
@@ -8019,7 +8019,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabtype.htm"/>
 	/// </summary>
-	public  partial class IfcSlabType
+	public  partial class IfcSlabType : IfcBuildingElementType
 	{
 		public IfcSlabTypeEnum PredefinedType {get;set;}
 
@@ -8028,7 +8028,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslippageconnectioncondition.htm"/>
 	/// </summary>
-	public  partial class IfcSlippageConnectionCondition
+	public  partial class IfcSlippageConnectionCondition : IfcStructuralConnectionCondition
 	{
 		public IfcLengthMeasure SlippageX {get;set;}
 		public IfcLengthMeasure SlippageY {get;set;}
@@ -8039,7 +8039,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolardevice.htm"/>
 	/// </summary>
-	public  partial class IfcSolarDevice
+	public  partial class IfcSolarDevice : IfcEnergyConversionDevice
 	{
 		public IfcSolarDeviceTypeEnum PredefinedType {get;set;}
 
@@ -8048,7 +8048,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolardevicetype.htm"/>
 	/// </summary>
-	public  partial class IfcSolarDeviceType
+	public  partial class IfcSolarDeviceType : IfcEnergyConversionDeviceType
 	{
 		public IfcSolarDeviceTypeEnum PredefinedType {get;set;}
 
@@ -8057,7 +8057,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidmodel.htm"/>
 	/// </summary>
-	public abstract partial class IfcSolidModel
+	public abstract partial class IfcSolidModel : IfcGeometricRepresentationItem
 	{
 		public IfcDimensionCount Dim {get;set;}
 
@@ -8066,7 +8066,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspace.htm"/>
 	/// </summary>
-	public  partial class IfcSpace
+	public  partial class IfcSpace : IfcSpatialStructureElement
 	{
 		public IfcSpaceTypeEnum PredefinedType {get;set;}
 		public IfcLengthMeasure ElevationWithFlooring {get;set;}
@@ -8076,7 +8076,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceheater.htm"/>
 	/// </summary>
-	public  partial class IfcSpaceHeater
+	public  partial class IfcSpaceHeater : IfcFlowTerminal
 	{
 		public IfcSpaceHeaterTypeEnum PredefinedType {get;set;}
 
@@ -8085,7 +8085,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceheatertype.htm"/>
 	/// </summary>
-	public  partial class IfcSpaceHeaterType
+	public  partial class IfcSpaceHeaterType : IfcFlowTerminalType
 	{
 		public IfcSpaceHeaterTypeEnum PredefinedType {get;set;}
 
@@ -8094,7 +8094,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspacetype.htm"/>
 	/// </summary>
-	public  partial class IfcSpaceType
+	public  partial class IfcSpaceType : IfcSpatialStructureElementType
 	{
 		public IfcSpaceTypeEnum PredefinedType {get;set;}
 		public IfcLabel LongName {get;set;}
@@ -8104,7 +8104,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcSpatialElement
+	public abstract partial class IfcSpatialElement : IfcProduct
 	{
 		public IfcLabel LongName {get;set;}
 
@@ -8113,7 +8113,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcSpatialElementType
+	public abstract partial class IfcSpatialElementType : IfcTypeProduct
 	{
 		public IfcLabel ElementType {get;set;}
 
@@ -8122,7 +8122,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialstructureelement.htm"/>
 	/// </summary>
-	public abstract partial class IfcSpatialStructureElement
+	public abstract partial class IfcSpatialStructureElement : IfcSpatialElement
 	{
 		public IfcElementCompositionEnum CompositionType {get;set;}
 
@@ -8131,7 +8131,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialstructureelementtype.htm"/>
 	/// </summary>
-	public abstract partial class IfcSpatialStructureElementType
+	public abstract partial class IfcSpatialStructureElementType : IfcSpatialElementType
 	{
 
 	}
@@ -8139,7 +8139,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialzone.htm"/>
 	/// </summary>
-	public  partial class IfcSpatialZone
+	public  partial class IfcSpatialZone : IfcSpatialElement
 	{
 		public IfcSpatialZoneTypeEnum PredefinedType {get;set;}
 
@@ -8148,7 +8148,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialzonetype.htm"/>
 	/// </summary>
-	public  partial class IfcSpatialZoneType
+	public  partial class IfcSpatialZoneType : IfcSpatialElementType
 	{
 		public IfcSpatialZoneTypeEnum PredefinedType {get;set;}
 		public IfcLabel LongName {get;set;}
@@ -8158,7 +8158,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsphere.htm"/>
 	/// </summary>
-	public  partial class IfcSphere
+	public  partial class IfcSphere : IfcCsgPrimitive3D
 	{
 		public IfcPositiveLengthMeasure Radius {get;set;}
 
@@ -8167,7 +8167,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstackterminal.htm"/>
 	/// </summary>
-	public  partial class IfcStackTerminal
+	public  partial class IfcStackTerminal : IfcFlowTerminal
 	{
 		public IfcStackTerminalTypeEnum PredefinedType {get;set;}
 
@@ -8176,7 +8176,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstackterminaltype.htm"/>
 	/// </summary>
-	public  partial class IfcStackTerminalType
+	public  partial class IfcStackTerminalType : IfcFlowTerminalType
 	{
 		public IfcStackTerminalTypeEnum PredefinedType {get;set;}
 
@@ -8185,7 +8185,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstair.htm"/>
 	/// </summary>
-	public  partial class IfcStair
+	public  partial class IfcStair : IfcBuildingElement
 	{
 		public IfcStairTypeEnum PredefinedType {get;set;}
 
@@ -8194,7 +8194,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairflight.htm"/>
 	/// </summary>
-	public  partial class IfcStairFlight
+	public  partial class IfcStairFlight : IfcBuildingElement
 	{
 		public int NumberOfRiser {get;set;}
 		public int NumberOfTreads {get;set;}
@@ -8207,7 +8207,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairflighttype.htm"/>
 	/// </summary>
-	public  partial class IfcStairFlightType
+	public  partial class IfcStairFlightType : IfcBuildingElementType
 	{
 		public IfcStairFlightTypeEnum PredefinedType {get;set;}
 
@@ -8216,7 +8216,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairtype.htm"/>
 	/// </summary>
-	public  partial class IfcStairType
+	public  partial class IfcStairType : IfcBuildingElementType
 	{
 		public IfcStairTypeEnum PredefinedType {get;set;}
 
@@ -8225,7 +8225,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralaction.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralAction
+	public abstract partial class IfcStructuralAction : IfcStructuralActivity
 	{
 		public bool DestabilizingLoad {get;set;}
 
@@ -8234,7 +8234,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivity.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralActivity
+	public abstract partial class IfcStructuralActivity : IfcProduct
 	{
 		public IfcStructuralLoad AppliedLoad {get;set;}
 		public IfcGlobalOrLocalEnum GlobalOrLocal {get;set;}
@@ -8244,7 +8244,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralanalysismodel.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralAnalysisModel
+	public  partial class IfcStructuralAnalysisModel : IfcSystem
 	{
 		public IfcAnalysisModelTypeEnum PredefinedType {get;set;}
 		public IfcAxis2Placement3D OrientationOf2DPlane {get;set;}
@@ -8257,7 +8257,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralconnection.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralConnection
+	public abstract partial class IfcStructuralConnection : IfcStructuralItem
 	{
 		public IfcBoundaryCondition AppliedCondition {get;set;}
 
@@ -8275,7 +8275,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralCurveAction
+	public  partial class IfcStructuralCurveAction : IfcStructuralAction
 	{
 		public IfcProjectedOrTrueLengthEnum ProjectedOrTrue {get;set;}
 		public IfcStructuralCurveActivityTypeEnum PredefinedType {get;set;}
@@ -8285,7 +8285,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveconnection.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralCurveConnection
+	public  partial class IfcStructuralCurveConnection : IfcStructuralConnection
 	{
 		public IfcDirection Axis {get;set;}
 
@@ -8294,7 +8294,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvemember.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralCurveMember
+	public  partial class IfcStructuralCurveMember : IfcStructuralMember
 	{
 		public IfcStructuralCurveMemberTypeEnum PredefinedType {get;set;}
 		public IfcDirection Axis {get;set;}
@@ -8304,7 +8304,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvemembervarying.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralCurveMemberVarying
+	public  partial class IfcStructuralCurveMemberVarying : IfcStructuralCurveMember
 	{
 
 	}
@@ -8312,7 +8312,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvereaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralCurveReaction
+	public  partial class IfcStructuralCurveReaction : IfcStructuralReaction
 	{
 		public IfcStructuralCurveActivityTypeEnum PredefinedType {get;set;}
 
@@ -8321,7 +8321,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralitem.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralItem
+	public abstract partial class IfcStructuralItem : IfcProduct
 	{
 
 	}
@@ -8329,7 +8329,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructurallinearaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLinearAction
+	public  partial class IfcStructuralLinearAction : IfcStructuralCurveAction
 	{
 
 	}
@@ -8346,7 +8346,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadcase.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadCase
+	public  partial class IfcStructuralLoadCase : IfcStructuralLoadGroup
 	{
 		public LIST[3:3]OFIfcRatioMeasure SelfWeightCoefficients {get;set;}
 
@@ -8355,7 +8355,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadconfiguration.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadConfiguration
+	public  partial class IfcStructuralLoadConfiguration : IfcStructuralLoad
 	{
 		public LIST[1:?]OFIfcStructuralLoadOrResult Values {get;set;}
 		public LIST[1:?]OFUNIQUELIST[1:2]OFIfcLengthMeasure Locations {get;set;}
@@ -8365,7 +8365,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadgroup.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadGroup
+	public  partial class IfcStructuralLoadGroup : IfcGroup
 	{
 		public IfcLoadGroupTypeEnum PredefinedType {get;set;}
 		public IfcActionTypeEnum ActionType {get;set;}
@@ -8378,7 +8378,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadlinearforce.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadLinearForce
+	public  partial class IfcStructuralLoadLinearForce : IfcStructuralLoadStatic
 	{
 		public IfcLinearForceMeasure LinearForceX {get;set;}
 		public IfcLinearForceMeasure LinearForceY {get;set;}
@@ -8392,7 +8392,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadorresult.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralLoadOrResult
+	public abstract partial class IfcStructuralLoadOrResult : IfcStructuralLoad
 	{
 
 	}
@@ -8400,7 +8400,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadplanarforce.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadPlanarForce
+	public  partial class IfcStructuralLoadPlanarForce : IfcStructuralLoadStatic
 	{
 		public IfcPlanarForceMeasure PlanarForceX {get;set;}
 		public IfcPlanarForceMeasure PlanarForceY {get;set;}
@@ -8411,7 +8411,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadsingledisplacement.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadSingleDisplacement
+	public  partial class IfcStructuralLoadSingleDisplacement : IfcStructuralLoadStatic
 	{
 		public IfcLengthMeasure DisplacementX {get;set;}
 		public IfcLengthMeasure DisplacementY {get;set;}
@@ -8425,7 +8425,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadsingledisplacementdistortion.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadSingleDisplacementDistortion
+	public  partial class IfcStructuralLoadSingleDisplacementDistortion : IfcStructuralLoadSingleDisplacement
 	{
 		public IfcCurvatureMeasure Distortion {get;set;}
 
@@ -8434,7 +8434,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadsingleforce.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadSingleForce
+	public  partial class IfcStructuralLoadSingleForce : IfcStructuralLoadStatic
 	{
 		public IfcForceMeasure ForceX {get;set;}
 		public IfcForceMeasure ForceY {get;set;}
@@ -8448,7 +8448,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadsingleforcewarping.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadSingleForceWarping
+	public  partial class IfcStructuralLoadSingleForceWarping : IfcStructuralLoadSingleForce
 	{
 		public IfcWarpingMomentMeasure WarpingMoment {get;set;}
 
@@ -8457,7 +8457,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadstatic.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralLoadStatic
+	public abstract partial class IfcStructuralLoadStatic : IfcStructuralLoadOrResult
 	{
 
 	}
@@ -8465,7 +8465,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadtemperature.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralLoadTemperature
+	public  partial class IfcStructuralLoadTemperature : IfcStructuralLoadStatic
 	{
 		public IfcThermodynamicTemperatureMeasure DeltaTConstant {get;set;}
 		public IfcThermodynamicTemperatureMeasure DeltaTY {get;set;}
@@ -8476,7 +8476,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralmember.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralMember
+	public abstract partial class IfcStructuralMember : IfcStructuralItem
 	{
 
 	}
@@ -8484,7 +8484,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralplanaraction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralPlanarAction
+	public  partial class IfcStructuralPlanarAction : IfcStructuralSurfaceAction
 	{
 
 	}
@@ -8492,7 +8492,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralpointaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralPointAction
+	public  partial class IfcStructuralPointAction : IfcStructuralAction
 	{
 
 	}
@@ -8500,7 +8500,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralpointconnection.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralPointConnection
+	public  partial class IfcStructuralPointConnection : IfcStructuralConnection
 	{
 		public IfcAxis2Placement3D ConditionCoordinateSystem {get;set;}
 
@@ -8509,7 +8509,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralpointreaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralPointReaction
+	public  partial class IfcStructuralPointReaction : IfcStructuralReaction
 	{
 
 	}
@@ -8517,7 +8517,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralreaction.htm"/>
 	/// </summary>
-	public abstract partial class IfcStructuralReaction
+	public abstract partial class IfcStructuralReaction : IfcStructuralActivity
 	{
 
 	}
@@ -8525,7 +8525,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralresultgroup.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralResultGroup
+	public  partial class IfcStructuralResultGroup : IfcGroup
 	{
 		public IfcAnalysisTheoryTypeEnum TheoryType {get;set;}
 		public IfcStructuralLoadGroup ResultForLoadGroup {get;set;}
@@ -8536,7 +8536,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfaceaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralSurfaceAction
+	public  partial class IfcStructuralSurfaceAction : IfcStructuralAction
 	{
 		public IfcProjectedOrTrueLengthEnum ProjectedOrTrue {get;set;}
 		public IfcStructuralSurfaceActivityTypeEnum PredefinedType {get;set;}
@@ -8546,7 +8546,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfaceconnection.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralSurfaceConnection
+	public  partial class IfcStructuralSurfaceConnection : IfcStructuralConnection
 	{
 
 	}
@@ -8554,7 +8554,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacemember.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralSurfaceMember
+	public  partial class IfcStructuralSurfaceMember : IfcStructuralMember
 	{
 		public IfcStructuralSurfaceMemberTypeEnum PredefinedType {get;set;}
 		public IfcPositiveLengthMeasure Thickness {get;set;}
@@ -8564,7 +8564,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacemembervarying.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralSurfaceMemberVarying
+	public  partial class IfcStructuralSurfaceMemberVarying : IfcStructuralSurfaceMember
 	{
 
 	}
@@ -8572,7 +8572,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacereaction.htm"/>
 	/// </summary>
-	public  partial class IfcStructuralSurfaceReaction
+	public  partial class IfcStructuralSurfaceReaction : IfcStructuralReaction
 	{
 		public IfcStructuralSurfaceActivityTypeEnum PredefinedType {get;set;}
 
@@ -8581,7 +8581,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstylemodel.htm"/>
 	/// </summary>
-	public abstract partial class IfcStyleModel
+	public abstract partial class IfcStyleModel : IfcRepresentation
 	{
 
 	}
@@ -8589,7 +8589,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyleditem.htm"/>
 	/// </summary>
-	public  partial class IfcStyledItem
+	public  partial class IfcStyledItem : IfcRepresentationItem
 	{
 		public IfcRepresentationItem Item {get;set;}
 		public SET[1:?]OFIfcStyleAssignmentSelect Styles {get;set;}
@@ -8600,7 +8600,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyledrepresentation.htm"/>
 	/// </summary>
-	public  partial class IfcStyledRepresentation
+	public  partial class IfcStyledRepresentation : IfcStyleModel
 	{
 
 	}
@@ -8608,7 +8608,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubcontractresource.htm"/>
 	/// </summary>
-	public  partial class IfcSubContractResource
+	public  partial class IfcSubContractResource : IfcConstructionResource
 	{
 		public IfcSubContractResourceTypeEnum PredefinedType {get;set;}
 
@@ -8617,7 +8617,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubcontractresourcetype.htm"/>
 	/// </summary>
-	public  partial class IfcSubContractResourceType
+	public  partial class IfcSubContractResourceType : IfcConstructionResourceType
 	{
 		public IfcSubContractResourceTypeEnum PredefinedType {get;set;}
 
@@ -8626,7 +8626,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubedge.htm"/>
 	/// </summary>
-	public  partial class IfcSubedge
+	public  partial class IfcSubedge : IfcEdge
 	{
 		public IfcEdge ParentEdge {get;set;}
 
@@ -8635,7 +8635,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurface.htm"/>
 	/// </summary>
-	public abstract partial class IfcSurface
+	public abstract partial class IfcSurface : IfcGeometricRepresentationItem
 	{
 		public IfcDimensionCount Dim {get;set;}
 
@@ -8644,7 +8644,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacecurvesweptareasolid.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceCurveSweptAreaSolid
+	public  partial class IfcSurfaceCurveSweptAreaSolid : IfcSweptAreaSolid
 	{
 		public IfcCurve Directrix {get;set;}
 		public IfcParameterValue StartParam {get;set;}
@@ -8656,7 +8656,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacefeature.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceFeature
+	public  partial class IfcSurfaceFeature : IfcFeatureElement
 	{
 		public IfcSurfaceFeatureTypeEnum PredefinedType {get;set;}
 
@@ -8665,7 +8665,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceoflinearextrusion.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceOfLinearExtrusion
+	public  partial class IfcSurfaceOfLinearExtrusion : IfcSweptSurface
 	{
 		public IfcDirection ExtrudedDirection {get;set;}
 		public IfcLengthMeasure Depth {get;set;}
@@ -8676,7 +8676,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceofrevolution.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceOfRevolution
+	public  partial class IfcSurfaceOfRevolution : IfcSweptSurface
 	{
 		public IfcAxis1Placement AxisPosition {get;set;}
 		public IfcLine AxisLine {get;set;}
@@ -8686,7 +8686,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacereinforcementarea.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceReinforcementArea
+	public  partial class IfcSurfaceReinforcementArea : IfcStructuralLoadOrResult
 	{
 		public LIST[2:3]OFIfcLengthMeasure SurfaceReinforcement1 {get;set;}
 		public LIST[2:3]OFIfcLengthMeasure SurfaceReinforcement2 {get;set;}
@@ -8697,7 +8697,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyle.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceStyle
+	public  partial class IfcSurfaceStyle : IfcPresentationStyle
 	{
 		public IfcSurfaceSide Side {get;set;}
 		public SET[1:5]OFIfcSurfaceStyleElementSelect Styles {get;set;}
@@ -8707,7 +8707,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylelighting.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceStyleLighting
+	public  partial class IfcSurfaceStyleLighting : IfcPresentationItem
 	{
 		public IfcColourRgb DiffuseTransmissionColour {get;set;}
 		public IfcColourRgb DiffuseReflectionColour {get;set;}
@@ -8719,7 +8719,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerefraction.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceStyleRefraction
+	public  partial class IfcSurfaceStyleRefraction : IfcPresentationItem
 	{
 		public IfcReal RefractionIndex {get;set;}
 		public IfcReal DispersionFactor {get;set;}
@@ -8729,7 +8729,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerendering.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceStyleRendering
+	public  partial class IfcSurfaceStyleRendering : IfcSurfaceStyleShading
 	{
 		public IfcNormalisedRatioMeasure Transparency {get;set;}
 		public IfcColourOrFactor DiffuseColour {get;set;}
@@ -8745,7 +8745,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyleshading.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceStyleShading
+	public  partial class IfcSurfaceStyleShading : IfcPresentationItem
 	{
 		public IfcColourRgb SurfaceColour {get;set;}
 
@@ -8754,7 +8754,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylewithtextures.htm"/>
 	/// </summary>
-	public  partial class IfcSurfaceStyleWithTextures
+	public  partial class IfcSurfaceStyleWithTextures : IfcPresentationItem
 	{
 		public LIST[1:?]OFIfcSurfaceTexture Textures {get;set;}
 
@@ -8763,7 +8763,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacetexture.htm"/>
 	/// </summary>
-	public abstract partial class IfcSurfaceTexture
+	public abstract partial class IfcSurfaceTexture : IfcPresentationItem
 	{
 		public bool RepeatS {get;set;}
 		public bool RepeatT {get;set;}
@@ -8776,7 +8776,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptareasolid.htm"/>
 	/// </summary>
-	public abstract partial class IfcSweptAreaSolid
+	public abstract partial class IfcSweptAreaSolid : IfcSolidModel
 	{
 		public IfcProfileDef SweptArea {get;set;}
 		public IfcAxis2Placement3D Position {get;set;}
@@ -8786,7 +8786,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptdisksolid.htm"/>
 	/// </summary>
-	public  partial class IfcSweptDiskSolid
+	public  partial class IfcSweptDiskSolid : IfcSolidModel
 	{
 		public IfcCurve Directrix {get;set;}
 		public IfcPositiveLengthMeasure Radius {get;set;}
@@ -8799,7 +8799,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptdisksolidpolygonal.htm"/>
 	/// </summary>
-	public  partial class IfcSweptDiskSolidPolygonal
+	public  partial class IfcSweptDiskSolidPolygonal : IfcSweptDiskSolid
 	{
 		public IfcPositiveLengthMeasure FilletRadius {get;set;}
 
@@ -8808,7 +8808,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptsurface.htm"/>
 	/// </summary>
-	public abstract partial class IfcSweptSurface
+	public abstract partial class IfcSweptSurface : IfcSurface
 	{
 		public IfcProfileDef SweptCurve {get;set;}
 		public IfcAxis2Placement3D Position {get;set;}
@@ -8818,7 +8818,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcswitchingdevice.htm"/>
 	/// </summary>
-	public  partial class IfcSwitchingDevice
+	public  partial class IfcSwitchingDevice : IfcFlowController
 	{
 		public IfcSwitchingDeviceTypeEnum PredefinedType {get;set;}
 
@@ -8827,7 +8827,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcswitchingdevicetype.htm"/>
 	/// </summary>
-	public  partial class IfcSwitchingDeviceType
+	public  partial class IfcSwitchingDeviceType : IfcFlowControllerType
 	{
 		public IfcSwitchingDeviceTypeEnum PredefinedType {get;set;}
 
@@ -8836,7 +8836,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystem.htm"/>
 	/// </summary>
-	public  partial class IfcSystem
+	public  partial class IfcSystem : IfcGroup
 	{
 
 	}
@@ -8844,7 +8844,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystemfurnitureelement.htm"/>
 	/// </summary>
-	public  partial class IfcSystemFurnitureElement
+	public  partial class IfcSystemFurnitureElement : IfcFurnishingElement
 	{
 		public IfcSystemFurnitureElementTypeEnum PredefinedType {get;set;}
 
@@ -8853,7 +8853,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystemfurnitureelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcSystemFurnitureElementType
+	public  partial class IfcSystemFurnitureElementType : IfcFurnishingElementType
 	{
 		public IfcSystemFurnitureElementTypeEnum PredefinedType {get;set;}
 
@@ -8862,7 +8862,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctshapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcTShapeProfileDef
+	public  partial class IfcTShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure Depth {get;set;}
 		public IfcPositiveLengthMeasure FlangeWidth {get;set;}
@@ -8916,7 +8916,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctank.htm"/>
 	/// </summary>
-	public  partial class IfcTank
+	public  partial class IfcTank : IfcFlowStorageDevice
 	{
 		public IfcTankTypeEnum PredefinedType {get;set;}
 
@@ -8925,7 +8925,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctanktype.htm"/>
 	/// </summary>
-	public  partial class IfcTankType
+	public  partial class IfcTankType : IfcFlowStorageDeviceType
 	{
 		public IfcTankTypeEnum PredefinedType {get;set;}
 
@@ -8934,7 +8934,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctask.htm"/>
 	/// </summary>
-	public  partial class IfcTask
+	public  partial class IfcTask : IfcProcess
 	{
 		public IfcLabel Status {get;set;}
 		public IfcLabel WorkMethod {get;set;}
@@ -8948,7 +8948,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktime.htm"/>
 	/// </summary>
-	public  partial class IfcTaskTime
+	public  partial class IfcTaskTime : IfcSchedulingTime
 	{
 		public IfcTaskDurationEnum DurationType {get;set;}
 		public IfcDuration ScheduleDuration {get;set;}
@@ -8973,7 +8973,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktimerecurring.htm"/>
 	/// </summary>
-	public  partial class IfcTaskTimeRecurring
+	public  partial class IfcTaskTimeRecurring : IfcTaskTime
 	{
 		public IfcRecurrencePattern Recurrance {get;set;}
 
@@ -8982,7 +8982,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktype.htm"/>
 	/// </summary>
-	public  partial class IfcTaskType
+	public  partial class IfcTaskType : IfcTypeProcess
 	{
 		public IfcTaskTypeEnum PredefinedType {get;set;}
 		public IfcLabel WorkMethod {get;set;}
@@ -8992,7 +8992,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctelecomaddress.htm"/>
 	/// </summary>
-	public  partial class IfcTelecomAddress
+	public  partial class IfcTelecomAddress : IfcAddress
 	{
 		public LIST[1:?]OFIfcLabel TelephoneNumbers {get;set;}
 		public LIST[1:?]OFIfcLabel FacsimileNumbers {get;set;}
@@ -9006,7 +9006,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendon.htm"/>
 	/// </summary>
-	public  partial class IfcTendon
+	public  partial class IfcTendon : IfcReinforcingElement
 	{
 		public IfcTendonTypeEnum PredefinedType {get;set;}
 		public IfcPositiveLengthMeasure NominalDiameter {get;set;}
@@ -9022,7 +9022,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchor.htm"/>
 	/// </summary>
-	public  partial class IfcTendonAnchor
+	public  partial class IfcTendonAnchor : IfcReinforcingElement
 	{
 		public IfcTendonAnchorTypeEnum PredefinedType {get;set;}
 
@@ -9031,7 +9031,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchortype.htm"/>
 	/// </summary>
-	public  partial class IfcTendonAnchorType
+	public  partial class IfcTendonAnchorType : IfcReinforcingElementType
 	{
 		public IfcTendonAnchorTypeEnum PredefinedType {get;set;}
 
@@ -9040,7 +9040,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendontype.htm"/>
 	/// </summary>
-	public  partial class IfcTendonType
+	public  partial class IfcTendonType : IfcReinforcingElementType
 	{
 		public IfcTendonTypeEnum PredefinedType {get;set;}
 		public IfcPositiveLengthMeasure NominalDiameter {get;set;}
@@ -9052,7 +9052,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellatedfaceset.htm"/>
 	/// </summary>
-	public abstract partial class IfcTessellatedFaceSet
+	public abstract partial class IfcTessellatedFaceSet : IfcTessellatedItem
 	{
 		public IfcCartesianPointList3D Coordinates {get;set;}
 		public LIST[1:?]OFLIST[3:3]OFIfcParameterValue Normals {get;set;}
@@ -9063,7 +9063,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellateditem.htm"/>
 	/// </summary>
-	public abstract partial class IfcTessellatedItem
+	public abstract partial class IfcTessellatedItem : IfcGeometricRepresentationItem
 	{
 
 	}
@@ -9071,7 +9071,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextliteral.htm"/>
 	/// </summary>
-	public  partial class IfcTextLiteral
+	public  partial class IfcTextLiteral : IfcGeometricRepresentationItem
 	{
 		public IfcPresentableText Literal {get;set;}
 		public IfcAxis2Placement Placement {get;set;}
@@ -9082,7 +9082,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextliteralwithextent.htm"/>
 	/// </summary>
-	public  partial class IfcTextLiteralWithExtent
+	public  partial class IfcTextLiteralWithExtent : IfcTextLiteral
 	{
 		public IfcPlanarExtent Extent {get;set;}
 		public IfcBoxAlignment BoxAlignment {get;set;}
@@ -9092,7 +9092,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyle.htm"/>
 	/// </summary>
-	public  partial class IfcTextStyle
+	public  partial class IfcTextStyle : IfcPresentationStyle
 	{
 		public IfcTextStyleForDefinedFont TextCharacterAppearance {get;set;}
 		public IfcTextStyleTextModel TextStyle {get;set;}
@@ -9104,7 +9104,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefontmodel.htm"/>
 	/// </summary>
-	public  partial class IfcTextStyleFontModel
+	public  partial class IfcTextStyleFontModel : IfcPreDefinedTextFont
 	{
 		public LIST[1:?]OFIfcTextFontName FontFamily {get;set;}
 		public IfcFontStyle FontStyle {get;set;}
@@ -9117,7 +9117,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefordefinedfont.htm"/>
 	/// </summary>
-	public  partial class IfcTextStyleForDefinedFont
+	public  partial class IfcTextStyleForDefinedFont : IfcPresentationItem
 	{
 		public IfcColour Colour {get;set;}
 		public IfcColour BackgroundColour {get;set;}
@@ -9127,7 +9127,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyletextmodel.htm"/>
 	/// </summary>
-	public  partial class IfcTextStyleTextModel
+	public  partial class IfcTextStyleTextModel : IfcPresentationItem
 	{
 		public IfcSizeSelect TextIndent {get;set;}
 		public IfcTextAlignment TextAlign {get;set;}
@@ -9142,7 +9142,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturecoordinate.htm"/>
 	/// </summary>
-	public abstract partial class IfcTextureCoordinate
+	public abstract partial class IfcTextureCoordinate : IfcPresentationItem
 	{
 		public LIST[1:?]OFIfcSurfaceTexture Maps {get;set;}
 
@@ -9151,7 +9151,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturecoordinategenerator.htm"/>
 	/// </summary>
-	public  partial class IfcTextureCoordinateGenerator
+	public  partial class IfcTextureCoordinateGenerator : IfcTextureCoordinate
 	{
 		public IfcLabel Mode {get;set;}
 		public LIST[1:?]OFIfcReal Parameter {get;set;}
@@ -9161,7 +9161,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturemap.htm"/>
 	/// </summary>
-	public  partial class IfcTextureMap
+	public  partial class IfcTextureMap : IfcTextureCoordinate
 	{
 		public LIST[3:?]OFIfcTextureVertex Vertices {get;set;}
 		public IfcFace MappedTo {get;set;}
@@ -9171,7 +9171,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturevertex.htm"/>
 	/// </summary>
-	public  partial class IfcTextureVertex
+	public  partial class IfcTextureVertex : IfcPresentationItem
 	{
 		public LIST[2:2]OFIfcParameterValue Coordinates {get;set;}
 
@@ -9180,7 +9180,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturevertexlist.htm"/>
 	/// </summary>
-	public  partial class IfcTextureVertexList
+	public  partial class IfcTextureVertexList : IfcPresentationItem
 	{
 		public LIST[1:?]OFLIST[2:2]OFIfcParameterValue TexCoordsList {get;set;}
 
@@ -9224,7 +9224,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctopologicalrepresentationitem.htm"/>
 	/// </summary>
-	public abstract partial class IfcTopologicalRepresentationItem
+	public abstract partial class IfcTopologicalRepresentationItem : IfcRepresentationItem
 	{
 
 	}
@@ -9232,7 +9232,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctopologyrepresentation.htm"/>
 	/// </summary>
-	public  partial class IfcTopologyRepresentation
+	public  partial class IfcTopologyRepresentation : IfcShapeModel
 	{
 
 	}
@@ -9240,7 +9240,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransformer.htm"/>
 	/// </summary>
-	public  partial class IfcTransformer
+	public  partial class IfcTransformer : IfcEnergyConversionDevice
 	{
 		public IfcTransformerTypeEnum PredefinedType {get;set;}
 
@@ -9249,7 +9249,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransformertype.htm"/>
 	/// </summary>
-	public  partial class IfcTransformerType
+	public  partial class IfcTransformerType : IfcEnergyConversionDeviceType
 	{
 		public IfcTransformerTypeEnum PredefinedType {get;set;}
 
@@ -9258,7 +9258,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransportelement.htm"/>
 	/// </summary>
-	public  partial class IfcTransportElement
+	public  partial class IfcTransportElement : IfcElement
 	{
 		public IfcTransportElementTypeEnum PredefinedType {get;set;}
 
@@ -9267,7 +9267,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransportelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcTransportElementType
+	public  partial class IfcTransportElementType : IfcElementType
 	{
 		public IfcTransportElementTypeEnum PredefinedType {get;set;}
 
@@ -9276,7 +9276,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrapeziumprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcTrapeziumProfileDef
+	public  partial class IfcTrapeziumProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure BottomXDim {get;set;}
 		public IfcPositiveLengthMeasure TopXDim {get;set;}
@@ -9288,7 +9288,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctriangulatedfaceset.htm"/>
 	/// </summary>
-	public  partial class IfcTriangulatedFaceSet
+	public  partial class IfcTriangulatedFaceSet : IfcTessellatedFaceSet
 	{
 		public LIST[1:?]OFLIST[3:3]OFINTEGER CoordIndex {get;set;}
 		public LIST[1:?]OFLIST[3:3]OFINTEGER NormalIndex {get;set;}
@@ -9299,7 +9299,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmedcurve.htm"/>
 	/// </summary>
-	public  partial class IfcTrimmedCurve
+	public  partial class IfcTrimmedCurve : IfcBoundedCurve
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public SET[1:2]OFIfcTrimmingSelect Trim1 {get;set;}
@@ -9312,7 +9312,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctubebundle.htm"/>
 	/// </summary>
-	public  partial class IfcTubeBundle
+	public  partial class IfcTubeBundle : IfcEnergyConversionDevice
 	{
 		public IfcTubeBundleTypeEnum PredefinedType {get;set;}
 
@@ -9321,7 +9321,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctubebundletype.htm"/>
 	/// </summary>
-	public  partial class IfcTubeBundleType
+	public  partial class IfcTubeBundleType : IfcEnergyConversionDeviceType
 	{
 		public IfcTubeBundleTypeEnum PredefinedType {get;set;}
 
@@ -9330,7 +9330,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeobject.htm"/>
 	/// </summary>
-	public  partial class IfcTypeObject
+	public  partial class IfcTypeObject : IfcObjectDefinition
 	{
 		public IfcIdentifier ApplicableOccurrence {get;set;}
 		public SET[1:?]OFIfcPropertySetDefinition HasPropertySets {get;set;}
@@ -9340,7 +9340,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeprocess.htm"/>
 	/// </summary>
-	public abstract partial class IfcTypeProcess
+	public abstract partial class IfcTypeProcess : IfcTypeObject
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
@@ -9351,7 +9351,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeproduct.htm"/>
 	/// </summary>
-	public  partial class IfcTypeProduct
+	public  partial class IfcTypeProduct : IfcTypeObject
 	{
 		public LIST[1:?]OFUNIQUEIfcRepresentationMap RepresentationMaps {get;set;}
 		public IfcLabel Tag {get;set;}
@@ -9361,7 +9361,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctyperesource.htm"/>
 	/// </summary>
-	public abstract partial class IfcTypeResource
+	public abstract partial class IfcTypeResource : IfcTypeObject
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
@@ -9372,7 +9372,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcushapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcUShapeProfileDef
+	public  partial class IfcUShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure Depth {get;set;}
 		public IfcPositiveLengthMeasure FlangeWidth {get;set;}
@@ -9396,7 +9396,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitarycontrolelement.htm"/>
 	/// </summary>
-	public  partial class IfcUnitaryControlElement
+	public  partial class IfcUnitaryControlElement : IfcDistributionControlElement
 	{
 		public IfcUnitaryControlElementTypeEnum PredefinedType {get;set;}
 
@@ -9405,7 +9405,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitarycontrolelementtype.htm"/>
 	/// </summary>
-	public  partial class IfcUnitaryControlElementType
+	public  partial class IfcUnitaryControlElementType : IfcDistributionControlElementType
 	{
 		public IfcUnitaryControlElementTypeEnum PredefinedType {get;set;}
 
@@ -9414,7 +9414,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitaryequipment.htm"/>
 	/// </summary>
-	public  partial class IfcUnitaryEquipment
+	public  partial class IfcUnitaryEquipment : IfcEnergyConversionDevice
 	{
 		public IfcUnitaryEquipmentTypeEnum PredefinedType {get;set;}
 
@@ -9423,7 +9423,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitaryequipmenttype.htm"/>
 	/// </summary>
-	public  partial class IfcUnitaryEquipmentType
+	public  partial class IfcUnitaryEquipmentType : IfcEnergyConversionDeviceType
 	{
 		public IfcUnitaryEquipmentTypeEnum PredefinedType {get;set;}
 
@@ -9432,7 +9432,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalve.htm"/>
 	/// </summary>
-	public  partial class IfcValve
+	public  partial class IfcValve : IfcFlowController
 	{
 		public IfcValveTypeEnum PredefinedType {get;set;}
 
@@ -9441,7 +9441,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalvetype.htm"/>
 	/// </summary>
-	public  partial class IfcValveType
+	public  partial class IfcValveType : IfcFlowControllerType
 	{
 		public IfcValveTypeEnum PredefinedType {get;set;}
 
@@ -9450,7 +9450,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvector.htm"/>
 	/// </summary>
-	public  partial class IfcVector
+	public  partial class IfcVector : IfcGeometricRepresentationItem
 	{
 		public IfcDirection Orientation {get;set;}
 		public IfcLengthMeasure Magnitude {get;set;}
@@ -9461,7 +9461,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertex.htm"/>
 	/// </summary>
-	public  partial class IfcVertex
+	public  partial class IfcVertex : IfcTopologicalRepresentationItem
 	{
 
 	}
@@ -9469,7 +9469,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertexloop.htm"/>
 	/// </summary>
-	public  partial class IfcVertexLoop
+	public  partial class IfcVertexLoop : IfcLoop
 	{
 		public IfcVertex LoopVertex {get;set;}
 
@@ -9478,7 +9478,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertexpoint.htm"/>
 	/// </summary>
-	public  partial class IfcVertexPoint
+	public  partial class IfcVertexPoint : IfcVertex
 	{
 		public IfcPoint VertexGeometry {get;set;}
 
@@ -9487,7 +9487,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvibrationisolator.htm"/>
 	/// </summary>
-	public  partial class IfcVibrationIsolator
+	public  partial class IfcVibrationIsolator : IfcElementComponent
 	{
 		public IfcVibrationIsolatorTypeEnum PredefinedType {get;set;}
 
@@ -9496,7 +9496,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvibrationisolatortype.htm"/>
 	/// </summary>
-	public  partial class IfcVibrationIsolatorType
+	public  partial class IfcVibrationIsolatorType : IfcElementComponentType
 	{
 		public IfcVibrationIsolatorTypeEnum PredefinedType {get;set;}
 
@@ -9505,7 +9505,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvirtualelement.htm"/>
 	/// </summary>
-	public  partial class IfcVirtualElement
+	public  partial class IfcVirtualElement : IfcElement
 	{
 
 	}
@@ -9523,7 +9523,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvoidingfeature.htm"/>
 	/// </summary>
-	public  partial class IfcVoidingFeature
+	public  partial class IfcVoidingFeature : IfcFeatureElementSubtraction
 	{
 		public IfcVoidingFeatureTypeEnum PredefinedType {get;set;}
 
@@ -9532,7 +9532,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwall.htm"/>
 	/// </summary>
-	public  partial class IfcWall
+	public  partial class IfcWall : IfcBuildingElement
 	{
 		public IfcWallTypeEnum PredefinedType {get;set;}
 
@@ -9541,7 +9541,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwallelementedcase.htm"/>
 	/// </summary>
-	public  partial class IfcWallElementedCase
+	public  partial class IfcWallElementedCase : IfcWall
 	{
 
 	}
@@ -9549,7 +9549,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwallstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcWallStandardCase
+	public  partial class IfcWallStandardCase : IfcWall
 	{
 
 	}
@@ -9557,7 +9557,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwalltype.htm"/>
 	/// </summary>
-	public  partial class IfcWallType
+	public  partial class IfcWallType : IfcBuildingElementType
 	{
 		public IfcWallTypeEnum PredefinedType {get;set;}
 
@@ -9566,7 +9566,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwasteterminal.htm"/>
 	/// </summary>
-	public  partial class IfcWasteTerminal
+	public  partial class IfcWasteTerminal : IfcFlowTerminal
 	{
 		public IfcWasteTerminalTypeEnum PredefinedType {get;set;}
 
@@ -9575,7 +9575,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwasteterminaltype.htm"/>
 	/// </summary>
-	public  partial class IfcWasteTerminalType
+	public  partial class IfcWasteTerminalType : IfcFlowTerminalType
 	{
 		public IfcWasteTerminalTypeEnum PredefinedType {get;set;}
 
@@ -9584,7 +9584,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindow.htm"/>
 	/// </summary>
-	public  partial class IfcWindow
+	public  partial class IfcWindow : IfcBuildingElement
 	{
 		public IfcPositiveLengthMeasure OverallHeight {get;set;}
 		public IfcPositiveLengthMeasure OverallWidth {get;set;}
@@ -9597,7 +9597,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowliningproperties.htm"/>
 	/// </summary>
-	public  partial class IfcWindowLiningProperties
+	public  partial class IfcWindowLiningProperties : IfcPreDefinedPropertySet
 	{
 		public IfcPositiveLengthMeasure LiningDepth {get;set;}
 		public IfcNonNegativeLengthMeasure LiningThickness {get;set;}
@@ -9617,7 +9617,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpanelproperties.htm"/>
 	/// </summary>
-	public  partial class IfcWindowPanelProperties
+	public  partial class IfcWindowPanelProperties : IfcPreDefinedPropertySet
 	{
 		public IfcWindowPanelOperationEnum OperationType {get;set;}
 		public IfcWindowPanelPositionEnum PanelPosition {get;set;}
@@ -9630,7 +9630,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstandardcase.htm"/>
 	/// </summary>
-	public  partial class IfcWindowStandardCase
+	public  partial class IfcWindowStandardCase : IfcWindow
 	{
 
 	}
@@ -9638,7 +9638,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyle.htm"/>
 	/// </summary>
-	public  partial class IfcWindowStyle
+	public  partial class IfcWindowStyle : IfcTypeProduct
 	{
 		public IfcWindowStyleConstructionEnum ConstructionType {get;set;}
 		public IfcWindowStyleOperationEnum OperationType {get;set;}
@@ -9650,7 +9650,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtype.htm"/>
 	/// </summary>
-	public  partial class IfcWindowType
+	public  partial class IfcWindowType : IfcBuildingElementType
 	{
 		public IfcWindowTypeEnum PredefinedType {get;set;}
 		public IfcWindowTypePartitioningEnum PartitioningType {get;set;}
@@ -9662,7 +9662,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcalendar.htm"/>
 	/// </summary>
-	public  partial class IfcWorkCalendar
+	public  partial class IfcWorkCalendar : IfcControl
 	{
 		public SET[1:?]OFIfcWorkTime WorkingTimes {get;set;}
 		public SET[1:?]OFIfcWorkTime ExceptionTimes {get;set;}
@@ -9673,7 +9673,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcontrol.htm"/>
 	/// </summary>
-	public abstract partial class IfcWorkControl
+	public abstract partial class IfcWorkControl : IfcControl
 	{
 		public IfcDateTime CreationDate {get;set;}
 		public SET[1:?]OFIfcPerson Creators {get;set;}
@@ -9688,7 +9688,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkplan.htm"/>
 	/// </summary>
-	public  partial class IfcWorkPlan
+	public  partial class IfcWorkPlan : IfcWorkControl
 	{
 		public IfcWorkPlanTypeEnum PredefinedType {get;set;}
 
@@ -9697,7 +9697,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkschedule.htm"/>
 	/// </summary>
-	public  partial class IfcWorkSchedule
+	public  partial class IfcWorkSchedule : IfcWorkControl
 	{
 		public IfcWorkScheduleTypeEnum PredefinedType {get;set;}
 
@@ -9706,7 +9706,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworktime.htm"/>
 	/// </summary>
-	public  partial class IfcWorkTime
+	public  partial class IfcWorkTime : IfcSchedulingTime
 	{
 		public IfcRecurrencePattern RecurrencePattern {get;set;}
 		public IfcDate Start {get;set;}
@@ -9717,7 +9717,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifczshapeprofiledef.htm"/>
 	/// </summary>
-	public  partial class IfcZShapeProfileDef
+	public  partial class IfcZShapeProfileDef : IfcParameterizedProfileDef
 	{
 		public IfcPositiveLengthMeasure Depth {get;set;}
 		public IfcPositiveLengthMeasure FlangeWidth {get;set;}
@@ -9731,7 +9731,7 @@ namespace IFC4
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifczone.htm"/>
 	/// </summary>
-	public  partial class IfcZone
+	public  partial class IfcZone : IfcSystem
 	{
 		public IfcLabel LongName {get;set;}
 

@@ -7,7 +7,7 @@
         {
             "taskName": "build",
             "args": [
-                "${workspaceRoot}/test/IFC-dotnet-test.csproj"
+                "${workspaceRoot}/src/IFC-gen/csharp/IFC-gen.csproj"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"
