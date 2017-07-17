@@ -4,13 +4,27 @@ schemaDeclaration
 	: SCHEMA Version ';' typeDeclaration* entityDeclaration* functionDeclaration*  END_SCHEMA';' EOF;
 
 typeDeclaration 
-	: TYPE typeName EQ valueType FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
+	: TYPE Identifier EQ (valueType|enumeration|) FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
 
 typeName	
 	: Identifier
 	;
 
-atomicValueType
+valueType 
+	: BINARY_SIZED
+	| BOOLEAN
+	| INTEGER
+	| LOGICAL
+	| REAL
+	| STRING
+	| STRING_SIZED
+	| Identifier
+	| enumeration
+	| select
+	| collectionDeclaration
+	;
+
+collectionValueType
 	: BINARY_SIZED
 	| BOOLEAN
 	| INTEGER
@@ -21,28 +35,13 @@ atomicValueType
 	| Identifier
 	;
 
-valueType 
-	: atomicValueType
-	| enumeration
-	| select
-	| setDeclaration
-	| arrayDeclaration
-	| listDeclaration
-	;
-	
-setDeclaration
-	: SET setParameters OF UNIQUE? atomicValueType
-	| SET setParameters (OF SET setParameters)+ OF atomicValueType
-	;
-
-arrayDeclaration
-	: ARRAY setParameters OF UNIQUE? atomicValueType
-	| ARRAY setParameters (OF ARRAY setParameters)+ OF atomicValueType
-	;
-
-listDeclaration
-	: LIST setParameters OF UNIQUE? atomicValueType
-	| LIST setParameters (OF UNIQUE? LIST setParameters)+ OF atomicValueType
+collectionDeclaration
+	: ARRAY setParameters OF UNIQUE? collectionValueType					#array
+	| SET setParameters OF UNIQUE? collectionValueType						#set	
+	| LIST setParameters OF UNIQUE? collectionValueType						#list
+	| ARRAY setParameters (OF ARRAY setParameters)+ OF collectionValueType 	#arrayOfArray
+	| SET setParameters (OF SET setParameters)+ OF collectionValueType 		#setOfSets
+	| LIST setParameters (OF UNIQUE? LIST setParameters)+ OF collectionValueType 	#listOfLists
 	;
 
 setParameters
@@ -55,19 +54,11 @@ setSize
 	;
 
 enumeration
-	: ENUMERATION OF LP enumIdList RP 
-	;
-
-enumIdList
-	: idList
+	: ENUMERATION OF LP idList RP 
 	;
 
 select
-	: SELECT LP selectIdList RP
-	;
-
-selectIdList
-	: idList
+	: SELECT LP idList RP
 	;
 
 idList
@@ -143,11 +134,7 @@ addSubExpr
 	;
 
 entityDeclaration
-	: ENTITY entityName ';'? entityDeclarationBody END_ENTITY ';' 
-	;
-
-entityName
-	: Identifier
+	: ENTITY Identifier ';'? entityDeclarationBody END_ENTITY ';' 
 	;
 
 entityDeclarationBody
@@ -155,36 +142,21 @@ entityDeclarationBody
 	;
 
 supertypeDeclaration 
-	: abstract SUPERTYPE OF LP (oneOf | supertypeName) RP ';'? attribute* 
-	;
-
-abstract
-	: ABSTRACT?
-	;
-
-supertypeName
-	: Identifier
+	: ABSTRACT? SUPERTYPE OF LP Identifier RP ';'? attribute*	#supertype
+	| ABSTRACT? SUPERTYPE OF LP oneOf RP ';'? attribute* 		#supertypes
 	;
 
 subtypeDeclaration 
-	: SUBTYPE OF LP (oneOf | subtypeName) RP ';' attribute* 
-	;
-
-subtypeName
-	: Identifier
+	: SUBTYPE OF LP Identifier RP ';' attribute* 	#subtype
+	| SUBTYPE OF LP oneOf RP ';' attribute* 		#subtypes
 	;
 
 attribute
-	: attributeName COLON optional valueType definition? ';'
+	: (Identifier | path) COLON optional valueType definition? ';'
 	;
 
 optional
 	: OPTIONAL?
-	;
-
-attributeName
-	: Identifier
-	| path
 	;
 
 definition
@@ -199,7 +171,7 @@ inverseDeclaration
 	;
 
 inverseExpression
-	: Identifier COLON (Identifier|setDeclaration|arrayDeclaration|listDeclaration) FOR Identifier ';'
+	: Identifier COLON (Identifier|collectionDeclaration) FOR Identifier ';'
 	;
 
 deriveDeclaration
