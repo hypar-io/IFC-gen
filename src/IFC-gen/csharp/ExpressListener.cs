@@ -6,19 +6,6 @@ using Antlr4.Runtime.Misc;
 
 namespace Express
 {
-
-	public class StringList
-	{
-		public string Name {get;set;}
-		public string Values{get;set;}
-	}
-
-	public class EnumInfo : StringList{}
-
-	public class SelectInfo : StringList{}
-
-
-
 	public class ExpressListener : ExpressBaseListener
 	{
 		public List<EntityInfo> Entities {get;set;}
