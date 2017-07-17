@@ -556,36 +556,8 @@ public partial class ExpressParser : Parser {
 			base.CopyFrom(context);
 		}
 	}
-	public partial class SetOfSetsContext : CollectionDeclarationContext {
-		public ITerminalNode[] SET() { return GetTokens(ExpressParser.SET); }
-		public ITerminalNode SET(int i) {
-			return GetToken(ExpressParser.SET, i);
-		}
-		public SetParametersContext[] setParameters() {
-			return GetRuleContexts<SetParametersContext>();
-		}
-		public SetParametersContext setParameters(int i) {
-			return GetRuleContext<SetParametersContext>(i);
-		}
-		public ITerminalNode[] OF() { return GetTokens(ExpressParser.OF); }
-		public ITerminalNode OF(int i) {
-			return GetToken(ExpressParser.OF, i);
-		}
-		public CollectionValueTypeContext collectionValueType() {
-			return GetRuleContext<CollectionValueTypeContext>(0);
-		}
-		public SetOfSetsContext(CollectionDeclarationContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSetOfSets(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSetOfSets(this);
-		}
-	}
-	public partial class SetContext : CollectionDeclarationContext {
-		public ITerminalNode SET() { return GetToken(ExpressParser.SET, 0); }
+	public partial class ListDeclContext : CollectionDeclarationContext {
+		public ITerminalNode LIST() { return GetToken(ExpressParser.LIST, 0); }
 		public SetParametersContext setParameters() {
 			return GetRuleContext<SetParametersContext>(0);
 		}
@@ -594,37 +566,17 @@ public partial class ExpressParser : Parser {
 			return GetRuleContext<CollectionValueTypeContext>(0);
 		}
 		public ITerminalNode UNIQUE() { return GetToken(ExpressParser.UNIQUE, 0); }
-		public SetContext(CollectionDeclarationContext context) { CopyFrom(context); }
+		public ListDeclContext(CollectionDeclarationContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSet(this);
+			if (typedListener != null) typedListener.EnterListDecl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSet(this);
+			if (typedListener != null) typedListener.ExitListDecl(this);
 		}
 	}
-	public partial class ArrayContext : CollectionDeclarationContext {
-		public ITerminalNode ARRAY() { return GetToken(ExpressParser.ARRAY, 0); }
-		public SetParametersContext setParameters() {
-			return GetRuleContext<SetParametersContext>(0);
-		}
-		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
-		public CollectionValueTypeContext collectionValueType() {
-			return GetRuleContext<CollectionValueTypeContext>(0);
-		}
-		public ITerminalNode UNIQUE() { return GetToken(ExpressParser.UNIQUE, 0); }
-		public ArrayContext(CollectionDeclarationContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterArray(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitArray(this);
-		}
-	}
-	public partial class ArrayOfArrayContext : CollectionDeclarationContext {
+	public partial class ArrayOfArrayDeclContext : CollectionDeclarationContext {
 		public ITerminalNode[] ARRAY() { return GetTokens(ExpressParser.ARRAY); }
 		public ITerminalNode ARRAY(int i) {
 			return GetToken(ExpressParser.ARRAY, i);
@@ -642,37 +594,17 @@ public partial class ExpressParser : Parser {
 		public CollectionValueTypeContext collectionValueType() {
 			return GetRuleContext<CollectionValueTypeContext>(0);
 		}
-		public ArrayOfArrayContext(CollectionDeclarationContext context) { CopyFrom(context); }
+		public ArrayOfArrayDeclContext(CollectionDeclarationContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterArrayOfArray(this);
+			if (typedListener != null) typedListener.EnterArrayOfArrayDecl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitArrayOfArray(this);
+			if (typedListener != null) typedListener.ExitArrayOfArrayDecl(this);
 		}
 	}
-	public partial class ListContext : CollectionDeclarationContext {
-		public ITerminalNode LIST() { return GetToken(ExpressParser.LIST, 0); }
-		public SetParametersContext setParameters() {
-			return GetRuleContext<SetParametersContext>(0);
-		}
-		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
-		public CollectionValueTypeContext collectionValueType() {
-			return GetRuleContext<CollectionValueTypeContext>(0);
-		}
-		public ITerminalNode UNIQUE() { return GetToken(ExpressParser.UNIQUE, 0); }
-		public ListContext(CollectionDeclarationContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterList(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitList(this);
-		}
-	}
-	public partial class ListOfListsContext : CollectionDeclarationContext {
+	public partial class ListOfListsDeclContext : CollectionDeclarationContext {
 		public ITerminalNode[] LIST() { return GetTokens(ExpressParser.LIST); }
 		public ITerminalNode LIST(int i) {
 			return GetToken(ExpressParser.LIST, i);
@@ -694,14 +626,82 @@ public partial class ExpressParser : Parser {
 		public ITerminalNode UNIQUE(int i) {
 			return GetToken(ExpressParser.UNIQUE, i);
 		}
-		public ListOfListsContext(CollectionDeclarationContext context) { CopyFrom(context); }
+		public ListOfListsDeclContext(CollectionDeclarationContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterListOfLists(this);
+			if (typedListener != null) typedListener.EnterListOfListsDecl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitListOfLists(this);
+			if (typedListener != null) typedListener.ExitListOfListsDecl(this);
+		}
+	}
+	public partial class SetOfSetsDeclContext : CollectionDeclarationContext {
+		public ITerminalNode[] SET() { return GetTokens(ExpressParser.SET); }
+		public ITerminalNode SET(int i) {
+			return GetToken(ExpressParser.SET, i);
+		}
+		public SetParametersContext[] setParameters() {
+			return GetRuleContexts<SetParametersContext>();
+		}
+		public SetParametersContext setParameters(int i) {
+			return GetRuleContext<SetParametersContext>(i);
+		}
+		public ITerminalNode[] OF() { return GetTokens(ExpressParser.OF); }
+		public ITerminalNode OF(int i) {
+			return GetToken(ExpressParser.OF, i);
+		}
+		public CollectionValueTypeContext collectionValueType() {
+			return GetRuleContext<CollectionValueTypeContext>(0);
+		}
+		public SetOfSetsDeclContext(CollectionDeclarationContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.EnterSetOfSetsDecl(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.ExitSetOfSetsDecl(this);
+		}
+	}
+	public partial class SetDeclContext : CollectionDeclarationContext {
+		public ITerminalNode SET() { return GetToken(ExpressParser.SET, 0); }
+		public SetParametersContext setParameters() {
+			return GetRuleContext<SetParametersContext>(0);
+		}
+		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
+		public CollectionValueTypeContext collectionValueType() {
+			return GetRuleContext<CollectionValueTypeContext>(0);
+		}
+		public ITerminalNode UNIQUE() { return GetToken(ExpressParser.UNIQUE, 0); }
+		public SetDeclContext(CollectionDeclarationContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.EnterSetDecl(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.ExitSetDecl(this);
+		}
+	}
+	public partial class ArrayDeclContext : CollectionDeclarationContext {
+		public ITerminalNode ARRAY() { return GetToken(ExpressParser.ARRAY, 0); }
+		public SetParametersContext setParameters() {
+			return GetRuleContext<SetParametersContext>(0);
+		}
+		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
+		public CollectionValueTypeContext collectionValueType() {
+			return GetRuleContext<CollectionValueTypeContext>(0);
+		}
+		public ITerminalNode UNIQUE() { return GetToken(ExpressParser.UNIQUE, 0); }
+		public ArrayDeclContext(CollectionDeclarationContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.EnterArrayDecl(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.ExitArrayDecl(this);
 		}
 	}
 
@@ -716,7 +716,7 @@ public partial class ExpressParser : Parser {
 			ErrorHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(TokenStream,14,Context) ) {
 			case 1:
-				_localctx = new ArrayContext(_localctx);
+				_localctx = new ArrayDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 140; Match(ARRAY);
@@ -735,7 +735,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 2:
-				_localctx = new SetContext(_localctx);
+				_localctx = new SetDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 148; Match(SET);
@@ -754,7 +754,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 3:
-				_localctx = new ListContext(_localctx);
+				_localctx = new ListDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 3);
 				{
 				State = 156; Match(LIST);
@@ -773,7 +773,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 4:
-				_localctx = new ArrayOfArrayContext(_localctx);
+				_localctx = new ArrayOfArrayDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 4);
 				{
 				State = 164; Match(ARRAY);
@@ -804,7 +804,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 5:
-				_localctx = new SetOfSetsContext(_localctx);
+				_localctx = new SetOfSetsDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 5);
 				{
 				State = 176; Match(SET);
@@ -835,7 +835,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 6:
-				_localctx = new ListOfListsContext(_localctx);
+				_localctx = new ListOfListsDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 6);
 				{
 				State = 188; Match(LIST);
@@ -2633,30 +2633,7 @@ public partial class ExpressParser : Parser {
 			base.CopyFrom(context);
 		}
 	}
-	public partial class SupertypeContext : SupertypeDeclarationContext {
-		public ITerminalNode SUPERTYPE() { return GetToken(ExpressParser.SUPERTYPE, 0); }
-		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
-		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
-		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
-		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
-		public ITerminalNode ABSTRACT() { return GetToken(ExpressParser.ABSTRACT, 0); }
-		public AttributeContext[] attribute() {
-			return GetRuleContexts<AttributeContext>();
-		}
-		public AttributeContext attribute(int i) {
-			return GetRuleContext<AttributeContext>(i);
-		}
-		public SupertypeContext(SupertypeDeclarationContext context) { CopyFrom(context); }
-		public override void EnterRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSupertype(this);
-		}
-		public override void ExitRule(IParseTreeListener listener) {
-			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSupertype(this);
-		}
-	}
-	public partial class SupertypesContext : SupertypeDeclarationContext {
+	public partial class SupertypesDeclContext : SupertypeDeclarationContext {
 		public ITerminalNode SUPERTYPE() { return GetToken(ExpressParser.SUPERTYPE, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
@@ -2671,14 +2648,37 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public SupertypesContext(SupertypeDeclarationContext context) { CopyFrom(context); }
+		public SupertypesDeclContext(SupertypeDeclarationContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSupertypes(this);
+			if (typedListener != null) typedListener.EnterSupertypesDecl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSupertypes(this);
+			if (typedListener != null) typedListener.ExitSupertypesDecl(this);
+		}
+	}
+	public partial class SupertypeDeclContext : SupertypeDeclarationContext {
+		public ITerminalNode SUPERTYPE() { return GetToken(ExpressParser.SUPERTYPE, 0); }
+		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
+		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
+		public ITerminalNode Identifier() { return GetToken(ExpressParser.Identifier, 0); }
+		public ITerminalNode RP() { return GetToken(ExpressParser.RP, 0); }
+		public ITerminalNode ABSTRACT() { return GetToken(ExpressParser.ABSTRACT, 0); }
+		public AttributeContext[] attribute() {
+			return GetRuleContexts<AttributeContext>();
+		}
+		public AttributeContext attribute(int i) {
+			return GetRuleContext<AttributeContext>(i);
+		}
+		public SupertypeDeclContext(SupertypeDeclarationContext context) { CopyFrom(context); }
+		public override void EnterRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.EnterSupertypeDecl(this);
+		}
+		public override void ExitRule(IParseTreeListener listener) {
+			IExpressListener typedListener = listener as IExpressListener;
+			if (typedListener != null) typedListener.ExitSupertypeDecl(this);
 		}
 	}
 
@@ -2692,7 +2692,7 @@ public partial class ExpressParser : Parser {
 			ErrorHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(TokenStream,59,Context) ) {
 			case 1:
-				_localctx = new SupertypeContext(_localctx);
+				_localctx = new SupertypeDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 476;
@@ -2734,7 +2734,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 2:
-				_localctx = new SupertypesContext(_localctx);
+				_localctx = new SupertypesDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 493;
@@ -2800,7 +2800,7 @@ public partial class ExpressParser : Parser {
 			base.CopyFrom(context);
 		}
 	}
-	public partial class SubtypeContext : SubtypeDeclarationContext {
+	public partial class SubtypeDeclContext : SubtypeDeclarationContext {
 		public ITerminalNode SUBTYPE() { return GetToken(ExpressParser.SUBTYPE, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
@@ -2812,17 +2812,17 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public SubtypeContext(SubtypeDeclarationContext context) { CopyFrom(context); }
+		public SubtypeDeclContext(SubtypeDeclarationContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSubtype(this);
+			if (typedListener != null) typedListener.EnterSubtypeDecl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSubtype(this);
+			if (typedListener != null) typedListener.ExitSubtypeDecl(this);
 		}
 	}
-	public partial class SubtypesContext : SubtypeDeclarationContext {
+	public partial class SubtypesDeclContext : SubtypeDeclarationContext {
 		public ITerminalNode SUBTYPE() { return GetToken(ExpressParser.SUBTYPE, 0); }
 		public ITerminalNode OF() { return GetToken(ExpressParser.OF, 0); }
 		public ITerminalNode LP() { return GetToken(ExpressParser.LP, 0); }
@@ -2836,14 +2836,14 @@ public partial class ExpressParser : Parser {
 		public AttributeContext attribute(int i) {
 			return GetRuleContext<AttributeContext>(i);
 		}
-		public SubtypesContext(SubtypeDeclarationContext context) { CopyFrom(context); }
+		public SubtypesDeclContext(SubtypeDeclarationContext context) { CopyFrom(context); }
 		public override void EnterRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.EnterSubtypes(this);
+			if (typedListener != null) typedListener.EnterSubtypesDecl(this);
 		}
 		public override void ExitRule(IParseTreeListener listener) {
 			IExpressListener typedListener = listener as IExpressListener;
-			if (typedListener != null) typedListener.ExitSubtypes(this);
+			if (typedListener != null) typedListener.ExitSubtypesDecl(this);
 		}
 	}
 
@@ -2857,7 +2857,7 @@ public partial class ExpressParser : Parser {
 			ErrorHandler.Sync(this);
 			switch ( Interpreter.AdaptivePredict(TokenStream,62,Context) ) {
 			case 1:
-				_localctx = new SubtypeContext(_localctx);
+				_localctx = new SubtypeDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 1);
 				{
 				State = 511; Match(SUBTYPE);
@@ -2882,7 +2882,7 @@ public partial class ExpressParser : Parser {
 				}
 				break;
 			case 2:
-				_localctx = new SubtypesContext(_localctx);
+				_localctx = new SubtypesDeclContext(_localctx);
 				EnterOuterAlt(_localctx, 2);
 				{
 				State = 523; Match(SUBTYPE);

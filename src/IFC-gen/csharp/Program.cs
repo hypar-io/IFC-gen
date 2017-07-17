@@ -48,12 +48,12 @@ namespace IFC4
 }}";
 				File.WriteAllText("IFC.Types.cs",types);
 
-				var tokenStr = new StringBuilder();
+				/*var tokenStr = new StringBuilder();
 				foreach(var t in tokens.GetTokens())
 				{
 					tokenStr.AppendLine(t.ToString());
 				}
-				File.WriteAllText("tokens.txt",tokenStr.ToString());
+				File.WriteAllText("tokens.txt",tokenStr.ToString());*/
 			}
 			
 		}

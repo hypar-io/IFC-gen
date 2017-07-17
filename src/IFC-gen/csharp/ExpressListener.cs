@@ -122,27 +122,39 @@ namespace Express
 			((AttributeInfo)currentTypeInfo).IsOptional = true;
 		}
 
-		/*public override void EnterSupertypeDeclaration(ExpressParser.SupertypeDeclarationContext context)
+		public override void EnterSupertypeDeclaration(ExpressParser.SupertypeDeclarationContext context)
 		{
-			
+			Console.WriteLine("Boo!");
+		}
+
+		public override void EnterSupertypeDecl(ExpressParser.SupertypeDeclContext context)
+		{
 			if(context.ABSTRACT() != null)
 			{
 				currentEntityInfo.IsAbstract = true;
 			}
 
-			if(context.oneOf() != null)
-			{
-				
-			}
-			else
-			{
-				currentEntityInfo.SupertypeOf.Add(context.Identifier().GetText());
-			}
+			currentEntityInfo.SupertypeOf.Add(context.Identifier().GetText());
 		}
 
-		public override void EnterSubtypeDeclaration(ExpressParser.SubtypeDeclarationContext context)
+		public override void EnterSupertypesDecl(ExpressParser.SupertypesDeclContext context)
 		{
-			currentEntityInfo.Subtype = context.GetText();
-		}*/
+			if(context.ABSTRACT() != null)
+			{
+				currentEntityInfo.IsAbstract = true;
+			}
+
+			currentEntityInfo.SupertypeOf.AddRange(context.oneOf().idList().GetText().Split(','));
+		}
+
+		public override void EnterSubtypeDecl(ExpressParser.SubtypeDeclContext context)
+		{
+			currentEntityInfo.SubtypeOf.Add(context.Identifier().GetText());
+		}
+
+		public override void EnterSubtypesDecl(ExpressParser.SubtypesDeclContext context)
+		{
+			currentEntityInfo.SubtypeOf.AddRange(context.oneOf().idList().GetText().Split(','));
+		}
 	}
 }

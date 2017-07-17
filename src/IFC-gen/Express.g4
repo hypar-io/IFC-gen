@@ -36,12 +36,12 @@ collectionValueType
 	;
 
 collectionDeclaration
-	: ARRAY setParameters OF UNIQUE? collectionValueType					#array
-	| SET setParameters OF UNIQUE? collectionValueType						#set	
-	| LIST setParameters OF UNIQUE? collectionValueType						#list
-	| ARRAY setParameters (OF ARRAY setParameters)+ OF collectionValueType 	#arrayOfArray
-	| SET setParameters (OF SET setParameters)+ OF collectionValueType 		#setOfSets
-	| LIST setParameters (OF UNIQUE? LIST setParameters)+ OF collectionValueType 	#listOfLists
+	: ARRAY setParameters OF UNIQUE? collectionValueType							# ArrayDecl
+	| SET setParameters OF UNIQUE? collectionValueType								# SetDecl	
+	| LIST setParameters OF UNIQUE? collectionValueType								# ListDecl
+	| ARRAY setParameters (OF ARRAY setParameters)+ OF collectionValueType 			# ArrayOfArrayDecl
+	| SET setParameters (OF SET setParameters)+ OF collectionValueType 				# SetOfSetsDecl
+	| LIST setParameters (OF UNIQUE? LIST setParameters)+ OF collectionValueType 	# ListOfListsDecl
 	;
 
 setParameters
@@ -142,13 +142,13 @@ entityDeclarationBody
 	;
 
 supertypeDeclaration 
-	: ABSTRACT? SUPERTYPE OF LP Identifier RP ';'? attribute*	#supertype
-	| ABSTRACT? SUPERTYPE OF LP oneOf RP ';'? attribute* 		#supertypes
+	: ABSTRACT? SUPERTYPE OF LP Identifier RP ';'? attribute*	# SupertypeDecl
+	| ABSTRACT? SUPERTYPE OF LP oneOf RP ';'? attribute* 		# SupertypesDecl
 	;
 
 subtypeDeclaration 
-	: SUBTYPE OF LP Identifier RP ';' attribute* 	#subtype
-	| SUBTYPE OF LP oneOf RP ';' attribute* 		#subtypes
+	: SUBTYPE OF LP Identifier RP ';' attribute* 	# SubtypeDecl
+	| SUBTYPE OF LP oneOf RP ';' attribute* 		# SubtypesDecl
 	;
 
 attribute
