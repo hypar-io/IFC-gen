@@ -11,7 +11,7 @@ namespace Express
 	{
 		public override string ToString()
 		{
-			return $"List<{Type}>;";
+			return $"List<{Type}>";
 		}
 	}
 
@@ -19,7 +19,7 @@ namespace Express
 	{
 		public override string ToString()
 		{
-			return $"{Type}[{Size}];";
+			return $"{Type}[{Size}]";
 		}
 	}
 
@@ -27,7 +27,7 @@ namespace Express
 	{
 		public override string ToString()
 		{
-			return $"List<{Type}>;";
+			return $"List<{Type}>";
 		}
 	}
 }

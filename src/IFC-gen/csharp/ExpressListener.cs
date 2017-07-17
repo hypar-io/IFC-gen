@@ -41,24 +41,29 @@ namespace Express
 			currentTypeInfo.Type = new AtomicTypeInfo(context.GetText());
 		}
 
-		/*public override void EnterCollectionValueType(ExpressParser.CollectionValueTypeContext context)
+		public override void EnterArrayDecl(ExpressParser.ArrayDeclContext context)
 		{
-			if(context.Parent is ExpressParser.SetDeclarationContext)
-			{
-				currentTypeInfo.Type = new SetInfo();
-				return;
-			}
-			else if(context.Parent is ExpressParser.ArrayDeclarationContext)
-			{
-				currentTypeInfo.Type = new ArrayInfo();
-				return;
-			}
-			else if(context.Parent is ExpressParser.ListDeclarationContext)
-			{
-				currentTypeInfo.Type = new ListInfo();
-				return;
-			}
-		}*/
+			var ai = new ArrayInfo();
+			currentTypeInfo.Type = ai;
+			ai.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			ai.Type = context.collectionValueType().GetText();
+		}
+
+		public override void EnterSetDecl(ExpressParser.SetDeclContext context)
+		{
+			var si = new SetInfo();
+			currentTypeInfo.Type = si;
+			si.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			si.Type = context.collectionValueType().GetText();
+		}
+
+		public override void EnterListDecl(ExpressParser.ListDeclContext context)
+		{
+			var li = new ListInfo();
+			currentTypeInfo.Type = li;
+			li.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			li.Type = context.collectionValueType().GetText();
+		}
 
 		public override void EnterEnumeration(ExpressParser.EnumerationContext context)
 		{
@@ -83,6 +88,12 @@ namespace Express
 		public override void ExitEntityDeclaration(ExpressParser.EntityDeclarationContext context)
 		{
 			currentEntityInfo = null;
+		}
+
+		public override void EnterInverseAttribute(ExpressParser.InverseAttributeContext context)
+		{
+			currentTypeInfo = new AttributeInfo(context.Identifier()[0].GetText());
+			currentEntityInfo.Attributes.Add((AttributeInfo)currentTypeInfo);
 		}
 
 		public override void EnterAttribute(ExpressParser.AttributeContext context)

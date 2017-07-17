@@ -11,7 +11,7 @@ namespace Express
 		}
 		
 		public override string ToString()
-		{
+		{	
 			if(Type is EnumInfo)
 			{
 				var e = (EnumInfo)Type;

@@ -192,18 +192,6 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitSetParameters([NotNull] ExpressParser.SetParametersContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.setSize"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterSetSize([NotNull] ExpressParser.SetSizeContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.setSize"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitSetSize([NotNull] ExpressParser.SetSizeContext context) { }
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.enumeration"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -512,17 +500,17 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitInverseDeclaration([NotNull] ExpressParser.InverseDeclarationContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.inverseExpression"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.inverseAttribute"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterInverseExpression([NotNull] ExpressParser.InverseExpressionContext context) { }
+	public virtual void EnterInverseAttribute([NotNull] ExpressParser.InverseAttributeContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.inverseExpression"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.inverseAttribute"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitInverseExpression([NotNull] ExpressParser.InverseExpressionContext context) { }
+	public virtual void ExitInverseAttribute([NotNull] ExpressParser.InverseAttributeContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.deriveDeclaration"/>.
 	/// <para>The default implementation does nothing.</para>

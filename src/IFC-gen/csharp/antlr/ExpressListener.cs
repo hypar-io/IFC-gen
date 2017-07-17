@@ -164,16 +164,6 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitSetParameters([NotNull] ExpressParser.SetParametersContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.setSize"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterSetSize([NotNull] ExpressParser.SetSizeContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.setSize"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitSetSize([NotNull] ExpressParser.SetSizeContext context);
-	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.enumeration"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -432,15 +422,15 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitInverseDeclaration([NotNull] ExpressParser.InverseDeclarationContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.inverseExpression"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.inverseAttribute"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterInverseExpression([NotNull] ExpressParser.InverseExpressionContext context);
+	void EnterInverseAttribute([NotNull] ExpressParser.InverseAttributeContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.inverseExpression"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.inverseAttribute"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitInverseExpression([NotNull] ExpressParser.InverseExpressionContext context);
+	void ExitInverseAttribute([NotNull] ExpressParser.InverseAttributeContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.deriveDeclaration"/>.
 	/// </summary>

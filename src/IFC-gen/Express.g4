@@ -45,12 +45,7 @@ collectionDeclaration
 	;
 
 setParameters
-	: '[' Integer COLON (setSize|'?') ']'
-	;
-
-setSize
-	: Integer
-	| Identifier
+	: '[' Integer COLON (Integer|Identifier|'?') ']'
 	;
 
 enumeration
@@ -167,10 +162,10 @@ oneOf
 	;
 
 inverseDeclaration
-	: INVERSE inverseExpression+
+	: INVERSE inverseAttribute+
 	;
 
-inverseExpression
+inverseAttribute
 	: Identifier COLON (Identifier|collectionDeclaration) FOR Identifier ';'
 	;
 

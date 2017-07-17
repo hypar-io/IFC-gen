@@ -13,7 +13,26 @@ namespace IFC.Generate
 	{
 		static void Main(string[] args)
 		{
-			using (FileStream fs = new FileStream(args[0], FileMode.Open))
+			if(args.Length != 2)
+			{
+				Console.WriteLine("The syntax for the command is:");
+				Console.WriteLine("IFC-gen <express schema path> <output directory>");
+				return;
+			}
+
+			var expressPath = args[0];
+			if(!File.Exists(expressPath))
+			{
+				Console.WriteLine("The specified express file path does not exist.");
+			}
+
+			var outputDir = args[1];
+			if(!Directory.Exists(outputDir))
+			{
+				Console.WriteLine("The specified output directory does not exist.");
+			}
+
+			using (FileStream fs = new FileStream(expressPath, FileMode.Open))
 			{
 				var input = new AntlrInputStream(fs);
 				var lexer = new Express.ExpressLexer(input);
@@ -45,8 +64,9 @@ using System;
 namespace IFC4
 {{
 {sb.ToString()}
-}}";
-				File.WriteAllText("IFC.Types.cs",types);
+}}";			
+				var outPath = Path.Combine(outputDir, "IFC.cs");
+				File.WriteAllText(outPath,types);
 
 				/*var tokenStr = new StringBuilder();
 				foreach(var t in tokens.GetTokens())
