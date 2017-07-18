@@ -2277,7 +2277,6 @@ namespace IFC4
 	public  partial class IfcAxis1Placement : IfcPlacement
 	{
 		public IfcDirection Axis {get;set;}
-		public IfcDirection Z {get;set;}
 
 		public IfcAxis1Placement()
 		{
@@ -2291,11 +2290,9 @@ namespace IFC4
 	public  partial class IfcAxis2Placement2D : IfcPlacement
 	{
 		public IfcDirection RefDirection {get;set;}
-		public List<List<IfcDirection>> P {get;set;}
 
 		public IfcAxis2Placement2D()
 		{
-			P = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -2307,11 +2304,9 @@ namespace IFC4
 	{
 		public IfcDirection Axis {get;set;}
 		public IfcDirection RefDirection {get;set;}
-		public List<List<IfcDirection>> P {get;set;}
 
 		public IfcAxis2Placement3D()
 		{
-			P = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -2326,13 +2321,10 @@ namespace IFC4
 		public IfcBSplineCurveForm CurveForm {get;set;}
 		public System.Boolean? ClosedCurve {get;set;}
 		public System.Boolean? SelfIntersect {get;set;}
-		public System.Int32 UpperIndexOnControlPoints {get;set;}
-		public IfcCartesianPoint[][] ControlPoints {get;set;}
 
 		public IfcBSplineCurve()
 		{
 			ControlPointsList = new List<List<IfcCartesianPoint>>();
-			ControlPoints = new IfcCartesianPoint[][]();
 
 		}
 	}
@@ -2345,7 +2337,6 @@ namespace IFC4
 		public List<List<System.Int32>> KnotMultiplicities {get;set;}
 		public List<List<IfcParameterValue>> Knots {get;set;}
 		public IfcKnotType KnotSpec {get;set;}
-		public System.Int32 UpperIndexOnKnots {get;set;}
 
 		public IfcBSplineCurveWithKnots()
 		{
@@ -2367,14 +2358,10 @@ namespace IFC4
 		public System.Boolean? UClosed {get;set;}
 		public System.Boolean? VClosed {get;set;}
 		public System.Boolean? SelfIntersect {get;set;}
-		public System.Int32 UUpper {get;set;}
-		public System.Int32 VUpper {get;set;}
-		public IfcCartesianPoint[][][] ControlPoints {get;set;}
 
 		public IfcBSplineSurface()
 		{
 			ControlPointsList = new List<List<List<IfcCartesianPoint>>>();
-			ControlPoints = new IfcCartesianPoint[][][]();
 
 		}
 	}
@@ -2389,8 +2376,6 @@ namespace IFC4
 		public List<List<IfcParameterValue>> UKnots {get;set;}
 		public List<List<IfcParameterValue>> VKnots {get;set;}
 		public IfcKnotType KnotSpec {get;set;}
-		public System.Int32 KnotVUpper {get;set;}
-		public System.Int32 KnotUUpper {get;set;}
 
 		public IfcBSplineSurfaceWithKnots()
 		{
@@ -2515,7 +2500,6 @@ namespace IFC4
 		public IfcBooleanOperator Operator {get;set;}
 		public IfcBooleanOperand FirstOperand {get;set;}
 		public IfcBooleanOperand SecondOperand {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcBooleanResult()
 		{
@@ -2645,7 +2629,6 @@ namespace IFC4
 		public IfcPositiveLengthMeasure XDim {get;set;}
 		public IfcPositiveLengthMeasure YDim {get;set;}
 		public IfcPositiveLengthMeasure ZDim {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcBoundingBox()
 		{
@@ -2938,7 +2921,6 @@ namespace IFC4
 	public  partial class IfcCartesianPoint : IfcPoint
 	{
 		public List<List<IfcLengthMeasure>> Coordinates {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcCartesianPoint()
 		{
@@ -2982,8 +2964,6 @@ namespace IFC4
 		public IfcDirection Axis2 {get;set;}
 		public IfcCartesianPoint LocalOrigin {get;set;}
 		public System.Double Scale {get;set;}
-		public System.Double Scl {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcCartesianTransformationOperator()
 		{
@@ -2996,11 +2976,9 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator2D : IfcCartesianTransformationOperator
 	{
-		public List<List<IfcDirection>> U {get;set;}
 
 		public IfcCartesianTransformationOperator2D()
 		{
-			U = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -3011,7 +2989,6 @@ namespace IFC4
 	public  partial class IfcCartesianTransformationOperator2DnonUniform : IfcCartesianTransformationOperator2D
 	{
 		public System.Double Scale2 {get;set;}
-		public System.Double Scl2 {get;set;}
 
 		public IfcCartesianTransformationOperator2DnonUniform()
 		{
@@ -3025,11 +3002,9 @@ namespace IFC4
 	public  partial class IfcCartesianTransformationOperator3D : IfcCartesianTransformationOperator
 	{
 		public IfcDirection Axis3 {get;set;}
-		public List<List<IfcDirection>> U {get;set;}
 
 		public IfcCartesianTransformationOperator3D()
 		{
-			U = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -3041,8 +3016,6 @@ namespace IFC4
 	{
 		public System.Double Scale2 {get;set;}
 		public System.Double Scale3 {get;set;}
-		public System.Double Scl2 {get;set;}
-		public System.Double Scl3 {get;set;}
 
 		public IfcCartesianTransformationOperator3DnonUniform()
 		{
@@ -3403,8 +3376,6 @@ namespace IFC4
 	{
 		public List<List<IfcCompositeCurveSegment>> Segments {get;set;}
 		public System.Boolean? SelfIntersect {get;set;}
-		public System.Int32 NSegments {get;set;}
-		public System.Boolean? ClosedCurve {get;set;}
 
 		public IfcCompositeCurve()
 		{
@@ -3418,11 +3389,9 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCompositeCurveOnSurface : IfcCompositeCurve
 	{
-		public List<List<IfcSurface>> BasisSurface {get;set;}
 
 		public IfcCompositeCurveOnSurface()
 		{
-			BasisSurface = new List<List<IfcSurface>>();
 
 		}
 	}
@@ -3435,7 +3404,6 @@ namespace IFC4
 		public IfcTransitionCode Transition {get;set;}
 		public System.Boolean SameSense {get;set;}
 		public IfcCurve ParentCurve {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 		public List<List<IfcCompositeCurve>> UsingCurves {get;set;}
 
 		public IfcCompositeCurveSegment()
@@ -4050,7 +4018,6 @@ namespace IFC4
 	public abstract partial class IfcCsgPrimitive3D : IfcGeometricRepresentationItem
 	{
 		public IfcAxis2Placement3D Position {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcCsgPrimitive3D()
 		{
@@ -4119,7 +4086,6 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcCurve : IfcGeometricRepresentationItem
 	{
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcCurve()
 		{
@@ -4281,7 +4247,6 @@ namespace IFC4
 		public List<List<IfcDerivedUnitElement>> Elements {get;set;}
 		public IfcDerivedUnitEnum UnitType {get;set;}
 		public IfcLabel UserDefinedType {get;set;}
-		public IfcDimensionalExponents Dimensions {get;set;}
 
 		public IfcDerivedUnit()
 		{
@@ -4329,7 +4294,6 @@ namespace IFC4
 	public  partial class IfcDirection : IfcGeometricRepresentationItem
 	{
 		public List<List<System.Double>> DirectionRatios {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcDirection()
 		{
@@ -4818,7 +4782,6 @@ namespace IFC4
 	public  partial class IfcEdgeLoop : IfcLoop
 	{
 		public List<List<IfcOrientedEdge>> EdgeList {get;set;}
-		public System.Int32 Ne {get;set;}
 
 		public IfcEdgeLoop()
 		{
@@ -5459,7 +5422,6 @@ namespace IFC4
 	public  partial class IfcFaceBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
 		public List<List<IfcConnectedFaceSet>> FbsmFaces {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcFaceBasedSurfaceModel()
 		{
@@ -6133,10 +6095,6 @@ namespace IFC4
 		public IfcPositiveRatioMeasure TargetScale {get;set;}
 		public IfcGeometricProjectionEnum TargetView {get;set;}
 		public IfcLabel UserDefinedTargetView {get;set;}
-		public IfcAxis2Placement SELF\IfcGeometricRepresentationContext.WorldCoordinateSystem {get;set;}
-		public IfcDimensionCount SELF\IfcGeometricRepresentationContext.CoordinateSpaceDimension {get;set;}
-		public IfcDirection SELF\IfcGeometricRepresentationContext.TrueNorth {get;set;}
-		public System.Double SELF\IfcGeometricRepresentationContext.Precision {get;set;}
 
 		public IfcGeometricRepresentationSubContext()
 		{
@@ -6150,7 +6108,6 @@ namespace IFC4
 	public  partial class IfcGeometricSet : IfcGeometricRepresentationItem
 	{
 		public List<List<IfcGeometricSetSelect>> Elements {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcGeometricSet()
 		{
@@ -6238,7 +6195,6 @@ namespace IFC4
 	{
 		public IfcSurface BaseSurface {get;set;}
 		public System.Boolean AgreementFlag {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcHalfSpaceSolid()
 		{
@@ -6962,7 +6918,6 @@ namespace IFC4
 		public List<List<IfcMaterialLayer>> MaterialLayers {get;set;}
 		public IfcLabel LayerSetName {get;set;}
 		public IfcText Description {get;set;}
-		public IfcLengthMeasure TotalThickness {get;set;}
 
 		public IfcMaterialLayerSet()
 		{
@@ -7268,7 +7223,6 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMirroredProfileDef : IfcDerivedProfileDef
 	{
-		public IfcCartesianTransformationOperator2D SELF\IfcDerivedProfileDef.Operator {get;set;}
 
 		public IfcMirroredProfileDef()
 		{
@@ -7539,8 +7493,6 @@ namespace IFC4
 	{
 		public IfcEdge EdgeElement {get;set;}
 		public System.Boolean Orientation {get;set;}
-		public IfcVertex SELF\IfcEdge.EdgeStart {get;set;}
-		public IfcVertex SELF\IfcEdge.EdgeEnd {get;set;}
 
 		public IfcOrientedEdge()
 		{
@@ -7886,7 +7838,6 @@ namespace IFC4
 	public abstract partial class IfcPlacement : IfcGeometricRepresentationItem
 	{
 		public IfcCartesianPoint Location {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcPlacement()
 		{
@@ -7990,7 +7941,6 @@ namespace IFC4
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public IfcParameterValue PointParameter {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcPointOnCurve()
 		{
@@ -8006,7 +7956,6 @@ namespace IFC4
 		public IfcSurface BasisSurface {get;set;}
 		public IfcParameterValue PointParameterU {get;set;}
 		public IfcParameterValue PointParameterV {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcPointOnSurface()
 		{
@@ -8959,12 +8908,10 @@ namespace IFC4
 	public  partial class IfcRationalBSplineCurveWithKnots : IfcBSplineCurveWithKnots
 	{
 		public List<List<System.Double>> WeightsData {get;set;}
-		public System.Double[][] Weights {get;set;}
 
 		public IfcRationalBSplineCurveWithKnots()
 		{
 			WeightsData = new List<List<System.Double>>();
-			Weights = new System.Double[][]();
 
 		}
 	}
@@ -8975,12 +8922,10 @@ namespace IFC4
 	public  partial class IfcRationalBSplineSurfaceWithKnots : IfcBSplineSurfaceWithKnots
 	{
 		public List<List<List<System.Double>>> WeightsData {get;set;}
-		public System.Double[][][] Weights {get;set;}
 
 		public IfcRationalBSplineSurfaceWithKnots()
 		{
 			WeightsData = new List<List<List<System.Double>>>();
-			Weights = new System.Double[][][]();
 
 		}
 	}
@@ -10114,7 +10059,6 @@ namespace IFC4
 	{
 		public IfcAxis1Placement Axis {get;set;}
 		public IfcPlaneAngleMeasure Angle {get;set;}
-		public IfcLine AxisLine {get;set;}
 
 		public IfcRevolvedAreaSolid()
 		{
@@ -10225,7 +10169,6 @@ namespace IFC4
 	{
 		public IfcSIPrefix Prefix {get;set;}
 		public IfcSIUnitName Name {get;set;}
-		public IfcDimensionalExponents SELF\IfcNamedUnit.Dimensions {get;set;}
 
 		public IfcSIUnit()
 		{
@@ -10316,7 +10259,6 @@ namespace IFC4
 		public IfcCompositeCurve SpineCurve {get;set;}
 		public List<List<IfcProfileDef>> CrossSections {get;set;}
 		public List<List<IfcAxis2Placement3D>> CrossSectionPositions {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcSectionedSpine()
 		{
@@ -10428,7 +10370,6 @@ namespace IFC4
 	public  partial class IfcShellBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
 		public List<List<IfcShell>> SbsmBoundary {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcShellBasedSurfaceModel()
 		{
@@ -10582,7 +10523,6 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcSolidModel : IfcGeometricRepresentationItem
 	{
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcSolidModel()
 		{
@@ -11434,7 +11374,6 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcSurface : IfcGeometricRepresentationItem
 	{
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcSurface()
 		{
@@ -11478,7 +11417,6 @@ namespace IFC4
 	{
 		public IfcDirection ExtrudedDirection {get;set;}
 		public IfcLengthMeasure Depth {get;set;}
-		public IfcVector ExtrusionAxis {get;set;}
 
 		public IfcSurfaceOfLinearExtrusion()
 		{
@@ -11492,7 +11430,6 @@ namespace IFC4
 	public  partial class IfcSurfaceOfRevolution : IfcSweptSurface
 	{
 		public IfcAxis1Placement AxisPosition {get;set;}
-		public IfcLine AxisLine {get;set;}
 
 		public IfcSurfaceOfRevolution()
 		{
@@ -11784,9 +11721,6 @@ namespace IFC4
 		public IfcLabel Name {get;set;}
 		public List<List<IfcTableRow>> Rows {get;set;}
 		public List<List<IfcTableColumn>> Columns {get;set;}
-		public System.Int32 NumberOfCellsInRow {get;set;}
-		public System.Int32 NumberOfHeadings {get;set;}
-		public System.Int32 NumberOfDataRows {get;set;}
 
 		public IfcTable()
 		{
@@ -12362,7 +12296,6 @@ namespace IFC4
 	{
 		public List<List<List<System.Int32>>> CoordIndex {get;set;}
 		public List<List<List<System.Int32>>> NormalIndex {get;set;}
-		public System.Int32 NumberOfTriangles {get;set;}
 
 		public IfcTriangulatedFaceSet()
 		{
@@ -12603,7 +12536,6 @@ namespace IFC4
 	{
 		public IfcDirection Orientation {get;set;}
 		public IfcLengthMeasure Magnitude {get;set;}
-		public IfcDimensionCount Dim {get;set;}
 
 		public IfcVector()
 		{

@@ -37,7 +37,7 @@ namespace Express
 		public override string ToString()
 		{
 			var propStringBuilder = new StringBuilder();
-			foreach(var a in Attributes)
+			foreach(var a in Attributes.Where(a=>!a.IsDerived))
 			{
 				propStringBuilder.Append(a.ToString());
 			}
@@ -49,7 +49,7 @@ namespace Express
 			}
 
 			var allocBuilder = new StringBuilder();
-			foreach(var a in Attributes.Where(a=>a.TypeInfo is CollectionInfo))
+			foreach(var a in Attributes.Where(a=>a.TypeInfo is CollectionInfo && !a.IsDerived))
 			{
 				allocBuilder.Append($"\t\t\t{a.TypeInfo.Name} = new {a.TypeInfo.ToString()}();\n");
 			}

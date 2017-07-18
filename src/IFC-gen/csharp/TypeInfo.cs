@@ -120,6 +120,8 @@ var result =
 		public TypeInfo TypeInfo{get;set;}
 		public bool IsOptional{get;set;}
 
+		public bool IsDerived{get;set;}
+		
 		public override string ToString()
 		{
 			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}\n";

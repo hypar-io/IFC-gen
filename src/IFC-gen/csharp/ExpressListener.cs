@@ -157,6 +157,10 @@ namespace Express
 			attr.IsOptional = context.OPTIONAL() != null;
 			attr.TypeInfo = TypeInfoFromValueTypeContext(name, context.valueType());
 			
+			if(context.Parent is ExpressParser.DeriveDeclarationContext)
+			{
+				attr.IsDerived = true;
+			}
 			currentTypeInfo = attr.TypeInfo;
 
 			currentEntityInfo.Attributes.Add(attr);
