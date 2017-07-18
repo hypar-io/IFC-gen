@@ -19,7 +19,7 @@ namespace Express
 	{
 		public override string ToString()
 		{
-			return $"{string.Join("",Enumerable.Repeat("List<",Rank))} {Type}{string.Join("",Enumerable.Repeat(">",Rank))}";
+			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{Type}{string.Join("",Enumerable.Repeat(">",Rank))}";
 		}
 	}
 
@@ -27,7 +27,8 @@ namespace Express
 	{
 		public override string ToString()
 		{
-			return $"{string.Join("",Enumerable.Repeat("{Type}[",Rank))}{Type}{string.Join("",Enumerable.Repeat("]",Rank))}";
+			var arr = $"{Type}" + string.Join("",Enumerable.Repeat("[]",Rank));
+			return arr;
 		}
 	}
 

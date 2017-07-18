@@ -104,7 +104,7 @@ $@"	/// <summary>
 			{
 				return $"***ERROR FOR ATTRIBUTE {Name}";
 			}
-			var attStr =$"\t\tpublic {Type.ToString()} {Name} {{get;set;}}";
+			var attStr =$"\t\tpublic {Type.ToString()} {Name} {{get;set;}}\n";
 
 			return attStr;
 		}
