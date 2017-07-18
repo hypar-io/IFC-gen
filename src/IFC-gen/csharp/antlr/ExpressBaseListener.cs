@@ -72,6 +72,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitTypeName([NotNull] ExpressParser.TypeNameContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.atomicType"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterAtomicType([NotNull] ExpressParser.AtomicTypeContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.atomicType"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitAtomicType([NotNull] ExpressParser.AtomicTypeContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.valueType"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
@@ -84,29 +96,17 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitValueType([NotNull] ExpressParser.ValueTypeContext context) { }
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.collectionValueType"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.collection"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCollectionValueType([NotNull] ExpressParser.CollectionValueTypeContext context) { }
+	public virtual void EnterCollection([NotNull] ExpressParser.CollectionContext context) { }
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.collectionValueType"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.collection"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCollectionValueType([NotNull] ExpressParser.CollectionValueTypeContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.collectionDeclaration"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterCollectionDeclaration([NotNull] ExpressParser.CollectionDeclarationContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.collectionDeclaration"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitCollectionDeclaration([NotNull] ExpressParser.CollectionDeclarationContext context) { }
+	public virtual void ExitCollection([NotNull] ExpressParser.CollectionContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by the <c>ArrayDecl</c>
 	/// labeled alternative in <see cref="ExpressParser.collectionParameters"/>.
@@ -421,18 +421,6 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitAttribute([NotNull] ExpressParser.AttributeContext context) { }
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.optional"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void EnterOptional([NotNull] ExpressParser.OptionalContext context) { }
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.optional"/>.
-	/// <para>The default implementation does nothing.</para>
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	public virtual void ExitOptional([NotNull] ExpressParser.OptionalContext context) { }
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.definition"/>.
 	/// <para>The default implementation does nothing.</para>

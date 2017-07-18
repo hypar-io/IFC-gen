@@ -1,88 +1,58 @@
 namespace Express
 {
-	public class TypeInfo
+	public class TypeDeclaration
+	{
+		public TypeInfo TypeInfo{get;private set;}
+
+		public TypeDeclaration(TypeInfo info)
+		{
+			TypeInfo = info;
+		}
+
+		public override string ToString()
+		{	
+			if(TypeInfo is EnumInfo || TypeInfo is SelectInfo)
+			{
+				return TypeInfo.ToString();
+			}
+
+			return $"\tusing {TypeInfo.Name} = {TypeInfo.ToString()};\n";
+		}
+	}
+
+	public abstract class TypeInfo
 	{
 		public string Name{get;set;}
-		public object Type{get;set;}
+
+		public string ValueType{get;set;}
 
 		public TypeInfo(string name)
 		{
 			Name = name;
 		}
-		
-		public override string ToString()
-		{	
-			if(Type is EnumInfo)
-			{
-				var e = (EnumInfo)Type;
-				var enumStr =
-$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
-	/// </summary>
-	public enum {Name} 
-	{{
-		{e.Values}
-	}}
 
-";
-				return enumStr;
-			}
-
-			if(Type is SelectInfo)
-			{
-				var s = (SelectInfo)Type;
-				var selectStr =
-$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
-	/// </summary>
-	public class {Name}<T> : Select<T> where T : {s.Values} {{}}
-
-";
-
-				return selectStr;
-			}
-
-			// Create a 'using' directive which will allow
-			// us to to use this alias anywhere in the namespace.
-			if(Type == null)
-			{
-				return $"***ERROR FOR TYPE {Name}";
-			}
-			return $"\tusing {Name} = {Type.ToString()};\n";
-		}
-	}
-
-
-	public class AtomicTypeInfo
-	{
-		private string type;
-		public AtomicTypeInfo(string type)
+		public static string ToSystemType(string type)
 		{
-			this.type = type;
-		}
-
-		public override string ToString()
-		{
-			var retType = "object";
+			var retType = type;
 			switch(type)
 			{
 				case "BOOLEAN":
-					retType = "bool";
+					retType = "System.Boolean";
 					break;
 				case "LOGICAL":
-					retType = "bool?";
+					retType = "System.Boolean?";
 					break;
 				case "REAL":
-					retType = "double";
+					retType = "System.Double";
 					break;
 				case "STRING":
-					retType = "string";
+					retType = "System.String";
 					break;
 				case "INTEGER":
-					retType = "int";
+					retType = "System.Int32";
 					break;
 				case "NUMBER":
-					retType = "double";
+					retType = "System.Double";
 					break;
 				default:
 					retType = type;
@@ -92,21 +62,67 @@ $@"	/// <summary>
 		}
 	}
 
-	public class AttributeInfo : TypeInfo
+	public abstract class StringList : TypeInfo
 	{
-		public bool IsOptional{get;set;}
+		public string Values{get;set;}
 
-		public AttributeInfo(string name) : base(name){}
+		public StringList(string name) : base(name){}
+	}
+
+	public class EnumInfo : StringList
+	{
+		public EnumInfo(string name) : base(name){}
 
 		public override string ToString()
 		{
-			if(Type == null)
-			{
-				return $"***ERROR FOR ATTRIBUTE {Name}";
-			}
-			var attStr =$"\t\tpublic {Type.ToString()} {Name} {{get;set;}}\n";
+var result = 
+	$@"	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
+	/// </summary>
+	public enum {Name} 
+	{{
+		{Values}
+	}}
+";
+			return result;
+		}
+	}
 
-			return attStr;
+	public class SelectInfo : StringList
+	{
+		public SelectInfo(string name) : base(name){}
+
+		public override string ToString()
+		{
+			var result = 
+	$@"	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
+	/// </summary>
+	public class {Name}<T> : Select<T> where T : {Values} {{}}
+";
+
+			return result;
+		}
+	}
+
+	public class DefinedTypeInfo : TypeInfo
+	{
+		public DefinedTypeInfo(string name) : base(name){}
+
+		public override string ToString()
+		{	
+			return $"{TypeInfo.ToSystemType(ValueType)}";
+		}
+	}
+
+	public class AttributeDeclaration
+	{
+		public TypeInfo TypeInfo{get;set;}
+		public bool IsOptional{get;set;}
+
+		public override string ToString()
+		{
+			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}\n";
 		}
 	}
 }

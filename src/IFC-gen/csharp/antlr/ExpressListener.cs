@@ -62,6 +62,16 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitTypeName([NotNull] ExpressParser.TypeNameContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.atomicType"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterAtomicType([NotNull] ExpressParser.AtomicTypeContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.atomicType"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitAtomicType([NotNull] ExpressParser.AtomicTypeContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.valueType"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
@@ -72,25 +82,15 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitValueType([NotNull] ExpressParser.ValueTypeContext context);
 	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.collectionValueType"/>.
+	/// Enter a parse tree produced by <see cref="ExpressParser.collection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void EnterCollectionValueType([NotNull] ExpressParser.CollectionValueTypeContext context);
+	void EnterCollection([NotNull] ExpressParser.CollectionContext context);
 	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.collectionValueType"/>.
+	/// Exit a parse tree produced by <see cref="ExpressParser.collection"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
-	void ExitCollectionValueType([NotNull] ExpressParser.CollectionValueTypeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.collectionDeclaration"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterCollectionDeclaration([NotNull] ExpressParser.CollectionDeclarationContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.collectionDeclaration"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitCollectionDeclaration([NotNull] ExpressParser.CollectionDeclarationContext context);
+	void ExitCollection([NotNull] ExpressParser.CollectionContext context);
 	/// <summary>
 	/// Enter a parse tree produced by the <c>ArrayDecl</c>
 	/// labeled alternative in <see cref="ExpressParser.collectionParameters"/>.
@@ -355,16 +355,6 @@ public interface IExpressListener : IParseTreeListener {
 	/// </summary>
 	/// <param name="context">The parse tree.</param>
 	void ExitAttribute([NotNull] ExpressParser.AttributeContext context);
-	/// <summary>
-	/// Enter a parse tree produced by <see cref="ExpressParser.optional"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void EnterOptional([NotNull] ExpressParser.OptionalContext context);
-	/// <summary>
-	/// Exit a parse tree produced by <see cref="ExpressParser.optional"/>.
-	/// </summary>
-	/// <param name="context">The parse tree.</param>
-	void ExitOptional([NotNull] ExpressParser.OptionalContext context);
 	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.definition"/>.
 	/// </summary>

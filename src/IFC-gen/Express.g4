@@ -4,13 +4,13 @@ schemaDeclaration
 	: SCHEMA Version ';' typeDeclaration* entityDeclaration* functionDeclaration*  END_SCHEMA';' EOF;
 
 typeDeclaration 
-	: TYPE Identifier EQ (valueType|enumeration|) FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
+	: TYPE Identifier EQ valueType FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
 
 typeName	
 	: Identifier
 	;
 
-valueType 
+atomicType
 	: BINARY_SIZED
 	| BOOLEAN
 	| INTEGER
@@ -18,25 +18,19 @@ valueType
 	| REAL
 	| STRING
 	| STRING_SIZED
+	| Identifier
+	;
+
+valueType 
+	: atomicType
 	| Identifier
 	| enumeration
 	| select
-	| collectionDeclaration
+	| collection
 	;
 
-collectionValueType
-	: BINARY_SIZED
-	| BOOLEAN
-	| INTEGER
-	| LOGICAL
-	| REAL
-	| STRING
-	| STRING_SIZED
-	| Identifier
-	;
-
-collectionDeclaration
-	: collectionParameters (OF UNIQUE? collectionParameters)* OF UNIQUE? collectionValueType
+collection
+	: collectionParameters (OF UNIQUE? collectionParameters)* OF UNIQUE? atomicType
 	;
 
 collectionParameters
@@ -148,11 +142,7 @@ subtypeDeclaration
 	;
 
 attribute
-	: (Identifier | path) COLON optional valueType definition? ';'
-	;
-
-optional
-	: OPTIONAL?
+	: (Identifier | path) COLON OPTIONAL? valueType definition? ';'
 	;
 
 definition
@@ -167,7 +157,7 @@ inverseDeclaration
 	;
 
 inverseAttribute
-	: Identifier COLON (Identifier|collectionDeclaration) FOR Identifier ';'
+	: Identifier COLON (Identifier|collection) FOR Identifier ';'
 	;
 
 deriveDeclaration

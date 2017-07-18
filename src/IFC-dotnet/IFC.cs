@@ -5,132 +5,132 @@ using System;
 				
 namespace IFC4
 {
-	using IfcAbsorbedDoseMeasure = double;
-	using IfcAccelerationMeasure = double;
-	using IfcAmountOfSubstanceMeasure = double;
-	using IfcAngularVelocityMeasure = double;
-	using IfcAreaDensityMeasure = double;
-	using IfcAreaMeasure = double;
-	using IfcBoolean = bool;
+	using IfcAbsorbedDoseMeasure = System.Double;
+	using IfcAccelerationMeasure = System.Double;
+	using IfcAmountOfSubstanceMeasure = System.Double;
+	using IfcAngularVelocityMeasure = System.Double;
+	using IfcAreaDensityMeasure = System.Double;
+	using IfcAreaMeasure = System.Double;
+	using IfcBoolean = System.Boolean;
 	using IfcBoxAlignment = IfcLabel;
-	using IfcCardinalPointReference = int;
-	using IfcComplexNumber = REAL[];
-	using IfcCompoundPlaneAngleMeasure = List<INTEGER>;
-	using IfcContextDependentMeasure = double;
-	using IfcCountMeasure = double;
-	using IfcCurvatureMeasure = double;
-	using IfcDate = string;
-	using IfcDateTime = string;
-	using IfcDayInMonthNumber = int;
-	using IfcDayInWeekNumber = int;
-	using IfcDescriptiveMeasure = string;
-	using IfcDimensionCount = int;
-	using IfcDoseEquivalentMeasure = double;
-	using IfcDuration = string;
-	using IfcDynamicViscosityMeasure = double;
-	using IfcElectricCapacitanceMeasure = double;
-	using IfcElectricChargeMeasure = double;
-	using IfcElectricConductanceMeasure = double;
-	using IfcElectricCurrentMeasure = double;
-	using IfcElectricResistanceMeasure = double;
-	using IfcElectricVoltageMeasure = double;
-	using IfcEnergyMeasure = double;
-	using IfcFontStyle = string;
-	using IfcFontVariant = string;
-	using IfcFontWeight = string;
-	using IfcForceMeasure = double;
-	using IfcFrequencyMeasure = double;
+	using IfcCardinalPointReference = System.Int32;
+	using IfcComplexNumber = System.Double[][];
+	using IfcCompoundPlaneAngleMeasure = List<List<System.Int32>>;
+	using IfcContextDependentMeasure = System.Double;
+	using IfcCountMeasure = System.Double;
+	using IfcCurvatureMeasure = System.Double;
+	using IfcDate = System.String;
+	using IfcDateTime = System.String;
+	using IfcDayInMonthNumber = System.Int32;
+	using IfcDayInWeekNumber = System.Int32;
+	using IfcDescriptiveMeasure = System.String;
+	using IfcDimensionCount = System.Int32;
+	using IfcDoseEquivalentMeasure = System.Double;
+	using IfcDuration = System.String;
+	using IfcDynamicViscosityMeasure = System.Double;
+	using IfcElectricCapacitanceMeasure = System.Double;
+	using IfcElectricChargeMeasure = System.Double;
+	using IfcElectricConductanceMeasure = System.Double;
+	using IfcElectricCurrentMeasure = System.Double;
+	using IfcElectricResistanceMeasure = System.Double;
+	using IfcElectricVoltageMeasure = System.Double;
+	using IfcEnergyMeasure = System.Double;
+	using IfcFontStyle = System.String;
+	using IfcFontVariant = System.String;
+	using IfcFontWeight = System.String;
+	using IfcForceMeasure = System.Double;
+	using IfcFrequencyMeasure = System.Double;
 	using IfcGloballyUniqueId = STRING(22);
-	using IfcHeatFluxDensityMeasure = double;
-	using IfcHeatingValueMeasure = double;
+	using IfcHeatFluxDensityMeasure = System.Double;
+	using IfcHeatingValueMeasure = System.Double;
 	using IfcIdentifier = STRING(255);
-	using IfcIlluminanceMeasure = double;
-	using IfcInductanceMeasure = double;
-	using IfcInteger = int;
-	using IfcIntegerCountRateMeasure = int;
-	using IfcIonConcentrationMeasure = double;
-	using IfcIsothermalMoistureCapacityMeasure = double;
-	using IfcKinematicViscosityMeasure = double;
+	using IfcIlluminanceMeasure = System.Double;
+	using IfcInductanceMeasure = System.Double;
+	using IfcInteger = System.Int32;
+	using IfcIntegerCountRateMeasure = System.Int32;
+	using IfcIonConcentrationMeasure = System.Double;
+	using IfcIsothermalMoistureCapacityMeasure = System.Double;
+	using IfcKinematicViscosityMeasure = System.Double;
 	using IfcLabel = STRING(255);
 	using IfcLanguageId = IfcIdentifier;
-	using IfcLengthMeasure = double;
-	using IfcLinearForceMeasure = double;
-	using IfcLinearMomentMeasure = double;
-	using IfcLinearStiffnessMeasure = double;
-	using IfcLinearVelocityMeasure = double;
-	using IfcLogical = bool?;
-	using IfcLuminousFluxMeasure = double;
-	using IfcLuminousIntensityDistributionMeasure = double;
-	using IfcLuminousIntensityMeasure = double;
-	using IfcMagneticFluxDensityMeasure = double;
-	using IfcMagneticFluxMeasure = double;
-	using IfcMassDensityMeasure = double;
-	using IfcMassFlowRateMeasure = double;
-	using IfcMassMeasure = double;
-	using IfcMassPerLengthMeasure = double;
-	using IfcModulusOfElasticityMeasure = double;
-	using IfcModulusOfLinearSubgradeReactionMeasure = double;
-	using IfcModulusOfRotationalSubgradeReactionMeasure = double;
-	using IfcModulusOfSubgradeReactionMeasure = double;
-	using IfcMoistureDiffusivityMeasure = double;
-	using IfcMolecularWeightMeasure = double;
-	using IfcMomentOfInertiaMeasure = double;
-	using IfcMonetaryMeasure = double;
-	using IfcMonthInYearNumber = int;
+	using IfcLengthMeasure = System.Double;
+	using IfcLinearForceMeasure = System.Double;
+	using IfcLinearMomentMeasure = System.Double;
+	using IfcLinearStiffnessMeasure = System.Double;
+	using IfcLinearVelocityMeasure = System.Double;
+	using IfcLogical = System.Boolean?;
+	using IfcLuminousFluxMeasure = System.Double;
+	using IfcLuminousIntensityDistributionMeasure = System.Double;
+	using IfcLuminousIntensityMeasure = System.Double;
+	using IfcMagneticFluxDensityMeasure = System.Double;
+	using IfcMagneticFluxMeasure = System.Double;
+	using IfcMassDensityMeasure = System.Double;
+	using IfcMassFlowRateMeasure = System.Double;
+	using IfcMassMeasure = System.Double;
+	using IfcMassPerLengthMeasure = System.Double;
+	using IfcModulusOfElasticityMeasure = System.Double;
+	using IfcModulusOfLinearSubgradeReactionMeasure = System.Double;
+	using IfcModulusOfRotationalSubgradeReactionMeasure = System.Double;
+	using IfcModulusOfSubgradeReactionMeasure = System.Double;
+	using IfcMoistureDiffusivityMeasure = System.Double;
+	using IfcMolecularWeightMeasure = System.Double;
+	using IfcMomentOfInertiaMeasure = System.Double;
+	using IfcMonetaryMeasure = System.Double;
+	using IfcMonthInYearNumber = System.Int32;
 	using IfcNonNegativeLengthMeasure = IfcLengthMeasure;
 	using IfcNormalisedRatioMeasure = IfcRatioMeasure;
-	using IfcNumericMeasure = double;
-	using IfcPHMeasure = double;
-	using IfcParameterValue = double;
-	using IfcPlanarForceMeasure = double;
-	using IfcPlaneAngleMeasure = double;
+	using IfcNumericMeasure = System.Double;
+	using IfcPHMeasure = System.Double;
+	using IfcParameterValue = System.Double;
+	using IfcPlanarForceMeasure = System.Double;
+	using IfcPlaneAngleMeasure = System.Double;
 	using IfcPositiveLengthMeasure = IfcLengthMeasure;
 	using IfcPositivePlaneAngleMeasure = IfcPlaneAngleMeasure;
 	using IfcPositiveRatioMeasure = IfcRatioMeasure;
-	using IfcPowerMeasure = double;
-	using IfcPresentableText = string;
-	using IfcPressureMeasure = double;
-	using IfcPropertySetDefinitionSet = List<IfcPropertySetDefinition>;
-	using IfcRadioActivityMeasure = double;
-	using IfcRatioMeasure = double;
-	using IfcReal = double;
-	using IfcRotationalFrequencyMeasure = double;
-	using IfcRotationalMassMeasure = double;
-	using IfcRotationalStiffnessMeasure = double;
-	using IfcSectionModulusMeasure = double;
-	using IfcSectionalAreaIntegralMeasure = double;
-	using IfcShearModulusMeasure = double;
-	using IfcSolidAngleMeasure = double;
-	using IfcSoundPowerLevelMeasure = double;
-	using IfcSoundPowerMeasure = double;
-	using IfcSoundPressureLevelMeasure = double;
-	using IfcSoundPressureMeasure = double;
-	using IfcSpecificHeatCapacityMeasure = double;
-	using IfcSpecularExponent = double;
-	using IfcSpecularRoughness = double;
-	using IfcTemperatureGradientMeasure = double;
-	using IfcTemperatureRateOfChangeMeasure = double;
-	using IfcText = string;
-	using IfcTextAlignment = string;
-	using IfcTextDecoration = string;
-	using IfcTextFontName = string;
-	using IfcTextTransformation = string;
-	using IfcThermalAdmittanceMeasure = double;
-	using IfcThermalConductivityMeasure = double;
-	using IfcThermalExpansionCoefficientMeasure = double;
-	using IfcThermalResistanceMeasure = double;
-	using IfcThermalTransmittanceMeasure = double;
-	using IfcThermodynamicTemperatureMeasure = double;
-	using IfcTime = string;
-	using IfcTimeMeasure = double;
-	using IfcTimeStamp = int;
-	using IfcTorqueMeasure = double;
-	using IfcURIReference = string;
-	using IfcVaporPermeabilityMeasure = double;
-	using IfcVolumeMeasure = double;
-	using IfcVolumetricFlowRateMeasure = double;
-	using IfcWarpingConstantMeasure = double;
-	using IfcWarpingMomentMeasure = double;
+	using IfcPowerMeasure = System.Double;
+	using IfcPresentableText = System.String;
+	using IfcPressureMeasure = System.Double;
+	using IfcPropertySetDefinitionSet = List<List<IfcPropertySetDefinition>>;
+	using IfcRadioActivityMeasure = System.Double;
+	using IfcRatioMeasure = System.Double;
+	using IfcReal = System.Double;
+	using IfcRotationalFrequencyMeasure = System.Double;
+	using IfcRotationalMassMeasure = System.Double;
+	using IfcRotationalStiffnessMeasure = System.Double;
+	using IfcSectionModulusMeasure = System.Double;
+	using IfcSectionalAreaIntegralMeasure = System.Double;
+	using IfcShearModulusMeasure = System.Double;
+	using IfcSolidAngleMeasure = System.Double;
+	using IfcSoundPowerLevelMeasure = System.Double;
+	using IfcSoundPowerMeasure = System.Double;
+	using IfcSoundPressureLevelMeasure = System.Double;
+	using IfcSoundPressureMeasure = System.Double;
+	using IfcSpecificHeatCapacityMeasure = System.Double;
+	using IfcSpecularExponent = System.Double;
+	using IfcSpecularRoughness = System.Double;
+	using IfcTemperatureGradientMeasure = System.Double;
+	using IfcTemperatureRateOfChangeMeasure = System.Double;
+	using IfcText = System.String;
+	using IfcTextAlignment = System.String;
+	using IfcTextDecoration = System.String;
+	using IfcTextFontName = System.String;
+	using IfcTextTransformation = System.String;
+	using IfcThermalAdmittanceMeasure = System.Double;
+	using IfcThermalConductivityMeasure = System.Double;
+	using IfcThermalExpansionCoefficientMeasure = System.Double;
+	using IfcThermalResistanceMeasure = System.Double;
+	using IfcThermalTransmittanceMeasure = System.Double;
+	using IfcThermodynamicTemperatureMeasure = System.Double;
+	using IfcTime = System.String;
+	using IfcTimeMeasure = System.Double;
+	using IfcTimeStamp = System.Int32;
+	using IfcTorqueMeasure = System.Double;
+	using IfcURIReference = System.String;
+	using IfcVaporPermeabilityMeasure = System.Double;
+	using IfcVolumeMeasure = System.Double;
+	using IfcVolumetricFlowRateMeasure = System.Double;
+	using IfcWarpingConstantMeasure = System.Double;
+	using IfcWarpingMomentMeasure = System.Double;
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequesttypeenum.htm
 	/// </summary>
@@ -138,7 +138,6 @@ namespace IFC4
 	{
 		EMAIL,FAX,PHONE,POST,VERBAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionsourcetypeenum.htm
 	/// </summary>
@@ -146,7 +145,6 @@ namespace IFC4
 	{
 		DEAD_LOAD_G,COMPLETION_G1,LIVE_LOAD_Q,SNOW_S,WIND_W,PRESTRESSING_P,SETTLEMENT_U,TEMPERATURE_T,EARTHQUAKE_E,FIRE,IMPULSE,IMPACT,TRANSPORT,ERECTION,PROPPING,SYSTEM_IMPERFECTION,SHRINKAGE,CREEP,LACK_OF_FIT,BUOYANCY,ICE,CURRENT,WAVE,RAIN,BRAKES,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactiontypeenum.htm
 	/// </summary>
@@ -154,7 +152,6 @@ namespace IFC4
 	{
 		PERMANENT_G,VARIABLE_Q,EXTRAORDINARY_A,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactuatortypeenum.htm
 	/// </summary>
@@ -162,7 +159,6 @@ namespace IFC4
 	{
 		ELECTRICACTUATOR,HANDOPERATEDACTUATOR,HYDRAULICACTUATOR,PNEUMATICACTUATOR,THERMOSTATICACTUATOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaddresstypeenum.htm
 	/// </summary>
@@ -170,7 +166,6 @@ namespace IFC4
 	{
 		OFFICE,SITE,HOME,DISTRIBUTIONPOINT,USERDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminalboxtypeenum.htm
 	/// </summary>
@@ -178,7 +173,6 @@ namespace IFC4
 	{
 		CONSTANTFLOW,VARIABLEFLOWPRESSUREDEPENDANT,VARIABLEFLOWPRESSUREINDEPENDANT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminaltypeenum.htm
 	/// </summary>
@@ -186,7 +180,6 @@ namespace IFC4
 	{
 		DIFFUSER,GRILLE,LOUVRE,REGISTER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairtoairheatrecoverytypeenum.htm
 	/// </summary>
@@ -194,7 +187,6 @@ namespace IFC4
 	{
 		FIXEDPLATECOUNTERFLOWEXCHANGER,FIXEDPLATECROSSFLOWEXCHANGER,FIXEDPLATEPARALLELFLOWEXCHANGER,ROTARYWHEEL,RUNAROUNDCOILLOOP,HEATPIPE,TWINTOWERENTHALPYRECOVERYLOOPS,THERMOSIPHONSEALEDTUBEHEATEXCHANGERS,THERMOSIPHONCOILTYPEHEATEXCHANGERS,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcalarmtypeenum.htm
 	/// </summary>
@@ -202,7 +194,6 @@ namespace IFC4
 	{
 		BELL,BREAKGLASSBUTTON,LIGHT,MANUALPULLBOX,SIREN,WHISTLE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysismodeltypeenum.htm
 	/// </summary>
@@ -210,7 +201,6 @@ namespace IFC4
 	{
 		IN_PLANE_LOADING_2D,OUT_PLANE_LOADING_2D,LOADING_3D,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysistheorytypeenum.htm
 	/// </summary>
@@ -218,7 +208,6 @@ namespace IFC4
 	{
 		FIRST_ORDER_THEORY,SECOND_ORDER_THEORY,THIRD_ORDER_THEORY,FULL_NONLINEAR_THEORY,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarithmeticoperatorenum.htm
 	/// </summary>
@@ -226,7 +215,6 @@ namespace IFC4
 	{
 		ADD,DIVIDE,MULTIPLY,SUBTRACT
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcassemblyplaceenum.htm
 	/// </summary>
@@ -234,7 +222,6 @@ namespace IFC4
 	{
 		SITE,FACTORY,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaudiovisualappliancetypeenum.htm
 	/// </summary>
@@ -242,7 +229,6 @@ namespace IFC4
 	{
 		AMPLIFIER,CAMERA,DISPLAY,MICROPHONE,PLAYER,PROJECTOR,RECEIVER,SPEAKER,SWITCHER,TELEPHONE,TUNER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurveform.htm
 	/// </summary>
@@ -250,7 +236,6 @@ namespace IFC4
 	{
 		POLYLINE_FORM,CIRCULAR_ARC,ELLIPTIC_ARC,PARABOLIC_ARC,HYPERBOLIC_ARC,UNSPECIFIED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurfaceform.htm
 	/// </summary>
@@ -258,7 +243,6 @@ namespace IFC4
 	{
 		PLANE_SURF,CYLINDRICAL_SURF,CONICAL_SURF,SPHERICAL_SURF,TOROIDAL_SURF,SURF_OF_REVOLUTION,RULED_SURF,GENERALISED_CONE,QUADRIC_SURF,SURF_OF_LINEAR_EXTRUSION,UNSPECIFIED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeamtypeenum.htm
 	/// </summary>
@@ -266,7 +250,6 @@ namespace IFC4
 	{
 		BEAM,JOIST,HOLLOWCORE,LINTEL,SPANDREL,T_BEAM,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbenchmarkenum.htm
 	/// </summary>
@@ -274,7 +257,6 @@ namespace IFC4
 	{
 		GREATERTHAN,GREATERTHANOREQUALTO,LESSTHAN,LESSTHANOREQUALTO,EQUALTO,NOTEQUALTO,INCLUDES,NOTINCLUDES,INCLUDEDIN,NOTINCLUDEDIN
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboilertypeenum.htm
 	/// </summary>
@@ -282,7 +264,6 @@ namespace IFC4
 	{
 		WATER,STEAM,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperator.htm
 	/// </summary>
@@ -290,7 +271,6 @@ namespace IFC4
 	{
 		UNION,INTERSECTION,DIFFERENCE
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementparttypeenum.htm
 	/// </summary>
@@ -298,7 +278,6 @@ namespace IFC4
 	{
 		INSULATION,PRECASTPANEL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxytypeenum.htm
 	/// </summary>
@@ -306,7 +285,6 @@ namespace IFC4
 	{
 		COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystemtypeenum.htm
 	/// </summary>
@@ -314,7 +292,6 @@ namespace IFC4
 	{
 		FENESTRATION,FOUNDATION,LOADBEARING,OUTERSHELL,SHADING,TRANSPORT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcburnertypeenum.htm
 	/// </summary>
@@ -322,7 +299,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarrierfittingtypeenum.htm
 	/// </summary>
@@ -330,7 +306,6 @@ namespace IFC4
 	{
 		BEND,CROSS,REDUCER,TEE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarriersegmenttypeenum.htm
 	/// </summary>
@@ -338,7 +313,6 @@ namespace IFC4
 	{
 		CABLELADDERSEGMENT,CABLETRAYSEGMENT,CABLETRUNKINGSEGMENT,CONDUITSEGMENT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefittingtypeenum.htm
 	/// </summary>
@@ -346,7 +320,6 @@ namespace IFC4
 	{
 		CONNECTOR,ENTRY,EXIT,JUNCTION,TRANSITION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablesegmenttypeenum.htm
 	/// </summary>
@@ -354,7 +327,6 @@ namespace IFC4
 	{
 		BUSBARSEGMENT,CABLESEGMENT,CONDUCTORSEGMENT,CORESEGMENT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchangeactionenum.htm
 	/// </summary>
@@ -362,7 +334,6 @@ namespace IFC4
 	{
 		NOCHANGE,MODIFIED,ADDED,DELETED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchillertypeenum.htm
 	/// </summary>
@@ -370,7 +341,6 @@ namespace IFC4
 	{
 		AIRCOOLED,WATERCOOLED,HEATRECOVERY,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchimneytypeenum.htm
 	/// </summary>
@@ -378,7 +348,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoiltypeenum.htm
 	/// </summary>
@@ -386,7 +355,6 @@ namespace IFC4
 	{
 		DXCOOLINGCOIL,ELECTRICHEATINGCOIL,GASHEATINGCOIL,HYDRONICCOIL,STEAMHEATINGCOIL,WATERCOOLINGCOIL,WATERHEATINGCOIL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumntypeenum.htm
 	/// </summary>
@@ -394,7 +362,6 @@ namespace IFC4
 	{
 		COLUMN,PILASTER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccommunicationsappliancetypeenum.htm
 	/// </summary>
@@ -402,7 +369,6 @@ namespace IFC4
 	{
 		ANTENNA,COMPUTER,FAX,GATEWAY,MODEM,NETWORKAPPLIANCE,NETWORKBRIDGE,NETWORKHUB,PRINTER,REPEATER,ROUTER,SCANNER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexpropertytemplatetypeenum.htm
 	/// </summary>
@@ -410,7 +376,6 @@ namespace IFC4
 	{
 		P_COMPLEX,Q_COMPLEX
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompressortypeenum.htm
 	/// </summary>
@@ -418,7 +383,6 @@ namespace IFC4
 	{
 		DYNAMIC,RECIPROCATING,ROTARY,SCROLL,TROCHOIDAL,SINGLESTAGE,BOOSTER,OPENTYPE,HERMETIC,SEMIHERMETIC,WELDEDSHELLHERMETIC,ROLLINGPISTON,ROTARYVANE,SINGLESCREW,TWINSCREW,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccondensertypeenum.htm
 	/// </summary>
@@ -426,7 +390,6 @@ namespace IFC4
 	{
 		AIRCOOLED,EVAPORATIVECOOLED,WATERCOOLED,WATERCOOLEDBRAZEDPLATE,WATERCOOLEDSHELLCOIL,WATERCOOLEDSHELLTUBE,WATERCOOLEDTUBEINTUBE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectiontypeenum.htm
 	/// </summary>
@@ -434,7 +397,6 @@ namespace IFC4
 	{
 		ATPATH,ATSTART,ATEND,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstraintenum.htm
 	/// </summary>
@@ -442,7 +404,6 @@ namespace IFC4
 	{
 		HARD,SOFT,ADVISORY,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionequipmentresourcetypeenum.htm
 	/// </summary>
@@ -450,7 +411,6 @@ namespace IFC4
 	{
 		DEMOLISHING,EARTHMOVING,ERECTING,HEATING,LIGHTING,PAVING,PUMPING,TRANSPORTING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionmaterialresourcetypeenum.htm
 	/// </summary>
@@ -458,7 +418,6 @@ namespace IFC4
 	{
 		AGGREGATES,CONCRETE,DRYWALL,FUEL,GYPSUM,MASONRY,METAL,PLASTIC,WOOD,NOTDEFINED,USERDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionproductresourcetypeenum.htm
 	/// </summary>
@@ -466,7 +425,6 @@ namespace IFC4
 	{
 		ASSEMBLY,FORMWORK,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrollertypeenum.htm
 	/// </summary>
@@ -474,7 +432,6 @@ namespace IFC4
 	{
 		FLOATING,PROGRAMMABLE,PROPORTIONAL,MULTIPOSITION,TWOPOSITION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccooledbeamtypeenum.htm
 	/// </summary>
@@ -482,7 +439,6 @@ namespace IFC4
 	{
 		ACTIVE,PASSIVE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoolingtowertypeenum.htm
 	/// </summary>
@@ -490,7 +446,6 @@ namespace IFC4
 	{
 		NATURALDRAFT,MECHANICALINDUCEDDRAFT,MECHANICALFORCEDDRAFT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostitemtypeenum.htm
 	/// </summary>
@@ -498,7 +453,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostscheduletypeenum.htm
 	/// </summary>
@@ -506,7 +460,6 @@ namespace IFC4
 	{
 		BUDGET,COSTPLAN,ESTIMATE,TENDER,PRICEDBILLOFQUANTITIES,UNPRICEDBILLOFQUANTITIES,SCHEDULEOFRATES,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoveringtypeenum.htm
 	/// </summary>
@@ -514,7 +467,6 @@ namespace IFC4
 	{
 		CEILING,FLOORING,CLADDING,ROOFING,MOLDING,SKIRTINGBOARD,INSULATION,MEMBRANE,SLEEVING,WRAPPING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresourcetypeenum.htm
 	/// </summary>
@@ -522,7 +474,6 @@ namespace IFC4
 	{
 		OFFICE,SITE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurtainwalltypeenum.htm
 	/// </summary>
@@ -530,7 +481,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveinterpolationenum.htm
 	/// </summary>
@@ -538,7 +488,6 @@ namespace IFC4
 	{
 		LINEAR,LOG_LINEAR,LOG_LOG,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdampertypeenum.htm
 	/// </summary>
@@ -546,7 +495,6 @@ namespace IFC4
 	{
 		BACKDRAFTDAMPER,BALANCINGDAMPER,BLASTDAMPER,CONTROLDAMPER,FIREDAMPER,FIRESMOKEDAMPER,FUMEHOODEXHAUST,GRAVITYDAMPER,GRAVITYRELIEFDAMPER,RELIEFDAMPER,SMOKEDAMPER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdataoriginenum.htm
 	/// </summary>
@@ -554,7 +502,6 @@ namespace IFC4
 	{
 		MEASURED,PREDICTED,SIMULATED,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunitenum.htm
 	/// </summary>
@@ -562,7 +509,6 @@ namespace IFC4
 	{
 		ANGULARVELOCITYUNIT,AREADENSITYUNIT,COMPOUNDPLANEANGLEUNIT,DYNAMICVISCOSITYUNIT,HEATFLUXDENSITYUNIT,INTEGERCOUNTRATEUNIT,ISOTHERMALMOISTURECAPACITYUNIT,KINEMATICVISCOSITYUNIT,LINEARVELOCITYUNIT,MASSDENSITYUNIT,MASSFLOWRATEUNIT,MOISTUREDIFFUSIVITYUNIT,MOLECULARWEIGHTUNIT,SPECIFICHEATCAPACITYUNIT,THERMALADMITTANCEUNIT,THERMALCONDUCTANCEUNIT,THERMALRESISTANCEUNIT,THERMALTRANSMITTANCEUNIT,VAPORPERMEABILITYUNIT,VOLUMETRICFLOWRATEUNIT,ROTATIONALFREQUENCYUNIT,TORQUEUNIT,MOMENTOFINERTIAUNIT,LINEARMOMENTUNIT,LINEARFORCEUNIT,PLANARFORCEUNIT,MODULUSOFELASTICITYUNIT,SHEARMODULUSUNIT,LINEARSTIFFNESSUNIT,ROTATIONALSTIFFNESSUNIT,MODULUSOFSUBGRADEREACTIONUNIT,ACCELERATIONUNIT,CURVATUREUNIT,HEATINGVALUEUNIT,IONCONCENTRATIONUNIT,LUMINOUSINTENSITYDISTRIBUTIONUNIT,MASSPERLENGTHUNIT,MODULUSOFLINEARSUBGRADEREACTIONUNIT,MODULUSOFROTATIONALSUBGRADEREACTIONUNIT,PHUNIT,ROTATIONALMASSUNIT,SECTIONAREAINTEGRALUNIT,SECTIONMODULUSUNIT,SOUNDPOWERLEVELUNIT,SOUNDPOWERUNIT,SOUNDPRESSURELEVELUNIT,SOUNDPRESSUREUNIT,TEMPERATUREGRADIENTUNIT,TEMPERATURERATEOFCHANGEUNIT,THERMALEXPANSIONCOEFFICIENTUNIT,WARPINGCONSTANTUNIT,WARPINGMOMENTUNIT,USERDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdirectionsenseenum.htm
 	/// </summary>
@@ -570,7 +516,6 @@ namespace IFC4
 	{
 		POSITIVE,NEGATIVE
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdiscreteaccessorytypeenum.htm
 	/// </summary>
@@ -578,7 +523,6 @@ namespace IFC4
 	{
 		ANCHORPLATE,BRACKET,SHOE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionchamberelementtypeenum.htm
 	/// </summary>
@@ -586,7 +530,6 @@ namespace IFC4
 	{
 		FORMEDDUCT,INSPECTIONCHAMBER,INSPECTIONPIT,MANHOLE,METERCHAMBER,SUMP,TRENCH,VALVECHAMBER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionporttypeenum.htm
 	/// </summary>
@@ -594,7 +537,6 @@ namespace IFC4
 	{
 		CABLE,CABLECARRIER,DUCT,PIPE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionsystemenum.htm
 	/// </summary>
@@ -602,7 +544,6 @@ namespace IFC4
 	{
 		AIRCONDITIONING,AUDIOVISUAL,CHEMICAL,CHILLEDWATER,COMMUNICATION,COMPRESSEDAIR,CONDENSERWATER,CONTROL,CONVEYING,DATA,DISPOSAL,DOMESTICCOLDWATER,DOMESTICHOTWATER,DRAINAGE,EARTHING,ELECTRICAL,ELECTROACOUSTIC,EXHAUST,FIREPROTECTION,FUEL,GAS,HAZARDOUS,HEATING,LIGHTING,LIGHTNINGPROTECTION,MUNICIPALSOLIDWASTE,OIL,OPERATIONAL,POWERGENERATION,RAINWATER,REFRIGERATION,SECURITY,SEWAGE,SIGNAL,STORMWATER,TELEPHONE,TV,VACUUM,VENT,VENTILATION,WASTEWATER,WATERSUPPLY,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentconfidentialityenum.htm
 	/// </summary>
@@ -610,7 +551,6 @@ namespace IFC4
 	{
 		PUBLIC,RESTRICTED,CONFIDENTIAL,PERSONAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentstatusenum.htm
 	/// </summary>
@@ -618,7 +558,6 @@ namespace IFC4
 	{
 		DRAFT,FINALDRAFT,FINAL,REVISION,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpaneloperationenum.htm
 	/// </summary>
@@ -626,7 +565,6 @@ namespace IFC4
 	{
 		SWINGING,DOUBLE_ACTING,SLIDING,FOLDING,REVOLVING,ROLLINGUP,FIXEDPANEL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelpositionenum.htm
 	/// </summary>
@@ -634,7 +572,6 @@ namespace IFC4
 	{
 		LEFT,MIDDLE,RIGHT,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleconstructionenum.htm
 	/// </summary>
@@ -642,7 +579,6 @@ namespace IFC4
 	{
 		ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,ALUMINIUM_PLASTIC,PLASTIC,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleoperationenum.htm
 	/// </summary>
@@ -650,7 +586,6 @@ namespace IFC4
 	{
 		SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeenum.htm
 	/// </summary>
@@ -658,7 +593,6 @@ namespace IFC4
 	{
 		DOOR,GATE,TRAPDOOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeoperationenum.htm
 	/// </summary>
@@ -666,7 +600,6 @@ namespace IFC4
 	{
 		SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,SWING_FIXED_LEFT,SWING_FIXED_RIGHT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductfittingtypeenum.htm
 	/// </summary>
@@ -674,7 +607,6 @@ namespace IFC4
 	{
 		BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsegmenttypeenum.htm
 	/// </summary>
@@ -682,7 +614,6 @@ namespace IFC4
 	{
 		RIGIDSEGMENT,FLEXIBLESEGMENT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsilencertypeenum.htm
 	/// </summary>
@@ -690,7 +621,6 @@ namespace IFC4
 	{
 		FLATOVAL,RECTANGULAR,ROUND,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricappliancetypeenum.htm
 	/// </summary>
@@ -698,7 +628,6 @@ namespace IFC4
 	{
 		DISHWASHER,ELECTRICCOOKER,FREESTANDINGELECTRICHEATER,FREESTANDINGFAN,FREESTANDINGWATERHEATER,FREESTANDINGWATERCOOLER,FREEZER,FRIDGE_FREEZER,HANDDRYER,KITCHENMACHINE,MICROWAVE,PHOTOCOPIER,REFRIGERATOR,TUMBLEDRYER,VENDINGMACHINE,WASHINGMACHINE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricdistributionboardtypeenum.htm
 	/// </summary>
@@ -706,7 +635,6 @@ namespace IFC4
 	{
 		CONSUMERUNIT,DISTRIBUTIONBOARD,MOTORCONTROLCENTRE,SWITCHBOARD,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricflowstoragedevicetypeenum.htm
 	/// </summary>
@@ -714,7 +642,6 @@ namespace IFC4
 	{
 		BATTERY,CAPACITORBANK,HARMONICFILTER,INDUCTORBANK,UPS,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricgeneratortypeenum.htm
 	/// </summary>
@@ -722,7 +649,6 @@ namespace IFC4
 	{
 		CHP,ENGINEGENERATOR,STANDALONE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricmotortypeenum.htm
 	/// </summary>
@@ -730,7 +656,6 @@ namespace IFC4
 	{
 		DC,INDUCTION,POLYPHASE,RELUCTANCESYNCHRONOUS,SYNCHRONOUS,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectrictimecontroltypeenum.htm
 	/// </summary>
@@ -738,7 +663,6 @@ namespace IFC4
 	{
 		TIMECLOCK,TIMEDELAY,RELAY,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassemblytypeenum.htm
 	/// </summary>
@@ -746,7 +670,6 @@ namespace IFC4
 	{
 		ACCESSORY_ASSEMBLY,ARCH,BEAM_GRID,BRACED_FRAME,GIRDER,REINFORCEMENT_UNIT,RIGID_FRAME,SLAB_FIELD,TRUSS,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcompositionenum.htm
 	/// </summary>
@@ -754,7 +677,6 @@ namespace IFC4
 	{
 		COMPLEX,ELEMENT,PARTIAL
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenginetypeenum.htm
 	/// </summary>
@@ -762,7 +684,6 @@ namespace IFC4
 	{
 		EXTERNALCOMBUSTION,INTERNALCOMBUSTION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporativecoolertypeenum.htm
 	/// </summary>
@@ -770,7 +691,6 @@ namespace IFC4
 	{
 		DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER,DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER,DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER,DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER,DIRECTEVAPORATIVEAIRWASHER,INDIRECTEVAPORATIVEPACKAGEAIRCOOLER,INDIRECTEVAPORATIVEWETCOIL,INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER,INDIRECTDIRECTCOMBINATION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporatortypeenum.htm
 	/// </summary>
@@ -778,7 +698,6 @@ namespace IFC4
 	{
 		DIRECTEXPANSION,DIRECTEXPANSIONSHELLANDTUBE,DIRECTEXPANSIONTUBEINTUBE,DIRECTEXPANSIONBRAZEDPLATE,FLOODEDSHELLANDTUBE,SHELLANDCOIL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtriggertypeenum.htm
 	/// </summary>
@@ -786,7 +705,6 @@ namespace IFC4
 	{
 		EVENTRULE,EVENTMESSAGE,EVENTTIME,EVENTCOMPLEX,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtypeenum.htm
 	/// </summary>
@@ -794,7 +712,6 @@ namespace IFC4
 	{
 		STARTEVENT,ENDEVENT,INTERMEDIATEEVENT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelementtypeenum.htm
 	/// </summary>
@@ -802,7 +719,6 @@ namespace IFC4
 	{
 		EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFIEND
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfantypeenum.htm
 	/// </summary>
@@ -810,7 +726,6 @@ namespace IFC4
 	{
 		CENTRIFUGALFORWARDCURVED,CENTRIFUGALRADIAL,CENTRIFUGALBACKWARDINCLINEDCURVED,CENTRIFUGALAIRFOIL,TUBEAXIAL,VANEAXIAL,PROPELLORAXIAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastenertypeenum.htm
 	/// </summary>
@@ -818,7 +733,6 @@ namespace IFC4
 	{
 		GLUE,MORTAR,WELD,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiltertypeenum.htm
 	/// </summary>
@@ -826,7 +740,6 @@ namespace IFC4
 	{
 		AIRPARTICLEFILTER,COMPRESSEDAIRFILTER,ODORFILTER,OILFILTER,STRAINER,WATERFILTER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiresuppressionterminaltypeenum.htm
 	/// </summary>
@@ -834,7 +747,6 @@ namespace IFC4
 	{
 		BREECHINGINLET,FIREHYDRANT,HOSEREEL,SPRINKLER,SPRINKLERDEFLECTOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowdirectionenum.htm
 	/// </summary>
@@ -842,7 +754,6 @@ namespace IFC4
 	{
 		SOURCE,SINK,SOURCEANDSINK,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrumenttypeenum.htm
 	/// </summary>
@@ -850,7 +761,6 @@ namespace IFC4
 	{
 		PRESSUREGAUGE,THERMOMETER,AMMETER,FREQUENCYMETER,POWERFACTORMETER,PHASEANGLEMETER,VOLTMETER_PEAK,VOLTMETER_RMS,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmetertypeenum.htm
 	/// </summary>
@@ -858,7 +768,6 @@ namespace IFC4
 	{
 		ENERGYMETER,GASMETER,OILMETER,WATERMETER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfootingtypeenum.htm
 	/// </summary>
@@ -866,7 +775,6 @@ namespace IFC4
 	{
 		CAISSON_FOUNDATION,FOOTING_BEAM,PAD_FOOTING,PILE_CAP,STRIP_FOOTING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretypeenum.htm
 	/// </summary>
@@ -874,7 +782,6 @@ namespace IFC4
 	{
 		CHAIR,TABLE,DESK,BED,FILECABINET,SHELF,SOFA,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeographicelementtypeenum.htm
 	/// </summary>
@@ -882,7 +789,6 @@ namespace IFC4
 	{
 		TERRAIN,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricprojectionenum.htm
 	/// </summary>
@@ -890,7 +796,6 @@ namespace IFC4
 	{
 		GRAPH_VIEW,SKETCH_VIEW,MODEL_VIEW,PLAN_VIEW,REFLECTED_PLAN_VIEW,SECTION_VIEW,ELEVATION_VIEW,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcglobalorlocalenum.htm
 	/// </summary>
@@ -898,7 +803,6 @@ namespace IFC4
 	{
 		GLOBAL_COORDS,LOCAL_COORDS
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridtypeenum.htm
 	/// </summary>
@@ -906,7 +810,6 @@ namespace IFC4
 	{
 		RECTANGULAR,RADIAL,TRIANGULAR,IRREGULAR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatexchangertypeenum.htm
 	/// </summary>
@@ -914,7 +817,6 @@ namespace IFC4
 	{
 		PLATE,SHELLANDTUBE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchumidifiertypeenum.htm
 	/// </summary>
@@ -922,7 +824,6 @@ namespace IFC4
 	{
 		STEAMINJECTION,ADIABATICAIRWASHER,ADIABATICPAN,ADIABATICWETTEDELEMENT,ADIABATICATOMIZING,ADIABATICULTRASONIC,ADIABATICRIGIDMEDIA,ADIABATICCOMPRESSEDAIRNOZZLE,ASSISTEDELECTRIC,ASSISTEDNATURALGAS,ASSISTEDPROPANE,ASSISTEDBUTANE,ASSISTEDSTEAM,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptortypeenum.htm
 	/// </summary>
@@ -930,7 +831,6 @@ namespace IFC4
 	{
 		CYCLONIC,GREASE,OIL,PETROL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinternalorexternalenum.htm
 	/// </summary>
@@ -938,7 +838,6 @@ namespace IFC4
 	{
 		INTERNAL,EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventorytypeenum.htm
 	/// </summary>
@@ -946,7 +845,6 @@ namespace IFC4
 	{
 		ASSETINVENTORY,SPACEINVENTORY,FURNITUREINVENTORY,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcjunctionboxtypeenum.htm
 	/// </summary>
@@ -954,7 +852,6 @@ namespace IFC4
 	{
 		DATA,POWER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcknottype.htm
 	/// </summary>
@@ -962,7 +859,6 @@ namespace IFC4
 	{
 		UNIFORM_KNOTS,QUASI_UNIFORM_KNOTS,PIECEWISE_BEZIER_KNOTS,UNSPECIFIED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetypeenum.htm
 	/// </summary>
@@ -970,7 +866,6 @@ namespace IFC4
 	{
 		ADMINISTRATION,CARPENTRY,CLEANING,CONCRETE,DRYWALL,ELECTRIC,FINISHING,FLOORING,GENERAL,HVAC,LANDSCAPING,MASONRY,PAINTING,PAVING,PLUMBING,ROOFING,SITEGRADING,STEELWORK,SURVEYING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclamptypeenum.htm
 	/// </summary>
@@ -978,7 +873,6 @@ namespace IFC4
 	{
 		COMPACTFLUORESCENT,FLUORESCENT,HALOGEN,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LED,METALHALIDE,OLED,TUNGSTENFILAMENT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayersetdirectionenum.htm
 	/// </summary>
@@ -986,7 +880,6 @@ namespace IFC4
 	{
 		AXIS1,AXIS2,AXIS3
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributioncurveenum.htm
 	/// </summary>
@@ -994,7 +887,6 @@ namespace IFC4
 	{
 		TYPE_A,TYPE_B,TYPE_C,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightemissionsourceenum.htm
 	/// </summary>
@@ -1002,7 +894,6 @@ namespace IFC4
 	{
 		COMPACTFLUORESCENT,FLUORESCENT,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LIGHTEMITTINGDIODE,LOWPRESSURESODIUM,LOWVOLTAGEHALOGEN,MAINVOLTAGEHALOGEN,METALHALIDE,TUNGSTENFILAMENT,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightfixturetypeenum.htm
 	/// </summary>
@@ -1010,7 +901,6 @@ namespace IFC4
 	{
 		POINTSOURCE,DIRECTIONSOURCE,SECURITYLIGHTING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcloadgrouptypeenum.htm
 	/// </summary>
@@ -1018,7 +908,6 @@ namespace IFC4
 	{
 		LOAD_GROUP,LOAD_CASE,LOAD_COMBINATION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclogicaloperatorenum.htm
 	/// </summary>
@@ -1026,7 +915,6 @@ namespace IFC4
 	{
 		LOGICALAND,LOGICALOR,LOGICALXOR,LOGICALNOTAND,LOGICALNOTOR
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastenertypeenum.htm
 	/// </summary>
@@ -1034,7 +922,6 @@ namespace IFC4
 	{
 		ANCHORBOLT,BOLT,DOWEL,NAIL,NAILPLATE,RIVET,SCREW,SHEARCONNECTOR,STAPLE,STUDSHEARCONNECTOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevicetypeenum.htm
 	/// </summary>
@@ -1042,7 +929,6 @@ namespace IFC4
 	{
 		AIRSTATION,FEEDAIRUNIT,OXYGENGENERATOR,OXYGENPLANT,VACUUMSTATION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmembertypeenum.htm
 	/// </summary>
@@ -1050,7 +936,6 @@ namespace IFC4
 	{
 		BRACE,CHORD,COLLAR,MEMBER,MULLION,PLATE,POST,PURLIN,RAFTER,STRINGER,STRUT,STUD,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmotorconnectiontypeenum.htm
 	/// </summary>
@@ -1058,7 +943,6 @@ namespace IFC4
 	{
 		BELTDRIVE,COUPLING,DIRECTDRIVE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnullstyle.htm
 	/// </summary>
@@ -1066,7 +950,6 @@ namespace IFC4
 	{
 		NULL
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjecttypeenum.htm
 	/// </summary>
@@ -1074,7 +957,6 @@ namespace IFC4
 	{
 		PRODUCT,PROCESS,CONTROL,RESOURCE,ACTOR,GROUP,PROJECT,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectiveenum.htm
 	/// </summary>
@@ -1082,7 +964,6 @@ namespace IFC4
 	{
 		CODECOMPLIANCE,CODEWAIVER,DESIGNINTENT,EXTERNAL,HEALTHANDSAFETY,MERGECONFLICT,MODELVIEW,PARAMETER,REQUIREMENT,SPECIFICATION,TRIGGERCONDITION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoccupanttypeenum.htm
 	/// </summary>
@@ -1090,7 +971,6 @@ namespace IFC4
 	{
 		ASSIGNEE,ASSIGNOR,LESSEE,LESSOR,LETTINGAGENT,OWNER,TENANT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopeningelementtypeenum.htm
 	/// </summary>
@@ -1098,7 +978,6 @@ namespace IFC4
 	{
 		OPENING,RECESS,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoutlettypeenum.htm
 	/// </summary>
@@ -1106,7 +985,6 @@ namespace IFC4
 	{
 		AUDIOVISUALOUTLET,COMMUNICATIONSOUTLET,POWEROUTLET,DATAOUTLET,TELEPHONEOUTLET,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperformancehistorytypeenum.htm
 	/// </summary>
@@ -1114,7 +992,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermeablecoveringoperationenum.htm
 	/// </summary>
@@ -1122,7 +999,6 @@ namespace IFC4
 	{
 		GRILL,LOUVER,SCREEN,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermittypeenum.htm
 	/// </summary>
@@ -1130,7 +1006,6 @@ namespace IFC4
 	{
 		ACCESS,BUILDING,WORK,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalorvirtualenum.htm
 	/// </summary>
@@ -1138,7 +1013,6 @@ namespace IFC4
 	{
 		PHYSICAL,VIRTUAL,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpileconstructionenum.htm
 	/// </summary>
@@ -1146,7 +1020,6 @@ namespace IFC4
 	{
 		CAST_IN_PLACE,COMPOSITE,PRECAST_CONCRETE,PREFAB_STEEL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpiletypeenum.htm
 	/// </summary>
@@ -1154,7 +1027,6 @@ namespace IFC4
 	{
 		BORED,DRIVEN,JETGROUTING,COHESION,FRICTION,SUPPORT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipefittingtypeenum.htm
 	/// </summary>
@@ -1162,7 +1034,6 @@ namespace IFC4
 	{
 		BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipesegmenttypeenum.htm
 	/// </summary>
@@ -1170,7 +1041,6 @@ namespace IFC4
 	{
 		CULVERT,FLEXIBLESEGMENT,RIGIDSEGMENT,GUTTER,SPOOL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplatetypeenum.htm
 	/// </summary>
@@ -1178,7 +1048,6 @@ namespace IFC4
 	{
 		CURTAIN_PANEL,SHEET,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretypeenum.htm
 	/// </summary>
@@ -1186,7 +1055,6 @@ namespace IFC4
 	{
 		ADVICE_CAUTION,ADVICE_NOTE,ADVICE_WARNING,CALIBRATION,DIAGNOSTIC,SHUTDOWN,STARTUP,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofiletypeenum.htm
 	/// </summary>
@@ -1194,7 +1062,6 @@ namespace IFC4
 	{
 		CURVE,AREA
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectordertypeenum.htm
 	/// </summary>
@@ -1202,7 +1069,6 @@ namespace IFC4
 	{
 		CHANGEORDER,MAINTENANCEWORKORDER,MOVEORDER,PURCHASEORDER,WORKORDER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectedortruelengthenum.htm
 	/// </summary>
@@ -1210,7 +1076,6 @@ namespace IFC4
 	{
 		PROJECTED_LENGTH,TRUE_LENGTH
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectionelementtypeenum.htm
 	/// </summary>
@@ -1218,7 +1083,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplatetypeenum.htm
 	/// </summary>
@@ -1226,7 +1090,6 @@ namespace IFC4
 	{
 		PSET_TYPEDRIVENONLY,PSET_TYPEDRIVENOVERRIDE,PSET_OCCURRENCEDRIVEN,PSET_PERFORMANCEDRIVEN,QTO_TYPEDRIVENONLY,QTO_TYPEDRIVENOVERRIDE,QTO_OCCURRENCEDRIVEN,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetrippingunittypeenum.htm
 	/// </summary>
@@ -1234,7 +1097,6 @@ namespace IFC4
 	{
 		ELECTRONIC,ELECTROMAGNETIC,RESIDUALCURRENT,THERMAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetypeenum.htm
 	/// </summary>
@@ -1242,7 +1104,6 @@ namespace IFC4
 	{
 		CIRCUITBREAKER,EARTHLEAKAGECIRCUITBREAKER,EARTHINGSWITCH,FUSEDISCONNECTOR,RESIDUALCURRENTCIRCUITBREAKER,RESIDUALCURRENTSWITCH,VARISTOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpumptypeenum.htm
 	/// </summary>
@@ -1250,7 +1111,6 @@ namespace IFC4
 	{
 		CIRCULATOR,ENDSUCTION,SPLITCASE,SUBMERSIBLEPUMP,SUMPPUMP,VERTICALINLINE,VERTICALTURBINE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrailingtypeenum.htm
 	/// </summary>
@@ -1258,7 +1118,6 @@ namespace IFC4
 	{
 		HANDRAIL,GUARDRAIL,BALUSTRADE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrampflighttypeenum.htm
 	/// </summary>
@@ -1266,7 +1125,6 @@ namespace IFC4
 	{
 		STRAIGHT,SPIRAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramptypeenum.htm
 	/// </summary>
@@ -1274,7 +1132,6 @@ namespace IFC4
 	{
 		STRAIGHT_RUN_RAMP,TWO_STRAIGHT_RUN_RAMP,QUARTER_TURN_RAMP,TWO_QUARTER_TURN_RAMP,HALF_TURN_RAMP,SPIRAL_RAMP,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencetypeenum.htm
 	/// </summary>
@@ -1282,7 +1139,6 @@ namespace IFC4
 	{
 		DAILY,WEEKLY,MONTHLY_BY_DAY_OF_MONTH,MONTHLY_BY_POSITION,BY_DAY_COUNT,BY_WEEKDAY_COUNT,YEARLY_BY_DAY_OF_MONTH,YEARLY_BY_POSITION
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreflectancemethodenum.htm
 	/// </summary>
@@ -1290,7 +1146,6 @@ namespace IFC4
 	{
 		BLINN,FLAT,GLASS,MATT,METAL,MIRROR,PHONG,PLASTIC,STRAUSS,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarroleenum.htm
 	/// </summary>
@@ -1298,7 +1153,6 @@ namespace IFC4
 	{
 		MAIN,SHEAR,LIGATURE,STUD,PUNCHING,EDGE,RING,ANCHORING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarsurfaceenum.htm
 	/// </summary>
@@ -1306,7 +1160,6 @@ namespace IFC4
 	{
 		PLAIN,TEXTURED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartypeenum.htm
 	/// </summary>
@@ -1314,7 +1167,6 @@ namespace IFC4
 	{
 		ANCHORING,EDGE,LIGATURE,MAIN,PUNCHING,RING,SHEAR,STUD,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingmeshtypeenum.htm
 	/// </summary>
@@ -1322,7 +1174,6 @@ namespace IFC4
 	{
 		USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroleenum.htm
 	/// </summary>
@@ -1330,7 +1181,6 @@ namespace IFC4
 	{
 		SUPPLIER,MANUFACTURER,CONTRACTOR,SUBCONTRACTOR,ARCHITECT,STRUCTURALENGINEER,COSTENGINEER,CLIENT,BUILDINGOWNER,BUILDINGOPERATOR,MECHANICALENGINEER,ELECTRICALENGINEER,PROJECTMANAGER,FACILITIESMANAGER,CIVILENGINEER,COMMISSIONINGENGINEER,ENGINEER,OWNER,CONSULTANT,CONSTRUCTIONMANAGER,FIELDCONSTRUCTIONMANAGER,RESELLER,USERDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrooftypeenum.htm
 	/// </summary>
@@ -1338,7 +1188,6 @@ namespace IFC4
 	{
 		FLAT_ROOF,SHED_ROOF,GABLE_ROOF,HIP_ROOF,HIPPED_GABLE_ROOF,GAMBREL_ROOF,MANSARD_ROOF,BARREL_ROOF,RAINBOW_ROOF,BUTTERFLY_ROOF,PAVILION_ROOF,DOME_ROOF,FREEFORM,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiprefix.htm
 	/// </summary>
@@ -1346,7 +1195,6 @@ namespace IFC4
 	{
 		EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiunitname.htm
 	/// </summary>
@@ -1354,7 +1202,6 @@ namespace IFC4
 	{
 		AMPERE,BECQUEREL,CANDELA,COULOMB,CUBIC_METRE,DEGREE_CELSIUS,FARAD,GRAM,GRAY,HENRY,HERTZ,JOULE,KELVIN,LUMEN,LUX,METRE,MOLE,NEWTON,OHM,PASCAL,RADIAN,SECOND,SIEMENS,SIEVERT,SQUARE_METRE,STERADIAN,TESLA,VOLT,WATT,WEBER
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsanitaryterminaltypeenum.htm
 	/// </summary>
@@ -1362,7 +1209,6 @@ namespace IFC4
 	{
 		BATH,BIDET,CISTERN,SHOWER,SINK,SANITARYFOUNTAIN,TOILETPAN,URINAL,WASHHANDBASIN,WCSEAT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectiontypeenum.htm
 	/// </summary>
@@ -1370,7 +1216,6 @@ namespace IFC4
 	{
 		UNIFORM,TAPERED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensortypeenum.htm
 	/// </summary>
@@ -1378,7 +1223,6 @@ namespace IFC4
 	{
 		CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsequenceenum.htm
 	/// </summary>
@@ -1386,7 +1230,6 @@ namespace IFC4
 	{
 		START_START,START_FINISH,FINISH_START,FINISH_FINISH,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshadingdevicetypeenum.htm
 	/// </summary>
@@ -1394,7 +1237,6 @@ namespace IFC4
 	{
 		JALOUSIE,SHUTTER,AWNING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplatetypeenum.htm
 	/// </summary>
@@ -1402,7 +1244,6 @@ namespace IFC4
 	{
 		P_SINGLEVALUE,P_ENUMERATEDVALUE,P_BOUNDEDVALUE,P_LISTVALUE,P_TABLEVALUE,P_REFERENCEVALUE,Q_LENGTH,Q_AREA,Q_VOLUME,Q_COUNT,Q_WEIGHT,Q_TIME
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabtypeenum.htm
 	/// </summary>
@@ -1410,7 +1251,6 @@ namespace IFC4
 	{
 		FLOOR,ROOF,LANDING,BASESLAB,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolardevicetypeenum.htm
 	/// </summary>
@@ -1418,7 +1258,6 @@ namespace IFC4
 	{
 		SOLARCOLLECTOR,SOLARPANEL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceheatertypeenum.htm
 	/// </summary>
@@ -1426,7 +1265,6 @@ namespace IFC4
 	{
 		CONVECTOR,RADIATOR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspacetypeenum.htm
 	/// </summary>
@@ -1434,7 +1272,6 @@ namespace IFC4
 	{
 		SPACE,PARKING,GFA,INTERNAL,EXTERNAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialzonetypeenum.htm
 	/// </summary>
@@ -1442,7 +1279,6 @@ namespace IFC4
 	{
 		CONSTRUCTION,FIRESAFETY,LIGHTING,OCCUPANCY,SECURITY,THERMAL,TRANSPORT,VENTILATION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstackterminaltypeenum.htm
 	/// </summary>
@@ -1450,7 +1286,6 @@ namespace IFC4
 	{
 		BIRDCAGE,COWL,RAINWATERHOPPER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairflighttypeenum.htm
 	/// </summary>
@@ -1458,7 +1293,6 @@ namespace IFC4
 	{
 		STRAIGHT,WINDER,SPIRAL,CURVED,FREEFORM,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairtypeenum.htm
 	/// </summary>
@@ -1466,7 +1300,6 @@ namespace IFC4
 	{
 		STRAIGHT_RUN_STAIR,TWO_STRAIGHT_RUN_STAIR,QUARTER_WINDING_STAIR,QUARTER_TURN_STAIR,HALF_WINDING_STAIR,HALF_TURN_STAIR,TWO_QUARTER_WINDING_STAIR,TWO_QUARTER_TURN_STAIR,THREE_QUARTER_WINDING_STAIR,THREE_QUARTER_TURN_STAIR,SPIRAL_STAIR,DOUBLE_RETURN_STAIR,CURVED_RUN_STAIR,TWO_CURVED_RUN_STAIR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstateenum.htm
 	/// </summary>
@@ -1474,7 +1307,6 @@ namespace IFC4
 	{
 		READWRITE,READONLY,LOCKED,READWRITELOCKED,READONLYLOCKED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveactivitytypeenum.htm
 	/// </summary>
@@ -1482,7 +1314,6 @@ namespace IFC4
 	{
 		CONST,LINEAR,POLYGONAL,EQUIDISTANT,SINUS,PARABOLA,DISCRETE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvemembertypeenum.htm
 	/// </summary>
@@ -1490,7 +1321,6 @@ namespace IFC4
 	{
 		RIGID_JOINED_MEMBER,PIN_JOINED_MEMBER,CABLE,TENSION_MEMBER,COMPRESSION_MEMBER,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfaceactivitytypeenum.htm
 	/// </summary>
@@ -1498,7 +1328,6 @@ namespace IFC4
 	{
 		CONST,BILINEAR,DISCRETE,ISOCONTOUR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacemembertypeenum.htm
 	/// </summary>
@@ -1506,7 +1335,6 @@ namespace IFC4
 	{
 		BENDING_ELEMENT,MEMBRANE_ELEMENT,SHELL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubcontractresourcetypeenum.htm
 	/// </summary>
@@ -1514,7 +1342,6 @@ namespace IFC4
 	{
 		PURCHASE,WORK,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacefeaturetypeenum.htm
 	/// </summary>
@@ -1522,7 +1349,6 @@ namespace IFC4
 	{
 		MARK,TAG,TREATMENT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceside.htm
 	/// </summary>
@@ -1530,7 +1356,6 @@ namespace IFC4
 	{
 		POSITIVE,NEGATIVE,BOTH
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcswitchingdevicetypeenum.htm
 	/// </summary>
@@ -1538,7 +1363,6 @@ namespace IFC4
 	{
 		CONTACTOR,DIMMERSWITCH,EMERGENCYSTOP,KEYPAD,MOMENTARYSWITCH,SELECTORSWITCH,STARTER,SWITCHDISCONNECTOR,TOGGLESWITCH,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystemfurnitureelementtypeenum.htm
 	/// </summary>
@@ -1546,7 +1370,6 @@ namespace IFC4
 	{
 		PANEL,WORKSURFACE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctanktypeenum.htm
 	/// </summary>
@@ -1554,7 +1377,6 @@ namespace IFC4
 	{
 		BASIN,BREAKPRESSURE,EXPANSION,FEEDANDEXPANSION,PRESSUREVESSEL,STORAGE,VESSEL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctaskdurationenum.htm
 	/// </summary>
@@ -1562,7 +1384,6 @@ namespace IFC4
 	{
 		ELAPSEDTIME,WORKTIME,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktypeenum.htm
 	/// </summary>
@@ -1570,7 +1391,6 @@ namespace IFC4
 	{
 		ATTENDANCE,CONSTRUCTION,DEMOLITION,DISMANTLE,DISPOSAL,INSTALLATION,LOGISTIC,MAINTENANCE,MOVE,OPERATION,REMOVAL,RENOVATION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchortypeenum.htm
 	/// </summary>
@@ -1578,7 +1398,6 @@ namespace IFC4
 	{
 		COUPLER,FIXED_END,TENSIONING_END,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendontypeenum.htm
 	/// </summary>
@@ -1586,7 +1405,6 @@ namespace IFC4
 	{
 		BAR,COATED,STRAND,WIRE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextpath.htm
 	/// </summary>
@@ -1594,7 +1412,6 @@ namespace IFC4
 	{
 		LEFT,RIGHT,UP,DOWN
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseriesdatatypeenum.htm
 	/// </summary>
@@ -1602,7 +1419,6 @@ namespace IFC4
 	{
 		CONTINUOUS,DISCRETE,DISCRETEBINARY,PIECEWISEBINARY,PIECEWISECONSTANT,PIECEWISECONTINUOUS,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransformertypeenum.htm
 	/// </summary>
@@ -1610,7 +1426,6 @@ namespace IFC4
 	{
 		CURRENT,FREQUENCY,INVERTER,RECTIFIER,VOLTAGE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransitioncode.htm
 	/// </summary>
@@ -1618,7 +1433,6 @@ namespace IFC4
 	{
 		DISCONTINUOUS,CONTINUOUS,CONTSAMEGRADIENT,CONTSAMEGRADIENTSAMECURVATURE
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransportelementtypeenum.htm
 	/// </summary>
@@ -1626,7 +1440,6 @@ namespace IFC4
 	{
 		ELEVATOR,ESCALATOR,MOVINGWALKWAY,CRANEWAY,LIFTINGGEAR,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingpreference.htm
 	/// </summary>
@@ -1634,7 +1447,6 @@ namespace IFC4
 	{
 		CARTESIAN,PARAMETER,UNSPECIFIED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctubebundletypeenum.htm
 	/// </summary>
@@ -1642,7 +1454,6 @@ namespace IFC4
 	{
 		FINNED,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitenum.htm
 	/// </summary>
@@ -1650,7 +1461,6 @@ namespace IFC4
 	{
 		ABSORBEDDOSEUNIT,AMOUNTOFSUBSTANCEUNIT,AREAUNIT,DOSEEQUIVALENTUNIT,ELECTRICCAPACITANCEUNIT,ELECTRICCHARGEUNIT,ELECTRICCONDUCTANCEUNIT,ELECTRICCURRENTUNIT,ELECTRICRESISTANCEUNIT,ELECTRICVOLTAGEUNIT,ENERGYUNIT,FORCEUNIT,FREQUENCYUNIT,ILLUMINANCEUNIT,INDUCTANCEUNIT,LENGTHUNIT,LUMINOUSFLUXUNIT,LUMINOUSINTENSITYUNIT,MAGNETICFLUXDENSITYUNIT,MAGNETICFLUXUNIT,MASSUNIT,PLANEANGLEUNIT,POWERUNIT,PRESSUREUNIT,RADIOACTIVITYUNIT,SOLIDANGLEUNIT,THERMODYNAMICTEMPERATUREUNIT,TIMEUNIT,VOLUMEUNIT,USERDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitarycontrolelementtypeenum.htm
 	/// </summary>
@@ -1658,7 +1468,6 @@ namespace IFC4
 	{
 		ALARMPANEL,CONTROLPANEL,GASDETECTIONPANEL,INDICATORPANEL,MIMICPANEL,HUMIDISTAT,THERMOSTAT,WEATHERSTATION,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitaryequipmenttypeenum.htm
 	/// </summary>
@@ -1666,7 +1475,6 @@ namespace IFC4
 	{
 		AIRHANDLER,AIRCONDITIONINGUNIT,DEHUMIDIFIER,SPLITSYSTEM,ROOFTOPUNIT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalvetypeenum.htm
 	/// </summary>
@@ -1674,7 +1482,6 @@ namespace IFC4
 	{
 		AIRRELEASE,ANTIVACUUM,CHANGEOVER,CHECK,COMMISSIONING,DIVERTING,DRAWOFFCOCK,DOUBLECHECK,DOUBLEREGULATING,FAUCET,FLUSHING,GASCOCK,GASTAP,ISOLATING,MIXING,PRESSUREREDUCING,PRESSURERELIEF,REGULATING,SAFETYCUTOFF,STEAMTRAP,STOPCOCK,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvibrationisolatortypeenum.htm
 	/// </summary>
@@ -1682,7 +1489,6 @@ namespace IFC4
 	{
 		COMPRESSION,SPRING,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvoidingfeaturetypeenum.htm
 	/// </summary>
@@ -1690,7 +1496,6 @@ namespace IFC4
 	{
 		CUTOUT,NOTCH,HOLE,MITER,CHAMFER,EDGE,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwalltypeenum.htm
 	/// </summary>
@@ -1698,7 +1503,6 @@ namespace IFC4
 	{
 		MOVABLE,PARAPET,PARTITIONING,PLUMBINGWALL,SHEAR,SOLIDWALL,STANDARD,POLYGONAL,ELEMENTEDWALL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwasteterminaltypeenum.htm
 	/// </summary>
@@ -1706,7 +1510,6 @@ namespace IFC4
 	{
 		FLOORTRAP,FLOORWASTE,GULLYSUMP,GULLYTRAP,ROOFDRAIN,WASTEDISPOSALUNIT,WASTETRAP,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpaneloperationenum.htm
 	/// </summary>
@@ -1714,7 +1517,6 @@ namespace IFC4
 	{
 		SIDEHUNGRIGHTHAND,SIDEHUNGLEFTHAND,TILTANDTURNRIGHTHAND,TILTANDTURNLEFTHAND,TOPHUNG,BOTTOMHUNG,PIVOTHORIZONTAL,PIVOTVERTICAL,SLIDINGHORIZONTAL,SLIDINGVERTICAL,REMOVABLECASEMENT,FIXEDCASEMENT,OTHEROPERATION,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpanelpositionenum.htm
 	/// </summary>
@@ -1722,7 +1524,6 @@ namespace IFC4
 	{
 		LEFT,MIDDLE,RIGHT,BOTTOM,TOP,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleconstructionenum.htm
 	/// </summary>
@@ -1730,7 +1531,6 @@ namespace IFC4
 	{
 		ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,PLASTIC,OTHER_CONSTRUCTION,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleoperationenum.htm
 	/// </summary>
@@ -1738,7 +1538,6 @@ namespace IFC4
 	{
 		SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypeenum.htm
 	/// </summary>
@@ -1746,7 +1545,6 @@ namespace IFC4
 	{
 		WINDOW,SKYLIGHT,LIGHTDOME,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypepartitioningenum.htm
 	/// </summary>
@@ -1754,7 +1552,6 @@ namespace IFC4
 	{
 		SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcalendartypeenum.htm
 	/// </summary>
@@ -1762,7 +1559,6 @@ namespace IFC4
 	{
 		FIRSTSHIFT,SECONDSHIFT,THIRDSHIFT,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkplantypeenum.htm
 	/// </summary>
@@ -1770,7 +1566,6 @@ namespace IFC4
 	{
 		ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkscheduletypeenum.htm
 	/// </summary>
@@ -1778,302 +1573,242 @@ namespace IFC4
 	{
 		ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED
 	}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorselect.htm
 	/// </summary>
 	public class IfcActorSelect<T> : Select<T> where T : IfcOrganization,IfcPerson,IfcPersonAndOrganization {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcappliedvalueselect.htm
 	/// </summary>
 	public class IfcAppliedValueSelect<T> : Select<T> where T : IfcMeasureWithUnit,IfcReference,IfcValue {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement.htm
 	/// </summary>
 	public class IfcAxis2Placement<T> : Select<T> where T : IfcAxis2Placement2D,IfcAxis2Placement3D {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbendingparameterselect.htm
 	/// </summary>
 	public class IfcBendingParameterSelect<T> : Select<T> where T : IfcLengthMeasure,IfcPlaneAngleMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperand.htm
 	/// </summary>
 	public class IfcBooleanOperand<T> : Select<T> where T : IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationreferenceselect.htm
 	/// </summary>
 	public class IfcClassificationReferenceSelect<T> : Select<T> where T : IfcClassification,IfcClassificationReference {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationselect.htm
 	/// </summary>
 	public class IfcClassificationSelect<T> : Select<T> where T : IfcClassification,IfcClassificationReference {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolour.htm
 	/// </summary>
 	public class IfcColour<T> : Select<T> where T : IfcColourSpecification,IfcPreDefinedColour {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourorfactor.htm
 	/// </summary>
 	public class IfcColourOrFactor<T> : Select<T> where T : IfcColourRgb,IfcNormalisedRatioMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinatereferencesystemselect.htm
 	/// </summary>
 	public class IfcCoordinateReferenceSystemSelect<T> : Select<T> where T : IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgselect.htm
 	/// </summary>
 	public class IfcCsgSelect<T> : Select<T> where T : IfcBooleanResult,IfcCsgPrimitive3D {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvefontorscaledcurvefontselect.htm
 	/// </summary>
 	public class IfcCurveFontOrScaledCurveFontSelect<T> : Select<T> where T : IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveonsurface.htm
 	/// </summary>
 	public class IfcCurveOnSurface<T> : Select<T> where T : IfcCompositeCurveOnSurface,IfcPcurve {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveoredgecurve.htm
 	/// </summary>
 	public class IfcCurveOrEdgeCurve<T> : Select<T> where T : IfcBoundedCurve,IfcEdgeCurve {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontselect.htm
 	/// </summary>
 	public class IfcCurveStyleFontSelect<T> : Select<T> where T : IfcCurveStyleFont,IfcPreDefinedCurveFont {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdefinitionselect.htm
 	/// </summary>
 	public class IfcDefinitionSelect<T> : Select<T> where T : IfcObjectDefinition,IfcPropertyDefinition {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedmeasurevalue.htm
 	/// </summary>
 	public class IfcDerivedMeasureValue<T> : Select<T> where T : IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentselect.htm
 	/// </summary>
 	public class IfcDocumentSelect<T> : Select<T> where T : IfcDocumentInformation,IfcDocumentReference {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillstyleselect.htm
 	/// </summary>
 	public class IfcFillStyleSelect<T> : Select<T> where T : IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricsetselect.htm
 	/// </summary>
 	public class IfcGeometricSetSelect<T> : Select<T> where T : IfcCurve,IfcPoint,IfcSurface {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacementdirectionselect.htm
 	/// </summary>
 	public class IfcGridPlacementDirectionSelect<T> : Select<T> where T : IfcDirection,IfcVirtualGridIntersection {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchatchlinedistanceselect.htm
 	/// </summary>
 	public class IfcHatchLineDistanceSelect<T> : Select<T> where T : IfcPositiveLengthMeasure,IfcVector {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayereditem.htm
 	/// </summary>
 	public class IfcLayeredItem<T> : Select<T> where T : IfcRepresentation,IfcRepresentationItem {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryselect.htm
 	/// </summary>
 	public class IfcLibrarySelect<T> : Select<T> where T : IfcLibraryInformation,IfcLibraryReference {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondatasourceselect.htm
 	/// </summary>
 	public class IfcLightDistributionDataSourceSelect<T> : Select<T> where T : IfcExternalReference,IfcLightIntensityDistribution {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialselect.htm
 	/// </summary>
 	public class IfcMaterialSelect<T> : Select<T> where T : IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmeasurevalue.htm
 	/// </summary>
 	public class IfcMeasureValue<T> : Select<T> where T : IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetricvalueselect.htm
 	/// </summary>
 	public class IfcMetricValueSelect<T> : Select<T> where T : IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofrotationalsubgradereactionselect.htm
 	/// </summary>
 	public class IfcModulusOfRotationalSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofsubgradereactionselect.htm
 	/// </summary>
 	public class IfcModulusOfSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfSubgradeReactionMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusoftranslationalsubgradereactionselect.htm
 	/// </summary>
 	public class IfcModulusOfTranslationalSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectreferenceselect.htm
 	/// </summary>
 	public class IfcObjectReferenceSelect<T> : Select<T> where T : IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointorvertexpoint.htm
 	/// </summary>
 	public class IfcPointOrVertexPoint<T> : Select<T> where T : IfcPoint,IfcVertexPoint {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationstyleselect.htm
 	/// </summary>
 	public class IfcPresentationStyleSelect<T> : Select<T> where T : IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocessselect.htm
 	/// </summary>
 	public class IfcProcessSelect<T> : Select<T> where T : IfcProcess,IfcTypeProcess {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductrepresentationselect.htm
 	/// </summary>
 	public class IfcProductRepresentationSelect<T> : Select<T> where T : IfcProductDefinitionShape,IfcRepresentationMap {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductselect.htm
 	/// </summary>
 	public class IfcProductSelect<T> : Select<T> where T : IfcProduct,IfcTypeProduct {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionselect.htm
 	/// </summary>
 	public class IfcPropertySetDefinitionSelect<T> : Select<T> where T : IfcPropertySetDefinition,IfcPropertySetDefinitionSet {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceobjectselect.htm
 	/// </summary>
 	public class IfcResourceObjectSelect<T> : Select<T> where T : IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceselect.htm
 	/// </summary>
 	public class IfcResourceSelect<T> : Select<T> where T : IfcResource,IfcTypeResource {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalstiffnessselect.htm
 	/// </summary>
 	public class IfcRotationalStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcRotationalStiffnessMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshell.htm
 	/// </summary>
 	public class IfcShell<T> : Select<T> where T : IfcClosedShell,IfcOpenShell {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplevalue.htm
 	/// </summary>
 	public class IfcSimpleValue<T> : Select<T> where T : IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsizeselect.htm
 	/// </summary>
 	public class IfcSizeSelect<T> : Select<T> where T : IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidorshell.htm
 	/// </summary>
 	public class IfcSolidOrShell<T> : Select<T> where T : IfcClosedShell,IfcSolidModel {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceboundaryselect.htm
 	/// </summary>
 	public class IfcSpaceBoundarySelect<T> : Select<T> where T : IfcExternalSpatialElement,IfcSpace {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularhighlightselect.htm
 	/// </summary>
 	public class IfcSpecularHighlightSelect<T> : Select<T> where T : IfcSpecularExponent,IfcSpecularRoughness {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivityassignmentselect.htm
 	/// </summary>
 	public class IfcStructuralActivityAssignmentSelect<T> : Select<T> where T : IfcElement,IfcStructuralItem {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyleassignmentselect.htm
 	/// </summary>
 	public class IfcStyleAssignmentSelect<T> : Select<T> where T : IfcPresentationStyle,IfcPresentationStyleAssignment {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceorfacesurface.htm
 	/// </summary>
 	public class IfcSurfaceOrFaceSurface<T> : Select<T> where T : IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyleelementselect.htm
 	/// </summary>
 	public class IfcSurfaceStyleElementSelect<T> : Select<T> where T : IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextfontselect.htm
 	/// </summary>
 	public class IfcTextFontSelect<T> : Select<T> where T : IfcExternallyDefinedTextFont,IfcPreDefinedTextFont {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeorratioselect.htm
 	/// </summary>
 	public class IfcTimeOrRatioSelect<T> : Select<T> where T : IfcDuration,IfcRatioMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctranslationalstiffnessselect.htm
 	/// </summary>
 	public class IfcTranslationalStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcLinearStiffnessMeasure {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingselect.htm
 	/// </summary>
 	public class IfcTrimmingSelect<T> : Select<T> where T : IfcCartesianPoint,IfcParameterValue {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunit.htm
 	/// </summary>
 	public class IfcUnit<T> : Select<T> where T : IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalue.htm
 	/// </summary>
 	public class IfcValue<T> : Select<T> where T : IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvectorordirection.htm
 	/// </summary>
 	public class IfcVectorOrDirection<T> : Select<T> where T : IfcDirection,IfcVector {}
-
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingstiffnessselect.htm
 	/// </summary>
 	public class IfcWarpingStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcWarpingMomentMeasure {}
-
 
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequest.htm"/>
@@ -2096,11 +1831,11 @@ namespace IFC4
 	public  partial class IfcActor : IfcObject
 	{
 		public IfcActorSelect TheActor {get;set;}
-		public List<IfcRelAssignsToActor> IsActingUpon {get;set;}
+		public List<List<IfcRelAssignsToActor>> IsActingUpon {get;set;}
 
 		public IfcActor()
 		{
-			IsActingUpon = new List<IfcRelAssignsToActor>();
+			IsActingUpon = new List<List<IfcRelAssignsToActor>>();
 
 		}
 	}
@@ -2113,11 +1848,11 @@ namespace IFC4
 		public IfcRoleEnum Role {get;set;}
 		public IfcLabel UserDefinedRole {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReference {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReference {get;set;}
 
 		public IfcActorRole()
 		{
-			HasExternalReference = new List<IfcExternalReferenceRelationship>();
+			HasExternalReference = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -2156,13 +1891,13 @@ namespace IFC4
 		public IfcAddressTypeEnum Purpose {get;set;}
 		public IfcText Description {get;set;}
 		public IfcLabel UserDefinedPurpose {get;set;}
-		public List<IfcPerson> OfPerson {get;set;}
-		public List<IfcOrganization> OfOrganization {get;set;}
+		public List<List<IfcPerson>> OfPerson {get;set;}
+		public List<List<IfcOrganization>> OfOrganization {get;set;}
 
 		public IfcAddress()
 		{
-			OfPerson = new List<IfcPerson>();
-			OfOrganization = new List<IfcOrganization>();
+			OfPerson = new List<List<IfcPerson>>();
+			OfOrganization = new List<List<IfcOrganization>>();
 
 		}
 	}
@@ -2184,11 +1919,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcAdvancedBrepWithVoids : IfcAdvancedBrep
 	{
-		public List<IfcClosedShell> Voids {get;set;}
+		public List<List<IfcClosedShell>> Voids {get;set;}
 
 		public IfcAdvancedBrepWithVoids()
 		{
-			Voids = new List<IfcClosedShell>();
+			Voids = new List<List<IfcClosedShell>>();
 
 		}
 	}
@@ -2314,11 +2049,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcAnnotation : IfcProduct
 	{
-		public List<IfcRelContainedInSpatialStructure> ContainedInStructure {get;set;}
+		public List<List<IfcRelContainedInSpatialStructure>> ContainedInStructure {get;set;}
 
 		public IfcAnnotation()
 		{
-			ContainedInStructure = new List<IfcRelContainedInSpatialStructure>();
+			ContainedInStructure = new List<List<IfcRelContainedInSpatialStructure>>();
 
 		}
 	}
@@ -2329,11 +2064,11 @@ namespace IFC4
 	public  partial class IfcAnnotationFillArea : IfcGeometricRepresentationItem
 	{
 		public IfcCurve OuterBoundary {get;set;}
-		public List<IfcCurve> InnerBoundaries {get;set;}
+		public List<List<IfcCurve>> InnerBoundaries {get;set;}
 
 		public IfcAnnotationFillArea()
 		{
-			InnerBoundaries = new List<IfcCurve>();
+			InnerBoundaries = new List<List<IfcCurve>>();
 
 		}
 	}
@@ -2368,13 +2103,13 @@ namespace IFC4
 		public IfcLabel Category {get;set;}
 		public IfcLabel Condition {get;set;}
 		public IfcArithmeticOperatorEnum ArithmeticOperator {get;set;}
-		public List<IfcAppliedValue> Components {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReference {get;set;}
+		public List<List<IfcAppliedValue>> Components {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReference {get;set;}
 
 		public IfcAppliedValue()
 		{
-			Components = new List<IfcAppliedValue>();
-			HasExternalReference = new List<IfcExternalReferenceRelationship>();
+			Components = new List<List<IfcAppliedValue>>();
+			HasExternalReference = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -2393,19 +2128,19 @@ namespace IFC4
 		public IfcText Qualifier {get;set;}
 		public IfcActorSelect RequestingApproval {get;set;}
 		public IfcActorSelect GivingApproval {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReferences {get;set;}
-		public List<IfcRelAssociatesApproval> ApprovedObjects {get;set;}
-		public List<IfcResourceApprovalRelationship> ApprovedResources {get;set;}
-		public List<IfcApprovalRelationship> IsRelatedWith {get;set;}
-		public List<IfcApprovalRelationship> Relates {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReferences {get;set;}
+		public List<List<IfcRelAssociatesApproval>> ApprovedObjects {get;set;}
+		public List<List<IfcResourceApprovalRelationship>> ApprovedResources {get;set;}
+		public List<List<IfcApprovalRelationship>> IsRelatedWith {get;set;}
+		public List<List<IfcApprovalRelationship>> Relates {get;set;}
 
 		public IfcApproval()
 		{
-			HasExternalReferences = new List<IfcExternalReferenceRelationship>();
-			ApprovedObjects = new List<IfcRelAssociatesApproval>();
-			ApprovedResources = new List<IfcResourceApprovalRelationship>();
-			IsRelatedWith = new List<IfcApprovalRelationship>();
-			Relates = new List<IfcApprovalRelationship>();
+			HasExternalReferences = new List<List<IfcExternalReferenceRelationship>>();
+			ApprovedObjects = new List<List<IfcRelAssociatesApproval>>();
+			ApprovedResources = new List<List<IfcResourceApprovalRelationship>>();
+			IsRelatedWith = new List<List<IfcApprovalRelationship>>();
+			Relates = new List<List<IfcApprovalRelationship>>();
 
 		}
 	}
@@ -2416,11 +2151,11 @@ namespace IFC4
 	public  partial class IfcApprovalRelationship : IfcResourceLevelRelationship
 	{
 		public IfcApproval RelatingApproval {get;set;}
-		public List<IfcApproval> RelatedApprovals {get;set;}
+		public List<List<IfcApproval>> RelatedApprovals {get;set;}
 
 		public IfcApprovalRelationship()
 		{
-			RelatedApprovals = new List<IfcApproval>();
+			RelatedApprovals = new List<List<IfcApproval>>();
 
 		}
 	}
@@ -2456,11 +2191,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcArbitraryProfileDefWithVoids : IfcArbitraryClosedProfileDef
 	{
-		public List<IfcCurve> InnerCurves {get;set;}
+		public List<List<IfcCurve>> InnerCurves {get;set;}
 
 		public IfcArbitraryProfileDefWithVoids()
 		{
-			InnerCurves = new List<IfcCurve>();
+			InnerCurves = new List<List<IfcCurve>>();
 
 		}
 	}
@@ -2556,11 +2291,11 @@ namespace IFC4
 	public  partial class IfcAxis2Placement2D : IfcPlacement
 	{
 		public IfcDirection RefDirection {get;set;}
-		public List<IfcDirection> P {get;set;}
+		public List<List<IfcDirection>> P {get;set;}
 
 		public IfcAxis2Placement2D()
 		{
-			P = new List<IfcDirection>();
+			P = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -2572,11 +2307,11 @@ namespace IFC4
 	{
 		public IfcDirection Axis {get;set;}
 		public IfcDirection RefDirection {get;set;}
-		public List<IfcDirection> P {get;set;}
+		public List<List<IfcDirection>> P {get;set;}
 
 		public IfcAxis2Placement3D()
 		{
-			P = new List<IfcDirection>();
+			P = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -2586,18 +2321,18 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcBSplineCurve : IfcBoundedCurve
 	{
-		public int Degree {get;set;}
-		public List<IfcCartesianPoint> ControlPointsList {get;set;}
+		public System.Int32 Degree {get;set;}
+		public List<List<IfcCartesianPoint>> ControlPointsList {get;set;}
 		public IfcBSplineCurveForm CurveForm {get;set;}
-		public bool? ClosedCurve {get;set;}
-		public bool? SelfIntersect {get;set;}
-		public int UpperIndexOnControlPoints {get;set;}
-		public IfcCartesianPoint[] ControlPoints {get;set;}
+		public System.Boolean? ClosedCurve {get;set;}
+		public System.Boolean? SelfIntersect {get;set;}
+		public System.Int32 UpperIndexOnControlPoints {get;set;}
+		public IfcCartesianPoint[][] ControlPoints {get;set;}
 
 		public IfcBSplineCurve()
 		{
-			ControlPointsList = new List<IfcCartesianPoint>();
-			ControlPoints = new IfcCartesianPoint[0]();
+			ControlPointsList = new List<List<IfcCartesianPoint>>();
+			ControlPoints = new IfcCartesianPoint[][]();
 
 		}
 	}
@@ -2607,15 +2342,15 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcBSplineCurveWithKnots : IfcBSplineCurve
 	{
-		public List<INTEGER> KnotMultiplicities {get;set;}
-		public List<IfcParameterValue> Knots {get;set;}
+		public List<List<System.Int32>> KnotMultiplicities {get;set;}
+		public List<List<IfcParameterValue>> Knots {get;set;}
 		public IfcKnotType KnotSpec {get;set;}
-		public int UpperIndexOnKnots {get;set;}
+		public System.Int32 UpperIndexOnKnots {get;set;}
 
 		public IfcBSplineCurveWithKnots()
 		{
-			KnotMultiplicities = new List<INTEGER>();
-			Knots = new List<IfcParameterValue>();
+			KnotMultiplicities = new List<List<System.Int32>>();
+			Knots = new List<List<IfcParameterValue>>();
 
 		}
 	}
@@ -2625,21 +2360,21 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcBSplineSurface : IfcBoundedSurface
 	{
-		public int UDegree {get;set;}
-		public int VDegree {get;set;}
-		public List<List<IfcCartesianPoint>> ControlPointsList {get;set;}
+		public System.Int32 UDegree {get;set;}
+		public System.Int32 VDegree {get;set;}
+		public List<List<List<IfcCartesianPoint>>> ControlPointsList {get;set;}
 		public IfcBSplineSurfaceForm SurfaceForm {get;set;}
-		public bool? UClosed {get;set;}
-		public bool? VClosed {get;set;}
-		public bool? SelfIntersect {get;set;}
-		public int UUpper {get;set;}
-		public int VUpper {get;set;}
-		public IfcCartesianPoint[][] ControlPoints {get;set;}
+		public System.Boolean? UClosed {get;set;}
+		public System.Boolean? VClosed {get;set;}
+		public System.Boolean? SelfIntersect {get;set;}
+		public System.Int32 UUpper {get;set;}
+		public System.Int32 VUpper {get;set;}
+		public IfcCartesianPoint[][][] ControlPoints {get;set;}
 
 		public IfcBSplineSurface()
 		{
-			ControlPointsList = new List<List<IfcCartesianPoint>>();
-			ControlPoints = new IfcCartesianPoint[0][0]();
+			ControlPointsList = new List<List<List<IfcCartesianPoint>>>();
+			ControlPoints = new IfcCartesianPoint[][][]();
 
 		}
 	}
@@ -2649,20 +2384,20 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcBSplineSurfaceWithKnots : IfcBSplineSurface
 	{
-		public List<INTEGER> UMultiplicities {get;set;}
-		public List<INTEGER> VMultiplicities {get;set;}
-		public List<IfcParameterValue> UKnots {get;set;}
-		public List<IfcParameterValue> VKnots {get;set;}
+		public List<List<System.Int32>> UMultiplicities {get;set;}
+		public List<List<System.Int32>> VMultiplicities {get;set;}
+		public List<List<IfcParameterValue>> UKnots {get;set;}
+		public List<List<IfcParameterValue>> VKnots {get;set;}
 		public IfcKnotType KnotSpec {get;set;}
-		public int KnotVUpper {get;set;}
-		public int KnotUUpper {get;set;}
+		public System.Int32 KnotVUpper {get;set;}
+		public System.Int32 KnotUUpper {get;set;}
 
 		public IfcBSplineSurfaceWithKnots()
 		{
-			UMultiplicities = new List<INTEGER>();
-			VMultiplicities = new List<INTEGER>();
-			UKnots = new List<IfcParameterValue>();
-			VKnots = new List<IfcParameterValue>();
+			UMultiplicities = new List<List<System.Int32>>();
+			VMultiplicities = new List<List<System.Int32>>();
+			UKnots = new List<List<IfcParameterValue>>();
+			VKnots = new List<List<IfcParameterValue>>();
 
 		}
 	}
@@ -2951,11 +2686,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcBuildingElement : IfcElement
 	{
-		public List<IfcRelCoversBldgElements> HasCoverings {get;set;}
+		public List<List<IfcRelCoversBldgElements>> HasCoverings {get;set;}
 
 		public IfcBuildingElement()
 		{
-			HasCoverings = new List<IfcRelCoversBldgElements>();
+			HasCoverings = new List<List<IfcRelCoversBldgElements>>();
 
 		}
 	}
@@ -3202,12 +2937,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianPoint : IfcPoint
 	{
-		public List<IfcLengthMeasure> Coordinates {get;set;}
+		public List<List<IfcLengthMeasure>> Coordinates {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcCartesianPoint()
 		{
-			Coordinates = new List<IfcLengthMeasure>();
+			Coordinates = new List<List<IfcLengthMeasure>>();
 
 		}
 	}
@@ -3229,11 +2964,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianPointList3D : IfcCartesianPointList
 	{
-		public List<List<IfcLengthMeasure>> CoordList {get;set;}
+		public List<List<List<IfcLengthMeasure>>> CoordList {get;set;}
 
 		public IfcCartesianPointList3D()
 		{
-			CoordList = new List<List<IfcLengthMeasure>>();
+			CoordList = new List<List<List<IfcLengthMeasure>>>();
 
 		}
 	}
@@ -3246,8 +2981,8 @@ namespace IFC4
 		public IfcDirection Axis1 {get;set;}
 		public IfcDirection Axis2 {get;set;}
 		public IfcCartesianPoint LocalOrigin {get;set;}
-		public double Scale {get;set;}
-		public double Scl {get;set;}
+		public System.Double Scale {get;set;}
+		public System.Double Scl {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcCartesianTransformationOperator()
@@ -3261,11 +2996,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator2D : IfcCartesianTransformationOperator
 	{
-		public List<IfcDirection> U {get;set;}
+		public List<List<IfcDirection>> U {get;set;}
 
 		public IfcCartesianTransformationOperator2D()
 		{
-			U = new List<IfcDirection>();
+			U = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -3275,8 +3010,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator2DnonUniform : IfcCartesianTransformationOperator2D
 	{
-		public double Scale2 {get;set;}
-		public double Scl2 {get;set;}
+		public System.Double Scale2 {get;set;}
+		public System.Double Scl2 {get;set;}
 
 		public IfcCartesianTransformationOperator2DnonUniform()
 		{
@@ -3290,11 +3025,11 @@ namespace IFC4
 	public  partial class IfcCartesianTransformationOperator3D : IfcCartesianTransformationOperator
 	{
 		public IfcDirection Axis3 {get;set;}
-		public List<IfcDirection> U {get;set;}
+		public List<List<IfcDirection>> U {get;set;}
 
 		public IfcCartesianTransformationOperator3D()
 		{
-			U = new List<IfcDirection>();
+			U = new List<List<IfcDirection>>();
 
 		}
 	}
@@ -3304,10 +3039,10 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator3DnonUniform : IfcCartesianTransformationOperator3D
 	{
-		public double Scale2 {get;set;}
-		public double Scale3 {get;set;}
-		public double Scl2 {get;set;}
-		public double Scl3 {get;set;}
+		public System.Double Scale2 {get;set;}
+		public System.Double Scale3 {get;set;}
+		public System.Double Scl2 {get;set;}
+		public System.Double Scl3 {get;set;}
 
 		public IfcCartesianTransformationOperator3DnonUniform()
 		{
@@ -3454,15 +3189,15 @@ namespace IFC4
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
 		public IfcURIReference Location {get;set;}
-		public List<IfcIdentifier> ReferenceTokens {get;set;}
-		public List<IfcRelAssociatesClassification> ClassificationForObjects {get;set;}
-		public List<IfcClassificationReference> HasReferences {get;set;}
+		public List<List<IfcIdentifier>> ReferenceTokens {get;set;}
+		public List<List<IfcRelAssociatesClassification>> ClassificationForObjects {get;set;}
+		public List<List<IfcClassificationReference>> HasReferences {get;set;}
 
 		public IfcClassification()
 		{
-			ReferenceTokens = new List<IfcIdentifier>();
-			ClassificationForObjects = new List<IfcRelAssociatesClassification>();
-			HasReferences = new List<IfcClassificationReference>();
+			ReferenceTokens = new List<List<IfcIdentifier>>();
+			ClassificationForObjects = new List<List<IfcRelAssociatesClassification>>();
+			HasReferences = new List<List<IfcClassificationReference>>();
 
 		}
 	}
@@ -3475,13 +3210,13 @@ namespace IFC4
 		public IfcClassificationReferenceSelect ReferencedSource {get;set;}
 		public IfcText Description {get;set;}
 		public IfcIdentifier Sort {get;set;}
-		public List<IfcRelAssociatesClassification> ClassificationRefForObjects {get;set;}
-		public List<IfcClassificationReference> HasReferences {get;set;}
+		public List<List<IfcRelAssociatesClassification>> ClassificationRefForObjects {get;set;}
+		public List<List<IfcClassificationReference>> HasReferences {get;set;}
 
 		public IfcClassificationReference()
 		{
-			ClassificationRefForObjects = new List<IfcRelAssociatesClassification>();
-			HasReferences = new List<IfcClassificationReference>();
+			ClassificationRefForObjects = new List<List<IfcRelAssociatesClassification>>();
+			HasReferences = new List<List<IfcClassificationReference>>();
 
 		}
 	}
@@ -3544,11 +3279,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcColourRgbList : IfcPresentationItem
 	{
-		public List<List<IfcNormalisedRatioMeasure>> ColourList {get;set;}
+		public List<List<List<IfcNormalisedRatioMeasure>>> ColourList {get;set;}
 
 		public IfcColourRgbList()
 		{
-			ColourList = new List<List<IfcNormalisedRatioMeasure>>();
+			ColourList = new List<List<List<IfcNormalisedRatioMeasure>>>();
 
 		}
 	}
@@ -3636,11 +3371,11 @@ namespace IFC4
 	public  partial class IfcComplexProperty : IfcProperty
 	{
 		public IfcIdentifier UsageName {get;set;}
-		public List<IfcProperty> HasProperties {get;set;}
+		public List<List<IfcProperty>> HasProperties {get;set;}
 
 		public IfcComplexProperty()
 		{
-			HasProperties = new List<IfcProperty>();
+			HasProperties = new List<List<IfcProperty>>();
 
 		}
 	}
@@ -3652,11 +3387,11 @@ namespace IFC4
 	{
 		public IfcLabel UsageName {get;set;}
 		public IfcComplexPropertyTemplateTypeEnum TemplateType {get;set;}
-		public List<IfcPropertyTemplate> HasPropertyTemplates {get;set;}
+		public List<List<IfcPropertyTemplate>> HasPropertyTemplates {get;set;}
 
 		public IfcComplexPropertyTemplate()
 		{
-			HasPropertyTemplates = new List<IfcPropertyTemplate>();
+			HasPropertyTemplates = new List<List<IfcPropertyTemplate>>();
 
 		}
 	}
@@ -3666,14 +3401,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCompositeCurve : IfcBoundedCurve
 	{
-		public List<IfcCompositeCurveSegment> Segments {get;set;}
-		public bool? SelfIntersect {get;set;}
-		public int NSegments {get;set;}
-		public bool? ClosedCurve {get;set;}
+		public List<List<IfcCompositeCurveSegment>> Segments {get;set;}
+		public System.Boolean? SelfIntersect {get;set;}
+		public System.Int32 NSegments {get;set;}
+		public System.Boolean? ClosedCurve {get;set;}
 
 		public IfcCompositeCurve()
 		{
-			Segments = new List<IfcCompositeCurveSegment>();
+			Segments = new List<List<IfcCompositeCurveSegment>>();
 
 		}
 	}
@@ -3683,11 +3418,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCompositeCurveOnSurface : IfcCompositeCurve
 	{
-		public List<IfcSurface> BasisSurface {get;set;}
+		public List<List<IfcSurface>> BasisSurface {get;set;}
 
 		public IfcCompositeCurveOnSurface()
 		{
-			BasisSurface = new List<IfcSurface>();
+			BasisSurface = new List<List<IfcSurface>>();
 
 		}
 	}
@@ -3698,14 +3433,14 @@ namespace IFC4
 	public  partial class IfcCompositeCurveSegment : IfcGeometricRepresentationItem
 	{
 		public IfcTransitionCode Transition {get;set;}
-		public bool SameSense {get;set;}
+		public System.Boolean SameSense {get;set;}
 		public IfcCurve ParentCurve {get;set;}
 		public IfcDimensionCount Dim {get;set;}
-		public List<IfcCompositeCurve> UsingCurves {get;set;}
+		public List<List<IfcCompositeCurve>> UsingCurves {get;set;}
 
 		public IfcCompositeCurveSegment()
 		{
-			UsingCurves = new List<IfcCompositeCurve>();
+			UsingCurves = new List<List<IfcCompositeCurve>>();
 
 		}
 	}
@@ -3715,12 +3450,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCompositeProfileDef : IfcProfileDef
 	{
-		public List<IfcProfileDef> Profiles {get;set;}
+		public List<List<IfcProfileDef>> Profiles {get;set;}
 		public IfcLabel Label {get;set;}
 
 		public IfcCompositeProfileDef()
 		{
-			Profiles = new List<IfcProfileDef>();
+			Profiles = new List<List<IfcProfileDef>>();
 
 		}
 	}
@@ -3795,11 +3530,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcConnectedFaceSet : IfcTopologicalRepresentationItem
 	{
-		public List<IfcFace> CfsFaces {get;set;}
+		public List<List<IfcFace>> CfsFaces {get;set;}
 
 		public IfcConnectedFaceSet()
 		{
-			CfsFaces = new List<IfcFace>();
+			CfsFaces = new List<List<IfcFace>>();
 
 		}
 	}
@@ -3899,13 +3634,13 @@ namespace IFC4
 		public IfcActorSelect CreatingActor {get;set;}
 		public IfcDateTime CreationTime {get;set;}
 		public IfcLabel UserDefinedGrade {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReferences {get;set;}
-		public List<IfcResourceConstraintRelationship> PropertiesForConstraint {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReferences {get;set;}
+		public List<List<IfcResourceConstraintRelationship>> PropertiesForConstraint {get;set;}
 
 		public IfcConstraint()
 		{
-			HasExternalReferences = new List<IfcExternalReferenceRelationship>();
-			PropertiesForConstraint = new List<IfcResourceConstraintRelationship>();
+			HasExternalReferences = new List<List<IfcExternalReferenceRelationship>>();
+			PropertiesForConstraint = new List<List<IfcResourceConstraintRelationship>>();
 
 		}
 	}
@@ -3994,12 +3729,12 @@ namespace IFC4
 	public abstract partial class IfcConstructionResource : IfcResource
 	{
 		public IfcResourceTime Usage {get;set;}
-		public List<IfcAppliedValue> BaseCosts {get;set;}
+		public List<List<IfcAppliedValue>> BaseCosts {get;set;}
 		public IfcPhysicalQuantity BaseQuantity {get;set;}
 
 		public IfcConstructionResource()
 		{
-			BaseCosts = new List<IfcAppliedValue>();
+			BaseCosts = new List<List<IfcAppliedValue>>();
 
 		}
 	}
@@ -4009,12 +3744,12 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcConstructionResourceType : IfcTypeResource
 	{
-		public List<IfcAppliedValue> BaseCosts {get;set;}
+		public List<List<IfcAppliedValue>> BaseCosts {get;set;}
 		public IfcPhysicalQuantity BaseQuantity {get;set;}
 
 		public IfcConstructionResourceType()
 		{
-			BaseCosts = new List<IfcAppliedValue>();
+			BaseCosts = new List<List<IfcAppliedValue>>();
 
 		}
 	}
@@ -4027,16 +3762,16 @@ namespace IFC4
 		public IfcLabel ObjectType {get;set;}
 		public IfcLabel LongName {get;set;}
 		public IfcLabel Phase {get;set;}
-		public List<IfcRepresentationContext> RepresentationContexts {get;set;}
+		public List<List<IfcRepresentationContext>> RepresentationContexts {get;set;}
 		public IfcUnitAssignment UnitsInContext {get;set;}
-		public List<IfcRelDefinesByProperties> IsDefinedBy {get;set;}
-		public List<IfcRelDeclares> Declares {get;set;}
+		public List<List<IfcRelDefinesByProperties>> IsDefinedBy {get;set;}
+		public List<List<IfcRelDeclares>> Declares {get;set;}
 
 		public IfcContext()
 		{
-			RepresentationContexts = new List<IfcRepresentationContext>();
-			IsDefinedBy = new List<IfcRelDefinesByProperties>();
-			Declares = new List<IfcRelDeclares>();
+			RepresentationContexts = new List<List<IfcRepresentationContext>>();
+			IsDefinedBy = new List<List<IfcRelDefinesByProperties>>();
+			Declares = new List<List<IfcRelDeclares>>();
 
 		}
 	}
@@ -4047,11 +3782,11 @@ namespace IFC4
 	public  partial class IfcContextDependentUnit : IfcNamedUnit
 	{
 		public IfcLabel Name {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReference {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReference {get;set;}
 
 		public IfcContextDependentUnit()
 		{
-			HasExternalReference = new List<IfcExternalReferenceRelationship>();
+			HasExternalReference = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -4062,11 +3797,11 @@ namespace IFC4
 	public abstract partial class IfcControl : IfcObject
 	{
 		public IfcIdentifier Identification {get;set;}
-		public List<IfcRelAssignsToControl> Controls {get;set;}
+		public List<List<IfcRelAssignsToControl>> Controls {get;set;}
 
 		public IfcControl()
 		{
-			Controls = new List<IfcRelAssignsToControl>();
+			Controls = new List<List<IfcRelAssignsToControl>>();
 
 		}
 	}
@@ -4104,11 +3839,11 @@ namespace IFC4
 	{
 		public IfcLabel Name {get;set;}
 		public IfcMeasureWithUnit ConversionFactor {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReference {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReference {get;set;}
 
 		public IfcConversionBasedUnit()
 		{
-			HasExternalReference = new List<IfcExternalReferenceRelationship>();
+			HasExternalReference = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -4214,13 +3949,13 @@ namespace IFC4
 	public  partial class IfcCostItem : IfcControl
 	{
 		public IfcCostItemTypeEnum PredefinedType {get;set;}
-		public List<IfcCostValue> CostValues {get;set;}
-		public List<IfcPhysicalQuantity> CostQuantities {get;set;}
+		public List<List<IfcCostValue>> CostValues {get;set;}
+		public List<List<IfcPhysicalQuantity>> CostQuantities {get;set;}
 
 		public IfcCostItem()
 		{
-			CostValues = new List<IfcCostValue>();
-			CostQuantities = new List<IfcPhysicalQuantity>();
+			CostValues = new List<List<IfcCostValue>>();
+			CostQuantities = new List<List<IfcPhysicalQuantity>>();
 
 		}
 	}
@@ -4259,13 +3994,13 @@ namespace IFC4
 	public  partial class IfcCovering : IfcBuildingElement
 	{
 		public IfcCoveringTypeEnum PredefinedType {get;set;}
-		public List<IfcRelCoversSpaces> CoversSpaces {get;set;}
-		public List<IfcRelCoversBldgElements> CoversElements {get;set;}
+		public List<List<IfcRelCoversSpaces>> CoversSpaces {get;set;}
+		public List<List<IfcRelCoversBldgElements>> CoversElements {get;set;}
 
 		public IfcCovering()
 		{
-			CoversSpaces = new List<IfcRelCoversSpaces>();
-			CoversElements = new List<IfcRelCoversBldgElements>();
+			CoversSpaces = new List<List<IfcRelCoversSpaces>>();
+			CoversElements = new List<List<IfcRelCoversBldgElements>>();
 
 		}
 	}
@@ -4399,11 +4134,11 @@ namespace IFC4
 	{
 		public IfcPlane BasisSurface {get;set;}
 		public IfcCurve OuterBoundary {get;set;}
-		public List<IfcCurve> InnerBoundaries {get;set;}
+		public List<List<IfcCurve>> InnerBoundaries {get;set;}
 
 		public IfcCurveBoundedPlane()
 		{
-			InnerBoundaries = new List<IfcCurve>();
+			InnerBoundaries = new List<List<IfcCurve>>();
 
 		}
 	}
@@ -4414,12 +4149,12 @@ namespace IFC4
 	public  partial class IfcCurveBoundedSurface : IfcBoundedSurface
 	{
 		public IfcSurface BasisSurface {get;set;}
-		public List<IfcBoundaryCurve> Boundaries {get;set;}
-		public bool ImplicitOuter {get;set;}
+		public List<List<IfcBoundaryCurve>> Boundaries {get;set;}
+		public System.Boolean ImplicitOuter {get;set;}
 
 		public IfcCurveBoundedSurface()
 		{
-			Boundaries = new List<IfcBoundaryCurve>();
+			Boundaries = new List<List<IfcBoundaryCurve>>();
 
 		}
 	}
@@ -4432,7 +4167,7 @@ namespace IFC4
 		public IfcCurveFontOrScaledCurveFontSelect CurveFont {get;set;}
 		public IfcSizeSelect CurveWidth {get;set;}
 		public IfcColour CurveColour {get;set;}
-		public bool ModelOrDraughting {get;set;}
+		public System.Boolean ModelOrDraughting {get;set;}
 
 		public IfcCurveStyle()
 		{
@@ -4446,11 +4181,11 @@ namespace IFC4
 	public  partial class IfcCurveStyleFont : IfcPresentationItem
 	{
 		public IfcLabel Name {get;set;}
-		public List<IfcCurveStyleFontPattern> PatternList {get;set;}
+		public List<List<IfcCurveStyleFontPattern>> PatternList {get;set;}
 
 		public IfcCurveStyleFont()
 		{
-			PatternList = new List<IfcCurveStyleFontPattern>();
+			PatternList = new List<List<IfcCurveStyleFontPattern>>();
 
 		}
 	}
@@ -4543,14 +4278,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDerivedUnit
 	{
-		public List<IfcDerivedUnitElement> Elements {get;set;}
+		public List<List<IfcDerivedUnitElement>> Elements {get;set;}
 		public IfcDerivedUnitEnum UnitType {get;set;}
 		public IfcLabel UserDefinedType {get;set;}
 		public IfcDimensionalExponents Dimensions {get;set;}
 
 		public IfcDerivedUnit()
 		{
-			Elements = new List<IfcDerivedUnitElement>();
+			Elements = new List<List<IfcDerivedUnitElement>>();
 
 		}
 	}
@@ -4561,7 +4296,7 @@ namespace IFC4
 	public  partial class IfcDerivedUnitElement
 	{
 		public IfcNamedUnit Unit {get;set;}
-		public int Exponent {get;set;}
+		public System.Int32 Exponent {get;set;}
 
 		public IfcDerivedUnitElement()
 		{
@@ -4574,13 +4309,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDimensionalExponents
 	{
-		public int LengthExponent {get;set;}
-		public int MassExponent {get;set;}
-		public int TimeExponent {get;set;}
-		public int ElectricCurrentExponent {get;set;}
-		public int ThermodynamicTemperatureExponent {get;set;}
-		public int AmountOfSubstanceExponent {get;set;}
-		public int LuminousIntensityExponent {get;set;}
+		public System.Int32 LengthExponent {get;set;}
+		public System.Int32 MassExponent {get;set;}
+		public System.Int32 TimeExponent {get;set;}
+		public System.Int32 ElectricCurrentExponent {get;set;}
+		public System.Int32 ThermodynamicTemperatureExponent {get;set;}
+		public System.Int32 AmountOfSubstanceExponent {get;set;}
+		public System.Int32 LuminousIntensityExponent {get;set;}
 
 		public IfcDimensionalExponents()
 		{
@@ -4593,12 +4328,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDirection : IfcGeometricRepresentationItem
 	{
-		public List<REAL> DirectionRatios {get;set;}
+		public List<List<System.Double>> DirectionRatios {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcDirection()
 		{
-			DirectionRatios = new List<REAL>();
+			DirectionRatios = new List<List<System.Double>>();
 
 		}
 	}
@@ -4672,11 +4407,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDistributionControlElement : IfcDistributionElement
 	{
-		public List<IfcRelFlowControlElements> AssignedToFlowElement {get;set;}
+		public List<List<IfcRelFlowControlElements>> AssignedToFlowElement {get;set;}
 
 		public IfcDistributionControlElement()
 		{
-			AssignedToFlowElement = new List<IfcRelFlowControlElements>();
+			AssignedToFlowElement = new List<List<IfcRelFlowControlElements>>();
 
 		}
 	}
@@ -4698,11 +4433,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDistributionElement : IfcElement
 	{
-		public List<IfcRelConnectsPortToElement> HasPorts {get;set;}
+		public List<List<IfcRelConnectsPortToElement>> HasPorts {get;set;}
 
 		public IfcDistributionElement()
 		{
-			HasPorts = new List<IfcRelConnectsPortToElement>();
+			HasPorts = new List<List<IfcRelConnectsPortToElement>>();
 
 		}
 	}
@@ -4724,11 +4459,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDistributionFlowElement : IfcDistributionElement
 	{
-		public List<IfcRelFlowControlElements> HasControlElements {get;set;}
+		public List<List<IfcRelFlowControlElements>> HasControlElements {get;set;}
 
 		public IfcDistributionFlowElement()
 		{
-			HasControlElements = new List<IfcRelFlowControlElements>();
+			HasControlElements = new List<List<IfcRelFlowControlElements>>();
 
 		}
 	}
@@ -4788,7 +4523,7 @@ namespace IFC4
 		public IfcText Scope {get;set;}
 		public IfcLabel Revision {get;set;}
 		public IfcActorSelect DocumentOwner {get;set;}
-		public List<IfcActorSelect> Editors {get;set;}
+		public List<List<IfcActorSelect>> Editors {get;set;}
 		public IfcDateTime CreationTime {get;set;}
 		public IfcDateTime LastRevisionTime {get;set;}
 		public IfcIdentifier ElectronicFormat {get;set;}
@@ -4796,18 +4531,18 @@ namespace IFC4
 		public IfcDate ValidUntil {get;set;}
 		public IfcDocumentConfidentialityEnum Confidentiality {get;set;}
 		public IfcDocumentStatusEnum Status {get;set;}
-		public List<IfcRelAssociatesDocument> DocumentInfoForObjects {get;set;}
-		public List<IfcDocumentReference> HasDocumentReferences {get;set;}
-		public List<IfcDocumentInformationRelationship> IsPointedTo {get;set;}
-		public List<IfcDocumentInformationRelationship> IsPointer {get;set;}
+		public List<List<IfcRelAssociatesDocument>> DocumentInfoForObjects {get;set;}
+		public List<List<IfcDocumentReference>> HasDocumentReferences {get;set;}
+		public List<List<IfcDocumentInformationRelationship>> IsPointedTo {get;set;}
+		public List<List<IfcDocumentInformationRelationship>> IsPointer {get;set;}
 
 		public IfcDocumentInformation()
 		{
-			Editors = new List<IfcActorSelect>();
-			DocumentInfoForObjects = new List<IfcRelAssociatesDocument>();
-			HasDocumentReferences = new List<IfcDocumentReference>();
-			IsPointedTo = new List<IfcDocumentInformationRelationship>();
-			IsPointer = new List<IfcDocumentInformationRelationship>();
+			Editors = new List<List<IfcActorSelect>>();
+			DocumentInfoForObjects = new List<List<IfcRelAssociatesDocument>>();
+			HasDocumentReferences = new List<List<IfcDocumentReference>>();
+			IsPointedTo = new List<List<IfcDocumentInformationRelationship>>();
+			IsPointer = new List<List<IfcDocumentInformationRelationship>>();
 
 		}
 	}
@@ -4818,12 +4553,12 @@ namespace IFC4
 	public  partial class IfcDocumentInformationRelationship : IfcResourceLevelRelationship
 	{
 		public IfcDocumentInformation RelatingDocument {get;set;}
-		public List<IfcDocumentInformation> RelatedDocuments {get;set;}
+		public List<List<IfcDocumentInformation>> RelatedDocuments {get;set;}
 		public IfcLabel RelationshipType {get;set;}
 
 		public IfcDocumentInformationRelationship()
 		{
-			RelatedDocuments = new List<IfcDocumentInformation>();
+			RelatedDocuments = new List<List<IfcDocumentInformation>>();
 
 		}
 	}
@@ -4835,11 +4570,11 @@ namespace IFC4
 	{
 		public IfcText Description {get;set;}
 		public IfcDocumentInformation ReferencedDocument {get;set;}
-		public List<IfcRelAssociatesDocument> DocumentRefForObjects {get;set;}
+		public List<List<IfcRelAssociatesDocument>> DocumentRefForObjects {get;set;}
 
 		public IfcDocumentReference()
 		{
-			DocumentRefForObjects = new List<IfcRelAssociatesDocument>();
+			DocumentRefForObjects = new List<List<IfcRelAssociatesDocument>>();
 
 		}
 	}
@@ -4922,8 +4657,8 @@ namespace IFC4
 	{
 		public IfcDoorStyleOperationEnum OperationType {get;set;}
 		public IfcDoorStyleConstructionEnum ConstructionType {get;set;}
-		public bool ParameterTakesPrecedence {get;set;}
-		public bool Sizeable {get;set;}
+		public System.Boolean ParameterTakesPrecedence {get;set;}
+		public System.Boolean Sizeable {get;set;}
 
 		public IfcDoorStyle()
 		{
@@ -4938,7 +4673,7 @@ namespace IFC4
 	{
 		public IfcDoorTypeEnum PredefinedType {get;set;}
 		public IfcDoorTypeOperationEnum OperationType {get;set;}
-		public bool ParameterTakesPrecedence {get;set;}
+		public System.Boolean ParameterTakesPrecedence {get;set;}
 		public IfcLabel UserDefinedOperationType {get;set;}
 
 		public IfcDoorType()
@@ -5069,7 +4804,7 @@ namespace IFC4
 	public  partial class IfcEdgeCurve : IfcEdge
 	{
 		public IfcCurve EdgeGeometry {get;set;}
-		public bool SameSense {get;set;}
+		public System.Boolean SameSense {get;set;}
 
 		public IfcEdgeCurve()
 		{
@@ -5082,12 +4817,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcEdgeLoop : IfcLoop
 	{
-		public List<IfcOrientedEdge> EdgeList {get;set;}
-		public int Ne {get;set;}
+		public List<List<IfcOrientedEdge>> EdgeList {get;set;}
+		public System.Int32 Ne {get;set;}
 
 		public IfcEdgeLoop()
 		{
-			EdgeList = new List<IfcOrientedEdge>();
+			EdgeList = new List<List<IfcOrientedEdge>>();
 
 		}
 	}
@@ -5254,31 +4989,31 @@ namespace IFC4
 	public abstract partial class IfcElement : IfcProduct
 	{
 		public IfcIdentifier Tag {get;set;}
-		public List<IfcRelFillsElement> FillsVoids {get;set;}
-		public List<IfcRelConnectsElements> ConnectedTo {get;set;}
-		public List<IfcRelInterferesElements> IsInterferedByElements {get;set;}
-		public List<IfcRelInterferesElements> InterferesElements {get;set;}
-		public List<IfcRelProjectsElement> HasProjections {get;set;}
-		public List<IfcRelReferencedInSpatialStructure> ReferencedInStructures {get;set;}
-		public List<IfcRelVoidsElement> HasOpenings {get;set;}
-		public List<IfcRelConnectsWithRealizingElements> IsConnectionRealization {get;set;}
-		public List<IfcRelSpaceBoundary> ProvidesBoundaries {get;set;}
-		public List<IfcRelConnectsElements> ConnectedFrom {get;set;}
-		public List<IfcRelContainedInSpatialStructure> ContainedInStructure {get;set;}
+		public List<List<IfcRelFillsElement>> FillsVoids {get;set;}
+		public List<List<IfcRelConnectsElements>> ConnectedTo {get;set;}
+		public List<List<IfcRelInterferesElements>> IsInterferedByElements {get;set;}
+		public List<List<IfcRelInterferesElements>> InterferesElements {get;set;}
+		public List<List<IfcRelProjectsElement>> HasProjections {get;set;}
+		public List<List<IfcRelReferencedInSpatialStructure>> ReferencedInStructures {get;set;}
+		public List<List<IfcRelVoidsElement>> HasOpenings {get;set;}
+		public List<List<IfcRelConnectsWithRealizingElements>> IsConnectionRealization {get;set;}
+		public List<List<IfcRelSpaceBoundary>> ProvidesBoundaries {get;set;}
+		public List<List<IfcRelConnectsElements>> ConnectedFrom {get;set;}
+		public List<List<IfcRelContainedInSpatialStructure>> ContainedInStructure {get;set;}
 
 		public IfcElement()
 		{
-			FillsVoids = new List<IfcRelFillsElement>();
-			ConnectedTo = new List<IfcRelConnectsElements>();
-			IsInterferedByElements = new List<IfcRelInterferesElements>();
-			InterferesElements = new List<IfcRelInterferesElements>();
-			HasProjections = new List<IfcRelProjectsElement>();
-			ReferencedInStructures = new List<IfcRelReferencedInSpatialStructure>();
-			HasOpenings = new List<IfcRelVoidsElement>();
-			IsConnectionRealization = new List<IfcRelConnectsWithRealizingElements>();
-			ProvidesBoundaries = new List<IfcRelSpaceBoundary>();
-			ConnectedFrom = new List<IfcRelConnectsElements>();
-			ContainedInStructure = new List<IfcRelContainedInSpatialStructure>();
+			FillsVoids = new List<List<IfcRelFillsElement>>();
+			ConnectedTo = new List<List<IfcRelConnectsElements>>();
+			IsInterferedByElements = new List<List<IfcRelInterferesElements>>();
+			InterferesElements = new List<List<IfcRelInterferesElements>>();
+			HasProjections = new List<List<IfcRelProjectsElement>>();
+			ReferencedInStructures = new List<List<IfcRelReferencedInSpatialStructure>>();
+			HasOpenings = new List<List<IfcRelVoidsElement>>();
+			IsConnectionRealization = new List<List<IfcRelConnectsWithRealizingElements>>();
+			ProvidesBoundaries = new List<List<IfcRelSpaceBoundary>>();
+			ConnectedFrom = new List<List<IfcRelConnectsElements>>();
+			ContainedInStructure = new List<List<IfcRelContainedInSpatialStructure>>();
 
 		}
 	}
@@ -5340,11 +5075,11 @@ namespace IFC4
 	public  partial class IfcElementQuantity : IfcQuantitySet
 	{
 		public IfcLabel MethodOfMeasurement {get;set;}
-		public List<IfcPhysicalQuantity> Quantities {get;set;}
+		public List<List<IfcPhysicalQuantity>> Quantities {get;set;}
 
 		public IfcElementQuantity()
 		{
-			Quantities = new List<IfcPhysicalQuantity>();
+			Quantities = new List<List<IfcPhysicalQuantity>>();
 
 		}
 	}
@@ -5559,11 +5294,11 @@ namespace IFC4
 	{
 		public IfcIdentifier Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcProperty> Properties {get;set;}
+		public List<List<IfcProperty>> Properties {get;set;}
 
 		public IfcExtendedProperties()
 		{
-			Properties = new List<IfcProperty>();
+			Properties = new List<List<IfcProperty>>();
 
 		}
 	}
@@ -5588,11 +5323,11 @@ namespace IFC4
 		public IfcURIReference Location {get;set;}
 		public IfcIdentifier Identification {get;set;}
 		public IfcLabel Name {get;set;}
-		public List<IfcExternalReferenceRelationship> ExternalReferenceForResources {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> ExternalReferenceForResources {get;set;}
 
 		public IfcExternalReference()
 		{
-			ExternalReferenceForResources = new List<IfcExternalReferenceRelationship>();
+			ExternalReferenceForResources = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -5603,11 +5338,11 @@ namespace IFC4
 	public  partial class IfcExternalReferenceRelationship : IfcResourceLevelRelationship
 	{
 		public IfcExternalReference RelatingReference {get;set;}
-		public List<IfcResourceObjectSelect> RelatedResourceObjects {get;set;}
+		public List<List<IfcResourceObjectSelect>> RelatedResourceObjects {get;set;}
 
 		public IfcExternalReferenceRelationship()
 		{
-			RelatedResourceObjects = new List<IfcResourceObjectSelect>();
+			RelatedResourceObjects = new List<List<IfcResourceObjectSelect>>();
 
 		}
 	}
@@ -5618,11 +5353,11 @@ namespace IFC4
 	public  partial class IfcExternalSpatialElement : IfcExternalSpatialStructureElement
 	{
 		public IfcExternalSpatialElementTypeEnum PredefinedType {get;set;}
-		public List<IfcRelSpaceBoundary> BoundedBy {get;set;}
+		public List<List<IfcRelSpaceBoundary>> BoundedBy {get;set;}
 
 		public IfcExternalSpatialElement()
 		{
-			BoundedBy = new List<IfcRelSpaceBoundary>();
+			BoundedBy = new List<List<IfcRelSpaceBoundary>>();
 
 		}
 	}
@@ -5707,13 +5442,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcFace : IfcTopologicalRepresentationItem
 	{
-		public List<IfcFaceBound> Bounds {get;set;}
-		public List<IfcTextureMap> HasTextureMaps {get;set;}
+		public List<List<IfcFaceBound>> Bounds {get;set;}
+		public List<List<IfcTextureMap>> HasTextureMaps {get;set;}
 
 		public IfcFace()
 		{
-			Bounds = new List<IfcFaceBound>();
-			HasTextureMaps = new List<IfcTextureMap>();
+			Bounds = new List<List<IfcFaceBound>>();
+			HasTextureMaps = new List<List<IfcTextureMap>>();
 
 		}
 	}
@@ -5723,12 +5458,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcFaceBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
-		public List<IfcConnectedFaceSet> FbsmFaces {get;set;}
+		public List<List<IfcConnectedFaceSet>> FbsmFaces {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcFaceBasedSurfaceModel()
 		{
-			FbsmFaces = new List<IfcConnectedFaceSet>();
+			FbsmFaces = new List<List<IfcConnectedFaceSet>>();
 
 		}
 	}
@@ -5739,7 +5474,7 @@ namespace IFC4
 	public  partial class IfcFaceBound : IfcTopologicalRepresentationItem
 	{
 		public IfcLoop Bound {get;set;}
-		public bool Orientation {get;set;}
+		public System.Boolean Orientation {get;set;}
 
 		public IfcFaceBound()
 		{
@@ -5765,7 +5500,7 @@ namespace IFC4
 	public  partial class IfcFaceSurface : IfcFace
 	{
 		public IfcSurface FaceSurface {get;set;}
-		public bool SameSense {get;set;}
+		public System.Boolean SameSense {get;set;}
 
 		public IfcFaceSurface()
 		{
@@ -5790,11 +5525,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcFacetedBrepWithVoids : IfcFacetedBrep
 	{
-		public List<IfcClosedShell> Voids {get;set;}
+		public List<List<IfcClosedShell>> Voids {get;set;}
 
 		public IfcFacetedBrepWithVoids()
 		{
-			Voids = new List<IfcClosedShell>();
+			Voids = new List<List<IfcClosedShell>>();
 
 		}
 	}
@@ -5886,7 +5621,8 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcFeatureElementAddition : IfcFeatureElement
 	{
-***ERROR FOR ATTRIBUTE ProjectsElements
+		public IfcRelProjectsElement ProjectsElements {get;set;}
+
 		public IfcFeatureElementAddition()
 		{
 
@@ -5898,7 +5634,8 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcFeatureElementSubtraction : IfcFeatureElement
 	{
-***ERROR FOR ATTRIBUTE VoidsElements
+		public IfcRelVoidsElement VoidsElements {get;set;}
+
 		public IfcFeatureElementSubtraction()
 		{
 
@@ -5910,12 +5647,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcFillAreaStyle : IfcPresentationStyle
 	{
-		public List<IfcFillStyleSelect> FillStyles {get;set;}
-		public bool ModelorDraughting {get;set;}
+		public List<List<IfcFillStyleSelect>> FillStyles {get;set;}
+		public System.Boolean ModelorDraughting {get;set;}
 
 		public IfcFillAreaStyle()
 		{
-			FillStyles = new List<IfcFillStyleSelect>();
+			FillStyles = new List<List<IfcFillStyleSelect>>();
 
 		}
 	}
@@ -5942,14 +5679,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcFillAreaStyleTiles : IfcGeometricRepresentationItem
 	{
-		public List<IfcVector> TilingPattern {get;set;}
-		public List<IfcStyledItem> Tiles {get;set;}
+		public List<List<IfcVector>> TilingPattern {get;set;}
+		public List<List<IfcStyledItem>> Tiles {get;set;}
 		public IfcPositiveRatioMeasure TilingScale {get;set;}
 
 		public IfcFillAreaStyleTiles()
 		{
-			TilingPattern = new List<IfcVector>();
-			Tiles = new List<IfcStyledItem>();
+			TilingPattern = new List<List<IfcVector>>();
+			Tiles = new List<List<IfcStyledItem>>();
 
 		}
 	}
@@ -6363,14 +6100,14 @@ namespace IFC4
 	public  partial class IfcGeometricRepresentationContext : IfcRepresentationContext
 	{
 		public IfcDimensionCount CoordinateSpaceDimension {get;set;}
-		public double Precision {get;set;}
+		public System.Double Precision {get;set;}
 		public IfcAxis2Placement WorldCoordinateSystem {get;set;}
 		public IfcDirection TrueNorth {get;set;}
-		public List<IfcGeometricRepresentationSubContext> HasSubContexts {get;set;}
+		public List<List<IfcGeometricRepresentationSubContext>> HasSubContexts {get;set;}
 
 		public IfcGeometricRepresentationContext()
 		{
-			HasSubContexts = new List<IfcGeometricRepresentationSubContext>();
+			HasSubContexts = new List<List<IfcGeometricRepresentationSubContext>>();
 
 		}
 	}
@@ -6399,7 +6136,7 @@ namespace IFC4
 		public IfcAxis2Placement SELF\IfcGeometricRepresentationContext.WorldCoordinateSystem {get;set;}
 		public IfcDimensionCount SELF\IfcGeometricRepresentationContext.CoordinateSpaceDimension {get;set;}
 		public IfcDirection SELF\IfcGeometricRepresentationContext.TrueNorth {get;set;}
-		public double SELF\IfcGeometricRepresentationContext.Precision {get;set;}
+		public System.Double SELF\IfcGeometricRepresentationContext.Precision {get;set;}
 
 		public IfcGeometricRepresentationSubContext()
 		{
@@ -6412,12 +6149,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcGeometricSet : IfcGeometricRepresentationItem
 	{
-		public List<IfcGeometricSetSelect> Elements {get;set;}
+		public List<List<IfcGeometricSetSelect>> Elements {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcGeometricSet()
 		{
-			Elements = new List<IfcGeometricSetSelect>();
+			Elements = new List<List<IfcGeometricSetSelect>>();
 
 		}
 	}
@@ -6427,18 +6164,18 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcGrid : IfcProduct
 	{
-		public List<IfcGridAxis> UAxes {get;set;}
-		public List<IfcGridAxis> VAxes {get;set;}
-		public List<IfcGridAxis> WAxes {get;set;}
+		public List<List<IfcGridAxis>> UAxes {get;set;}
+		public List<List<IfcGridAxis>> VAxes {get;set;}
+		public List<List<IfcGridAxis>> WAxes {get;set;}
 		public IfcGridTypeEnum PredefinedType {get;set;}
-		public List<IfcRelContainedInSpatialStructure> ContainedInStructure {get;set;}
+		public List<List<IfcRelContainedInSpatialStructure>> ContainedInStructure {get;set;}
 
 		public IfcGrid()
 		{
-			UAxes = new List<IfcGridAxis>();
-			VAxes = new List<IfcGridAxis>();
-			WAxes = new List<IfcGridAxis>();
-			ContainedInStructure = new List<IfcRelContainedInSpatialStructure>();
+			UAxes = new List<List<IfcGridAxis>>();
+			VAxes = new List<List<IfcGridAxis>>();
+			WAxes = new List<List<IfcGridAxis>>();
+			ContainedInStructure = new List<List<IfcRelContainedInSpatialStructure>>();
 
 		}
 	}
@@ -6451,17 +6188,17 @@ namespace IFC4
 		public IfcLabel AxisTag {get;set;}
 		public IfcCurve AxisCurve {get;set;}
 		public IfcBoolean SameSense {get;set;}
-		public List<IfcGrid> PartOfW {get;set;}
-		public List<IfcGrid> PartOfV {get;set;}
-		public List<IfcGrid> PartOfU {get;set;}
-		public List<IfcVirtualGridIntersection> HasIntersections {get;set;}
+		public List<List<IfcGrid>> PartOfW {get;set;}
+		public List<List<IfcGrid>> PartOfV {get;set;}
+		public List<List<IfcGrid>> PartOfU {get;set;}
+		public List<List<IfcVirtualGridIntersection>> HasIntersections {get;set;}
 
 		public IfcGridAxis()
 		{
-			PartOfW = new List<IfcGrid>();
-			PartOfV = new List<IfcGrid>();
-			PartOfU = new List<IfcGrid>();
-			HasIntersections = new List<IfcVirtualGridIntersection>();
+			PartOfW = new List<List<IfcGrid>>();
+			PartOfV = new List<List<IfcGrid>>();
+			PartOfU = new List<List<IfcGrid>>();
+			HasIntersections = new List<List<IfcVirtualGridIntersection>>();
 
 		}
 	}
@@ -6485,11 +6222,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcGroup : IfcObject
 	{
-		public List<IfcRelAssignsToGroup> IsGroupedBy {get;set;}
+		public List<List<IfcRelAssignsToGroup>> IsGroupedBy {get;set;}
 
 		public IfcGroup()
 		{
-			IsGroupedBy = new List<IfcRelAssignsToGroup>();
+			IsGroupedBy = new List<List<IfcRelAssignsToGroup>>();
 
 		}
 	}
@@ -6500,7 +6237,7 @@ namespace IFC4
 	public  partial class IfcHalfSpaceSolid : IfcGeometricRepresentationItem
 	{
 		public IfcSurface BaseSurface {get;set;}
-		public bool AgreementFlag {get;set;}
+		public System.Boolean AgreementFlag {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcHalfSpaceSolid()
@@ -6601,11 +6338,11 @@ namespace IFC4
 		public IfcTessellatedFaceSet MappedTo {get;set;}
 		public IfcSurfaceStyleShading Overrides {get;set;}
 		public IfcColourRgbList Colours {get;set;}
-		public List<INTEGER> ColourIndex {get;set;}
+		public List<List<System.Int32>> ColourIndex {get;set;}
 
 		public IfcIndexedColourMap()
 		{
-			ColourIndex = new List<INTEGER>();
+			ColourIndex = new List<List<System.Int32>>();
 
 		}
 	}
@@ -6629,11 +6366,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcIndexedTriangleTextureMap : IfcIndexedTextureMap
 	{
-		public List<List<INTEGER>> TexCoordIndex {get;set;}
+		public List<List<List<System.Int32>>> TexCoordIndex {get;set;}
 
 		public IfcIndexedTriangleTextureMap()
 		{
-			TexCoordIndex = new List<List<INTEGER>>();
+			TexCoordIndex = new List<List<List<System.Int32>>>();
 
 		}
 	}
@@ -6671,14 +6408,14 @@ namespace IFC4
 	{
 		public IfcInventoryTypeEnum PredefinedType {get;set;}
 		public IfcActorSelect Jurisdiction {get;set;}
-		public List<IfcPerson> ResponsiblePersons {get;set;}
+		public List<List<IfcPerson>> ResponsiblePersons {get;set;}
 		public IfcDate LastUpdateDate {get;set;}
 		public IfcCostValue CurrentValue {get;set;}
 		public IfcCostValue OriginalValue {get;set;}
 
 		public IfcInventory()
 		{
-			ResponsiblePersons = new List<IfcPerson>();
+			ResponsiblePersons = new List<List<IfcPerson>>();
 
 		}
 	}
@@ -6688,11 +6425,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcIrregularTimeSeries : IfcTimeSeries
 	{
-		public List<IfcIrregularTimeSeriesValue> Values {get;set;}
+		public List<List<IfcIrregularTimeSeriesValue>> Values {get;set;}
 
 		public IfcIrregularTimeSeries()
 		{
-			Values = new List<IfcIrregularTimeSeriesValue>();
+			Values = new List<List<IfcIrregularTimeSeriesValue>>();
 
 		}
 	}
@@ -6703,11 +6440,11 @@ namespace IFC4
 	public  partial class IfcIrregularTimeSeriesValue
 	{
 		public IfcDateTime TimeStamp {get;set;}
-		public List<IfcValue> ListValues {get;set;}
+		public List<List<IfcValue>> ListValues {get;set;}
 
 		public IfcIrregularTimeSeriesValue()
 		{
-			ListValues = new List<IfcValue>();
+			ListValues = new List<List<IfcValue>>();
 
 		}
 	}
@@ -6833,13 +6570,13 @@ namespace IFC4
 		public IfcDateTime VersionDate {get;set;}
 		public IfcURIReference Location {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcRelAssociatesLibrary> LibraryInfoForObjects {get;set;}
-		public List<IfcLibraryReference> HasLibraryReferences {get;set;}
+		public List<List<IfcRelAssociatesLibrary>> LibraryInfoForObjects {get;set;}
+		public List<List<IfcLibraryReference>> HasLibraryReferences {get;set;}
 
 		public IfcLibraryInformation()
 		{
-			LibraryInfoForObjects = new List<IfcRelAssociatesLibrary>();
-			HasLibraryReferences = new List<IfcLibraryReference>();
+			LibraryInfoForObjects = new List<List<IfcRelAssociatesLibrary>>();
+			HasLibraryReferences = new List<List<IfcLibraryReference>>();
 
 		}
 	}
@@ -6852,11 +6589,11 @@ namespace IFC4
 		public IfcText Description {get;set;}
 		public IfcLanguageId Language {get;set;}
 		public IfcLibraryInformation ReferencedLibrary {get;set;}
-		public List<IfcRelAssociatesLibrary> LibraryRefForObjects {get;set;}
+		public List<List<IfcRelAssociatesLibrary>> LibraryRefForObjects {get;set;}
 
 		public IfcLibraryReference()
 		{
-			LibraryRefForObjects = new List<IfcRelAssociatesLibrary>();
+			LibraryRefForObjects = new List<List<IfcRelAssociatesLibrary>>();
 
 		}
 	}
@@ -6867,13 +6604,13 @@ namespace IFC4
 	public  partial class IfcLightDistributionData
 	{
 		public IfcPlaneAngleMeasure MainPlaneAngle {get;set;}
-		public List<IfcPlaneAngleMeasure> SecondaryPlaneAngle {get;set;}
-		public List<IfcLuminousIntensityDistributionMeasure> LuminousIntensity {get;set;}
+		public List<List<IfcPlaneAngleMeasure>> SecondaryPlaneAngle {get;set;}
+		public List<List<IfcLuminousIntensityDistributionMeasure>> LuminousIntensity {get;set;}
 
 		public IfcLightDistributionData()
 		{
-			SecondaryPlaneAngle = new List<IfcPlaneAngleMeasure>();
-			LuminousIntensity = new List<IfcLuminousIntensityDistributionMeasure>();
+			SecondaryPlaneAngle = new List<List<IfcPlaneAngleMeasure>>();
+			LuminousIntensity = new List<List<IfcLuminousIntensityDistributionMeasure>>();
 
 		}
 	}
@@ -6910,11 +6647,11 @@ namespace IFC4
 	public  partial class IfcLightIntensityDistribution
 	{
 		public IfcLightDistributionCurveEnum LightDistributionCurve {get;set;}
-		public List<IfcLightDistributionData> DistributionData {get;set;}
+		public List<List<IfcLightDistributionData>> DistributionData {get;set;}
 
 		public IfcLightIntensityDistribution()
 		{
-			DistributionData = new List<IfcLightDistributionData>();
+			DistributionData = new List<List<IfcLightDistributionData>>();
 
 		}
 	}
@@ -7104,15 +6841,15 @@ namespace IFC4
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
 		public IfcLabel Category {get;set;}
-		public List<IfcMaterialDefinitionRepresentation> HasRepresentation {get;set;}
-		public List<IfcMaterialRelationship> IsRelatedWith {get;set;}
-		public List<IfcMaterialRelationship> RelatesTo {get;set;}
+		public List<List<IfcMaterialDefinitionRepresentation>> HasRepresentation {get;set;}
+		public List<List<IfcMaterialRelationship>> IsRelatedWith {get;set;}
+		public List<List<IfcMaterialRelationship>> RelatesTo {get;set;}
 
 		public IfcMaterial()
 		{
-			HasRepresentation = new List<IfcMaterialDefinitionRepresentation>();
-			IsRelatedWith = new List<IfcMaterialRelationship>();
-			RelatesTo = new List<IfcMaterialRelationship>();
+			HasRepresentation = new List<List<IfcMaterialDefinitionRepresentation>>();
+			IsRelatedWith = new List<List<IfcMaterialRelationship>>();
+			RelatesTo = new List<List<IfcMaterialRelationship>>();
 
 		}
 	}
@@ -7122,12 +6859,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMaterialClassificationRelationship
 	{
-		public List<IfcClassificationSelect> MaterialClassifications {get;set;}
+		public List<List<IfcClassificationSelect>> MaterialClassifications {get;set;}
 		public IfcMaterial ClassifiedMaterial {get;set;}
 
 		public IfcMaterialClassificationRelationship()
 		{
-			MaterialClassifications = new List<IfcClassificationSelect>();
+			MaterialClassifications = new List<List<IfcClassificationSelect>>();
 
 		}
 	}
@@ -7142,7 +6879,8 @@ namespace IFC4
 		public IfcMaterial Material {get;set;}
 		public IfcNormalisedRatioMeasure Fraction {get;set;}
 		public IfcLabel Category {get;set;}
-***ERROR FOR ATTRIBUTE ToMaterialConstituentSet
+		public IfcMaterialConstituentSet ToMaterialConstituentSet {get;set;}
+
 		public IfcMaterialConstituent()
 		{
 
@@ -7156,11 +6894,11 @@ namespace IFC4
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcMaterialConstituent> MaterialConstituents {get;set;}
+		public List<List<IfcMaterialConstituent>> MaterialConstituents {get;set;}
 
 		public IfcMaterialConstituentSet()
 		{
-			MaterialConstituents = new List<IfcMaterialConstituent>();
+			MaterialConstituents = new List<List<IfcMaterialConstituent>>();
 
 		}
 	}
@@ -7170,15 +6908,15 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcMaterialDefinition
 	{
-		public List<IfcRelAssociatesMaterial> AssociatedTo {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReferences {get;set;}
-		public List<IfcMaterialProperties> HasProperties {get;set;}
+		public List<List<IfcRelAssociatesMaterial>> AssociatedTo {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReferences {get;set;}
+		public List<List<IfcMaterialProperties>> HasProperties {get;set;}
 
 		public IfcMaterialDefinition()
 		{
-			AssociatedTo = new List<IfcRelAssociatesMaterial>();
-			HasExternalReferences = new List<IfcExternalReferenceRelationship>();
-			HasProperties = new List<IfcMaterialProperties>();
+			AssociatedTo = new List<List<IfcRelAssociatesMaterial>>();
+			HasExternalReferences = new List<List<IfcExternalReferenceRelationship>>();
+			HasProperties = new List<List<IfcMaterialProperties>>();
 
 		}
 	}
@@ -7208,7 +6946,8 @@ namespace IFC4
 		public IfcText Description {get;set;}
 		public IfcLabel Category {get;set;}
 		public IfcNormalisedRatioMeasure Priority {get;set;}
-***ERROR FOR ATTRIBUTE ToMaterialLayerSet
+		public IfcMaterialLayerSet ToMaterialLayerSet {get;set;}
+
 		public IfcMaterialLayer()
 		{
 
@@ -7220,14 +6959,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMaterialLayerSet : IfcMaterialDefinition
 	{
-		public List<IfcMaterialLayer> MaterialLayers {get;set;}
+		public List<List<IfcMaterialLayer>> MaterialLayers {get;set;}
 		public IfcLabel LayerSetName {get;set;}
 		public IfcText Description {get;set;}
 		public IfcLengthMeasure TotalThickness {get;set;}
 
 		public IfcMaterialLayerSet()
 		{
-			MaterialLayers = new List<IfcMaterialLayer>();
+			MaterialLayers = new List<List<IfcMaterialLayer>>();
 
 		}
 	}
@@ -7255,11 +6994,11 @@ namespace IFC4
 	public  partial class IfcMaterialLayerWithOffsets : IfcMaterialLayer
 	{
 		public IfcLayerSetDirectionEnum OffsetDirection {get;set;}
-		public IfcLengthMeasure[] OffsetValues {get;set;}
+		public IfcLengthMeasure[][] OffsetValues {get;set;}
 
 		public IfcMaterialLayerWithOffsets()
 		{
-			OffsetValues = new IfcLengthMeasure[1]();
+			OffsetValues = new IfcLengthMeasure[][]();
 
 		}
 	}
@@ -7269,11 +7008,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMaterialList
 	{
-		public List<IfcMaterial> Materials {get;set;}
+		public List<List<IfcMaterial>> Materials {get;set;}
 
 		public IfcMaterialList()
 		{
-			Materials = new List<IfcMaterial>();
+			Materials = new List<List<IfcMaterial>>();
 
 		}
 	}
@@ -7289,7 +7028,8 @@ namespace IFC4
 		public IfcProfileDef Profile {get;set;}
 		public IfcNormalisedRatioMeasure Priority {get;set;}
 		public IfcLabel Category {get;set;}
-***ERROR FOR ATTRIBUTE ToMaterialProfileSet
+		public IfcMaterialProfileSet ToMaterialProfileSet {get;set;}
+
 		public IfcMaterialProfile()
 		{
 
@@ -7303,12 +7043,12 @@ namespace IFC4
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcMaterialProfile> MaterialProfiles {get;set;}
+		public List<List<IfcMaterialProfile>> MaterialProfiles {get;set;}
 		public IfcCompositeProfileDef CompositeProfile {get;set;}
 
 		public IfcMaterialProfileSet()
 		{
-			MaterialProfiles = new List<IfcMaterialProfile>();
+			MaterialProfiles = new List<List<IfcMaterialProfile>>();
 
 		}
 	}
@@ -7347,11 +7087,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMaterialProfileWithOffsets : IfcMaterialProfile
 	{
-		public IfcLengthMeasure[] OffsetValues {get;set;}
+		public IfcLengthMeasure[][] OffsetValues {get;set;}
 
 		public IfcMaterialProfileWithOffsets()
 		{
-			OffsetValues = new IfcLengthMeasure[1]();
+			OffsetValues = new IfcLengthMeasure[][]();
 
 		}
 	}
@@ -7375,12 +7115,12 @@ namespace IFC4
 	public  partial class IfcMaterialRelationship : IfcResourceLevelRelationship
 	{
 		public IfcMaterial RelatingMaterial {get;set;}
-		public List<IfcMaterial> RelatedMaterials {get;set;}
+		public List<List<IfcMaterial>> RelatedMaterials {get;set;}
 		public IfcLabel Expression {get;set;}
 
 		public IfcMaterialRelationship()
 		{
-			RelatedMaterials = new List<IfcMaterial>();
+			RelatedMaterials = new List<List<IfcMaterial>>();
 
 		}
 	}
@@ -7390,11 +7130,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcMaterialUsageDefinition
 	{
-		public List<IfcRelAssociatesMaterial> AssociatedTo {get;set;}
+		public List<List<IfcRelAssociatesMaterial>> AssociatedTo {get;set;}
 
 		public IfcMaterialUsageDefinition()
 		{
-			AssociatedTo = new List<IfcRelAssociatesMaterial>();
+			AssociatedTo = new List<List<IfcRelAssociatesMaterial>>();
 
 		}
 	}
@@ -7595,17 +7335,17 @@ namespace IFC4
 	public abstract partial class IfcObject : IfcObjectDefinition
 	{
 		public IfcLabel ObjectType {get;set;}
-		public List<IfcRelDefinesByObject> IsDeclaredBy {get;set;}
-		public List<IfcRelDefinesByObject> Declares {get;set;}
-		public List<IfcRelDefinesByType> IsTypedBy {get;set;}
-		public List<IfcRelDefinesByProperties> IsDefinedBy {get;set;}
+		public List<List<IfcRelDefinesByObject>> IsDeclaredBy {get;set;}
+		public List<List<IfcRelDefinesByObject>> Declares {get;set;}
+		public List<List<IfcRelDefinesByType>> IsTypedBy {get;set;}
+		public List<List<IfcRelDefinesByProperties>> IsDefinedBy {get;set;}
 
 		public IfcObject()
 		{
-			IsDeclaredBy = new List<IfcRelDefinesByObject>();
-			Declares = new List<IfcRelDefinesByObject>();
-			IsTypedBy = new List<IfcRelDefinesByType>();
-			IsDefinedBy = new List<IfcRelDefinesByProperties>();
+			IsDeclaredBy = new List<List<IfcRelDefinesByObject>>();
+			Declares = new List<List<IfcRelDefinesByObject>>();
+			IsTypedBy = new List<List<IfcRelDefinesByType>>();
+			IsDefinedBy = new List<List<IfcRelDefinesByProperties>>();
 
 		}
 	}
@@ -7615,23 +7355,23 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcObjectDefinition : IfcRoot
 	{
-		public List<IfcRelAssigns> HasAssignments {get;set;}
-		public List<IfcRelNests> Nests {get;set;}
-		public List<IfcRelNests> IsNestedBy {get;set;}
-		public List<IfcRelDeclares> HasContext {get;set;}
-		public List<IfcRelAggregates> IsDecomposedBy {get;set;}
-		public List<IfcRelAggregates> Decomposes {get;set;}
-		public List<IfcRelAssociates> HasAssociations {get;set;}
+		public List<List<IfcRelAssigns>> HasAssignments {get;set;}
+		public List<List<IfcRelNests>> Nests {get;set;}
+		public List<List<IfcRelNests>> IsNestedBy {get;set;}
+		public List<List<IfcRelDeclares>> HasContext {get;set;}
+		public List<List<IfcRelAggregates>> IsDecomposedBy {get;set;}
+		public List<List<IfcRelAggregates>> Decomposes {get;set;}
+		public List<List<IfcRelAssociates>> HasAssociations {get;set;}
 
 		public IfcObjectDefinition()
 		{
-			HasAssignments = new List<IfcRelAssigns>();
-			Nests = new List<IfcRelNests>();
-			IsNestedBy = new List<IfcRelNests>();
-			HasContext = new List<IfcRelDeclares>();
-			IsDecomposedBy = new List<IfcRelAggregates>();
-			Decomposes = new List<IfcRelAggregates>();
-			HasAssociations = new List<IfcRelAssociates>();
+			HasAssignments = new List<List<IfcRelAssigns>>();
+			Nests = new List<List<IfcRelNests>>();
+			IsNestedBy = new List<List<IfcRelNests>>();
+			HasContext = new List<List<IfcRelDeclares>>();
+			IsDecomposedBy = new List<List<IfcRelAggregates>>();
+			Decomposes = new List<List<IfcRelAggregates>>();
+			HasAssociations = new List<List<IfcRelAssociates>>();
 
 		}
 	}
@@ -7641,13 +7381,13 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcObjectPlacement
 	{
-		public List<IfcProduct> PlacesObject {get;set;}
-		public List<IfcLocalPlacement> ReferencedByPlacements {get;set;}
+		public List<List<IfcProduct>> PlacesObject {get;set;}
+		public List<List<IfcLocalPlacement>> ReferencedByPlacements {get;set;}
 
 		public IfcObjectPlacement()
 		{
-			PlacesObject = new List<IfcProduct>();
-			ReferencedByPlacements = new List<IfcLocalPlacement>();
+			PlacesObject = new List<List<IfcProduct>>();
+			ReferencedByPlacements = new List<List<IfcLocalPlacement>>();
 
 		}
 	}
@@ -7657,14 +7397,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcObjective : IfcConstraint
 	{
-		public List<IfcConstraint> BenchmarkValues {get;set;}
+		public List<List<IfcConstraint>> BenchmarkValues {get;set;}
 		public IfcLogicalOperatorEnum LogicalAggregator {get;set;}
 		public IfcObjectiveEnum ObjectiveQualifier {get;set;}
 		public IfcLabel UserDefinedQualifier {get;set;}
 
 		public IfcObjective()
 		{
-			BenchmarkValues = new List<IfcConstraint>();
+			BenchmarkValues = new List<List<IfcConstraint>>();
 
 		}
 	}
@@ -7689,7 +7429,7 @@ namespace IFC4
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public IfcLengthMeasure Distance {get;set;}
-		public bool? SelfIntersect {get;set;}
+		public System.Boolean? SelfIntersect {get;set;}
 
 		public IfcOffsetCurve2D()
 		{
@@ -7704,7 +7444,7 @@ namespace IFC4
 	{
 		public IfcCurve BasisCurve {get;set;}
 		public IfcLengthMeasure Distance {get;set;}
-		public bool? SelfIntersect {get;set;}
+		public System.Boolean? SelfIntersect {get;set;}
 		public IfcDirection RefDirection {get;set;}
 
 		public IfcOffsetCurve3D()
@@ -7731,11 +7471,11 @@ namespace IFC4
 	public  partial class IfcOpeningElement : IfcFeatureElementSubtraction
 	{
 		public IfcOpeningElementTypeEnum PredefinedType {get;set;}
-		public List<IfcRelFillsElement> HasFillings {get;set;}
+		public List<List<IfcRelFillsElement>> HasFillings {get;set;}
 
 		public IfcOpeningElement()
 		{
-			HasFillings = new List<IfcRelFillsElement>();
+			HasFillings = new List<List<IfcRelFillsElement>>();
 
 		}
 	}
@@ -7760,19 +7500,19 @@ namespace IFC4
 		public IfcIdentifier Identification {get;set;}
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcActorRole> Roles {get;set;}
-		public List<IfcAddress> Addresses {get;set;}
-		public List<IfcOrganizationRelationship> IsRelatedBy {get;set;}
-		public List<IfcOrganizationRelationship> Relates {get;set;}
-		public List<IfcPersonAndOrganization> Engages {get;set;}
+		public List<List<IfcActorRole>> Roles {get;set;}
+		public List<List<IfcAddress>> Addresses {get;set;}
+		public List<List<IfcOrganizationRelationship>> IsRelatedBy {get;set;}
+		public List<List<IfcOrganizationRelationship>> Relates {get;set;}
+		public List<List<IfcPersonAndOrganization>> Engages {get;set;}
 
 		public IfcOrganization()
 		{
-			Roles = new List<IfcActorRole>();
-			Addresses = new List<IfcAddress>();
-			IsRelatedBy = new List<IfcOrganizationRelationship>();
-			Relates = new List<IfcOrganizationRelationship>();
-			Engages = new List<IfcPersonAndOrganization>();
+			Roles = new List<List<IfcActorRole>>();
+			Addresses = new List<List<IfcAddress>>();
+			IsRelatedBy = new List<List<IfcOrganizationRelationship>>();
+			Relates = new List<List<IfcOrganizationRelationship>>();
+			Engages = new List<List<IfcPersonAndOrganization>>();
 
 		}
 	}
@@ -7783,11 +7523,11 @@ namespace IFC4
 	public  partial class IfcOrganizationRelationship : IfcResourceLevelRelationship
 	{
 		public IfcOrganization RelatingOrganization {get;set;}
-		public List<IfcOrganization> RelatedOrganizations {get;set;}
+		public List<List<IfcOrganization>> RelatedOrganizations {get;set;}
 
 		public IfcOrganizationRelationship()
 		{
-			RelatedOrganizations = new List<IfcOrganization>();
+			RelatedOrganizations = new List<List<IfcOrganization>>();
 
 		}
 	}
@@ -7798,7 +7538,7 @@ namespace IFC4
 	public  partial class IfcOrientedEdge : IfcEdge
 	{
 		public IfcEdge EdgeElement {get;set;}
-		public bool Orientation {get;set;}
+		public System.Boolean Orientation {get;set;}
 		public IfcVertex SELF\IfcEdge.EdgeStart {get;set;}
 		public IfcVertex SELF\IfcEdge.EdgeEnd {get;set;}
 
@@ -7884,11 +7624,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPath : IfcTopologicalRepresentationItem
 	{
-		public List<IfcOrientedEdge> EdgeList {get;set;}
+		public List<List<IfcOrientedEdge>> EdgeList {get;set;}
 
 		public IfcPath()
 		{
-			EdgeList = new List<IfcOrientedEdge>();
+			EdgeList = new List<List<IfcOrientedEdge>>();
 
 		}
 	}
@@ -7961,21 +7701,21 @@ namespace IFC4
 		public IfcIdentifier Identification {get;set;}
 		public IfcLabel FamilyName {get;set;}
 		public IfcLabel GivenName {get;set;}
-		public List<IfcLabel> MiddleNames {get;set;}
-		public List<IfcLabel> PrefixTitles {get;set;}
-		public List<IfcLabel> SuffixTitles {get;set;}
-		public List<IfcActorRole> Roles {get;set;}
-		public List<IfcAddress> Addresses {get;set;}
-		public List<IfcPersonAndOrganization> EngagedIn {get;set;}
+		public List<List<IfcLabel>> MiddleNames {get;set;}
+		public List<List<IfcLabel>> PrefixTitles {get;set;}
+		public List<List<IfcLabel>> SuffixTitles {get;set;}
+		public List<List<IfcActorRole>> Roles {get;set;}
+		public List<List<IfcAddress>> Addresses {get;set;}
+		public List<List<IfcPersonAndOrganization>> EngagedIn {get;set;}
 
 		public IfcPerson()
 		{
-			MiddleNames = new List<IfcLabel>();
-			PrefixTitles = new List<IfcLabel>();
-			SuffixTitles = new List<IfcLabel>();
-			Roles = new List<IfcActorRole>();
-			Addresses = new List<IfcAddress>();
-			EngagedIn = new List<IfcPersonAndOrganization>();
+			MiddleNames = new List<List<IfcLabel>>();
+			PrefixTitles = new List<List<IfcLabel>>();
+			SuffixTitles = new List<List<IfcLabel>>();
+			Roles = new List<List<IfcActorRole>>();
+			Addresses = new List<List<IfcAddress>>();
+			EngagedIn = new List<List<IfcPersonAndOrganization>>();
 
 		}
 	}
@@ -7987,11 +7727,11 @@ namespace IFC4
 	{
 		public IfcPerson ThePerson {get;set;}
 		public IfcOrganization TheOrganization {get;set;}
-		public List<IfcActorRole> Roles {get;set;}
+		public List<List<IfcActorRole>> Roles {get;set;}
 
 		public IfcPersonAndOrganization()
 		{
-			Roles = new List<IfcActorRole>();
+			Roles = new List<List<IfcActorRole>>();
 
 		}
 	}
@@ -8001,14 +7741,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPhysicalComplexQuantity : IfcPhysicalQuantity
 	{
-		public List<IfcPhysicalQuantity> HasQuantities {get;set;}
+		public List<List<IfcPhysicalQuantity>> HasQuantities {get;set;}
 		public IfcLabel Discrimination {get;set;}
 		public IfcLabel Quality {get;set;}
 		public IfcLabel Usage {get;set;}
 
 		public IfcPhysicalComplexQuantity()
 		{
-			HasQuantities = new List<IfcPhysicalQuantity>();
+			HasQuantities = new List<List<IfcPhysicalQuantity>>();
 
 		}
 	}
@@ -8020,13 +7760,13 @@ namespace IFC4
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReferences {get;set;}
-		public List<IfcPhysicalComplexQuantity> PartOfComplex {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReferences {get;set;}
+		public List<List<IfcPhysicalComplexQuantity>> PartOfComplex {get;set;}
 
 		public IfcPhysicalQuantity()
 		{
-			HasExternalReferences = new List<IfcExternalReferenceRelationship>();
-			PartOfComplex = new List<IfcPhysicalComplexQuantity>();
+			HasExternalReferences = new List<List<IfcExternalReferenceRelationship>>();
+			PartOfComplex = new List<List<IfcPhysicalComplexQuantity>>();
 
 		}
 	}
@@ -8131,11 +7871,11 @@ namespace IFC4
 		public IfcInteger Width {get;set;}
 		public IfcInteger Height {get;set;}
 		public IfcInteger ColourComponents {get;set;}
-		public List<BINARY(32)> Pixel {get;set;}
+		public List<List<BINARY(32)>> Pixel {get;set;}
 
 		public IfcPixelTexture()
 		{
-			Pixel = new List<BINARY(32)>();
+			Pixel = new List<List<BINARY(32)>>();
 
 		}
 	}
@@ -8279,11 +8019,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPolyLoop : IfcLoop
 	{
-		public List<IfcCartesianPoint> Polygon {get;set;}
+		public List<List<IfcCartesianPoint>> Polygon {get;set;}
 
 		public IfcPolyLoop()
 		{
-			Polygon = new List<IfcCartesianPoint>();
+			Polygon = new List<List<IfcCartesianPoint>>();
 
 		}
 	}
@@ -8307,11 +8047,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPolyline : IfcBoundedCurve
 	{
-		public List<IfcCartesianPoint> Points {get;set;}
+		public List<List<IfcCartesianPoint>> Points {get;set;}
 
 		public IfcPolyline()
 		{
-			Points = new List<IfcCartesianPoint>();
+			Points = new List<List<IfcCartesianPoint>>();
 
 		}
 	}
@@ -8321,15 +8061,15 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcPort : IfcProduct
 	{
-		public List<IfcRelConnectsPortToElement> ContainedIn {get;set;}
-		public List<IfcRelConnectsPorts> ConnectedFrom {get;set;}
-		public List<IfcRelConnectsPorts> ConnectedTo {get;set;}
+		public List<List<IfcRelConnectsPortToElement>> ContainedIn {get;set;}
+		public List<List<IfcRelConnectsPorts>> ConnectedFrom {get;set;}
+		public List<List<IfcRelConnectsPorts>> ConnectedTo {get;set;}
 
 		public IfcPort()
 		{
-			ContainedIn = new List<IfcRelConnectsPortToElement>();
-			ConnectedFrom = new List<IfcRelConnectsPorts>();
-			ConnectedTo = new List<IfcRelConnectsPorts>();
+			ContainedIn = new List<List<IfcRelConnectsPortToElement>>();
+			ConnectedFrom = new List<List<IfcRelConnectsPorts>>();
+			ConnectedTo = new List<List<IfcRelConnectsPorts>>();
 
 		}
 	}
@@ -8340,7 +8080,7 @@ namespace IFC4
 	public  partial class IfcPostalAddress : IfcAddress
 	{
 		public IfcLabel InternalLocation {get;set;}
-		public List<IfcLabel> AddressLines {get;set;}
+		public List<List<IfcLabel>> AddressLines {get;set;}
 		public IfcLabel PostalBox {get;set;}
 		public IfcLabel Town {get;set;}
 		public IfcLabel Region {get;set;}
@@ -8349,7 +8089,7 @@ namespace IFC4
 
 		public IfcPostalAddress()
 		{
-			AddressLines = new List<IfcLabel>();
+			AddressLines = new List<List<IfcLabel>>();
 
 		}
 	}
@@ -8446,12 +8186,12 @@ namespace IFC4
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcLayeredItem> AssignedItems {get;set;}
+		public List<List<IfcLayeredItem>> AssignedItems {get;set;}
 		public IfcIdentifier Identifier {get;set;}
 
 		public IfcPresentationLayerAssignment()
 		{
-			AssignedItems = new List<IfcLayeredItem>();
+			AssignedItems = new List<List<IfcLayeredItem>>();
 
 		}
 	}
@@ -8461,14 +8201,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPresentationLayerWithStyle : IfcPresentationLayerAssignment
 	{
-		public bool? LayerOn {get;set;}
-		public bool? LayerFrozen {get;set;}
-		public bool? LayerBlocked {get;set;}
-		public List<IfcPresentationStyle> LayerStyles {get;set;}
+		public System.Boolean? LayerOn {get;set;}
+		public System.Boolean? LayerFrozen {get;set;}
+		public System.Boolean? LayerBlocked {get;set;}
+		public List<List<IfcPresentationStyle>> LayerStyles {get;set;}
 
 		public IfcPresentationLayerWithStyle()
 		{
-			LayerStyles = new List<IfcPresentationStyle>();
+			LayerStyles = new List<List<IfcPresentationStyle>>();
 
 		}
 	}
@@ -8491,11 +8231,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPresentationStyleAssignment
 	{
-		public List<IfcPresentationStyleSelect> Styles {get;set;}
+		public List<List<IfcPresentationStyleSelect>> Styles {get;set;}
 
 		public IfcPresentationStyleAssignment()
 		{
-			Styles = new List<IfcPresentationStyleSelect>();
+			Styles = new List<List<IfcPresentationStyleSelect>>();
 
 		}
 	}
@@ -8533,15 +8273,15 @@ namespace IFC4
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
-		public List<IfcRelSequence> IsPredecessorTo {get;set;}
-		public List<IfcRelSequence> IsSuccessorFrom {get;set;}
-		public List<IfcRelAssignsToProcess> OperatesOn {get;set;}
+		public List<List<IfcRelSequence>> IsPredecessorTo {get;set;}
+		public List<List<IfcRelSequence>> IsSuccessorFrom {get;set;}
+		public List<List<IfcRelAssignsToProcess>> OperatesOn {get;set;}
 
 		public IfcProcess()
 		{
-			IsPredecessorTo = new List<IfcRelSequence>();
-			IsSuccessorFrom = new List<IfcRelSequence>();
-			OperatesOn = new List<IfcRelAssignsToProcess>();
+			IsPredecessorTo = new List<List<IfcRelSequence>>();
+			IsSuccessorFrom = new List<List<IfcRelSequence>>();
+			OperatesOn = new List<List<IfcRelAssignsToProcess>>();
 
 		}
 	}
@@ -8553,11 +8293,11 @@ namespace IFC4
 	{
 		public IfcObjectPlacement ObjectPlacement {get;set;}
 		public IfcProductRepresentation Representation {get;set;}
-		public List<IfcRelAssignsToProduct> ReferencedBy {get;set;}
+		public List<List<IfcRelAssignsToProduct>> ReferencedBy {get;set;}
 
 		public IfcProduct()
 		{
-			ReferencedBy = new List<IfcRelAssignsToProduct>();
+			ReferencedBy = new List<List<IfcRelAssignsToProduct>>();
 
 		}
 	}
@@ -8567,13 +8307,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcProductDefinitionShape : IfcProductRepresentation
 	{
-		public List<IfcProduct> ShapeOfProduct {get;set;}
-		public List<IfcShapeAspect> HasShapeAspects {get;set;}
+		public List<List<IfcProduct>> ShapeOfProduct {get;set;}
+		public List<List<IfcShapeAspect>> HasShapeAspects {get;set;}
 
 		public IfcProductDefinitionShape()
 		{
-			ShapeOfProduct = new List<IfcProduct>();
-			HasShapeAspects = new List<IfcShapeAspect>();
+			ShapeOfProduct = new List<List<IfcProduct>>();
+			HasShapeAspects = new List<List<IfcShapeAspect>>();
 
 		}
 	}
@@ -8585,11 +8325,11 @@ namespace IFC4
 	{
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcRepresentation> Representations {get;set;}
+		public List<List<IfcRepresentation>> Representations {get;set;}
 
 		public IfcProductRepresentation()
 		{
-			Representations = new List<IfcRepresentation>();
+			Representations = new List<List<IfcRepresentation>>();
 
 		}
 	}
@@ -8601,13 +8341,13 @@ namespace IFC4
 	{
 		public IfcProfileTypeEnum ProfileType {get;set;}
 		public IfcLabel ProfileName {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReference {get;set;}
-		public List<IfcProfileProperties> HasProperties {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReference {get;set;}
+		public List<List<IfcProfileProperties>> HasProperties {get;set;}
 
 		public IfcProfileDef()
 		{
-			HasExternalReference = new List<IfcExternalReferenceRelationship>();
-			HasProperties = new List<IfcProfileProperties>();
+			HasExternalReference = new List<List<IfcExternalReferenceRelationship>>();
+			HasProperties = new List<List<IfcProfileProperties>>();
 
 		}
 	}
@@ -8699,17 +8439,17 @@ namespace IFC4
 	{
 		public IfcIdentifier Name {get;set;}
 		public IfcText Description {get;set;}
-		public List<IfcPropertySet> PartOfPset {get;set;}
-		public List<IfcPropertyDependencyRelationship> PropertyForDependance {get;set;}
-		public List<IfcPropertyDependencyRelationship> PropertyDependsOn {get;set;}
-		public List<IfcComplexProperty> PartOfComplex {get;set;}
+		public List<List<IfcPropertySet>> PartOfPset {get;set;}
+		public List<List<IfcPropertyDependencyRelationship>> PropertyForDependance {get;set;}
+		public List<List<IfcPropertyDependencyRelationship>> PropertyDependsOn {get;set;}
+		public List<List<IfcComplexProperty>> PartOfComplex {get;set;}
 
 		public IfcProperty()
 		{
-			PartOfPset = new List<IfcPropertySet>();
-			PropertyForDependance = new List<IfcPropertyDependencyRelationship>();
-			PropertyDependsOn = new List<IfcPropertyDependencyRelationship>();
-			PartOfComplex = new List<IfcComplexProperty>();
+			PartOfPset = new List<List<IfcPropertySet>>();
+			PropertyForDependance = new List<List<IfcPropertyDependencyRelationship>>();
+			PropertyDependsOn = new List<List<IfcPropertyDependencyRelationship>>();
+			PartOfComplex = new List<List<IfcComplexProperty>>();
 
 		}
 	}
@@ -8719,11 +8459,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcPropertyAbstraction
 	{
-		public List<IfcExternalReferenceRelationship> HasExternalReferences {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReferences {get;set;}
 
 		public IfcPropertyAbstraction()
 		{
-			HasExternalReferences = new List<IfcExternalReferenceRelationship>();
+			HasExternalReferences = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -8749,13 +8489,13 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcPropertyDefinition : IfcRoot
 	{
-		public List<IfcRelDeclares> HasContext {get;set;}
-		public List<IfcRelAssociates> HasAssociations {get;set;}
+		public List<List<IfcRelDeclares>> HasContext {get;set;}
+		public List<List<IfcRelAssociates>> HasAssociations {get;set;}
 
 		public IfcPropertyDefinition()
 		{
-			HasContext = new List<IfcRelDeclares>();
-			HasAssociations = new List<IfcRelAssociates>();
+			HasContext = new List<List<IfcRelDeclares>>();
+			HasAssociations = new List<List<IfcRelAssociates>>();
 
 		}
 	}
@@ -8780,12 +8520,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPropertyEnumeratedValue : IfcSimpleProperty
 	{
-		public List<IfcValue> EnumerationValues {get;set;}
+		public List<List<IfcValue>> EnumerationValues {get;set;}
 		public IfcPropertyEnumeration EnumerationReference {get;set;}
 
 		public IfcPropertyEnumeratedValue()
 		{
-			EnumerationValues = new List<IfcValue>();
+			EnumerationValues = new List<List<IfcValue>>();
 
 		}
 	}
@@ -8796,12 +8536,12 @@ namespace IFC4
 	public  partial class IfcPropertyEnumeration : IfcPropertyAbstraction
 	{
 		public IfcLabel Name {get;set;}
-		public List<IfcValue> EnumerationValues {get;set;}
+		public List<List<IfcValue>> EnumerationValues {get;set;}
 		public IfcUnit Unit {get;set;}
 
 		public IfcPropertyEnumeration()
 		{
-			EnumerationValues = new List<IfcValue>();
+			EnumerationValues = new List<List<IfcValue>>();
 
 		}
 	}
@@ -8811,12 +8551,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPropertyListValue : IfcSimpleProperty
 	{
-		public List<IfcValue> ListValues {get;set;}
+		public List<List<IfcValue>> ListValues {get;set;}
 		public IfcUnit Unit {get;set;}
 
 		public IfcPropertyListValue()
 		{
-			ListValues = new List<IfcValue>();
+			ListValues = new List<List<IfcValue>>();
 
 		}
 	}
@@ -8840,11 +8580,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPropertySet : IfcPropertySetDefinition
 	{
-		public List<IfcProperty> HasProperties {get;set;}
+		public List<List<IfcProperty>> HasProperties {get;set;}
 
 		public IfcPropertySet()
 		{
-			HasProperties = new List<IfcProperty>();
+			HasProperties = new List<List<IfcProperty>>();
 
 		}
 	}
@@ -8854,15 +8594,15 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcPropertySetDefinition : IfcPropertyDefinition
 	{
-		public List<IfcTypeObject> DefinesType {get;set;}
-		public List<IfcRelDefinesByTemplate> IsDefinedBy {get;set;}
-		public List<IfcRelDefinesByProperties> DefinesOccurrence {get;set;}
+		public List<List<IfcTypeObject>> DefinesType {get;set;}
+		public List<List<IfcRelDefinesByTemplate>> IsDefinedBy {get;set;}
+		public List<List<IfcRelDefinesByProperties>> DefinesOccurrence {get;set;}
 
 		public IfcPropertySetDefinition()
 		{
-			DefinesType = new List<IfcTypeObject>();
-			IsDefinedBy = new List<IfcRelDefinesByTemplate>();
-			DefinesOccurrence = new List<IfcRelDefinesByProperties>();
+			DefinesType = new List<List<IfcTypeObject>>();
+			IsDefinedBy = new List<List<IfcRelDefinesByTemplate>>();
+			DefinesOccurrence = new List<List<IfcRelDefinesByProperties>>();
 
 		}
 	}
@@ -8874,13 +8614,13 @@ namespace IFC4
 	{
 		public IfcPropertySetTemplateTypeEnum TemplateType {get;set;}
 		public IfcIdentifier ApplicableEntity {get;set;}
-		public List<IfcPropertyTemplate> HasPropertyTemplates {get;set;}
-		public List<IfcRelDefinesByTemplate> Defines {get;set;}
+		public List<List<IfcPropertyTemplate>> HasPropertyTemplates {get;set;}
+		public List<List<IfcRelDefinesByTemplate>> Defines {get;set;}
 
 		public IfcPropertySetTemplate()
 		{
-			HasPropertyTemplates = new List<IfcPropertyTemplate>();
-			Defines = new List<IfcRelDefinesByTemplate>();
+			HasPropertyTemplates = new List<List<IfcPropertyTemplate>>();
+			Defines = new List<List<IfcRelDefinesByTemplate>>();
 
 		}
 	}
@@ -8904,8 +8644,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPropertyTableValue : IfcSimpleProperty
 	{
-		public List<IfcValue> DefiningValues {get;set;}
-		public List<IfcValue> DefinedValues {get;set;}
+		public List<List<IfcValue>> DefiningValues {get;set;}
+		public List<List<IfcValue>> DefinedValues {get;set;}
 		public IfcText Expression {get;set;}
 		public IfcUnit DefiningUnit {get;set;}
 		public IfcUnit DefinedUnit {get;set;}
@@ -8913,8 +8653,8 @@ namespace IFC4
 
 		public IfcPropertyTableValue()
 		{
-			DefiningValues = new List<IfcValue>();
-			DefinedValues = new List<IfcValue>();
+			DefiningValues = new List<List<IfcValue>>();
+			DefinedValues = new List<List<IfcValue>>();
 
 		}
 	}
@@ -8924,13 +8664,13 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcPropertyTemplate : IfcPropertyTemplateDefinition
 	{
-		public List<IfcComplexPropertyTemplate> PartOfComplexTemplate {get;set;}
-		public List<IfcPropertySetTemplate> PartOfPsetTemplate {get;set;}
+		public List<List<IfcComplexPropertyTemplate>> PartOfComplexTemplate {get;set;}
+		public List<List<IfcPropertySetTemplate>> PartOfPsetTemplate {get;set;}
 
 		public IfcPropertyTemplate()
 		{
-			PartOfComplexTemplate = new List<IfcComplexPropertyTemplate>();
-			PartOfPsetTemplate = new List<IfcPropertySetTemplate>();
+			PartOfComplexTemplate = new List<List<IfcComplexPropertyTemplate>>();
+			PartOfPsetTemplate = new List<List<IfcPropertySetTemplate>>();
 
 		}
 	}
@@ -9218,13 +8958,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRationalBSplineCurveWithKnots : IfcBSplineCurveWithKnots
 	{
-		public List<REAL> WeightsData {get;set;}
-		public REAL[] Weights {get;set;}
+		public List<List<System.Double>> WeightsData {get;set;}
+		public System.Double[][] Weights {get;set;}
 
 		public IfcRationalBSplineCurveWithKnots()
 		{
-			WeightsData = new List<REAL>();
-			Weights = new REAL[0]();
+			WeightsData = new List<List<System.Double>>();
+			Weights = new System.Double[][]();
 
 		}
 	}
@@ -9234,13 +8974,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRationalBSplineSurfaceWithKnots : IfcBSplineSurfaceWithKnots
 	{
-		public List<List<REAL>> WeightsData {get;set;}
-		public REAL[][] Weights {get;set;}
+		public List<List<List<System.Double>>> WeightsData {get;set;}
+		public System.Double[][][] Weights {get;set;}
 
 		public IfcRationalBSplineSurfaceWithKnots()
 		{
-			WeightsData = new List<List<REAL>>();
-			Weights = new REAL[0][0]();
+			WeightsData = new List<List<List<System.Double>>>();
+			Weights = new System.Double[][][]();
 
 		}
 	}
@@ -9299,8 +9039,8 @@ namespace IFC4
 		public IfcParameterValue V1 {get;set;}
 		public IfcParameterValue U2 {get;set;}
 		public IfcParameterValue V2 {get;set;}
-		public bool Usense {get;set;}
-		public bool Vsense {get;set;}
+		public System.Boolean Usense {get;set;}
+		public System.Boolean Vsense {get;set;}
 
 		public IfcRectangularTrimmedSurface()
 		{
@@ -9314,20 +9054,20 @@ namespace IFC4
 	public  partial class IfcRecurrencePattern
 	{
 		public IfcRecurrenceTypeEnum RecurrenceType {get;set;}
-		public List<IfcDayInMonthNumber> DayComponent {get;set;}
-		public List<IfcDayInWeekNumber> WeekdayComponent {get;set;}
-		public List<IfcMonthInYearNumber> MonthComponent {get;set;}
+		public List<List<IfcDayInMonthNumber>> DayComponent {get;set;}
+		public List<List<IfcDayInWeekNumber>> WeekdayComponent {get;set;}
+		public List<List<IfcMonthInYearNumber>> MonthComponent {get;set;}
 		public IfcInteger Position {get;set;}
 		public IfcInteger Interval {get;set;}
 		public IfcInteger Occurrences {get;set;}
-		public List<IfcTimePeriod> TimePeriods {get;set;}
+		public List<List<IfcTimePeriod>> TimePeriods {get;set;}
 
 		public IfcRecurrencePattern()
 		{
-			DayComponent = new List<IfcDayInMonthNumber>();
-			WeekdayComponent = new List<IfcDayInWeekNumber>();
-			MonthComponent = new List<IfcMonthInYearNumber>();
-			TimePeriods = new List<IfcTimePeriod>();
+			DayComponent = new List<List<IfcDayInMonthNumber>>();
+			WeekdayComponent = new List<List<IfcDayInWeekNumber>>();
+			MonthComponent = new List<List<IfcMonthInYearNumber>>();
+			TimePeriods = new List<List<IfcTimePeriod>>();
 
 		}
 	}
@@ -9340,12 +9080,12 @@ namespace IFC4
 		public IfcIdentifier TypeIdentifier {get;set;}
 		public IfcIdentifier AttributeIdentifier {get;set;}
 		public IfcLabel InstanceName {get;set;}
-		public List<INTEGER> ListPositions {get;set;}
+		public List<List<System.Int32>> ListPositions {get;set;}
 		public IfcReference InnerReference {get;set;}
 
 		public IfcReference()
 		{
-			ListPositions = new List<INTEGER>();
+			ListPositions = new List<List<System.Int32>>();
 
 		}
 	}
@@ -9356,11 +9096,11 @@ namespace IFC4
 	public  partial class IfcRegularTimeSeries : IfcTimeSeries
 	{
 		public IfcTimeMeasure TimeStep {get;set;}
-		public List<IfcTimeSeriesValue> Values {get;set;}
+		public List<List<IfcTimeSeriesValue>> Values {get;set;}
 
 		public IfcRegularTimeSeries()
 		{
-			Values = new List<IfcTimeSeriesValue>();
+			Values = new List<List<IfcTimeSeriesValue>>();
 
 		}
 	}
@@ -9389,11 +9129,11 @@ namespace IFC4
 	public  partial class IfcReinforcementDefinitionProperties : IfcPreDefinedPropertySet
 	{
 		public IfcLabel DefinitionType {get;set;}
-		public List<IfcSectionReinforcementProperties> ReinforcementSectionDefinitions {get;set;}
+		public List<List<IfcSectionReinforcementProperties>> ReinforcementSectionDefinitions {get;set;}
 
 		public IfcReinforcementDefinitionProperties()
 		{
-			ReinforcementSectionDefinitions = new List<IfcSectionReinforcementProperties>();
+			ReinforcementSectionDefinitions = new List<List<IfcSectionReinforcementProperties>>();
 
 		}
 	}
@@ -9426,11 +9166,11 @@ namespace IFC4
 		public IfcPositiveLengthMeasure BarLength {get;set;}
 		public IfcReinforcingBarSurfaceEnum BarSurface {get;set;}
 		public IfcLabel BendingShapeCode {get;set;}
-		public List<IfcBendingParameterSelect> BendingParameters {get;set;}
+		public List<List<IfcBendingParameterSelect>> BendingParameters {get;set;}
 
 		public IfcReinforcingBarType()
 		{
-			BendingParameters = new List<IfcBendingParameterSelect>();
+			BendingParameters = new List<List<IfcBendingParameterSelect>>();
 
 		}
 	}
@@ -9496,11 +9236,11 @@ namespace IFC4
 		public IfcPositiveLengthMeasure LongitudinalBarSpacing {get;set;}
 		public IfcPositiveLengthMeasure TransverseBarSpacing {get;set;}
 		public IfcLabel BendingShapeCode {get;set;}
-		public List<IfcBendingParameterSelect> BendingParameters {get;set;}
+		public List<List<IfcBendingParameterSelect>> BendingParameters {get;set;}
 
 		public IfcReinforcingMeshType()
 		{
-			BendingParameters = new List<IfcBendingParameterSelect>();
+			BendingParameters = new List<List<IfcBendingParameterSelect>>();
 
 		}
 	}
@@ -9511,11 +9251,11 @@ namespace IFC4
 	public  partial class IfcRelAggregates : IfcRelDecomposes
 	{
 		public IfcObjectDefinition RelatingObject {get;set;}
-		public List<IfcObjectDefinition> RelatedObjects {get;set;}
+		public List<List<IfcObjectDefinition>> RelatedObjects {get;set;}
 
 		public IfcRelAggregates()
 		{
-			RelatedObjects = new List<IfcObjectDefinition>();
+			RelatedObjects = new List<List<IfcObjectDefinition>>();
 
 		}
 	}
@@ -9525,12 +9265,12 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcRelAssigns : IfcRelationship
 	{
-		public List<IfcObjectDefinition> RelatedObjects {get;set;}
+		public List<List<IfcObjectDefinition>> RelatedObjects {get;set;}
 		public IfcObjectTypeEnum RelatedObjectsType {get;set;}
 
 		public IfcRelAssigns()
 		{
-			RelatedObjects = new List<IfcObjectDefinition>();
+			RelatedObjects = new List<List<IfcObjectDefinition>>();
 
 		}
 	}
@@ -9633,11 +9373,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcRelAssociates : IfcRelationship
 	{
-		public List<IfcDefinitionSelect> RelatedObjects {get;set;}
+		public List<List<IfcDefinitionSelect>> RelatedObjects {get;set;}
 
 		public IfcRelAssociates()
 		{
-			RelatedObjects = new List<IfcDefinitionSelect>();
+			RelatedObjects = new List<List<IfcDefinitionSelect>>();
 
 		}
 	}
@@ -9753,15 +9493,15 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelConnectsPathElements : IfcRelConnectsElements
 	{
-		public List<NUMBER> RelatingPriorities {get;set;}
-		public List<NUMBER> RelatedPriorities {get;set;}
+		public List<List<System.Double>> RelatingPriorities {get;set;}
+		public List<List<System.Double>> RelatedPriorities {get;set;}
 		public IfcConnectionTypeEnum RelatedConnectionType {get;set;}
 		public IfcConnectionTypeEnum RelatingConnectionType {get;set;}
 
 		public IfcRelConnectsPathElements()
 		{
-			RelatingPriorities = new List<NUMBER>();
-			RelatedPriorities = new List<NUMBER>();
+			RelatingPriorities = new List<List<System.Double>>();
+			RelatedPriorities = new List<List<System.Double>>();
 
 		}
 	}
@@ -9845,12 +9585,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelConnectsWithRealizingElements : IfcRelConnectsElements
 	{
-		public List<IfcElement> RealizingElements {get;set;}
+		public List<List<IfcElement>> RealizingElements {get;set;}
 		public IfcLabel ConnectionType {get;set;}
 
 		public IfcRelConnectsWithRealizingElements()
 		{
-			RealizingElements = new List<IfcElement>();
+			RealizingElements = new List<List<IfcElement>>();
 
 		}
 	}
@@ -9860,12 +9600,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelContainedInSpatialStructure : IfcRelConnects
 	{
-		public List<IfcProduct> RelatedElements {get;set;}
+		public List<List<IfcProduct>> RelatedElements {get;set;}
 		public IfcSpatialElement RelatingStructure {get;set;}
 
 		public IfcRelContainedInSpatialStructure()
 		{
-			RelatedElements = new List<IfcProduct>();
+			RelatedElements = new List<List<IfcProduct>>();
 
 		}
 	}
@@ -9876,11 +9616,11 @@ namespace IFC4
 	public  partial class IfcRelCoversBldgElements : IfcRelConnects
 	{
 		public IfcElement RelatingBuildingElement {get;set;}
-		public List<IfcCovering> RelatedCoverings {get;set;}
+		public List<List<IfcCovering>> RelatedCoverings {get;set;}
 
 		public IfcRelCoversBldgElements()
 		{
-			RelatedCoverings = new List<IfcCovering>();
+			RelatedCoverings = new List<List<IfcCovering>>();
 
 		}
 	}
@@ -9891,11 +9631,11 @@ namespace IFC4
 	public  partial class IfcRelCoversSpaces : IfcRelConnects
 	{
 		public IfcSpace RelatingSpace {get;set;}
-		public List<IfcCovering> RelatedCoverings {get;set;}
+		public List<List<IfcCovering>> RelatedCoverings {get;set;}
 
 		public IfcRelCoversSpaces()
 		{
-			RelatedCoverings = new List<IfcCovering>();
+			RelatedCoverings = new List<List<IfcCovering>>();
 
 		}
 	}
@@ -9906,11 +9646,11 @@ namespace IFC4
 	public  partial class IfcRelDeclares : IfcRelationship
 	{
 		public IfcContext RelatingContext {get;set;}
-		public List<IfcDefinitionSelect> RelatedDefinitions {get;set;}
+		public List<List<IfcDefinitionSelect>> RelatedDefinitions {get;set;}
 
 		public IfcRelDeclares()
 		{
-			RelatedDefinitions = new List<IfcDefinitionSelect>();
+			RelatedDefinitions = new List<List<IfcDefinitionSelect>>();
 
 		}
 	}
@@ -9944,12 +9684,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelDefinesByObject : IfcRelDefines
 	{
-		public List<IfcObject> RelatedObjects {get;set;}
+		public List<List<IfcObject>> RelatedObjects {get;set;}
 		public IfcObject RelatingObject {get;set;}
 
 		public IfcRelDefinesByObject()
 		{
-			RelatedObjects = new List<IfcObject>();
+			RelatedObjects = new List<List<IfcObject>>();
 
 		}
 	}
@@ -9959,12 +9699,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelDefinesByProperties : IfcRelDefines
 	{
-		public List<IfcObjectDefinition> RelatedObjects {get;set;}
+		public List<List<IfcObjectDefinition>> RelatedObjects {get;set;}
 		public IfcPropertySetDefinitionSelect RelatingPropertyDefinition {get;set;}
 
 		public IfcRelDefinesByProperties()
 		{
-			RelatedObjects = new List<IfcObjectDefinition>();
+			RelatedObjects = new List<List<IfcObjectDefinition>>();
 
 		}
 	}
@@ -9974,12 +9714,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelDefinesByTemplate : IfcRelDefines
 	{
-		public List<IfcPropertySetDefinition> RelatedPropertySets {get;set;}
+		public List<List<IfcPropertySetDefinition>> RelatedPropertySets {get;set;}
 		public IfcPropertySetTemplate RelatingTemplate {get;set;}
 
 		public IfcRelDefinesByTemplate()
 		{
-			RelatedPropertySets = new List<IfcPropertySetDefinition>();
+			RelatedPropertySets = new List<List<IfcPropertySetDefinition>>();
 
 		}
 	}
@@ -9989,12 +9729,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelDefinesByType : IfcRelDefines
 	{
-		public List<IfcObject> RelatedObjects {get;set;}
+		public List<List<IfcObject>> RelatedObjects {get;set;}
 		public IfcTypeObject RelatingType {get;set;}
 
 		public IfcRelDefinesByType()
 		{
-			RelatedObjects = new List<IfcObject>();
+			RelatedObjects = new List<List<IfcObject>>();
 
 		}
 	}
@@ -10018,12 +9758,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelFlowControlElements : IfcRelConnects
 	{
-		public List<IfcDistributionControlElement> RelatedControlElements {get;set;}
+		public List<List<IfcDistributionControlElement>> RelatedControlElements {get;set;}
 		public IfcDistributionFlowElement RelatingFlowElement {get;set;}
 
 		public IfcRelFlowControlElements()
 		{
-			RelatedControlElements = new List<IfcDistributionControlElement>();
+			RelatedControlElements = new List<List<IfcDistributionControlElement>>();
 
 		}
 	}
@@ -10037,7 +9777,7 @@ namespace IFC4
 		public IfcElement RelatedElement {get;set;}
 		public IfcConnectionGeometry InterferenceGeometry {get;set;}
 		public IfcIdentifier InterferenceType {get;set;}
-		public bool? ImpliedOrder {get;set;}
+		public System.Boolean? ImpliedOrder {get;set;}
 
 		public IfcRelInterferesElements()
 		{
@@ -10051,11 +9791,11 @@ namespace IFC4
 	public  partial class IfcRelNests : IfcRelDecomposes
 	{
 		public IfcObjectDefinition RelatingObject {get;set;}
-		public List<IfcObjectDefinition> RelatedObjects {get;set;}
+		public List<List<IfcObjectDefinition>> RelatedObjects {get;set;}
 
 		public IfcRelNests()
 		{
-			RelatedObjects = new List<IfcObjectDefinition>();
+			RelatedObjects = new List<List<IfcObjectDefinition>>();
 
 		}
 	}
@@ -10079,12 +9819,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelReferencedInSpatialStructure : IfcRelConnects
 	{
-		public List<IfcProduct> RelatedElements {get;set;}
+		public List<List<IfcProduct>> RelatedElements {get;set;}
 		public IfcSpatialElement RelatingStructure {get;set;}
 
 		public IfcRelReferencedInSpatialStructure()
 		{
-			RelatedElements = new List<IfcProduct>();
+			RelatedElements = new List<List<IfcProduct>>();
 
 		}
 	}
@@ -10112,11 +9852,11 @@ namespace IFC4
 	public  partial class IfcRelServicesBuildings : IfcRelConnects
 	{
 		public IfcSystem RelatingSystem {get;set;}
-		public List<IfcSpatialElement> RelatedBuildings {get;set;}
+		public List<List<IfcSpatialElement>> RelatedBuildings {get;set;}
 
 		public IfcRelServicesBuildings()
 		{
-			RelatedBuildings = new List<IfcSpatialElement>();
+			RelatedBuildings = new List<List<IfcSpatialElement>>();
 
 		}
 	}
@@ -10144,11 +9884,11 @@ namespace IFC4
 	public  partial class IfcRelSpaceBoundary1stLevel : IfcRelSpaceBoundary
 	{
 		public IfcRelSpaceBoundary1stLevel ParentBoundary {get;set;}
-		public List<IfcRelSpaceBoundary1stLevel> InnerBoundaries {get;set;}
+		public List<List<IfcRelSpaceBoundary1stLevel>> InnerBoundaries {get;set;}
 
 		public IfcRelSpaceBoundary1stLevel()
 		{
-			InnerBoundaries = new List<IfcRelSpaceBoundary1stLevel>();
+			InnerBoundaries = new List<List<IfcRelSpaceBoundary1stLevel>>();
 
 		}
 	}
@@ -10159,11 +9899,11 @@ namespace IFC4
 	public  partial class IfcRelSpaceBoundary2ndLevel : IfcRelSpaceBoundary1stLevel
 	{
 		public IfcRelSpaceBoundary2ndLevel CorrespondingBoundary {get;set;}
-		public List<IfcRelSpaceBoundary2ndLevel> Corresponds {get;set;}
+		public List<List<IfcRelSpaceBoundary2ndLevel>> Corresponds {get;set;}
 
 		public IfcRelSpaceBoundary2ndLevel()
 		{
-			Corresponds = new List<IfcRelSpaceBoundary2ndLevel>();
+			Corresponds = new List<List<IfcRelSpaceBoundary2ndLevel>>();
 
 		}
 	}
@@ -10215,17 +9955,17 @@ namespace IFC4
 		public IfcRepresentationContext ContextOfItems {get;set;}
 		public IfcLabel RepresentationIdentifier {get;set;}
 		public IfcLabel RepresentationType {get;set;}
-		public List<IfcRepresentationItem> Items {get;set;}
-		public List<IfcRepresentationMap> RepresentationMap {get;set;}
-		public List<IfcPresentationLayerAssignment> LayerAssignments {get;set;}
-		public List<IfcProductRepresentation> OfProductRepresentation {get;set;}
+		public List<List<IfcRepresentationItem>> Items {get;set;}
+		public List<List<IfcRepresentationMap>> RepresentationMap {get;set;}
+		public List<List<IfcPresentationLayerAssignment>> LayerAssignments {get;set;}
+		public List<List<IfcProductRepresentation>> OfProductRepresentation {get;set;}
 
 		public IfcRepresentation()
 		{
-			Items = new List<IfcRepresentationItem>();
-			RepresentationMap = new List<IfcRepresentationMap>();
-			LayerAssignments = new List<IfcPresentationLayerAssignment>();
-			OfProductRepresentation = new List<IfcProductRepresentation>();
+			Items = new List<List<IfcRepresentationItem>>();
+			RepresentationMap = new List<List<IfcRepresentationMap>>();
+			LayerAssignments = new List<List<IfcPresentationLayerAssignment>>();
+			OfProductRepresentation = new List<List<IfcProductRepresentation>>();
 
 		}
 	}
@@ -10237,11 +9977,11 @@ namespace IFC4
 	{
 		public IfcLabel ContextIdentifier {get;set;}
 		public IfcLabel ContextType {get;set;}
-		public List<IfcRepresentation> RepresentationsInContext {get;set;}
+		public List<List<IfcRepresentation>> RepresentationsInContext {get;set;}
 
 		public IfcRepresentationContext()
 		{
-			RepresentationsInContext = new List<IfcRepresentation>();
+			RepresentationsInContext = new List<List<IfcRepresentation>>();
 
 		}
 	}
@@ -10251,13 +9991,13 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcRepresentationItem
 	{
-		public List<IfcPresentationLayerAssignment> LayerAssignment {get;set;}
-		public List<IfcStyledItem> StyledByItem {get;set;}
+		public List<List<IfcPresentationLayerAssignment>> LayerAssignment {get;set;}
+		public List<List<IfcStyledItem>> StyledByItem {get;set;}
 
 		public IfcRepresentationItem()
 		{
-			LayerAssignment = new List<IfcPresentationLayerAssignment>();
-			StyledByItem = new List<IfcStyledItem>();
+			LayerAssignment = new List<List<IfcPresentationLayerAssignment>>();
+			StyledByItem = new List<List<IfcStyledItem>>();
 
 		}
 	}
@@ -10269,13 +10009,13 @@ namespace IFC4
 	{
 		public IfcAxis2Placement MappingOrigin {get;set;}
 		public IfcRepresentation MappedRepresentation {get;set;}
-		public List<IfcShapeAspect> HasShapeAspects {get;set;}
-		public List<IfcMappedItem> MapUsage {get;set;}
+		public List<List<IfcShapeAspect>> HasShapeAspects {get;set;}
+		public List<List<IfcMappedItem>> MapUsage {get;set;}
 
 		public IfcRepresentationMap()
 		{
-			HasShapeAspects = new List<IfcShapeAspect>();
-			MapUsage = new List<IfcMappedItem>();
+			HasShapeAspects = new List<List<IfcShapeAspect>>();
+			MapUsage = new List<List<IfcMappedItem>>();
 
 		}
 	}
@@ -10287,11 +10027,11 @@ namespace IFC4
 	{
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
-		public List<IfcRelAssignsToResource> ResourceOf {get;set;}
+		public List<List<IfcRelAssignsToResource>> ResourceOf {get;set;}
 
 		public IfcResource()
 		{
-			ResourceOf = new List<IfcRelAssignsToResource>();
+			ResourceOf = new List<List<IfcRelAssignsToResource>>();
 
 		}
 	}
@@ -10301,12 +10041,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcResourceApprovalRelationship : IfcResourceLevelRelationship
 	{
-		public List<IfcResourceObjectSelect> RelatedResourceObjects {get;set;}
+		public List<List<IfcResourceObjectSelect>> RelatedResourceObjects {get;set;}
 		public IfcApproval RelatingApproval {get;set;}
 
 		public IfcResourceApprovalRelationship()
 		{
-			RelatedResourceObjects = new List<IfcResourceObjectSelect>();
+			RelatedResourceObjects = new List<List<IfcResourceObjectSelect>>();
 
 		}
 	}
@@ -10317,11 +10057,11 @@ namespace IFC4
 	public  partial class IfcResourceConstraintRelationship : IfcResourceLevelRelationship
 	{
 		public IfcConstraint RelatingConstraint {get;set;}
-		public List<IfcResourceObjectSelect> RelatedResourceObjects {get;set;}
+		public List<List<IfcResourceObjectSelect>> RelatedResourceObjects {get;set;}
 
 		public IfcResourceConstraintRelationship()
 		{
-			RelatedResourceObjects = new List<IfcResourceObjectSelect>();
+			RelatedResourceObjects = new List<List<IfcResourceObjectSelect>>();
 
 		}
 	}
@@ -10351,7 +10091,7 @@ namespace IFC4
 		public IfcDateTime ScheduleFinish {get;set;}
 		public IfcLabel ScheduleContour {get;set;}
 		public IfcDuration LevelingDelay {get;set;}
-		public bool IsOverAllocated {get;set;}
+		public System.Boolean IsOverAllocated {get;set;}
 		public IfcDateTime StatusTime {get;set;}
 		public IfcDuration ActualWork {get;set;}
 		public IfcPositiveRatioMeasure ActualUsage {get;set;}
@@ -10559,11 +10299,11 @@ namespace IFC4
 		public IfcLengthMeasure TransversePosition {get;set;}
 		public IfcReinforcingBarRoleEnum ReinforcementRole {get;set;}
 		public IfcSectionProperties SectionDefinition {get;set;}
-		public List<IfcReinforcementBarProperties> CrossSectionReinforcementDefinitions {get;set;}
+		public List<List<IfcReinforcementBarProperties>> CrossSectionReinforcementDefinitions {get;set;}
 
 		public IfcSectionReinforcementProperties()
 		{
-			CrossSectionReinforcementDefinitions = new List<IfcReinforcementBarProperties>();
+			CrossSectionReinforcementDefinitions = new List<List<IfcReinforcementBarProperties>>();
 
 		}
 	}
@@ -10574,14 +10314,14 @@ namespace IFC4
 	public  partial class IfcSectionedSpine : IfcGeometricRepresentationItem
 	{
 		public IfcCompositeCurve SpineCurve {get;set;}
-		public List<IfcProfileDef> CrossSections {get;set;}
-		public List<IfcAxis2Placement3D> CrossSectionPositions {get;set;}
+		public List<List<IfcProfileDef>> CrossSections {get;set;}
+		public List<List<IfcAxis2Placement3D>> CrossSectionPositions {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcSectionedSpine()
 		{
-			CrossSections = new List<IfcProfileDef>();
-			CrossSectionPositions = new List<IfcAxis2Placement3D>();
+			CrossSections = new List<List<IfcProfileDef>>();
+			CrossSectionPositions = new List<List<IfcAxis2Placement3D>>();
 
 		}
 	}
@@ -10643,15 +10383,15 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcShapeAspect
 	{
-		public List<IfcShapeModel> ShapeRepresentations {get;set;}
+		public List<List<IfcShapeModel>> ShapeRepresentations {get;set;}
 		public IfcLabel Name {get;set;}
 		public IfcText Description {get;set;}
-		public bool? ProductDefinitional {get;set;}
+		public System.Boolean? ProductDefinitional {get;set;}
 		public IfcProductRepresentationSelect PartOfProductDefinitionShape {get;set;}
 
 		public IfcShapeAspect()
 		{
-			ShapeRepresentations = new List<IfcShapeModel>();
+			ShapeRepresentations = new List<List<IfcShapeModel>>();
 
 		}
 	}
@@ -10661,11 +10401,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcShapeModel : IfcRepresentation
 	{
-		public List<IfcShapeAspect> OfShapeAspect {get;set;}
+		public List<List<IfcShapeAspect>> OfShapeAspect {get;set;}
 
 		public IfcShapeModel()
 		{
-			OfShapeAspect = new List<IfcShapeAspect>();
+			OfShapeAspect = new List<List<IfcShapeAspect>>();
 
 		}
 	}
@@ -10687,12 +10427,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcShellBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
-		public List<IfcShell> SbsmBoundary {get;set;}
+		public List<List<IfcShell>> SbsmBoundary {get;set;}
 		public IfcDimensionCount Dim {get;set;}
 
 		public IfcShellBasedSurfaceModel()
 		{
-			SbsmBoundary = new List<IfcShell>();
+			SbsmBoundary = new List<List<IfcShell>>();
 
 		}
 	}
@@ -10857,13 +10597,13 @@ namespace IFC4
 	{
 		public IfcSpaceTypeEnum PredefinedType {get;set;}
 		public IfcLengthMeasure ElevationWithFlooring {get;set;}
-		public List<IfcRelCoversSpaces> HasCoverings {get;set;}
-		public List<IfcRelSpaceBoundary> BoundedBy {get;set;}
+		public List<List<IfcRelCoversSpaces>> HasCoverings {get;set;}
+		public List<List<IfcRelSpaceBoundary>> BoundedBy {get;set;}
 
 		public IfcSpace()
 		{
-			HasCoverings = new List<IfcRelCoversSpaces>();
-			BoundedBy = new List<IfcRelSpaceBoundary>();
+			HasCoverings = new List<List<IfcRelCoversSpaces>>();
+			BoundedBy = new List<List<IfcRelSpaceBoundary>>();
 
 		}
 	}
@@ -10914,15 +10654,15 @@ namespace IFC4
 	public abstract partial class IfcSpatialElement : IfcProduct
 	{
 		public IfcLabel LongName {get;set;}
-		public List<IfcRelContainedInSpatialStructure> ContainsElements {get;set;}
-		public List<IfcRelServicesBuildings> ServicedBySystems {get;set;}
-		public List<IfcRelReferencedInSpatialStructure> ReferencesElements {get;set;}
+		public List<List<IfcRelContainedInSpatialStructure>> ContainsElements {get;set;}
+		public List<List<IfcRelServicesBuildings>> ServicedBySystems {get;set;}
+		public List<List<IfcRelReferencedInSpatialStructure>> ReferencesElements {get;set;}
 
 		public IfcSpatialElement()
 		{
-			ContainsElements = new List<IfcRelContainedInSpatialStructure>();
-			ServicedBySystems = new List<IfcRelServicesBuildings>();
-			ReferencesElements = new List<IfcRelReferencedInSpatialStructure>();
+			ContainsElements = new List<List<IfcRelContainedInSpatialStructure>>();
+			ServicedBySystems = new List<List<IfcRelServicesBuildings>>();
+			ReferencesElements = new List<List<IfcRelReferencedInSpatialStructure>>();
 
 		}
 	}
@@ -11049,8 +10789,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcStairFlight : IfcBuildingElement
 	{
-		public int NumberOfRiser {get;set;}
-		public int NumberOfTreads {get;set;}
+		public System.Int32 NumberOfRiser {get;set;}
+		public System.Int32 NumberOfTreads {get;set;}
 		public IfcPositiveLengthMeasure RiserHeight {get;set;}
 		public IfcPositiveLengthMeasure TreadLength {get;set;}
 		public IfcStairFlightTypeEnum PredefinedType {get;set;}
@@ -11092,7 +10832,7 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcStructuralAction : IfcStructuralActivity
 	{
-		public bool DestabilizingLoad {get;set;}
+		public System.Boolean DestabilizingLoad {get;set;}
 
 		public IfcStructuralAction()
 		{
@@ -11107,11 +10847,11 @@ namespace IFC4
 	{
 		public IfcStructuralLoad AppliedLoad {get;set;}
 		public IfcGlobalOrLocalEnum GlobalOrLocal {get;set;}
-		public List<IfcRelConnectsStructuralActivity> AssignedToStructuralItem {get;set;}
+		public List<List<IfcRelConnectsStructuralActivity>> AssignedToStructuralItem {get;set;}
 
 		public IfcStructuralActivity()
 		{
-			AssignedToStructuralItem = new List<IfcRelConnectsStructuralActivity>();
+			AssignedToStructuralItem = new List<List<IfcRelConnectsStructuralActivity>>();
 
 		}
 	}
@@ -11123,14 +10863,14 @@ namespace IFC4
 	{
 		public IfcAnalysisModelTypeEnum PredefinedType {get;set;}
 		public IfcAxis2Placement3D OrientationOf2DPlane {get;set;}
-		public List<IfcStructuralLoadGroup> LoadedBy {get;set;}
-		public List<IfcStructuralResultGroup> HasResults {get;set;}
+		public List<List<IfcStructuralLoadGroup>> LoadedBy {get;set;}
+		public List<List<IfcStructuralResultGroup>> HasResults {get;set;}
 		public IfcObjectPlacement SharedPlacement {get;set;}
 
 		public IfcStructuralAnalysisModel()
 		{
-			LoadedBy = new List<IfcStructuralLoadGroup>();
-			HasResults = new List<IfcStructuralResultGroup>();
+			LoadedBy = new List<List<IfcStructuralLoadGroup>>();
+			HasResults = new List<List<IfcStructuralResultGroup>>();
 
 		}
 	}
@@ -11141,11 +10881,11 @@ namespace IFC4
 	public abstract partial class IfcStructuralConnection : IfcStructuralItem
 	{
 		public IfcBoundaryCondition AppliedCondition {get;set;}
-		public List<IfcRelConnectsStructuralMember> ConnectsStructuralMembers {get;set;}
+		public List<List<IfcRelConnectsStructuralMember>> ConnectsStructuralMembers {get;set;}
 
 		public IfcStructuralConnection()
 		{
-			ConnectsStructuralMembers = new List<IfcRelConnectsStructuralMember>();
+			ConnectsStructuralMembers = new List<List<IfcRelConnectsStructuralMember>>();
 
 		}
 	}
@@ -11234,11 +10974,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcStructuralItem : IfcProduct
 	{
-		public List<IfcRelConnectsStructuralActivity> AssignedStructuralActivity {get;set;}
+		public List<List<IfcRelConnectsStructuralActivity>> AssignedStructuralActivity {get;set;}
 
 		public IfcStructuralItem()
 		{
-			AssignedStructuralActivity = new List<IfcRelConnectsStructuralActivity>();
+			AssignedStructuralActivity = new List<List<IfcRelConnectsStructuralActivity>>();
 
 		}
 	}
@@ -11273,11 +11013,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcStructuralLoadCase : IfcStructuralLoadGroup
 	{
-		public List<IfcRatioMeasure> SelfWeightCoefficients {get;set;}
+		public List<List<IfcRatioMeasure>> SelfWeightCoefficients {get;set;}
 
 		public IfcStructuralLoadCase()
 		{
-			SelfWeightCoefficients = new List<IfcRatioMeasure>();
+			SelfWeightCoefficients = new List<List<IfcRatioMeasure>>();
 
 		}
 	}
@@ -11287,13 +11027,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcStructuralLoadConfiguration : IfcStructuralLoad
 	{
-		public List<IfcStructuralLoadOrResult> Values {get;set;}
-		public List<List<IfcLengthMeasure>> Locations {get;set;}
+		public List<List<IfcStructuralLoadOrResult>> Values {get;set;}
+		public List<List<List<IfcLengthMeasure>>> Locations {get;set;}
 
 		public IfcStructuralLoadConfiguration()
 		{
-			Values = new List<IfcStructuralLoadOrResult>();
-			Locations = new List<List<IfcLengthMeasure>>();
+			Values = new List<List<IfcStructuralLoadOrResult>>();
+			Locations = new List<List<List<IfcLengthMeasure>>>();
 
 		}
 	}
@@ -11308,13 +11048,13 @@ namespace IFC4
 		public IfcActionSourceTypeEnum ActionSource {get;set;}
 		public IfcRatioMeasure Coefficient {get;set;}
 		public IfcLabel Purpose {get;set;}
-		public List<IfcStructuralResultGroup> SourceOfResultGroup {get;set;}
-		public List<IfcStructuralAnalysisModel> LoadGroupFor {get;set;}
+		public List<List<IfcStructuralResultGroup>> SourceOfResultGroup {get;set;}
+		public List<List<IfcStructuralAnalysisModel>> LoadGroupFor {get;set;}
 
 		public IfcStructuralLoadGroup()
 		{
-			SourceOfResultGroup = new List<IfcStructuralResultGroup>();
-			LoadGroupFor = new List<IfcStructuralAnalysisModel>();
+			SourceOfResultGroup = new List<List<IfcStructuralResultGroup>>();
+			LoadGroupFor = new List<List<IfcStructuralAnalysisModel>>();
 
 		}
 	}
@@ -11458,11 +11198,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcStructuralMember : IfcStructuralItem
 	{
-		public List<IfcRelConnectsStructuralMember> ConnectedBy {get;set;}
+		public List<List<IfcRelConnectsStructuralMember>> ConnectedBy {get;set;}
 
 		public IfcStructuralMember()
 		{
-			ConnectedBy = new List<IfcRelConnectsStructuralMember>();
+			ConnectedBy = new List<List<IfcRelConnectsStructuralMember>>();
 
 		}
 	}
@@ -11535,12 +11275,12 @@ namespace IFC4
 	{
 		public IfcAnalysisTheoryTypeEnum TheoryType {get;set;}
 		public IfcStructuralLoadGroup ResultForLoadGroup {get;set;}
-		public bool IsLinear {get;set;}
-		public List<IfcStructuralAnalysisModel> ResultGroupFor {get;set;}
+		public System.Boolean IsLinear {get;set;}
+		public List<List<IfcStructuralAnalysisModel>> ResultGroupFor {get;set;}
 
 		public IfcStructuralResultGroup()
 		{
-			ResultGroupFor = new List<IfcStructuralAnalysisModel>();
+			ResultGroupFor = new List<List<IfcStructuralAnalysisModel>>();
 
 		}
 	}
@@ -11628,12 +11368,12 @@ namespace IFC4
 	public  partial class IfcStyledItem : IfcRepresentationItem
 	{
 		public IfcRepresentationItem Item {get;set;}
-		public List<IfcStyleAssignmentSelect> Styles {get;set;}
+		public List<List<IfcStyleAssignmentSelect>> Styles {get;set;}
 		public IfcLabel Name {get;set;}
 
 		public IfcStyledItem()
 		{
-			Styles = new List<IfcStyleAssignmentSelect>();
+			Styles = new List<List<IfcStyleAssignmentSelect>>();
 
 		}
 	}
@@ -11765,14 +11505,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcSurfaceReinforcementArea : IfcStructuralLoadOrResult
 	{
-		public List<IfcLengthMeasure> SurfaceReinforcement1 {get;set;}
-		public List<IfcLengthMeasure> SurfaceReinforcement2 {get;set;}
+		public List<List<IfcLengthMeasure>> SurfaceReinforcement1 {get;set;}
+		public List<List<IfcLengthMeasure>> SurfaceReinforcement2 {get;set;}
 		public IfcRatioMeasure ShearReinforcement {get;set;}
 
 		public IfcSurfaceReinforcementArea()
 		{
-			SurfaceReinforcement1 = new List<IfcLengthMeasure>();
-			SurfaceReinforcement2 = new List<IfcLengthMeasure>();
+			SurfaceReinforcement1 = new List<List<IfcLengthMeasure>>();
+			SurfaceReinforcement2 = new List<List<IfcLengthMeasure>>();
 
 		}
 	}
@@ -11783,11 +11523,11 @@ namespace IFC4
 	public  partial class IfcSurfaceStyle : IfcPresentationStyle
 	{
 		public IfcSurfaceSide Side {get;set;}
-		public List<IfcSurfaceStyleElementSelect> Styles {get;set;}
+		public List<List<IfcSurfaceStyleElementSelect>> Styles {get;set;}
 
 		public IfcSurfaceStyle()
 		{
-			Styles = new List<IfcSurfaceStyleElementSelect>();
+			Styles = new List<List<IfcSurfaceStyleElementSelect>>();
 
 		}
 	}
@@ -11860,11 +11600,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcSurfaceStyleWithTextures : IfcPresentationItem
 	{
-		public List<IfcSurfaceTexture> Textures {get;set;}
+		public List<List<IfcSurfaceTexture>> Textures {get;set;}
 
 		public IfcSurfaceStyleWithTextures()
 		{
-			Textures = new List<IfcSurfaceTexture>();
+			Textures = new List<List<IfcSurfaceTexture>>();
 
 		}
 	}
@@ -11874,19 +11614,19 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcSurfaceTexture : IfcPresentationItem
 	{
-		public bool RepeatS {get;set;}
-		public bool RepeatT {get;set;}
+		public System.Boolean RepeatS {get;set;}
+		public System.Boolean RepeatT {get;set;}
 		public IfcIdentifier Mode {get;set;}
 		public IfcCartesianTransformationOperator2D TextureTransform {get;set;}
-		public List<IfcIdentifier> Parameter {get;set;}
-		public List<IfcTextureCoordinate> IsMappedBy {get;set;}
-		public List<IfcSurfaceStyleWithTextures> UsedInStyles {get;set;}
+		public List<List<IfcIdentifier>> Parameter {get;set;}
+		public List<List<IfcTextureCoordinate>> IsMappedBy {get;set;}
+		public List<List<IfcSurfaceStyleWithTextures>> UsedInStyles {get;set;}
 
 		public IfcSurfaceTexture()
 		{
-			Parameter = new List<IfcIdentifier>();
-			IsMappedBy = new List<IfcTextureCoordinate>();
-			UsedInStyles = new List<IfcSurfaceStyleWithTextures>();
+			Parameter = new List<List<IfcIdentifier>>();
+			IsMappedBy = new List<List<IfcTextureCoordinate>>();
+			UsedInStyles = new List<List<IfcSurfaceStyleWithTextures>>();
 
 		}
 	}
@@ -11980,11 +11720,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcSystem : IfcGroup
 	{
-		public List<IfcRelServicesBuildings> ServicesBuildings {get;set;}
+		public List<List<IfcRelServicesBuildings>> ServicesBuildings {get;set;}
 
 		public IfcSystem()
 		{
-			ServicesBuildings = new List<IfcRelServicesBuildings>();
+			ServicesBuildings = new List<List<IfcRelServicesBuildings>>();
 
 		}
 	}
@@ -12042,16 +11782,16 @@ namespace IFC4
 	public  partial class IfcTable
 	{
 		public IfcLabel Name {get;set;}
-		public List<IfcTableRow> Rows {get;set;}
-		public List<IfcTableColumn> Columns {get;set;}
-		public int NumberOfCellsInRow {get;set;}
-		public int NumberOfHeadings {get;set;}
-		public int NumberOfDataRows {get;set;}
+		public List<List<IfcTableRow>> Rows {get;set;}
+		public List<List<IfcTableColumn>> Columns {get;set;}
+		public System.Int32 NumberOfCellsInRow {get;set;}
+		public System.Int32 NumberOfHeadings {get;set;}
+		public System.Int32 NumberOfDataRows {get;set;}
 
 		public IfcTable()
 		{
-			Rows = new List<IfcTableRow>();
-			Columns = new List<IfcTableColumn>();
+			Rows = new List<List<IfcTableRow>>();
+			Columns = new List<List<IfcTableColumn>>();
 
 		}
 	}
@@ -12078,12 +11818,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTableRow
 	{
-		public List<IfcValue> RowCells {get;set;}
-		public bool IsHeading {get;set;}
-***ERROR FOR ATTRIBUTE OfTable
+		public List<List<IfcValue>> RowCells {get;set;}
+		public System.Boolean IsHeading {get;set;}
+		public IfcTable OfTable {get;set;}
+
 		public IfcTableRow()
 		{
-			RowCells = new List<IfcValue>();
+			RowCells = new List<List<IfcValue>>();
 
 		}
 	}
@@ -12121,8 +11862,8 @@ namespace IFC4
 	{
 		public IfcLabel Status {get;set;}
 		public IfcLabel WorkMethod {get;set;}
-		public bool IsMilestone {get;set;}
-		public int Priority {get;set;}
+		public System.Boolean IsMilestone {get;set;}
+		public System.Int32 Priority {get;set;}
 		public IfcTaskTime TaskTime {get;set;}
 		public IfcTaskTypeEnum PredefinedType {get;set;}
 
@@ -12147,7 +11888,7 @@ namespace IFC4
 		public IfcDateTime LateFinish {get;set;}
 		public IfcDuration FreeFloat {get;set;}
 		public IfcDuration TotalFloat {get;set;}
-		public bool IsCritical {get;set;}
+		public System.Boolean IsCritical {get;set;}
 		public IfcDateTime StatusTime {get;set;}
 		public IfcDuration ActualDuration {get;set;}
 		public IfcDateTime ActualStart {get;set;}
@@ -12193,19 +11934,19 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTelecomAddress : IfcAddress
 	{
-		public List<IfcLabel> TelephoneNumbers {get;set;}
-		public List<IfcLabel> FacsimileNumbers {get;set;}
+		public List<List<IfcLabel>> TelephoneNumbers {get;set;}
+		public List<List<IfcLabel>> FacsimileNumbers {get;set;}
 		public IfcLabel PagerNumber {get;set;}
-		public List<IfcLabel> ElectronicMailAddresses {get;set;}
+		public List<List<IfcLabel>> ElectronicMailAddresses {get;set;}
 		public IfcURIReference WWWHomePageURL {get;set;}
-		public List<IfcURIReference> MessagingIDs {get;set;}
+		public List<List<IfcURIReference>> MessagingIDs {get;set;}
 
 		public IfcTelecomAddress()
 		{
-			TelephoneNumbers = new List<IfcLabel>();
-			FacsimileNumbers = new List<IfcLabel>();
-			ElectronicMailAddresses = new List<IfcLabel>();
-			MessagingIDs = new List<IfcURIReference>();
+			TelephoneNumbers = new List<List<IfcLabel>>();
+			FacsimileNumbers = new List<List<IfcLabel>>();
+			ElectronicMailAddresses = new List<List<IfcLabel>>();
+			MessagingIDs = new List<List<IfcURIReference>>();
 
 		}
 	}
@@ -12278,16 +12019,16 @@ namespace IFC4
 	public abstract partial class IfcTessellatedFaceSet : IfcTessellatedItem
 	{
 		public IfcCartesianPointList3D Coordinates {get;set;}
-		public List<List<IfcParameterValue>> Normals {get;set;}
-		public bool Closed {get;set;}
-		public List<IfcIndexedColourMap> HasColours {get;set;}
-		public List<IfcIndexedTextureMap> HasTextures {get;set;}
+		public List<List<List<IfcParameterValue>>> Normals {get;set;}
+		public System.Boolean Closed {get;set;}
+		public List<List<IfcIndexedColourMap>> HasColours {get;set;}
+		public List<List<IfcIndexedTextureMap>> HasTextures {get;set;}
 
 		public IfcTessellatedFaceSet()
 		{
-			Normals = new List<List<IfcParameterValue>>();
-			HasColours = new List<IfcIndexedColourMap>();
-			HasTextures = new List<IfcIndexedTextureMap>();
+			Normals = new List<List<List<IfcParameterValue>>>();
+			HasColours = new List<List<IfcIndexedColourMap>>();
+			HasTextures = new List<List<IfcIndexedTextureMap>>();
 
 		}
 	}
@@ -12341,7 +12082,7 @@ namespace IFC4
 		public IfcTextStyleForDefinedFont TextCharacterAppearance {get;set;}
 		public IfcTextStyleTextModel TextStyle {get;set;}
 		public IfcTextFontSelect TextFontStyle {get;set;}
-		public bool ModelOrDraughting {get;set;}
+		public System.Boolean ModelOrDraughting {get;set;}
 
 		public IfcTextStyle()
 		{
@@ -12354,7 +12095,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTextStyleFontModel : IfcPreDefinedTextFont
 	{
-		public List<IfcTextFontName> FontFamily {get;set;}
+		public List<List<IfcTextFontName>> FontFamily {get;set;}
 		public IfcFontStyle FontStyle {get;set;}
 		public IfcFontVariant FontVariant {get;set;}
 		public IfcFontWeight FontWeight {get;set;}
@@ -12362,7 +12103,7 @@ namespace IFC4
 
 		public IfcTextStyleFontModel()
 		{
-			FontFamily = new List<IfcTextFontName>();
+			FontFamily = new List<List<IfcTextFontName>>();
 
 		}
 	}
@@ -12405,11 +12146,11 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcTextureCoordinate : IfcPresentationItem
 	{
-		public List<IfcSurfaceTexture> Maps {get;set;}
+		public List<List<IfcSurfaceTexture>> Maps {get;set;}
 
 		public IfcTextureCoordinate()
 		{
-			Maps = new List<IfcSurfaceTexture>();
+			Maps = new List<List<IfcSurfaceTexture>>();
 
 		}
 	}
@@ -12420,11 +12161,11 @@ namespace IFC4
 	public  partial class IfcTextureCoordinateGenerator : IfcTextureCoordinate
 	{
 		public IfcLabel Mode {get;set;}
-		public List<IfcReal> Parameter {get;set;}
+		public List<List<IfcReal>> Parameter {get;set;}
 
 		public IfcTextureCoordinateGenerator()
 		{
-			Parameter = new List<IfcReal>();
+			Parameter = new List<List<IfcReal>>();
 
 		}
 	}
@@ -12434,12 +12175,12 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTextureMap : IfcTextureCoordinate
 	{
-		public List<IfcTextureVertex> Vertices {get;set;}
+		public List<List<IfcTextureVertex>> Vertices {get;set;}
 		public IfcFace MappedTo {get;set;}
 
 		public IfcTextureMap()
 		{
-			Vertices = new List<IfcTextureVertex>();
+			Vertices = new List<List<IfcTextureVertex>>();
 
 		}
 	}
@@ -12449,11 +12190,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTextureVertex : IfcPresentationItem
 	{
-		public List<IfcParameterValue> Coordinates {get;set;}
+		public List<List<IfcParameterValue>> Coordinates {get;set;}
 
 		public IfcTextureVertex()
 		{
-			Coordinates = new List<IfcParameterValue>();
+			Coordinates = new List<List<IfcParameterValue>>();
 
 		}
 	}
@@ -12463,11 +12204,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTextureVertexList : IfcPresentationItem
 	{
-		public List<List<IfcParameterValue>> TexCoordsList {get;set;}
+		public List<List<List<IfcParameterValue>>> TexCoordsList {get;set;}
 
 		public IfcTextureVertexList()
 		{
-			TexCoordsList = new List<List<IfcParameterValue>>();
+			TexCoordsList = new List<List<List<IfcParameterValue>>>();
 
 		}
 	}
@@ -12499,11 +12240,11 @@ namespace IFC4
 		public IfcDataOriginEnum DataOrigin {get;set;}
 		public IfcLabel UserDefinedDataOrigin {get;set;}
 		public IfcUnit Unit {get;set;}
-		public List<IfcExternalReferenceRelationship> HasExternalReference {get;set;}
+		public List<List<IfcExternalReferenceRelationship>> HasExternalReference {get;set;}
 
 		public IfcTimeSeries()
 		{
-			HasExternalReference = new List<IfcExternalReferenceRelationship>();
+			HasExternalReference = new List<List<IfcExternalReferenceRelationship>>();
 
 		}
 	}
@@ -12513,11 +12254,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTimeSeriesValue
 	{
-		public List<IfcValue> ListValues {get;set;}
+		public List<List<IfcValue>> ListValues {get;set;}
 
 		public IfcTimeSeriesValue()
 		{
-			ListValues = new List<IfcValue>();
+			ListValues = new List<List<IfcValue>>();
 
 		}
 	}
@@ -12619,14 +12360,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTriangulatedFaceSet : IfcTessellatedFaceSet
 	{
-		public List<List<INTEGER>> CoordIndex {get;set;}
-		public List<List<INTEGER>> NormalIndex {get;set;}
-		public int NumberOfTriangles {get;set;}
+		public List<List<List<System.Int32>>> CoordIndex {get;set;}
+		public List<List<List<System.Int32>>> NormalIndex {get;set;}
+		public System.Int32 NumberOfTriangles {get;set;}
 
 		public IfcTriangulatedFaceSet()
 		{
-			CoordIndex = new List<List<INTEGER>>();
-			NormalIndex = new List<List<INTEGER>>();
+			CoordIndex = new List<List<List<System.Int32>>>();
+			NormalIndex = new List<List<List<System.Int32>>>();
 
 		}
 	}
@@ -12637,15 +12378,15 @@ namespace IFC4
 	public  partial class IfcTrimmedCurve : IfcBoundedCurve
 	{
 		public IfcCurve BasisCurve {get;set;}
-		public List<IfcTrimmingSelect> Trim1 {get;set;}
-		public List<IfcTrimmingSelect> Trim2 {get;set;}
-		public bool SenseAgreement {get;set;}
+		public List<List<IfcTrimmingSelect>> Trim1 {get;set;}
+		public List<List<IfcTrimmingSelect>> Trim2 {get;set;}
+		public System.Boolean SenseAgreement {get;set;}
 		public IfcTrimmingPreference MasterRepresentation {get;set;}
 
 		public IfcTrimmedCurve()
 		{
-			Trim1 = new List<IfcTrimmingSelect>();
-			Trim2 = new List<IfcTrimmingSelect>();
+			Trim1 = new List<List<IfcTrimmingSelect>>();
+			Trim2 = new List<List<IfcTrimmingSelect>>();
 
 		}
 	}
@@ -12682,13 +12423,13 @@ namespace IFC4
 	public  partial class IfcTypeObject : IfcObjectDefinition
 	{
 		public IfcIdentifier ApplicableOccurrence {get;set;}
-		public List<IfcPropertySetDefinition> HasPropertySets {get;set;}
-		public List<IfcRelDefinesByType> Types {get;set;}
+		public List<List<IfcPropertySetDefinition>> HasPropertySets {get;set;}
+		public List<List<IfcRelDefinesByType>> Types {get;set;}
 
 		public IfcTypeObject()
 		{
-			HasPropertySets = new List<IfcPropertySetDefinition>();
-			Types = new List<IfcRelDefinesByType>();
+			HasPropertySets = new List<List<IfcPropertySetDefinition>>();
+			Types = new List<List<IfcRelDefinesByType>>();
 
 		}
 	}
@@ -12701,11 +12442,11 @@ namespace IFC4
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
 		public IfcLabel ProcessType {get;set;}
-		public List<IfcRelAssignsToProcess> OperatesOn {get;set;}
+		public List<List<IfcRelAssignsToProcess>> OperatesOn {get;set;}
 
 		public IfcTypeProcess()
 		{
-			OperatesOn = new List<IfcRelAssignsToProcess>();
+			OperatesOn = new List<List<IfcRelAssignsToProcess>>();
 
 		}
 	}
@@ -12715,14 +12456,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTypeProduct : IfcTypeObject
 	{
-		public List<IfcRepresentationMap> RepresentationMaps {get;set;}
+		public List<List<IfcRepresentationMap>> RepresentationMaps {get;set;}
 		public IfcLabel Tag {get;set;}
-		public List<IfcRelAssignsToProduct> ReferencedBy {get;set;}
+		public List<List<IfcRelAssignsToProduct>> ReferencedBy {get;set;}
 
 		public IfcTypeProduct()
 		{
-			RepresentationMaps = new List<IfcRepresentationMap>();
-			ReferencedBy = new List<IfcRelAssignsToProduct>();
+			RepresentationMaps = new List<List<IfcRepresentationMap>>();
+			ReferencedBy = new List<List<IfcRelAssignsToProduct>>();
 
 		}
 	}
@@ -12735,11 +12476,11 @@ namespace IFC4
 		public IfcIdentifier Identification {get;set;}
 		public IfcText LongDescription {get;set;}
 		public IfcLabel ResourceType {get;set;}
-		public List<IfcRelAssignsToResource> ResourceOf {get;set;}
+		public List<List<IfcRelAssignsToResource>> ResourceOf {get;set;}
 
 		public IfcTypeResource()
 		{
-			ResourceOf = new List<IfcRelAssignsToResource>();
+			ResourceOf = new List<List<IfcRelAssignsToResource>>();
 
 		}
 	}
@@ -12768,11 +12509,11 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcUnitAssignment
 	{
-		public List<IfcUnit> Units {get;set;}
+		public List<List<IfcUnit>> Units {get;set;}
 
 		public IfcUnitAssignment()
 		{
-			Units = new List<IfcUnit>();
+			Units = new List<List<IfcUnit>>();
 
 		}
 	}
@@ -12951,13 +12692,13 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcVirtualGridIntersection
 	{
-		public List<IfcGridAxis> IntersectingAxes {get;set;}
-		public List<IfcLengthMeasure> OffsetDistances {get;set;}
+		public List<List<IfcGridAxis>> IntersectingAxes {get;set;}
+		public List<List<IfcLengthMeasure>> OffsetDistances {get;set;}
 
 		public IfcVirtualGridIntersection()
 		{
-			IntersectingAxes = new List<IfcGridAxis>();
-			OffsetDistances = new List<IfcLengthMeasure>();
+			IntersectingAxes = new List<List<IfcGridAxis>>();
+			OffsetDistances = new List<List<IfcLengthMeasure>>();
 
 		}
 	}
@@ -13128,8 +12869,8 @@ namespace IFC4
 	{
 		public IfcWindowStyleConstructionEnum ConstructionType {get;set;}
 		public IfcWindowStyleOperationEnum OperationType {get;set;}
-		public bool ParameterTakesPrecedence {get;set;}
-		public bool Sizeable {get;set;}
+		public System.Boolean ParameterTakesPrecedence {get;set;}
+		public System.Boolean Sizeable {get;set;}
 
 		public IfcWindowStyle()
 		{
@@ -13144,7 +12885,7 @@ namespace IFC4
 	{
 		public IfcWindowTypeEnum PredefinedType {get;set;}
 		public IfcWindowTypePartitioningEnum PartitioningType {get;set;}
-		public bool ParameterTakesPrecedence {get;set;}
+		public System.Boolean ParameterTakesPrecedence {get;set;}
 		public IfcLabel UserDefinedPartitioningType {get;set;}
 
 		public IfcWindowType()
@@ -13158,14 +12899,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcWorkCalendar : IfcControl
 	{
-		public List<IfcWorkTime> WorkingTimes {get;set;}
-		public List<IfcWorkTime> ExceptionTimes {get;set;}
+		public List<List<IfcWorkTime>> WorkingTimes {get;set;}
+		public List<List<IfcWorkTime>> ExceptionTimes {get;set;}
 		public IfcWorkCalendarTypeEnum PredefinedType {get;set;}
 
 		public IfcWorkCalendar()
 		{
-			WorkingTimes = new List<IfcWorkTime>();
-			ExceptionTimes = new List<IfcWorkTime>();
+			WorkingTimes = new List<List<IfcWorkTime>>();
+			ExceptionTimes = new List<List<IfcWorkTime>>();
 
 		}
 	}
@@ -13176,7 +12917,7 @@ namespace IFC4
 	public abstract partial class IfcWorkControl : IfcControl
 	{
 		public IfcDateTime CreationDate {get;set;}
-		public List<IfcPerson> Creators {get;set;}
+		public List<List<IfcPerson>> Creators {get;set;}
 		public IfcLabel Purpose {get;set;}
 		public IfcDuration Duration {get;set;}
 		public IfcDuration TotalFloat {get;set;}
@@ -13185,7 +12926,7 @@ namespace IFC4
 
 		public IfcWorkControl()
 		{
-			Creators = new List<IfcPerson>();
+			Creators = new List<List<IfcPerson>>();
 
 		}
 	}

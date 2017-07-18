@@ -5,15 +5,16 @@ using System.Collections.Generic;
 
 namespace Express
 {
-	public class EntityInfo
+	public class EntityDeclarationInfo
 	{
 
 		public string Name {get;set;}
+		
 		public List<string> SupertypeOf {get;set;}
 
 		public List<string> SubtypeOf {get;set;}
 		
-		public List<AttributeInfo> Attributes{get;set;}
+		public List<AttributeDeclaration> Attributes{get;set;}
 
 		public bool IsAbstract{get;set;}
 
@@ -25,10 +26,10 @@ namespace Express
 			}
 		}
 
-		public EntityInfo(string name)
+		public EntityDeclarationInfo(string name)
 		{
 			Name = name;
-			Attributes = new List<AttributeInfo>();
+			Attributes = new List<AttributeDeclaration>();
 			SupertypeOf = new List<string>();
 			SubtypeOf = new List<string>();
 		}
@@ -48,18 +49,9 @@ namespace Express
 			}
 
 			var allocBuilder = new StringBuilder();
-			foreach(var a in Attributes.Where(a=>a.Type is CollectionInfo))
+			foreach(var a in Attributes.Where(a=>a.TypeInfo is CollectionInfo))
 			{
-				var coll = (CollectionInfo)a.Type;
-				if(a.Type is SetInfo || a.Type is ListInfo)
-				{
-					allocBuilder.Append($"\t\t\t{a.Name} = new {string.Join("",Enumerable.Repeat("List<",coll.Rank))}{coll.Type}{string.Join("",Enumerable.Repeat(">",coll.Rank))}();\n");
-				}
-				else if(a.Type is ArrayInfo)
-				{
-					var allocStr = $"[{coll.Size}]";
-					allocBuilder.Append($"\t\t\t{a.Name} = new {coll.Type}{string.Join("",Enumerable.Repeat(allocStr,coll.Rank))}();\n");
-				}
+				allocBuilder.Append($"\t\t\t{a.TypeInfo.Name} = new {a.TypeInfo.ToString()}();\n");
 			}
 
 			var classStr =

@@ -8,28 +8,68 @@ namespace Express
 {
 	public class ExpressListener : ExpressBaseListener
 	{
-		public List<EntityInfo> Entities {get;set;}
-		public List<EnumInfo> Enums {get;set;}
-		public List<TypeInfo> Types{get;set;}
+		public List<EntityDeclarationInfo> Entities {get;set;}
 
-		private EntityInfo currentEntityInfo;
-		private CollectionInfo currentCollectionInfo;
+		public List<TypeDeclaration> Types{get;set;}
 
-		// The cursor to the type currently being parsed.
+		/// <summary>
+		/// The cursor to the entity declaration currently being parsed.
+		/// </summary>
+		private EntityDeclarationInfo currentEntityInfo;
+
+		/// <summary>
+		///The cursor to the type declaration currently being parsed.
 		// This may be a defined type or an attribute.
+		/// </summary>
 		private TypeInfo currentTypeInfo;
 
 		public ExpressListener()
 		{
-			Types = new List<TypeInfo>();
-			Entities = new List<EntityInfo>();
-			Enums= new List<EnumInfo>();
+			Types = new List<TypeDeclaration>();
+			Entities = new List<EntityDeclarationInfo>();
+		}
+
+		private TypeInfo TypeInfoFromValueTypeContext(string name, ExpressParser.ValueTypeContext ctx)
+		{
+			TypeInfo typeInfo = null;
+			// ENUMERATION
+			if(ctx.enumeration() != null)
+			{
+				typeInfo = new EnumInfo(name);
+			}
+			//SELECT
+			else if(ctx.select() != null)
+			{
+				typeInfo = new SelectInfo(name);
+			}
+			//COLLECTION
+			else if(ctx.collection() != null)
+			{
+				typeInfo = new CollectionInfo(name);
+			}
+			// DEFINED TYPE
+			else if(ctx.atomicType() != null)
+			{
+				typeInfo = new DefinedTypeInfo(name);
+				typeInfo.ValueType = TypeInfo.ToSystemType(ctx.atomicType().GetText());
+			}
+			return typeInfo;
 		}
 
 		public override void EnterTypeDeclaration(ExpressParser.TypeDeclarationContext context)
 		{
-			currentTypeInfo = new TypeInfo(context.Identifier().GetText());
-			Types.Add(currentTypeInfo);
+			currentTypeInfo = TypeInfoFromValueTypeContext(context.Identifier().GetText(),context.valueType());
+			Types.Add(new TypeDeclaration(currentTypeInfo));
+		}
+
+		public override void EnterEnumeration(ExpressParser.EnumerationContext context)
+		{
+			((EnumInfo)currentTypeInfo).Values = context.idList().GetText();
+		}
+
+		public override void EnterSelect(ExpressParser.SelectContext context)
+		{
+			((SelectInfo)currentTypeInfo).Values = context.idList().GetText();
 		}
 
 		public override void ExitTypeDeclaration(ExpressParser.TypeDeclarationContext context)
@@ -37,75 +77,38 @@ namespace Express
 			currentTypeInfo = null;
 		}
 
-		public override void EnterValueType(ExpressParser.ValueTypeContext context)
+		public override void ExitCollection(ExpressParser.CollectionContext context)
 		{
-			currentTypeInfo.Type = new AtomicTypeInfo(context.GetText());
-		}
-
-		public override void ExitCollectionDeclaration(ExpressParser.CollectionDeclarationContext context)
-		{
-			((CollectionInfo)currentTypeInfo.Type).Type = context.collectionValueType().GetText();
+			((CollectionInfo)currentTypeInfo).ValueType = TypeInfo.ToSystemType(context.atomicType().GetText());
 		}
 
 		public override void EnterArrayDecl(ExpressParser.ArrayDeclContext context)
 		{
-			if(currentTypeInfo.Type is ArrayInfo)
-			{
-				((ArrayInfo)currentTypeInfo.Type).Rank++;
-			}
-			else
-			{
-				var ai = new ArrayInfo();
-				currentTypeInfo.Type = ai;
-				ai.Size = int.Parse(context.setParameters().Integer()[0].GetText());
-			}
+			var ci = ((CollectionInfo)currentTypeInfo);
+			ci.Rank++;
+			ci.CollectionType = CollectionType.Array;
+			ci.Size = int.Parse(context.setParameters().Integer()[0].GetText());
 		}
 
 		public override void EnterSetDecl(ExpressParser.SetDeclContext context)
 		{
-			if(currentTypeInfo.Type is SetInfo)
-			{
-				((SetInfo)currentTypeInfo.Type).Rank++;
-			}
-			else
-			{
-				var si = new SetInfo();
-				currentTypeInfo.Type = si;
-				si.Size = int.Parse(context.setParameters().Integer()[0].GetText());
-			}
+			var ci = ((CollectionInfo)currentTypeInfo);
+			ci.Rank++;
+			ci.CollectionType = CollectionType.Set;
+			ci.Size = int.Parse(context.setParameters().Integer()[0].GetText());
 		}
 
 		public override void EnterListDecl(ExpressParser.ListDeclContext context)
 		{
-			if(currentTypeInfo.Type is ListInfo)
-			{
-				((ListInfo)currentTypeInfo.Type).Rank++;
-			}
-			else
-			{
-				var li = new ListInfo();
-				currentTypeInfo.Type = li;
-				li.Size = int.Parse(context.setParameters().Integer()[0].GetText());
-			}
-		}
-
-		public override void EnterEnumeration(ExpressParser.EnumerationContext context)
-		{
-			var enumInfo = new EnumInfo();
-			enumInfo.Values = context.idList().GetText();
-			currentTypeInfo.Type = enumInfo;
-		}
-
-		public override void EnterSelect(ExpressParser.SelectContext context)
-		{
-			var selectInfo = new SelectInfo();
-			selectInfo.Values = context.idList().GetText();
-			currentTypeInfo.Type = selectInfo;
+			var ci = ((CollectionInfo)currentTypeInfo);
+			ci.Rank++;
+			ci.CollectionType = CollectionType.List;
+			ci.Size = int.Parse(context.setParameters().Integer()[0].GetText());
 		}
 
 		public override void EnterEntityDeclaration(ExpressParser.EntityDeclarationContext context)
 		{
-			currentEntityInfo = new EntityInfo(context.Identifier().GetText());
+			currentEntityInfo = new EntityDeclarationInfo(context.Identifier().GetText());
 			Entities.Add(currentEntityInfo);
 		}
 
@@ -116,36 +119,52 @@ namespace Express
 
 		public override void EnterInverseAttribute(ExpressParser.InverseAttributeContext context)
 		{
-			currentTypeInfo = new AttributeInfo(context.Identifier()[0].GetText());
-			currentEntityInfo.Attributes.Add((AttributeInfo)currentTypeInfo);
-			if(context.Identifier().Length == 2)
+			var attr = new AttributeDeclaration();
+
+			TypeInfo typeInfo = null;
+			var name = context.Identifier()[0].GetText();
+
+			//COLLECTION
+			if(context.collection() != null)
 			{
-				currentTypeInfo.Type = context.Identifier()[1].GetText();
+				typeInfo = new CollectionInfo(name);
 			}
+			// DEFINED TYPE
+			else if(context.Identifier()[1] != null)
+			{
+				typeInfo = new DefinedTypeInfo(name);
+				typeInfo.ValueType = TypeInfo.ToSystemType(context.Identifier()[1].GetText());
+			}
+
+			attr.TypeInfo = typeInfo;
+			currentTypeInfo = typeInfo;
+
+			currentEntityInfo.Attributes.Add(attr);
 		}
 
 		public override void EnterAttribute(ExpressParser.AttributeContext context)
 		{
+			var attr = new AttributeDeclaration();
+			string name = null;
 			if(context.Identifier() != null)
 			{
-				currentTypeInfo = new AttributeInfo(context.Identifier().GetText());
+				name = context.Identifier().GetText();
 			}
 			else
 			{
-				currentTypeInfo = new AttributeInfo(context.path().GetText());
+				name = context.path().GetText();
 			}
+			attr.IsOptional = context.OPTIONAL() != null;
+			attr.TypeInfo = TypeInfoFromValueTypeContext(name, context.valueType());
 			
-			currentEntityInfo.Attributes.Add((AttributeInfo)currentTypeInfo);
+			currentTypeInfo = attr.TypeInfo;
+
+			currentEntityInfo.Attributes.Add(attr);
 		}
 
 		public override void ExitAttribute(ExpressParser.AttributeContext context)
 		{
 			currentTypeInfo = null;
-		}
-
-		public override void EnterOptional(ExpressParser.OptionalContext context)
-		{
-			((AttributeInfo)currentTypeInfo).IsOptional = true;
 		}
 
 		public override void EnterSupertypeDecl(ExpressParser.SupertypeDeclContext context)

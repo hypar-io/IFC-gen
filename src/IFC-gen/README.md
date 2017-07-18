@@ -6,6 +6,11 @@ Source files for each language target can be found in the directory correspondin
 
 For per-language build instruction, please see the language folder's `README`.
 
+## Goals
+- Provide one EXPRESS-conformant grammar from which to generate ALL IFC libraries.
+- Maximize automation of code generation to lower the barrier to IFC libray implementors.
+- Accelerate the pace of development of IFC-based libraries and services.
+
 ## Prerequisites
 
 - [ANTLR](http://www.antlr.org). Follow the instructions on the ANTLR website to install ANTLR and create aliases to the ANTLR binaries. 

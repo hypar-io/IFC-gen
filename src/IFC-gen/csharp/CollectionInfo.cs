@@ -1,42 +1,39 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Express
 {
-	public abstract class CollectionInfo
+	public enum CollectionType
 	{
-		public string Name{get;set;}
-		public string Type{get;set;}
+		Array,List,Set
+	}
+
+	public class CollectionInfo : TypeInfo
+	{
 		public int Rank{get;set;}
 		public int Size{get;set;}
 
-		public CollectionInfo(){
+		public CollectionType CollectionType {get;set;}
+
+		public CollectionInfo(string name) : base(name)
+		{
 			Rank = 1;
 		}
-	}
 
-	public class SetInfo : CollectionInfo
-	{
 		public override string ToString()
 		{
-			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{Type}{string.Join("",Enumerable.Repeat(">",Rank))}";
-		}
-	}
-
-	public class ArrayInfo : CollectionInfo
-	{
-		public override string ToString()
-		{
-			var arr = $"{Type}" + string.Join("",Enumerable.Repeat("[]",Rank));
-			return arr;
-		}
-	}
-
-	public class ListInfo : CollectionInfo
-	{
-		public override string ToString()
-		{
-			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{Type}{string.Join("",Enumerable.Repeat(">",Rank))}";
+			switch(CollectionType)
+			{
+				case CollectionType.Array:
+					return $"{ValueType}" + string.Join("",Enumerable.Repeat("[]",Rank));
+				case CollectionType.List:
+					return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{ValueType}{string.Join("",Enumerable.Repeat(">",Rank))}";
+				case CollectionType.Set:
+					return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{ValueType}{string.Join("",Enumerable.Repeat(">",Rank))}";
+				default:
+					return "*** ERROR ***";
+			}
 		}
 	}
 }
