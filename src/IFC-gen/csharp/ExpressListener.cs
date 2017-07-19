@@ -12,6 +12,8 @@ namespace Express
 
 		public List<TypeDeclaration> Types{get;set;}
 
+		public List<SelectInfo> Selects{get;set;}
+
 		/// <summary>
 		/// The cursor to the entity declaration currently being parsed.
 		/// </summary>
@@ -27,6 +29,7 @@ namespace Express
 		{
 			Types = new List<TypeDeclaration>();
 			Entities = new List<EntityDeclarationInfo>();
+			Selects = new List<SelectInfo>();
 		}
 
 		private TypeInfo TypeInfoFromValueTypeContext(string name, ExpressParser.ValueTypeContext ctx)
@@ -41,6 +44,7 @@ namespace Express
 			else if(ctx.select() != null)
 			{
 				typeInfo = new SelectInfo(name);
+				Selects.Add((SelectInfo)typeInfo);
 			}
 			//COLLECTION
 			else if(ctx.collection() != null)

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace Express
 {
@@ -19,11 +20,15 @@ namespace Express
 			{
 				return TypeInfo.ToString();
 			}
+
 			var result = 
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{TypeInfo.Name.ToLower()}.htm
 	/// </summary>
-	public class {TypeInfo.Name} : IfcType<{TypeInfo.ToString()}>{{}}
+	public class {TypeInfo.Name} : IfcType<{TypeInfo.ToString()}>
+	{{
+		public {TypeInfo.Name}({TypeInfo.ToString()} value):base(value){{}}		
+	}}
 
 ";
 			return result;
@@ -101,10 +106,8 @@ var result =
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
 	/// </summary>
-	public enum {Name} 
-	{{
-		{string.Join(",",Values)}
-	}}
+	public enum {Name} {{{string.Join(",",Values)}}}
+
 ";
 			return result;
 		}
@@ -116,11 +119,20 @@ var result =
 
 		public override string ToString()
 		{
+			var constructors = new StringBuilder();
+			foreach(var value in Values)
+			{
+				constructors.AppendLine($"\t\tpublic {Name}({value} value):base(value){{}}");
+			}
 			var result = 
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
 	/// </summary>
-	public class {Name}<T> : Select<T> where T : {string.Join(",",Values)} {{}}
+	public class {Name} : IfcSelect<{string.Join(",",Values)}>
+	{{
+{constructors}
+	}}
+
 ";
 
 			return result;

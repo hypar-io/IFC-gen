@@ -9,2311 +9,2777 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcabsorbeddosemeasure.htm
 	/// </summary>
-	public class IfcAbsorbedDoseMeasure : IfcType<System.Double>{}
+	public class IfcAbsorbedDoseMeasure : IfcType<System.Double>
+	{
+		public IfcAbsorbedDoseMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaccelerationmeasure.htm
 	/// </summary>
-	public class IfcAccelerationMeasure : IfcType<System.Double>{}
+	public class IfcAccelerationMeasure : IfcType<System.Double>
+	{
+		public IfcAccelerationMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcamountofsubstancemeasure.htm
 	/// </summary>
-	public class IfcAmountOfSubstanceMeasure : IfcType<System.Double>{}
+	public class IfcAmountOfSubstanceMeasure : IfcType<System.Double>
+	{
+		public IfcAmountOfSubstanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcangularvelocitymeasure.htm
 	/// </summary>
-	public class IfcAngularVelocityMeasure : IfcType<System.Double>{}
+	public class IfcAngularVelocityMeasure : IfcType<System.Double>
+	{
+		public IfcAngularVelocityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcareadensitymeasure.htm
 	/// </summary>
-	public class IfcAreaDensityMeasure : IfcType<System.Double>{}
+	public class IfcAreaDensityMeasure : IfcType<System.Double>
+	{
+		public IfcAreaDensityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcareameasure.htm
 	/// </summary>
-	public class IfcAreaMeasure : IfcType<System.Double>{}
+	public class IfcAreaMeasure : IfcType<System.Double>
+	{
+		public IfcAreaMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboolean.htm
 	/// </summary>
-	public class IfcBoolean : IfcType<System.Boolean>{}
+	public class IfcBoolean : IfcType<System.Boolean>
+	{
+		public IfcBoolean(System.Boolean value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboxalignment.htm
 	/// </summary>
-	public class IfcBoxAlignment : IfcType<IfcLabel>{}
+	public class IfcBoxAlignment : IfcType<IfcLabel>
+	{
+		public IfcBoxAlignment(IfcLabel value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccardinalpointreference.htm
 	/// </summary>
-	public class IfcCardinalPointReference : IfcType<System.Int32>{}
+	public class IfcCardinalPointReference : IfcType<System.Int32>
+	{
+		public IfcCardinalPointReference(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexnumber.htm
 	/// </summary>
-	public class IfcComplexNumber : IfcType<List<System.Double>>{}
+	public class IfcComplexNumber : IfcType<List<System.Double>>
+	{
+		public IfcComplexNumber(List<System.Double> value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompoundplaneanglemeasure.htm
 	/// </summary>
-	public class IfcCompoundPlaneAngleMeasure : IfcType<List<System.Int32>>{}
+	public class IfcCompoundPlaneAngleMeasure : IfcType<List<System.Int32>>
+	{
+		public IfcCompoundPlaneAngleMeasure(List<System.Int32> value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontextdependentmeasure.htm
 	/// </summary>
-	public class IfcContextDependentMeasure : IfcType<System.Double>{}
+	public class IfcContextDependentMeasure : IfcType<System.Double>
+	{
+		public IfcContextDependentMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccountmeasure.htm
 	/// </summary>
-	public class IfcCountMeasure : IfcType<System.Double>{}
+	public class IfcCountMeasure : IfcType<System.Double>
+	{
+		public IfcCountMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvaturemeasure.htm
 	/// </summary>
-	public class IfcCurvatureMeasure : IfcType<System.Double>{}
+	public class IfcCurvatureMeasure : IfcType<System.Double>
+	{
+		public IfcCurvatureMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdate.htm
 	/// </summary>
-	public class IfcDate : IfcType<System.String>{}
+	public class IfcDate : IfcType<System.String>
+	{
+		public IfcDate(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdatetime.htm
 	/// </summary>
-	public class IfcDateTime : IfcType<System.String>{}
+	public class IfcDateTime : IfcType<System.String>
+	{
+		public IfcDateTime(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdayinmonthnumber.htm
 	/// </summary>
-	public class IfcDayInMonthNumber : IfcType<System.Int32>{}
+	public class IfcDayInMonthNumber : IfcType<System.Int32>
+	{
+		public IfcDayInMonthNumber(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdayinweeknumber.htm
 	/// </summary>
-	public class IfcDayInWeekNumber : IfcType<System.Int32>{}
+	public class IfcDayInWeekNumber : IfcType<System.Int32>
+	{
+		public IfcDayInWeekNumber(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdescriptivemeasure.htm
 	/// </summary>
-	public class IfcDescriptiveMeasure : IfcType<System.String>{}
+	public class IfcDescriptiveMeasure : IfcType<System.String>
+	{
+		public IfcDescriptiveMeasure(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdimensioncount.htm
 	/// </summary>
-	public class IfcDimensionCount : IfcType<System.Int32>{}
+	public class IfcDimensionCount : IfcType<System.Int32>
+	{
+		public IfcDimensionCount(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoseequivalentmeasure.htm
 	/// </summary>
-	public class IfcDoseEquivalentMeasure : IfcType<System.Double>{}
+	public class IfcDoseEquivalentMeasure : IfcType<System.Double>
+	{
+		public IfcDoseEquivalentMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcduration.htm
 	/// </summary>
-	public class IfcDuration : IfcType<System.String>{}
+	public class IfcDuration : IfcType<System.String>
+	{
+		public IfcDuration(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdynamicviscositymeasure.htm
 	/// </summary>
-	public class IfcDynamicViscosityMeasure : IfcType<System.Double>{}
+	public class IfcDynamicViscosityMeasure : IfcType<System.Double>
+	{
+		public IfcDynamicViscosityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectriccapacitancemeasure.htm
 	/// </summary>
-	public class IfcElectricCapacitanceMeasure : IfcType<System.Double>{}
+	public class IfcElectricCapacitanceMeasure : IfcType<System.Double>
+	{
+		public IfcElectricCapacitanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricchargemeasure.htm
 	/// </summary>
-	public class IfcElectricChargeMeasure : IfcType<System.Double>{}
+	public class IfcElectricChargeMeasure : IfcType<System.Double>
+	{
+		public IfcElectricChargeMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricconductancemeasure.htm
 	/// </summary>
-	public class IfcElectricConductanceMeasure : IfcType<System.Double>{}
+	public class IfcElectricConductanceMeasure : IfcType<System.Double>
+	{
+		public IfcElectricConductanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectriccurrentmeasure.htm
 	/// </summary>
-	public class IfcElectricCurrentMeasure : IfcType<System.Double>{}
+	public class IfcElectricCurrentMeasure : IfcType<System.Double>
+	{
+		public IfcElectricCurrentMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricresistancemeasure.htm
 	/// </summary>
-	public class IfcElectricResistanceMeasure : IfcType<System.Double>{}
+	public class IfcElectricResistanceMeasure : IfcType<System.Double>
+	{
+		public IfcElectricResistanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricvoltagemeasure.htm
 	/// </summary>
-	public class IfcElectricVoltageMeasure : IfcType<System.Double>{}
+	public class IfcElectricVoltageMeasure : IfcType<System.Double>
+	{
+		public IfcElectricVoltageMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenergymeasure.htm
 	/// </summary>
-	public class IfcEnergyMeasure : IfcType<System.Double>{}
+	public class IfcEnergyMeasure : IfcType<System.Double>
+	{
+		public IfcEnergyMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfontstyle.htm
 	/// </summary>
-	public class IfcFontStyle : IfcType<System.String>{}
+	public class IfcFontStyle : IfcType<System.String>
+	{
+		public IfcFontStyle(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfontvariant.htm
 	/// </summary>
-	public class IfcFontVariant : IfcType<System.String>{}
+	public class IfcFontVariant : IfcType<System.String>
+	{
+		public IfcFontVariant(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfontweight.htm
 	/// </summary>
-	public class IfcFontWeight : IfcType<System.String>{}
+	public class IfcFontWeight : IfcType<System.String>
+	{
+		public IfcFontWeight(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcforcemeasure.htm
 	/// </summary>
-	public class IfcForceMeasure : IfcType<System.Double>{}
+	public class IfcForceMeasure : IfcType<System.Double>
+	{
+		public IfcForceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfrequencymeasure.htm
 	/// </summary>
-	public class IfcFrequencyMeasure : IfcType<System.Double>{}
+	public class IfcFrequencyMeasure : IfcType<System.Double>
+	{
+		public IfcFrequencyMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgloballyuniqueid.htm
 	/// </summary>
-	public class IfcGloballyUniqueId : IfcType<System.String>{}
+	public class IfcGloballyUniqueId : IfcType<System.String>
+	{
+		public IfcGloballyUniqueId(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatfluxdensitymeasure.htm
 	/// </summary>
-	public class IfcHeatFluxDensityMeasure : IfcType<System.Double>{}
+	public class IfcHeatFluxDensityMeasure : IfcType<System.Double>
+	{
+		public IfcHeatFluxDensityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatingvaluemeasure.htm
 	/// </summary>
-	public class IfcHeatingValueMeasure : IfcType<System.Double>{}
+	public class IfcHeatingValueMeasure : IfcType<System.Double>
+	{
+		public IfcHeatingValueMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcidentifier.htm
 	/// </summary>
-	public class IfcIdentifier : IfcType<System.String>{}
+	public class IfcIdentifier : IfcType<System.String>
+	{
+		public IfcIdentifier(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcilluminancemeasure.htm
 	/// </summary>
-	public class IfcIlluminanceMeasure : IfcType<System.Double>{}
+	public class IfcIlluminanceMeasure : IfcType<System.Double>
+	{
+		public IfcIlluminanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinductancemeasure.htm
 	/// </summary>
-	public class IfcInductanceMeasure : IfcType<System.Double>{}
+	public class IfcInductanceMeasure : IfcType<System.Double>
+	{
+		public IfcInductanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinteger.htm
 	/// </summary>
-	public class IfcInteger : IfcType<System.Int32>{}
+	public class IfcInteger : IfcType<System.Int32>
+	{
+		public IfcInteger(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcintegercountratemeasure.htm
 	/// </summary>
-	public class IfcIntegerCountRateMeasure : IfcType<System.Int32>{}
+	public class IfcIntegerCountRateMeasure : IfcType<System.Int32>
+	{
+		public IfcIntegerCountRateMeasure(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcionconcentrationmeasure.htm
 	/// </summary>
-	public class IfcIonConcentrationMeasure : IfcType<System.Double>{}
+	public class IfcIonConcentrationMeasure : IfcType<System.Double>
+	{
+		public IfcIonConcentrationMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcisothermalmoisturecapacitymeasure.htm
 	/// </summary>
-	public class IfcIsothermalMoistureCapacityMeasure : IfcType<System.Double>{}
+	public class IfcIsothermalMoistureCapacityMeasure : IfcType<System.Double>
+	{
+		public IfcIsothermalMoistureCapacityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifckinematicviscositymeasure.htm
 	/// </summary>
-	public class IfcKinematicViscosityMeasure : IfcType<System.Double>{}
+	public class IfcKinematicViscosityMeasure : IfcType<System.Double>
+	{
+		public IfcKinematicViscosityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclabel.htm
 	/// </summary>
-	public class IfcLabel : IfcType<System.String>{}
+	public class IfcLabel : IfcType<System.String>
+	{
+		public IfcLabel(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclanguageid.htm
 	/// </summary>
-	public class IfcLanguageId : IfcType<IfcIdentifier>{}
+	public class IfcLanguageId : IfcType<IfcIdentifier>
+	{
+		public IfcLanguageId(IfcIdentifier value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclengthmeasure.htm
 	/// </summary>
-	public class IfcLengthMeasure : IfcType<System.Double>{}
+	public class IfcLengthMeasure : IfcType<System.Double>
+	{
+		public IfcLengthMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearforcemeasure.htm
 	/// </summary>
-	public class IfcLinearForceMeasure : IfcType<System.Double>{}
+	public class IfcLinearForceMeasure : IfcType<System.Double>
+	{
+		public IfcLinearForceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearmomentmeasure.htm
 	/// </summary>
-	public class IfcLinearMomentMeasure : IfcType<System.Double>{}
+	public class IfcLinearMomentMeasure : IfcType<System.Double>
+	{
+		public IfcLinearMomentMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearstiffnessmeasure.htm
 	/// </summary>
-	public class IfcLinearStiffnessMeasure : IfcType<System.Double>{}
+	public class IfcLinearStiffnessMeasure : IfcType<System.Double>
+	{
+		public IfcLinearStiffnessMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearvelocitymeasure.htm
 	/// </summary>
-	public class IfcLinearVelocityMeasure : IfcType<System.Double>{}
+	public class IfcLinearVelocityMeasure : IfcType<System.Double>
+	{
+		public IfcLinearVelocityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclogical.htm
 	/// </summary>
-	public class IfcLogical : IfcType<System.Boolean>{}
+	public class IfcLogical : IfcType<System.Boolean>
+	{
+		public IfcLogical(System.Boolean value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcluminousfluxmeasure.htm
 	/// </summary>
-	public class IfcLuminousFluxMeasure : IfcType<System.Double>{}
+	public class IfcLuminousFluxMeasure : IfcType<System.Double>
+	{
+		public IfcLuminousFluxMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcluminousintensitydistributionmeasure.htm
 	/// </summary>
-	public class IfcLuminousIntensityDistributionMeasure : IfcType<System.Double>{}
+	public class IfcLuminousIntensityDistributionMeasure : IfcType<System.Double>
+	{
+		public IfcLuminousIntensityDistributionMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcluminousintensitymeasure.htm
 	/// </summary>
-	public class IfcLuminousIntensityMeasure : IfcType<System.Double>{}
+	public class IfcLuminousIntensityMeasure : IfcType<System.Double>
+	{
+		public IfcLuminousIntensityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmagneticfluxdensitymeasure.htm
 	/// </summary>
-	public class IfcMagneticFluxDensityMeasure : IfcType<System.Double>{}
+	public class IfcMagneticFluxDensityMeasure : IfcType<System.Double>
+	{
+		public IfcMagneticFluxDensityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmagneticfluxmeasure.htm
 	/// </summary>
-	public class IfcMagneticFluxMeasure : IfcType<System.Double>{}
+	public class IfcMagneticFluxMeasure : IfcType<System.Double>
+	{
+		public IfcMagneticFluxMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassdensitymeasure.htm
 	/// </summary>
-	public class IfcMassDensityMeasure : IfcType<System.Double>{}
+	public class IfcMassDensityMeasure : IfcType<System.Double>
+	{
+		public IfcMassDensityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassflowratemeasure.htm
 	/// </summary>
-	public class IfcMassFlowRateMeasure : IfcType<System.Double>{}
+	public class IfcMassFlowRateMeasure : IfcType<System.Double>
+	{
+		public IfcMassFlowRateMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassmeasure.htm
 	/// </summary>
-	public class IfcMassMeasure : IfcType<System.Double>{}
+	public class IfcMassMeasure : IfcType<System.Double>
+	{
+		public IfcMassMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassperlengthmeasure.htm
 	/// </summary>
-	public class IfcMassPerLengthMeasure : IfcType<System.Double>{}
+	public class IfcMassPerLengthMeasure : IfcType<System.Double>
+	{
+		public IfcMassPerLengthMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofelasticitymeasure.htm
 	/// </summary>
-	public class IfcModulusOfElasticityMeasure : IfcType<System.Double>{}
+	public class IfcModulusOfElasticityMeasure : IfcType<System.Double>
+	{
+		public IfcModulusOfElasticityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusoflinearsubgradereactionmeasure.htm
 	/// </summary>
-	public class IfcModulusOfLinearSubgradeReactionMeasure : IfcType<System.Double>{}
+	public class IfcModulusOfLinearSubgradeReactionMeasure : IfcType<System.Double>
+	{
+		public IfcModulusOfLinearSubgradeReactionMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofrotationalsubgradereactionmeasure.htm
 	/// </summary>
-	public class IfcModulusOfRotationalSubgradeReactionMeasure : IfcType<System.Double>{}
+	public class IfcModulusOfRotationalSubgradeReactionMeasure : IfcType<System.Double>
+	{
+		public IfcModulusOfRotationalSubgradeReactionMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofsubgradereactionmeasure.htm
 	/// </summary>
-	public class IfcModulusOfSubgradeReactionMeasure : IfcType<System.Double>{}
+	public class IfcModulusOfSubgradeReactionMeasure : IfcType<System.Double>
+	{
+		public IfcModulusOfSubgradeReactionMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmoisturediffusivitymeasure.htm
 	/// </summary>
-	public class IfcMoistureDiffusivityMeasure : IfcType<System.Double>{}
+	public class IfcMoistureDiffusivityMeasure : IfcType<System.Double>
+	{
+		public IfcMoistureDiffusivityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmolecularweightmeasure.htm
 	/// </summary>
-	public class IfcMolecularWeightMeasure : IfcType<System.Double>{}
+	public class IfcMolecularWeightMeasure : IfcType<System.Double>
+	{
+		public IfcMolecularWeightMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmomentofinertiameasure.htm
 	/// </summary>
-	public class IfcMomentOfInertiaMeasure : IfcType<System.Double>{}
+	public class IfcMomentOfInertiaMeasure : IfcType<System.Double>
+	{
+		public IfcMomentOfInertiaMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmonetarymeasure.htm
 	/// </summary>
-	public class IfcMonetaryMeasure : IfcType<System.Double>{}
+	public class IfcMonetaryMeasure : IfcType<System.Double>
+	{
+		public IfcMonetaryMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmonthinyearnumber.htm
 	/// </summary>
-	public class IfcMonthInYearNumber : IfcType<System.Int32>{}
+	public class IfcMonthInYearNumber : IfcType<System.Int32>
+	{
+		public IfcMonthInYearNumber(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnonnegativelengthmeasure.htm
 	/// </summary>
-	public class IfcNonNegativeLengthMeasure : IfcType<IfcLengthMeasure>{}
+	public class IfcNonNegativeLengthMeasure : IfcType<IfcLengthMeasure>
+	{
+		public IfcNonNegativeLengthMeasure(IfcLengthMeasure value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnormalisedratiomeasure.htm
 	/// </summary>
-	public class IfcNormalisedRatioMeasure : IfcType<IfcRatioMeasure>{}
+	public class IfcNormalisedRatioMeasure : IfcType<IfcRatioMeasure>
+	{
+		public IfcNormalisedRatioMeasure(IfcRatioMeasure value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnumericmeasure.htm
 	/// </summary>
-	public class IfcNumericMeasure : IfcType<System.Double>{}
+	public class IfcNumericMeasure : IfcType<System.Double>
+	{
+		public IfcNumericMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphmeasure.htm
 	/// </summary>
-	public class IfcPHMeasure : IfcType<System.Double>{}
+	public class IfcPHMeasure : IfcType<System.Double>
+	{
+		public IfcPHMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcparametervalue.htm
 	/// </summary>
-	public class IfcParameterValue : IfcType<System.Double>{}
+	public class IfcParameterValue : IfcType<System.Double>
+	{
+		public IfcParameterValue(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarforcemeasure.htm
 	/// </summary>
-	public class IfcPlanarForceMeasure : IfcType<System.Double>{}
+	public class IfcPlanarForceMeasure : IfcType<System.Double>
+	{
+		public IfcPlanarForceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplaneanglemeasure.htm
 	/// </summary>
-	public class IfcPlaneAngleMeasure : IfcType<System.Double>{}
+	public class IfcPlaneAngleMeasure : IfcType<System.Double>
+	{
+		public IfcPlaneAngleMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositivelengthmeasure.htm
 	/// </summary>
-	public class IfcPositiveLengthMeasure : IfcType<IfcLengthMeasure>{}
+	public class IfcPositiveLengthMeasure : IfcType<IfcLengthMeasure>
+	{
+		public IfcPositiveLengthMeasure(IfcLengthMeasure value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositiveplaneanglemeasure.htm
 	/// </summary>
-	public class IfcPositivePlaneAngleMeasure : IfcType<IfcPlaneAngleMeasure>{}
+	public class IfcPositivePlaneAngleMeasure : IfcType<IfcPlaneAngleMeasure>
+	{
+		public IfcPositivePlaneAngleMeasure(IfcPlaneAngleMeasure value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositiveratiomeasure.htm
 	/// </summary>
-	public class IfcPositiveRatioMeasure : IfcType<IfcRatioMeasure>{}
+	public class IfcPositiveRatioMeasure : IfcType<IfcRatioMeasure>
+	{
+		public IfcPositiveRatioMeasure(IfcRatioMeasure value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpowermeasure.htm
 	/// </summary>
-	public class IfcPowerMeasure : IfcType<System.Double>{}
+	public class IfcPowerMeasure : IfcType<System.Double>
+	{
+		public IfcPowerMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentabletext.htm
 	/// </summary>
-	public class IfcPresentableText : IfcType<System.String>{}
+	public class IfcPresentableText : IfcType<System.String>
+	{
+		public IfcPresentableText(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpressuremeasure.htm
 	/// </summary>
-	public class IfcPressureMeasure : IfcType<System.Double>{}
+	public class IfcPressureMeasure : IfcType<System.Double>
+	{
+		public IfcPressureMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionset.htm
 	/// </summary>
-	public class IfcPropertySetDefinitionSet : IfcType<List<IfcPropertySetDefinition>>{}
+	public class IfcPropertySetDefinitionSet : IfcType<List<IfcPropertySetDefinition>>
+	{
+		public IfcPropertySetDefinitionSet(List<IfcPropertySetDefinition> value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcradioactivitymeasure.htm
 	/// </summary>
-	public class IfcRadioActivityMeasure : IfcType<System.Double>{}
+	public class IfcRadioActivityMeasure : IfcType<System.Double>
+	{
+		public IfcRadioActivityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcratiomeasure.htm
 	/// </summary>
-	public class IfcRatioMeasure : IfcType<System.Double>{}
+	public class IfcRatioMeasure : IfcType<System.Double>
+	{
+		public IfcRatioMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreal.htm
 	/// </summary>
-	public class IfcReal : IfcType<System.Double>{}
+	public class IfcReal : IfcType<System.Double>
+	{
+		public IfcReal(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalfrequencymeasure.htm
 	/// </summary>
-	public class IfcRotationalFrequencyMeasure : IfcType<System.Double>{}
+	public class IfcRotationalFrequencyMeasure : IfcType<System.Double>
+	{
+		public IfcRotationalFrequencyMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalmassmeasure.htm
 	/// </summary>
-	public class IfcRotationalMassMeasure : IfcType<System.Double>{}
+	public class IfcRotationalMassMeasure : IfcType<System.Double>
+	{
+		public IfcRotationalMassMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalstiffnessmeasure.htm
 	/// </summary>
-	public class IfcRotationalStiffnessMeasure : IfcType<System.Double>{}
+	public class IfcRotationalStiffnessMeasure : IfcType<System.Double>
+	{
+		public IfcRotationalStiffnessMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionmodulusmeasure.htm
 	/// </summary>
-	public class IfcSectionModulusMeasure : IfcType<System.Double>{}
+	public class IfcSectionModulusMeasure : IfcType<System.Double>
+	{
+		public IfcSectionModulusMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionalareaintegralmeasure.htm
 	/// </summary>
-	public class IfcSectionalAreaIntegralMeasure : IfcType<System.Double>{}
+	public class IfcSectionalAreaIntegralMeasure : IfcType<System.Double>
+	{
+		public IfcSectionalAreaIntegralMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshearmodulusmeasure.htm
 	/// </summary>
-	public class IfcShearModulusMeasure : IfcType<System.Double>{}
+	public class IfcShearModulusMeasure : IfcType<System.Double>
+	{
+		public IfcShearModulusMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidanglemeasure.htm
 	/// </summary>
-	public class IfcSolidAngleMeasure : IfcType<System.Double>{}
+	public class IfcSolidAngleMeasure : IfcType<System.Double>
+	{
+		public IfcSolidAngleMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpowerlevelmeasure.htm
 	/// </summary>
-	public class IfcSoundPowerLevelMeasure : IfcType<System.Double>{}
+	public class IfcSoundPowerLevelMeasure : IfcType<System.Double>
+	{
+		public IfcSoundPowerLevelMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpowermeasure.htm
 	/// </summary>
-	public class IfcSoundPowerMeasure : IfcType<System.Double>{}
+	public class IfcSoundPowerMeasure : IfcType<System.Double>
+	{
+		public IfcSoundPowerMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpressurelevelmeasure.htm
 	/// </summary>
-	public class IfcSoundPressureLevelMeasure : IfcType<System.Double>{}
+	public class IfcSoundPressureLevelMeasure : IfcType<System.Double>
+	{
+		public IfcSoundPressureLevelMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpressuremeasure.htm
 	/// </summary>
-	public class IfcSoundPressureMeasure : IfcType<System.Double>{}
+	public class IfcSoundPressureMeasure : IfcType<System.Double>
+	{
+		public IfcSoundPressureMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecificheatcapacitymeasure.htm
 	/// </summary>
-	public class IfcSpecificHeatCapacityMeasure : IfcType<System.Double>{}
+	public class IfcSpecificHeatCapacityMeasure : IfcType<System.Double>
+	{
+		public IfcSpecificHeatCapacityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularexponent.htm
 	/// </summary>
-	public class IfcSpecularExponent : IfcType<System.Double>{}
+	public class IfcSpecularExponent : IfcType<System.Double>
+	{
+		public IfcSpecularExponent(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularroughness.htm
 	/// </summary>
-	public class IfcSpecularRoughness : IfcType<System.Double>{}
+	public class IfcSpecularRoughness : IfcType<System.Double>
+	{
+		public IfcSpecularRoughness(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctemperaturegradientmeasure.htm
 	/// </summary>
-	public class IfcTemperatureGradientMeasure : IfcType<System.Double>{}
+	public class IfcTemperatureGradientMeasure : IfcType<System.Double>
+	{
+		public IfcTemperatureGradientMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctemperaturerateofchangemeasure.htm
 	/// </summary>
-	public class IfcTemperatureRateOfChangeMeasure : IfcType<System.Double>{}
+	public class IfcTemperatureRateOfChangeMeasure : IfcType<System.Double>
+	{
+		public IfcTemperatureRateOfChangeMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctext.htm
 	/// </summary>
-	public class IfcText : IfcType<System.String>{}
+	public class IfcText : IfcType<System.String>
+	{
+		public IfcText(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextalignment.htm
 	/// </summary>
-	public class IfcTextAlignment : IfcType<System.String>{}
+	public class IfcTextAlignment : IfcType<System.String>
+	{
+		public IfcTextAlignment(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextdecoration.htm
 	/// </summary>
-	public class IfcTextDecoration : IfcType<System.String>{}
+	public class IfcTextDecoration : IfcType<System.String>
+	{
+		public IfcTextDecoration(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextfontname.htm
 	/// </summary>
-	public class IfcTextFontName : IfcType<System.String>{}
+	public class IfcTextFontName : IfcType<System.String>
+	{
+		public IfcTextFontName(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexttransformation.htm
 	/// </summary>
-	public class IfcTextTransformation : IfcType<System.String>{}
+	public class IfcTextTransformation : IfcType<System.String>
+	{
+		public IfcTextTransformation(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermaladmittancemeasure.htm
 	/// </summary>
-	public class IfcThermalAdmittanceMeasure : IfcType<System.Double>{}
+	public class IfcThermalAdmittanceMeasure : IfcType<System.Double>
+	{
+		public IfcThermalAdmittanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermalconductivitymeasure.htm
 	/// </summary>
-	public class IfcThermalConductivityMeasure : IfcType<System.Double>{}
+	public class IfcThermalConductivityMeasure : IfcType<System.Double>
+	{
+		public IfcThermalConductivityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermalexpansioncoefficientmeasure.htm
 	/// </summary>
-	public class IfcThermalExpansionCoefficientMeasure : IfcType<System.Double>{}
+	public class IfcThermalExpansionCoefficientMeasure : IfcType<System.Double>
+	{
+		public IfcThermalExpansionCoefficientMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermalresistancemeasure.htm
 	/// </summary>
-	public class IfcThermalResistanceMeasure : IfcType<System.Double>{}
+	public class IfcThermalResistanceMeasure : IfcType<System.Double>
+	{
+		public IfcThermalResistanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermaltransmittancemeasure.htm
 	/// </summary>
-	public class IfcThermalTransmittanceMeasure : IfcType<System.Double>{}
+	public class IfcThermalTransmittanceMeasure : IfcType<System.Double>
+	{
+		public IfcThermalTransmittanceMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermodynamictemperaturemeasure.htm
 	/// </summary>
-	public class IfcThermodynamicTemperatureMeasure : IfcType<System.Double>{}
+	public class IfcThermodynamicTemperatureMeasure : IfcType<System.Double>
+	{
+		public IfcThermodynamicTemperatureMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctime.htm
 	/// </summary>
-	public class IfcTime : IfcType<System.String>{}
+	public class IfcTime : IfcType<System.String>
+	{
+		public IfcTime(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimemeasure.htm
 	/// </summary>
-	public class IfcTimeMeasure : IfcType<System.Double>{}
+	public class IfcTimeMeasure : IfcType<System.Double>
+	{
+		public IfcTimeMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimestamp.htm
 	/// </summary>
-	public class IfcTimeStamp : IfcType<System.Int32>{}
+	public class IfcTimeStamp : IfcType<System.Int32>
+	{
+		public IfcTimeStamp(System.Int32 value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctorquemeasure.htm
 	/// </summary>
-	public class IfcTorqueMeasure : IfcType<System.Double>{}
+	public class IfcTorqueMeasure : IfcType<System.Double>
+	{
+		public IfcTorqueMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcurireference.htm
 	/// </summary>
-	public class IfcURIReference : IfcType<System.String>{}
+	public class IfcURIReference : IfcType<System.String>
+	{
+		public IfcURIReference(System.String value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvaporpermeabilitymeasure.htm
 	/// </summary>
-	public class IfcVaporPermeabilityMeasure : IfcType<System.Double>{}
+	public class IfcVaporPermeabilityMeasure : IfcType<System.Double>
+	{
+		public IfcVaporPermeabilityMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvolumemeasure.htm
 	/// </summary>
-	public class IfcVolumeMeasure : IfcType<System.Double>{}
+	public class IfcVolumeMeasure : IfcType<System.Double>
+	{
+		public IfcVolumeMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvolumetricflowratemeasure.htm
 	/// </summary>
-	public class IfcVolumetricFlowRateMeasure : IfcType<System.Double>{}
+	public class IfcVolumetricFlowRateMeasure : IfcType<System.Double>
+	{
+		public IfcVolumetricFlowRateMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingconstantmeasure.htm
 	/// </summary>
-	public class IfcWarpingConstantMeasure : IfcType<System.Double>{}
+	public class IfcWarpingConstantMeasure : IfcType<System.Double>
+	{
+		public IfcWarpingConstantMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingmomentmeasure.htm
 	/// </summary>
-	public class IfcWarpingMomentMeasure : IfcType<System.Double>{}
+	public class IfcWarpingMomentMeasure : IfcType<System.Double>
+	{
+		public IfcWarpingMomentMeasure(System.Double value):base(value){}		
+	}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequesttypeenum.htm
 	/// </summary>
-	public enum IfcActionRequestTypeEnum 
-	{
-		EMAIL,FAX,PHONE,POST,VERBAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcActionRequestTypeEnum {EMAIL,FAX,PHONE,POST,VERBAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionsourcetypeenum.htm
 	/// </summary>
-	public enum IfcActionSourceTypeEnum 
-	{
-		DEAD_LOAD_G,COMPLETION_G1,LIVE_LOAD_Q,SNOW_S,WIND_W,PRESTRESSING_P,SETTLEMENT_U,TEMPERATURE_T,EARTHQUAKE_E,FIRE,IMPULSE,IMPACT,TRANSPORT,ERECTION,PROPPING,SYSTEM_IMPERFECTION,SHRINKAGE,CREEP,LACK_OF_FIT,BUOYANCY,ICE,CURRENT,WAVE,RAIN,BRAKES,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcActionSourceTypeEnum {DEAD_LOAD_G,COMPLETION_G1,LIVE_LOAD_Q,SNOW_S,WIND_W,PRESTRESSING_P,SETTLEMENT_U,TEMPERATURE_T,EARTHQUAKE_E,FIRE,IMPULSE,IMPACT,TRANSPORT,ERECTION,PROPPING,SYSTEM_IMPERFECTION,SHRINKAGE,CREEP,LACK_OF_FIT,BUOYANCY,ICE,CURRENT,WAVE,RAIN,BRAKES,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactiontypeenum.htm
 	/// </summary>
-	public enum IfcActionTypeEnum 
-	{
-		PERMANENT_G,VARIABLE_Q,EXTRAORDINARY_A,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcActionTypeEnum {PERMANENT_G,VARIABLE_Q,EXTRAORDINARY_A,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactuatortypeenum.htm
 	/// </summary>
-	public enum IfcActuatorTypeEnum 
-	{
-		ELECTRICACTUATOR,HANDOPERATEDACTUATOR,HYDRAULICACTUATOR,PNEUMATICACTUATOR,THERMOSTATICACTUATOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcActuatorTypeEnum {ELECTRICACTUATOR,HANDOPERATEDACTUATOR,HYDRAULICACTUATOR,PNEUMATICACTUATOR,THERMOSTATICACTUATOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaddresstypeenum.htm
 	/// </summary>
-	public enum IfcAddressTypeEnum 
-	{
-		OFFICE,SITE,HOME,DISTRIBUTIONPOINT,USERDEFINED
-	}
+	public enum IfcAddressTypeEnum {OFFICE,SITE,HOME,DISTRIBUTIONPOINT,USERDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminalboxtypeenum.htm
 	/// </summary>
-	public enum IfcAirTerminalBoxTypeEnum 
-	{
-		CONSTANTFLOW,VARIABLEFLOWPRESSUREDEPENDANT,VARIABLEFLOWPRESSUREINDEPENDANT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAirTerminalBoxTypeEnum {CONSTANTFLOW,VARIABLEFLOWPRESSUREDEPENDANT,VARIABLEFLOWPRESSUREINDEPENDANT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminaltypeenum.htm
 	/// </summary>
-	public enum IfcAirTerminalTypeEnum 
-	{
-		DIFFUSER,GRILLE,LOUVRE,REGISTER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAirTerminalTypeEnum {DIFFUSER,GRILLE,LOUVRE,REGISTER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairtoairheatrecoverytypeenum.htm
 	/// </summary>
-	public enum IfcAirToAirHeatRecoveryTypeEnum 
-	{
-		FIXEDPLATECOUNTERFLOWEXCHANGER,FIXEDPLATECROSSFLOWEXCHANGER,FIXEDPLATEPARALLELFLOWEXCHANGER,ROTARYWHEEL,RUNAROUNDCOILLOOP,HEATPIPE,TWINTOWERENTHALPYRECOVERYLOOPS,THERMOSIPHONSEALEDTUBEHEATEXCHANGERS,THERMOSIPHONCOILTYPEHEATEXCHANGERS,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAirToAirHeatRecoveryTypeEnum {FIXEDPLATECOUNTERFLOWEXCHANGER,FIXEDPLATECROSSFLOWEXCHANGER,FIXEDPLATEPARALLELFLOWEXCHANGER,ROTARYWHEEL,RUNAROUNDCOILLOOP,HEATPIPE,TWINTOWERENTHALPYRECOVERYLOOPS,THERMOSIPHONSEALEDTUBEHEATEXCHANGERS,THERMOSIPHONCOILTYPEHEATEXCHANGERS,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcalarmtypeenum.htm
 	/// </summary>
-	public enum IfcAlarmTypeEnum 
-	{
-		BELL,BREAKGLASSBUTTON,LIGHT,MANUALPULLBOX,SIREN,WHISTLE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAlarmTypeEnum {BELL,BREAKGLASSBUTTON,LIGHT,MANUALPULLBOX,SIREN,WHISTLE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysismodeltypeenum.htm
 	/// </summary>
-	public enum IfcAnalysisModelTypeEnum 
-	{
-		IN_PLANE_LOADING_2D,OUT_PLANE_LOADING_2D,LOADING_3D,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAnalysisModelTypeEnum {IN_PLANE_LOADING_2D,OUT_PLANE_LOADING_2D,LOADING_3D,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysistheorytypeenum.htm
 	/// </summary>
-	public enum IfcAnalysisTheoryTypeEnum 
-	{
-		FIRST_ORDER_THEORY,SECOND_ORDER_THEORY,THIRD_ORDER_THEORY,FULL_NONLINEAR_THEORY,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAnalysisTheoryTypeEnum {FIRST_ORDER_THEORY,SECOND_ORDER_THEORY,THIRD_ORDER_THEORY,FULL_NONLINEAR_THEORY,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarithmeticoperatorenum.htm
 	/// </summary>
-	public enum IfcArithmeticOperatorEnum 
-	{
-		ADD,DIVIDE,MULTIPLY,SUBTRACT
-	}
+	public enum IfcArithmeticOperatorEnum {ADD,DIVIDE,MULTIPLY,SUBTRACT}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcassemblyplaceenum.htm
 	/// </summary>
-	public enum IfcAssemblyPlaceEnum 
-	{
-		SITE,FACTORY,NOTDEFINED
-	}
+	public enum IfcAssemblyPlaceEnum {SITE,FACTORY,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaudiovisualappliancetypeenum.htm
 	/// </summary>
-	public enum IfcAudioVisualApplianceTypeEnum 
-	{
-		AMPLIFIER,CAMERA,DISPLAY,MICROPHONE,PLAYER,PROJECTOR,RECEIVER,SPEAKER,SWITCHER,TELEPHONE,TUNER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcAudioVisualApplianceTypeEnum {AMPLIFIER,CAMERA,DISPLAY,MICROPHONE,PLAYER,PROJECTOR,RECEIVER,SPEAKER,SWITCHER,TELEPHONE,TUNER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurveform.htm
 	/// </summary>
-	public enum IfcBSplineCurveForm 
-	{
-		POLYLINE_FORM,CIRCULAR_ARC,ELLIPTIC_ARC,PARABOLIC_ARC,HYPERBOLIC_ARC,UNSPECIFIED
-	}
+	public enum IfcBSplineCurveForm {POLYLINE_FORM,CIRCULAR_ARC,ELLIPTIC_ARC,PARABOLIC_ARC,HYPERBOLIC_ARC,UNSPECIFIED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurfaceform.htm
 	/// </summary>
-	public enum IfcBSplineSurfaceForm 
-	{
-		PLANE_SURF,CYLINDRICAL_SURF,CONICAL_SURF,SPHERICAL_SURF,TOROIDAL_SURF,SURF_OF_REVOLUTION,RULED_SURF,GENERALISED_CONE,QUADRIC_SURF,SURF_OF_LINEAR_EXTRUSION,UNSPECIFIED
-	}
+	public enum IfcBSplineSurfaceForm {PLANE_SURF,CYLINDRICAL_SURF,CONICAL_SURF,SPHERICAL_SURF,TOROIDAL_SURF,SURF_OF_REVOLUTION,RULED_SURF,GENERALISED_CONE,QUADRIC_SURF,SURF_OF_LINEAR_EXTRUSION,UNSPECIFIED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeamtypeenum.htm
 	/// </summary>
-	public enum IfcBeamTypeEnum 
-	{
-		BEAM,JOIST,HOLLOWCORE,LINTEL,SPANDREL,T_BEAM,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcBeamTypeEnum {BEAM,JOIST,HOLLOWCORE,LINTEL,SPANDREL,T_BEAM,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbenchmarkenum.htm
 	/// </summary>
-	public enum IfcBenchmarkEnum 
-	{
-		GREATERTHAN,GREATERTHANOREQUALTO,LESSTHAN,LESSTHANOREQUALTO,EQUALTO,NOTEQUALTO,INCLUDES,NOTINCLUDES,INCLUDEDIN,NOTINCLUDEDIN
-	}
+	public enum IfcBenchmarkEnum {GREATERTHAN,GREATERTHANOREQUALTO,LESSTHAN,LESSTHANOREQUALTO,EQUALTO,NOTEQUALTO,INCLUDES,NOTINCLUDES,INCLUDEDIN,NOTINCLUDEDIN}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboilertypeenum.htm
 	/// </summary>
-	public enum IfcBoilerTypeEnum 
-	{
-		WATER,STEAM,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcBoilerTypeEnum {WATER,STEAM,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperator.htm
 	/// </summary>
-	public enum IfcBooleanOperator 
-	{
-		UNION,INTERSECTION,DIFFERENCE
-	}
+	public enum IfcBooleanOperator {UNION,INTERSECTION,DIFFERENCE}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementparttypeenum.htm
 	/// </summary>
-	public enum IfcBuildingElementPartTypeEnum 
-	{
-		INSULATION,PRECASTPANEL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcBuildingElementPartTypeEnum {INSULATION,PRECASTPANEL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxytypeenum.htm
 	/// </summary>
-	public enum IfcBuildingElementProxyTypeEnum 
-	{
-		COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcBuildingElementProxyTypeEnum {COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystemtypeenum.htm
 	/// </summary>
-	public enum IfcBuildingSystemTypeEnum 
-	{
-		FENESTRATION,FOUNDATION,LOADBEARING,OUTERSHELL,SHADING,TRANSPORT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcBuildingSystemTypeEnum {FENESTRATION,FOUNDATION,LOADBEARING,OUTERSHELL,SHADING,TRANSPORT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcburnertypeenum.htm
 	/// </summary>
-	public enum IfcBurnerTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcBurnerTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarrierfittingtypeenum.htm
 	/// </summary>
-	public enum IfcCableCarrierFittingTypeEnum 
-	{
-		BEND,CROSS,REDUCER,TEE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCableCarrierFittingTypeEnum {BEND,CROSS,REDUCER,TEE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarriersegmenttypeenum.htm
 	/// </summary>
-	public enum IfcCableCarrierSegmentTypeEnum 
-	{
-		CABLELADDERSEGMENT,CABLETRAYSEGMENT,CABLETRUNKINGSEGMENT,CONDUITSEGMENT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCableCarrierSegmentTypeEnum {CABLELADDERSEGMENT,CABLETRAYSEGMENT,CABLETRUNKINGSEGMENT,CONDUITSEGMENT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefittingtypeenum.htm
 	/// </summary>
-	public enum IfcCableFittingTypeEnum 
-	{
-		CONNECTOR,ENTRY,EXIT,JUNCTION,TRANSITION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCableFittingTypeEnum {CONNECTOR,ENTRY,EXIT,JUNCTION,TRANSITION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablesegmenttypeenum.htm
 	/// </summary>
-	public enum IfcCableSegmentTypeEnum 
-	{
-		BUSBARSEGMENT,CABLESEGMENT,CONDUCTORSEGMENT,CORESEGMENT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCableSegmentTypeEnum {BUSBARSEGMENT,CABLESEGMENT,CONDUCTORSEGMENT,CORESEGMENT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchangeactionenum.htm
 	/// </summary>
-	public enum IfcChangeActionEnum 
-	{
-		NOCHANGE,MODIFIED,ADDED,DELETED,NOTDEFINED
-	}
+	public enum IfcChangeActionEnum {NOCHANGE,MODIFIED,ADDED,DELETED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchillertypeenum.htm
 	/// </summary>
-	public enum IfcChillerTypeEnum 
-	{
-		AIRCOOLED,WATERCOOLED,HEATRECOVERY,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcChillerTypeEnum {AIRCOOLED,WATERCOOLED,HEATRECOVERY,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchimneytypeenum.htm
 	/// </summary>
-	public enum IfcChimneyTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcChimneyTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoiltypeenum.htm
 	/// </summary>
-	public enum IfcCoilTypeEnum 
-	{
-		DXCOOLINGCOIL,ELECTRICHEATINGCOIL,GASHEATINGCOIL,HYDRONICCOIL,STEAMHEATINGCOIL,WATERCOOLINGCOIL,WATERHEATINGCOIL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCoilTypeEnum {DXCOOLINGCOIL,ELECTRICHEATINGCOIL,GASHEATINGCOIL,HYDRONICCOIL,STEAMHEATINGCOIL,WATERCOOLINGCOIL,WATERHEATINGCOIL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumntypeenum.htm
 	/// </summary>
-	public enum IfcColumnTypeEnum 
-	{
-		COLUMN,PILASTER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcColumnTypeEnum {COLUMN,PILASTER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccommunicationsappliancetypeenum.htm
 	/// </summary>
-	public enum IfcCommunicationsApplianceTypeEnum 
-	{
-		ANTENNA,COMPUTER,FAX,GATEWAY,MODEM,NETWORKAPPLIANCE,NETWORKBRIDGE,NETWORKHUB,PRINTER,REPEATER,ROUTER,SCANNER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCommunicationsApplianceTypeEnum {ANTENNA,COMPUTER,FAX,GATEWAY,MODEM,NETWORKAPPLIANCE,NETWORKBRIDGE,NETWORKHUB,PRINTER,REPEATER,ROUTER,SCANNER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexpropertytemplatetypeenum.htm
 	/// </summary>
-	public enum IfcComplexPropertyTemplateTypeEnum 
-	{
-		P_COMPLEX,Q_COMPLEX
-	}
+	public enum IfcComplexPropertyTemplateTypeEnum {P_COMPLEX,Q_COMPLEX}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompressortypeenum.htm
 	/// </summary>
-	public enum IfcCompressorTypeEnum 
-	{
-		DYNAMIC,RECIPROCATING,ROTARY,SCROLL,TROCHOIDAL,SINGLESTAGE,BOOSTER,OPENTYPE,HERMETIC,SEMIHERMETIC,WELDEDSHELLHERMETIC,ROLLINGPISTON,ROTARYVANE,SINGLESCREW,TWINSCREW,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCompressorTypeEnum {DYNAMIC,RECIPROCATING,ROTARY,SCROLL,TROCHOIDAL,SINGLESTAGE,BOOSTER,OPENTYPE,HERMETIC,SEMIHERMETIC,WELDEDSHELLHERMETIC,ROLLINGPISTON,ROTARYVANE,SINGLESCREW,TWINSCREW,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccondensertypeenum.htm
 	/// </summary>
-	public enum IfcCondenserTypeEnum 
-	{
-		AIRCOOLED,EVAPORATIVECOOLED,WATERCOOLED,WATERCOOLEDBRAZEDPLATE,WATERCOOLEDSHELLCOIL,WATERCOOLEDSHELLTUBE,WATERCOOLEDTUBEINTUBE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCondenserTypeEnum {AIRCOOLED,EVAPORATIVECOOLED,WATERCOOLED,WATERCOOLEDBRAZEDPLATE,WATERCOOLEDSHELLCOIL,WATERCOOLEDSHELLTUBE,WATERCOOLEDTUBEINTUBE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectiontypeenum.htm
 	/// </summary>
-	public enum IfcConnectionTypeEnum 
-	{
-		ATPATH,ATSTART,ATEND,NOTDEFINED
-	}
+	public enum IfcConnectionTypeEnum {ATPATH,ATSTART,ATEND,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstraintenum.htm
 	/// </summary>
-	public enum IfcConstraintEnum 
-	{
-		HARD,SOFT,ADVISORY,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcConstraintEnum {HARD,SOFT,ADVISORY,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionequipmentresourcetypeenum.htm
 	/// </summary>
-	public enum IfcConstructionEquipmentResourceTypeEnum 
-	{
-		DEMOLISHING,EARTHMOVING,ERECTING,HEATING,LIGHTING,PAVING,PUMPING,TRANSPORTING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcConstructionEquipmentResourceTypeEnum {DEMOLISHING,EARTHMOVING,ERECTING,HEATING,LIGHTING,PAVING,PUMPING,TRANSPORTING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionmaterialresourcetypeenum.htm
 	/// </summary>
-	public enum IfcConstructionMaterialResourceTypeEnum 
-	{
-		AGGREGATES,CONCRETE,DRYWALL,FUEL,GYPSUM,MASONRY,METAL,PLASTIC,WOOD,NOTDEFINED,USERDEFINED
-	}
+	public enum IfcConstructionMaterialResourceTypeEnum {AGGREGATES,CONCRETE,DRYWALL,FUEL,GYPSUM,MASONRY,METAL,PLASTIC,WOOD,NOTDEFINED,USERDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionproductresourcetypeenum.htm
 	/// </summary>
-	public enum IfcConstructionProductResourceTypeEnum 
-	{
-		ASSEMBLY,FORMWORK,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcConstructionProductResourceTypeEnum {ASSEMBLY,FORMWORK,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrollertypeenum.htm
 	/// </summary>
-	public enum IfcControllerTypeEnum 
-	{
-		FLOATING,PROGRAMMABLE,PROPORTIONAL,MULTIPOSITION,TWOPOSITION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcControllerTypeEnum {FLOATING,PROGRAMMABLE,PROPORTIONAL,MULTIPOSITION,TWOPOSITION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccooledbeamtypeenum.htm
 	/// </summary>
-	public enum IfcCooledBeamTypeEnum 
-	{
-		ACTIVE,PASSIVE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCooledBeamTypeEnum {ACTIVE,PASSIVE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoolingtowertypeenum.htm
 	/// </summary>
-	public enum IfcCoolingTowerTypeEnum 
-	{
-		NATURALDRAFT,MECHANICALINDUCEDDRAFT,MECHANICALFORCEDDRAFT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCoolingTowerTypeEnum {NATURALDRAFT,MECHANICALINDUCEDDRAFT,MECHANICALFORCEDDRAFT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostitemtypeenum.htm
 	/// </summary>
-	public enum IfcCostItemTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCostItemTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostscheduletypeenum.htm
 	/// </summary>
-	public enum IfcCostScheduleTypeEnum 
-	{
-		BUDGET,COSTPLAN,ESTIMATE,TENDER,PRICEDBILLOFQUANTITIES,UNPRICEDBILLOFQUANTITIES,SCHEDULEOFRATES,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCostScheduleTypeEnum {BUDGET,COSTPLAN,ESTIMATE,TENDER,PRICEDBILLOFQUANTITIES,UNPRICEDBILLOFQUANTITIES,SCHEDULEOFRATES,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoveringtypeenum.htm
 	/// </summary>
-	public enum IfcCoveringTypeEnum 
-	{
-		CEILING,FLOORING,CLADDING,ROOFING,MOLDING,SKIRTINGBOARD,INSULATION,MEMBRANE,SLEEVING,WRAPPING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCoveringTypeEnum {CEILING,FLOORING,CLADDING,ROOFING,MOLDING,SKIRTINGBOARD,INSULATION,MEMBRANE,SLEEVING,WRAPPING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresourcetypeenum.htm
 	/// </summary>
-	public enum IfcCrewResourceTypeEnum 
-	{
-		OFFICE,SITE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCrewResourceTypeEnum {OFFICE,SITE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurtainwalltypeenum.htm
 	/// </summary>
-	public enum IfcCurtainWallTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcCurtainWallTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveinterpolationenum.htm
 	/// </summary>
-	public enum IfcCurveInterpolationEnum 
-	{
-		LINEAR,LOG_LINEAR,LOG_LOG,NOTDEFINED
-	}
+	public enum IfcCurveInterpolationEnum {LINEAR,LOG_LINEAR,LOG_LOG,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdampertypeenum.htm
 	/// </summary>
-	public enum IfcDamperTypeEnum 
-	{
-		BACKDRAFTDAMPER,BALANCINGDAMPER,BLASTDAMPER,CONTROLDAMPER,FIREDAMPER,FIRESMOKEDAMPER,FUMEHOODEXHAUST,GRAVITYDAMPER,GRAVITYRELIEFDAMPER,RELIEFDAMPER,SMOKEDAMPER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDamperTypeEnum {BACKDRAFTDAMPER,BALANCINGDAMPER,BLASTDAMPER,CONTROLDAMPER,FIREDAMPER,FIRESMOKEDAMPER,FUMEHOODEXHAUST,GRAVITYDAMPER,GRAVITYRELIEFDAMPER,RELIEFDAMPER,SMOKEDAMPER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdataoriginenum.htm
 	/// </summary>
-	public enum IfcDataOriginEnum 
-	{
-		MEASURED,PREDICTED,SIMULATED,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDataOriginEnum {MEASURED,PREDICTED,SIMULATED,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunitenum.htm
 	/// </summary>
-	public enum IfcDerivedUnitEnum 
-	{
-		ANGULARVELOCITYUNIT,AREADENSITYUNIT,COMPOUNDPLANEANGLEUNIT,DYNAMICVISCOSITYUNIT,HEATFLUXDENSITYUNIT,INTEGERCOUNTRATEUNIT,ISOTHERMALMOISTURECAPACITYUNIT,KINEMATICVISCOSITYUNIT,LINEARVELOCITYUNIT,MASSDENSITYUNIT,MASSFLOWRATEUNIT,MOISTUREDIFFUSIVITYUNIT,MOLECULARWEIGHTUNIT,SPECIFICHEATCAPACITYUNIT,THERMALADMITTANCEUNIT,THERMALCONDUCTANCEUNIT,THERMALRESISTANCEUNIT,THERMALTRANSMITTANCEUNIT,VAPORPERMEABILITYUNIT,VOLUMETRICFLOWRATEUNIT,ROTATIONALFREQUENCYUNIT,TORQUEUNIT,MOMENTOFINERTIAUNIT,LINEARMOMENTUNIT,LINEARFORCEUNIT,PLANARFORCEUNIT,MODULUSOFELASTICITYUNIT,SHEARMODULUSUNIT,LINEARSTIFFNESSUNIT,ROTATIONALSTIFFNESSUNIT,MODULUSOFSUBGRADEREACTIONUNIT,ACCELERATIONUNIT,CURVATUREUNIT,HEATINGVALUEUNIT,IONCONCENTRATIONUNIT,LUMINOUSINTENSITYDISTRIBUTIONUNIT,MASSPERLENGTHUNIT,MODULUSOFLINEARSUBGRADEREACTIONUNIT,MODULUSOFROTATIONALSUBGRADEREACTIONUNIT,PHUNIT,ROTATIONALMASSUNIT,SECTIONAREAINTEGRALUNIT,SECTIONMODULUSUNIT,SOUNDPOWERLEVELUNIT,SOUNDPOWERUNIT,SOUNDPRESSURELEVELUNIT,SOUNDPRESSUREUNIT,TEMPERATUREGRADIENTUNIT,TEMPERATURERATEOFCHANGEUNIT,THERMALEXPANSIONCOEFFICIENTUNIT,WARPINGCONSTANTUNIT,WARPINGMOMENTUNIT,USERDEFINED
-	}
+	public enum IfcDerivedUnitEnum {ANGULARVELOCITYUNIT,AREADENSITYUNIT,COMPOUNDPLANEANGLEUNIT,DYNAMICVISCOSITYUNIT,HEATFLUXDENSITYUNIT,INTEGERCOUNTRATEUNIT,ISOTHERMALMOISTURECAPACITYUNIT,KINEMATICVISCOSITYUNIT,LINEARVELOCITYUNIT,MASSDENSITYUNIT,MASSFLOWRATEUNIT,MOISTUREDIFFUSIVITYUNIT,MOLECULARWEIGHTUNIT,SPECIFICHEATCAPACITYUNIT,THERMALADMITTANCEUNIT,THERMALCONDUCTANCEUNIT,THERMALRESISTANCEUNIT,THERMALTRANSMITTANCEUNIT,VAPORPERMEABILITYUNIT,VOLUMETRICFLOWRATEUNIT,ROTATIONALFREQUENCYUNIT,TORQUEUNIT,MOMENTOFINERTIAUNIT,LINEARMOMENTUNIT,LINEARFORCEUNIT,PLANARFORCEUNIT,MODULUSOFELASTICITYUNIT,SHEARMODULUSUNIT,LINEARSTIFFNESSUNIT,ROTATIONALSTIFFNESSUNIT,MODULUSOFSUBGRADEREACTIONUNIT,ACCELERATIONUNIT,CURVATUREUNIT,HEATINGVALUEUNIT,IONCONCENTRATIONUNIT,LUMINOUSINTENSITYDISTRIBUTIONUNIT,MASSPERLENGTHUNIT,MODULUSOFLINEARSUBGRADEREACTIONUNIT,MODULUSOFROTATIONALSUBGRADEREACTIONUNIT,PHUNIT,ROTATIONALMASSUNIT,SECTIONAREAINTEGRALUNIT,SECTIONMODULUSUNIT,SOUNDPOWERLEVELUNIT,SOUNDPOWERUNIT,SOUNDPRESSURELEVELUNIT,SOUNDPRESSUREUNIT,TEMPERATUREGRADIENTUNIT,TEMPERATURERATEOFCHANGEUNIT,THERMALEXPANSIONCOEFFICIENTUNIT,WARPINGCONSTANTUNIT,WARPINGMOMENTUNIT,USERDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdirectionsenseenum.htm
 	/// </summary>
-	public enum IfcDirectionSenseEnum 
-	{
-		POSITIVE,NEGATIVE
-	}
+	public enum IfcDirectionSenseEnum {POSITIVE,NEGATIVE}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdiscreteaccessorytypeenum.htm
 	/// </summary>
-	public enum IfcDiscreteAccessoryTypeEnum 
-	{
-		ANCHORPLATE,BRACKET,SHOE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDiscreteAccessoryTypeEnum {ANCHORPLATE,BRACKET,SHOE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionchamberelementtypeenum.htm
 	/// </summary>
-	public enum IfcDistributionChamberElementTypeEnum 
-	{
-		FORMEDDUCT,INSPECTIONCHAMBER,INSPECTIONPIT,MANHOLE,METERCHAMBER,SUMP,TRENCH,VALVECHAMBER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDistributionChamberElementTypeEnum {FORMEDDUCT,INSPECTIONCHAMBER,INSPECTIONPIT,MANHOLE,METERCHAMBER,SUMP,TRENCH,VALVECHAMBER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionporttypeenum.htm
 	/// </summary>
-	public enum IfcDistributionPortTypeEnum 
-	{
-		CABLE,CABLECARRIER,DUCT,PIPE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDistributionPortTypeEnum {CABLE,CABLECARRIER,DUCT,PIPE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionsystemenum.htm
 	/// </summary>
-	public enum IfcDistributionSystemEnum 
-	{
-		AIRCONDITIONING,AUDIOVISUAL,CHEMICAL,CHILLEDWATER,COMMUNICATION,COMPRESSEDAIR,CONDENSERWATER,CONTROL,CONVEYING,DATA,DISPOSAL,DOMESTICCOLDWATER,DOMESTICHOTWATER,DRAINAGE,EARTHING,ELECTRICAL,ELECTROACOUSTIC,EXHAUST,FIREPROTECTION,FUEL,GAS,HAZARDOUS,HEATING,LIGHTING,LIGHTNINGPROTECTION,MUNICIPALSOLIDWASTE,OIL,OPERATIONAL,POWERGENERATION,RAINWATER,REFRIGERATION,SECURITY,SEWAGE,SIGNAL,STORMWATER,TELEPHONE,TV,VACUUM,VENT,VENTILATION,WASTEWATER,WATERSUPPLY,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDistributionSystemEnum {AIRCONDITIONING,AUDIOVISUAL,CHEMICAL,CHILLEDWATER,COMMUNICATION,COMPRESSEDAIR,CONDENSERWATER,CONTROL,CONVEYING,DATA,DISPOSAL,DOMESTICCOLDWATER,DOMESTICHOTWATER,DRAINAGE,EARTHING,ELECTRICAL,ELECTROACOUSTIC,EXHAUST,FIREPROTECTION,FUEL,GAS,HAZARDOUS,HEATING,LIGHTING,LIGHTNINGPROTECTION,MUNICIPALSOLIDWASTE,OIL,OPERATIONAL,POWERGENERATION,RAINWATER,REFRIGERATION,SECURITY,SEWAGE,SIGNAL,STORMWATER,TELEPHONE,TV,VACUUM,VENT,VENTILATION,WASTEWATER,WATERSUPPLY,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentconfidentialityenum.htm
 	/// </summary>
-	public enum IfcDocumentConfidentialityEnum 
-	{
-		PUBLIC,RESTRICTED,CONFIDENTIAL,PERSONAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDocumentConfidentialityEnum {PUBLIC,RESTRICTED,CONFIDENTIAL,PERSONAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentstatusenum.htm
 	/// </summary>
-	public enum IfcDocumentStatusEnum 
-	{
-		DRAFT,FINALDRAFT,FINAL,REVISION,NOTDEFINED
-	}
+	public enum IfcDocumentStatusEnum {DRAFT,FINALDRAFT,FINAL,REVISION,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpaneloperationenum.htm
 	/// </summary>
-	public enum IfcDoorPanelOperationEnum 
-	{
-		SWINGING,DOUBLE_ACTING,SLIDING,FOLDING,REVOLVING,ROLLINGUP,FIXEDPANEL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDoorPanelOperationEnum {SWINGING,DOUBLE_ACTING,SLIDING,FOLDING,REVOLVING,ROLLINGUP,FIXEDPANEL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelpositionenum.htm
 	/// </summary>
-	public enum IfcDoorPanelPositionEnum 
-	{
-		LEFT,MIDDLE,RIGHT,NOTDEFINED
-	}
+	public enum IfcDoorPanelPositionEnum {LEFT,MIDDLE,RIGHT,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleconstructionenum.htm
 	/// </summary>
-	public enum IfcDoorStyleConstructionEnum 
-	{
-		ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,ALUMINIUM_PLASTIC,PLASTIC,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDoorStyleConstructionEnum {ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,ALUMINIUM_PLASTIC,PLASTIC,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleoperationenum.htm
 	/// </summary>
-	public enum IfcDoorStyleOperationEnum 
-	{
-		SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDoorStyleOperationEnum {SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeenum.htm
 	/// </summary>
-	public enum IfcDoorTypeEnum 
-	{
-		DOOR,GATE,TRAPDOOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDoorTypeEnum {DOOR,GATE,TRAPDOOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeoperationenum.htm
 	/// </summary>
-	public enum IfcDoorTypeOperationEnum 
-	{
-		SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,SWING_FIXED_LEFT,SWING_FIXED_RIGHT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDoorTypeOperationEnum {SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,SWING_FIXED_LEFT,SWING_FIXED_RIGHT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductfittingtypeenum.htm
 	/// </summary>
-	public enum IfcDuctFittingTypeEnum 
-	{
-		BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDuctFittingTypeEnum {BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsegmenttypeenum.htm
 	/// </summary>
-	public enum IfcDuctSegmentTypeEnum 
-	{
-		RIGIDSEGMENT,FLEXIBLESEGMENT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDuctSegmentTypeEnum {RIGIDSEGMENT,FLEXIBLESEGMENT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsilencertypeenum.htm
 	/// </summary>
-	public enum IfcDuctSilencerTypeEnum 
-	{
-		FLATOVAL,RECTANGULAR,ROUND,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcDuctSilencerTypeEnum {FLATOVAL,RECTANGULAR,ROUND,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricappliancetypeenum.htm
 	/// </summary>
-	public enum IfcElectricApplianceTypeEnum 
-	{
-		DISHWASHER,ELECTRICCOOKER,FREESTANDINGELECTRICHEATER,FREESTANDINGFAN,FREESTANDINGWATERHEATER,FREESTANDINGWATERCOOLER,FREEZER,FRIDGE_FREEZER,HANDDRYER,KITCHENMACHINE,MICROWAVE,PHOTOCOPIER,REFRIGERATOR,TUMBLEDRYER,VENDINGMACHINE,WASHINGMACHINE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElectricApplianceTypeEnum {DISHWASHER,ELECTRICCOOKER,FREESTANDINGELECTRICHEATER,FREESTANDINGFAN,FREESTANDINGWATERHEATER,FREESTANDINGWATERCOOLER,FREEZER,FRIDGE_FREEZER,HANDDRYER,KITCHENMACHINE,MICROWAVE,PHOTOCOPIER,REFRIGERATOR,TUMBLEDRYER,VENDINGMACHINE,WASHINGMACHINE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricdistributionboardtypeenum.htm
 	/// </summary>
-	public enum IfcElectricDistributionBoardTypeEnum 
-	{
-		CONSUMERUNIT,DISTRIBUTIONBOARD,MOTORCONTROLCENTRE,SWITCHBOARD,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElectricDistributionBoardTypeEnum {CONSUMERUNIT,DISTRIBUTIONBOARD,MOTORCONTROLCENTRE,SWITCHBOARD,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricflowstoragedevicetypeenum.htm
 	/// </summary>
-	public enum IfcElectricFlowStorageDeviceTypeEnum 
-	{
-		BATTERY,CAPACITORBANK,HARMONICFILTER,INDUCTORBANK,UPS,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElectricFlowStorageDeviceTypeEnum {BATTERY,CAPACITORBANK,HARMONICFILTER,INDUCTORBANK,UPS,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricgeneratortypeenum.htm
 	/// </summary>
-	public enum IfcElectricGeneratorTypeEnum 
-	{
-		CHP,ENGINEGENERATOR,STANDALONE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElectricGeneratorTypeEnum {CHP,ENGINEGENERATOR,STANDALONE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricmotortypeenum.htm
 	/// </summary>
-	public enum IfcElectricMotorTypeEnum 
-	{
-		DC,INDUCTION,POLYPHASE,RELUCTANCESYNCHRONOUS,SYNCHRONOUS,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElectricMotorTypeEnum {DC,INDUCTION,POLYPHASE,RELUCTANCESYNCHRONOUS,SYNCHRONOUS,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectrictimecontroltypeenum.htm
 	/// </summary>
-	public enum IfcElectricTimeControlTypeEnum 
-	{
-		TIMECLOCK,TIMEDELAY,RELAY,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElectricTimeControlTypeEnum {TIMECLOCK,TIMEDELAY,RELAY,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassemblytypeenum.htm
 	/// </summary>
-	public enum IfcElementAssemblyTypeEnum 
-	{
-		ACCESSORY_ASSEMBLY,ARCH,BEAM_GRID,BRACED_FRAME,GIRDER,REINFORCEMENT_UNIT,RIGID_FRAME,SLAB_FIELD,TRUSS,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcElementAssemblyTypeEnum {ACCESSORY_ASSEMBLY,ARCH,BEAM_GRID,BRACED_FRAME,GIRDER,REINFORCEMENT_UNIT,RIGID_FRAME,SLAB_FIELD,TRUSS,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcompositionenum.htm
 	/// </summary>
-	public enum IfcElementCompositionEnum 
-	{
-		COMPLEX,ELEMENT,PARTIAL
-	}
+	public enum IfcElementCompositionEnum {COMPLEX,ELEMENT,PARTIAL}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenginetypeenum.htm
 	/// </summary>
-	public enum IfcEngineTypeEnum 
-	{
-		EXTERNALCOMBUSTION,INTERNALCOMBUSTION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcEngineTypeEnum {EXTERNALCOMBUSTION,INTERNALCOMBUSTION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporativecoolertypeenum.htm
 	/// </summary>
-	public enum IfcEvaporativeCoolerTypeEnum 
-	{
-		DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER,DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER,DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER,DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER,DIRECTEVAPORATIVEAIRWASHER,INDIRECTEVAPORATIVEPACKAGEAIRCOOLER,INDIRECTEVAPORATIVEWETCOIL,INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER,INDIRECTDIRECTCOMBINATION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcEvaporativeCoolerTypeEnum {DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER,DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER,DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER,DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER,DIRECTEVAPORATIVEAIRWASHER,INDIRECTEVAPORATIVEPACKAGEAIRCOOLER,INDIRECTEVAPORATIVEWETCOIL,INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER,INDIRECTDIRECTCOMBINATION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporatortypeenum.htm
 	/// </summary>
-	public enum IfcEvaporatorTypeEnum 
-	{
-		DIRECTEXPANSION,DIRECTEXPANSIONSHELLANDTUBE,DIRECTEXPANSIONTUBEINTUBE,DIRECTEXPANSIONBRAZEDPLATE,FLOODEDSHELLANDTUBE,SHELLANDCOIL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcEvaporatorTypeEnum {DIRECTEXPANSION,DIRECTEXPANSIONSHELLANDTUBE,DIRECTEXPANSIONTUBEINTUBE,DIRECTEXPANSIONBRAZEDPLATE,FLOODEDSHELLANDTUBE,SHELLANDCOIL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtriggertypeenum.htm
 	/// </summary>
-	public enum IfcEventTriggerTypeEnum 
-	{
-		EVENTRULE,EVENTMESSAGE,EVENTTIME,EVENTCOMPLEX,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcEventTriggerTypeEnum {EVENTRULE,EVENTMESSAGE,EVENTTIME,EVENTCOMPLEX,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtypeenum.htm
 	/// </summary>
-	public enum IfcEventTypeEnum 
-	{
-		STARTEVENT,ENDEVENT,INTERMEDIATEEVENT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcEventTypeEnum {STARTEVENT,ENDEVENT,INTERMEDIATEEVENT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelementtypeenum.htm
 	/// </summary>
-	public enum IfcExternalSpatialElementTypeEnum 
-	{
-		EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFIEND
-	}
+	public enum IfcExternalSpatialElementTypeEnum {EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFIEND}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfantypeenum.htm
 	/// </summary>
-	public enum IfcFanTypeEnum 
-	{
-		CENTRIFUGALFORWARDCURVED,CENTRIFUGALRADIAL,CENTRIFUGALBACKWARDINCLINEDCURVED,CENTRIFUGALAIRFOIL,TUBEAXIAL,VANEAXIAL,PROPELLORAXIAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFanTypeEnum {CENTRIFUGALFORWARDCURVED,CENTRIFUGALRADIAL,CENTRIFUGALBACKWARDINCLINEDCURVED,CENTRIFUGALAIRFOIL,TUBEAXIAL,VANEAXIAL,PROPELLORAXIAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastenertypeenum.htm
 	/// </summary>
-	public enum IfcFastenerTypeEnum 
-	{
-		GLUE,MORTAR,WELD,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFastenerTypeEnum {GLUE,MORTAR,WELD,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiltertypeenum.htm
 	/// </summary>
-	public enum IfcFilterTypeEnum 
-	{
-		AIRPARTICLEFILTER,COMPRESSEDAIRFILTER,ODORFILTER,OILFILTER,STRAINER,WATERFILTER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFilterTypeEnum {AIRPARTICLEFILTER,COMPRESSEDAIRFILTER,ODORFILTER,OILFILTER,STRAINER,WATERFILTER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiresuppressionterminaltypeenum.htm
 	/// </summary>
-	public enum IfcFireSuppressionTerminalTypeEnum 
-	{
-		BREECHINGINLET,FIREHYDRANT,HOSEREEL,SPRINKLER,SPRINKLERDEFLECTOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFireSuppressionTerminalTypeEnum {BREECHINGINLET,FIREHYDRANT,HOSEREEL,SPRINKLER,SPRINKLERDEFLECTOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowdirectionenum.htm
 	/// </summary>
-	public enum IfcFlowDirectionEnum 
-	{
-		SOURCE,SINK,SOURCEANDSINK,NOTDEFINED
-	}
+	public enum IfcFlowDirectionEnum {SOURCE,SINK,SOURCEANDSINK,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrumenttypeenum.htm
 	/// </summary>
-	public enum IfcFlowInstrumentTypeEnum 
-	{
-		PRESSUREGAUGE,THERMOMETER,AMMETER,FREQUENCYMETER,POWERFACTORMETER,PHASEANGLEMETER,VOLTMETER_PEAK,VOLTMETER_RMS,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFlowInstrumentTypeEnum {PRESSUREGAUGE,THERMOMETER,AMMETER,FREQUENCYMETER,POWERFACTORMETER,PHASEANGLEMETER,VOLTMETER_PEAK,VOLTMETER_RMS,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmetertypeenum.htm
 	/// </summary>
-	public enum IfcFlowMeterTypeEnum 
-	{
-		ENERGYMETER,GASMETER,OILMETER,WATERMETER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFlowMeterTypeEnum {ENERGYMETER,GASMETER,OILMETER,WATERMETER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfootingtypeenum.htm
 	/// </summary>
-	public enum IfcFootingTypeEnum 
-	{
-		CAISSON_FOUNDATION,FOOTING_BEAM,PAD_FOOTING,PILE_CAP,STRIP_FOOTING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFootingTypeEnum {CAISSON_FOUNDATION,FOOTING_BEAM,PAD_FOOTING,PILE_CAP,STRIP_FOOTING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretypeenum.htm
 	/// </summary>
-	public enum IfcFurnitureTypeEnum 
-	{
-		CHAIR,TABLE,DESK,BED,FILECABINET,SHELF,SOFA,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcFurnitureTypeEnum {CHAIR,TABLE,DESK,BED,FILECABINET,SHELF,SOFA,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeographicelementtypeenum.htm
 	/// </summary>
-	public enum IfcGeographicElementTypeEnum 
-	{
-		TERRAIN,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcGeographicElementTypeEnum {TERRAIN,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricprojectionenum.htm
 	/// </summary>
-	public enum IfcGeometricProjectionEnum 
-	{
-		GRAPH_VIEW,SKETCH_VIEW,MODEL_VIEW,PLAN_VIEW,REFLECTED_PLAN_VIEW,SECTION_VIEW,ELEVATION_VIEW,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcGeometricProjectionEnum {GRAPH_VIEW,SKETCH_VIEW,MODEL_VIEW,PLAN_VIEW,REFLECTED_PLAN_VIEW,SECTION_VIEW,ELEVATION_VIEW,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcglobalorlocalenum.htm
 	/// </summary>
-	public enum IfcGlobalOrLocalEnum 
-	{
-		GLOBAL_COORDS,LOCAL_COORDS
-	}
+	public enum IfcGlobalOrLocalEnum {GLOBAL_COORDS,LOCAL_COORDS}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridtypeenum.htm
 	/// </summary>
-	public enum IfcGridTypeEnum 
-	{
-		RECTANGULAR,RADIAL,TRIANGULAR,IRREGULAR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcGridTypeEnum {RECTANGULAR,RADIAL,TRIANGULAR,IRREGULAR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatexchangertypeenum.htm
 	/// </summary>
-	public enum IfcHeatExchangerTypeEnum 
-	{
-		PLATE,SHELLANDTUBE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcHeatExchangerTypeEnum {PLATE,SHELLANDTUBE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchumidifiertypeenum.htm
 	/// </summary>
-	public enum IfcHumidifierTypeEnum 
-	{
-		STEAMINJECTION,ADIABATICAIRWASHER,ADIABATICPAN,ADIABATICWETTEDELEMENT,ADIABATICATOMIZING,ADIABATICULTRASONIC,ADIABATICRIGIDMEDIA,ADIABATICCOMPRESSEDAIRNOZZLE,ASSISTEDELECTRIC,ASSISTEDNATURALGAS,ASSISTEDPROPANE,ASSISTEDBUTANE,ASSISTEDSTEAM,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcHumidifierTypeEnum {STEAMINJECTION,ADIABATICAIRWASHER,ADIABATICPAN,ADIABATICWETTEDELEMENT,ADIABATICATOMIZING,ADIABATICULTRASONIC,ADIABATICRIGIDMEDIA,ADIABATICCOMPRESSEDAIRNOZZLE,ASSISTEDELECTRIC,ASSISTEDNATURALGAS,ASSISTEDPROPANE,ASSISTEDBUTANE,ASSISTEDSTEAM,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptortypeenum.htm
 	/// </summary>
-	public enum IfcInterceptorTypeEnum 
-	{
-		CYCLONIC,GREASE,OIL,PETROL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcInterceptorTypeEnum {CYCLONIC,GREASE,OIL,PETROL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinternalorexternalenum.htm
 	/// </summary>
-	public enum IfcInternalOrExternalEnum 
-	{
-		INTERNAL,EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,NOTDEFINED
-	}
+	public enum IfcInternalOrExternalEnum {INTERNAL,EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventorytypeenum.htm
 	/// </summary>
-	public enum IfcInventoryTypeEnum 
-	{
-		ASSETINVENTORY,SPACEINVENTORY,FURNITUREINVENTORY,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcInventoryTypeEnum {ASSETINVENTORY,SPACEINVENTORY,FURNITUREINVENTORY,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcjunctionboxtypeenum.htm
 	/// </summary>
-	public enum IfcJunctionBoxTypeEnum 
-	{
-		DATA,POWER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcJunctionBoxTypeEnum {DATA,POWER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcknottype.htm
 	/// </summary>
-	public enum IfcKnotType 
-	{
-		UNIFORM_KNOTS,QUASI_UNIFORM_KNOTS,PIECEWISE_BEZIER_KNOTS,UNSPECIFIED
-	}
+	public enum IfcKnotType {UNIFORM_KNOTS,QUASI_UNIFORM_KNOTS,PIECEWISE_BEZIER_KNOTS,UNSPECIFIED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetypeenum.htm
 	/// </summary>
-	public enum IfcLaborResourceTypeEnum 
-	{
-		ADMINISTRATION,CARPENTRY,CLEANING,CONCRETE,DRYWALL,ELECTRIC,FINISHING,FLOORING,GENERAL,HVAC,LANDSCAPING,MASONRY,PAINTING,PAVING,PLUMBING,ROOFING,SITEGRADING,STEELWORK,SURVEYING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcLaborResourceTypeEnum {ADMINISTRATION,CARPENTRY,CLEANING,CONCRETE,DRYWALL,ELECTRIC,FINISHING,FLOORING,GENERAL,HVAC,LANDSCAPING,MASONRY,PAINTING,PAVING,PLUMBING,ROOFING,SITEGRADING,STEELWORK,SURVEYING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclamptypeenum.htm
 	/// </summary>
-	public enum IfcLampTypeEnum 
-	{
-		COMPACTFLUORESCENT,FLUORESCENT,HALOGEN,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LED,METALHALIDE,OLED,TUNGSTENFILAMENT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcLampTypeEnum {COMPACTFLUORESCENT,FLUORESCENT,HALOGEN,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LED,METALHALIDE,OLED,TUNGSTENFILAMENT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayersetdirectionenum.htm
 	/// </summary>
-	public enum IfcLayerSetDirectionEnum 
-	{
-		AXIS1,AXIS2,AXIS3
-	}
+	public enum IfcLayerSetDirectionEnum {AXIS1,AXIS2,AXIS3}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributioncurveenum.htm
 	/// </summary>
-	public enum IfcLightDistributionCurveEnum 
-	{
-		TYPE_A,TYPE_B,TYPE_C,NOTDEFINED
-	}
+	public enum IfcLightDistributionCurveEnum {TYPE_A,TYPE_B,TYPE_C,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightemissionsourceenum.htm
 	/// </summary>
-	public enum IfcLightEmissionSourceEnum 
-	{
-		COMPACTFLUORESCENT,FLUORESCENT,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LIGHTEMITTINGDIODE,LOWPRESSURESODIUM,LOWVOLTAGEHALOGEN,MAINVOLTAGEHALOGEN,METALHALIDE,TUNGSTENFILAMENT,NOTDEFINED
-	}
+	public enum IfcLightEmissionSourceEnum {COMPACTFLUORESCENT,FLUORESCENT,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LIGHTEMITTINGDIODE,LOWPRESSURESODIUM,LOWVOLTAGEHALOGEN,MAINVOLTAGEHALOGEN,METALHALIDE,TUNGSTENFILAMENT,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightfixturetypeenum.htm
 	/// </summary>
-	public enum IfcLightFixtureTypeEnum 
-	{
-		POINTSOURCE,DIRECTIONSOURCE,SECURITYLIGHTING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcLightFixtureTypeEnum {POINTSOURCE,DIRECTIONSOURCE,SECURITYLIGHTING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcloadgrouptypeenum.htm
 	/// </summary>
-	public enum IfcLoadGroupTypeEnum 
-	{
-		LOAD_GROUP,LOAD_CASE,LOAD_COMBINATION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcLoadGroupTypeEnum {LOAD_GROUP,LOAD_CASE,LOAD_COMBINATION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclogicaloperatorenum.htm
 	/// </summary>
-	public enum IfcLogicalOperatorEnum 
-	{
-		LOGICALAND,LOGICALOR,LOGICALXOR,LOGICALNOTAND,LOGICALNOTOR
-	}
+	public enum IfcLogicalOperatorEnum {LOGICALAND,LOGICALOR,LOGICALXOR,LOGICALNOTAND,LOGICALNOTOR}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastenertypeenum.htm
 	/// </summary>
-	public enum IfcMechanicalFastenerTypeEnum 
-	{
-		ANCHORBOLT,BOLT,DOWEL,NAIL,NAILPLATE,RIVET,SCREW,SHEARCONNECTOR,STAPLE,STUDSHEARCONNECTOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcMechanicalFastenerTypeEnum {ANCHORBOLT,BOLT,DOWEL,NAIL,NAILPLATE,RIVET,SCREW,SHEARCONNECTOR,STAPLE,STUDSHEARCONNECTOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevicetypeenum.htm
 	/// </summary>
-	public enum IfcMedicalDeviceTypeEnum 
-	{
-		AIRSTATION,FEEDAIRUNIT,OXYGENGENERATOR,OXYGENPLANT,VACUUMSTATION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcMedicalDeviceTypeEnum {AIRSTATION,FEEDAIRUNIT,OXYGENGENERATOR,OXYGENPLANT,VACUUMSTATION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmembertypeenum.htm
 	/// </summary>
-	public enum IfcMemberTypeEnum 
-	{
-		BRACE,CHORD,COLLAR,MEMBER,MULLION,PLATE,POST,PURLIN,RAFTER,STRINGER,STRUT,STUD,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcMemberTypeEnum {BRACE,CHORD,COLLAR,MEMBER,MULLION,PLATE,POST,PURLIN,RAFTER,STRINGER,STRUT,STUD,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmotorconnectiontypeenum.htm
 	/// </summary>
-	public enum IfcMotorConnectionTypeEnum 
-	{
-		BELTDRIVE,COUPLING,DIRECTDRIVE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcMotorConnectionTypeEnum {BELTDRIVE,COUPLING,DIRECTDRIVE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnullstyle.htm
 	/// </summary>
-	public enum IfcNullStyle 
-	{
-		NULL
-	}
+	public enum IfcNullStyle {NULL}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjecttypeenum.htm
 	/// </summary>
-	public enum IfcObjectTypeEnum 
-	{
-		PRODUCT,PROCESS,CONTROL,RESOURCE,ACTOR,GROUP,PROJECT,NOTDEFINED
-	}
+	public enum IfcObjectTypeEnum {PRODUCT,PROCESS,CONTROL,RESOURCE,ACTOR,GROUP,PROJECT,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectiveenum.htm
 	/// </summary>
-	public enum IfcObjectiveEnum 
-	{
-		CODECOMPLIANCE,CODEWAIVER,DESIGNINTENT,EXTERNAL,HEALTHANDSAFETY,MERGECONFLICT,MODELVIEW,PARAMETER,REQUIREMENT,SPECIFICATION,TRIGGERCONDITION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcObjectiveEnum {CODECOMPLIANCE,CODEWAIVER,DESIGNINTENT,EXTERNAL,HEALTHANDSAFETY,MERGECONFLICT,MODELVIEW,PARAMETER,REQUIREMENT,SPECIFICATION,TRIGGERCONDITION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoccupanttypeenum.htm
 	/// </summary>
-	public enum IfcOccupantTypeEnum 
-	{
-		ASSIGNEE,ASSIGNOR,LESSEE,LESSOR,LETTINGAGENT,OWNER,TENANT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcOccupantTypeEnum {ASSIGNEE,ASSIGNOR,LESSEE,LESSOR,LETTINGAGENT,OWNER,TENANT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopeningelementtypeenum.htm
 	/// </summary>
-	public enum IfcOpeningElementTypeEnum 
-	{
-		OPENING,RECESS,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcOpeningElementTypeEnum {OPENING,RECESS,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoutlettypeenum.htm
 	/// </summary>
-	public enum IfcOutletTypeEnum 
-	{
-		AUDIOVISUALOUTLET,COMMUNICATIONSOUTLET,POWEROUTLET,DATAOUTLET,TELEPHONEOUTLET,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcOutletTypeEnum {AUDIOVISUALOUTLET,COMMUNICATIONSOUTLET,POWEROUTLET,DATAOUTLET,TELEPHONEOUTLET,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperformancehistorytypeenum.htm
 	/// </summary>
-	public enum IfcPerformanceHistoryTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPerformanceHistoryTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermeablecoveringoperationenum.htm
 	/// </summary>
-	public enum IfcPermeableCoveringOperationEnum 
-	{
-		GRILL,LOUVER,SCREEN,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPermeableCoveringOperationEnum {GRILL,LOUVER,SCREEN,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermittypeenum.htm
 	/// </summary>
-	public enum IfcPermitTypeEnum 
-	{
-		ACCESS,BUILDING,WORK,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPermitTypeEnum {ACCESS,BUILDING,WORK,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalorvirtualenum.htm
 	/// </summary>
-	public enum IfcPhysicalOrVirtualEnum 
-	{
-		PHYSICAL,VIRTUAL,NOTDEFINED
-	}
+	public enum IfcPhysicalOrVirtualEnum {PHYSICAL,VIRTUAL,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpileconstructionenum.htm
 	/// </summary>
-	public enum IfcPileConstructionEnum 
-	{
-		CAST_IN_PLACE,COMPOSITE,PRECAST_CONCRETE,PREFAB_STEEL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPileConstructionEnum {CAST_IN_PLACE,COMPOSITE,PRECAST_CONCRETE,PREFAB_STEEL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpiletypeenum.htm
 	/// </summary>
-	public enum IfcPileTypeEnum 
-	{
-		BORED,DRIVEN,JETGROUTING,COHESION,FRICTION,SUPPORT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPileTypeEnum {BORED,DRIVEN,JETGROUTING,COHESION,FRICTION,SUPPORT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipefittingtypeenum.htm
 	/// </summary>
-	public enum IfcPipeFittingTypeEnum 
-	{
-		BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPipeFittingTypeEnum {BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipesegmenttypeenum.htm
 	/// </summary>
-	public enum IfcPipeSegmentTypeEnum 
-	{
-		CULVERT,FLEXIBLESEGMENT,RIGIDSEGMENT,GUTTER,SPOOL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPipeSegmentTypeEnum {CULVERT,FLEXIBLESEGMENT,RIGIDSEGMENT,GUTTER,SPOOL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplatetypeenum.htm
 	/// </summary>
-	public enum IfcPlateTypeEnum 
-	{
-		CURTAIN_PANEL,SHEET,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPlateTypeEnum {CURTAIN_PANEL,SHEET,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretypeenum.htm
 	/// </summary>
-	public enum IfcProcedureTypeEnum 
-	{
-		ADVICE_CAUTION,ADVICE_NOTE,ADVICE_WARNING,CALIBRATION,DIAGNOSTIC,SHUTDOWN,STARTUP,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcProcedureTypeEnum {ADVICE_CAUTION,ADVICE_NOTE,ADVICE_WARNING,CALIBRATION,DIAGNOSTIC,SHUTDOWN,STARTUP,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofiletypeenum.htm
 	/// </summary>
-	public enum IfcProfileTypeEnum 
-	{
-		CURVE,AREA
-	}
+	public enum IfcProfileTypeEnum {CURVE,AREA}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectordertypeenum.htm
 	/// </summary>
-	public enum IfcProjectOrderTypeEnum 
-	{
-		CHANGEORDER,MAINTENANCEWORKORDER,MOVEORDER,PURCHASEORDER,WORKORDER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcProjectOrderTypeEnum {CHANGEORDER,MAINTENANCEWORKORDER,MOVEORDER,PURCHASEORDER,WORKORDER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectedortruelengthenum.htm
 	/// </summary>
-	public enum IfcProjectedOrTrueLengthEnum 
-	{
-		PROJECTED_LENGTH,TRUE_LENGTH
-	}
+	public enum IfcProjectedOrTrueLengthEnum {PROJECTED_LENGTH,TRUE_LENGTH}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectionelementtypeenum.htm
 	/// </summary>
-	public enum IfcProjectionElementTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcProjectionElementTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplatetypeenum.htm
 	/// </summary>
-	public enum IfcPropertySetTemplateTypeEnum 
-	{
-		PSET_TYPEDRIVENONLY,PSET_TYPEDRIVENOVERRIDE,PSET_OCCURRENCEDRIVEN,PSET_PERFORMANCEDRIVEN,QTO_TYPEDRIVENONLY,QTO_TYPEDRIVENOVERRIDE,QTO_OCCURRENCEDRIVEN,NOTDEFINED
-	}
+	public enum IfcPropertySetTemplateTypeEnum {PSET_TYPEDRIVENONLY,PSET_TYPEDRIVENOVERRIDE,PSET_OCCURRENCEDRIVEN,PSET_PERFORMANCEDRIVEN,QTO_TYPEDRIVENONLY,QTO_TYPEDRIVENOVERRIDE,QTO_OCCURRENCEDRIVEN,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetrippingunittypeenum.htm
 	/// </summary>
-	public enum IfcProtectiveDeviceTrippingUnitTypeEnum 
-	{
-		ELECTRONIC,ELECTROMAGNETIC,RESIDUALCURRENT,THERMAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcProtectiveDeviceTrippingUnitTypeEnum {ELECTRONIC,ELECTROMAGNETIC,RESIDUALCURRENT,THERMAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetypeenum.htm
 	/// </summary>
-	public enum IfcProtectiveDeviceTypeEnum 
-	{
-		CIRCUITBREAKER,EARTHLEAKAGECIRCUITBREAKER,EARTHINGSWITCH,FUSEDISCONNECTOR,RESIDUALCURRENTCIRCUITBREAKER,RESIDUALCURRENTSWITCH,VARISTOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcProtectiveDeviceTypeEnum {CIRCUITBREAKER,EARTHLEAKAGECIRCUITBREAKER,EARTHINGSWITCH,FUSEDISCONNECTOR,RESIDUALCURRENTCIRCUITBREAKER,RESIDUALCURRENTSWITCH,VARISTOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpumptypeenum.htm
 	/// </summary>
-	public enum IfcPumpTypeEnum 
-	{
-		CIRCULATOR,ENDSUCTION,SPLITCASE,SUBMERSIBLEPUMP,SUMPPUMP,VERTICALINLINE,VERTICALTURBINE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcPumpTypeEnum {CIRCULATOR,ENDSUCTION,SPLITCASE,SUBMERSIBLEPUMP,SUMPPUMP,VERTICALINLINE,VERTICALTURBINE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrailingtypeenum.htm
 	/// </summary>
-	public enum IfcRailingTypeEnum 
-	{
-		HANDRAIL,GUARDRAIL,BALUSTRADE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcRailingTypeEnum {HANDRAIL,GUARDRAIL,BALUSTRADE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrampflighttypeenum.htm
 	/// </summary>
-	public enum IfcRampFlightTypeEnum 
-	{
-		STRAIGHT,SPIRAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcRampFlightTypeEnum {STRAIGHT,SPIRAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramptypeenum.htm
 	/// </summary>
-	public enum IfcRampTypeEnum 
-	{
-		STRAIGHT_RUN_RAMP,TWO_STRAIGHT_RUN_RAMP,QUARTER_TURN_RAMP,TWO_QUARTER_TURN_RAMP,HALF_TURN_RAMP,SPIRAL_RAMP,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcRampTypeEnum {STRAIGHT_RUN_RAMP,TWO_STRAIGHT_RUN_RAMP,QUARTER_TURN_RAMP,TWO_QUARTER_TURN_RAMP,HALF_TURN_RAMP,SPIRAL_RAMP,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencetypeenum.htm
 	/// </summary>
-	public enum IfcRecurrenceTypeEnum 
-	{
-		DAILY,WEEKLY,MONTHLY_BY_DAY_OF_MONTH,MONTHLY_BY_POSITION,BY_DAY_COUNT,BY_WEEKDAY_COUNT,YEARLY_BY_DAY_OF_MONTH,YEARLY_BY_POSITION
-	}
+	public enum IfcRecurrenceTypeEnum {DAILY,WEEKLY,MONTHLY_BY_DAY_OF_MONTH,MONTHLY_BY_POSITION,BY_DAY_COUNT,BY_WEEKDAY_COUNT,YEARLY_BY_DAY_OF_MONTH,YEARLY_BY_POSITION}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreflectancemethodenum.htm
 	/// </summary>
-	public enum IfcReflectanceMethodEnum 
-	{
-		BLINN,FLAT,GLASS,MATT,METAL,MIRROR,PHONG,PLASTIC,STRAUSS,NOTDEFINED
-	}
+	public enum IfcReflectanceMethodEnum {BLINN,FLAT,GLASS,MATT,METAL,MIRROR,PHONG,PLASTIC,STRAUSS,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarroleenum.htm
 	/// </summary>
-	public enum IfcReinforcingBarRoleEnum 
-	{
-		MAIN,SHEAR,LIGATURE,STUD,PUNCHING,EDGE,RING,ANCHORING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcReinforcingBarRoleEnum {MAIN,SHEAR,LIGATURE,STUD,PUNCHING,EDGE,RING,ANCHORING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarsurfaceenum.htm
 	/// </summary>
-	public enum IfcReinforcingBarSurfaceEnum 
-	{
-		PLAIN,TEXTURED
-	}
+	public enum IfcReinforcingBarSurfaceEnum {PLAIN,TEXTURED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartypeenum.htm
 	/// </summary>
-	public enum IfcReinforcingBarTypeEnum 
-	{
-		ANCHORING,EDGE,LIGATURE,MAIN,PUNCHING,RING,SHEAR,STUD,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcReinforcingBarTypeEnum {ANCHORING,EDGE,LIGATURE,MAIN,PUNCHING,RING,SHEAR,STUD,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingmeshtypeenum.htm
 	/// </summary>
-	public enum IfcReinforcingMeshTypeEnum 
-	{
-		USERDEFINED,NOTDEFINED
-	}
+	public enum IfcReinforcingMeshTypeEnum {USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroleenum.htm
 	/// </summary>
-	public enum IfcRoleEnum 
-	{
-		SUPPLIER,MANUFACTURER,CONTRACTOR,SUBCONTRACTOR,ARCHITECT,STRUCTURALENGINEER,COSTENGINEER,CLIENT,BUILDINGOWNER,BUILDINGOPERATOR,MECHANICALENGINEER,ELECTRICALENGINEER,PROJECTMANAGER,FACILITIESMANAGER,CIVILENGINEER,COMMISSIONINGENGINEER,ENGINEER,OWNER,CONSULTANT,CONSTRUCTIONMANAGER,FIELDCONSTRUCTIONMANAGER,RESELLER,USERDEFINED
-	}
+	public enum IfcRoleEnum {SUPPLIER,MANUFACTURER,CONTRACTOR,SUBCONTRACTOR,ARCHITECT,STRUCTURALENGINEER,COSTENGINEER,CLIENT,BUILDINGOWNER,BUILDINGOPERATOR,MECHANICALENGINEER,ELECTRICALENGINEER,PROJECTMANAGER,FACILITIESMANAGER,CIVILENGINEER,COMMISSIONINGENGINEER,ENGINEER,OWNER,CONSULTANT,CONSTRUCTIONMANAGER,FIELDCONSTRUCTIONMANAGER,RESELLER,USERDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrooftypeenum.htm
 	/// </summary>
-	public enum IfcRoofTypeEnum 
-	{
-		FLAT_ROOF,SHED_ROOF,GABLE_ROOF,HIP_ROOF,HIPPED_GABLE_ROOF,GAMBREL_ROOF,MANSARD_ROOF,BARREL_ROOF,RAINBOW_ROOF,BUTTERFLY_ROOF,PAVILION_ROOF,DOME_ROOF,FREEFORM,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcRoofTypeEnum {FLAT_ROOF,SHED_ROOF,GABLE_ROOF,HIP_ROOF,HIPPED_GABLE_ROOF,GAMBREL_ROOF,MANSARD_ROOF,BARREL_ROOF,RAINBOW_ROOF,BUTTERFLY_ROOF,PAVILION_ROOF,DOME_ROOF,FREEFORM,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiprefix.htm
 	/// </summary>
-	public enum IfcSIPrefix 
-	{
-		EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO
-	}
+	public enum IfcSIPrefix {EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiunitname.htm
 	/// </summary>
-	public enum IfcSIUnitName 
-	{
-		AMPERE,BECQUEREL,CANDELA,COULOMB,CUBIC_METRE,DEGREE_CELSIUS,FARAD,GRAM,GRAY,HENRY,HERTZ,JOULE,KELVIN,LUMEN,LUX,METRE,MOLE,NEWTON,OHM,PASCAL,RADIAN,SECOND,SIEMENS,SIEVERT,SQUARE_METRE,STERADIAN,TESLA,VOLT,WATT,WEBER
-	}
+	public enum IfcSIUnitName {AMPERE,BECQUEREL,CANDELA,COULOMB,CUBIC_METRE,DEGREE_CELSIUS,FARAD,GRAM,GRAY,HENRY,HERTZ,JOULE,KELVIN,LUMEN,LUX,METRE,MOLE,NEWTON,OHM,PASCAL,RADIAN,SECOND,SIEMENS,SIEVERT,SQUARE_METRE,STERADIAN,TESLA,VOLT,WATT,WEBER}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsanitaryterminaltypeenum.htm
 	/// </summary>
-	public enum IfcSanitaryTerminalTypeEnum 
-	{
-		BATH,BIDET,CISTERN,SHOWER,SINK,SANITARYFOUNTAIN,TOILETPAN,URINAL,WASHHANDBASIN,WCSEAT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSanitaryTerminalTypeEnum {BATH,BIDET,CISTERN,SHOWER,SINK,SANITARYFOUNTAIN,TOILETPAN,URINAL,WASHHANDBASIN,WCSEAT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectiontypeenum.htm
 	/// </summary>
-	public enum IfcSectionTypeEnum 
-	{
-		UNIFORM,TAPERED
-	}
+	public enum IfcSectionTypeEnum {UNIFORM,TAPERED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensortypeenum.htm
 	/// </summary>
-	public enum IfcSensorTypeEnum 
-	{
-		CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSensorTypeEnum {CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsequenceenum.htm
 	/// </summary>
-	public enum IfcSequenceEnum 
-	{
-		START_START,START_FINISH,FINISH_START,FINISH_FINISH,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSequenceEnum {START_START,START_FINISH,FINISH_START,FINISH_FINISH,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshadingdevicetypeenum.htm
 	/// </summary>
-	public enum IfcShadingDeviceTypeEnum 
-	{
-		JALOUSIE,SHUTTER,AWNING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcShadingDeviceTypeEnum {JALOUSIE,SHUTTER,AWNING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplatetypeenum.htm
 	/// </summary>
-	public enum IfcSimplePropertyTemplateTypeEnum 
-	{
-		P_SINGLEVALUE,P_ENUMERATEDVALUE,P_BOUNDEDVALUE,P_LISTVALUE,P_TABLEVALUE,P_REFERENCEVALUE,Q_LENGTH,Q_AREA,Q_VOLUME,Q_COUNT,Q_WEIGHT,Q_TIME
-	}
+	public enum IfcSimplePropertyTemplateTypeEnum {P_SINGLEVALUE,P_ENUMERATEDVALUE,P_BOUNDEDVALUE,P_LISTVALUE,P_TABLEVALUE,P_REFERENCEVALUE,Q_LENGTH,Q_AREA,Q_VOLUME,Q_COUNT,Q_WEIGHT,Q_TIME}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabtypeenum.htm
 	/// </summary>
-	public enum IfcSlabTypeEnum 
-	{
-		FLOOR,ROOF,LANDING,BASESLAB,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSlabTypeEnum {FLOOR,ROOF,LANDING,BASESLAB,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolardevicetypeenum.htm
 	/// </summary>
-	public enum IfcSolarDeviceTypeEnum 
-	{
-		SOLARCOLLECTOR,SOLARPANEL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSolarDeviceTypeEnum {SOLARCOLLECTOR,SOLARPANEL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceheatertypeenum.htm
 	/// </summary>
-	public enum IfcSpaceHeaterTypeEnum 
-	{
-		CONVECTOR,RADIATOR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSpaceHeaterTypeEnum {CONVECTOR,RADIATOR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspacetypeenum.htm
 	/// </summary>
-	public enum IfcSpaceTypeEnum 
-	{
-		SPACE,PARKING,GFA,INTERNAL,EXTERNAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSpaceTypeEnum {SPACE,PARKING,GFA,INTERNAL,EXTERNAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialzonetypeenum.htm
 	/// </summary>
-	public enum IfcSpatialZoneTypeEnum 
-	{
-		CONSTRUCTION,FIRESAFETY,LIGHTING,OCCUPANCY,SECURITY,THERMAL,TRANSPORT,VENTILATION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSpatialZoneTypeEnum {CONSTRUCTION,FIRESAFETY,LIGHTING,OCCUPANCY,SECURITY,THERMAL,TRANSPORT,VENTILATION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstackterminaltypeenum.htm
 	/// </summary>
-	public enum IfcStackTerminalTypeEnum 
-	{
-		BIRDCAGE,COWL,RAINWATERHOPPER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStackTerminalTypeEnum {BIRDCAGE,COWL,RAINWATERHOPPER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairflighttypeenum.htm
 	/// </summary>
-	public enum IfcStairFlightTypeEnum 
-	{
-		STRAIGHT,WINDER,SPIRAL,CURVED,FREEFORM,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStairFlightTypeEnum {STRAIGHT,WINDER,SPIRAL,CURVED,FREEFORM,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairtypeenum.htm
 	/// </summary>
-	public enum IfcStairTypeEnum 
-	{
-		STRAIGHT_RUN_STAIR,TWO_STRAIGHT_RUN_STAIR,QUARTER_WINDING_STAIR,QUARTER_TURN_STAIR,HALF_WINDING_STAIR,HALF_TURN_STAIR,TWO_QUARTER_WINDING_STAIR,TWO_QUARTER_TURN_STAIR,THREE_QUARTER_WINDING_STAIR,THREE_QUARTER_TURN_STAIR,SPIRAL_STAIR,DOUBLE_RETURN_STAIR,CURVED_RUN_STAIR,TWO_CURVED_RUN_STAIR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStairTypeEnum {STRAIGHT_RUN_STAIR,TWO_STRAIGHT_RUN_STAIR,QUARTER_WINDING_STAIR,QUARTER_TURN_STAIR,HALF_WINDING_STAIR,HALF_TURN_STAIR,TWO_QUARTER_WINDING_STAIR,TWO_QUARTER_TURN_STAIR,THREE_QUARTER_WINDING_STAIR,THREE_QUARTER_TURN_STAIR,SPIRAL_STAIR,DOUBLE_RETURN_STAIR,CURVED_RUN_STAIR,TWO_CURVED_RUN_STAIR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstateenum.htm
 	/// </summary>
-	public enum IfcStateEnum 
-	{
-		READWRITE,READONLY,LOCKED,READWRITELOCKED,READONLYLOCKED
-	}
+	public enum IfcStateEnum {READWRITE,READONLY,LOCKED,READWRITELOCKED,READONLYLOCKED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveactivitytypeenum.htm
 	/// </summary>
-	public enum IfcStructuralCurveActivityTypeEnum 
-	{
-		CONST,LINEAR,POLYGONAL,EQUIDISTANT,SINUS,PARABOLA,DISCRETE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStructuralCurveActivityTypeEnum {CONST,LINEAR,POLYGONAL,EQUIDISTANT,SINUS,PARABOLA,DISCRETE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvemembertypeenum.htm
 	/// </summary>
-	public enum IfcStructuralCurveMemberTypeEnum 
-	{
-		RIGID_JOINED_MEMBER,PIN_JOINED_MEMBER,CABLE,TENSION_MEMBER,COMPRESSION_MEMBER,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStructuralCurveMemberTypeEnum {RIGID_JOINED_MEMBER,PIN_JOINED_MEMBER,CABLE,TENSION_MEMBER,COMPRESSION_MEMBER,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfaceactivitytypeenum.htm
 	/// </summary>
-	public enum IfcStructuralSurfaceActivityTypeEnum 
-	{
-		CONST,BILINEAR,DISCRETE,ISOCONTOUR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStructuralSurfaceActivityTypeEnum {CONST,BILINEAR,DISCRETE,ISOCONTOUR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacemembertypeenum.htm
 	/// </summary>
-	public enum IfcStructuralSurfaceMemberTypeEnum 
-	{
-		BENDING_ELEMENT,MEMBRANE_ELEMENT,SHELL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcStructuralSurfaceMemberTypeEnum {BENDING_ELEMENT,MEMBRANE_ELEMENT,SHELL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubcontractresourcetypeenum.htm
 	/// </summary>
-	public enum IfcSubContractResourceTypeEnum 
-	{
-		PURCHASE,WORK,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSubContractResourceTypeEnum {PURCHASE,WORK,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacefeaturetypeenum.htm
 	/// </summary>
-	public enum IfcSurfaceFeatureTypeEnum 
-	{
-		MARK,TAG,TREATMENT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSurfaceFeatureTypeEnum {MARK,TAG,TREATMENT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceside.htm
 	/// </summary>
-	public enum IfcSurfaceSide 
-	{
-		POSITIVE,NEGATIVE,BOTH
-	}
+	public enum IfcSurfaceSide {POSITIVE,NEGATIVE,BOTH}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcswitchingdevicetypeenum.htm
 	/// </summary>
-	public enum IfcSwitchingDeviceTypeEnum 
-	{
-		CONTACTOR,DIMMERSWITCH,EMERGENCYSTOP,KEYPAD,MOMENTARYSWITCH,SELECTORSWITCH,STARTER,SWITCHDISCONNECTOR,TOGGLESWITCH,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSwitchingDeviceTypeEnum {CONTACTOR,DIMMERSWITCH,EMERGENCYSTOP,KEYPAD,MOMENTARYSWITCH,SELECTORSWITCH,STARTER,SWITCHDISCONNECTOR,TOGGLESWITCH,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystemfurnitureelementtypeenum.htm
 	/// </summary>
-	public enum IfcSystemFurnitureElementTypeEnum 
-	{
-		PANEL,WORKSURFACE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcSystemFurnitureElementTypeEnum {PANEL,WORKSURFACE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctanktypeenum.htm
 	/// </summary>
-	public enum IfcTankTypeEnum 
-	{
-		BASIN,BREAKPRESSURE,EXPANSION,FEEDANDEXPANSION,PRESSUREVESSEL,STORAGE,VESSEL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTankTypeEnum {BASIN,BREAKPRESSURE,EXPANSION,FEEDANDEXPANSION,PRESSUREVESSEL,STORAGE,VESSEL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctaskdurationenum.htm
 	/// </summary>
-	public enum IfcTaskDurationEnum 
-	{
-		ELAPSEDTIME,WORKTIME,NOTDEFINED
-	}
+	public enum IfcTaskDurationEnum {ELAPSEDTIME,WORKTIME,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktypeenum.htm
 	/// </summary>
-	public enum IfcTaskTypeEnum 
-	{
-		ATTENDANCE,CONSTRUCTION,DEMOLITION,DISMANTLE,DISPOSAL,INSTALLATION,LOGISTIC,MAINTENANCE,MOVE,OPERATION,REMOVAL,RENOVATION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTaskTypeEnum {ATTENDANCE,CONSTRUCTION,DEMOLITION,DISMANTLE,DISPOSAL,INSTALLATION,LOGISTIC,MAINTENANCE,MOVE,OPERATION,REMOVAL,RENOVATION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchortypeenum.htm
 	/// </summary>
-	public enum IfcTendonAnchorTypeEnum 
-	{
-		COUPLER,FIXED_END,TENSIONING_END,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTendonAnchorTypeEnum {COUPLER,FIXED_END,TENSIONING_END,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendontypeenum.htm
 	/// </summary>
-	public enum IfcTendonTypeEnum 
-	{
-		BAR,COATED,STRAND,WIRE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTendonTypeEnum {BAR,COATED,STRAND,WIRE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextpath.htm
 	/// </summary>
-	public enum IfcTextPath 
-	{
-		LEFT,RIGHT,UP,DOWN
-	}
+	public enum IfcTextPath {LEFT,RIGHT,UP,DOWN}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseriesdatatypeenum.htm
 	/// </summary>
-	public enum IfcTimeSeriesDataTypeEnum 
-	{
-		CONTINUOUS,DISCRETE,DISCRETEBINARY,PIECEWISEBINARY,PIECEWISECONSTANT,PIECEWISECONTINUOUS,NOTDEFINED
-	}
+	public enum IfcTimeSeriesDataTypeEnum {CONTINUOUS,DISCRETE,DISCRETEBINARY,PIECEWISEBINARY,PIECEWISECONSTANT,PIECEWISECONTINUOUS,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransformertypeenum.htm
 	/// </summary>
-	public enum IfcTransformerTypeEnum 
-	{
-		CURRENT,FREQUENCY,INVERTER,RECTIFIER,VOLTAGE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTransformerTypeEnum {CURRENT,FREQUENCY,INVERTER,RECTIFIER,VOLTAGE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransitioncode.htm
 	/// </summary>
-	public enum IfcTransitionCode 
-	{
-		DISCONTINUOUS,CONTINUOUS,CONTSAMEGRADIENT,CONTSAMEGRADIENTSAMECURVATURE
-	}
+	public enum IfcTransitionCode {DISCONTINUOUS,CONTINUOUS,CONTSAMEGRADIENT,CONTSAMEGRADIENTSAMECURVATURE}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransportelementtypeenum.htm
 	/// </summary>
-	public enum IfcTransportElementTypeEnum 
-	{
-		ELEVATOR,ESCALATOR,MOVINGWALKWAY,CRANEWAY,LIFTINGGEAR,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTransportElementTypeEnum {ELEVATOR,ESCALATOR,MOVINGWALKWAY,CRANEWAY,LIFTINGGEAR,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingpreference.htm
 	/// </summary>
-	public enum IfcTrimmingPreference 
-	{
-		CARTESIAN,PARAMETER,UNSPECIFIED
-	}
+	public enum IfcTrimmingPreference {CARTESIAN,PARAMETER,UNSPECIFIED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctubebundletypeenum.htm
 	/// </summary>
-	public enum IfcTubeBundleTypeEnum 
-	{
-		FINNED,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcTubeBundleTypeEnum {FINNED,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitenum.htm
 	/// </summary>
-	public enum IfcUnitEnum 
-	{
-		ABSORBEDDOSEUNIT,AMOUNTOFSUBSTANCEUNIT,AREAUNIT,DOSEEQUIVALENTUNIT,ELECTRICCAPACITANCEUNIT,ELECTRICCHARGEUNIT,ELECTRICCONDUCTANCEUNIT,ELECTRICCURRENTUNIT,ELECTRICRESISTANCEUNIT,ELECTRICVOLTAGEUNIT,ENERGYUNIT,FORCEUNIT,FREQUENCYUNIT,ILLUMINANCEUNIT,INDUCTANCEUNIT,LENGTHUNIT,LUMINOUSFLUXUNIT,LUMINOUSINTENSITYUNIT,MAGNETICFLUXDENSITYUNIT,MAGNETICFLUXUNIT,MASSUNIT,PLANEANGLEUNIT,POWERUNIT,PRESSUREUNIT,RADIOACTIVITYUNIT,SOLIDANGLEUNIT,THERMODYNAMICTEMPERATUREUNIT,TIMEUNIT,VOLUMEUNIT,USERDEFINED
-	}
+	public enum IfcUnitEnum {ABSORBEDDOSEUNIT,AMOUNTOFSUBSTANCEUNIT,AREAUNIT,DOSEEQUIVALENTUNIT,ELECTRICCAPACITANCEUNIT,ELECTRICCHARGEUNIT,ELECTRICCONDUCTANCEUNIT,ELECTRICCURRENTUNIT,ELECTRICRESISTANCEUNIT,ELECTRICVOLTAGEUNIT,ENERGYUNIT,FORCEUNIT,FREQUENCYUNIT,ILLUMINANCEUNIT,INDUCTANCEUNIT,LENGTHUNIT,LUMINOUSFLUXUNIT,LUMINOUSINTENSITYUNIT,MAGNETICFLUXDENSITYUNIT,MAGNETICFLUXUNIT,MASSUNIT,PLANEANGLEUNIT,POWERUNIT,PRESSUREUNIT,RADIOACTIVITYUNIT,SOLIDANGLEUNIT,THERMODYNAMICTEMPERATUREUNIT,TIMEUNIT,VOLUMEUNIT,USERDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitarycontrolelementtypeenum.htm
 	/// </summary>
-	public enum IfcUnitaryControlElementTypeEnum 
-	{
-		ALARMPANEL,CONTROLPANEL,GASDETECTIONPANEL,INDICATORPANEL,MIMICPANEL,HUMIDISTAT,THERMOSTAT,WEATHERSTATION,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcUnitaryControlElementTypeEnum {ALARMPANEL,CONTROLPANEL,GASDETECTIONPANEL,INDICATORPANEL,MIMICPANEL,HUMIDISTAT,THERMOSTAT,WEATHERSTATION,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitaryequipmenttypeenum.htm
 	/// </summary>
-	public enum IfcUnitaryEquipmentTypeEnum 
-	{
-		AIRHANDLER,AIRCONDITIONINGUNIT,DEHUMIDIFIER,SPLITSYSTEM,ROOFTOPUNIT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcUnitaryEquipmentTypeEnum {AIRHANDLER,AIRCONDITIONINGUNIT,DEHUMIDIFIER,SPLITSYSTEM,ROOFTOPUNIT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalvetypeenum.htm
 	/// </summary>
-	public enum IfcValveTypeEnum 
-	{
-		AIRRELEASE,ANTIVACUUM,CHANGEOVER,CHECK,COMMISSIONING,DIVERTING,DRAWOFFCOCK,DOUBLECHECK,DOUBLEREGULATING,FAUCET,FLUSHING,GASCOCK,GASTAP,ISOLATING,MIXING,PRESSUREREDUCING,PRESSURERELIEF,REGULATING,SAFETYCUTOFF,STEAMTRAP,STOPCOCK,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcValveTypeEnum {AIRRELEASE,ANTIVACUUM,CHANGEOVER,CHECK,COMMISSIONING,DIVERTING,DRAWOFFCOCK,DOUBLECHECK,DOUBLEREGULATING,FAUCET,FLUSHING,GASCOCK,GASTAP,ISOLATING,MIXING,PRESSUREREDUCING,PRESSURERELIEF,REGULATING,SAFETYCUTOFF,STEAMTRAP,STOPCOCK,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvibrationisolatortypeenum.htm
 	/// </summary>
-	public enum IfcVibrationIsolatorTypeEnum 
-	{
-		COMPRESSION,SPRING,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcVibrationIsolatorTypeEnum {COMPRESSION,SPRING,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvoidingfeaturetypeenum.htm
 	/// </summary>
-	public enum IfcVoidingFeatureTypeEnum 
-	{
-		CUTOUT,NOTCH,HOLE,MITER,CHAMFER,EDGE,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcVoidingFeatureTypeEnum {CUTOUT,NOTCH,HOLE,MITER,CHAMFER,EDGE,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwalltypeenum.htm
 	/// </summary>
-	public enum IfcWallTypeEnum 
-	{
-		MOVABLE,PARAPET,PARTITIONING,PLUMBINGWALL,SHEAR,SOLIDWALL,STANDARD,POLYGONAL,ELEMENTEDWALL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWallTypeEnum {MOVABLE,PARAPET,PARTITIONING,PLUMBINGWALL,SHEAR,SOLIDWALL,STANDARD,POLYGONAL,ELEMENTEDWALL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwasteterminaltypeenum.htm
 	/// </summary>
-	public enum IfcWasteTerminalTypeEnum 
-	{
-		FLOORTRAP,FLOORWASTE,GULLYSUMP,GULLYTRAP,ROOFDRAIN,WASTEDISPOSALUNIT,WASTETRAP,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWasteTerminalTypeEnum {FLOORTRAP,FLOORWASTE,GULLYSUMP,GULLYTRAP,ROOFDRAIN,WASTEDISPOSALUNIT,WASTETRAP,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpaneloperationenum.htm
 	/// </summary>
-	public enum IfcWindowPanelOperationEnum 
-	{
-		SIDEHUNGRIGHTHAND,SIDEHUNGLEFTHAND,TILTANDTURNRIGHTHAND,TILTANDTURNLEFTHAND,TOPHUNG,BOTTOMHUNG,PIVOTHORIZONTAL,PIVOTVERTICAL,SLIDINGHORIZONTAL,SLIDINGVERTICAL,REMOVABLECASEMENT,FIXEDCASEMENT,OTHEROPERATION,NOTDEFINED
-	}
+	public enum IfcWindowPanelOperationEnum {SIDEHUNGRIGHTHAND,SIDEHUNGLEFTHAND,TILTANDTURNRIGHTHAND,TILTANDTURNLEFTHAND,TOPHUNG,BOTTOMHUNG,PIVOTHORIZONTAL,PIVOTVERTICAL,SLIDINGHORIZONTAL,SLIDINGVERTICAL,REMOVABLECASEMENT,FIXEDCASEMENT,OTHEROPERATION,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpanelpositionenum.htm
 	/// </summary>
-	public enum IfcWindowPanelPositionEnum 
-	{
-		LEFT,MIDDLE,RIGHT,BOTTOM,TOP,NOTDEFINED
-	}
+	public enum IfcWindowPanelPositionEnum {LEFT,MIDDLE,RIGHT,BOTTOM,TOP,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleconstructionenum.htm
 	/// </summary>
-	public enum IfcWindowStyleConstructionEnum 
-	{
-		ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,PLASTIC,OTHER_CONSTRUCTION,NOTDEFINED
-	}
+	public enum IfcWindowStyleConstructionEnum {ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,PLASTIC,OTHER_CONSTRUCTION,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleoperationenum.htm
 	/// </summary>
-	public enum IfcWindowStyleOperationEnum 
-	{
-		SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWindowStyleOperationEnum {SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypeenum.htm
 	/// </summary>
-	public enum IfcWindowTypeEnum 
-	{
-		WINDOW,SKYLIGHT,LIGHTDOME,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWindowTypeEnum {WINDOW,SKYLIGHT,LIGHTDOME,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypepartitioningenum.htm
 	/// </summary>
-	public enum IfcWindowTypePartitioningEnum 
-	{
-		SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWindowTypePartitioningEnum {SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcalendartypeenum.htm
 	/// </summary>
-	public enum IfcWorkCalendarTypeEnum 
-	{
-		FIRSTSHIFT,SECONDSHIFT,THIRDSHIFT,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWorkCalendarTypeEnum {FIRSTSHIFT,SECONDSHIFT,THIRDSHIFT,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkplantypeenum.htm
 	/// </summary>
-	public enum IfcWorkPlanTypeEnum 
-	{
-		ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWorkPlanTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkscheduletypeenum.htm
 	/// </summary>
-	public enum IfcWorkScheduleTypeEnum 
-	{
-		ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED
-	}
+	public enum IfcWorkScheduleTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorselect.htm
 	/// </summary>
-	public class IfcActorSelect<T> : Select<T> where T : IfcOrganization,IfcPerson,IfcPersonAndOrganization {}
+	public class IfcActorSelect : IfcSelect<IfcOrganization,IfcPerson,IfcPersonAndOrganization>
+	{
+		public IfcActorSelect(IfcOrganization value):base(value){}
+		public IfcActorSelect(IfcPerson value):base(value){}
+		public IfcActorSelect(IfcPersonAndOrganization value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcappliedvalueselect.htm
 	/// </summary>
-	public class IfcAppliedValueSelect<T> : Select<T> where T : IfcMeasureWithUnit,IfcReference,IfcValue {}
+	public class IfcAppliedValueSelect : IfcSelect<IfcMeasureWithUnit,IfcReference,IfcValue>
+	{
+		public IfcAppliedValueSelect(IfcMeasureWithUnit value):base(value){}
+		public IfcAppliedValueSelect(IfcReference value):base(value){}
+		public IfcAppliedValueSelect(IfcValue value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement.htm
 	/// </summary>
-	public class IfcAxis2Placement<T> : Select<T> where T : IfcAxis2Placement2D,IfcAxis2Placement3D {}
+	public class IfcAxis2Placement : IfcSelect<IfcAxis2Placement2D,IfcAxis2Placement3D>
+	{
+		public IfcAxis2Placement(IfcAxis2Placement2D value):base(value){}
+		public IfcAxis2Placement(IfcAxis2Placement3D value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbendingparameterselect.htm
 	/// </summary>
-	public class IfcBendingParameterSelect<T> : Select<T> where T : IfcLengthMeasure,IfcPlaneAngleMeasure {}
+	public class IfcBendingParameterSelect : IfcSelect<IfcLengthMeasure,IfcPlaneAngleMeasure>
+	{
+		public IfcBendingParameterSelect(IfcLengthMeasure value):base(value){}
+		public IfcBendingParameterSelect(IfcPlaneAngleMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperand.htm
 	/// </summary>
-	public class IfcBooleanOperand<T> : Select<T> where T : IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel {}
+	public class IfcBooleanOperand : IfcSelect<IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel>
+	{
+		public IfcBooleanOperand(IfcBooleanResult value):base(value){}
+		public IfcBooleanOperand(IfcCsgPrimitive3D value):base(value){}
+		public IfcBooleanOperand(IfcHalfSpaceSolid value):base(value){}
+		public IfcBooleanOperand(IfcSolidModel value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationreferenceselect.htm
 	/// </summary>
-	public class IfcClassificationReferenceSelect<T> : Select<T> where T : IfcClassification,IfcClassificationReference {}
+	public class IfcClassificationReferenceSelect : IfcSelect<IfcClassification,IfcClassificationReference>
+	{
+		public IfcClassificationReferenceSelect(IfcClassification value):base(value){}
+		public IfcClassificationReferenceSelect(IfcClassificationReference value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationselect.htm
 	/// </summary>
-	public class IfcClassificationSelect<T> : Select<T> where T : IfcClassification,IfcClassificationReference {}
+	public class IfcClassificationSelect : IfcSelect<IfcClassification,IfcClassificationReference>
+	{
+		public IfcClassificationSelect(IfcClassification value):base(value){}
+		public IfcClassificationSelect(IfcClassificationReference value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolour.htm
 	/// </summary>
-	public class IfcColour<T> : Select<T> where T : IfcColourSpecification,IfcPreDefinedColour {}
+	public class IfcColour : IfcSelect<IfcColourSpecification,IfcPreDefinedColour>
+	{
+		public IfcColour(IfcColourSpecification value):base(value){}
+		public IfcColour(IfcPreDefinedColour value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourorfactor.htm
 	/// </summary>
-	public class IfcColourOrFactor<T> : Select<T> where T : IfcColourRgb,IfcNormalisedRatioMeasure {}
+	public class IfcColourOrFactor : IfcSelect<IfcColourRgb,IfcNormalisedRatioMeasure>
+	{
+		public IfcColourOrFactor(IfcColourRgb value):base(value){}
+		public IfcColourOrFactor(IfcNormalisedRatioMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinatereferencesystemselect.htm
 	/// </summary>
-	public class IfcCoordinateReferenceSystemSelect<T> : Select<T> where T : IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext {}
+	public class IfcCoordinateReferenceSystemSelect : IfcSelect<IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext>
+	{
+		public IfcCoordinateReferenceSystemSelect(IfcCoordinateReferenceSystem value):base(value){}
+		public IfcCoordinateReferenceSystemSelect(IfcGeometricRepresentationContext value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgselect.htm
 	/// </summary>
-	public class IfcCsgSelect<T> : Select<T> where T : IfcBooleanResult,IfcCsgPrimitive3D {}
+	public class IfcCsgSelect : IfcSelect<IfcBooleanResult,IfcCsgPrimitive3D>
+	{
+		public IfcCsgSelect(IfcBooleanResult value):base(value){}
+		public IfcCsgSelect(IfcCsgPrimitive3D value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvefontorscaledcurvefontselect.htm
 	/// </summary>
-	public class IfcCurveFontOrScaledCurveFontSelect<T> : Select<T> where T : IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect {}
+	public class IfcCurveFontOrScaledCurveFontSelect : IfcSelect<IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect>
+	{
+		public IfcCurveFontOrScaledCurveFontSelect(IfcCurveStyleFontAndScaling value):base(value){}
+		public IfcCurveFontOrScaledCurveFontSelect(IfcCurveStyleFontSelect value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveonsurface.htm
 	/// </summary>
-	public class IfcCurveOnSurface<T> : Select<T> where T : IfcCompositeCurveOnSurface,IfcPcurve {}
+	public class IfcCurveOnSurface : IfcSelect<IfcCompositeCurveOnSurface,IfcPcurve>
+	{
+		public IfcCurveOnSurface(IfcCompositeCurveOnSurface value):base(value){}
+		public IfcCurveOnSurface(IfcPcurve value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveoredgecurve.htm
 	/// </summary>
-	public class IfcCurveOrEdgeCurve<T> : Select<T> where T : IfcBoundedCurve,IfcEdgeCurve {}
+	public class IfcCurveOrEdgeCurve : IfcSelect<IfcBoundedCurve,IfcEdgeCurve>
+	{
+		public IfcCurveOrEdgeCurve(IfcBoundedCurve value):base(value){}
+		public IfcCurveOrEdgeCurve(IfcEdgeCurve value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontselect.htm
 	/// </summary>
-	public class IfcCurveStyleFontSelect<T> : Select<T> where T : IfcCurveStyleFont,IfcPreDefinedCurveFont {}
+	public class IfcCurveStyleFontSelect : IfcSelect<IfcCurveStyleFont,IfcPreDefinedCurveFont>
+	{
+		public IfcCurveStyleFontSelect(IfcCurveStyleFont value):base(value){}
+		public IfcCurveStyleFontSelect(IfcPreDefinedCurveFont value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdefinitionselect.htm
 	/// </summary>
-	public class IfcDefinitionSelect<T> : Select<T> where T : IfcObjectDefinition,IfcPropertyDefinition {}
+	public class IfcDefinitionSelect : IfcSelect<IfcObjectDefinition,IfcPropertyDefinition>
+	{
+		public IfcDefinitionSelect(IfcObjectDefinition value):base(value){}
+		public IfcDefinitionSelect(IfcPropertyDefinition value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedmeasurevalue.htm
 	/// </summary>
-	public class IfcDerivedMeasureValue<T> : Select<T> where T : IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure {}
+	public class IfcDerivedMeasureValue : IfcSelect<IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure>
+	{
+		public IfcDerivedMeasureValue(IfcAbsorbedDoseMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcAccelerationMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcAngularVelocityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcAreaDensityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcCompoundPlaneAngleMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcCurvatureMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcDoseEquivalentMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcDynamicViscosityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcElectricCapacitanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcElectricChargeMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcElectricConductanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcElectricResistanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcElectricVoltageMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcEnergyMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcForceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcFrequencyMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcHeatFluxDensityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcHeatingValueMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcIlluminanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcInductanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcIntegerCountRateMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcIonConcentrationMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcIsothermalMoistureCapacityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcKinematicViscosityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcLinearForceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcLinearMomentMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcLinearStiffnessMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcLinearVelocityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcLuminousFluxMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcLuminousIntensityDistributionMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMagneticFluxDensityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMagneticFluxMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMassDensityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMassFlowRateMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMassPerLengthMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcModulusOfElasticityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcModulusOfLinearSubgradeReactionMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcModulusOfRotationalSubgradeReactionMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcModulusOfSubgradeReactionMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMoistureDiffusivityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMolecularWeightMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMomentOfInertiaMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcMonetaryMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcPHMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcPlanarForceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcPowerMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcPressureMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcRadioActivityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcRotationalFrequencyMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcRotationalMassMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcRotationalStiffnessMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSectionModulusMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSectionalAreaIntegralMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcShearModulusMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSoundPowerLevelMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSoundPowerMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSoundPressureLevelMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSoundPressureMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcSpecificHeatCapacityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcTemperatureGradientMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcTemperatureRateOfChangeMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcThermalAdmittanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcThermalConductivityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcThermalExpansionCoefficientMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcThermalResistanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcThermalTransmittanceMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcTorqueMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcVaporPermeabilityMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcVolumetricFlowRateMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcWarpingConstantMeasure value):base(value){}
+		public IfcDerivedMeasureValue(IfcWarpingMomentMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentselect.htm
 	/// </summary>
-	public class IfcDocumentSelect<T> : Select<T> where T : IfcDocumentInformation,IfcDocumentReference {}
+	public class IfcDocumentSelect : IfcSelect<IfcDocumentInformation,IfcDocumentReference>
+	{
+		public IfcDocumentSelect(IfcDocumentInformation value):base(value){}
+		public IfcDocumentSelect(IfcDocumentReference value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillstyleselect.htm
 	/// </summary>
-	public class IfcFillStyleSelect<T> : Select<T> where T : IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles {}
+	public class IfcFillStyleSelect : IfcSelect<IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles>
+	{
+		public IfcFillStyleSelect(IfcColour value):base(value){}
+		public IfcFillStyleSelect(IfcExternallyDefinedHatchStyle value):base(value){}
+		public IfcFillStyleSelect(IfcFillAreaStyleHatching value):base(value){}
+		public IfcFillStyleSelect(IfcFillAreaStyleTiles value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricsetselect.htm
 	/// </summary>
-	public class IfcGeometricSetSelect<T> : Select<T> where T : IfcCurve,IfcPoint,IfcSurface {}
+	public class IfcGeometricSetSelect : IfcSelect<IfcCurve,IfcPoint,IfcSurface>
+	{
+		public IfcGeometricSetSelect(IfcCurve value):base(value){}
+		public IfcGeometricSetSelect(IfcPoint value):base(value){}
+		public IfcGeometricSetSelect(IfcSurface value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacementdirectionselect.htm
 	/// </summary>
-	public class IfcGridPlacementDirectionSelect<T> : Select<T> where T : IfcDirection,IfcVirtualGridIntersection {}
+	public class IfcGridPlacementDirectionSelect : IfcSelect<IfcDirection,IfcVirtualGridIntersection>
+	{
+		public IfcGridPlacementDirectionSelect(IfcDirection value):base(value){}
+		public IfcGridPlacementDirectionSelect(IfcVirtualGridIntersection value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchatchlinedistanceselect.htm
 	/// </summary>
-	public class IfcHatchLineDistanceSelect<T> : Select<T> where T : IfcPositiveLengthMeasure,IfcVector {}
+	public class IfcHatchLineDistanceSelect : IfcSelect<IfcPositiveLengthMeasure,IfcVector>
+	{
+		public IfcHatchLineDistanceSelect(IfcPositiveLengthMeasure value):base(value){}
+		public IfcHatchLineDistanceSelect(IfcVector value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayereditem.htm
 	/// </summary>
-	public class IfcLayeredItem<T> : Select<T> where T : IfcRepresentation,IfcRepresentationItem {}
+	public class IfcLayeredItem : IfcSelect<IfcRepresentation,IfcRepresentationItem>
+	{
+		public IfcLayeredItem(IfcRepresentation value):base(value){}
+		public IfcLayeredItem(IfcRepresentationItem value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryselect.htm
 	/// </summary>
-	public class IfcLibrarySelect<T> : Select<T> where T : IfcLibraryInformation,IfcLibraryReference {}
+	public class IfcLibrarySelect : IfcSelect<IfcLibraryInformation,IfcLibraryReference>
+	{
+		public IfcLibrarySelect(IfcLibraryInformation value):base(value){}
+		public IfcLibrarySelect(IfcLibraryReference value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondatasourceselect.htm
 	/// </summary>
-	public class IfcLightDistributionDataSourceSelect<T> : Select<T> where T : IfcExternalReference,IfcLightIntensityDistribution {}
+	public class IfcLightDistributionDataSourceSelect : IfcSelect<IfcExternalReference,IfcLightIntensityDistribution>
+	{
+		public IfcLightDistributionDataSourceSelect(IfcExternalReference value):base(value){}
+		public IfcLightDistributionDataSourceSelect(IfcLightIntensityDistribution value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialselect.htm
 	/// </summary>
-	public class IfcMaterialSelect<T> : Select<T> where T : IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition {}
+	public class IfcMaterialSelect : IfcSelect<IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition>
+	{
+		public IfcMaterialSelect(IfcMaterialDefinition value):base(value){}
+		public IfcMaterialSelect(IfcMaterialList value):base(value){}
+		public IfcMaterialSelect(IfcMaterialUsageDefinition value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmeasurevalue.htm
 	/// </summary>
-	public class IfcMeasureValue<T> : Select<T> where T : IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure {}
+	public class IfcMeasureValue : IfcSelect<IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure>
+	{
+		public IfcMeasureValue(IfcAmountOfSubstanceMeasure value):base(value){}
+		public IfcMeasureValue(IfcAreaMeasure value):base(value){}
+		public IfcMeasureValue(IfcComplexNumber value):base(value){}
+		public IfcMeasureValue(IfcContextDependentMeasure value):base(value){}
+		public IfcMeasureValue(IfcCountMeasure value):base(value){}
+		public IfcMeasureValue(IfcDescriptiveMeasure value):base(value){}
+		public IfcMeasureValue(IfcElectricCurrentMeasure value):base(value){}
+		public IfcMeasureValue(IfcLengthMeasure value):base(value){}
+		public IfcMeasureValue(IfcLuminousIntensityMeasure value):base(value){}
+		public IfcMeasureValue(IfcMassMeasure value):base(value){}
+		public IfcMeasureValue(IfcNonNegativeLengthMeasure value):base(value){}
+		public IfcMeasureValue(IfcNormalisedRatioMeasure value):base(value){}
+		public IfcMeasureValue(IfcNumericMeasure value):base(value){}
+		public IfcMeasureValue(IfcParameterValue value):base(value){}
+		public IfcMeasureValue(IfcPlaneAngleMeasure value):base(value){}
+		public IfcMeasureValue(IfcPositiveLengthMeasure value):base(value){}
+		public IfcMeasureValue(IfcPositivePlaneAngleMeasure value):base(value){}
+		public IfcMeasureValue(IfcPositiveRatioMeasure value):base(value){}
+		public IfcMeasureValue(IfcRatioMeasure value):base(value){}
+		public IfcMeasureValue(IfcSolidAngleMeasure value):base(value){}
+		public IfcMeasureValue(IfcThermodynamicTemperatureMeasure value):base(value){}
+		public IfcMeasureValue(IfcTimeMeasure value):base(value){}
+		public IfcMeasureValue(IfcVolumeMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetricvalueselect.htm
 	/// </summary>
-	public class IfcMetricValueSelect<T> : Select<T> where T : IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue {}
+	public class IfcMetricValueSelect : IfcSelect<IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue>
+	{
+		public IfcMetricValueSelect(IfcAppliedValue value):base(value){}
+		public IfcMetricValueSelect(IfcMeasureWithUnit value):base(value){}
+		public IfcMetricValueSelect(IfcReference value):base(value){}
+		public IfcMetricValueSelect(IfcTable value):base(value){}
+		public IfcMetricValueSelect(IfcTimeSeries value):base(value){}
+		public IfcMetricValueSelect(IfcValue value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofrotationalsubgradereactionselect.htm
 	/// </summary>
-	public class IfcModulusOfRotationalSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure {}
+	public class IfcModulusOfRotationalSubgradeReactionSelect : IfcSelect<IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure>
+	{
+		public IfcModulusOfRotationalSubgradeReactionSelect(IfcBoolean value):base(value){}
+		public IfcModulusOfRotationalSubgradeReactionSelect(IfcModulusOfRotationalSubgradeReactionMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofsubgradereactionselect.htm
 	/// </summary>
-	public class IfcModulusOfSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfSubgradeReactionMeasure {}
+	public class IfcModulusOfSubgradeReactionSelect : IfcSelect<IfcBoolean,IfcModulusOfSubgradeReactionMeasure>
+	{
+		public IfcModulusOfSubgradeReactionSelect(IfcBoolean value):base(value){}
+		public IfcModulusOfSubgradeReactionSelect(IfcModulusOfSubgradeReactionMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusoftranslationalsubgradereactionselect.htm
 	/// </summary>
-	public class IfcModulusOfTranslationalSubgradeReactionSelect<T> : Select<T> where T : IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure {}
+	public class IfcModulusOfTranslationalSubgradeReactionSelect : IfcSelect<IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure>
+	{
+		public IfcModulusOfTranslationalSubgradeReactionSelect(IfcBoolean value):base(value){}
+		public IfcModulusOfTranslationalSubgradeReactionSelect(IfcModulusOfLinearSubgradeReactionMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectreferenceselect.htm
 	/// </summary>
-	public class IfcObjectReferenceSelect<T> : Select<T> where T : IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries {}
+	public class IfcObjectReferenceSelect : IfcSelect<IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries>
+	{
+		public IfcObjectReferenceSelect(IfcAddress value):base(value){}
+		public IfcObjectReferenceSelect(IfcAppliedValue value):base(value){}
+		public IfcObjectReferenceSelect(IfcExternalReference value):base(value){}
+		public IfcObjectReferenceSelect(IfcMaterialDefinition value):base(value){}
+		public IfcObjectReferenceSelect(IfcOrganization value):base(value){}
+		public IfcObjectReferenceSelect(IfcPerson value):base(value){}
+		public IfcObjectReferenceSelect(IfcPersonAndOrganization value):base(value){}
+		public IfcObjectReferenceSelect(IfcTable value):base(value){}
+		public IfcObjectReferenceSelect(IfcTimeSeries value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointorvertexpoint.htm
 	/// </summary>
-	public class IfcPointOrVertexPoint<T> : Select<T> where T : IfcPoint,IfcVertexPoint {}
+	public class IfcPointOrVertexPoint : IfcSelect<IfcPoint,IfcVertexPoint>
+	{
+		public IfcPointOrVertexPoint(IfcPoint value):base(value){}
+		public IfcPointOrVertexPoint(IfcVertexPoint value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationstyleselect.htm
 	/// </summary>
-	public class IfcPresentationStyleSelect<T> : Select<T> where T : IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle {}
+	public class IfcPresentationStyleSelect : IfcSelect<IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle>
+	{
+		public IfcPresentationStyleSelect(IfcCurveStyle value):base(value){}
+		public IfcPresentationStyleSelect(IfcFillAreaStyle value):base(value){}
+		public IfcPresentationStyleSelect(IfcNullStyle value):base(value){}
+		public IfcPresentationStyleSelect(IfcSurfaceStyle value):base(value){}
+		public IfcPresentationStyleSelect(IfcTextStyle value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocessselect.htm
 	/// </summary>
-	public class IfcProcessSelect<T> : Select<T> where T : IfcProcess,IfcTypeProcess {}
+	public class IfcProcessSelect : IfcSelect<IfcProcess,IfcTypeProcess>
+	{
+		public IfcProcessSelect(IfcProcess value):base(value){}
+		public IfcProcessSelect(IfcTypeProcess value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductrepresentationselect.htm
 	/// </summary>
-	public class IfcProductRepresentationSelect<T> : Select<T> where T : IfcProductDefinitionShape,IfcRepresentationMap {}
+	public class IfcProductRepresentationSelect : IfcSelect<IfcProductDefinitionShape,IfcRepresentationMap>
+	{
+		public IfcProductRepresentationSelect(IfcProductDefinitionShape value):base(value){}
+		public IfcProductRepresentationSelect(IfcRepresentationMap value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductselect.htm
 	/// </summary>
-	public class IfcProductSelect<T> : Select<T> where T : IfcProduct,IfcTypeProduct {}
+	public class IfcProductSelect : IfcSelect<IfcProduct,IfcTypeProduct>
+	{
+		public IfcProductSelect(IfcProduct value):base(value){}
+		public IfcProductSelect(IfcTypeProduct value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionselect.htm
 	/// </summary>
-	public class IfcPropertySetDefinitionSelect<T> : Select<T> where T : IfcPropertySetDefinition,IfcPropertySetDefinitionSet {}
+	public class IfcPropertySetDefinitionSelect : IfcSelect<IfcPropertySetDefinition,IfcPropertySetDefinitionSet>
+	{
+		public IfcPropertySetDefinitionSelect(IfcPropertySetDefinition value):base(value){}
+		public IfcPropertySetDefinitionSelect(IfcPropertySetDefinitionSet value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceobjectselect.htm
 	/// </summary>
-	public class IfcResourceObjectSelect<T> : Select<T> where T : IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries {}
+	public class IfcResourceObjectSelect : IfcSelect<IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries>
+	{
+		public IfcResourceObjectSelect(IfcActorRole value):base(value){}
+		public IfcResourceObjectSelect(IfcAppliedValue value):base(value){}
+		public IfcResourceObjectSelect(IfcApproval value):base(value){}
+		public IfcResourceObjectSelect(IfcConstraint value):base(value){}
+		public IfcResourceObjectSelect(IfcContextDependentUnit value):base(value){}
+		public IfcResourceObjectSelect(IfcConversionBasedUnit value):base(value){}
+		public IfcResourceObjectSelect(IfcExternalInformation value):base(value){}
+		public IfcResourceObjectSelect(IfcExternalReference value):base(value){}
+		public IfcResourceObjectSelect(IfcMaterialDefinition value):base(value){}
+		public IfcResourceObjectSelect(IfcOrganization value):base(value){}
+		public IfcResourceObjectSelect(IfcPerson value):base(value){}
+		public IfcResourceObjectSelect(IfcPersonAndOrganization value):base(value){}
+		public IfcResourceObjectSelect(IfcPhysicalQuantity value):base(value){}
+		public IfcResourceObjectSelect(IfcProfileDef value):base(value){}
+		public IfcResourceObjectSelect(IfcPropertyAbstraction value):base(value){}
+		public IfcResourceObjectSelect(IfcTimeSeries value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceselect.htm
 	/// </summary>
-	public class IfcResourceSelect<T> : Select<T> where T : IfcResource,IfcTypeResource {}
+	public class IfcResourceSelect : IfcSelect<IfcResource,IfcTypeResource>
+	{
+		public IfcResourceSelect(IfcResource value):base(value){}
+		public IfcResourceSelect(IfcTypeResource value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalstiffnessselect.htm
 	/// </summary>
-	public class IfcRotationalStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcRotationalStiffnessMeasure {}
+	public class IfcRotationalStiffnessSelect : IfcSelect<IfcBoolean,IfcRotationalStiffnessMeasure>
+	{
+		public IfcRotationalStiffnessSelect(IfcBoolean value):base(value){}
+		public IfcRotationalStiffnessSelect(IfcRotationalStiffnessMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshell.htm
 	/// </summary>
-	public class IfcShell<T> : Select<T> where T : IfcClosedShell,IfcOpenShell {}
+	public class IfcShell : IfcSelect<IfcClosedShell,IfcOpenShell>
+	{
+		public IfcShell(IfcClosedShell value):base(value){}
+		public IfcShell(IfcOpenShell value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplevalue.htm
 	/// </summary>
-	public class IfcSimpleValue<T> : Select<T> where T : IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp {}
+	public class IfcSimpleValue : IfcSelect<IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp>
+	{
+		public IfcSimpleValue(IfcBoolean value):base(value){}
+		public IfcSimpleValue(IfcDate value):base(value){}
+		public IfcSimpleValue(IfcDateTime value):base(value){}
+		public IfcSimpleValue(IfcDuration value):base(value){}
+		public IfcSimpleValue(IfcIdentifier value):base(value){}
+		public IfcSimpleValue(IfcInteger value):base(value){}
+		public IfcSimpleValue(IfcLabel value):base(value){}
+		public IfcSimpleValue(IfcLogical value):base(value){}
+		public IfcSimpleValue(IfcReal value):base(value){}
+		public IfcSimpleValue(IfcText value):base(value){}
+		public IfcSimpleValue(IfcTime value):base(value){}
+		public IfcSimpleValue(IfcTimeStamp value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsizeselect.htm
 	/// </summary>
-	public class IfcSizeSelect<T> : Select<T> where T : IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure {}
+	public class IfcSizeSelect : IfcSelect<IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure>
+	{
+		public IfcSizeSelect(IfcDescriptiveMeasure value):base(value){}
+		public IfcSizeSelect(IfcLengthMeasure value):base(value){}
+		public IfcSizeSelect(IfcNormalisedRatioMeasure value):base(value){}
+		public IfcSizeSelect(IfcPositiveLengthMeasure value):base(value){}
+		public IfcSizeSelect(IfcPositiveRatioMeasure value):base(value){}
+		public IfcSizeSelect(IfcRatioMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidorshell.htm
 	/// </summary>
-	public class IfcSolidOrShell<T> : Select<T> where T : IfcClosedShell,IfcSolidModel {}
+	public class IfcSolidOrShell : IfcSelect<IfcClosedShell,IfcSolidModel>
+	{
+		public IfcSolidOrShell(IfcClosedShell value):base(value){}
+		public IfcSolidOrShell(IfcSolidModel value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceboundaryselect.htm
 	/// </summary>
-	public class IfcSpaceBoundarySelect<T> : Select<T> where T : IfcExternalSpatialElement,IfcSpace {}
+	public class IfcSpaceBoundarySelect : IfcSelect<IfcExternalSpatialElement,IfcSpace>
+	{
+		public IfcSpaceBoundarySelect(IfcExternalSpatialElement value):base(value){}
+		public IfcSpaceBoundarySelect(IfcSpace value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularhighlightselect.htm
 	/// </summary>
-	public class IfcSpecularHighlightSelect<T> : Select<T> where T : IfcSpecularExponent,IfcSpecularRoughness {}
+	public class IfcSpecularHighlightSelect : IfcSelect<IfcSpecularExponent,IfcSpecularRoughness>
+	{
+		public IfcSpecularHighlightSelect(IfcSpecularExponent value):base(value){}
+		public IfcSpecularHighlightSelect(IfcSpecularRoughness value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivityassignmentselect.htm
 	/// </summary>
-	public class IfcStructuralActivityAssignmentSelect<T> : Select<T> where T : IfcElement,IfcStructuralItem {}
+	public class IfcStructuralActivityAssignmentSelect : IfcSelect<IfcElement,IfcStructuralItem>
+	{
+		public IfcStructuralActivityAssignmentSelect(IfcElement value):base(value){}
+		public IfcStructuralActivityAssignmentSelect(IfcStructuralItem value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyleassignmentselect.htm
 	/// </summary>
-	public class IfcStyleAssignmentSelect<T> : Select<T> where T : IfcPresentationStyle,IfcPresentationStyleAssignment {}
+	public class IfcStyleAssignmentSelect : IfcSelect<IfcPresentationStyle,IfcPresentationStyleAssignment>
+	{
+		public IfcStyleAssignmentSelect(IfcPresentationStyle value):base(value){}
+		public IfcStyleAssignmentSelect(IfcPresentationStyleAssignment value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceorfacesurface.htm
 	/// </summary>
-	public class IfcSurfaceOrFaceSurface<T> : Select<T> where T : IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface {}
+	public class IfcSurfaceOrFaceSurface : IfcSelect<IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface>
+	{
+		public IfcSurfaceOrFaceSurface(IfcFaceBasedSurfaceModel value):base(value){}
+		public IfcSurfaceOrFaceSurface(IfcFaceSurface value):base(value){}
+		public IfcSurfaceOrFaceSurface(IfcSurface value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyleelementselect.htm
 	/// </summary>
-	public class IfcSurfaceStyleElementSelect<T> : Select<T> where T : IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures {}
+	public class IfcSurfaceStyleElementSelect : IfcSelect<IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures>
+	{
+		public IfcSurfaceStyleElementSelect(IfcExternallyDefinedSurfaceStyle value):base(value){}
+		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleLighting value):base(value){}
+		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleRefraction value):base(value){}
+		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleShading value):base(value){}
+		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleWithTextures value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextfontselect.htm
 	/// </summary>
-	public class IfcTextFontSelect<T> : Select<T> where T : IfcExternallyDefinedTextFont,IfcPreDefinedTextFont {}
+	public class IfcTextFontSelect : IfcSelect<IfcExternallyDefinedTextFont,IfcPreDefinedTextFont>
+	{
+		public IfcTextFontSelect(IfcExternallyDefinedTextFont value):base(value){}
+		public IfcTextFontSelect(IfcPreDefinedTextFont value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeorratioselect.htm
 	/// </summary>
-	public class IfcTimeOrRatioSelect<T> : Select<T> where T : IfcDuration,IfcRatioMeasure {}
+	public class IfcTimeOrRatioSelect : IfcSelect<IfcDuration,IfcRatioMeasure>
+	{
+		public IfcTimeOrRatioSelect(IfcDuration value):base(value){}
+		public IfcTimeOrRatioSelect(IfcRatioMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctranslationalstiffnessselect.htm
 	/// </summary>
-	public class IfcTranslationalStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcLinearStiffnessMeasure {}
+	public class IfcTranslationalStiffnessSelect : IfcSelect<IfcBoolean,IfcLinearStiffnessMeasure>
+	{
+		public IfcTranslationalStiffnessSelect(IfcBoolean value):base(value){}
+		public IfcTranslationalStiffnessSelect(IfcLinearStiffnessMeasure value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingselect.htm
 	/// </summary>
-	public class IfcTrimmingSelect<T> : Select<T> where T : IfcCartesianPoint,IfcParameterValue {}
+	public class IfcTrimmingSelect : IfcSelect<IfcCartesianPoint,IfcParameterValue>
+	{
+		public IfcTrimmingSelect(IfcCartesianPoint value):base(value){}
+		public IfcTrimmingSelect(IfcParameterValue value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunit.htm
 	/// </summary>
-	public class IfcUnit<T> : Select<T> where T : IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit {}
+	public class IfcUnit : IfcSelect<IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit>
+	{
+		public IfcUnit(IfcDerivedUnit value):base(value){}
+		public IfcUnit(IfcMonetaryUnit value):base(value){}
+		public IfcUnit(IfcNamedUnit value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalue.htm
 	/// </summary>
-	public class IfcValue<T> : Select<T> where T : IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue {}
+	public class IfcValue : IfcSelect<IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue>
+	{
+		public IfcValue(IfcDerivedMeasureValue value):base(value){}
+		public IfcValue(IfcMeasureValue value):base(value){}
+		public IfcValue(IfcSimpleValue value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvectorordirection.htm
 	/// </summary>
-	public class IfcVectorOrDirection<T> : Select<T> where T : IfcDirection,IfcVector {}
+	public class IfcVectorOrDirection : IfcSelect<IfcDirection,IfcVector>
+	{
+		public IfcVectorOrDirection(IfcDirection value):base(value){}
+		public IfcVectorOrDirection(IfcVector value):base(value){}
+
+	}
+
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingstiffnessselect.htm
 	/// </summary>
-	public class IfcWarpingStiffnessSelect<T> : Select<T> where T : IfcBoolean,IfcWarpingMomentMeasure {}
+	public class IfcWarpingStiffnessSelect : IfcSelect<IfcBoolean,IfcWarpingMomentMeasure>
+	{
+		public IfcWarpingStiffnessSelect(IfcBoolean value):base(value){}
+		public IfcWarpingStiffnessSelect(IfcWarpingMomentMeasure value):base(value){}
+
+	}
+
 
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequest.htm"/>
