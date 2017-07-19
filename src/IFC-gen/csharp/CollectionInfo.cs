@@ -23,7 +23,9 @@ namespace Express
 
 		public override string ToString()
 		{
-			switch(CollectionType)
+			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{ValueType}{string.Join("",Enumerable.Repeat(">",Rank))}";
+
+			/*switch(CollectionType)
 			{
 				case CollectionType.Array:
 					return $"{ValueType}" + string.Join("",Enumerable.Repeat($"[{Size}]",Rank));
@@ -33,7 +35,7 @@ namespace Express
 					return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{ValueType}{string.Join("",Enumerable.Repeat(">",Rank))}";
 				default:
 					return "*** ERROR ***";
-			}
+			}*/
 		}
 	}
 }
