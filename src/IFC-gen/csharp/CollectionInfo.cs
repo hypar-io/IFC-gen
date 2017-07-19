@@ -18,7 +18,7 @@ namespace Express
 
 		public CollectionInfo(string name) : base(name)
 		{
-			Rank = 1;
+			Rank = 0;
 		}
 
 		public override string ToString()
@@ -26,7 +26,7 @@ namespace Express
 			switch(CollectionType)
 			{
 				case CollectionType.Array:
-					return $"{ValueType}" + string.Join("",Enumerable.Repeat("[]",Rank));
+					return $"{ValueType}" + string.Join("",Enumerable.Repeat($"[{Size}]",Rank));
 				case CollectionType.List:
 					return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{ValueType}{string.Join("",Enumerable.Repeat(">",Rank))}";
 				case CollectionType.Set:
