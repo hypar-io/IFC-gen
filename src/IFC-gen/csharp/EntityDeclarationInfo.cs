@@ -39,7 +39,7 @@ namespace Express
 			var propStringBuilder = new StringBuilder();
 			foreach(var a in Attributes.Where(a=>!a.IsDerived))
 			{
-				propStringBuilder.Append(a.ToString());
+				propStringBuilder.AppendLine(a.ToString());
 			}
 
 			var supertype = string.Empty;
@@ -51,7 +51,7 @@ namespace Express
 			var allocBuilder = new StringBuilder();
 			foreach(var a in Attributes.Where(a=>a.TypeInfo is CollectionInfo && !a.IsDerived))
 			{
-				allocBuilder.Append($"\t\t\t{a.TypeInfo.Name} = new {a.TypeInfo.ToString()}();\n");
+				allocBuilder.AppendLine($"\t\t\t{a.TypeInfo.Name} = new {a.TypeInfo.ToString()}();");
 			}
 
 			var classStr =
@@ -67,7 +67,7 @@ $@"
 {allocBuilder.ToString()}
 		}}
 	}}
-	";
+";
 			return classStr;
 		}
 	}

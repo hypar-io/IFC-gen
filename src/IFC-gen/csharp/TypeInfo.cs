@@ -19,8 +19,14 @@ namespace Express
 			{
 				return TypeInfo.ToString();
 			}
+			var result = 
+	$@"	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{TypeInfo.Name.ToLower()}.htm
+	/// </summary>
+	public class {TypeInfo.Name} : IfcType<{TypeInfo.ToString()}>{{}}
 
-			return $"\tusing {TypeInfo.Name} = {TypeInfo.ToString()};\n";
+";
+			return result;
 		}
 	}
 
@@ -114,7 +120,7 @@ var result =
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
 	/// </summary>
-	public class {Name}<T> : Select<T> where T : {string.Join(",",Values.Select(v=>"I"+v))} {{}}
+	public class {Name}<T> : Select<T> where T : {string.Join(",",Values)} {{}}
 ";
 
 			return result;
@@ -140,7 +146,7 @@ var result =
 
 		public override string ToString()
 		{
-			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}\n";
+			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}";
 		}
 	}
 }
