@@ -1,3 +1,5 @@
+using System;
+
 namespace Express
 {
 	public class TypeDeclaration
@@ -34,6 +36,17 @@ namespace Express
 		public static string ToSystemType(string type)
 		{
 			var retType = type;
+
+			if(type.Contains("BINARY"))
+			{
+				return "System.Byte[]";
+			}
+
+			if(type.Contains("STRING("))
+			{
+				return "System.String";
+			}
+
 			switch(type)
 			{
 				case "BOOLEAN":
@@ -121,7 +134,7 @@ var result =
 		public bool IsOptional{get;set;}
 
 		public bool IsDerived{get;set;}
-		
+
 		public override string ToString()
 		{
 			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}\n";
