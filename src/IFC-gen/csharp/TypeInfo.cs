@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Express
 {
@@ -53,7 +55,8 @@ namespace Express
 					retType = "System.Boolean";
 					break;
 				case "LOGICAL":
-					retType = "System.Boolean?";
+					retType = "System.Boolean";
+					//retType = "System.Boolean?";
 					break;
 				case "REAL":
 					retType = "System.Double";
@@ -77,7 +80,7 @@ namespace Express
 
 	public abstract class StringList : TypeInfo
 	{
-		public string Values{get;set;}
+		public string[] Values{get;set;}
 
 		public StringList(string name) : base(name){}
 	}
@@ -94,7 +97,7 @@ var result =
 	/// </summary>
 	public enum {Name} 
 	{{
-		{Values}
+		{string.Join(",",Values)}
 	}}
 ";
 			return result;
@@ -111,7 +114,7 @@ var result =
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
 	/// </summary>
-	public class {Name}<T> : Select<T> where T : {Values} {{}}
+	public class {Name}<T> : Select<T> where T : {string.Join(",",Values.Select(v=>"I"+v))} {{}}
 ";
 
 			return result;

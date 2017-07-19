@@ -64,12 +64,12 @@ namespace Express
 
 		public override void EnterEnumeration(ExpressParser.EnumerationContext context)
 		{
-			((EnumInfo)currentTypeInfo).Values = context.idList().GetText();
+			((EnumInfo)currentTypeInfo).Values = context.idList().GetText().Split(',');
 		}
 
 		public override void EnterSelect(ExpressParser.SelectContext context)
 		{
-			((SelectInfo)currentTypeInfo).Values = context.idList().GetText();
+			((SelectInfo)currentTypeInfo).Values = context.idList().GetText().Split(',');
 		}
 
 		public override void ExitTypeDeclaration(ExpressParser.TypeDeclarationContext context)
