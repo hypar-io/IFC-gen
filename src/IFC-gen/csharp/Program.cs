@@ -58,9 +58,16 @@ namespace IFC.Generate
 				//Write entities.
 				foreach(var e in listener.Entities)
 				{	
+					// Build the inheritance graph by using the string
+					// type names in SupertypeOf and SubtypeOf to find
+					// the mathing EntityDeclarations.
 					if(e.SubtypeOf.Any())
 					{
-						e.ParentType = listener.Entities.First(ent=>ent.Name == e.SubtypeOf.First());
+						e.ParentEntity = listener.Entities.First(ent=>ent.Name == e.SubtypeOf.First());
+					}
+					if(e.SupertypeOf.Any())
+					{
+						e.ChildEntities.AddRange(listener.Entities.Where(ent=>e.SupertypeOf.Contains(ent.Name)));
 					}
 					
 					sb.Append(e.ToString());

@@ -8,25 +8,49 @@ namespace Express
 	public class EntityDeclarationInfo
 	{
 
+		/// <summary>
+		/// The name of the entity.
+		/// </summary>
+		/// <returns></returns>
 		public string Name {get;set;}
 		
+		/// <summary>
+		/// A list of entities which derive from this.
+		/// </summary>
+		/// <returns></returns>
 		public List<string> SupertypeOf {get;set;}
 
+		/// <summary>
+		/// A list of entities from which this derives.
+		/// </summary>
+		/// <returns></returns>
 		public List<string> SubtypeOf {get;set;}
 		
-		public EntityDeclarationInfo ParentType{get;set;}
+		/// <summary>
+		/// The entity from which this entity is derived.
+		/// EXPRESS supports multiple inheritance. In C#, we
+		/// support only one parent.
+		/// </summary>
+		/// <returns></returns>
+		public EntityDeclarationInfo ParentEntity{get;set;}
 
+		/// <summary>
+		/// A list of entities which derive from this entity.
+		/// </summary>
+		/// <returns></returns>
+		public List<EntityDeclarationInfo> ChildEntities{get;set;}
+
+		/// <summary>
+		/// A list of attributes which define this entity.
+		/// </summary>
+		/// <returns></returns>
 		public List<AttributeDeclaration> Attributes{get;set;}
 
+		/// <summary>
+		/// A flag indicating whether this entity can be constructed.
+		/// </summary>
+		/// <returns></returns>
 		public bool IsAbstract{get;set;}
-		
-		public string Modifier
-		{
-			get
-			{
-				return IsAbstract? "abstract" : string.Empty;
-			}
-		}
 
 		public EntityDeclarationInfo(string name)
 		{
@@ -34,6 +58,7 @@ namespace Express
 			Attributes = new List<AttributeDeclaration>();
 			SupertypeOf = new List<string>();
 			SubtypeOf = new List<string>();
+			ChildEntities = new List<EntityDeclarationInfo>();
 		}
 
 		public override string ToString()
@@ -63,7 +88,7 @@ $@"
 	/// <summary>
 	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm""/>
 	/// </summary>
-	public {Modifier} partial class {Name}{supertype}
+	public {Modifier()} partial class {Name}{supertype}
 	{{
 {propStringBuilder.ToString()}
 		public {Name}({ConstructorParameters()}){baseConstructor}
@@ -75,6 +100,11 @@ $@"
 			return classStr;
 		}
 
+		private string Modifier()
+		{
+			return IsAbstract? "abstract" : string.Empty;
+		}
+
 		/// <summary>
 		/// The parameters to a constructor for this entity, including parameters which
 		/// will be fed to the base constructor. Parameters do not include optional attributes.
@@ -82,20 +112,31 @@ $@"
 		/// <returns>Returns a string formed as follows: Type1 name1, Type2 name2, ... </returns>
 		private string ConstructorParameters()
 		{
-			var constructorParams = BuildConstructorParameters(Attributes.Where(a=>!a.IsOptional && !a.IsDerived));
+			var constructorParams = BuildConstructorParameters(AttributesForUseInConstructors());
 
-			var parent = ParentType;
+			var parent = ParentEntity;
 			while(parent != null && parent.Name != "IfcRoot")
 			{
-				var baseConstructorParams = parent.BuildConstructorParameters(parent.Attributes.Where(a=>!a.IsOptional && !a.IsDerived));
+				var baseConstructorParams = parent.BuildConstructorParameters(parent.AttributesForUseInConstructors());
 				if(!string.IsNullOrEmpty(baseConstructorParams))
 				{
 					constructorParams += string.IsNullOrEmpty(constructorParams)?baseConstructorParams:","+baseConstructorParams;
 				}
-				parent = parent.ParentType;
+				parent = parent.ParentEntity;
 			}
 			
 			return constructorParams;
+		}
+
+		/// <summary>
+		/// Some attributes will not have matching constructors parameters.
+		/// These include optional attributes, derived attributes, and 
+		/// attributes representing a relationship.
+		/// </summary>
+		/// <returns></returns>
+		private IEnumerable<AttributeDeclaration> AttributesForUseInConstructors()
+		{
+			return Attributes.Where(a=>!a.IsOptional && !a.IsDerived);
 		}
 
 		private string BuildConstructorParameters(IEnumerable<AttributeDeclaration> attributes)
@@ -107,7 +148,7 @@ $@"
 		{
 			var baseConstructorParams = string.Empty;
 
-			var parent = ParentType;
+			var parent = ParentEntity;
 			while(parent != null && parent.Name != "IfcRoot")
 			{
 				var parentParams = BuildBaseConstructorParams(parent.Attributes.Where(a=>!a.IsOptional && !a.IsDerived));
@@ -115,7 +156,7 @@ $@"
 				{
 					baseConstructorParams += string.IsNullOrEmpty(baseConstructorParams) ? parentParams: "," + parentParams;
 				}
-				parent = parent.ParentType;
+				parent = parent.ParentEntity;
 			}
 
 			return baseConstructorParams;
@@ -128,6 +169,51 @@ $@"
 		private string BuildBaseConstructorParams(IEnumerable<AttributeDeclaration> attributes)
 		{
 			return string.Join(",",attributes.Select(a=>$"{a.TypeInfo.ParameterName}\n\t\t\t\t\t"));
+		}
+
+		/// <summary>
+		/// Determine whether this is the provided entity or a sub-entity of the entity.
+		/// </summary>
+		/// <param name="entity"></param>
+		/// <returns></returns>
+		public bool IsEntityOrSubtypeOfEntity(EntityDeclarationInfo entity)
+		{
+			if(this == entity)
+			{
+				return true;
+			}
+
+			var parent = ParentEntity;
+			while(parent != null)
+			{
+				if(parent == entity)
+				{
+					return true;
+				}
+				parent = parent.ParentEntity;
+			}
+			return false;
+		}
+
+		/// <summary>
+		/// Determine whether this is the provided entity or the entity is
+		/// one of this entity's children.
+		/// </summary>
+		/// <param name="entity"></param>
+		/// <returns></returns>
+		public bool IsEntityOrSupertypeOfEntity(EntityDeclarationInfo entity)
+		{
+			if(this == entity)
+			{
+				return true;
+			}
+
+			var found = false;
+			foreach(var e in ChildEntities)
+			{
+				found = e.IsEntityOrSupertypeOfEntity(entity);
+			}
+			return found;
 		}
 	}
 }

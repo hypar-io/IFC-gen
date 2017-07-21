@@ -5,36 +5,10 @@ using System.Text;
 
 namespace Express
 {
-	public class TypeDeclaration
-	{
-		public TypeInfo TypeInfo{get;private set;}
-
-		public TypeDeclaration(TypeInfo info)
-		{
-			TypeInfo = info;
-		}
-
-		public override string ToString()
-		{	
-			if(TypeInfo is EnumInfo || TypeInfo is SelectInfo)
-			{
-				return TypeInfo.ToString();
-			}
-
-			var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{TypeInfo.Name.ToLower()}.htm
+	/// <summary>
+	/// Base class which gathers type information has set out in 
+	/// EXPRESS' TYPE or ENTITY attributes.
 	/// </summary>
-	public class {TypeInfo.Name} : IfcType<{TypeInfo.ToString()}>
-	{{
-		public {TypeInfo.Name}({TypeInfo.ToString()} value):base(value){{}}		
-	}}
-
-";
-			return result;
-		}
-	}
-
 	public abstract class TypeInfo
 	{
 		public string Name{get;set;}
@@ -102,14 +76,21 @@ namespace Express
 		}
 	}
 
-	public abstract class StringList : TypeInfo
+	/// <summary>
+	/// Base class for type information which represents an enumerated list,
+	/// such as EXPRESS ENUM and SELECT.
+	/// </summary>
+	public abstract class EnumeratedTypeInfo : TypeInfo
 	{
 		public string[] Values{get;set;}
 
-		public StringList(string name) : base(name){}
+		public EnumeratedTypeInfo(string name) : base(name){}
 	}
 
-	public class EnumInfo : StringList
+	/// <summary>
+	/// Type info representing an EXPRESS ENUM.
+	/// </summary>
+	public class EnumInfo : EnumeratedTypeInfo
 	{
 		public EnumInfo(string name) : base(name){}
 
@@ -126,7 +107,10 @@ var result =
 		}
 	}
 
-	public class SelectInfo : StringList
+	/// <summary>
+	/// Type info representing an EXPRESS SELECT.
+	/// </summary>
+	public class SelectInfo : EnumeratedTypeInfo
 	{
 		public SelectInfo(string name) : base(name){}
 
@@ -152,6 +136,9 @@ var result =
 		}
 	}
 
+	/// <summary>
+	/// Type information for a wrapper around a system type.
+	/// </summary>
 	public class DefinedTypeInfo : TypeInfo
 	{
 		public DefinedTypeInfo(string name) : base(name){}
@@ -159,19 +146,6 @@ var result =
 		public override string ToString()
 		{	
 			return $"{TypeInfo.ToSystemType(ValueType)}";
-		}
-	}
-
-	public class AttributeDeclaration
-	{
-		public TypeInfo TypeInfo{get;set;}
-		public bool IsOptional{get;set;}
-
-		public bool IsDerived{get;set;}
-
-		public override string ToString()
-		{
-			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}";
 		}
 	}
 }
