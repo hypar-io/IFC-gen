@@ -56,9 +56,14 @@ namespace IFC.Generate
 				}
 
 				//Write entities.
-				foreach(var c in listener.Entities)
-				{
-					sb.Append(c.ToString());
+				foreach(var e in listener.Entities)
+				{	
+					if(e.SubtypeOf.Any())
+					{
+						e.ParentType = listener.Entities.First(ent=>ent.Name == e.SubtypeOf.First());
+					}
+					
+					sb.Append(e.ToString());
 				}
 				var types = 
 $@"/*

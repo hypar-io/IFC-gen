@@ -39,6 +39,19 @@ namespace Express
 	{
 		public string Name{get;set;}
 
+		public string ParameterName
+		{
+			get
+			{
+				var name = Name;
+				if(Name == "Operator")
+				{
+					name = "op";
+				}
+				return Char.ToLowerInvariant(name[0]) + name.Substring(1);
+			}
+		}
+		
 		public string ValueType{get;set;}
 
 		public TypeInfo(string name)
