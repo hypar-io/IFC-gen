@@ -13,6 +13,8 @@ namespace Express
 	{
 		public string Name{get;set;}
 
+		public EntityDeclarationInfo Entity{get;set;}
+
 		public string ParameterName
 		{
 			get
@@ -21,6 +23,14 @@ namespace Express
 				if(Name == "Operator")
 				{
 					name = "op";
+				}
+
+				// Sometimes the name will be of the format SELF\IfcGeometricRepresentationContext.TrueNorth
+				// This won't work as a parameter name. Split it and takes the last part.
+				var split = name.Split('.');
+				if(split.Count() > 1)
+				{
+					name = split.Last();
 				}
 				return Char.ToLowerInvariant(name[0]) + name.Substring(1);
 			}
@@ -73,6 +83,15 @@ namespace Express
 					break;
 			}
 			return retType;
+		}
+
+		public bool IsDerivedFromRelationship()
+		{
+			if(Entity == null)
+			{
+				return false;
+			}
+			return Entity.IsEntityOrSubtypeOfEntity("IfcRelationship");
 		}
 	}
 

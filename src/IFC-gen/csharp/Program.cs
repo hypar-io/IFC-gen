@@ -54,13 +54,12 @@ namespace IFC.Generate
 				{
 					sb.Append(t.ToString());
 				}
-
-				//Write entities.
+				
+				// Build the inheritance graph by using the string
+				// type names in SupertypeOf and SubtypeOf to find
+				// the mathing EntityDeclarations.
 				foreach(var e in listener.Entities)
 				{	
-					// Build the inheritance graph by using the string
-					// type names in SupertypeOf and SubtypeOf to find
-					// the mathing EntityDeclarations.
 					if(e.SubtypeOf.Any())
 					{
 						e.ParentEntity = listener.Entities.First(ent=>ent.Name == e.SubtypeOf.First());
@@ -69,7 +68,19 @@ namespace IFC.Generate
 					{
 						e.ChildEntities.AddRange(listener.Entities.Where(ent=>e.SupertypeOf.Contains(ent.Name)));
 					}
-					
+
+					// Do a pass over all attributes on the entity, ensuring
+					// that the type info on the attribute has its corresponding entity value;
+					// THIS IS STUPID AND SLOW.
+					foreach(var a in e.Attributes)
+					{
+						a.TypeInfo.Entity = listener.Entities.FirstOrDefault(ent => ent.Name == a.TypeInfo.ValueType);
+					}
+				}
+
+				//Write entities.
+				foreach(var e in listener.Entities)
+				{
 					sb.Append(e.ToString());
 				}
 				var types = 

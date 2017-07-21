@@ -22,9 +22,15 @@ namespace Express
 		/// <returns></returns>
 		public bool IsDerived{get;set;}
 
+		public bool ShouldAssignInConstructor()
+		{
+			return !IsDerived && !IsOptional && !TypeInfo.IsDerivedFromRelationship();
+		}
+		
 		public override string ToString()
 		{
-			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}}";
+			var optionalComment = IsOptional?"// optional":string.Empty;
+			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}} {optionalComment}";
 		}
 	}
 }

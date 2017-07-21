@@ -64,7 +64,7 @@ namespace Express
 		public override string ToString()
 		{
 			var propStringBuilder = new StringBuilder();
-			foreach(var a in Attributes.Where(a=>!a.IsDerived))
+			foreach(var a in AttributesForProperties())
 			{
 				propStringBuilder.AppendLine(a.ToString());
 			}
@@ -78,10 +78,19 @@ namespace Express
 			}
 
 			var assignBuilder = new StringBuilder();
-			foreach(var a in Attributes.Where(a=>!a.IsOptional && !a.IsDerived))
+
+			if(Name == "IfcRoot")
 			{
-				assignBuilder.AppendLine($"\t\t\t{a.TypeInfo.Name} = {a.TypeInfo.ParameterName};");
+				assignBuilder.AppendLine($"\t\t\tGlobalId = new IfcGloballyUniqueId(\"{Guid.NewGuid().ToString()}\");");
 			}
+			else
+			{
+				foreach(var a in AttributesForUseInConstructors())
+				{
+					assignBuilder.AppendLine($"\t\t\t{a.TypeInfo.Name} = {a.TypeInfo.ParameterName};");
+				}
+			}
+			
 
 			var classStr =
 $@"
@@ -112,6 +121,11 @@ $@"
 		/// <returns>Returns a string formed as follows: Type1 name1, Type2 name2, ... </returns>
 		private string ConstructorParameters()
 		{
+			if(Name == "IfcRoot")
+			{
+				return string.Empty;
+			}
+
 			var constructorParams = BuildConstructorParameters(AttributesForUseInConstructors());
 
 			var parent = ParentEntity;
@@ -127,8 +141,18 @@ $@"
 			
 			return constructorParams;
 		}
-
+		
 		/// <summary>
+		/// Some attributes will not have matching properties.
+		/// These include attributes which are DERIVED.
+		/// </summary>
+		/// <returns></returns>
+		private IEnumerable<AttributeDeclaration> AttributesForProperties()
+		{
+			return Attributes.Where(a=>!a.IsDerived);
+		}
+
+		/// /// <summary>
 		/// Some attributes will not have matching constructors parameters.
 		/// These include optional attributes, derived attributes, and 
 		/// attributes representing a relationship.
@@ -136,7 +160,7 @@ $@"
 		/// <returns></returns>
 		private IEnumerable<AttributeDeclaration> AttributesForUseInConstructors()
 		{
-			return Attributes.Where(a=>!a.IsOptional && !a.IsDerived);
+			return Attributes.Where(a=>a.ShouldAssignInConstructor());
 		}
 
 		private string BuildConstructorParameters(IEnumerable<AttributeDeclaration> attributes)
@@ -151,7 +175,7 @@ $@"
 			var parent = ParentEntity;
 			while(parent != null && parent.Name != "IfcRoot")
 			{
-				var parentParams = BuildBaseConstructorParams(parent.Attributes.Where(a=>!a.IsOptional && !a.IsDerived));
+				var parentParams = BuildBaseConstructorParams(parent.AttributesForUseInConstructors());
 				if(!string.IsNullOrEmpty(parentParams))
 				{
 					baseConstructorParams += string.IsNullOrEmpty(baseConstructorParams) ? parentParams: "," + parentParams;
@@ -176,9 +200,9 @@ $@"
 		/// </summary>
 		/// <param name="entity"></param>
 		/// <returns></returns>
-		public bool IsEntityOrSubtypeOfEntity(EntityDeclarationInfo entity)
+		public bool IsEntityOrSubtypeOfEntity(string entityName)
 		{
-			if(this == entity)
+			if(this.Name == entityName)
 			{
 				return true;
 			}
@@ -186,7 +210,7 @@ $@"
 			var parent = ParentEntity;
 			while(parent != null)
 			{
-				if(parent == entity)
+				if(parent.Name == entityName)
 				{
 					return true;
 				}
@@ -201,9 +225,9 @@ $@"
 		/// </summary>
 		/// <param name="entity"></param>
 		/// <returns></returns>
-		public bool IsEntityOrSupertypeOfEntity(EntityDeclarationInfo entity)
+		public bool IsEntityOrSupertypeOfEntity(string entityName)
 		{
-			if(this == entity)
+			if(this.Name == entityName)
 			{
 				return true;
 			}
@@ -211,7 +235,7 @@ $@"
 			var found = false;
 			foreach(var e in ChildEntities)
 			{
-				found = e.IsEntityOrSupertypeOfEntity(entity);
+				found = e.IsEntityOrSupertypeOfEntity(entityName);
 			}
 			return found;
 		}
