@@ -16,5 +16,5 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 
 ## Building
 
-The only language target currently available is C#. To build C#:
+The only language target currently available is C#. To build C#:  
 `. ./build_csharp`
