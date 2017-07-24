@@ -15,5 +15,7 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 
 ## Building
 
-The only language target currently available is C#. To build C#:  
-`. ./build_csharp`
+The parser generator can run in any language as listed [here](https://github.com/antlr/antlr4/blob/master/doc/targets.md). Here's an example of how ANTLR would be run to generate C# code:  
+
+`antlr4 -Dlanguage=CSharp -package Express -o ./csharp/antlr Express.g4`
+
