@@ -12,7 +12,6 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 ## Prerequisites
 
 - [ANTLR](http://www.antlr.org). Follow the instructions on the ANTLR website to install ANTLR and create aliases to the ANTLR binaries.
-- [.NET Core](https://www.microsoft.com/net/core#macos) .NET Core is used for code generation.
 
 ## Building
 
