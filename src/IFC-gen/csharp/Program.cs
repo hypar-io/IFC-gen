@@ -122,6 +122,16 @@ namespace IFC4
 	{{
 		[JsonProperty(""value"")]
 		public dynamic Value {{get;protected set;}}
+
+		public override string ToString()
+		{{
+			var settings = new JsonSerializerSettings()
+			{{
+				Formatting = Formatting.Indented,
+				TypeNameHandling = TypeNameHandling.Objects
+			}};
+			return JsonConvert.SerializeObject(this);
+		}}
 	}}
 	{selectConstructors.ToString()}
 }}";
