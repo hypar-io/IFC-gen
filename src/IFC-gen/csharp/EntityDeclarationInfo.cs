@@ -115,7 +115,7 @@ $@"
 
 		public override string ToString()
 		{{
-			var settings = new JsonSerializationSettings()
+			var settings = new JsonSerializerSettings()
 			{{
 				Formatting = Formatting.Indented,
 				TypeNameHandling = TypeNameHandling.Objects
