@@ -119,7 +119,7 @@ $@"
 			{{
 				Formatting = Formatting.Indented,
 				TypeNameHandling = TypeNameHandling.Objects
-			}}
+			}};
 			return JsonConvert.SerializeObject(this);
 		}}
 	}}
