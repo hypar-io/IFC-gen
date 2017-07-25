@@ -30,7 +30,10 @@ namespace Express
 		public override string ToString()
 		{
 			var optionalComment = IsOptional?"// optional":string.Empty;
-			return $"\t\tpublic {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}} {optionalComment}";
+			var prop=
+$@"		[JsonProperty(""{TypeInfo.JsonPropertyName}"")]
+		public {TypeInfo.ToString()} {TypeInfo.Name} {{get;set;}} {optionalComment}";
+			return prop;
 		}
 	}
 }

@@ -13,6 +13,13 @@ namespace Express
 	{
 		public string Name{get;set;}
 
+		public string JsonPropertyName
+		{
+			get
+			{
+				return Char.ToLowerInvariant(Name[0]) + Name.Substring(1);
+			}
+		}
 		public EntityDeclarationInfo Entity{get;set;}
 
 		public string ParameterName
