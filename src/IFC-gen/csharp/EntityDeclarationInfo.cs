@@ -89,6 +89,14 @@ namespace Express
 				{
 					assignBuilder.AppendLine($"\t\t\t{a.TypeInfo.Name} = {a.TypeInfo.ParameterName};");
 				}
+				var collAttrs = Attributes.Where(a=>a.TypeInfo is CollectionInfo && a.IsOptional);
+				if(collAttrs.Any())
+				{
+					foreach(var c in collAttrs)
+					{
+						assignBuilder.AppendLine($"\t\t\t{c.TypeInfo.ToInitializationString()}");
+					}
+				}
 			}
 			
 

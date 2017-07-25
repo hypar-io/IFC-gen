@@ -13,6 +13,10 @@ namespace Express
 	{
 		public string Name{get;set;}
 
+		/// <summary>
+		/// A string representing the key to be used for an attribute during serialization.
+		/// </summary>
+		/// <returns></returns>
 		public string JsonPropertyName
 		{
 			get
@@ -22,6 +26,10 @@ namespace Express
 		}
 		public EntityDeclarationInfo Entity{get;set;}
 
+		/// <summary>
+		/// A string representing the parameter corresponding to an attribute's info.
+		/// </summary>
+		/// <returns></returns>
 		public string ParameterName
 		{
 			get
@@ -99,6 +107,15 @@ namespace Express
 				return false;
 			}
 			return Entity.IsEntityOrSubtypeOfEntity("IfcRelationship");
+		}
+
+		/// <summary>
+		/// A string representing the initialization and allocation of a property of this type.
+		/// </summary>
+		/// <returns></returns>
+		public virtual string ToInitializationString()
+		{
+			return string.Empty;
 		}
 	}
 

@@ -21,6 +21,11 @@ namespace Express
 			Rank = 0;
 		}
 
+		public override string ToInitializationString()
+		{
+			return $"{Name} = new {ToString()}();";
+		}
+
 		public override string ToString()
 		{
 			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{ValueType}{string.Join("",Enumerable.Repeat(">",Rank))}";
