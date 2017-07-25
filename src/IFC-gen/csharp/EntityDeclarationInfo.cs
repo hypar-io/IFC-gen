@@ -81,7 +81,7 @@ namespace Express
 
 			if(Name == "IfcRoot")
 			{
-				assignBuilder.AppendLine($"\t\t\tGlobalId = new IfcGloballyUniqueId(\"{Guid.NewGuid().ToString()}\");");
+				assignBuilder.AppendLine($"\t\t\tGlobalId = new IfcGloballyUniqueId(Guid.NewGuid().ToString());");
 			}
 			else
 			{
@@ -111,6 +111,16 @@ $@"
 		public {Name}({ConstructorParameters()}){baseConstructor}
 		{{
 {assignBuilder.ToString()}
+		}}
+
+		public override string ToString()
+		{{
+			var settings = new JsonSerializationSettings()
+			{{
+				Formatting = Formatting.Indented,
+				TypeNameHandling = TypeNameHandling.Objects
+			}}
+			return JsonConvert.SerializeObject(this);
 		}}
 	}}
 ";
