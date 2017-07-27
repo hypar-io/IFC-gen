@@ -124,7 +124,7 @@ $@"
 			return JsonConvert.DeserializeObject<{Name}>(json);
 		}}
 
-		public static {isNew} {Name} FromSTEP()
+		public static {isNew} {Name} FromSTEP(string step)
 		{{
 			throw new NotImplementedException();
 		}}

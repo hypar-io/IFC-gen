@@ -176,7 +176,7 @@ var result =
 			return JsonConvert.DeserializeObject<{Name}>(json);
 		}}
 
-		public static {Name} FromSTEP()
+		public static {Name} FromSTEP(string step)
 		{{
 			throw new NotImplementedException();
 		}}

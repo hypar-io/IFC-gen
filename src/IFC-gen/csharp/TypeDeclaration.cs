@@ -39,7 +39,7 @@ namespace Express
 			return JsonConvert.DeserializeObject<{TypeInfo.Name}>(json);
 		}}
 
-		public static {TypeInfo.Name} FromSTEP()
+		public static {TypeInfo.Name} FromSTEP(string step)
 		{{
 			throw new NotImplementedException();
 		}}
