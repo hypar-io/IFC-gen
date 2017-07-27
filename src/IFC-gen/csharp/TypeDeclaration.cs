@@ -33,6 +33,16 @@ namespace Express
 		{{
 			return new {TypeInfo.Name}(v);
 		}}	
+
+		public static {TypeInfo.Name} FromJSON(string json)
+		{{
+			return JsonConvert.DeserializeObject<{TypeInfo.Name}>(json);
+		}}
+
+		public static {TypeInfo.Name} FromSTEP()
+		{{
+			throw new NotImplementedException();
+		}}
 	}}
 
 ";

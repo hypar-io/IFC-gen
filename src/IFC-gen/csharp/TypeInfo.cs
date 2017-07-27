@@ -171,6 +171,15 @@ var result =
 	public class {Name} : IfcSelect<{string.Join(",",Values)}>
 	{{
 {constructors}
+		public static {Name} FromJSON(string json)
+		{{
+			return JsonConvert.DeserializeObject<{Name}>(json);
+		}}
+
+		public static {Name} FromSTEP()
+		{{
+			throw new NotImplementedException();
+		}}
 	}}
 
 ";
