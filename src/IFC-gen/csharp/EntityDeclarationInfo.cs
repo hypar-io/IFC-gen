@@ -99,6 +99,18 @@ namespace Express
 				}
 			}
 			
+			var toJson = SubtypeOf.Any()?string.Empty:
+$@"
+		public string ToJSON()
+		{{
+			var settings = new JsonSerializerSettings()
+			{{
+				Formatting = Formatting.Indented,
+				TypeNameHandling = TypeNameHandling.Objects
+			}};
+			return JsonConvert.SerializeObject(this);
+		}}
+";
 
 			var classStr =
 $@"
@@ -112,16 +124,7 @@ $@"
 		{{
 {assignBuilder.ToString()}
 		}}
-
-		public override string ToString()
-		{{
-			var settings = new JsonSerializerSettings()
-			{{
-				Formatting = Formatting.Indented,
-				TypeNameHandling = TypeNameHandling.Objects
-			}};
-			return JsonConvert.SerializeObject(this);
-		}}
+{toJson}
 	}}
 ";
 			return classStr;
