@@ -22,7 +22,17 @@ namespace Express
 	/// </summary>
 	public class {TypeInfo.Name} : IfcType<{TypeInfo.ToString()}>
 	{{
-		public {TypeInfo.Name}({TypeInfo.ToString()} value):base(value){{}}		
+		public {TypeInfo.Name}({TypeInfo.ToString()} value):base(value){{}}	
+
+		public static implicit operator {TypeInfo.ToString()}({TypeInfo.Name} v)
+		{{
+			return v.Value;
+		}}
+
+		public static implicit operator {TypeInfo.Name}({TypeInfo.ToString()} v)
+		{{
+			return new {TypeInfo.Name}(v);
+		}}	
 	}}
 
 ";
