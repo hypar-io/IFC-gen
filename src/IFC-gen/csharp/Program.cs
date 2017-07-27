@@ -118,20 +118,10 @@ using System.Collections.Generic;
 
 namespace IFC4
 {{
-	public abstract class Select
+	public abstract class Select : IfcBase
 	{{
 		[JsonProperty(""value"")]
 		public dynamic Value {{get;protected set;}}
-
-		public string ToJSON()
-		{{
-			var settings = new JsonSerializerSettings()
-			{{
-				Formatting = Formatting.Indented,
-				TypeNameHandling = TypeNameHandling.Objects
-			}};
-			return JsonConvert.SerializeObject(this);
-		}}
 	}}
 	{selectConstructors.ToString()}
 }}";

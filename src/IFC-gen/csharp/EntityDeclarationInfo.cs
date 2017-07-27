@@ -71,10 +71,17 @@ namespace Express
 
 			var supertype = string.Empty;
 			var baseConstructor = string.Empty;
+			var isNew = string.Empty;
+
 			if(SubtypeOf.Any())
 			{
 				supertype = $" : {string.Join(",",SubtypeOf)}";
-				baseConstructor = $" : base({(BaseConstructorParameters())})"; 
+				baseConstructor = $" : base({(BaseConstructorParameters())})";
+				isNew = "new"; 
+			}
+			else
+			{
+				supertype = $" : IfcBase";
 			}
 
 			var assignBuilder = new StringBuilder();
@@ -98,19 +105,6 @@ namespace Express
 					}
 				}
 			}
-			
-			var toJson = SubtypeOf.Any()?string.Empty:
-$@"
-		public string ToJSON()
-		{{
-			var settings = new JsonSerializerSettings()
-			{{
-				Formatting = Formatting.Indented,
-				TypeNameHandling = TypeNameHandling.Objects
-			}};
-			return JsonConvert.SerializeObject(this);
-		}}
-";
 
 			var classStr =
 $@"
@@ -124,7 +118,16 @@ $@"
 		{{
 {assignBuilder.ToString()}
 		}}
-{toJson}
+
+		public static {isNew} {Name} FromJSON(string json)
+		{{
+			return JsonConvert.DeserializeObject<{Name}>(json);
+		}}
+
+		public static {isNew} {Name} FromSTEP()
+		{{
+			throw new NotImplementedException();
+		}}
 	}}
 ";
 			return classStr;
