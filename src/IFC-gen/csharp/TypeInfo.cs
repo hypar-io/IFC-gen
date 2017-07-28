@@ -67,31 +67,31 @@ namespace Express
 				return "System.Byte[]";
 			}
 
+			// Fixed length strings
 			if(type.Contains("STRING("))
 			{
-				return "System.String";
+				return "string";
 			}
 
 			switch(type)
 			{
 				case "BOOLEAN":
-					retType = "System.Boolean";
+					retType = "bool";
 					break;
 				case "LOGICAL":
-					retType = "System.Boolean";
-					//retType = "System.Boolean?";
+					retType = "bool?";
 					break;
 				case "REAL":
-					retType = "System.Double";
+					retType = "double";
 					break;
 				case "STRING":
-					retType = "System.String";
+					retType = "string";
 					break;
 				case "INTEGER":
-					retType = "System.Int32";
+					retType = "int";
 					break;
 				case "NUMBER":
-					retType = "System.Double";
+					retType = "double";
 					break;
 				default:
 					retType = type;
