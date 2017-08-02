@@ -108,15 +108,6 @@ namespace Express
 			}
 			return Entity.IsEntityOrSubtypeOfEntity("IfcRelationship");
 		}
-
-		/// <summary>
-		/// A string representing the initialization and allocation of a property of this type.
-		/// </summary>
-		/// <returns></returns>
-		public virtual string ToInitializationString()
-		{
-			return string.Empty;
-		}
 	}
 
 	/// <summary>

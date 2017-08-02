@@ -26,7 +26,25 @@ namespace Express
 		{
 			return !IsDerived && !IsOptional && !TypeInfo.IsDerivedFromRelationship();
 		}
-		
+
+		public string ToAssignmentString()
+		{
+			if(!IsDerived && !IsOptional && !TypeInfo.IsDerivedFromRelationship())
+			{
+				return $"{TypeInfo.Name} = {TypeInfo.ParameterName};";
+			}
+			return string.Empty;
+		}
+
+		public string ToInitializationString()
+		{
+			if(!IsDerived && IsOptional && (TypeInfo is CollectionInfo))
+			{
+				return $"{TypeInfo.Name} = new {TypeInfo.ToString()}();";
+			}
+			return string.Empty;
+		}
+
 		public override string ToString()
 		{
 			var optionalComment = IsOptional?"// optional":string.Empty;

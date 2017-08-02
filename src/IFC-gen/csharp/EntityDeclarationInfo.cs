@@ -81,6 +81,7 @@ namespace Express
 			}
 			else
 			{
+				// All base types inherit from our IfcBase.
 				supertype = $" : IfcBase";
 			}
 
@@ -94,16 +95,22 @@ namespace Express
 			{
 				foreach(var a in AttributesForUseInConstructors())
 				{
-					assignBuilder.AppendLine($"\t\t\t{a.TypeInfo.Name} = {a.TypeInfo.ParameterName};");
-				}
-				var collAttrs = Attributes.Where(a=>a.TypeInfo is CollectionInfo && a.IsOptional);
-				if(collAttrs.Any())
-				{
-					foreach(var c in collAttrs)
+					var assign = a.ToAssignmentString();
+					if(assign != string.Empty)
 					{
-						assignBuilder.AppendLine($"\t\t\t{c.TypeInfo.ToInitializationString()}");
+						assignBuilder.AppendLine($"\t\t\t{assign}");
 					}
 				}
+
+				foreach(var a in Attributes)
+				{
+					var init = a.ToInitializationString();
+					if(init != string.Empty)
+					{
+						assignBuilder.AppendLine($"\t\t\t{init}");
+					}
+				}
+				
 			}
 
 			var classStr =
