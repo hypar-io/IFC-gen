@@ -32,112 +32,123 @@ namespace Express
 			Selects = new List<SelectInfo>();
 		}
 
-		private TypeInfo TypeInfoFromValueTypeContext(string name, ExpressParser.ValueTypeContext ctx)
+		private TypeInfo TypeInfoFromTypeSelContext(string name, ExpressParser.TypeSelContext ctx)
 		{
 			TypeInfo typeInfo = null;
 			// ENUMERATION
-			if(ctx.enumeration() != null)
+			if(ctx.enumType() != null)
 			{
 				typeInfo = new EnumInfo(name);
 			}
 			//SELECT
-			else if(ctx.select() != null)
+			else if(ctx.selectType() != null)
 			{
 				typeInfo = new SelectInfo(name);
 				Selects.Add((SelectInfo)typeInfo);
 			}
 			//COLLECTION
-			else if(ctx.collection() != null)
+			else if(ctx.collectionType() != null)
 			{
 				typeInfo = new CollectionInfo(name);
 			}
-			// DEFINED TYPE
-			else if(ctx.atomicType() != null)
+			// SIMPLE TYPE or NAMED TYPE
+			else if(ctx.simpleType() != null || ctx.namedType() != null)
 			{
 				typeInfo = new DefinedTypeInfo(name);
-				typeInfo.ValueType = TypeInfo.ToSystemType(ctx.atomicType().GetText());
+				typeInfo.ValueType = TypeInfo.ToSystemType(ctx.simpleType().GetText());
 			}
 			return typeInfo;
 		}
 
-		public override void EnterTypeDeclaration(ExpressParser.TypeDeclarationContext context)
+		private TypeInfo TypeInfoFromCollectionTypeSelContext(string name, ExpressParser.CollectionTypeSelContext ctx)
 		{
-			currentTypeInfo = TypeInfoFromValueTypeContext(context.Identifier().GetText(),context.valueType());
+			TypeInfo typeInfo = null;
+			//COLLECTION
+			if(ctx.collectionType() != null)
+			{
+				typeInfo = new CollectionInfo(name);
+			}
+			// SIMPLE TYPE or NAMED TYPE
+			else if(ctx.simpleType() != null || ctx.namedType() != null)
+			{
+				typeInfo = new DefinedTypeInfo(name);
+				typeInfo.ValueType = TypeInfo.ToSystemType(ctx.simpleType().GetText());
+			}
+			return typeInfo;
+		}
+
+		public override void EnterTypeBody(ExpressParser.TypeBodyContext context)
+		{
+			currentTypeInfo = TypeInfoFromTypeSelContext(context.typeDef().SimpleId().GetText(),context.typeSel());
 			Types.Add(new TypeDeclaration(currentTypeInfo));
 		}
 
-		public override void EnterEnumeration(ExpressParser.EnumerationContext context)
+		public override void EnterEnumType(ExpressParser.EnumTypeContext context)
 		{
-			((EnumInfo)currentTypeInfo).Values = context.idList().GetText().Split(',');
+			((EnumInfo)currentTypeInfo).Values = context.enumValues().GetText().Split(',');
 		}
 
-		public override void EnterSelect(ExpressParser.SelectContext context)
+		public override void EnterSelectType(ExpressParser.SelectTypeContext context)
 		{
-			((SelectInfo)currentTypeInfo).Values = context.idList().GetText().Split(',');
+			((SelectInfo)currentTypeInfo).Values = context.selectValues().GetText().Split(',');
 		}
 
-		public override void ExitTypeDeclaration(ExpressParser.TypeDeclarationContext context)
+		public override void ExitTypeDecl(ExpressParser.TypeDeclContext context)
 		{
 			currentTypeInfo = null;
 		}
 
-		public override void ExitCollection(ExpressParser.CollectionContext context)
+		public override void ExitCollectionType(ExpressParser.CollectionTypeContext context)
 		{
 			((CollectionInfo)currentTypeInfo).ValueType = TypeInfo.ToSystemType(context.atomicType().GetText());
 		}
 
-		public override void EnterArrayDecl(ExpressParser.ArrayDeclContext context)
+		public override void EnterArrayType(ExpressParser.ArrayTypeContext context)
 		{
 			var ci = ((CollectionInfo)currentTypeInfo);
 			ci.Rank++;
 			ci.CollectionType = CollectionType.Array;
-			ci.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			ci.Size = int.Parse(context.boundSpec().bound2().numberExpr().GetText());
 		}
 
-		public override void EnterSetDecl(ExpressParser.SetDeclContext context)
+		public override void EnterSetType(ExpressParser.SetTypeContext context)
 		{
 			var ci = ((CollectionInfo)currentTypeInfo);
 			ci.Rank++;
 			ci.CollectionType = CollectionType.Set;
-			ci.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			ci.Size = int.Parse(context.boundSpec().bound2().GetText());
 		}
 
-		public override void EnterListDecl(ExpressParser.ListDeclContext context)
+		public override void EnterListType(ExpressParser.ListTypeContext context)
 		{
 			var ci = ((CollectionInfo)currentTypeInfo);
 			ci.Rank++;
 			ci.CollectionType = CollectionType.List;
-			ci.Size = int.Parse(context.setParameters().Integer()[0].GetText());
+			ci.Size = int.Parse(context.boundSpec().bound2().GetText());
 		}
 
-		public override void EnterEntityDeclaration(ExpressParser.EntityDeclarationContext context)
+		public override void EnterEntityDecl(ExpressParser.EntityDeclContext context)
 		{
-			currentEntityInfo = new EntityDeclarationInfo(context.Identifier().GetText());
+			currentEntityInfo = new EntityDeclarationInfo(context.entityHead().entityDef().SimpleId().GetText());
 			Entities.Add(currentEntityInfo);
 		}
 
-		public override void ExitEntityDeclaration(ExpressParser.EntityDeclarationContext context)
+		public override void ExitEntityDecl(ExpressParser.EntityDeclContext context)
 		{
 			currentEntityInfo = null;
 		}
 
-		public override void EnterInverseAttribute(ExpressParser.InverseAttributeContext context)
+		public override void EnterInverseDef(ExpressParser.InverseDefContext context)
 		{
 			var attr = new AttributeDeclaration();
 
 			TypeInfo typeInfo = null;
-			var name = context.Identifier()[0].GetText();
+			var name = context.attrDef().SimpleId().GetText();
 
-			//COLLECTION
-			if(context.collection() != null)
+			if(context.inverseType().boundSpec() != null)
 			{
 				typeInfo = new CollectionInfo(name);
-			}
-			// DEFINED TYPE
-			else if(context.Identifier()[1] != null)
-			{
-				typeInfo = new DefinedTypeInfo(name);
-				typeInfo.ValueType = TypeInfo.ToSystemType(context.Identifier()[1].GetText());
+				typeInfo.ValueType = context.attrRef().SimpleId().GetText();
 			}
 
 			attr.TypeInfo = typeInfo;
@@ -146,31 +157,36 @@ namespace Express
 			currentEntityInfo.Attributes.Add(attr);
 		}
 
-		public override void EnterAttribute(ExpressParser.AttributeContext context)
+		public override void EnterExplDef(ExpressParser.ExplDefContext context)
 		{
-			var attr = new AttributeDeclaration();
-			string name = null;
-			if(context.Identifier() != null)
-			{
-				name = context.Identifier().GetText();
-			}
-			else
-			{
-				name = context.path().GetText();
-			}
-			attr.IsOptional = context.OPTIONAL() != null;
-			attr.TypeInfo = TypeInfoFromValueTypeContext(name, context.valueType());
-			
-			if(context.Parent is ExpressParser.DeriveDeclarationContext)
-			{
-				attr.IsDerived = true;
-			}
-			currentTypeInfo = attr.TypeInfo;
+			// Multiple attributes may be defined.
+			// Ex: thing1,thing2,thing3 : STRING
 
-			currentEntityInfo.Attributes.Add(attr);
+			foreach(var attrDef in context.attrDef())
+			{
+				var ad = new AttributeDeclaration();
+				ad.IsOptional = context.OPTIONAL() != null;
+				ad.TypeInfo = TypeInfoFromCollectionTypeSelContext(attrDef.SimpleId().GetText(), context.collectionTypeSel());
+				currentTypeInfo = ad.TypeInfo;
+				currentEntityInfo.Attributes.Add(ad);
+			}
 		}
 
-		public override void ExitAttribute(ExpressParser.AttributeContext context)
+		public override void EnterDeriveDef(ExpressParser.DeriveDefContext context)
+		{
+			var ad = new AttributeDeclaration();
+			ad.IsDerived = true;
+			ad.TypeInfo = TypeInfoFromCollectionTypeSelContext(context.attrDef().SimpleId().GetText(), context.collectionTypeSel());
+			currentTypeInfo = ad.TypeInfo;
+			currentEntityInfo.Attributes.Add(ad);
+		}
+
+		public override void ExitExplDef(ExpressParser.ExplDefContext context)
+		{
+			currentTypeInfo = null;
+		}
+
+		public override void ExitDeriveDef(ExpressParser.DeriveDefContext context)
 		{
 			currentTypeInfo = null;
 		}
@@ -182,27 +198,20 @@ namespace Express
 				currentEntityInfo.IsAbstract = true;
 			}
 
-			currentEntityInfo.SupertypeOf.Add(context.Identifier().GetText());
-		}
-
-		public override void EnterSupertypesDecl(ExpressParser.SupertypesDeclContext context)
-		{
-			if(context.ABSTRACT() != null)
+			if(context.supertypeExpr().supertypeFactor()[0].entityRef() != null)
 			{
-				currentEntityInfo.IsAbstract = true;
-			}
 
-			currentEntityInfo.SupertypeOf.AddRange(context.oneOf().idList().GetText().Split(','));
+			}
+			else if (context.supertypeExpr().supertypeFactor()[0].choice() != null)
+			{
+				currentEntityInfo.SupertypeOf.AddRange(context.supertypeExpr().supertypeFactor()[0].choice().supertypeExpr().GetText().Split(','));
+
+			}
 		}
 
 		public override void EnterSubtypeDecl(ExpressParser.SubtypeDeclContext context)
 		{
-			currentEntityInfo.SubtypeOf.Add(context.Identifier().GetText());
-		}
-
-		public override void EnterSubtypesDecl(ExpressParser.SubtypesDeclContext context)
-		{
-			currentEntityInfo.SubtypeOf.AddRange(context.oneOf().idList().GetText().Split(','));
+			//currentEntityInfo.SubtypeOf.AddRange(context.oneOf().idList().GetText().Split(','));
 		}
 	}
 }
