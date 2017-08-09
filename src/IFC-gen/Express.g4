@@ -46,6 +46,7 @@ assignmentStmt
 
 attrDef
 	: SimpleId
+	| Path // IFC: Paths were not supported here.
 	;
 
 attributes
@@ -77,7 +78,7 @@ bound2
 	;
 
 boundSpec
-	: '[' bound1 ';' bound2 ']'
+	: '[' bound1 ':' bound2 ']'
 	;
 
 caseAction
@@ -173,7 +174,7 @@ deriveClause
 	;
 
 deriveDef
-	: attrDef ';' collectionTypeSel init ';'
+	: attrDef ':' collectionTypeSel init ';'
 	;
 
 derivedAttr
@@ -195,6 +196,8 @@ domainRules
 
 element
 	: expression ':' repetition
+	| StringLiteral // IFC: ['thing1','thing2']
+	| RealLiteral // IFC: [0.0,1.0]
 	;
 
 embeddedRemark
@@ -360,7 +363,7 @@ inverseRedef
 	;
 
 inverseType
-	: ((SET|BAG) boundSpec)? OF entityRef
+	: ((SET|BAG) boundSpec? OF)? entityRef
 	;
 
 labelDef
@@ -569,7 +572,7 @@ simpleExpr
 	;
 
 simpleFactor
-	: (literal|varRef|interval|queryExpr|'(' expression ')'|unaryOp simpleFactor)
+	: (Path|literal|varRef|interval|queryExpr|'(' expression ')'|unaryOp simpleFactor) // IFC: Attribute values as factors. See Path.
 	;
 
 simpleType
@@ -677,11 +680,12 @@ supertypeFactor
 	;
 
 tailRemark
-	: '--' remarkStuff* NewlineChar
+	: '--' remarkStuff*
 	;
 
 term
 	: factor (('*'|'/'|DIV|MOD|AND|'||') factor)*
+	| Path
 	;
 
 typeBody
@@ -886,11 +890,44 @@ WHERE : 'WHERE' ;
 WHILE : 'WHILE' ;
 XOR : 'XOR';
 
-Bit
-	: '0'
-	| '1'
+SchemaDef 
+	: 'IFC' IntegerLiteral
+	; 
+
+SimpleId
+	: Letter (Letter|Digit|'_')*
 	;
 
+fragment
+PathFragment
+	: SimpleId ('.' SimpleId|'[' IntegerLiteral ']')*
+	;
+
+Path
+	: SELF
+	| SELF '\\' PathFragment // IFC: Ex: SELF\IfcEdgeLoop.EdgeList
+	| PathFragment ('\\' PathFragment)* // IFC: Ex: ElpFbnds.Bound\IfcEdgeLoop.EdgeList
+	;
+
+IntegerLiteral
+	: '-'? Digits
+	;
+
+BinaryLiteral
+	: '%' ('0'|'1') ('0'|'1')*
+	;
+
+LogicalLiteral
+	: FALSE
+	| TRUE
+	| UNKNOWN
+	;
+
+RealLiteral
+	: '-'? Digits '.' Digits* (('e'|'E') ('+'|'-') Digits)? // IFC: Scientific 'E' was not supported.
+	;
+
+fragment
 Digit : [0-9] ;
 
 Digits
@@ -909,32 +946,6 @@ Character
 QuoteChar 
 	: '\'';
 
-SchemaDef 
-	: 'IFC' IntegerLiteral
-	; 
-
-SimpleId
-	: Letter (Letter|Digit|'_')*
-	;
-
-BinaryLiteral
-	: '%' Bit Bit*
-	;
-
-IntegerLiteral
-	: '-'? Digits
-	;
-
-LogicalLiteral
-	: FALSE
-	| TRUE
-	| UNKNOWN
-	;
-
-RealLiteral
-	: '-'? Digits '.' Digits* ('e' ('+'|'-') Digits)?
-	;
-
 fragment
 SpaceChar 
 	: ' ' 
@@ -946,17 +957,25 @@ RogueChar
 	;
 
 StringLiteral
-	: QuoteChar (QuoteChar QuoteChar|Character|SpaceChar|RogueChar)* QuoteChar
+	: QuoteChar .*? QuoteChar 
 	;
 
 NewlineChar 
-	: [\r\n\u000c]+ ;
+	: [\r\n\u000c]+ -> skip ;
 
 WS 
 	: [ \t\r\n\u000c]+ -> skip ;
 
 Comments 
 	: '(*' .*? '*)' -> skip ;
+
+// IFC: Skip rules
+Rules
+	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
+
+// IFC: Skip functions
+Functions
+	: 'FUNCTION ' SimpleId .*? 'END_FUNCTION;' -> skip ;
 
 
 
