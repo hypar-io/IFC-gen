@@ -6,6 +6,139 @@ using Antlr4.Runtime.Misc;
 
 namespace Express
 {
+	/// <summary>
+	/// AttributeData store information about an attribute.
+	/// </summary>
+	internal class AttributeData
+	{
+		public string Name{get;set;}
+		public string Type{get;set;}
+
+		public bool IsOptional{get;set;}
+
+		public AttributeData ()
+		{
+		}
+
+		/// <summary>
+		/// A string representing the parameter corresponding to an attribute's info.
+		/// </summary>
+		/// <returns></returns>
+		public string ParameterName
+		{
+			get
+			{
+				var name = Name;
+				if(Name == "Operator")
+				{
+					name = "op";
+				}
+
+				// Sometimes the name will be of the format SELF\IfcGeometricRepresentationContext.TrueNorth
+				// This won't work as a parameter name. Split it and takes the last part.
+				var split = name.Split('.');
+				if(split.Count() > 1)
+				{
+					name = split.Last();
+				}
+				return Char.ToLowerInvariant(name[0]) + name.Substring(1);
+			}
+		}
+	}
+
+	/// <summary>
+	/// TypeData stores information about a type.
+	/// </summary>
+	internal class TypeData
+	{
+		public string Name {get;set;}
+		public List<TypeData> Supers{get;set;}
+		public List<TypeData> Subs{get;set;}
+
+		public List<AttributeData> Attributes{get;set;}
+
+		public bool IsAbstract{get;set;}
+
+		public TypeData(string name)
+		{
+			Name = name;
+			Supers = new List<TypeData>();
+			Subs = new List<TypeData>();
+			Attributes = new List<AttributeData>();
+		}
+
+		/// <summary>
+		/// Return all parents to this type all the way to the root.
+		/// </summary>
+		/// <returns></returns>
+		private IEnumerable<TypeData> Parents()
+		{
+			var parents = new List<TypeData>();
+			parents.AddRange(Subs);
+
+			foreach(var s in Subs)
+			{
+				parents.AddRange(s.Parents());
+			}
+			return parents;
+		}
+
+		/// <summary>
+		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
+		/// </summary>
+		/// <returns></returns>
+		public string ConstructorParams(Dictionary<string,TypeData> typeGraph, string key)
+		{
+			// Constructor parameters include the union of this type's attributes and all super type attributes.
+			// A constructor parameter is created for every attribute which does not derive
+			// from IFCRelationship.
+			return string.Join(",", Attributes.Concat(Parents().SelectMany(p=>p.Attributes))
+									.Where(a=>!IsTypeOrSubtypeOfEntity("IfcRelationship"))
+									.Where(a=>!a.IsOptional)
+									.Select(a=>$"{a.Type} {a.ParameterName}")
+									);
+		}
+		
+		/// <summary>
+		/// Return a set of constructor params in the form `name1, name2`.
+		/// </summary>
+		/// <returns></returns>
+		public string BaseConstructorParams()
+		{
+			// Base constructor parameters include the union of all super type attributes.
+			return string.Join(",", Parents()
+									.SelectMany(p=>p.Attributes)
+									.Where(a=>!IsTypeOrSubtypeOfEntity("IfcRelationship"))
+									.Where(a=>!a.IsOptional)
+									.Select(a=>$"{a.ParameterName}")
+									);
+		}
+
+		/// <summary>
+		/// Determine whether this is the provided type or a sub-type of the provided type.
+		/// </summary>
+		/// <param name="typeName"></param>
+		/// <returns></returns>
+		public bool IsTypeOrSubtypeOfEntity(string typeName)
+		{
+			if(this.Name == typeName)
+			{
+				return true;
+			}
+
+			foreach(var s in Subs)
+			{
+				var found = s.IsTypeOrSubtypeOfEntity(typeName);
+				if(found)
+				{
+					return true;
+				}
+			}
+
+			return false;
+		}
+	}
+
 	public class ExpressListener : ExpressBaseListener
 	{
 		private int currRank = 0;
@@ -13,6 +146,13 @@ namespace Express
 		private string currType;
 		
 		private StringBuilder stringBuilder;
+
+		private Dictionary<string,TypeData> typeGraph = new Dictionary<string,TypeData>();
+
+		private TypeData currTypeData;
+
+		private List<AttributeData> currAttrDatas = new List<AttributeData>();
+
 		public ExpressListener(StringBuilder stringBuilder)
 		{
 			this.stringBuilder = stringBuilder;
@@ -34,12 +174,20 @@ namespace IFC4
 	{
 		[JsonProperty(""value"")]
 		public dynamic Value {{get;protected set;}}
-	}";
+	}
+	";
 			stringBuilder.AppendLine(outer);
 		}
 
 		public override void ExitSchemaDecl(ExpressParser.SchemaDeclContext context)
 		{
+			// Write all the entities
+			foreach(var kvp in typeGraph)
+			{
+				var td = kvp.Value;
+				stringBuilder.AppendLine(WriteEntity(td));
+			}
+
 			// Close the main namespace.
 			stringBuilder.AppendLine("}");
 		}
@@ -91,31 +239,31 @@ namespace IFC4
 			var type = string.Empty;
 				if(context.binaryType() != null)
 				{
-					type = "BINARY";
+					type = "byte[]";
 				}
 				else if(context.booleanType() != null)
 				{
-					type = "BOOLEAN";
+					type = "bool";
 				}
 				else if(context.integerType() != null)
 				{
-					type = "INTEGER";
+					type = "int";
 				}
 				else if(context.logicalType() != null)
 				{
-					type = "LOGICAL";
+					type = "bool?";
 				}
 				else if(context.numberType() != null)
 				{
-					type = "NUMBER";
+					type = "double";
 				}
 				else if(context.realType() != null)
 				{
-					type = "REAL";
+					type = "double";
 				}
 				else if(context.stringType() != null)
 				{
-					type = "STRING";
+					type = "string";
 				}
 			return type;
 		}
@@ -130,11 +278,25 @@ namespace IFC4
 			{
 				currType = context.typeRef().SimpleId().GetText();
 			}
+			if(currAttrDatas.Any())
+			{
+				foreach(var a in currAttrDatas)
+				{
+					a.Type = currType;
+				}
+			}
 		}
 
 		public override void ExitSimpleType(ExpressParser.SimpleTypeContext context)
 		{
 			currType = ParseSimpleType(context);
+			if(currAttrDatas.Any())
+			{
+				foreach(var a in currAttrDatas)
+				{
+					a.Type = currType;
+				}
+			}
 		}
 
 		public override void EnterCollectionType(ExpressParser.CollectionTypeContext context)
@@ -145,6 +307,137 @@ namespace IFC4
 		public override void ExitCollectionType(ExpressParser.CollectionTypeContext context)
 		{
 			currRank = 0;
+		}
+
+		private TypeData AddOrReturnTypeData(string name)
+		{
+			TypeData td;
+			if(!typeGraph.ContainsKey(name))
+			{
+				td = new TypeData(name);
+				typeGraph.Add(name, td);
+			}
+			else
+			{
+				td = typeGraph[name];
+			}
+			return td;
+		}
+
+		public override void EnterEntityDecl(ExpressParser.EntityDeclContext context)
+		{
+			var name = context.entityHead().entityDef().SimpleId().GetText();
+			var subSuper = context.entityHead().subSuper();
+
+			TypeData td = AddOrReturnTypeData(name);
+			currTypeData = td;
+		}
+
+		public override void EnterSupertypeDecl(ExpressParser.SupertypeDeclContext context)
+		{
+			currTypeData.IsAbstract = context.ABSTRACT() != null;
+			var factor = context.supertypeExpr().supertypeFactor();
+			
+			// IFC: Use choice only.
+			if(factor[0].choice() != null)
+			{
+				foreach(var superRef in factor[0].choice().supertypeExpr())
+				{
+					var tdSuper = AddOrReturnTypeData(superRef.supertypeFactor()[0].entityRef().SimpleId().GetText());
+					currTypeData.Supers.Add(tdSuper);
+				}
+			}
+		}
+
+		public override void EnterSubtypeDecl(ExpressParser.SubtypeDeclContext context)
+		{
+			foreach(var subRef in context.entityRef())
+			{
+				var tdSub = AddOrReturnTypeData(subRef.SimpleId().GetText());
+				currTypeData.Subs.Add(tdSub);
+			}
+		}
+
+		public override void EnterExplDef(ExpressParser.ExplDefContext context)
+		{
+			var cad = new AttributeData();
+			currAttrDatas.Add(cad);
+			currTypeData.Attributes.Add(cad);
+			cad.IsOptional = context.OPTIONAL() != null;
+		}
+
+		public override void EnterDeriveDef(ExpressParser.DeriveDefContext context)
+		{
+			var cad = new AttributeData();
+			currAttrDatas.Add(cad);
+			currTypeData.Attributes.Add(cad);
+		}
+
+		public override void EnterInverseDef(ExpressParser.InverseDefContext context)
+		{
+			var cad = new AttributeData();
+			currAttrDatas.Add(cad);
+			currTypeData.Attributes.Add(cad);
+		}
+
+		public override void EnterAttrDef(ExpressParser.AttrDefContext context)
+		{
+			if(context.SimpleId() != null)
+			{
+				currAttrDatas.Last().Name = context.SimpleId().GetText();
+			}
+			else if(context.Path() != null)
+			{
+				currAttrDatas.Last().Name = context.Path().GetText();
+			}
+		}
+
+		public override void ExitExplDef(ExpressParser.ExplDefContext context)
+		{
+			currAttrDatas.Clear();
+		}
+
+		public override void ExitEntityDecl(ExpressParser.EntityDeclContext context)
+		{
+			currTypeData = null;
+		}
+
+		private string WriteEntity(TypeData td)
+		{
+			var super =  "IfcBase";
+			var newMod = string.Empty;
+			if(td.Subs.Any())
+			{
+				super = td.Subs[0].Name;;
+				newMod = "new";
+			}
+
+			var modifier = td.IsAbstract? "abstract":string.Empty;
+
+			var classStr =
+$@"
+	/// <summary>
+	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{td.Name.ToLower()}.htm""/>
+	/// </summary>
+	public {modifier} partial class {td.Name} : {super}
+	{{
+
+		public {td.Name}({td.ConstructorParams()}):base({td.BaseConstructorParams()})
+		{{
+
+		}}
+
+		public static {newMod} {td.Name} FromJSON(string json)
+		{{
+			return JsonConvert.DeserializeObject<{td.Name}>(json);
+		}}
+
+		public static {newMod} {td.Name} FromSTEP(string step)
+		{{
+			throw new NotImplementedException();
+		}}
+	}}";
+			return classStr;
 		}
 
 		private string WriteSimpleType(string name, string type)
@@ -179,7 +472,6 @@ namespace IFC4
 			throw new NotImplementedException();
 		}}
 	}}
-
 ";
 			return result;
 		}
@@ -229,7 +521,6 @@ var result =
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{name.ToLower()}.htm
 	/// </summary>
 	public enum {name} {{{string.Join(",",values)}}}
-
 ";
 			return result;
 		}
@@ -258,30 +549,55 @@ var result =
 			throw new NotImplementedException();
 		}}
 	}}
-
 ";
 
 			return result;
 		}
 
-		public override void EnterBagType(ExpressParser.BagTypeContext context)
+		public override void ExitBagType(ExpressParser.BagTypeContext context)
 		{
 			currRank ++;
+
+			if(currAttrDatas.Any())
+			{
+				foreach(var cad in currAttrDatas)
+				{
+					cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
+				}			
+			}
 		}
 
-		public override void EnterArrayType(ExpressParser.ArrayTypeContext context)
+		public override void ExitArrayType(ExpressParser.ArrayTypeContext context)
 		{
 			currRank ++;
+			if(currAttrDatas.Any())
+			{
+				foreach(var cad in currAttrDatas)
+				{
+					cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
+				}
+			}
 		}
 
-		public override void EnterSetType(ExpressParser.SetTypeContext context)
+		public override void ExitSetType(ExpressParser.SetTypeContext context)
 		{
 			currRank ++;
+			if(currAttrDatas.Any())
+			{
+				foreach(var cad in currAttrDatas)
+				{
+					cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
+				}			
+			}
 		}
 
-		public override void EnterListType(ExpressParser.ListTypeContext context)
+		public override void ExitListType(ExpressParser.ListTypeContext context)
 		{
 			currRank ++;
+			foreach(var cad in currAttrDatas)
+			{
+				cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
+			}
 		}
 	}
 }
