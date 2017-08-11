@@ -225,7 +225,7 @@ namespace Express
 	/// </summary>
 	public class {Name} : IfcSelect<{string.Join(",",Values)}>
 	{{
-	{constructors}
+{constructors}
 		public static {Name} FromJSON(string json)
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
