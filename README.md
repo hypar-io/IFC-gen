@@ -12,6 +12,7 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 ## Prerequisites
 
 - [ANTLR](http://www.antlr.org). Follow the instructions on the ANTLR website to install ANTLR and create aliases to the ANTLR binaries.
+- alias antlr4='java -jar /usr/local/lib/antlr-4.7-complete.jar'
 
 ## Building
 

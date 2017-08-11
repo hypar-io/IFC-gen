@@ -1,328 +1,981 @@
 grammar Express;
 
-schemaDeclaration
-	: SCHEMA Version ';' typeDeclaration* entityDeclaration* functionDeclaration*  END_SCHEMA';' EOF;
-
-typeDeclaration 
-	: TYPE Identifier EQ valueType FIXED? ';' typeDeclarationBody? END_TYPE ';' ;
-
-typeName	
-	: Identifier
+actualParams
+	: '(' parameter (',' parameter)* ')'
 	;
 
-atomicType
-	: BINARY_SIZED
-	| BOOLEAN
-	| INTEGER
-	| LOGICAL
-	| REAL
-	| STRING
-	| STRING_SIZED
-	| Identifier
+aggregateExpr
+	: expression
 	;
 
-valueType 
-	: atomicType
-	| Identifier
-	| enumeration
-	| select
-	| collection
+aggregateLiteral
+	: '[' element (',' element)* ']'
 	;
 
-collection
-	: collectionParameters (OF UNIQUE? collectionParameters)* OF UNIQUE? atomicType
+aggregateType
+	: AGGREGATE (':' typeLabel)? OF allTypeSel
 	;
 
-collectionParameters
-	: ARRAY setParameters	# ArrayDecl
-	| SET setParameters		# SetDecl
-	| LIST setParameters	# ListDecl
+aliasDef
+	: SimpleId
 	;
 
-setParameters
-	: '[' Integer COLON (Integer|Identifier|'?') ']'
+aliasRef
+	: SimpleId
 	;
 
-enumeration
-	: ENUMERATION OF LP idList RP 
+aliasStmt
+	: ALIAS aliasDef FOR varRef ';' stmts END_ALIAS ';'
 	;
 
-select
-	: SELECT LP idList RP
+allTypeSel
+	: aggregateType
+	| conformantType
+	| simpleType
+	| namedType
+	| pseudoType
 	;
 
-idList
-	: Identifier(','Identifier)*
-	| IfcType(','IfcType)*
+arrayType
+	: ARRAY boundSpec OF OPTIONAL? UNIQUE? collectionTypeSel
 	;
 
-typeDeclarationBody 
-	: ruleDeclaration 
+assignmentStmt
+	: varRef ':=' expression ';'
 	;
 
-ruleDeclaration : 'WHERE' rule+ ;
-
-rule 
-	: Identifier COLON boolExpr ';'
+attrDef
+	: SimpleId
+	| Path // IFC: Paths were not supported here.
 	;
 
-expr
-	: funcCallExpr
-	| mulDivExpr
-	| addSubExpr
-	| boolExpr
+attributes
+	: explicitClause* deriveClause* inverseClause*
 	;
 
-atom 
-	: LP NOT? expr RP
-	| NOT? LP expr RP
-	| SELF
-	| IfcType
-	| Integer 
-	| Float
-	| Scientific
-	| Identifier
-	| path
-	| propertyAccessor
-	| setAccessor
-	| '[' idList ']'
-	| '[' Float(','Float)+ ']'
-	| funcCallExpr
-	| funcCallExpr(LOR funcCallExpr)+ // a || b || c
-	| '?' // See line 4028
+attrRef
+	: SimpleId
 	;
 
-boolExpr
-	: atom MOD atom EQ atom
-	| SIZEOF LP mulDivExpr RP EQ atom //See line 3231
-	| (atom|funcCallExpr|mulDivExpr|addSubExpr) (LT|GT|LTE|GTE|EQ|NEQ|SAME|NOT_SAME) (atom|funcCallExpr|mulDivExpr|addSubExpr)
-	| LB atom((LT|GT|LTE|GTE|EQ|SAME|NOT_SAME)atom)* RB
-	| NOT? (atom|funcCallExpr) ((AND|OR|XOR) NOT? (atom|funcCallExpr))* 
-	| (IfcType|path|propertyAccessor|Identifier|SELF) IN (funcCallExpr|'['idList']'|propertyAccessor)
+bagType
+	: BAG boundSpec? OF collectionTypeSel
 	;
 
-funcCallExpr
-	: (EXISTS|SIZEOF|TYPEOF|ABS|USEDIN|Identifier)LP funcParameters RP
-	| (EXISTS|SIZEOF|TYPEOF|ABS|USEDIN|Identifier)LP RP // A function call with no parameters.
+binaryType
+	: BINARY ('(' width ')' FIXED?)?
 	;
 
-funcParameters
-	: queryExpr
-	| atom(','atom)*
+booleanType
+	: BOOLEAN
+	;
+
+bound1
+	: numberExpr
+	;
+
+bound2
+	: numberExpr
+	;
+
+boundSpec
+	: '[' bound1 ':' bound2 ']'
+	;
+
+caseAction
+	: caseLabel (',' caseLabel)* ':' stmt
+	;
+
+caseBody
+	: caseAction* otherAction?
+	;
+
+caseLabel	
+	: expression
+	;
+
+caseStmt
+	: CASE selector OF caseBody END_CASE ';'
+	;
+
+choice
+	: ONEOF '(' supertypeExpr (',' supertypeExpr)* ')'
+	;
+
+collectionType
+	: arrayType
+	| bagType
+	| listType
+	| setType
+	;
+
+collectionTypeSel
+	: collectionType
+	| namedType
+	| simpleType
+	;
+
+compoundStmt
+	: BEGIN stmts END ';'
+	;
+
+conformantArray
+	: ARRAY OF OPTIONAL? UNIQUE? allTypeSel
+	;
+
+conformantBag
+	: BAG OF allTypeSel
+	;
+
+conformantList
+	: LIST OF UNIQUE? allTypeSel
+	;
+
+conformantSet
+	: SET OF allTypeSel
+	;
+
+conformantType
+	: conformantArray
+	| conformantBag
+	| conformantList
+	| conformantSet
+	;
+
+constantDecl
+	: CONSTANT constBody* END_CONSTANT ';'
+	;
+
+constantRef
+	: SimpleId
+	;
+
+constBody
+	: constDef ':' collectionTypeSel init ';'
+	;
+
+constDef
+	: SimpleId
+	;
+
+constRef
+	: constDef
+	| stdConst
+	;
+
+declaration
+	: entityDecl
+	| functionDecl
+	| procedureDecl
+	| typeDecl
+	;
+
+deriveClause
+	: DERIVE derivedAttr+
+	;
+
+deriveDef
+	: attrDef ':' collectionTypeSel init ';'
+	;
+
+derivedAttr
+	: deriveDef
+	| derivedRedef
+	;
+
+derivedRedef
+	: attrRef ':' collectionTypeSel init ';'
+	;
+
+domainRule
+	: labelDef ':' logicalExpr
+	;
+
+domainRules
+	: WHERE (domainRule ';')+
+	;
+
+element
+	: expression ':' repetition
+	| StringLiteral // IFC: ['thing1','thing2']
+	| RealLiteral // IFC: [0.0,1.0]
+	;
+
+embeddedRemark
+	: '(*' (embeddedRemark|remarkStuff)* '*)'
+	;
+
+entityBody
+	: attributes localRules
+	;
+
+entityDecl
+	: entityHead entityBody END_ENTITY ';'
+	;
+
+entityDef
+	: SimpleId
+	;
+
+entityHead
+	: ENTITY entityDef subSuper ';'
+	;
+
+entityLiteral
+	: entityRef '(' (expression (',' expression)*)? ')'
+	;
+
+entityRef
+	: SimpleId
+	;
+
+enumDef
+	: SimpleId
+	;
+
+enumRef
+	: (typeRef '.')? enumDef
+	;
+
+enumType
+	: ENUMERATION OF '(' enumValues ')'
+	;
+
+enumValues
+	: enumDef (',' enumDef)*
+	;
+
+escapeStmt
+	: ESCAPE ';'
+	;
+
+explDef
+	: attrDef (',' attrDef)* ':' OPTIONAL? collectionTypeSel ';'
+	;
+
+explicitClause
+	: explDef
+	| explRedef
+	;
+
+explRedef
+	: attrRef ':' OPTIONAL? collectionTypeSel ';'
+	;
+
+expression
+	: simpleExpr (('<'|'>'|'<='|'>='|'<>'|'='|':<>:'|':=:'|IN|LIKE) simpleExpr)?
+	;
+
+factor
+	: simpleFactor ('**' simpleFactor)?
+	;
+
+formalParam
+	: paramDef (',' paramDef)* ':' allTypeSel
+	;
+
+formalParams	
+	: '(' formalParam (';' formalParam)* ')'
+	;
+
+funcDef
+	: SimpleId
+	;
+
+funcHead
+	: FUNCTION funcDef formalParams* ':' allTypeSel ';'
+	;
+
+funcRef
+	: (funcDef|stdFunc) actualParams
+	;
+
+functionDecl
+	: funcHead prolog stmts END_FUNCTION ';'
+	;
+
+genericType
+	: GENERIC (':' typeLabel)?
+	;
+
+ifStmt
+	: IF expression THEN stmts (ELSE stmts)? END_IF ';'
+	;
+
+importEntity
+	: entityRef (AS entityDef)?
+	;
+
+importItem
+	: importRef (AS aliasDef)?
+	;
+
+importList
+	: '(' importItem (',' importItem)* ')'
+	;
+
+importRef
+	: constantRef
+	| entityRef
+	| funcRef
+	| procRef
+	| typeRef
+	;
+incr
+	: numberExpr
+	;
+
+incrementControl
+	: varDef ':=' bound1 TO bound2 (BY incr)?
+	;
+
+init
+	: ':=' expression
+	;
+
+integerType
+	: INTEGER
+	;
+
+interfaceSpecification
+	: referenceClause
+	| useClause
+	;
+
+interval
+	: '{' simpleExpr ('<'|'<=') simpleExpr ('<'|'<=') simpleExpr '}'
+	;
+
+inverseAttr
+	: inverseDef
+	| inverseRedef
+	;
+
+inverseClause
+	: INVERSE inverseAttr*
+	;
+
+inverseDef
+	: attrDef ':' inverseType FOR attrRef ';'
+	;
+
+inverseRedef
+	: attrRef ';' inverseType FOR attrRef ';'
+	;
+
+inverseType
+	: ((SET|BAG) boundSpec? OF)? entityRef
+	;
+
+labelDef
+	: SimpleId
+	;
+
+listType
+	: LIST boundSpec? OF UNIQUE? collectionTypeSel
+	;
+
+literal
+	: BinaryLiteral
+	| IntegerLiteral
+	| LogicalLiteral
+	| RealLiteral
+	| StringLiteral
+	| aggregateLiteral
+	| entityLiteral
+	;
+
+localDecl
+	: LOCAL localVar* END_LOCAL ';'
+	;
+
+localRules
+	: uniqueRules? domainRules?
+	;
+
+localVar
+	: varDef (',' varDef)* ';' collectionTypeSel init? ';'
+	;
+
+logicalExpr
+	: expression
+	;
+
+logicalType
+	: LOGICAL
+	;
+
+namedType
+	: entityRef
+	| typeRef
+	;
+
+nullStmt
+	: ';'
+	;
+
+numberExpr
+	: simpleExpr
+	;
+
+numberType
+	: NUMBER
+	;
+
+otherAction
+	: OTHERWISE ':' stmt
+	;
+
+paramDef
+	: SimpleId
+	;
+
+parameter
+	: expression
+	;
+
+paramRef
+	: SimpleId
+	;
+
+precisionSpec
+	: numberExpr
+	;
+
+procCallStmt
+	: procRef ';'
+	;
+
+procDef
+	: SimpleId
+	;
+
+procedureDecl
+	: procHead prolog stmts END_PROCEDURE ';'
+	;
+
+procHead
+	: PROCEDURE procDef varParams? ';'
+	;
+
+procRef
+	: (procDef|stdProc) actualParams
+	;
+
+prolog
+	: declaration* constantDecl? localDecl?
+	;
+
+pseudoType
+	: aggregateType
+	| genericType
+	;
+
+qualifier
+	: (('.' attrRef)|subscript)*
+	;
+
+queryAssignment
+	: varDef '<*' aggregateExpr
 	;
 
 queryExpr
-	: QUERY LP Identifier INIT (Identifier|path|propertyAccessor|funcCallExpr|queryExpr) PIPE boolExpr RP
+	: QUERY '(' queryAssignment '|' queryScan ')'
 	;
 
-mulDivExpr
-	: (atom|addSubExpr)((MUL|DIV)(atom|addSubExpr))+
-	; 
-
-addSubExpr
-	: atom((ADD|SUB)atom)+
+queryScan
+	: logicalExpr
 	;
 
-entityDeclaration
-	: ENTITY Identifier ';'? entityDeclarationBody END_ENTITY ';' 
+realType
+	: REAL ('(' precisionSpec ')')?
 	;
 
-entityDeclarationBody
-	: attribute* supertypeDeclaration? subtypeDeclaration? deriveDeclaration? inverseDeclaration? uniqueDeclaration? ruleDeclaration? 
+referenceClause
+	: REFERENCE FROM schemaRef importList? ';'
 	;
 
-supertypeDeclaration 
-	: ABSTRACT? SUPERTYPE OF LP Identifier RP ';'? attribute*	# SupertypeDecl
-	| ABSTRACT? SUPERTYPE OF LP oneOf RP ';'? attribute* 		# SupertypesDecl
+referencedAttr
+	: attrRef
 	;
 
-subtypeDeclaration 
-	: SUBTYPE OF LP Identifier RP ';' attribute* 	# SubtypeDecl
-	| SUBTYPE OF LP oneOf RP ';' attribute* 		# SubtypesDecl
+remark
+	: embeddedRemark
+	| tailRemark
 	;
 
-attribute
-	: (Identifier | path) COLON OPTIONAL? valueType definition? ';'
+remarkStuff
+	:.
 	;
 
-definition
-	: DEF (atom|expr);
-
-oneOf 
-	: ONEOF LP idList RP 
+repeatControl
+	: incrementControl? whileControl? untilControl?
 	;
 
-inverseDeclaration
-	: INVERSE inverseAttribute+
+repeateStmt
+	: REPEAT repeatControl ';' stmts END_REPEAT ';'
 	;
 
-inverseAttribute
-	: Identifier COLON (Identifier|collection) FOR Identifier ';'
+repetition
+	: numberExpr
 	;
 
-deriveDeclaration
-	: DERIVE attribute+
+returnStmt
+	: RETURN ('(' expression ')')? ';'
 	;
 
-uniqueDeclaration
-	: UNIQUE uniqueStatement+ 
+ruleDecl
+	: ruleHead prolog stmts domainRules END_RULE ';'
 	;
 
-uniqueStatement
-	: Identifier COLON (Identifier|idList) ';' 
+ruleDef
+	: SimpleId
 	;
 
-functionDeclaration 
-	: 'FUNCTION' functionDeclarationBody 'END_FUNCTION' ;
-
-functionDeclarationBody
-	: .*? ;
-
-path
-	: (SELF'\\')? (Identifier|propertyAccessor)('\\'(Identifier|propertyAccessor))*
+ruleHead
+	: RULE ruleDef FOR ruleList ';'
 	;
 
-propertyAccessor
-	:  (setAccessor|Identifier|funcCallExpr|SELF)('.'(setAccessor|Identifier))+
+ruleList
+	: '(' entityRef (',' entityRef)* ')'
 	;
 
-setAccessor
-	: Identifier '[' (Integer|Identifier) ']'
-	| SELF '[' (Integer|Identifier) ']'
+schemaBody
+	: interfaceSpecification* constantDecl? (declaration|ruleDecl)*
 	;
+
+schemaDecl
+	: SCHEMA SchemaDef ';' schemaBody END_SCHEMA ';'
+	;
+
+schemaRef
+	: SimpleId
+	;
+
+selector
+	: expression
+	;
+
+selectType
+	: SELECT '(' selectValues ')'
+	;
+
+selectValues
+	:  namedType (',' namedType)*
+	;
+
+setType
+	: SET boundSpec OF collectionTypeSel
+	;
+
+simpleExpr
+	: term (('+'|'-'|OR|XOR) term)*
+	;
+
+simpleFactor
+	: (Path|literal|varRef|interval|queryExpr|'(' expression ')'|unaryOp simpleFactor) // IFC: Attribute values as factors. See Path.
+	;
+
+simpleType
+	: binaryType
+	| booleanType
+	| integerType
+	| logicalType
+	| numberType
+	| realType
+	| stringType
+	;
+
+skipStmt
+	: SKIP2 ';'
+	;
+
+stdConst	
+	: CONST_E
+	| PI
+	| SELF
+	| '?'
+	;
+
+stdFunc
+	: ABS
+	| ACOS
+	| ASIN
+	| ATAN
+	| BLENGTH
+	| COS
+	| EXISTS
+	| EXP
+	| FORMAT
+	| HIBOUND
+	| HIINDEX
+	| LENGTH
+	| LOBOUND
+	| LOINDEX
+	| LOG
+	| LOG2
+	| LOG10
+	| NVL
+	| ODD
+	| ROLESOF
+	| SIN
+	| SIZEOF
+	| SQRT
+	| TAN
+	| TYPEOF
+	| USEDIN
+	| VALUE
+	;
+
+stdProc
+	: INSERT
+	| REMOVE
+	;
+
+stmt
+	: aliasStmt
+	| assignmentStmt
+	| caseStmt
+	| compoundStmt
+	| escapeStmt
+	| ifStmt
+	| nullStmt
+	| procCallStmt
+	| repeateStmt
+	| returnStmt
+	| skipStmt
+	;
+
+stmts
+	: stmt stmt*
+	;
+
+stringType
+	: STRING ('(' width ')' FIXED?)?
+	;
+
+subSuper
+	: supertypeDecl? subtypeDecl?
+	;
+
+subscript
+	: ('[' numberExpr ']'|'[' numberExpr ':' numberExpr ']')
+	;
+
+subtypeDecl
+	: SUBTYPE OF '(' entityRef (',' entityRef)* ')'
+	;
+
+supertypeDecl
+	: (ABSTRACT SUPERTYPE | ABSTRACT? SUPERTYPE OF '(' supertypeExpr ')')
+	;
+
+supertypeExpr
+	: supertypeFactor ((AND|ANDOR) supertypeFactor)*
+	;
+
+supertypeFactor
+	: entityRef
+	| choice
+	| '(' supertypeExpr ')'
+	;
+
+tailRemark
+	: '--' remarkStuff*
+	;
+
+term
+	: factor (('*'|'/'|DIV|MOD|AND|'||') factor)*
+	| Path
+	;
+
+typeBody
+	: typeDef '=' typeSel ';' domainRules?
+	;
+
+typeDecl
+	: TYPE typeBody END_TYPE ';'
+	;
+
+typeDef
+	: SimpleId
+	;
+
+typeLabel
+	: SimpleId
+	;
+
+typeRef
+	: SimpleId
+	;
+
+typeSel
+	: collectionType
+	| namedType
+	| simpleType
+	| enumType
+	| selectType
+	;
+
+unaryOp
+	: '+'
+	| '-'
+	| NOT
+	;
+
+uniqueRule
+	: labelDef ':' referencedAttr (',' referencedAttr)*
+	;
+
+uniqueRules
+	: UNIQUE uniqueRule ';' (uniqueRule ';')*
+	;
+
+untilControl
+	: UNTIL logicalExpr
+	;
+
+useClause
+	: USE FROM schemaRef useList? ';'
+	;
+
+useList
+	: '(' importEntity (',' importEntity)* ')'
+	;
+
+varDef
+	: SimpleId
+	;
+
+varParam
+	: VAR formalParam
+	;
+
+varParams
+	: '(' varParam (';' varParam)* ')'
+	;
+
+varRef
+	: varDef qualifier
+	| aliasRef qualifier
+	| attrRef qualifier
+	| constRef qualifier
+	| entityRef
+	| enumRef
+	| funcRef qualifier
+	| paramRef qualifier
+	| procRef
+	;
+
+whileControl
+	: WHILE logicalExpr
+	;
+
+width
+	: numberExpr
+	;
+
 // Lexer
 
-//Base Types
-BINARY_SIZED : 'BINARY(' Integer ')';
-BOOLEAN : 'BOOLEAN' ;
-INTEGER : 'INTEGER' ;
-LIST : 'LIST';
-LOGICAL : 'LOGICAL' ;
-REAL : 'REAL' ;
-SET : 'SET' ;
-STRING_SIZED : 'STRING(' Integer ')';
-FIXED : 'FIXED';
-STRING : 'STRING' ;
-ARRAY : 'ARRAY' ;
-
-// Keywords
+ABS : 'ABS' ;
 ABSTRACT : 'ABSTRACT' ;
+ACOS : 'ACOS' ;
+AGGREGATE : 'AGGREGATE' ;
+ALIAS : 'ALIAS' ;
 AND : 'AND' ;
+ANDOR : 'ANDOR' ;
+ARRAY : 'ARRAY' ;
+AS : 'AS' ;
+ASIN : 'ASIN' ;
+ATAN : 'ATAN' ;
+BAG : 'BAG' ;
+BEGIN : 'BEGIN' ;
+BINARY : 'BINARY' ;
+BLENGTH : 'BLENGTH' ;
+BOOLEAN : 'BOOLEAN' ;
+BY : 'BY' ;
+CASE : 'CASE' ;
+CONSTANT : 'CONSTANT' ;
+CONST_E : 'CONST_E' ;
+COS : 'COS' ;
 DERIVE : 'DERIVE' ;
-ENTITY : 'ENTITY' ;
+DIV : 'DIV' ;
+ELSE : 'ELSE' ;
+END : 'END' ;
+END_ALIAS : 'END_ALIAS' ;
+END_CASE : 'END_CASE' ;
+END_CONSTANT : 'END_CONSTANT' ;
 END_ENTITY : 'END_ENTITY' ;
+END_FUNCTION : 'END_FUNCTION' ;
+END_IF : 'END_IF' ;
+END_LOCAL : 'END_LOCAL' ;
+END_PROCEDURE : 'END_PROCEDURE' ;
+END_RULE : 'END_RULE' ;
+END_REPEAT : 'END_REPEAT' ;
+END_SCHEMA : 'END_SCHEMA' ;
+END_TYPE : 'END_TYPE';
+ENTITY : 'ENTITY' ;
 ENUMERATION : 'ENUMERATION' ;
+ESCAPE : 'ESCAPE' ;
+EXISTS : 'EXISTS' ;
+EXP : 'EXP' ;
+FALSE : 'FALSE';
+FIXED : 'FIXED';
 FOR : 'FOR' ;
+FORMAT : 'FORMAT' ;
+FROM : 'FROM' ;
+FUNCTION : 'FUNCTION' ;
+GENERIC : 'GENERIC' ;
+HIBOUND : 'HIBOUND' ;
+HIINDEX : 'HIINDEX' ;
+IF : 'IF' ;
 IN : 'IN' ;
-INVERSE : 'INVERSE';
+INSERT : 'INSERT' ;
+INVERSE : 'INVERSE' ;
+INTEGER : 'INTEGER' ;
+LENGTH : 'LENGTH' ;
+LIKE : 'LIKE' ;
+LIST : 'LIST' ;
+LOCAL : 'LOCAL' ;
+LOGICAL : 'LOGICAL' ;
+LOBOUND : 'LOBOUND' ;
+LOINDEX : 'LOINDEX' ;
+LOG : 'LOG' ;
+LOG2 : 'LOG2' ;
+LOG10 : 'LOG10' ;
 MOD : 'MOD' ;
-OF : 'OF';
+NOT : 'NOT' ;
+NUMBER : 'NUMBER' ;
+NVL : 'NVL' ;
+ODD : 'ODD' ;
+OF : 'OF' ;
 ONEOF : 'ONEOF' ;
 OPTIONAL : 'OPTIONAL' ;
 OR : 'OR' ;
+OTHERWISE : 'OTHERWISE' ;
+PI : 'PI' ;
+PROCEDURE : 'PROCEDURE' ;
+QUERY : 'QUERY' ;
+REAL : 'REAL' ;
+REFERENCE : 'REFERENCE' ;
+REMOVE : 'REMOVE' ;
+REPEAT : 'REPEAT' ;
+RETURN : 'RETURN' ;
+ROLESOF : 'ROLESOF' ;
+RULE : 'RULE' ;
 SCHEMA : 'SCHEMA' ;
-END_SCHEMA : 'END_SCHEMA' ;
 SELECT : 'SELECT' ;
 SELF : 'SELF' ;
+SET : 'SET' ;
+SIN : 'SIN' ;
+SIZEOF : 'SIZEOF' ;
+SKIP2 : 'SKIP' ;
+SQRT : 'SQRT' ;
+STRING : 'STRING' ;
 SUBTYPE : 'SUBTYPE' ;
 SUPERTYPE : 'SUPERTYPE' ;
+TAN : 'TAN' ;
+THEN : 'THEN' ;
+TO : 'TO' ;
+TRUE : 'TRUE' ;
 TYPE : 'TYPE' ;
-END_TYPE : 'END_TYPE' ;
-UNIQUE : 'UNIQUE' ;
-WHERE : 'WHERE' ;
-XOR : 'XOR' ;
-
-// Functions
-EXISTS : 'EXISTS' ;
-SIZEOF : 'SIZEOF' ;
-QUERY : 'QUERY' ;
 TYPEOF : 'TYPEOF' ;
-ABS : 'ABS' ;
+UNIQUE : 'UNIQUE' ;
+UNKNOWN : 'UNKNOWN' ;
+UNTIL : 'UNTIL' ;
+USE : 'USE' ;
 USEDIN : 'USEDIN' ;
+VALUE : 'VALUE' ;
+VAR : 'VAR' ;
+WHERE : 'WHERE' ;
+WHILE : 'WHILE' ;
+XOR : 'XOR';
 
-IfcType
-	: '\'' Version ('.'Identifier)+ '\''
-	;
-
-Version 
-	: 'IFC' Integer
+SchemaDef 
+	: 'IFC' IntegerLiteral
 	; 
 
-fragment
-Digit : '0'..'9' ; 
-
-Integer : '-'? Digit+;
-
-LP : '(' ;
-RP : ')' ;
-LB : '{' ;
-RB : '}' ;
-COLON : ':' ;
-PIPE : '|' ;
-
-// Operators
-NOT : 'NOT';
-EQ : '=' ;
-GT : '>' ;
-LT : '<' ;
-GTE : '>=' ;
-LTE : '<=' ;
-NEQ  : '<>' ;
-MUL : '*' ;
-DIV : '/' ;
-ADD : '+' ;
-SUB : '-' ;
-DEF : ':=' ;
-SAME : ':=:' ;
-NOT_SAME : ':<>:' ;
-INIT : '<*' ;
-LAND : '&&' ;
-LOR : '||' ;
-
-Scientific
-	: Float 'E' '-'? Integer
-	;
-
-Float
-	: '-'? Digit+ '.' Digit*
-	| '-'? Digit+ '.' //See line 3460
-	| '-'? '.' Digit*
-	;
-
-Identifier 
-	: IdLetter (IdLetter | Digit)*
-	| '\'' (IdLetter|Digit) (IdLetter|Digit|' ')* '\''
+SimpleId
+	: Letter (Letter|Digit|'_')*
 	;
 
 fragment
-IdLetter 
-	: CapitalLetter
-	| LowercaseLetter
-	| '_' 
-	| '-'
+PathFragment
+	: SimpleId ('.' SimpleId|'[' IntegerLiteral ']')*
+	;
+
+Path
+	: SELF
+	| SELF '\\' PathFragment // IFC: Ex: SELF\IfcEdgeLoop.EdgeList
+	| PathFragment ('\\' PathFragment)* // IFC: Ex: ElpFbnds.Bound\IfcEdgeLoop.EdgeList
+	;
+
+IntegerLiteral
+	: '-'? Digits
+	;
+
+BinaryLiteral
+	: '%' ('0'|'1') ('0'|'1')*
+	;
+
+LogicalLiteral
+	: FALSE
+	| TRUE
+	| UNKNOWN
+	;
+
+RealLiteral
+	: '-'? Digits '.' Digits* (('e'|'E') ('+'|'-') Digits)? // IFC: Scientific 'E' was not supported.
 	;
 
 fragment
-CapitalLetter
-	: 'A'..'Z'
+Digit : [0-9] ;
+
+Digits
+	: Digit Digit*
+	;
+
+Letter
+	: [a-zA-Z]
+	;
+
+Character
+	: Digit
+	| Letter
+	;
+
+QuoteChar 
+	: '\'';
+
+fragment
+SpaceChar 
+	: ' ' 
 	;
 
 fragment
-LowercaseLetter
-	: 'a'..'z'
+RogueChar 
+	: [\u0177] 
 	;
 
-Rules
-	: 'RULE ' Identifier .*? 'END_RULE;' -> skip ;
+StringLiteral
+	: QuoteChar .*? QuoteChar 
+	;
 
-Functions
-	: 'FUNCTION ' Identifier .*? 'END_FUNCTION;' -> skip ;
+NewlineChar 
+	: [\r\n\u000c]+ -> skip ;
 
 WS 
 	: [ \t\r\n\u000c]+ -> skip ;
 
 Comments 
 	: '(*' .*? '*)' -> skip ;
+
+// IFC: Skip rules
+Rules
+	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
+
+// IFC: Skip functions
+Functions
+	: 'FUNCTION ' SimpleId .*? 'END_FUNCTION;' -> skip ;
 
 
 
