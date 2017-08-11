@@ -64,6 +64,24 @@ namespace IFC4
 		[JsonProperty(""value"")]
 		public dynamic Value {get;protected set;}
 	}
+
+	/// <summary>
+	/// A type wrapper for IFC.
+	/// </summary>
+	public class IfcType<T> : IfcBase
+	{
+		[JsonProperty(""value"")]
+		public T Value{get;set;}
+		public IfcType(T value)
+		{
+			Value = value;
+		}
+
+		public static implicit operator IfcType<T>(T value)
+		{
+			return new IfcType<T>(value);
+		}
+	}
 	";
 			stringBuilder.AppendLine(outer);
 		}
@@ -76,12 +94,6 @@ namespace IFC4
 				if(!td.Subs.Any())
 				{
 					continue;
-				}
-
-				var isRelationship = td.IsTypeOrSubtypeOfEntity("IfcRelationship");
-				foreach(var a in td.Attributes)
-				{
-					a.IsRelationshipReference = isRelationship;
 				}
 			}
 

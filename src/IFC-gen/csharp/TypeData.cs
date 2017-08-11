@@ -13,9 +13,22 @@ namespace Express
 	{
 		public string Name{get;set;}
 
-		public string Type{get;set;}
-
-		public bool IsRelationshipReference{get;set;}
+		private string type;
+		public string Type
+		{
+			get
+			{
+				if(IsCollection)
+				{
+					return 	$"{string.Join("",Enumerable.Repeat("List<",Rank))}{type}{string.Join("",Enumerable.Repeat(">",Rank))}";
+				}
+				return type;
+			}
+			set
+			{
+				type = value;
+			}
+		}
 
 		public bool IsInverse{get;set;}
 
@@ -59,9 +72,7 @@ namespace Express
 		public override string ToString()
 		{
 			var opt = IsOptional? "// optional":string.Empty;
-			var type = IsCollection? 
-						$"{string.Join("",Enumerable.Repeat("List<",Rank))}{Type}{string.Join("",Enumerable.Repeat(">",Rank))}":Type;
-			var prop = $"\t\tpublic {type} {Name}{{get;set;}} {opt}";
+			var prop = $"\t\tpublic {Type} {Name}{{get;set;}} {opt}";
 			return prop;
 		}
 
@@ -74,7 +85,7 @@ namespace Express
 		{
 			if(IsCollection)
 			{
-				return $"\t\t\t{Name} = new {string.Join("",Enumerable.Repeat("List<",Rank))}{Type}{string.Join("",Enumerable.Repeat(">",Rank))}();";
+				return $"\t\t\t{Name} = new {Type}();";
 			}
 			return null;
 		}
@@ -294,7 +305,6 @@ namespace Express
 			}
 
 			var validAttrs = attrs
-								.Where(a=>!a.IsRelationshipReference)
 								.Where(a=>!a.IsOptional)
 								.Where(a=>!a.IsInverse)
 								.Where(a=>!a.IsDerived);
@@ -317,7 +327,6 @@ namespace Express
 				return string.Empty;
 			}
 			var validAttrs = attrs
-								.Where(a=>!a.IsRelationshipReference)
 								.Where(a=>!a.IsOptional)
 								.Where(a=>!a.IsInverse)
 								.Where(a=>!a.IsDerived);
