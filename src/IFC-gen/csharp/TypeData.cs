@@ -296,7 +296,8 @@ namespace Express
 			var validAttrs = attrs
 								.Where(a=>!a.IsRelationshipReference)
 								.Where(a=>!a.IsOptional)
-								.Where(a=>!a.IsInverse);
+								.Where(a=>!a.IsInverse)
+								.Where(a=>!a.IsDerived);
 
 			return string.Join(",", validAttrs.Select(a=>$"{a.Type} {a.ParameterName}"));
 		}
@@ -318,7 +319,8 @@ namespace Express
 			var validAttrs = attrs
 								.Where(a=>!a.IsRelationshipReference)
 								.Where(a=>!a.IsOptional)
-								.Where(a=>!a.IsInverse);
+								.Where(a=>!a.IsInverse)
+								.Where(a=>!a.IsDerived);
 
 			return string.Join(",", validAttrs.Select(a=>$"{a.ParameterName}"));
 		}
