@@ -6,145 +6,8 @@ using Antlr4.Runtime.Misc;
 
 namespace Express
 {
-	/// <summary>
-	/// AttributeData store information about an attribute.
-	/// </summary>
-	internal class AttributeData
-	{
-		public string Name{get;set;}
-		public string Type{get;set;}
-
-		public bool IsOptional{get;set;}
-
-		public AttributeData ()
-		{
-		}
-
-		/// <summary>
-		/// A string representing the parameter corresponding to an attribute's info.
-		/// </summary>
-		/// <returns></returns>
-		public string ParameterName
-		{
-			get
-			{
-				var name = Name;
-				if(Name == "Operator")
-				{
-					name = "op";
-				}
-
-				// Sometimes the name will be of the format SELF\IfcGeometricRepresentationContext.TrueNorth
-				// This won't work as a parameter name. Split it and takes the last part.
-				var split = name.Split('.');
-				if(split.Count() > 1)
-				{
-					name = split.Last();
-				}
-				return Char.ToLowerInvariant(name[0]) + name.Substring(1);
-			}
-		}
-	}
-
-	/// <summary>
-	/// TypeData stores information about a type.
-	/// </summary>
-	internal class TypeData
-	{
-		public string Name {get;set;}
-		public List<TypeData> Supers{get;set;}
-		public List<TypeData> Subs{get;set;}
-
-		public List<AttributeData> Attributes{get;set;}
-
-		public bool IsAbstract{get;set;}
-
-		public TypeData(string name)
-		{
-			Name = name;
-			Supers = new List<TypeData>();
-			Subs = new List<TypeData>();
-			Attributes = new List<AttributeData>();
-		}
-
-		/// <summary>
-		/// Return all parents to this type all the way to the root.
-		/// </summary>
-		/// <returns></returns>
-		private IEnumerable<TypeData> Parents()
-		{
-			var parents = new List<TypeData>();
-			parents.AddRange(Subs);
-
-			foreach(var s in Subs)
-			{
-				parents.AddRange(s.Parents());
-			}
-			return parents;
-		}
-
-		/// <summary>
-		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
-		/// </summary>
-		/// <returns></returns>
-		public string ConstructorParams(Dictionary<string,TypeData> typeGraph, string key)
-		{
-			// Constructor parameters include the union of this type's attributes and all super type attributes.
-			// A constructor parameter is created for every attribute which does not derive
-			// from IFCRelationship.
-			return string.Join(",", Attributes.Concat(Parents().SelectMany(p=>p.Attributes))
-									.Where(a=>!IsTypeOrSubtypeOfEntity("IfcRelationship"))
-									.Where(a=>!a.IsOptional)
-									.Select(a=>$"{a.Type} {a.ParameterName}")
-									);
-		}
-		
-		/// <summary>
-		/// Return a set of constructor params in the form `name1, name2`.
-		/// </summary>
-		/// <returns></returns>
-		public string BaseConstructorParams()
-		{
-			// Base constructor parameters include the union of all super type attributes.
-			return string.Join(",", Parents()
-									.SelectMany(p=>p.Attributes)
-									.Where(a=>!IsTypeOrSubtypeOfEntity("IfcRelationship"))
-									.Where(a=>!a.IsOptional)
-									.Select(a=>$"{a.ParameterName}")
-									);
-		}
-
-		/// <summary>
-		/// Determine whether this is the provided type or a sub-type of the provided type.
-		/// </summary>
-		/// <param name="typeName"></param>
-		/// <returns></returns>
-		public bool IsTypeOrSubtypeOfEntity(string typeName)
-		{
-			if(this.Name == typeName)
-			{
-				return true;
-			}
-
-			foreach(var s in Subs)
-			{
-				var found = s.IsTypeOrSubtypeOfEntity(typeName);
-				if(found)
-				{
-					return true;
-				}
-			}
-
-			return false;
-		}
-	}
-
 	public class ExpressListener : ExpressBaseListener
 	{
-		private int currRank = 0;
-
-		private string currType;
-		
 		private StringBuilder stringBuilder;
 
 		private Dictionary<string,TypeData> typeGraph = new Dictionary<string,TypeData>();
@@ -170,67 +33,167 @@ using Newtonsoft.Json;
 	
 namespace IFC4
 {
+	public abstract class IfcBase
+	{
+		[JsonProperty(""id"")]
+		public Guid Id{get;}
+
+		public IfcBase()
+		{
+			Id = Guid.NewGuid();
+		}
+
+		public virtual string ToJSON()
+		{
+			var settings = new JsonSerializerSettings()
+			{
+				Formatting = Formatting.Indented,
+				TypeNameHandling = TypeNameHandling.Objects
+			};
+			return JsonConvert.SerializeObject(this);
+		}
+
+		public virtual string ToSTEP()
+		{
+			throw new NotImplementedException();
+		}
+	}
+
 	public abstract class Select : IfcBase
 	{
 		[JsonProperty(""value"")]
-		public dynamic Value {{get;protected set;}}
+		public dynamic Value {get;protected set;}
 	}
 	";
 			stringBuilder.AppendLine(outer);
 		}
 
 		public override void ExitSchemaDecl(ExpressParser.SchemaDeclContext context)
-		{
+		{	
+			// Set the IsRelationshipReference on all attribute data.
+			foreach(var td in typeGraph.Values.Where(td=>td is Entity).Cast<Entity>())
+			{
+				if(!td.Subs.Any())
+				{
+					continue;
+				}
+
+				var isRelationship = td.IsTypeOrSubtypeOfEntity("IfcRelationship");
+				foreach(var a in td.Attributes)
+				{
+					a.IsRelationshipReference = isRelationship;
+				}
+			}
+
 			// Write all the entities
 			foreach(var kvp in typeGraph)
 			{
 				var td = kvp.Value;
-				stringBuilder.AppendLine(WriteEntity(td));
+				stringBuilder.AppendLine(td.ToString());
 			}
 
 			// Close the main namespace.
 			stringBuilder.AppendLine("}");
 		}
 
-		public override void ExitTypeBody(ExpressParser.TypeBodyContext context)
+		public override void EnterTypeBody(ExpressParser.TypeBodyContext context)
 		{
 			var name = context.typeDef().SimpleId().GetText();
+
+			TypeData td = null;
 			if(context.typeSel().collectionType() != null)
 			{
-				var ct = context.typeSel().collectionType();
-				var optional = false;
-				var unique = false;
-
-				if(ct.arrayType() != null)
-				{
-					optional = ct.arrayType().OPTIONAL() != null;
-					unique = ct.arrayType().UNIQUE() != null;
-				}
-				else if(ct.listType() != null)
-				{
-					unique = ct.listType().UNIQUE() != null;
-				}
-				
-				// TODO use OPTIONAL and UNIQUE
-				stringBuilder.AppendLine(WriteSimpleType(name, WriteCollection(currType, currRank)));
-			}
-			else if(context.typeSel().namedType() != null)
-			{
-				stringBuilder.AppendLine(WriteSimpleType(name, currType));
+				td = new SimpleType(name);
+				((SimpleType)td).IsCollectionType = true;
 			}
 			else if(context.typeSel().simpleType() != null)
 			{
-				stringBuilder.AppendLine(WriteSimpleType(name, currType));
+				td = new SimpleType(name);
+				// The wrapped type will be discerned on exit so we can 
+				// get it for collection types as well.
+			}
+			else if(context.typeSel().namedType() != null)
+			{
+				td = new SimpleType(name);
+				// The wrapped type will be discerned on exit so we can 
+				// get it for collection types as well.
 			}
 			else if(context.typeSel().enumType() != null)
 			{
-				var values = context.typeSel().enumType().enumValues().GetText().Split(',');
-				stringBuilder.AppendLine(WriteEnum(name, values));
+				td = new EnumType(name);
+				((EnumType)td).Values = context.typeSel().enumType().enumValues().GetText().Split(',');
 			}
 			else if(context.typeSel().selectType() != null)
 			{
-				var values = context.typeSel().selectType().selectValues().GetText().Split(',');
-				stringBuilder.AppendLine(WriteSelect(name, values));
+				td = new SelectType(name);
+				((SelectType)td).Values = context.typeSel().selectType().selectValues().GetText().Split(',');
+			}
+
+			currTypeData = td;
+			typeGraph.Add(name, td);
+		}
+
+		public override void ExitSimpleType(ExpressParser.SimpleTypeContext context)
+		{
+			if(currTypeData is SimpleType)
+			{
+				((SimpleType)currTypeData).WrappedType = ParseSimpleType(context);
+			}
+			else if(currTypeData is Entity)
+			{
+				foreach(var ad in currAttrDatas)
+				{
+					ad.Type = ParseSimpleType(context);
+				}
+			}
+		}
+
+		public override void ExitNamedType(ExpressParser.NamedTypeContext context)
+		{
+			string t = null;
+			if(context.typeRef() != null)
+			{
+				t = context.typeRef().SimpleId().GetText();
+			}
+			else if(context.entityRef() != null)
+			{
+				t = context.entityRef().SimpleId().GetText();
+			}
+
+			if(currTypeData is SimpleType)
+			{
+				((SimpleType)currTypeData).WrappedType = t;
+			}
+			else if(currTypeData is Entity)
+			{
+				foreach(var ad in currAttrDatas)
+				{
+					ad.Type = t;
+				}
+			}
+		}
+
+		public override void ExitTypeBody(ExpressParser.TypeBodyContext context)
+		{
+			currTypeData = null;
+		}
+
+		public override void EnterCollectionType(ExpressParser.CollectionTypeContext context)
+		{
+			if(context.Parent.Parent is ExpressParser.TypeBodyContext)
+			{
+				var simple = (SimpleType)currTypeData;
+				simple.IsCollectionType = true;
+				simple.Rank ++;
+			}
+
+			if(currAttrDatas.Any())
+			{
+				foreach(var ad in currAttrDatas)
+				{
+					ad.IsCollection = true;
+					ad.Rank ++;
+				}
 			}
 		}
 
@@ -268,74 +231,24 @@ namespace IFC4
 			return type;
 		}
 
-		public override void ExitNamedType(ExpressParser.NamedTypeContext context)
+		public override void EnterEntityHead(ExpressParser.EntityHeadContext context)
 		{
-			if(context.entityRef() != null)
-			{
-				currType = context.entityRef().SimpleId().GetText();
-			}
-			else if(context.typeRef() != null)
-			{
-				currType = context.typeRef().SimpleId().GetText();
-			}
-			if(currAttrDatas.Any())
-			{
-				foreach(var a in currAttrDatas)
-				{
-					a.Type = currType;
-				}
-			}
-		}
+			var name = context.entityDef().SimpleId().GetText();
 
-		public override void ExitSimpleType(ExpressParser.SimpleTypeContext context)
-		{
-			currType = ParseSimpleType(context);
-			if(currAttrDatas.Any())
+			if(typeGraph.ContainsKey(name))
 			{
-				foreach(var a in currAttrDatas)
-				{
-					a.Type = currType;
-				}
-			}
-		}
-
-		public override void EnterCollectionType(ExpressParser.CollectionTypeContext context)
-		{
-			currRank = 0;
-		}
-
-		public override void ExitCollectionType(ExpressParser.CollectionTypeContext context)
-		{
-			currRank = 0;
-		}
-
-		private TypeData AddOrReturnTypeData(string name)
-		{
-			TypeData td;
-			if(!typeGraph.ContainsKey(name))
-			{
-				td = new TypeData(name);
-				typeGraph.Add(name, td);
+				currTypeData = (Entity)typeGraph[name];
 			}
 			else
 			{
-				td = typeGraph[name];
+				currTypeData = new Entity(name);
+				typeGraph.Add(name, currTypeData);
 			}
-			return td;
-		}
-
-		public override void EnterEntityDecl(ExpressParser.EntityDeclContext context)
-		{
-			var name = context.entityHead().entityDef().SimpleId().GetText();
-			var subSuper = context.entityHead().subSuper();
-
-			TypeData td = AddOrReturnTypeData(name);
-			currTypeData = td;
 		}
 
 		public override void EnterSupertypeDecl(ExpressParser.SupertypeDeclContext context)
 		{
-			currTypeData.IsAbstract = context.ABSTRACT() != null;
+			((Entity)currTypeData).IsAbstract = context.ABSTRACT() != null;
 			var factor = context.supertypeExpr().supertypeFactor();
 			
 			// IFC: Use choice only.
@@ -343,8 +256,18 @@ namespace IFC4
 			{
 				foreach(var superRef in factor[0].choice().supertypeExpr())
 				{
-					var tdSuper = AddOrReturnTypeData(superRef.supertypeFactor()[0].entityRef().SimpleId().GetText());
-					currTypeData.Supers.Add(tdSuper);
+					var name = superRef.supertypeFactor()[0].entityRef().SimpleId().GetText();
+					Entity tdSuper = null;
+					if(typeGraph.ContainsKey(name))
+					{
+						tdSuper = (Entity)typeGraph[name];
+					}
+					else
+					{
+						tdSuper = new Entity(name);
+						typeGraph.Add(name, tdSuper);
+					}
+					((Entity)currTypeData).Supers.Add(tdSuper);
 				}
 			}
 		}
@@ -353,31 +276,43 @@ namespace IFC4
 		{
 			foreach(var subRef in context.entityRef())
 			{
-				var tdSub = AddOrReturnTypeData(subRef.SimpleId().GetText());
-				currTypeData.Subs.Add(tdSub);
+				var name = subRef.SimpleId().GetText();
+				Entity tdSub = null;
+				if(typeGraph.ContainsKey(name))
+				{
+					tdSub = (Entity)typeGraph[name];
+				}
+				else
+				{
+					tdSub = new Entity(name);
+					typeGraph.Add(name, tdSub);
+				}
+				((Entity)currTypeData).Subs.Add(tdSub);
 			}
 		}
 
 		public override void EnterExplDef(ExpressParser.ExplDefContext context)
 		{
 			var cad = new AttributeData();
-			currAttrDatas.Add(cad);
-			currTypeData.Attributes.Add(cad);
 			cad.IsOptional = context.OPTIONAL() != null;
+			currAttrDatas.Add(cad);
+			((Entity)currTypeData).Attributes.Add(cad);
 		}
 
 		public override void EnterDeriveDef(ExpressParser.DeriveDefContext context)
 		{
 			var cad = new AttributeData();
+			cad.IsDerived = true;
 			currAttrDatas.Add(cad);
-			currTypeData.Attributes.Add(cad);
+			((Entity)currTypeData).Attributes.Add(cad);
 		}
 
 		public override void EnterInverseDef(ExpressParser.InverseDefContext context)
 		{
 			var cad = new AttributeData();
+			cad.IsInverse = true;
 			currAttrDatas.Add(cad);
-			currTypeData.Attributes.Add(cad);
+			((Entity)currTypeData).Attributes.Add(cad);
 		}
 
 		public override void EnterAttrDef(ExpressParser.AttrDefContext context)
@@ -397,207 +332,19 @@ namespace IFC4
 			currAttrDatas.Clear();
 		}
 
+		public override void ExitDeriveDef(ExpressParser.DeriveDefContext context)
+		{
+			currAttrDatas.Clear();
+		}
+
+		public override void ExitInverseDef(ExpressParser.InverseDefContext context)
+		{
+			currAttrDatas.Clear();
+		}
+
 		public override void ExitEntityDecl(ExpressParser.EntityDeclContext context)
 		{
 			currTypeData = null;
-		}
-
-		private string WriteEntity(TypeData td)
-		{
-			var super =  "IfcBase";
-			var newMod = string.Empty;
-			if(td.Subs.Any())
-			{
-				super = td.Subs[0].Name;;
-				newMod = "new";
-			}
-
-			var modifier = td.IsAbstract? "abstract":string.Empty;
-
-			var classStr =
-$@"
-	/// <summary>
-	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{td.Name.ToLower()}.htm""/>
-	/// </summary>
-	public {modifier} partial class {td.Name} : {super}
-	{{
-
-		public {td.Name}({td.ConstructorParams()}):base({td.BaseConstructorParams()})
-		{{
-
-		}}
-
-		public static {newMod} {td.Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{td.Name}>(json);
-		}}
-
-		public static {newMod} {td.Name} FromSTEP(string step)
-		{{
-			throw new NotImplementedException();
-		}}
-	}}";
-			return classStr;
-		}
-
-		private string WriteSimpleType(string name, string type)
-		{	
-			var csharpType = IFCTypeToCSharpType(type);
-
-			var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{name.ToLower()}.htm
-	/// </summary>
-	public class {name} : IfcType<{csharpType}>
-	{{
-		public {name}({csharpType} value):base(value){{}}	
-
-		public static implicit operator {csharpType}({name} v)
-		{{
-			return v.Value;
-		}}
-
-		public static implicit operator {name}({csharpType} v)
-		{{
-			return new {name}(v);
-		}}	
-
-		public static {name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{name}>(json);
-		}}
-
-		public static {name} FromSTEP(string step)
-		{{
-			throw new NotImplementedException();
-		}}
-	}}
-";
-			return result;
-		}
-		private string IFCTypeToCSharpType(string type)
-		{
-			var retType = type;
-
-			switch(type)
-			{
-				case "BINARY":
-					retType = "byte[]";
-					break;
-				case "BOOLEAN":
-					retType = "bool";
-					break;
-				case "LOGICAL":
-					retType = "bool?";
-					break;
-				case "REAL":
-					retType = "double";
-					break;
-				case "STRING":
-					retType = "string";
-					break;
-				case "INTEGER":
-					retType = "int";
-					break;
-				case "NUMBER":
-					retType = "double";
-					break;
-				default:
-					retType = type;
-					break;
-			}
-			return retType;
-		}
-
-		private string WriteCollection(string type, int rank)
-		{
-			return $"{string.Join("",Enumerable.Repeat("List<",rank))}{type}{string.Join("",Enumerable.Repeat(">",rank))}";
-		}
-
-		private string WriteEnum(string name, IEnumerable<string> values)
-		{
-var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{name.ToLower()}.htm
-	/// </summary>
-	public enum {name} {{{string.Join(",",values)}}}
-";
-			return result;
-		}
-
-		private string WriteSelect(string name, IEnumerable<string> values)
-		{
-			var constructors = new StringBuilder();
-			foreach(var value in values)
-			{
-				constructors.AppendLine($"\t\tpublic {name}({value} value):base(value){{}}");
-			}
-			var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{name.ToLower()}.htm
-	/// </summary>
-	public class {name} : IfcSelect<{string.Join(",",values)}>
-	{{
-{constructors}
-		public static {name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{name}>(json);
-		}}
-
-		public static {name} FromSTEP(string step)
-		{{
-			throw new NotImplementedException();
-		}}
-	}}
-";
-
-			return result;
-		}
-
-		public override void ExitBagType(ExpressParser.BagTypeContext context)
-		{
-			currRank ++;
-
-			if(currAttrDatas.Any())
-			{
-				foreach(var cad in currAttrDatas)
-				{
-					cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
-				}			
-			}
-		}
-
-		public override void ExitArrayType(ExpressParser.ArrayTypeContext context)
-		{
-			currRank ++;
-			if(currAttrDatas.Any())
-			{
-				foreach(var cad in currAttrDatas)
-				{
-					cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
-				}
-			}
-		}
-
-		public override void ExitSetType(ExpressParser.SetTypeContext context)
-		{
-			currRank ++;
-			if(currAttrDatas.Any())
-			{
-				foreach(var cad in currAttrDatas)
-				{
-					cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
-				}			
-			}
-		}
-
-		public override void ExitListType(ExpressParser.ListTypeContext context)
-		{
-			currRank ++;
-			foreach(var cad in currAttrDatas)
-			{
-				cad.Type = $"{string.Join("",Enumerable.Repeat("List<",currRank))}{currType}{string.Join("",Enumerable.Repeat(">",currRank))}";
-			}
 		}
 	}
 }
