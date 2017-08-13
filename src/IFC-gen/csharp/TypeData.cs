@@ -184,11 +184,6 @@ namespace Express
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
 		}}
-
-		public static {Name} FromSTEP(string step)
-		{{
-			throw new NotImplementedException();
-		}}
 	}}
 ";
 			return result;
@@ -240,11 +235,6 @@ namespace Express
 		public static {Name} FromJSON(string json)
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
-		}}
-
-		public static {Name} FromSTEP(string step)
-		{{
-			throw new NotImplementedException();
 		}}
 	}}
 ";
