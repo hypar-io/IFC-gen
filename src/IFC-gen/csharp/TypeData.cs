@@ -72,20 +72,20 @@ namespace Express
 		public override string ToString()
 		{
 			var opt = IsOptional? "// optional":string.Empty;
-			var prop = $"\t\tpublic {Type} {Name}{{get;set;}} {opt}";
+			var prop = $"\t\tpublic {Type} {Name}{{get;set;}} {opt}\n";
 			return prop;
 		}
 
 		public string Assignment()
 		{
-			return $"\t\t\t{Name} = {ParameterName};";
+			return $"\t\t\t{Name} = {ParameterName};\n";
 		}
 
 		public string Allocation()
 		{
 			if(IsCollection)
 			{
-				return $"\t\t\t{Name} = new {Type}();";
+				return $"\t\t\t{Name} = new {Type}();\n";
 			}
 			return null;
 		}
@@ -346,13 +346,19 @@ namespace Express
 		public string Properties()
 		{
 			var attrs = Attributes.Where(a=>!a.IsDerived && !a.IsInverse);
+			if(!attrs.Any())
+			{
+				return string.Empty;
+			}
+
 			var propBuilder = new StringBuilder();
+			propBuilder.AppendLine();
 			foreach(var a in attrs)
 			{
 				var prop = a.ToString();
 				if(!string.IsNullOrEmpty(prop))
 				{
-					propBuilder.AppendLine(prop);
+					propBuilder.Append(prop);
 				}
 			}
 			return propBuilder.ToString();
@@ -376,14 +382,19 @@ namespace Express
 		public string Assignments(bool includeOptional)
 		{
 			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
+			if(!attrs.Any())
+			{
+				return string.Empty;
+			}
 
 			var assignBuilder = new StringBuilder();
+			//assignBuilder.AppendLine();
 			foreach(var a in attrs)
 			{
 				var assign = a.Assignment();
 				if(!string.IsNullOrEmpty(assign))
 				{
-					assignBuilder.AppendLine(assign);
+					assignBuilder.Append(assign);
 				}
 			}
 			return assignBuilder.ToString();
@@ -392,6 +403,10 @@ namespace Express
 		public string Allocations(bool includeOptional)
 		{
 			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
+			if(!attrs.Any())
+			{
+				return string.Empty;
+			}
 
 			var allocBuilder = new StringBuilder();
 			foreach(var a in attrs.Where(a=>a.IsCollection))
@@ -399,7 +414,7 @@ namespace Express
 				var alloc = a.Allocation();
 				if(!string.IsNullOrEmpty(alloc))
 				{
-					allocBuilder.AppendLine(alloc);
+					allocBuilder.Append(alloc);
 				}
 			}
 			return allocBuilder.ToString();
@@ -432,16 +447,14 @@ namespace Express
 		/// </summary>
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
-{Assignments(false)}
-{Allocations(false)}
+{Assignments(false)}{Allocations(false)}
 		}}
 		/// <summary>
 		/// Construct a {Name} with required and optional attributes.
 		/// </summary>
 		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
 		{{
-{Assignments(true)}
-{Allocations(true)}
+{Assignments(true)}{Allocations(true)}
 		}}";
 			}
 			else
@@ -452,8 +465,7 @@ namespace Express
 		/// </summary>	
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
-{Assignments(true)}
-{Allocations(true)}
+{Assignments(true)}{Allocations(true)}
 		}}";
 			}
 
@@ -463,10 +475,7 @@ $@"
 	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm""/>
 	/// </summary>
 	public {modifier} partial class {Name} : {super}
-	{{
-{Properties()}
-{constructors}
-
+	{{{Properties()}{constructors}
 		public static {newMod} {Name} FromJSON(string json)
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
