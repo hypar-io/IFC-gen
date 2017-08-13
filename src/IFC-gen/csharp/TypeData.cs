@@ -278,6 +278,20 @@ namespace Express
 			return parents;
 		}
 
+		private IEnumerable<Entity> ParentsAndSelf()
+		{
+			var parents = new List<Entity>();
+			parents.Add(this);
+
+			parents.AddRange(Subs);
+
+			foreach(var s in Subs)
+			{
+				parents.AddRange(s.Parents());
+			}
+			return parents;
+		}
+
 		/// <summary>
 		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
 		/// </summary>
@@ -306,8 +320,7 @@ namespace Express
 		private string BaseConstructorParams(bool includeOptional)
 		{
 			// Base constructor parameters include the union of all super type attributes.
-			var attrs = Parents()
-						.SelectMany(p=>p.Attributes);
+			var attrs = Parents().SelectMany(p=>p.Attributes);
 						
 			if(!attrs.Any())
 			{
@@ -437,9 +450,11 @@ namespace Express
 			var modifier = IsAbstract? "abstract":string.Empty;
 
 			// Create two constructors, one which includes optional parameters and 
-			// one which does not.
+			// one which does not. We need to check whether any of the parent types
+			// have optional attributes as well, to avoid the case where the current type
+			// doesn't have optional parameters, but a base type does.
 			string constructors;
-			if(Attributes.Where(a=>a.IsOptional).Any())
+			if(ParentsAndSelf().SelectMany(e=>e.Attributes.Where(a=>a.IsOptional)).Any())
 			{
 				constructors = $@"
 		/// <summary>
