@@ -292,7 +292,7 @@ namespace Express
 		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
 		/// </summary>
 		/// <returns></returns>
-		private string ConstructorParams()
+		private string ConstructorParams(bool includeOptional)
 		{
 			// Constructor parameters include the union of this type's attributes and all super type attributes.
 			// A constructor parameter is created for every attribute which does not derive
@@ -304,10 +304,7 @@ namespace Express
 				return string.Empty;
 			}
 
-			var validAttrs = attrs
-								.Where(a=>!a.IsOptional)
-								.Where(a=>!a.IsInverse)
-								.Where(a=>!a.IsDerived);
+			var validAttrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
 
 			return string.Join(",", validAttrs.Select(a=>$"{a.Type} {a.ParameterName}"));
 		}
@@ -316,7 +313,7 @@ namespace Express
 		/// Return a set of constructor params in the form `name1, name2`.
 		/// </summary>
 		/// <returns></returns>
-		private string BaseConstructorParams()
+		private string BaseConstructorParams(bool includeOptional)
 		{
 			// Base constructor parameters include the union of all super type attributes.
 			var attrs = Parents()
@@ -326,10 +323,8 @@ namespace Express
 			{
 				return string.Empty;
 			}
-			var validAttrs = attrs
-								.Where(a=>!a.IsOptional)
-								.Where(a=>!a.IsInverse)
-								.Where(a=>!a.IsDerived);
+
+			var validAttrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
 
 			return string.Join(",", validAttrs.Select(a=>$"{a.ParameterName}"));
 		}
@@ -364,29 +359,58 @@ namespace Express
 			var propBuilder = new StringBuilder();
 			foreach(var a in attrs)
 			{
-				propBuilder.AppendLine(a.ToString());
+				var prop = a.ToString();
+				if(!string.IsNullOrEmpty(prop))
+				{
+					propBuilder.AppendLine(prop);
+				}
 			}
 			return propBuilder.ToString();
 		}
 
-		public string Assignments()
+		private IEnumerable<AttributeData> AttributesWithOptional()
 		{
-			var attrs = Attributes.Where(a=>!a.IsDerived && !a.IsInverse && !a.IsOptional);
+			return  Attributes
+						.Where(a=>!a.IsInverse)
+						.Where(a=>!a.IsDerived);
+		}
+
+		private IEnumerable<AttributeData> AttributesWithoutOptional()
+		{
+			return  Attributes
+						.Where(a=>!a.IsInverse)
+						.Where(a=>!a.IsDerived)
+						.Where(a=>!a.IsOptional);
+		}
+
+		public string Assignments(bool includeOptional)
+		{
+			var attrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
+
 			var assignBuilder = new StringBuilder();
 			foreach(var a in attrs)
 			{
-				assignBuilder.AppendLine(a.Assignment());
+				var assign = a.Assignment();
+				if(!string.IsNullOrEmpty(assign))
+				{
+					assignBuilder.AppendLine(assign);
+				}
 			}
 			return assignBuilder.ToString();
 		}
 
-		public string Allocations()
+		public string Allocations(bool includeOptional)
 		{
-			var attrs = Attributes.Where(a=>!a.IsDerived && !a.IsInverse && a.IsCollection && a.IsOptional);
+			var attrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
+
 			var allocBuilder = new StringBuilder();
-			foreach(var a in attrs)
+			foreach(var a in attrs.Where(a=>a.IsCollection))
 			{
-				allocBuilder.AppendLine(a.Allocation());
+				var alloc = a.Allocation();
+				if(!string.IsNullOrEmpty(alloc))
+				{
+					allocBuilder.AppendLine(alloc);
+				}
 			}
 			return allocBuilder.ToString();
 		}
@@ -407,6 +431,42 @@ namespace Express
 
 			var modifier = IsAbstract? "abstract":string.Empty;
 
+			// Create two constructors, one which includes optional parameters and 
+			// one which does not.
+			string constructors;
+			if(Attributes.Where(a=>a.IsOptional).Any())
+			{
+				constructors = $@"
+		/// <summary>
+		/// Construct a {Name} with all required attributes.
+		/// </summary>
+		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
+		{{
+{Assignments(false)}
+{Allocations(false)}
+		}}
+		/// <summary>
+		/// Construct a {Name} with required and optional attributes.
+		/// </summary>
+		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
+		{{
+{Assignments(true)}
+{Allocations(true)}
+		}}";
+			}
+			else
+			{
+				constructors =$@"
+		/// <summary>
+		/// Construct a {Name} with all required attributes.
+		/// </summary>	
+		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
+		{{
+{Assignments(true)}
+{Allocations(true)}
+		}}";
+			}
+
 			var classStr =
 $@"
 	/// <summary>
@@ -415,20 +475,11 @@ $@"
 	public {modifier} partial class {Name} : {super}
 	{{
 {Properties()}
-		public {Name}({ConstructorParams()}):base({BaseConstructorParams()})
-		{{
-{Assignments()}
-{Allocations()}
-		}}
+{constructors}
 
 		public static {newMod} {Name} FromJSON(string json)
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
-		}}
-
-		public static {newMod} {Name} FromSTEP(string step)
-		{{
-			throw new NotImplementedException();
 		}}
 	}}";
 			return classStr;
