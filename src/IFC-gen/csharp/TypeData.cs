@@ -467,6 +467,7 @@ namespace Express
 		/// <summary>
 		/// Construct a {Name} with required and optional attributes.
 		/// </summary>
+		[JsonContructor]
 		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
 		{{
 {Assignments(true)}{Allocations(true)}
@@ -477,7 +478,8 @@ namespace Express
 				constructors =$@"
 		/// <summary>
 		/// Construct a {Name} with all required attributes.
-		/// </summary>	
+		/// </summary>
+		[JsonConstructor]
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
 {Assignments(false)}{Allocations(false)}
