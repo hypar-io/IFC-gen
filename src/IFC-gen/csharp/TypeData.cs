@@ -304,7 +304,7 @@ namespace Express
 				return string.Empty;
 			}
 
-			var validAttrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
+			var validAttrs = includeOptional?AttributesWithOptional(attrs):AttributesWithoutOptional(attrs);
 
 			return string.Join(",", validAttrs.Select(a=>$"{a.Type} {a.ParameterName}"));
 		}
@@ -324,7 +324,7 @@ namespace Express
 				return string.Empty;
 			}
 
-			var validAttrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
+			var validAttrs = includeOptional?AttributesWithOptional(attrs):AttributesWithoutOptional(attrs);
 
 			return string.Join(",", validAttrs.Select(a=>$"{a.ParameterName}"));
 		}
@@ -368,16 +368,16 @@ namespace Express
 			return propBuilder.ToString();
 		}
 
-		private IEnumerable<AttributeData> AttributesWithOptional()
+		private IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
 		{
-			return  Attributes
+			return  ad
 						.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived);
 		}
 
-		private IEnumerable<AttributeData> AttributesWithoutOptional()
+		private IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
 		{
-			return  Attributes
+			return  ad
 						.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived)
 						.Where(a=>!a.IsOptional);
@@ -385,7 +385,7 @@ namespace Express
 
 		public string Assignments(bool includeOptional)
 		{
-			var attrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
+			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
 
 			var assignBuilder = new StringBuilder();
 			foreach(var a in attrs)
@@ -401,7 +401,7 @@ namespace Express
 
 		public string Allocations(bool includeOptional)
 		{
-			var attrs = includeOptional?AttributesWithOptional():AttributesWithoutOptional();
+			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
 
 			var allocBuilder = new StringBuilder();
 			foreach(var a in attrs.Where(a=>a.IsCollection))
