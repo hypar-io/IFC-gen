@@ -275,6 +275,7 @@ namespace Express
 			{
 				parents.AddRange(s.Parents());
 			}
+
 			return parents;
 		}
 
@@ -289,6 +290,7 @@ namespace Express
 			{
 				parents.AddRange(s.Parents());
 			}
+
 			return parents;
 		}
 
@@ -301,7 +303,10 @@ namespace Express
 			// Constructor parameters include the union of this type's attributes and all super type attributes.
 			// A constructor parameter is created for every attribute which does not derive
 			// from IFCRelationship.
-			var attrs = Attributes.Concat(Parents().SelectMany(p=>p.Attributes));
+
+			var parents = ParentsAndSelf().Reverse();
+			//Console.WriteLine(this.Name + ":" + string.Join(",", parents.Select(p=>p.Name)));
+			var attrs = parents.SelectMany(p=>p.Attributes);
 
 			if(!attrs.Any())
 			{
@@ -320,7 +325,9 @@ namespace Express
 		private string BaseConstructorParams(bool includeOptional)
 		{
 			// Base constructor parameters include the union of all super type attributes.
-			var attrs = Parents().SelectMany(p=>p.Attributes);
+			var parents = Parents().Reverse();
+
+			var attrs = parents.SelectMany(p=>p.Attributes);
 						
 			if(!attrs.Any())
 			{
