@@ -462,15 +462,15 @@ namespace Express
 		/// </summary>
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
-{Assignments(false)}{Allocations(false)}
+{Assignments(false)}{Allocations(true)}
 		}}
 		/// <summary>
 		/// Construct a {Name} with required and optional attributes.
 		/// </summary>
-		[JsonContructor]
+		[JsonConstructor]
 		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
 		{{
-{Assignments(true)}{Allocations(true)}
+{Assignments(true)}{Allocations(false)}
 		}}";
 			}
 			else
@@ -482,7 +482,7 @@ namespace Express
 		[JsonConstructor]
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
-{Assignments(false)}{Allocations(false)}
+{Assignments(false)}{Allocations(true)}
 		}}";
 			}
 
