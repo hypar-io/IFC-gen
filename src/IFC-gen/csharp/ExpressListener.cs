@@ -33,12 +33,12 @@ using Newtonsoft.Json;
 	
 namespace IFC4
 {
-	public abstract class IfcBase
+	public abstract class BaseIfc
 	{
 		[JsonProperty(""id"")]
 		public Guid Id{get;}
 
-		public IfcBase()
+		public BaseIfc()
 		{
 			Id = Guid.NewGuid();
 		}
@@ -59,7 +59,7 @@ namespace IFC4
 		}
 	}
 
-	public abstract class Select : IfcBase
+	public abstract class Select : BaseIfc
 	{
 		[JsonProperty(""value"")]
 		public dynamic Value {get;protected set;}
@@ -68,7 +68,7 @@ namespace IFC4
 	/// <summary>
 	/// A type wrapper for IFC.
 	/// </summary>
-	public class IfcType<T> : IfcBase
+	public class IfcType<T> : BaseIfc
 	{
 		[JsonProperty(""value"")]
 		public T Value{get;set;}

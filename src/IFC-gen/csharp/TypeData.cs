@@ -446,7 +446,7 @@ namespace Express
 		/// <returns></returns>
 		public override string ToString()
 		{
-			var super =  "IfcBase";
+			var super =  "BaseIfc";
 			var newMod = string.Empty;
 			if(Subs.Any())
 			{
