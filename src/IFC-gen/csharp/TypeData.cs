@@ -229,6 +229,7 @@ namespace Express
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
 	/// </summary>
+	[TypeConverter(typeof(SelectConverter<{Name}>))]
 	public class {Name} : IfcSelect<{string.Join(",",Values)}>
 	{{
 {constructors}
