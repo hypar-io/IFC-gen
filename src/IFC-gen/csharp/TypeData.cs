@@ -78,16 +78,16 @@ namespace Express
 
 		public string Assignment()
 		{
-			return $"\t\t\t{Name} = {ParameterName};\n";
-		}
-
-		public string Allocation()
-		{
-			if(IsCollection)
+			// If attribute is optional and a list, set the member field
+			// equal to a list allocation.
+			if(IsOptional && IsCollection)
 			{
 				return $"\t\t\t{Name} = new {Type}();\n";
 			}
-			return null;
+			else
+			{
+				return $"\t\t\t{Name} = {ParameterName};\n";
+			}
 		}
 	}
 
@@ -409,7 +409,6 @@ namespace Express
 			}
 
 			var assignBuilder = new StringBuilder();
-			//assignBuilder.AppendLine();
 			foreach(var a in attrs)
 			{
 				var assign = a.Assignment();
@@ -420,27 +419,7 @@ namespace Express
 			}
 			return assignBuilder.ToString();
 		}
-
-		public string Allocations(bool includeOptional)
-		{
-			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
-
-			var allocBuilder = new StringBuilder();
-			foreach(var a in attrs.Where(a=>a.IsCollection))
-			{
-				var alloc = a.Allocation();
-				if(!string.IsNullOrEmpty(alloc))
-				{
-					allocBuilder.Append(alloc);
-				}
-			}
-			return allocBuilder.ToString();
-		}
-
+		
 		/// <summary>
 		/// Return a string representing the TypeData as a Class.
 		/// </summary>
@@ -470,7 +449,7 @@ namespace Express
 		/// </summary>
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
-{Assignments(false)}{Allocations(true)}
+{Assignments(false)}
 		}}
 		/// <summary>
 		/// Construct a {Name} with required and optional attributes.
@@ -478,7 +457,7 @@ namespace Express
 		[JsonConstructor]
 		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
 		{{
-{Assignments(true)}{Allocations(false)}
+{Assignments(true)}
 		}}";
 			}
 			else
@@ -490,7 +469,7 @@ namespace Express
 		[JsonConstructor]
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
-{Assignments(false)}{Allocations(true)}
+{Assignments(false)}
 		}}";
 			}
 
