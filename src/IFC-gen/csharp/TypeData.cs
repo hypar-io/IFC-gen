@@ -76,14 +76,41 @@ namespace Express
 			return prop;
 		}
 
-		public string Assignment()
+        public string ToSTEPString()
+        {
+            string prop = "";
+            if (Type.EndsWith("Enum") | Type == "bool" | Type == "int" | Type == "double")
+            {
+                prop = $"\t\t\tparameters.Add({Name}.STEPValue(ref indexDictionnary));\n";
+            }
+            else
+            {
+                prop = $"\t\t\tparameters.Add({Name} != null ? {Name}.STEPValue(ref indexDictionnary) : \"$\");\n";
+            }
+
+            return prop;
+        }
+
+        public string Assignment()
 		{
 			// If attribute is optional and a list, set the member field
 			// equal to a list allocation.
 			if(IsOptional && IsCollection)
 			{
-				return $"\t\t\t{Name} = new {Type}();\n";
-			}
+                var assignment = 
+$@"
+            if ({ParameterName} != null)
+            {{
+                {Name} = {ParameterName};
+            }}
+            else
+            {{
+                {Name} = new {Type}();
+            }}
+";
+                return assignment;
+                //return {Name} = new {Type}();\n";
+            }
 			else
 			{
 				return $"\t\t\t{Name} = {ParameterName};\n";
@@ -156,11 +183,46 @@ namespace Express
 			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{WrappedType}{string.Join("",Enumerable.Repeat(">",Rank))}";
 		}
 
-		/// <summary>
-		/// Return a string representing the TypeData as an IfcType.
-		/// </summary>
-		/// <returns></returns>
-		public override string ToString()
+        public string STEPValue
+        {
+            get
+            {
+                if (IsCollectionType)
+                {
+                    string stepValue = 
+$@"
+        public override string STEPValue(ref Dictionary<Guid, int> indexDictionnary)
+        {{
+            List < string > values = new List<string>();
+            foreach ({wrappedType} value in Value)
+            {{
+                                    values.Add(value.STEPValue(ref indexDictionnary));
+            }}
+            if (values.Count == 0) return ""$"";
+            return ""("" + string.Join("", "", values.ToArray()) + "")"";
+        }}
+";
+                    return stepValue;
+                }
+                else
+                {
+                    string stepValue =
+$@"
+        public override string STEPValue(ref Dictionary<Guid, int> indexDictionnary)
+        {{
+            return Value.STEPValue(ref indexDictionnary);
+        }}
+";
+                    return stepValue;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Return a string representing the TypeData as an IfcType.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
 		{	
 			var result = 
 	$@"	/// <summary>
@@ -184,6 +246,7 @@ namespace Express
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
 		}}
+{STEPValue}
 	}}
 ";
 			return result;
@@ -243,207 +306,228 @@ namespace Express
 		}
 	}
 
-	/// <summary>
-	/// TypeData stores information about a type.
-	/// </summary>
-	internal class Entity : TypeData
-	{
-		public List<Entity> Supers{get;set;}
-		public List<Entity> Subs{get;set;}
+    /// <summary>
+    /// TypeData stores information about a type.
+    /// </summary>
+    internal class Entity : TypeData
+    {
+        public List<Entity> Supers { get; set; }
+        public List<Entity> Subs { get; set; }
 
-		public List<AttributeData> Attributes{get;set;}
+        public List<AttributeData> Attributes { get; set; }
 
-		public bool IsAbstract{get;set;}
+        public bool IsAbstract { get; set; }
 
-		public Entity(string name) : base(name)
-		{
-			Name = name;
-			Supers = new List<Entity>();
-			Subs = new List<Entity>();
-			Attributes = new List<AttributeData>();
-		}
+        public Entity(string name) : base(name)
+        {
+            Name = name;
+            Supers = new List<Entity>();
+            Subs = new List<Entity>();
+            Attributes = new List<AttributeData>();
+        }
 
-		/// <summary>
-		/// Return all parents to this type all the way to the root.
-		/// </summary>
-		/// <returns></returns>
-		private IEnumerable<Entity> Parents()
-		{
-			var parents = new List<Entity>();
-			parents.AddRange(Subs);
+        /// <summary>
+        /// Return all parents to this type all the way to the root.
+        /// </summary>
+        /// <returns></returns>
+        private IEnumerable<Entity> Parents()
+        {
+            var parents = new List<Entity>();
+            parents.AddRange(Subs);
 
-			foreach(var s in Subs)
-			{
-				parents.AddRange(s.Parents());
-			}
+            foreach (var s in Subs)
+            {
+                parents.AddRange(s.Parents());
+            }
 
-			return parents;
-		}
+            return parents;
+        }
 
-		private IEnumerable<Entity> ParentsAndSelf()
-		{
-			var parents = new List<Entity>();
-			parents.Add(this);
+        private IEnumerable<Entity> ParentsAndSelf()
+        {
+            var parents = new List<Entity>();
+            parents.Add(this);
 
-			parents.AddRange(Subs);
+            parents.AddRange(Subs);
 
-			foreach(var s in Subs)
-			{
-				parents.AddRange(s.Parents());
-			}
+            foreach (var s in Subs)
+            {
+                parents.AddRange(s.Parents());
+            }
 
-			return parents;
-		}
+            return parents;
+        }
 
-		/// <summary>
-		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
-		/// </summary>
-		/// <returns></returns>
-		private string ConstructorParams(bool includeOptional)
-		{
-			// Constructor parameters include the union of this type's attributes and all super type attributes.
-			// A constructor parameter is created for every attribute which does not derive
-			// from IFCRelationship.
+        /// <summary>
+        /// Return a set of constructor parameters in the form 'Type name1, Type name2'
+        /// </summary>
+        /// <returns></returns>
+        private string ConstructorParams(bool includeOptional)
+        {
+            // Constructor parameters include the union of this type's attributes and all super type attributes.
+            // A constructor parameter is created for every attribute which does not derive
+            // from IFCRelationship.
 
-			var parents = ParentsAndSelf().Reverse();
-			//Console.WriteLine(this.Name + ":" + string.Join(",", parents.Select(p=>p.Name)));
-			var attrs = parents.SelectMany(p=>p.Attributes);
+            var parents = ParentsAndSelf().Reverse();
+            //Console.WriteLine(this.Name + ":" + string.Join(",", parents.Select(p=>p.Name)));
+            var attrs = parents.SelectMany(p => p.Attributes);
 
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
+            if (!attrs.Any())
+            {
+                return string.Empty;
+            }
 
-			var validAttrs = includeOptional?AttributesWithOptional(attrs):AttributesWithoutOptional(attrs);
+            var validAttrs = includeOptional ? AttributesWithOptional(attrs) : AttributesWithoutOptional(attrs);
 
-			return string.Join(",", validAttrs.Select(a=>$"{a.Type} {a.ParameterName}"));
-		}
-		
-		/// <summary>
-		/// Return a set of constructor params in the form `name1, name2`.
-		/// </summary>
-		/// <returns></returns>
-		private string BaseConstructorParams(bool includeOptional)
-		{
-			// Base constructor parameters include the union of all super type attributes.
-			var parents = Parents().Reverse();
+            return string.Join(",", validAttrs.Select(a => $"{a.Type} {a.ParameterName}"));
+        }
 
-			var attrs = parents.SelectMany(p=>p.Attributes);
-						
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
+        /// <summary>
+        /// Return a set of constructor params in the form `name1, name2`.
+        /// </summary>
+        /// <returns></returns>
+        private string BaseConstructorParams(bool includeOptional)
+        {
+            // Base constructor parameters include the union of all super type attributes.
+            var parents = Parents().Reverse();
 
-			var validAttrs = includeOptional?AttributesWithOptional(attrs):AttributesWithoutOptional(attrs);
+            var attrs = parents.SelectMany(p => p.Attributes);
 
-			return string.Join(",", validAttrs.Select(a=>$"{a.ParameterName}"));
-		}
+            if (!attrs.Any())
+            {
+                return string.Empty;
+            }
 
-		/// <summary>
-		/// Determine whether this is the provided type or a sub-type of the provided type.
-		/// </summary>
-		/// <param name="typeName"></param>
-		/// <returns></returns>
-		public bool IsTypeOrSubtypeOfEntity(string typeName)
-		{
-			if(this.Name == typeName)
-			{
-				return true;
-			}
+            var validAttrs = includeOptional ? AttributesWithOptional(attrs) : AttributesWithoutOptional(attrs);
 
-			foreach(var s in Subs)
-			{
-				var found = s.IsTypeOrSubtypeOfEntity(typeName);
-				if(found)
-				{
-					return true;
-				}
-			}
+            return string.Join(",", validAttrs.Select(a => $"{a.ParameterName}"));
+        }
 
-			return false;
-		}
+        /// <summary>
+        /// Determine whether this is the provided type or a sub-type of the provided type.
+        /// </summary>
+        /// <param name="typeName"></param>
+        /// <returns></returns>
+        public bool IsTypeOrSubtypeOfEntity(string typeName)
+        {
+            if (this.Name == typeName)
+            {
+                return true;
+            }
 
-		public string Properties()
-		{
-			var attrs = Attributes.Where(a=>!a.IsDerived && !a.IsInverse);
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
+            foreach (var s in Subs)
+            {
+                var found = s.IsTypeOrSubtypeOfEntity(typeName);
+                if (found)
+                {
+                    return true;
+                }
+            }
 
-			var propBuilder = new StringBuilder();
-			propBuilder.AppendLine();
-			foreach(var a in attrs)
-			{
-				var prop = a.ToString();
-				if(!string.IsNullOrEmpty(prop))
-				{
-					propBuilder.Append(prop);
-				}
-			}
-			return propBuilder.ToString();
-		}
+            return false;
+        }
 
-		private IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
-		{
-			return  ad
-						.Where(a=>!a.IsInverse)
-						.Where(a=>!a.IsDerived);
-		}
+        public string Properties()
+        {
+            var attrs = Attributes.Where(a => !a.IsDerived && !a.IsInverse);
+            if (!attrs.Any())
+            {
+                return string.Empty;
+            }
 
-		private IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
-		{
-			return  ad
-						.Where(a=>!a.IsInverse)
-						.Where(a=>!a.IsDerived)
-						.Where(a=>!a.IsOptional);
-		}
+            var propBuilder = new StringBuilder();
+            propBuilder.AppendLine();
+            foreach (var a in attrs)
+            {
+                var prop = a.ToString();
+                if (!string.IsNullOrEmpty(prop))
+                {
+                    propBuilder.Append(prop);
+                }
+            }
+            return propBuilder.ToString();
+        }
 
-		public string Assignments(bool includeOptional)
-		{
-			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
+        public string STEPProperties()
+        {
+            var attrs = Attributes.Where(a => !a.IsDerived && !a.IsInverse);
+            if (!attrs.Any())
+            {
+                return string.Empty;
+            }
 
-			var assignBuilder = new StringBuilder();
-			foreach(var a in attrs)
-			{
-				var assign = a.Assignment();
-				if(!string.IsNullOrEmpty(assign))
-				{
-					assignBuilder.Append(assign);
-				}
-			}
-			return assignBuilder.ToString();
-		}
-		
-		/// <summary>
-		/// Return a string representing the TypeData as a Class.
-		/// </summary>
-		/// <returns></returns>
-		public override string ToString()
-		{
-			var super =  "BaseIfc";
-			var newMod = string.Empty;
-			if(Subs.Any())
-			{
-				super = Subs[0].Name;;
-				newMod = "new";
-			}
+            var propBuilder = new StringBuilder();
+            propBuilder.AppendLine();
+            foreach (var a in attrs)
+            {
+                var prop = a.ToSTEPString();
+                if (!string.IsNullOrEmpty(prop))
+                {
+                    propBuilder.Append(prop);
+                }
+            }
+            return propBuilder.ToString();
+        }
 
-			var modifier = IsAbstract? "abstract":string.Empty;
+        private IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
+        {
+            return ad
+                        .Where(a => !a.IsInverse)
+                        .Where(a => !a.IsDerived);
+        }
 
-			// Create two constructors, one which includes optional parameters and 
-			// one which does not. We need to check whether any of the parent types
-			// have optional attributes as well, to avoid the case where the current type
-			// doesn't have optional parameters, but a base type does.
-			string constructors;
-			if(ParentsAndSelf().SelectMany(e=>e.Attributes.Where(a=>a.IsOptional)).Any())
-			{
-				constructors = $@"
+        private IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
+        {
+            return ad
+                        .Where(a => !a.IsInverse)
+                        .Where(a => !a.IsDerived)
+                        .Where(a => !a.IsOptional);
+        }
+
+        public string Assignments(bool includeOptional)
+        {
+            var attrs = includeOptional ? AttributesWithOptional(Attributes) : AttributesWithoutOptional(Attributes);
+            if (!attrs.Any())
+            {
+                return string.Empty;
+            }
+
+            var assignBuilder = new StringBuilder();
+            foreach (var a in attrs)
+            {
+                var assign = a.Assignment();
+                if (!string.IsNullOrEmpty(assign))
+                {
+                    assignBuilder.Append(assign);
+                }
+            }
+            return assignBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Return a string representing the TypeData as a Class.
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
+        {
+            var super = "BaseIfc";
+            var newMod = string.Empty;
+            if (Subs.Any())
+            {
+                super = Subs[0].Name; ;
+                newMod = "new";
+            }
+
+            var modifier = IsAbstract ? "abstract" : string.Empty;
+
+            // Create two constructors, one which includes optional parameters and 
+            // one which does not. We need to check whether any of the parent types
+            // have optional attributes as well, to avoid the case where the current type
+            // doesn't have optional parameters, but a base type does.
+            string constructors;
+            if (ParentsAndSelf().SelectMany(e => e.Attributes.Where(a => a.IsOptional)).Any())
+            {
+                constructors = $@"
 		/// <summary>
 		/// Construct a {Name} with all required attributes.
 		/// </summary>
@@ -459,10 +543,10 @@ namespace Express
 		{{
 {Assignments(true)}
 		}}";
-			}
-			else
-			{
-				constructors =$@"
+            }
+            else
+            {
+                constructors = $@"
 		/// <summary>
 		/// Construct a {Name} with all required attributes.
 		/// </summary>
@@ -471,9 +555,9 @@ namespace Express
 		{{
 {Assignments(false)}
 		}}";
-			}
+            }
 
-			var classStr =
+            var classStr =
 $@"
 	/// <summary>
 	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm""/>
@@ -484,6 +568,16 @@ $@"
 		{{
 			return JsonConvert.DeserializeObject<{Name}>(json);
 		}}
+
+        public override string STEPParameters(ref Dictionary<Guid, int> indexDictionnary)
+        {{
+            List < string > parameters = new List<string>();
+            string baseSTEPParameters = base.STEPParameters(ref indexDictionnary);
+            if (!string.IsNullOrEmpty(baseSTEPParameters)) {{ parameters.Add(baseSTEPParameters);}}
+            {STEPProperties()}
+
+            return string.Join("", "", parameters.ToArray());
+        }}
 	}}";
 			return classStr;
 		}
