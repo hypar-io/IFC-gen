@@ -37,7 +37,7 @@ namespace IFC4
 	public abstract class BaseIfc
 	{
 		[JsonProperty(""id"")]
-		public Guid Id{get;}
+		public Guid Id{get;set;}
 
 		public BaseIfc()
 		{
