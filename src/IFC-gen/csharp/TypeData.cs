@@ -419,7 +419,7 @@ namespace Express
 		public string Allocations(){
 
 			var allocBuilder = new StringBuilder();
-			foreach(var a in Attributes){
+			foreach(var a in Attributes.Where(a=>!a.IsDerived)){
 				var alloc = a.Allocation();
 				if(!string.IsNullOrEmpty(alloc)){
 					allocBuilder.Append(alloc);
