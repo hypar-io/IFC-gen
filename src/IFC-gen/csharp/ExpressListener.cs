@@ -328,6 +328,21 @@ namespace IFC4
 			((Entity)currTypeData).Attributes.Add(cad);
 		}
 
+		public override void EnterInverseType(ExpressParser.InverseTypeContext context){
+			foreach(var ad in currAttrDatas)
+			{
+				ad.IsCollection = true;
+				ad.Rank ++;
+			}
+		}
+
+		public override void EnterEntityRef(ExpressParser.EntityRefContext context)
+		{
+			foreach(var ad in currAttrDatas){
+				ad.Type = context.SimpleId().GetText();
+			}
+		}
+
 		public override void EnterAttrDef(ExpressParser.AttrDefContext context)
 		{
 			if(context.SimpleId() != null)
