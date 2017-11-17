@@ -78,16 +78,14 @@ namespace Express
 
 		public string Assignment()
 		{
-			// If attribute is optional and a list, set the member field
-			// equal to a list allocation.
-			if(IsOptional && IsCollection)
-			{
+			return $"\t\t\t{Name} = {ParameterName};\n";
+		}
+
+		public string Allocation(){
+			if(IsCollection){
 				return $"\t\t\t{Name} = new {Type}();\n";
 			}
-			else
-			{
-				return $"\t\t\t{Name} = {ParameterName};\n";
-			}
+			return string.Empty;
 		}
 	}
 
@@ -366,7 +364,7 @@ namespace Express
 
 		public string Properties()
 		{
-			var attrs = Attributes.Where(a=>!a.IsDerived && !a.IsInverse);
+			var attrs = Attributes.Where(a=>!a.IsDerived); // && !a.IsInverse);
 			if(!attrs.Any())
 			{
 				return string.Empty;
@@ -388,14 +386,12 @@ namespace Express
 		private IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
 		{
 			return  ad
-						.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived);
 		}
 
 		private IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
 		{
 			return  ad
-						.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived)
 						.Where(a=>!a.IsOptional);
 		}
@@ -418,6 +414,18 @@ namespace Express
 				}
 			}
 			return assignBuilder.ToString();
+		}
+
+		public string Allocations(){
+
+			var allocBuilder = new StringBuilder();
+			foreach(var a in Attributes){
+				var alloc = a.Allocation();
+				if(!string.IsNullOrEmpty(alloc)){
+					allocBuilder.Append(alloc);
+				}
+			}
+			return allocBuilder.ToString();
 		}
 		
 		/// <summary>
@@ -449,6 +457,7 @@ namespace Express
 		/// </summary>
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
+{Allocations()}
 {Assignments(false)}
 		}}
 		/// <summary>
@@ -457,6 +466,7 @@ namespace Express
 		[JsonConstructor]
 		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
 		{{
+{Allocations()}
 {Assignments(true)}
 		}}";
 			}
@@ -469,6 +479,7 @@ namespace Express
 		[JsonConstructor]
 		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
 		{{
+{Allocations()}
 {Assignments(false)}
 		}}";
 			}
