@@ -304,7 +304,6 @@ namespace Express
 			// from IFCRelationship.
 
 			var parents = ParentsAndSelf().Reverse();
-			//Console.WriteLine(this.Name + ":" + string.Join(",", parents.Select(p=>p.Name)));
 			var attrs = parents.SelectMany(p=>p.Attributes);
 
 			if(!attrs.Any())
@@ -385,13 +384,13 @@ namespace Express
 
 		private IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
 		{
-			return  ad
+			return  ad	.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived);
 		}
 
 		private IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
 		{
-			return  ad
+			return  ad	.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived)
 						.Where(a=>!a.IsOptional);
 		}
