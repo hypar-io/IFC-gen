@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>0.0.1-beta1</Version>
+    <authors>Ian Keough</authors>
+    <AssemblyName>IFC-dotnet</AssemblyName>
+    <PackageId>IFC-dotnet</PackageId>
+    <NoWarn>3021</NoWarn> 
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.7.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+</Project>
