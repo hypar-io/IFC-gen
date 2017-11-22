@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using IFC4;
+using System.Globalization;
 
 namespace STEP
 {
@@ -229,7 +230,7 @@ namespace STEP
 		private dynamic ParseReal(Type t, string value)
 		{
 			double result;
-			if(!double.TryParse(value, out result))
+			if(!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
 			{
 				throw new STEPParserException(typeof(double), value);
 			}
