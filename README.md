@@ -16,4 +16,10 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 
 ## Building
 
+### For macOS
+
 `make`
+
+### For Windows
+
+'make' (run make.bat)
