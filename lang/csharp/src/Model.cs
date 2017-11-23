@@ -45,7 +45,7 @@ namespace IFC4
 	/// <summary>
 	/// Model provides a container for instances of BaseIfc.
 	/// </summary>
-	public class Model
+	public class Model : IModel
 	{
 		private Dictionary<Guid,BaseIfc> instances;
 
@@ -126,6 +126,10 @@ namespace IFC4
 		public IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>()
 		{
 			return instances.Where(i=>typeof(T).IsAssignableFrom(i.Value.GetType())).Select(e=>e.Value);
+		}
+
+		public void UpdateInstance(BaseIfc instance){
+			throw new NotImplementedException();
 		}
 
 		/// <summary>
