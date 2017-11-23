@@ -11,6 +11,6 @@
     <DotNetCliToolReference Include="dotnet-xunit" Version="2.3.0-beta4-build3742" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\src\IFC-dotnet\IFC-dotnet.csproj" />
+    <ProjectReference Include="..\src\IFC-dotnet.csproj" />
   </ItemGroup>
 </Project>
