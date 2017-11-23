@@ -15,5 +15,6 @@ namespace IFC4.Generators
         string EntityConstructorParams(Entity data, bool includeOptional);
         string EntityBaseConstructorParams(Entity data, bool includeOptional);
 		string EntityString(Entity data);
+		string FileName{get;}
 	}
 }

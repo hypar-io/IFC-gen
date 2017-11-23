@@ -205,5 +205,9 @@ $@"
 	}}";
 			return classStr;
         }
+
+		public string FileName{
+			get{return "IFC.g.cs";}
+		}
 	}
 }

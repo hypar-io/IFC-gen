@@ -7,32 +7,28 @@ using System.Text;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using IFC4.Generators;
+using NDesk.Options;
 
 namespace IFC.Generate
 {
 	class Program
 	{
+		private static string language;
+		private static string outDir;
+		private static string expressPath;
+		private static bool showHelp;
+
 		static void Main(string[] args)
 		{
-			if(args.Length != 2)
-			{
-				Console.WriteLine("The syntax for the command is:");
-				Console.WriteLine("IFC-gen <express schema path> <output directory>");
+			ParseOptions(args);
+			if(showHelp){
 				return;
 			}
 
-			var expressPath = args[0];
-			if(!File.Exists(expressPath))
-			{
-				Console.WriteLine($"The specified express file path, {expressPath}, does not exist.");
-				return;
-			}
+			List<ILanguageGenerator> generators = new List<ILanguageGenerator>();
 
-			var outputDir = args[1];
-			if(!Directory.Exists(outputDir))
-			{
-				Console.WriteLine($"The specified output directory, {outputDir}, does not exist.");
-				return;
+			if(language == "csharp"){
+				generators.Add(new CsharpLanguageGenerator());
 			}
 
 			using (FileStream fs = new FileStream(expressPath, FileMode.Open))
@@ -48,13 +44,13 @@ namespace IFC.Generate
 				var walker = new ParseTreeWalker();
 				var sb = new StringBuilder();
 
-				var generator = new CsharpLanguageGenerator();
-				var listener = new Express.ExpressListener(generator, sb);
-				walker.Walk(listener, tree);
-
-				var outPath = Path.Combine(outputDir, "IFC.g.cs");
-				File.WriteAllText(outPath,sb.ToString());
-
+				foreach(var generator in generators){
+					var listener = new Express.ExpressListener(generator, sb);
+					walker.Walk(listener, tree);
+					var outPath = Path.Combine(outDir, generator.FileName);
+					File.WriteAllText(outPath,sb.ToString());
+				}
+				
 				// Write tokens to a file for debugging.
 				/*var tokenStr = new StringBuilder();
 				foreach(var t in tokens.GetTokens())
@@ -62,8 +58,40 @@ namespace IFC.Generate
 					tokenStr.AppendLine(t.ToString());
 				}
 				File.WriteAllText("tokens.txt",tokenStr.ToString());*/
-
 			}
+		}
+
+		private static void ParseOptions(string[] args){
+			var p = new OptionSet () {
+				{ "e|express=", "The path the express schema.", v => expressPath = v },
+				{ "o|output=", "The directory in which the output file is written.", v => outDir = v},
+				{ "l|language=", "The target language (csharp)", v => language = v},
+				{ "h|help",   v => showHelp = v != null },
+			};
+			
+			List<string> extra;
+			try {
+				extra = p.Parse (args);
+			}
+			catch (OptionException e) {
+				Console.Write ("IFC-gen: ");
+				Console.WriteLine (e.Message);
+				Console.WriteLine ("Try `IFC-gen --help' for more information.");
+				return;
+			}
+
+			if(showHelp){
+				ShowHelp(p);
+				return;
+			}
+		}
+
+		private static void ShowHelp (OptionSet p)
+		{
+			Console.WriteLine ("Usage: IFC-gen [OPTIONS]+");
+			Console.WriteLine ();
+			Console.WriteLine ("Options:");
+			p.WriteOptionDescriptions (Console.Out);
 		}
 	}
 }

@@ -17,3 +17,8 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 ## Building
 
 `make`
+
+## Creating a Language Generator
+Language generators implement the `ILanguageGenerator` interface. You can find implementations of `ILanguageGenerator` in `/Generators`. To create your own language generator do the following:
+- Place an implementation of `ILanguageGenerator` in `/Generators`.
+- Extend the command line options parsing in `Program.cs` to support your target language. 
