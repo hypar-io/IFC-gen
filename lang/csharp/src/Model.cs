@@ -28,6 +28,9 @@ namespace IFC4
 		}
 	}
 
+	/// <summary>
+	/// MissingIdError is generated when a STEP file references an id that does not exist.
+	/// </summary>
 	public class MissingIdError : STEPError
 	{
 		private int missingId;
@@ -45,167 +48,31 @@ namespace IFC4
 	/// <summary>
 	/// Model provides a container for instances of BaseIfc.
 	/// </summary>
-	public class Model : IModel
-	{
-		private Dictionary<Guid,BaseIfc> instances;
+	public class Model{
 
-		[JsonProperty("instances")]
-		public Dictionary<Guid,BaseIfc> Instances
+		private IStorageProvider storage;
+
+		public Model(IStorageProvider storage)
 		{
-			get{ return instances;}
-		}
-
-		public Model()
-		{
-			instances = new Dictionary<Guid,BaseIfc>();
-		}
-
-		internal Model(Dictionary<Guid,BaseIfc> instances)
-		{
-			this.instances = instances;
-		}
-
-		/// <summary>
-		/// Add an instance to the model.
-		/// </summary>
-		/// <param name="instance">The instance to add to the Model.</param>
-		/// <exception cref="DuplicateInstanceException">Another instance already exists in the model with the same id.</exception>
-		public void AddInstance(BaseIfc instance)
-		{
-			if(instances.ContainsKey(instance.Id))
-			{
-				throw new DuplicateInstanceException(instance.Id);
-			}
-
-			instances.Add(instance.Id, instance);
-		}
-
-		/// <summary>
-		/// Remove an instance from the model.
-		/// </summary>
-		/// <param name="id"></param>
-		/// <exception cref="InstanceNotFoundException">The specified instance does not exist in the model.</exception>
-		public void RemoveInstance(Guid id)
-		{
-			if(!instances.ContainsKey(id))
-			{
-				throw new InstanceNotFoundException(id);
-			}
-
-			instances.Remove(id);
-		}
-
-		/// <summary>
-		/// Finds an instance in the model, given its unique identifier.
-		/// </summary>
-		/// <param name="id">The unique id of the instance to find.</param>
-		/// <returns>An BaseIfc instance or null if no instance can be found with the provided id.</returns>
-		public BaseIfc InstanceById(Guid id)
-		{
-			if(instances.ContainsKey(id))
-			{
-				return instances[id];
-			}
-			
-			return null;
-		}
-
-		/// <summary>
-		/// Find all instances of type T in the model.
-		/// </summary>
-		/// <returns>A collection of objects whose type is T.</returns>
-		public IEnumerable<T> AllInstancesOfType<T>()
-		{
-			return instances.Values.OfType<T>();
-		}
-
-		/// <summary>
-		/// Find all instances derived from type T in the model.
-		/// </summary>
-		/// <returns>A collection of objects whose types are derived from T.</returns>
-		public IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>()
-		{
-			return instances.Where(i=>typeof(T).IsAssignableFrom(i.Value.GetType())).Select(e=>e.Value);
-		}
-
-		public void UpdateInstance(BaseIfc instance){
-			throw new NotImplementedException();
-		}
-
-		/// <summary>
-		/// Serialize the model to JSON.
-		/// </summary>
-		/// <returns>A string representing the model serialized to JSON. The string will be indented and include type references.</returns>
-		public string ToJSON()
-		{
-			var settings = new JsonSerializerSettings(){
-				Formatting = Formatting.Indented,
-				TypeNameHandling = TypeNameHandling.Objects
-			};
-			var json = JsonConvert.SerializeObject(this, settings);
-			return json;
-		}
-
-		/// <summary>
-		/// Serialize the model to a DOT graph notation.
-		/// </summary>
-		/// <returns>A string representing the model serialized in DOT notation.</returns>
-		public string ToDOT()
-		{
-			var relationships = AllInstancesDerivedFromType<IfcRelationship>();
-			var visited = new List<Guid>();	 // Ids of visited nodes;
-			
-			var relations = new StringBuilder();
-			foreach(var r in relationships)
-			{
-				var rType = r.GetType();
-				foreach(var p in r.GetType().GetProperties().Where(p=>p.DeclaringType == r.GetType()))
-				{
-					var pVal = p.GetValue(r);
-					if(pVal is IList && pVal.GetType().IsGenericType)
-					{
-						var vs = (IList)pVal;
-						foreach(BaseIfc v in vs)
-						{	
-							relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
-						}
-					}
-					else if(pVal is BaseIfc)
-					{
-						var v = (BaseIfc)pVal;
-						relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
-					}
-					else if(pVal == null)
-					{
-						relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"null\"");
-					}
-				}
-			}
-			string graph =
-$@"graph model{{
-	rankdir=LR
-	node [shape=box];
-{relations.ToString()}
-}}";
-			return graph;
+			this.storage = storage;
 		}
 
 		/// <summary>
 		/// Create a Model given a STEP file.
 		/// </summary>
-		/// <param name="filePath">The path to the STEP file.</param>
+		/// <param name="STEPfilePath">The path to the STEP file.</param>
 		/// <returns>A Model.</returns>
 		/// <exception cref="FileNotFoundException">The specified file path does not exist.</exception>
-		public static Model FromSTEP(string filePath, out IList<STEPError> errors)
+		public Model(string STEPfilePath, IStorageProvider storage, out IList<STEPError> errors)
 		{
-			if(!File.Exists(filePath))
+			if(!File.Exists(STEPfilePath))
 			{
-				throw new FileNotFoundException($"The specified IFC STEP file does not exist: {filePath}.");
+				throw new FileNotFoundException($"The specified IFC STEP file does not exist: {STEPfilePath}.");
 			}
 			
-			Model model = new Model();
+			this.storage = storage;
 
-			using (FileStream fs = new FileStream(filePath, FileMode.Open))
+			using (FileStream fs = new FileStream(STEPfilePath, FileMode.Open))
 			{
 				var input = new AntlrInputStream(fs);
 				var lexer = new STEP.STEPLexer(input);
@@ -223,19 +90,18 @@ $@"graph model{{
 				var err = new List<STEPError>();
 				foreach(var data in listener.InstanceData)
 				{
-					if(data.Value.ConstructedGuid != null && model.InstanceById(data.Value.ConstructedGuid) != null)
+					if(data.Value.ConstructedGuid != null && storage.InstanceById(data.Value.ConstructedGuid) != null)
 					{
 						// Instance may have been previously constructed as the result
 						// of another construction.
 						continue;
 					}
 					
-					var instance = ConstructRecursive(data.Value, listener.InstanceData, model, data.Key, err);
-					model.AddInstance(instance);
+					var instance = ConstructRecursive(data.Value, listener.InstanceData, data.Key, err);
+					storage.AddInstance(instance);
 				}
 				errors = err;
 			}
-			return model;
 		}
 
 		/// <summary>
@@ -248,7 +114,7 @@ $@"graph model{{
 		/// <param name="instanceDataMap">The dictionary containing instance data gathered from the parser.</param>
 		/// <param name="model">The Model in which constructed instances will be stored.</param>
 		/// <returns></returns>
-		private static BaseIfc ConstructRecursive(STEP.InstanceData data, Dictionary<int,STEP.InstanceData> instanceDataMap, Model model, int currLine, IList<STEPError> errors)
+		private BaseIfc ConstructRecursive(STEP.InstanceData data, Dictionary<int,STEP.InstanceData> instanceDataMap, int currLine, IList<STEPError> errors)
 		{		
 			Debug.WriteLine($"{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
 	
@@ -257,7 +123,7 @@ $@"graph model{{
 				var instData = data.Parameters[i] as STEP.InstanceData;
 				if(instData != null)
 				{
-					var subInstance = ConstructRecursive(instData, instanceDataMap, model, currLine, errors);
+					var subInstance = ConstructRecursive(instData, instanceDataMap, currLine, errors);
 					data.Parameters[i] = subInstance;
 					continue;
 				}
@@ -268,7 +134,7 @@ $@"graph model{{
 					if(instanceDataMap.ContainsKey(stepId.Value))
 					{
 						var guid = instanceDataMap[stepId.Value].ConstructedGuid;
-						var existingInst = model.InstanceById(guid);
+						var existingInst = storage.InstanceById(guid);
 						if(existingInst != null)
 						{
 							data.Parameters[i] = existingInst;
@@ -284,7 +150,7 @@ $@"graph model{{
 						continue;
 					}
 
-					var subInstance = ConstructRecursive(instanceDataMap[stepId.Value], instanceDataMap, model, currLine, errors);
+					var subInstance = ConstructRecursive(instanceDataMap[stepId.Value], instanceDataMap, currLine, errors);
 					data.Parameters[i] = subInstance;
 					continue;
 				}
@@ -312,7 +178,7 @@ $@"graph model{{
 						if(item is STEP.STEPId)
 						{
 							var id = item as STEP.STEPId;
-							var subInstance = ConstructRecursive(instanceDataMap[id.Value], instanceDataMap, model, currLine, errors);
+							var subInstance = ConstructRecursive(instanceDataMap[id.Value], instanceDataMap, currLine, errors);
 
 							// The object must be converted to the type expected in the list
 							// for Select types, this will be a recursive build of the base select type.
@@ -321,7 +187,7 @@ $@"graph model{{
 						}
 						else if(item is STEP.InstanceData)
 						{
-							var subInstance = ConstructRecursive((STEP.InstanceData)item, instanceDataMap, model, currLine, errors);
+							var subInstance = ConstructRecursive((STEP.InstanceData)item, instanceDataMap, currLine, errors);
 							var convert = Convert(instanceType, subInstance);
 							subInstances.Add(convert);
 						}
@@ -391,6 +257,139 @@ $@"graph model{{
 			{
 				throw new Exception($"There was no type converter available to convert from {value.GetType()} to {expectedType}.");
 			}
+		}
+
+				/// <summary>
+		/// Serialize the model to JSON.
+		/// </summary>
+		/// <returns>A string representing the model serialized to JSON. The string will be indented and include type references.</returns>
+		public string ToJSON()
+		{
+			var settings = new JsonSerializerSettings(){
+				Formatting = Formatting.Indented,
+				TypeNameHandling = TypeNameHandling.Objects
+			};
+			var json = JsonConvert.SerializeObject(this, settings);
+			return json;
+		}
+
+		/// <summary>
+		/// Serialize the model to a DOT graph notation.
+		/// </summary>
+		/// <returns>A string representing the model serialized in DOT notation.</returns>
+		public string ToDOT()
+		{
+			var relationships = storage.AllInstancesDerivedFromType<IfcRelationship>();
+			var visited = new List<Guid>();	 // Ids of visited nodes;
+			
+			var relations = new StringBuilder();
+			foreach(var r in relationships)
+			{
+				var rType = r.GetType();
+				foreach(var p in r.GetType().GetProperties().Where(p=>p.DeclaringType == r.GetType()))
+				{
+					var pVal = p.GetValue(r);
+					if(pVal is IList && pVal.GetType().IsGenericType)
+					{
+						var vs = (IList)pVal;
+						foreach(BaseIfc v in vs)
+						{	
+							relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
+						}
+					}
+					else if(pVal is BaseIfc)
+					{
+						var v = (BaseIfc)pVal;
+						relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
+					}
+					else if(pVal == null)
+					{
+						relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"null\"");
+					}
+				}
+			}
+			string graph =
+$@"graph model{{
+	rankdir=LR
+	node [shape=box];
+{relations.ToString()}
+}}";
+			return graph;
+		}
+	}
+
+	/// <summary>
+	/// Model provides a container for instances of BaseIfc.
+	/// </summary>
+	public class LocalStorageProvider : IStorageProvider
+	{
+		private Dictionary<Guid, BaseIfc> instances = new Dictionary<Guid, BaseIfc>();
+
+		/// <summary>
+		/// Add an instance to the model.
+		/// </summary>
+		/// <param name="instance">The instance to add to the Model.</param>
+		/// <exception cref="DuplicateInstanceException">Another instance already exists in the model with the same id.</exception>
+		public void AddInstance(BaseIfc instance)
+		{
+			if(instances.ContainsKey(instance.Id))
+			{
+				throw new DuplicateInstanceException(instance.Id);
+			}
+
+			instances.Add(instance.Id, instance);
+		}
+
+		/// <summary>
+		/// Remove an instance from the model.
+		/// </summary>
+		/// <param name="id"></param>
+		/// <exception cref="InstanceNotFoundException">The specified instance does not exist in the model.</exception>
+		public void RemoveInstance(Guid id)
+		{
+			if(!instances.ContainsKey(id))
+			{
+				throw new InstanceNotFoundException(id);
+			}
+
+			instances.Remove(id);
+		}
+
+		/// <summary>
+		/// Finds an instance in the model, given its unique identifier.
+		/// </summary>
+		/// <param name="id">The unique id of the instance to find.</param>
+		/// <returns>An BaseIfc instance or null if no instance can be found with the provided id.</returns>
+		public BaseIfc InstanceById(Guid id)
+		{
+			if(instances.ContainsKey(id))
+			{
+				return instances[id];
+			}
+			
+			return null;
+		}
+
+		/// <summary>
+		/// Find all instances of type T in the model.
+		/// </summary>
+		/// <returns>A collection of objects whose type is T.</returns>
+		public IEnumerable<T> AllInstancesOfType<T>()
+		{
+			return instances.Values.OfType<T>();
+		}
+
+		/// <summary>
+		/// Find all instances derived from type T in the model.
+		/// </summary>
+		/// <returns>A collection of objects whose types are derived from T.</returns>
+		public IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>()
+		{
+			return instances.Where(i=>typeof(T).IsAssignableFrom(i.Value.GetType())).Select(e=>e.Value);
+		}
+
+		public void UpdateInstance(BaseIfc instance){
+			throw new NotImplementedException();
 		}
 	}
 }

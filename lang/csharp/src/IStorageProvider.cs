@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace IFC4{
-    public interface IModel
+    public interface IStorageProvider
     {
 		void AddInstance(BaseIfc instance);
 		IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>();
