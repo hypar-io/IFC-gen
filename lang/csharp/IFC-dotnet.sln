@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26124.0
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet", "src\IFC-dotnet\IFC-dotnet.csproj", "{301045AC-77F1-4B10-B668-0213CB53A2AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet", "src\IFC-dotnet.csproj", "{301045AC-77F1-4B10-B668-0213CB53A2AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet-test", "tests\IFC-dotnet-test\IFC-dotnet-test.csproj", "{3FA9536F-5D93-49B0-88E6-365400E8BB60}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IFC-dotnet-test", "tests\IFC-dotnet-test.csproj", "{3FA9536F-5D93-49B0-88E6-365400E8BB60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
