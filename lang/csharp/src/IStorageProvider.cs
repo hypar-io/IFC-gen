@@ -10,5 +10,8 @@ namespace IFC4{
 		BaseIfc InstanceById(Guid id);
 		void RemoveInstance(Guid id);
 		void UpdateInstance(BaseIfc instance);
+		event Action<Guid> InstanceAdded;
+		event Action<Guid> InstanceRemoved;
+		event Action<Guid> InstanceUpdated;
 	}
 }

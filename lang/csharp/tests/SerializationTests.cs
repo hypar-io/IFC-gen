@@ -42,7 +42,7 @@ namespace test
 		{
 			var stepPath = "../../../models/example.ifc";
 			IList<STEPError> errors;
-			var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
 			var json = model.ToJSON();
 		}
 
@@ -51,7 +51,7 @@ namespace test
 		{
 			var stepPath = "../../../models/example.ifc";
 			IList<STEPError> errors;
-			var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
 			var dot = model.ToDOT();
 		}
 
@@ -62,7 +62,7 @@ namespace test
 			sw.Start();
 			var stepPath = "../../../models/example.ifc";
 			IList<STEPError> errors;
-			var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
 			sw.Stop();
 			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
 			ReportErrors(stepPath, errors);
@@ -75,7 +75,7 @@ namespace test
 			sw.Start();
 			var stepPath = "../../../models/AC-20-Smiley-West-10-Bldg.ifc";
 			IList<STEPError> errors;
-			var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
 			sw.Stop();
 			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
 			ReportErrors(stepPath, errors);
@@ -88,7 +88,7 @@ namespace test
 			sw.Start();
 			var stepPath = "../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc";
 			IList<STEPError> errors;
-			var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
 			sw.Stop();
 			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
 			ReportErrors(stepPath, errors);

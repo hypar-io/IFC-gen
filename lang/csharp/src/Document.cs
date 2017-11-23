@@ -46,13 +46,13 @@ namespace IFC4
 	}
 
 	/// <summary>
-	/// Model provides a container for instances of BaseIfc.
+	/// Document provides a container for instances of BaseIfc.
 	/// </summary>
-	public class Model{
+	public class Document{
 
 		private IStorageProvider storage;
 
-		public Model(IStorageProvider storage)
+		public Document(IStorageProvider storage)
 		{
 			this.storage = storage;
 		}
@@ -63,7 +63,7 @@ namespace IFC4
 		/// <param name="STEPfilePath">The path to the STEP file.</param>
 		/// <returns>A Model.</returns>
 		/// <exception cref="FileNotFoundException">The specified file path does not exist.</exception>
-		public Model(string STEPfilePath, IStorageProvider storage, out IList<STEPError> errors)
+		public Document(string STEPfilePath, IStorageProvider storage, out IList<STEPError> errors)
 		{
 			if(!File.Exists(STEPfilePath))
 			{
@@ -319,11 +319,32 @@ $@"graph model{{
 	}
 
 	/// <summary>
-	/// Model provides a container for instances of BaseIfc.
+	/// LocalStorageProvider provides an in memory implementation of IStorageProvider.
 	/// </summary>
 	public class LocalStorageProvider : IStorageProvider
 	{
 		private Dictionary<Guid, BaseIfc> instances = new Dictionary<Guid, BaseIfc>();
+
+		public event Action<Guid> InstanceAdded;
+		protected virtual void OnInstanceAdded(Guid id){
+			if(InstanceAdded != null){
+				InstanceAdded(id);
+			}
+		}
+
+		public event Action<Guid> InstanceRemoved;
+		protected virtual void OnInstanceRemoved(Guid id){
+			if(InstanceRemoved != null){
+				InstanceRemoved(id);
+			}
+		}
+
+		public event Action<Guid> InstanceUpdated;
+		protected virtual void OnInstanceUpdated(Guid id){
+			if(InstanceUpdated != null){
+				InstanceUpdated(id);
+			}
+		}
 
 		/// <summary>
 		/// Add an instance to the model.

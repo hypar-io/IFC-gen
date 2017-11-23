@@ -23,6 +23,11 @@ dotnet xunit
 ```
 
 # Design Considerations
+
+### Document and IStorageProvider
+The container for all IFC instances is the `Document`. A Document holds a reference to an implementation of `IStorageProvider`. The built in storage provider is `LocalStorageProvider`, which provides an in-memory store, but other implementations of `IStorageProvider` could be created which allow storage to disk or to a database.
+
+### Generated Code
 Most of the code in this repository is generated automatically using [IFC-gen](https://github.com/ikeough/IFC-gen/blob/master/README.md). The templates for code generation and certain base classes have been designed to generate an idiomatic C# library.
 
 - All EXPRESS `TYPE` have a corresponding class derived from `IfcType`, which is a wrapper class whose `Value` property holds the actual value.
