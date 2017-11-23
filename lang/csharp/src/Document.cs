@@ -316,6 +316,97 @@ $@"graph model{{
 }}";
 			return graph;
 		}
+
+		public IEnumerable<T> AllInstanceOfType<T>(){
+			return storage.AllInstancesOfType<T>();
+		}
+
+		public IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>(){
+			return storage.AllInstancesDerivedFromType<T>();
+		}
+
+		public BaseIfc InstanceById(Guid id){
+			return storage.InstanceById(id);
+		}
+
+		public IfcProject AddProject(string name, string description){
+			var p = new IfcProject(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
+			p.Name = name;
+			p.Description = description;
+			storage.AddInstance(p);
+			return p;
+		}
+
+		public IfcSite AddSite(IfcProject project, string name="", string description=""){
+			var s = new IfcSite(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
+			s.Name = name;
+			s.Description = description;
+			storage.AddInstance(s);
+			CreateAggregationRelationship(project, s);
+			return s;
+		}
+
+		public bool RemoveSite(Guid id){
+			var s = storage.InstanceById(id);
+			if(s == null){
+				return false;
+			}
+			storage.RemoveInstance(id);
+			RemoveAggregationRelationships(s);
+			return true;
+		}
+
+		public IfcBuilding AddBuilding(IfcSite site, string name="", string description=""){
+			var b = new IfcBuilding(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
+			b.Name = name;
+			b.Description = description;
+            storage.AddInstance(b);
+			CreateAggregationRelationship(site, b);
+			return b;
+        }
+
+        public void RemoveBuilding(IStorageProvider storage, Guid id, bool delete=false){
+            var i = storage.InstanceById(id);
+            storage.RemoveInstance(i.Id);
+        }
+
+		public IfcBuildingStorey AddBuildingStorey(IfcBuilding building, double elevation, string name=""){
+			var s = new IfcBuildingStorey(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
+			s.Elevation = elevation;
+			s.Name = name;
+			storage.AddInstance(s);
+			CreateAggregationRelationship(building, s);
+			return s;
+		}
+
+		public IfcBuildingElementProxy AddBuildingElement(IfcBuildingStorey storey, string name="",string description=""){
+			var e = new IfcBuildingElementProxy(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
+			e.Name = name;
+			e.Description = description;
+			storage.AddInstance(e);
+			CreateAggregationRelationship(storey, e);
+			return e;
+		}
+
+		/*public AddPropertySet(IfcBuildingElementProxy element, List<IfcProperty> properties){
+			var ps = new IfcPropertySet(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()),properties);
+			var def = new IfcPropertySetDefinition(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
+			var test = new IfcPropertySetDefinitionSelect()
+			var r = new IfcRelDefinesByProperties(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()), new List<IfcObjectDefinition>{element},);
+		}*/
+
+		private void CreateAggregationRelationship(IfcObjectDefinition from, IfcObjectDefinition to){
+			var r = new IfcRelAggregates(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()),from, new List<IfcObjectDefinition>{to});
+			from.Decomposes.Add(r);
+			storage.AddInstance(r);
+		}
+
+		private void RemoveAggregationRelationships(BaseIfc obj){
+			var relationships = storage.AllInstancesOfType<IfcRelAggregates>().Where(r=>r.RelatedObjects.Contains(obj)).ToList();
+			for(var i=relationships.Count()-1; i>=0; i--){
+				storage.RemoveInstance(relationships[i].Id);
+			}
+		}
 	}
 
 	/// <summary>
