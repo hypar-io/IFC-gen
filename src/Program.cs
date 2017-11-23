@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
+using IFC4.Generators;
 
 namespace IFC.Generate
 {
@@ -46,7 +47,9 @@ namespace IFC.Generate
 				var tree = parser.schemaDecl();
 				var walker = new ParseTreeWalker();
 				var sb = new StringBuilder();
-				var listener = new Express.ExpressListener(sb);
+
+				var generator = new CsharpLanguageGenerator();
+				var listener = new Express.ExpressListener(generator, sb);
 				walker.Walk(listener, tree);
 
 				var outPath = Path.Combine(outputDir, "IFC.g.cs");
