@@ -8,10 +8,10 @@ SET SCHEMA=%CURR_DIR%\IFC4.exp
 	%ANTLR% -Dlanguage=CSharp -package Express -o %CURR_DIR%\src\antlr %GRAMMAR_IFC%
 	%ANTLR% -Dlanguage=CSharp -package STEP -o %CURR_DIR%\lang\csharp\src\antlr %GRAMMAR_STEP%
 	dotnet build .\src\IFC-gen.csproj
-	dotnet run -p .\src\IFC-gen.csproj %SCHEMA% .\lang\csharp\src
+	dotnet run -p .\src\IFC-gen.csproj -e %SCHEMA% -l csharp -o .\lang\csharp\src
 
 ::clean:
-	::rmdir /s /q .\lang\csharp\src\antlr
+	rmdir /s /q .\lang\csharp\src\antlr
 	rmdir /s /q .\src\antlr
 	rmdir /s /q .\src\bin
 	rmdir /s /q .\src\obj
