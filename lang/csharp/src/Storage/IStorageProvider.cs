@@ -1,7 +1,8 @@
 using System;
 using System.Collections.Generic;
 
-namespace IFC4{
+namespace IFC4.Storage
+{
     public interface IStorageProvider
     {
 		void AddInstance(BaseIfc instance);
