@@ -3,26 +3,25 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Antlr4.Runtime.Misc;
+using IFC4.Generators;
 
 namespace Express
 {
 	/// <summary>
 	/// AttributeData store information about an attribute.
 	/// </summary>
-	internal class AttributeData
+	public class AttributeData
 	{
+		private ILanguageGenerator generator;
+
 		public string Name{get;set;}
 
-		private string type;
+		internal string type;
 		public string Type
 		{
 			get
 			{
-				if(IsCollection)
-				{
-					return 	$"{string.Join("",Enumerable.Repeat("List<",Rank))}{type}{string.Join("",Enumerable.Repeat(">",Rank))}";
-				}
-				return type;
+				return generator.AttributeDataType(this);
 			}
 			set
 			{
@@ -40,8 +39,9 @@ namespace Express
 
 		public int Rank{get;set;}
 
-		public AttributeData ()
+		public AttributeData (ILanguageGenerator generator)
 		{
+			this.generator = generator;
 		}
 
 		/// <summary>
@@ -71,35 +71,32 @@ namespace Express
 
 		public override string ToString()
 		{
-			var opt = IsOptional? "// optional":string.Empty;
-			var prop = $"\t\tpublic {Type} {Name}{{get;set;}} {opt}\n";
-			return prop;
+			return generator.AttributeDataString(this);
 		}
 
 		public string Assignment()
 		{
-			return $"\t\t\t{Name} = {ParameterName};\n";
+			return generator.AttributeDataAssignment(this);
 		}
 
 		public string Allocation(){
-			if(IsCollection){
-				return $"\t\t\t{Name} = new {Type}();\n";
-			}
-			return string.Empty;
+			return generator.AttributeDataAllocation(this);
 		}
 	}
 
-	internal abstract class TypeData
+	public abstract class TypeData
 	{
 		public string Name {get;set;}
+		protected ILanguageGenerator generator;
 
-		public TypeData(string name)
+		public TypeData(string name, ILanguageGenerator generator)
 		{
+			this.generator = generator;
 			Name = name;
 		}
 	}
 
-	internal abstract class CollectionTypeData : TypeData
+	public abstract class CollectionTypeData : TypeData
 	{
 		/// <summary>
 		/// For a TypeData which wraps a Select or an Enum, the Values
@@ -108,13 +105,13 @@ namespace Express
 		/// <returns></returns>
 		public IEnumerable<string> Values{get;set;}
 
-		public CollectionTypeData(string name) : base(name)
+		public CollectionTypeData(string name, ILanguageGenerator generator) : base(name, generator)
 		{
 			Values = new List<string>();
 		}
 	}
 
-	internal class SimpleType : TypeData
+	public class SimpleType : TypeData
 	{
 		public bool IsCollectionType{get;set;}
 
@@ -125,7 +122,7 @@ namespace Express
 		/// <returns></returns>
 		public int Rank{get;set;}
 		
-		private string wrappedType;
+		internal string wrappedType;
 		/// <summary>
 		/// In the case of a simple type, the WrappedType
 		/// will be the name of type which is wrapped in an IfcType.
@@ -135,11 +132,7 @@ namespace Express
 		{
 			get
 			{
-				if(IsCollectionType)
-				{
-					return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{wrappedType}{string.Join("",Enumerable.Repeat(">",Rank))}";
-				}
-				return wrappedType;
+				return generator.SimpleTypeWrappedType(this);
 			}
 			set
 			{
@@ -147,11 +140,11 @@ namespace Express
 			}
 		}
 
-		public SimpleType(string name) : base(name){}
+		public SimpleType(string name, ILanguageGenerator generator) : base(name, generator){}
 
 		private string AsCollection()
 		{
-			return $"{string.Join("",Enumerable.Repeat("List<",Rank))}{WrappedType}{string.Join("",Enumerable.Repeat(">",Rank))}";
+			return generator.SimpleTypeAsCollection(this);
 		}
 
 		/// <summary>
@@ -160,37 +153,13 @@ namespace Express
 		/// <returns></returns>
 		public override string ToString()
 		{	
-			var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
-	/// </summary>
-	public class {Name} : IfcType<{WrappedType}>
-	{{
-		public {Name}({WrappedType} value):base(value){{}}	
-
-		public static implicit operator {WrappedType}({Name} v)
-		{{
-			return v.Value;
-		}}
-
-		public static implicit operator {Name}({WrappedType} v)
-		{{
-			return new {Name}(v);
-		}}	
-
-		public static {Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{Name}>(json);
-		}}
-	}}
-";
-			return result;
+			return generator.SimpleTypeString(this);
 		}
 	}
 
-	internal class EnumType : CollectionTypeData
+	public class EnumType : CollectionTypeData
 	{
-		public EnumType(string name) : base(name){}
+		public EnumType(string name, ILanguageGenerator generator) : base(name, generator){}
 
 		/// <summary>
 		/// Returns a string representing the TypeData as an Enum.
@@ -198,19 +167,13 @@ namespace Express
 		/// <returns></returns>
 		public override string ToString()
 		{
-			var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
-	/// </summary>
-	public enum {Name} {{{string.Join(",",Values)}}}
-";
-			return result;
+			return generator.EnumTypeString(this);
 		}
 	}
 
-	internal class SelectType : CollectionTypeData
+	public class SelectType : CollectionTypeData
 	{
-		public SelectType(string name) : base(name){}
+		public SelectType(string name, ILanguageGenerator generator) : base(name, generator){}
 
 		/// <summary>
 		/// Return a string representing the TypeData as a Select.
@@ -218,33 +181,14 @@ namespace Express
 		/// <returns></returns>
 		public override string ToString()
 		{
-			var constructors = new StringBuilder();
-			foreach(var value in Values)
-			{
-				constructors.AppendLine($"\t\tpublic {Name}({value} value):base(value){{}}");
-			}
-			var result = 
-	$@"	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm
-	/// </summary>
-	[TypeConverter(typeof(SelectConverter<{Name}>))]
-	public class {Name} : IfcSelect<{string.Join(",",Values)}>
-	{{
-{constructors}
-		public static {Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{Name}>(json);
-		}}
-	}}
-";
-			return result;
+			return generator.SelectTypeString(this);
 		}
 	}
 
 	/// <summary>
 	/// TypeData stores information about a type.
 	/// </summary>
-	internal class Entity : TypeData
+	public class Entity : TypeData
 	{
 		public List<Entity> Supers{get;set;}
 		public List<Entity> Subs{get;set;}
@@ -253,7 +197,7 @@ namespace Express
 
 		public bool IsAbstract{get;set;}
 
-		public Entity(string name) : base(name)
+		public Entity(string name, ILanguageGenerator generator) : base(name, generator)
 		{
 			Name = name;
 			Supers = new List<Entity>();
@@ -265,7 +209,7 @@ namespace Express
 		/// Return all parents to this type all the way to the root.
 		/// </summary>
 		/// <returns></returns>
-		private IEnumerable<Entity> Parents()
+		internal IEnumerable<Entity> Parents()
 		{
 			var parents = new List<Entity>();
 			parents.AddRange(Subs);
@@ -278,7 +222,7 @@ namespace Express
 			return parents;
 		}
 
-		private IEnumerable<Entity> ParentsAndSelf()
+		internal IEnumerable<Entity> ParentsAndSelf()
 		{
 			var parents = new List<Entity>();
 			parents.Add(this);
@@ -297,44 +241,18 @@ namespace Express
 		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
 		/// </summary>
 		/// <returns></returns>
-		private string ConstructorParams(bool includeOptional)
+		internal string ConstructorParams(bool includeOptional)
 		{
-			// Constructor parameters include the union of this type's attributes and all super type attributes.
-			// A constructor parameter is created for every attribute which does not derive
-			// from IFCRelationship.
-
-			var parents = ParentsAndSelf().Reverse();
-			var attrs = parents.SelectMany(p=>p.Attributes);
-
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
-
-			var validAttrs = includeOptional?AttributesWithOptional(attrs):AttributesWithoutOptional(attrs);
-
-			return string.Join(",", validAttrs.Select(a=>$"{a.Type} {a.ParameterName}"));
+			return generator.EntityConstructorParams(this, includeOptional);
 		}
 		
 		/// <summary>
 		/// Return a set of constructor params in the form `name1, name2`.
 		/// </summary>
 		/// <returns></returns>
-		private string BaseConstructorParams(bool includeOptional)
+		internal string BaseConstructorParams(bool includeOptional)
 		{
-			// Base constructor parameters include the union of all super type attributes.
-			var parents = Parents().Reverse();
-
-			var attrs = parents.SelectMany(p=>p.Attributes);
-						
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
-
-			var validAttrs = includeOptional?AttributesWithOptional(attrs):AttributesWithoutOptional(attrs);
-
-			return string.Join(",", validAttrs.Select(a=>$"{a.ParameterName}"));
+			return generator.EntityBaseConstructorParams(this, includeOptional);
 		}
 
 		/// <summary>
@@ -363,7 +281,7 @@ namespace Express
 
 		public string Properties()
 		{
-			var attrs = Attributes.Where(a=>!a.IsDerived); // && !a.IsInverse);
+			var attrs = Attributes.Where(a=>!a.IsDerived);
 			if(!attrs.Any())
 			{
 				return string.Empty;
@@ -382,13 +300,13 @@ namespace Express
 			return propBuilder.ToString();
 		}
 
-		private IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
+		internal IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
 		{
 			return  ad	.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived);
 		}
 
-		private IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
+		internal IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
 		{
 			return  ad	.Where(a=>!a.IsInverse)
 						.Where(a=>!a.IsDerived)
@@ -433,69 +351,7 @@ namespace Express
 		/// <returns></returns>
 		public override string ToString()
 		{
-			var super =  "BaseIfc";
-			var newMod = string.Empty;
-			if(Subs.Any())
-			{
-				super = Subs[0].Name;;
-				newMod = "new";
-			}
-
-			var modifier = IsAbstract? "abstract":string.Empty;
-
-			// Create two constructors, one which includes optional parameters and 
-			// one which does not. We need to check whether any of the parent types
-			// have optional attributes as well, to avoid the case where the current type
-			// doesn't have optional parameters, but a base type does.
-			string constructors;
-			if(ParentsAndSelf().SelectMany(e=>e.Attributes.Where(a=>a.IsOptional)).Any())
-			{
-				constructors = $@"
-		/// <summary>
-		/// Construct a {Name} with all required attributes.
-		/// </summary>
-		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
-		{{
-{Allocations()}
-{Assignments(false)}
-		}}
-		/// <summary>
-		/// Construct a {Name} with required and optional attributes.
-		/// </summary>
-		[JsonConstructor]
-		public {Name}({ConstructorParams(true)}):base({BaseConstructorParams(true)})
-		{{
-{Allocations()}
-{Assignments(true)}
-		}}";
-			}
-			else
-			{
-				constructors =$@"
-		/// <summary>
-		/// Construct a {Name} with all required attributes.
-		/// </summary>
-		[JsonConstructor]
-		public {Name}({ConstructorParams(false)}):base({BaseConstructorParams(false)})
-		{{
-{Allocations()}
-{Assignments(false)}
-		}}";
-			}
-
-			var classStr =
-$@"
-	/// <summary>
-	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{Name.ToLower()}.htm""/>
-	/// </summary>
-	public {modifier} partial class {Name} : {super}
-	{{{Properties()}{constructors}
-		public static {newMod} {Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{Name}>(json);
-		}}
-	}}";
-			return classStr;
+			return generator.EntityString(this);
 		}
 	}
 }

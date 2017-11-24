@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 
 namespace IFC4{
-    public interface IModel
+    public interface IStorageProvider
     {
 		void AddInstance(BaseIfc instance);
 		IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>();
@@ -10,5 +10,8 @@ namespace IFC4{
 		BaseIfc InstanceById(Guid id);
 		void RemoveInstance(Guid id);
 		void UpdateInstance(BaseIfc instance);
+		event Action<Guid> InstanceAdded;
+		event Action<Guid> InstanceRemoved;
+		event Action<Guid> InstanceUpdated;
 	}
 }

@@ -3,6 +3,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Antlr4.Runtime.Misc;
+using IFC4.Generators;
 
 namespace Express
 {
@@ -10,15 +11,18 @@ namespace Express
 	{
 		private StringBuilder stringBuilder;
 
+		private ILanguageGenerator generator;
+
 		private Dictionary<string,TypeData> typeGraph = new Dictionary<string,TypeData>();
 
 		private TypeData currTypeData;
 
 		private List<AttributeData> currAttrDatas = new List<AttributeData>();
 
-		public ExpressListener(StringBuilder stringBuilder)
+		public ExpressListener(ILanguageGenerator generator, StringBuilder stringBuilder)
 		{
 			this.stringBuilder = stringBuilder;
+			this.generator = generator;
 		}
 
 		public override void EnterSchemaDecl(ExpressParser.SchemaDeclContext context)
@@ -145,29 +149,29 @@ namespace IFC4
 			TypeData td = null;
 			if(context.typeSel().collectionType() != null)
 			{
-				td = new SimpleType(name);
+				td = new SimpleType(name, generator);
 				((SimpleType)td).IsCollectionType = true;
 			}
 			else if(context.typeSel().simpleType() != null)
 			{
-				td = new SimpleType(name);
+				td = new SimpleType(name, generator);
 				// The wrapped type will be discerned on exit so we can 
 				// get it for collection types as well.
 			}
 			else if(context.typeSel().namedType() != null)
 			{
-				td = new SimpleType(name);
+				td = new SimpleType(name, generator);
 				// The wrapped type will be discerned on exit so we can 
 				// get it for collection types as well.
 			}
 			else if(context.typeSel().enumType() != null)
 			{
-				td = new EnumType(name);
+				td = new EnumType(name, generator);
 				((EnumType)td).Values = context.typeSel().enumType().enumValues().GetText().Split(',');
 			}
 			else if(context.typeSel().selectType() != null)
 			{
-				td = new SelectType(name);
+				td = new SelectType(name, generator);
 				((SelectType)td).Values = context.typeSel().selectType().selectValues().GetText().Split(',');
 			}
 
@@ -283,7 +287,7 @@ namespace IFC4
 			}
 			else
 			{
-				currTypeData = new Entity(name);
+				currTypeData = new Entity(name, generator);
 				typeGraph.Add(name, currTypeData);
 			}
 		}
@@ -306,7 +310,7 @@ namespace IFC4
 					}
 					else
 					{
-						tdSuper = new Entity(name);
+						tdSuper = new Entity(name, generator);
 						typeGraph.Add(name, tdSuper);
 					}
 					((Entity)currTypeData).Supers.Add(tdSuper);
@@ -326,7 +330,7 @@ namespace IFC4
 				}
 				else
 				{
-					tdSub = new Entity(name);
+					tdSub = new Entity(name, generator);
 					typeGraph.Add(name, tdSub);
 				}
 				((Entity)currTypeData).Subs.Add(tdSub);
@@ -335,7 +339,7 @@ namespace IFC4
 
 		public override void EnterExplDef(ExpressParser.ExplDefContext context)
 		{
-			var cad = new AttributeData();
+			var cad = new AttributeData(generator);
 			cad.IsOptional = context.OPTIONAL() != null;
 			currAttrDatas.Add(cad);
 			((Entity)currTypeData).Attributes.Add(cad);
@@ -343,7 +347,7 @@ namespace IFC4
 
 		public override void EnterDeriveDef(ExpressParser.DeriveDefContext context)
 		{
-			var cad = new AttributeData();
+			var cad = new AttributeData(generator);
 			cad.IsDerived = true;
 			currAttrDatas.Add(cad);
 			((Entity)currTypeData).Attributes.Add(cad);
@@ -351,7 +355,7 @@ namespace IFC4
 
 		public override void EnterInverseDef(ExpressParser.InverseDefContext context)
 		{
-			var cad = new AttributeData();
+			var cad = new AttributeData(generator);
 			cad.IsInverse = true;
 			currAttrDatas.Add(cad);
 			((Entity)currTypeData).Attributes.Add(cad);

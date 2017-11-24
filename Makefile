@@ -8,7 +8,7 @@ csharp:
 	$(ANTLR) -Dlanguage=CSharp -package Express -o ./src/antlr $(GRAMMAR_IFC)
 	$(ANTLR) -Dlanguage=CSharp -package STEP -o ./lang/csharp/src/antlr $(GRAMMAR_STEP)
 	dotnet build ./src/IFC-gen.csproj
-	dotnet run -p ./src/IFC-gen.csproj $(SCHEMA) ./lang/csharp/src
+	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l csharp -o ./lang/csharp/src
 
 clean:
 	rm -rf ./lang/csharp/src/antlr

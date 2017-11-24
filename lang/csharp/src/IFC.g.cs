@@ -2965,1034 +2965,1034 @@ namespace IFC4
 	}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequesttypeenum.htm
-	/// </summary>
-	public enum IfcActionRequestTypeEnum {EMAIL,FAX,PHONE,POST,VERBAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionrequesttypeenum.htm
+    /// </summary>
+    public enum IfcActionRequestTypeEnum {EMAIL,FAX,PHONE,POST,VERBAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionsourcetypeenum.htm
-	/// </summary>
-	public enum IfcActionSourceTypeEnum {DEAD_LOAD_G,COMPLETION_G1,LIVE_LOAD_Q,SNOW_S,WIND_W,PRESTRESSING_P,SETTLEMENT_U,TEMPERATURE_T,EARTHQUAKE_E,FIRE,IMPULSE,IMPACT,TRANSPORT,ERECTION,PROPPING,SYSTEM_IMPERFECTION,SHRINKAGE,CREEP,LACK_OF_FIT,BUOYANCY,ICE,CURRENT,WAVE,RAIN,BRAKES,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactionsourcetypeenum.htm
+    /// </summary>
+    public enum IfcActionSourceTypeEnum {DEAD_LOAD_G,COMPLETION_G1,LIVE_LOAD_Q,SNOW_S,WIND_W,PRESTRESSING_P,SETTLEMENT_U,TEMPERATURE_T,EARTHQUAKE_E,FIRE,IMPULSE,IMPACT,TRANSPORT,ERECTION,PROPPING,SYSTEM_IMPERFECTION,SHRINKAGE,CREEP,LACK_OF_FIT,BUOYANCY,ICE,CURRENT,WAVE,RAIN,BRAKES,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactiontypeenum.htm
-	/// </summary>
-	public enum IfcActionTypeEnum {PERMANENT_G,VARIABLE_Q,EXTRAORDINARY_A,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactiontypeenum.htm
+    /// </summary>
+    public enum IfcActionTypeEnum {PERMANENT_G,VARIABLE_Q,EXTRAORDINARY_A,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactuatortypeenum.htm
-	/// </summary>
-	public enum IfcActuatorTypeEnum {ELECTRICACTUATOR,HANDOPERATEDACTUATOR,HYDRAULICACTUATOR,PNEUMATICACTUATOR,THERMOSTATICACTUATOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactuatortypeenum.htm
+    /// </summary>
+    public enum IfcActuatorTypeEnum {ELECTRICACTUATOR,HANDOPERATEDACTUATOR,HYDRAULICACTUATOR,PNEUMATICACTUATOR,THERMOSTATICACTUATOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaddresstypeenum.htm
-	/// </summary>
-	public enum IfcAddressTypeEnum {OFFICE,SITE,HOME,DISTRIBUTIONPOINT,USERDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaddresstypeenum.htm
+    /// </summary>
+    public enum IfcAddressTypeEnum {OFFICE,SITE,HOME,DISTRIBUTIONPOINT,USERDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminalboxtypeenum.htm
-	/// </summary>
-	public enum IfcAirTerminalBoxTypeEnum {CONSTANTFLOW,VARIABLEFLOWPRESSUREDEPENDANT,VARIABLEFLOWPRESSUREINDEPENDANT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminalboxtypeenum.htm
+    /// </summary>
+    public enum IfcAirTerminalBoxTypeEnum {CONSTANTFLOW,VARIABLEFLOWPRESSUREDEPENDANT,VARIABLEFLOWPRESSUREINDEPENDANT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminaltypeenum.htm
-	/// </summary>
-	public enum IfcAirTerminalTypeEnum {DIFFUSER,GRILLE,LOUVRE,REGISTER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairterminaltypeenum.htm
+    /// </summary>
+    public enum IfcAirTerminalTypeEnum {DIFFUSER,GRILLE,LOUVRE,REGISTER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairtoairheatrecoverytypeenum.htm
-	/// </summary>
-	public enum IfcAirToAirHeatRecoveryTypeEnum {FIXEDPLATECOUNTERFLOWEXCHANGER,FIXEDPLATECROSSFLOWEXCHANGER,FIXEDPLATEPARALLELFLOWEXCHANGER,ROTARYWHEEL,RUNAROUNDCOILLOOP,HEATPIPE,TWINTOWERENTHALPYRECOVERYLOOPS,THERMOSIPHONSEALEDTUBEHEATEXCHANGERS,THERMOSIPHONCOILTYPEHEATEXCHANGERS,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcairtoairheatrecoverytypeenum.htm
+    /// </summary>
+    public enum IfcAirToAirHeatRecoveryTypeEnum {FIXEDPLATECOUNTERFLOWEXCHANGER,FIXEDPLATECROSSFLOWEXCHANGER,FIXEDPLATEPARALLELFLOWEXCHANGER,ROTARYWHEEL,RUNAROUNDCOILLOOP,HEATPIPE,TWINTOWERENTHALPYRECOVERYLOOPS,THERMOSIPHONSEALEDTUBEHEATEXCHANGERS,THERMOSIPHONCOILTYPEHEATEXCHANGERS,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcalarmtypeenum.htm
-	/// </summary>
-	public enum IfcAlarmTypeEnum {BELL,BREAKGLASSBUTTON,LIGHT,MANUALPULLBOX,SIREN,WHISTLE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcalarmtypeenum.htm
+    /// </summary>
+    public enum IfcAlarmTypeEnum {BELL,BREAKGLASSBUTTON,LIGHT,MANUALPULLBOX,SIREN,WHISTLE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysismodeltypeenum.htm
-	/// </summary>
-	public enum IfcAnalysisModelTypeEnum {IN_PLANE_LOADING_2D,OUT_PLANE_LOADING_2D,LOADING_3D,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysismodeltypeenum.htm
+    /// </summary>
+    public enum IfcAnalysisModelTypeEnum {IN_PLANE_LOADING_2D,OUT_PLANE_LOADING_2D,LOADING_3D,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysistheorytypeenum.htm
-	/// </summary>
-	public enum IfcAnalysisTheoryTypeEnum {FIRST_ORDER_THEORY,SECOND_ORDER_THEORY,THIRD_ORDER_THEORY,FULL_NONLINEAR_THEORY,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcanalysistheorytypeenum.htm
+    /// </summary>
+    public enum IfcAnalysisTheoryTypeEnum {FIRST_ORDER_THEORY,SECOND_ORDER_THEORY,THIRD_ORDER_THEORY,FULL_NONLINEAR_THEORY,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarithmeticoperatorenum.htm
-	/// </summary>
-	public enum IfcArithmeticOperatorEnum {ADD,DIVIDE,MULTIPLY,SUBTRACT}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarithmeticoperatorenum.htm
+    /// </summary>
+    public enum IfcArithmeticOperatorEnum {ADD,DIVIDE,MULTIPLY,SUBTRACT}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcassemblyplaceenum.htm
-	/// </summary>
-	public enum IfcAssemblyPlaceEnum {SITE,FACTORY,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcassemblyplaceenum.htm
+    /// </summary>
+    public enum IfcAssemblyPlaceEnum {SITE,FACTORY,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaudiovisualappliancetypeenum.htm
-	/// </summary>
-	public enum IfcAudioVisualApplianceTypeEnum {AMPLIFIER,CAMERA,DISPLAY,MICROPHONE,PLAYER,PROJECTOR,RECEIVER,SPEAKER,SWITCHER,TELEPHONE,TUNER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaudiovisualappliancetypeenum.htm
+    /// </summary>
+    public enum IfcAudioVisualApplianceTypeEnum {AMPLIFIER,CAMERA,DISPLAY,MICROPHONE,PLAYER,PROJECTOR,RECEIVER,SPEAKER,SWITCHER,TELEPHONE,TUNER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurveform.htm
-	/// </summary>
-	public enum IfcBSplineCurveForm {POLYLINE_FORM,CIRCULAR_ARC,ELLIPTIC_ARC,PARABOLIC_ARC,HYPERBOLIC_ARC,UNSPECIFIED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurveform.htm
+    /// </summary>
+    public enum IfcBSplineCurveForm {POLYLINE_FORM,CIRCULAR_ARC,ELLIPTIC_ARC,PARABOLIC_ARC,HYPERBOLIC_ARC,UNSPECIFIED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurfaceform.htm
-	/// </summary>
-	public enum IfcBSplineSurfaceForm {PLANE_SURF,CYLINDRICAL_SURF,CONICAL_SURF,SPHERICAL_SURF,TOROIDAL_SURF,SURF_OF_REVOLUTION,RULED_SURF,GENERALISED_CONE,QUADRIC_SURF,SURF_OF_LINEAR_EXTRUSION,UNSPECIFIED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurfaceform.htm
+    /// </summary>
+    public enum IfcBSplineSurfaceForm {PLANE_SURF,CYLINDRICAL_SURF,CONICAL_SURF,SPHERICAL_SURF,TOROIDAL_SURF,SURF_OF_REVOLUTION,RULED_SURF,GENERALISED_CONE,QUADRIC_SURF,SURF_OF_LINEAR_EXTRUSION,UNSPECIFIED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeamtypeenum.htm
-	/// </summary>
-	public enum IfcBeamTypeEnum {BEAM,JOIST,HOLLOWCORE,LINTEL,SPANDREL,T_BEAM,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbeamtypeenum.htm
+    /// </summary>
+    public enum IfcBeamTypeEnum {BEAM,JOIST,HOLLOWCORE,LINTEL,SPANDREL,T_BEAM,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbenchmarkenum.htm
-	/// </summary>
-	public enum IfcBenchmarkEnum {GREATERTHAN,GREATERTHANOREQUALTO,LESSTHAN,LESSTHANOREQUALTO,EQUALTO,NOTEQUALTO,INCLUDES,NOTINCLUDES,INCLUDEDIN,NOTINCLUDEDIN}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbenchmarkenum.htm
+    /// </summary>
+    public enum IfcBenchmarkEnum {GREATERTHAN,GREATERTHANOREQUALTO,LESSTHAN,LESSTHANOREQUALTO,EQUALTO,NOTEQUALTO,INCLUDES,NOTINCLUDES,INCLUDEDIN,NOTINCLUDEDIN}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboilertypeenum.htm
-	/// </summary>
-	public enum IfcBoilerTypeEnum {WATER,STEAM,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboilertypeenum.htm
+    /// </summary>
+    public enum IfcBoilerTypeEnum {WATER,STEAM,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperator.htm
-	/// </summary>
-	public enum IfcBooleanOperator {UNION,INTERSECTION,DIFFERENCE}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperator.htm
+    /// </summary>
+    public enum IfcBooleanOperator {UNION,INTERSECTION,DIFFERENCE}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementparttypeenum.htm
-	/// </summary>
-	public enum IfcBuildingElementPartTypeEnum {INSULATION,PRECASTPANEL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementparttypeenum.htm
+    /// </summary>
+    public enum IfcBuildingElementPartTypeEnum {INSULATION,PRECASTPANEL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxytypeenum.htm
-	/// </summary>
-	public enum IfcBuildingElementProxyTypeEnum {COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxytypeenum.htm
+    /// </summary>
+    public enum IfcBuildingElementProxyTypeEnum {COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystemtypeenum.htm
-	/// </summary>
-	public enum IfcBuildingSystemTypeEnum {FENESTRATION,FOUNDATION,LOADBEARING,OUTERSHELL,SHADING,TRANSPORT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystemtypeenum.htm
+    /// </summary>
+    public enum IfcBuildingSystemTypeEnum {FENESTRATION,FOUNDATION,LOADBEARING,OUTERSHELL,SHADING,TRANSPORT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcburnertypeenum.htm
-	/// </summary>
-	public enum IfcBurnerTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcburnertypeenum.htm
+    /// </summary>
+    public enum IfcBurnerTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarrierfittingtypeenum.htm
-	/// </summary>
-	public enum IfcCableCarrierFittingTypeEnum {BEND,CROSS,REDUCER,TEE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarrierfittingtypeenum.htm
+    /// </summary>
+    public enum IfcCableCarrierFittingTypeEnum {BEND,CROSS,REDUCER,TEE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarriersegmenttypeenum.htm
-	/// </summary>
-	public enum IfcCableCarrierSegmentTypeEnum {CABLELADDERSEGMENT,CABLETRAYSEGMENT,CABLETRUNKINGSEGMENT,CONDUITSEGMENT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablecarriersegmenttypeenum.htm
+    /// </summary>
+    public enum IfcCableCarrierSegmentTypeEnum {CABLELADDERSEGMENT,CABLETRAYSEGMENT,CABLETRUNKINGSEGMENT,CONDUITSEGMENT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefittingtypeenum.htm
-	/// </summary>
-	public enum IfcCableFittingTypeEnum {CONNECTOR,ENTRY,EXIT,JUNCTION,TRANSITION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablefittingtypeenum.htm
+    /// </summary>
+    public enum IfcCableFittingTypeEnum {CONNECTOR,ENTRY,EXIT,JUNCTION,TRANSITION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablesegmenttypeenum.htm
-	/// </summary>
-	public enum IfcCableSegmentTypeEnum {BUSBARSEGMENT,CABLESEGMENT,CONDUCTORSEGMENT,CORESEGMENT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccablesegmenttypeenum.htm
+    /// </summary>
+    public enum IfcCableSegmentTypeEnum {BUSBARSEGMENT,CABLESEGMENT,CONDUCTORSEGMENT,CORESEGMENT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchangeactionenum.htm
-	/// </summary>
-	public enum IfcChangeActionEnum {NOCHANGE,MODIFIED,ADDED,DELETED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchangeactionenum.htm
+    /// </summary>
+    public enum IfcChangeActionEnum {NOCHANGE,MODIFIED,ADDED,DELETED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchillertypeenum.htm
-	/// </summary>
-	public enum IfcChillerTypeEnum {AIRCOOLED,WATERCOOLED,HEATRECOVERY,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchillertypeenum.htm
+    /// </summary>
+    public enum IfcChillerTypeEnum {AIRCOOLED,WATERCOOLED,HEATRECOVERY,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchimneytypeenum.htm
-	/// </summary>
-	public enum IfcChimneyTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcchimneytypeenum.htm
+    /// </summary>
+    public enum IfcChimneyTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoiltypeenum.htm
-	/// </summary>
-	public enum IfcCoilTypeEnum {DXCOOLINGCOIL,ELECTRICHEATINGCOIL,GASHEATINGCOIL,HYDRONICCOIL,STEAMHEATINGCOIL,WATERCOOLINGCOIL,WATERHEATINGCOIL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoiltypeenum.htm
+    /// </summary>
+    public enum IfcCoilTypeEnum {DXCOOLINGCOIL,ELECTRICHEATINGCOIL,GASHEATINGCOIL,HYDRONICCOIL,STEAMHEATINGCOIL,WATERCOOLINGCOIL,WATERHEATINGCOIL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumntypeenum.htm
-	/// </summary>
-	public enum IfcColumnTypeEnum {COLUMN,PILASTER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolumntypeenum.htm
+    /// </summary>
+    public enum IfcColumnTypeEnum {COLUMN,PILASTER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccommunicationsappliancetypeenum.htm
-	/// </summary>
-	public enum IfcCommunicationsApplianceTypeEnum {ANTENNA,COMPUTER,FAX,GATEWAY,MODEM,NETWORKAPPLIANCE,NETWORKBRIDGE,NETWORKHUB,PRINTER,REPEATER,ROUTER,SCANNER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccommunicationsappliancetypeenum.htm
+    /// </summary>
+    public enum IfcCommunicationsApplianceTypeEnum {ANTENNA,COMPUTER,FAX,GATEWAY,MODEM,NETWORKAPPLIANCE,NETWORKBRIDGE,NETWORKHUB,PRINTER,REPEATER,ROUTER,SCANNER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexpropertytemplatetypeenum.htm
-	/// </summary>
-	public enum IfcComplexPropertyTemplateTypeEnum {P_COMPLEX,Q_COMPLEX}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexpropertytemplatetypeenum.htm
+    /// </summary>
+    public enum IfcComplexPropertyTemplateTypeEnum {P_COMPLEX,Q_COMPLEX}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompressortypeenum.htm
-	/// </summary>
-	public enum IfcCompressorTypeEnum {DYNAMIC,RECIPROCATING,ROTARY,SCROLL,TROCHOIDAL,SINGLESTAGE,BOOSTER,OPENTYPE,HERMETIC,SEMIHERMETIC,WELDEDSHELLHERMETIC,ROLLINGPISTON,ROTARYVANE,SINGLESCREW,TWINSCREW,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompressortypeenum.htm
+    /// </summary>
+    public enum IfcCompressorTypeEnum {DYNAMIC,RECIPROCATING,ROTARY,SCROLL,TROCHOIDAL,SINGLESTAGE,BOOSTER,OPENTYPE,HERMETIC,SEMIHERMETIC,WELDEDSHELLHERMETIC,ROLLINGPISTON,ROTARYVANE,SINGLESCREW,TWINSCREW,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccondensertypeenum.htm
-	/// </summary>
-	public enum IfcCondenserTypeEnum {AIRCOOLED,EVAPORATIVECOOLED,WATERCOOLED,WATERCOOLEDBRAZEDPLATE,WATERCOOLEDSHELLCOIL,WATERCOOLEDSHELLTUBE,WATERCOOLEDTUBEINTUBE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccondensertypeenum.htm
+    /// </summary>
+    public enum IfcCondenserTypeEnum {AIRCOOLED,EVAPORATIVECOOLED,WATERCOOLED,WATERCOOLEDBRAZEDPLATE,WATERCOOLEDSHELLCOIL,WATERCOOLEDSHELLTUBE,WATERCOOLEDTUBEINTUBE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectiontypeenum.htm
-	/// </summary>
-	public enum IfcConnectionTypeEnum {ATPATH,ATSTART,ATEND,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectiontypeenum.htm
+    /// </summary>
+    public enum IfcConnectionTypeEnum {ATPATH,ATSTART,ATEND,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstraintenum.htm
-	/// </summary>
-	public enum IfcConstraintEnum {HARD,SOFT,ADVISORY,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstraintenum.htm
+    /// </summary>
+    public enum IfcConstraintEnum {HARD,SOFT,ADVISORY,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionequipmentresourcetypeenum.htm
-	/// </summary>
-	public enum IfcConstructionEquipmentResourceTypeEnum {DEMOLISHING,EARTHMOVING,ERECTING,HEATING,LIGHTING,PAVING,PUMPING,TRANSPORTING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionequipmentresourcetypeenum.htm
+    /// </summary>
+    public enum IfcConstructionEquipmentResourceTypeEnum {DEMOLISHING,EARTHMOVING,ERECTING,HEATING,LIGHTING,PAVING,PUMPING,TRANSPORTING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionmaterialresourcetypeenum.htm
-	/// </summary>
-	public enum IfcConstructionMaterialResourceTypeEnum {AGGREGATES,CONCRETE,DRYWALL,FUEL,GYPSUM,MASONRY,METAL,PLASTIC,WOOD,NOTDEFINED,USERDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionmaterialresourcetypeenum.htm
+    /// </summary>
+    public enum IfcConstructionMaterialResourceTypeEnum {AGGREGATES,CONCRETE,DRYWALL,FUEL,GYPSUM,MASONRY,METAL,PLASTIC,WOOD,NOTDEFINED,USERDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionproductresourcetypeenum.htm
-	/// </summary>
-	public enum IfcConstructionProductResourceTypeEnum {ASSEMBLY,FORMWORK,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionproductresourcetypeenum.htm
+    /// </summary>
+    public enum IfcConstructionProductResourceTypeEnum {ASSEMBLY,FORMWORK,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrollertypeenum.htm
-	/// </summary>
-	public enum IfcControllerTypeEnum {FLOATING,PROGRAMMABLE,PROPORTIONAL,MULTIPOSITION,TWOPOSITION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrollertypeenum.htm
+    /// </summary>
+    public enum IfcControllerTypeEnum {FLOATING,PROGRAMMABLE,PROPORTIONAL,MULTIPOSITION,TWOPOSITION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccooledbeamtypeenum.htm
-	/// </summary>
-	public enum IfcCooledBeamTypeEnum {ACTIVE,PASSIVE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccooledbeamtypeenum.htm
+    /// </summary>
+    public enum IfcCooledBeamTypeEnum {ACTIVE,PASSIVE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoolingtowertypeenum.htm
-	/// </summary>
-	public enum IfcCoolingTowerTypeEnum {NATURALDRAFT,MECHANICALINDUCEDDRAFT,MECHANICALFORCEDDRAFT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoolingtowertypeenum.htm
+    /// </summary>
+    public enum IfcCoolingTowerTypeEnum {NATURALDRAFT,MECHANICALINDUCEDDRAFT,MECHANICALFORCEDDRAFT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostitemtypeenum.htm
-	/// </summary>
-	public enum IfcCostItemTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostitemtypeenum.htm
+    /// </summary>
+    public enum IfcCostItemTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostscheduletypeenum.htm
-	/// </summary>
-	public enum IfcCostScheduleTypeEnum {BUDGET,COSTPLAN,ESTIMATE,TENDER,PRICEDBILLOFQUANTITIES,UNPRICEDBILLOFQUANTITIES,SCHEDULEOFRATES,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostscheduletypeenum.htm
+    /// </summary>
+    public enum IfcCostScheduleTypeEnum {BUDGET,COSTPLAN,ESTIMATE,TENDER,PRICEDBILLOFQUANTITIES,UNPRICEDBILLOFQUANTITIES,SCHEDULEOFRATES,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoveringtypeenum.htm
-	/// </summary>
-	public enum IfcCoveringTypeEnum {CEILING,FLOORING,CLADDING,ROOFING,MOLDING,SKIRTINGBOARD,INSULATION,MEMBRANE,SLEEVING,WRAPPING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoveringtypeenum.htm
+    /// </summary>
+    public enum IfcCoveringTypeEnum {CEILING,FLOORING,CLADDING,ROOFING,MOLDING,SKIRTINGBOARD,INSULATION,MEMBRANE,SLEEVING,WRAPPING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresourcetypeenum.htm
-	/// </summary>
-	public enum IfcCrewResourceTypeEnum {OFFICE,SITE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccrewresourcetypeenum.htm
+    /// </summary>
+    public enum IfcCrewResourceTypeEnum {OFFICE,SITE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurtainwalltypeenum.htm
-	/// </summary>
-	public enum IfcCurtainWallTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurtainwalltypeenum.htm
+    /// </summary>
+    public enum IfcCurtainWallTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveinterpolationenum.htm
-	/// </summary>
-	public enum IfcCurveInterpolationEnum {LINEAR,LOG_LINEAR,LOG_LOG,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveinterpolationenum.htm
+    /// </summary>
+    public enum IfcCurveInterpolationEnum {LINEAR,LOG_LINEAR,LOG_LOG,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdampertypeenum.htm
-	/// </summary>
-	public enum IfcDamperTypeEnum {BACKDRAFTDAMPER,BALANCINGDAMPER,BLASTDAMPER,CONTROLDAMPER,FIREDAMPER,FIRESMOKEDAMPER,FUMEHOODEXHAUST,GRAVITYDAMPER,GRAVITYRELIEFDAMPER,RELIEFDAMPER,SMOKEDAMPER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdampertypeenum.htm
+    /// </summary>
+    public enum IfcDamperTypeEnum {BACKDRAFTDAMPER,BALANCINGDAMPER,BLASTDAMPER,CONTROLDAMPER,FIREDAMPER,FIRESMOKEDAMPER,FUMEHOODEXHAUST,GRAVITYDAMPER,GRAVITYRELIEFDAMPER,RELIEFDAMPER,SMOKEDAMPER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdataoriginenum.htm
-	/// </summary>
-	public enum IfcDataOriginEnum {MEASURED,PREDICTED,SIMULATED,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdataoriginenum.htm
+    /// </summary>
+    public enum IfcDataOriginEnum {MEASURED,PREDICTED,SIMULATED,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunitenum.htm
-	/// </summary>
-	public enum IfcDerivedUnitEnum {ANGULARVELOCITYUNIT,AREADENSITYUNIT,COMPOUNDPLANEANGLEUNIT,DYNAMICVISCOSITYUNIT,HEATFLUXDENSITYUNIT,INTEGERCOUNTRATEUNIT,ISOTHERMALMOISTURECAPACITYUNIT,KINEMATICVISCOSITYUNIT,LINEARVELOCITYUNIT,MASSDENSITYUNIT,MASSFLOWRATEUNIT,MOISTUREDIFFUSIVITYUNIT,MOLECULARWEIGHTUNIT,SPECIFICHEATCAPACITYUNIT,THERMALADMITTANCEUNIT,THERMALCONDUCTANCEUNIT,THERMALRESISTANCEUNIT,THERMALTRANSMITTANCEUNIT,VAPORPERMEABILITYUNIT,VOLUMETRICFLOWRATEUNIT,ROTATIONALFREQUENCYUNIT,TORQUEUNIT,MOMENTOFINERTIAUNIT,LINEARMOMENTUNIT,LINEARFORCEUNIT,PLANARFORCEUNIT,MODULUSOFELASTICITYUNIT,SHEARMODULUSUNIT,LINEARSTIFFNESSUNIT,ROTATIONALSTIFFNESSUNIT,MODULUSOFSUBGRADEREACTIONUNIT,ACCELERATIONUNIT,CURVATUREUNIT,HEATINGVALUEUNIT,IONCONCENTRATIONUNIT,LUMINOUSINTENSITYDISTRIBUTIONUNIT,MASSPERLENGTHUNIT,MODULUSOFLINEARSUBGRADEREACTIONUNIT,MODULUSOFROTATIONALSUBGRADEREACTIONUNIT,PHUNIT,ROTATIONALMASSUNIT,SECTIONAREAINTEGRALUNIT,SECTIONMODULUSUNIT,SOUNDPOWERLEVELUNIT,SOUNDPOWERUNIT,SOUNDPRESSURELEVELUNIT,SOUNDPRESSUREUNIT,TEMPERATUREGRADIENTUNIT,TEMPERATURERATEOFCHANGEUNIT,THERMALEXPANSIONCOEFFICIENTUNIT,WARPINGCONSTANTUNIT,WARPINGMOMENTUNIT,USERDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunitenum.htm
+    /// </summary>
+    public enum IfcDerivedUnitEnum {ANGULARVELOCITYUNIT,AREADENSITYUNIT,COMPOUNDPLANEANGLEUNIT,DYNAMICVISCOSITYUNIT,HEATFLUXDENSITYUNIT,INTEGERCOUNTRATEUNIT,ISOTHERMALMOISTURECAPACITYUNIT,KINEMATICVISCOSITYUNIT,LINEARVELOCITYUNIT,MASSDENSITYUNIT,MASSFLOWRATEUNIT,MOISTUREDIFFUSIVITYUNIT,MOLECULARWEIGHTUNIT,SPECIFICHEATCAPACITYUNIT,THERMALADMITTANCEUNIT,THERMALCONDUCTANCEUNIT,THERMALRESISTANCEUNIT,THERMALTRANSMITTANCEUNIT,VAPORPERMEABILITYUNIT,VOLUMETRICFLOWRATEUNIT,ROTATIONALFREQUENCYUNIT,TORQUEUNIT,MOMENTOFINERTIAUNIT,LINEARMOMENTUNIT,LINEARFORCEUNIT,PLANARFORCEUNIT,MODULUSOFELASTICITYUNIT,SHEARMODULUSUNIT,LINEARSTIFFNESSUNIT,ROTATIONALSTIFFNESSUNIT,MODULUSOFSUBGRADEREACTIONUNIT,ACCELERATIONUNIT,CURVATUREUNIT,HEATINGVALUEUNIT,IONCONCENTRATIONUNIT,LUMINOUSINTENSITYDISTRIBUTIONUNIT,MASSPERLENGTHUNIT,MODULUSOFLINEARSUBGRADEREACTIONUNIT,MODULUSOFROTATIONALSUBGRADEREACTIONUNIT,PHUNIT,ROTATIONALMASSUNIT,SECTIONAREAINTEGRALUNIT,SECTIONMODULUSUNIT,SOUNDPOWERLEVELUNIT,SOUNDPOWERUNIT,SOUNDPRESSURELEVELUNIT,SOUNDPRESSUREUNIT,TEMPERATUREGRADIENTUNIT,TEMPERATURERATEOFCHANGEUNIT,THERMALEXPANSIONCOEFFICIENTUNIT,WARPINGCONSTANTUNIT,WARPINGMOMENTUNIT,USERDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdirectionsenseenum.htm
-	/// </summary>
-	public enum IfcDirectionSenseEnum {POSITIVE,NEGATIVE}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdirectionsenseenum.htm
+    /// </summary>
+    public enum IfcDirectionSenseEnum {POSITIVE,NEGATIVE}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdiscreteaccessorytypeenum.htm
-	/// </summary>
-	public enum IfcDiscreteAccessoryTypeEnum {ANCHORPLATE,BRACKET,SHOE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdiscreteaccessorytypeenum.htm
+    /// </summary>
+    public enum IfcDiscreteAccessoryTypeEnum {ANCHORPLATE,BRACKET,SHOE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionchamberelementtypeenum.htm
-	/// </summary>
-	public enum IfcDistributionChamberElementTypeEnum {FORMEDDUCT,INSPECTIONCHAMBER,INSPECTIONPIT,MANHOLE,METERCHAMBER,SUMP,TRENCH,VALVECHAMBER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionchamberelementtypeenum.htm
+    /// </summary>
+    public enum IfcDistributionChamberElementTypeEnum {FORMEDDUCT,INSPECTIONCHAMBER,INSPECTIONPIT,MANHOLE,METERCHAMBER,SUMP,TRENCH,VALVECHAMBER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionporttypeenum.htm
-	/// </summary>
-	public enum IfcDistributionPortTypeEnum {CABLE,CABLECARRIER,DUCT,PIPE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionporttypeenum.htm
+    /// </summary>
+    public enum IfcDistributionPortTypeEnum {CABLE,CABLECARRIER,DUCT,PIPE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionsystemenum.htm
-	/// </summary>
-	public enum IfcDistributionSystemEnum {AIRCONDITIONING,AUDIOVISUAL,CHEMICAL,CHILLEDWATER,COMMUNICATION,COMPRESSEDAIR,CONDENSERWATER,CONTROL,CONVEYING,DATA,DISPOSAL,DOMESTICCOLDWATER,DOMESTICHOTWATER,DRAINAGE,EARTHING,ELECTRICAL,ELECTROACOUSTIC,EXHAUST,FIREPROTECTION,FUEL,GAS,HAZARDOUS,HEATING,LIGHTING,LIGHTNINGPROTECTION,MUNICIPALSOLIDWASTE,OIL,OPERATIONAL,POWERGENERATION,RAINWATER,REFRIGERATION,SECURITY,SEWAGE,SIGNAL,STORMWATER,TELEPHONE,TV,VACUUM,VENT,VENTILATION,WASTEWATER,WATERSUPPLY,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionsystemenum.htm
+    /// </summary>
+    public enum IfcDistributionSystemEnum {AIRCONDITIONING,AUDIOVISUAL,CHEMICAL,CHILLEDWATER,COMMUNICATION,COMPRESSEDAIR,CONDENSERWATER,CONTROL,CONVEYING,DATA,DISPOSAL,DOMESTICCOLDWATER,DOMESTICHOTWATER,DRAINAGE,EARTHING,ELECTRICAL,ELECTROACOUSTIC,EXHAUST,FIREPROTECTION,FUEL,GAS,HAZARDOUS,HEATING,LIGHTING,LIGHTNINGPROTECTION,MUNICIPALSOLIDWASTE,OIL,OPERATIONAL,POWERGENERATION,RAINWATER,REFRIGERATION,SECURITY,SEWAGE,SIGNAL,STORMWATER,TELEPHONE,TV,VACUUM,VENT,VENTILATION,WASTEWATER,WATERSUPPLY,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentconfidentialityenum.htm
-	/// </summary>
-	public enum IfcDocumentConfidentialityEnum {PUBLIC,RESTRICTED,CONFIDENTIAL,PERSONAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentconfidentialityenum.htm
+    /// </summary>
+    public enum IfcDocumentConfidentialityEnum {PUBLIC,RESTRICTED,CONFIDENTIAL,PERSONAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentstatusenum.htm
-	/// </summary>
-	public enum IfcDocumentStatusEnum {DRAFT,FINALDRAFT,FINAL,REVISION,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentstatusenum.htm
+    /// </summary>
+    public enum IfcDocumentStatusEnum {DRAFT,FINALDRAFT,FINAL,REVISION,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpaneloperationenum.htm
-	/// </summary>
-	public enum IfcDoorPanelOperationEnum {SWINGING,DOUBLE_ACTING,SLIDING,FOLDING,REVOLVING,ROLLINGUP,FIXEDPANEL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpaneloperationenum.htm
+    /// </summary>
+    public enum IfcDoorPanelOperationEnum {SWINGING,DOUBLE_ACTING,SLIDING,FOLDING,REVOLVING,ROLLINGUP,FIXEDPANEL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelpositionenum.htm
-	/// </summary>
-	public enum IfcDoorPanelPositionEnum {LEFT,MIDDLE,RIGHT,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelpositionenum.htm
+    /// </summary>
+    public enum IfcDoorPanelPositionEnum {LEFT,MIDDLE,RIGHT,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleconstructionenum.htm
-	/// </summary>
-	public enum IfcDoorStyleConstructionEnum {ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,ALUMINIUM_PLASTIC,PLASTIC,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleconstructionenum.htm
+    /// </summary>
+    public enum IfcDoorStyleConstructionEnum {ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,ALUMINIUM_PLASTIC,PLASTIC,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleoperationenum.htm
-	/// </summary>
-	public enum IfcDoorStyleOperationEnum {SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorstyleoperationenum.htm
+    /// </summary>
+    public enum IfcDoorStyleOperationEnum {SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeenum.htm
-	/// </summary>
-	public enum IfcDoorTypeEnum {DOOR,GATE,TRAPDOOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeenum.htm
+    /// </summary>
+    public enum IfcDoorTypeEnum {DOOR,GATE,TRAPDOOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeoperationenum.htm
-	/// </summary>
-	public enum IfcDoorTypeOperationEnum {SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,SWING_FIXED_LEFT,SWING_FIXED_RIGHT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortypeoperationenum.htm
+    /// </summary>
+    public enum IfcDoorTypeOperationEnum {SINGLE_SWING_LEFT,SINGLE_SWING_RIGHT,DOUBLE_DOOR_SINGLE_SWING,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_LEFT,DOUBLE_DOOR_SINGLE_SWING_OPPOSITE_RIGHT,DOUBLE_SWING_LEFT,DOUBLE_SWING_RIGHT,DOUBLE_DOOR_DOUBLE_SWING,SLIDING_TO_LEFT,SLIDING_TO_RIGHT,DOUBLE_DOOR_SLIDING,FOLDING_TO_LEFT,FOLDING_TO_RIGHT,DOUBLE_DOOR_FOLDING,REVOLVING,ROLLINGUP,SWING_FIXED_LEFT,SWING_FIXED_RIGHT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductfittingtypeenum.htm
-	/// </summary>
-	public enum IfcDuctFittingTypeEnum {BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductfittingtypeenum.htm
+    /// </summary>
+    public enum IfcDuctFittingTypeEnum {BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsegmenttypeenum.htm
-	/// </summary>
-	public enum IfcDuctSegmentTypeEnum {RIGIDSEGMENT,FLEXIBLESEGMENT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsegmenttypeenum.htm
+    /// </summary>
+    public enum IfcDuctSegmentTypeEnum {RIGIDSEGMENT,FLEXIBLESEGMENT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsilencertypeenum.htm
-	/// </summary>
-	public enum IfcDuctSilencerTypeEnum {FLATOVAL,RECTANGULAR,ROUND,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcductsilencertypeenum.htm
+    /// </summary>
+    public enum IfcDuctSilencerTypeEnum {FLATOVAL,RECTANGULAR,ROUND,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricappliancetypeenum.htm
-	/// </summary>
-	public enum IfcElectricApplianceTypeEnum {DISHWASHER,ELECTRICCOOKER,FREESTANDINGELECTRICHEATER,FREESTANDINGFAN,FREESTANDINGWATERHEATER,FREESTANDINGWATERCOOLER,FREEZER,FRIDGE_FREEZER,HANDDRYER,KITCHENMACHINE,MICROWAVE,PHOTOCOPIER,REFRIGERATOR,TUMBLEDRYER,VENDINGMACHINE,WASHINGMACHINE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricappliancetypeenum.htm
+    /// </summary>
+    public enum IfcElectricApplianceTypeEnum {DISHWASHER,ELECTRICCOOKER,FREESTANDINGELECTRICHEATER,FREESTANDINGFAN,FREESTANDINGWATERHEATER,FREESTANDINGWATERCOOLER,FREEZER,FRIDGE_FREEZER,HANDDRYER,KITCHENMACHINE,MICROWAVE,PHOTOCOPIER,REFRIGERATOR,TUMBLEDRYER,VENDINGMACHINE,WASHINGMACHINE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricdistributionboardtypeenum.htm
-	/// </summary>
-	public enum IfcElectricDistributionBoardTypeEnum {CONSUMERUNIT,DISTRIBUTIONBOARD,MOTORCONTROLCENTRE,SWITCHBOARD,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricdistributionboardtypeenum.htm
+    /// </summary>
+    public enum IfcElectricDistributionBoardTypeEnum {CONSUMERUNIT,DISTRIBUTIONBOARD,MOTORCONTROLCENTRE,SWITCHBOARD,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricflowstoragedevicetypeenum.htm
-	/// </summary>
-	public enum IfcElectricFlowStorageDeviceTypeEnum {BATTERY,CAPACITORBANK,HARMONICFILTER,INDUCTORBANK,UPS,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricflowstoragedevicetypeenum.htm
+    /// </summary>
+    public enum IfcElectricFlowStorageDeviceTypeEnum {BATTERY,CAPACITORBANK,HARMONICFILTER,INDUCTORBANK,UPS,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricgeneratortypeenum.htm
-	/// </summary>
-	public enum IfcElectricGeneratorTypeEnum {CHP,ENGINEGENERATOR,STANDALONE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricgeneratortypeenum.htm
+    /// </summary>
+    public enum IfcElectricGeneratorTypeEnum {CHP,ENGINEGENERATOR,STANDALONE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricmotortypeenum.htm
-	/// </summary>
-	public enum IfcElectricMotorTypeEnum {DC,INDUCTION,POLYPHASE,RELUCTANCESYNCHRONOUS,SYNCHRONOUS,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricmotortypeenum.htm
+    /// </summary>
+    public enum IfcElectricMotorTypeEnum {DC,INDUCTION,POLYPHASE,RELUCTANCESYNCHRONOUS,SYNCHRONOUS,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectrictimecontroltypeenum.htm
-	/// </summary>
-	public enum IfcElectricTimeControlTypeEnum {TIMECLOCK,TIMEDELAY,RELAY,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectrictimecontroltypeenum.htm
+    /// </summary>
+    public enum IfcElectricTimeControlTypeEnum {TIMECLOCK,TIMEDELAY,RELAY,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassemblytypeenum.htm
-	/// </summary>
-	public enum IfcElementAssemblyTypeEnum {ACCESSORY_ASSEMBLY,ARCH,BEAM_GRID,BRACED_FRAME,GIRDER,REINFORCEMENT_UNIT,RIGID_FRAME,SLAB_FIELD,TRUSS,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementassemblytypeenum.htm
+    /// </summary>
+    public enum IfcElementAssemblyTypeEnum {ACCESSORY_ASSEMBLY,ARCH,BEAM_GRID,BRACED_FRAME,GIRDER,REINFORCEMENT_UNIT,RIGID_FRAME,SLAB_FIELD,TRUSS,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcompositionenum.htm
-	/// </summary>
-	public enum IfcElementCompositionEnum {COMPLEX,ELEMENT,PARTIAL}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcompositionenum.htm
+    /// </summary>
+    public enum IfcElementCompositionEnum {COMPLEX,ELEMENT,PARTIAL}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenginetypeenum.htm
-	/// </summary>
-	public enum IfcEngineTypeEnum {EXTERNALCOMBUSTION,INTERNALCOMBUSTION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenginetypeenum.htm
+    /// </summary>
+    public enum IfcEngineTypeEnum {EXTERNALCOMBUSTION,INTERNALCOMBUSTION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporativecoolertypeenum.htm
-	/// </summary>
-	public enum IfcEvaporativeCoolerTypeEnum {DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER,DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER,DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER,DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER,DIRECTEVAPORATIVEAIRWASHER,INDIRECTEVAPORATIVEPACKAGEAIRCOOLER,INDIRECTEVAPORATIVEWETCOIL,INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER,INDIRECTDIRECTCOMBINATION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporativecoolertypeenum.htm
+    /// </summary>
+    public enum IfcEvaporativeCoolerTypeEnum {DIRECTEVAPORATIVERANDOMMEDIAAIRCOOLER,DIRECTEVAPORATIVERIGIDMEDIAAIRCOOLER,DIRECTEVAPORATIVESLINGERSPACKAGEDAIRCOOLER,DIRECTEVAPORATIVEPACKAGEDROTARYAIRCOOLER,DIRECTEVAPORATIVEAIRWASHER,INDIRECTEVAPORATIVEPACKAGEAIRCOOLER,INDIRECTEVAPORATIVEWETCOIL,INDIRECTEVAPORATIVECOOLINGTOWERORCOILCOOLER,INDIRECTDIRECTCOMBINATION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporatortypeenum.htm
-	/// </summary>
-	public enum IfcEvaporatorTypeEnum {DIRECTEXPANSION,DIRECTEXPANSIONSHELLANDTUBE,DIRECTEXPANSIONTUBEINTUBE,DIRECTEXPANSIONBRAZEDPLATE,FLOODEDSHELLANDTUBE,SHELLANDCOIL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcevaporatortypeenum.htm
+    /// </summary>
+    public enum IfcEvaporatorTypeEnum {DIRECTEXPANSION,DIRECTEXPANSIONSHELLANDTUBE,DIRECTEXPANSIONTUBEINTUBE,DIRECTEXPANSIONBRAZEDPLATE,FLOODEDSHELLANDTUBE,SHELLANDCOIL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtriggertypeenum.htm
-	/// </summary>
-	public enum IfcEventTriggerTypeEnum {EVENTRULE,EVENTMESSAGE,EVENTTIME,EVENTCOMPLEX,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtriggertypeenum.htm
+    /// </summary>
+    public enum IfcEventTriggerTypeEnum {EVENTRULE,EVENTMESSAGE,EVENTTIME,EVENTCOMPLEX,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtypeenum.htm
-	/// </summary>
-	public enum IfcEventTypeEnum {STARTEVENT,ENDEVENT,INTERMEDIATEEVENT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtypeenum.htm
+    /// </summary>
+    public enum IfcEventTypeEnum {STARTEVENT,ENDEVENT,INTERMEDIATEEVENT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelementtypeenum.htm
-	/// </summary>
-	public enum IfcExternalSpatialElementTypeEnum {EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFIEND}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelementtypeenum.htm
+    /// </summary>
+    public enum IfcExternalSpatialElementTypeEnum {EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFIEND}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfantypeenum.htm
-	/// </summary>
-	public enum IfcFanTypeEnum {CENTRIFUGALFORWARDCURVED,CENTRIFUGALRADIAL,CENTRIFUGALBACKWARDINCLINEDCURVED,CENTRIFUGALAIRFOIL,TUBEAXIAL,VANEAXIAL,PROPELLORAXIAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfantypeenum.htm
+    /// </summary>
+    public enum IfcFanTypeEnum {CENTRIFUGALFORWARDCURVED,CENTRIFUGALRADIAL,CENTRIFUGALBACKWARDINCLINEDCURVED,CENTRIFUGALAIRFOIL,TUBEAXIAL,VANEAXIAL,PROPELLORAXIAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastenertypeenum.htm
-	/// </summary>
-	public enum IfcFastenerTypeEnum {GLUE,MORTAR,WELD,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfastenertypeenum.htm
+    /// </summary>
+    public enum IfcFastenerTypeEnum {GLUE,MORTAR,WELD,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiltertypeenum.htm
-	/// </summary>
-	public enum IfcFilterTypeEnum {AIRPARTICLEFILTER,COMPRESSEDAIRFILTER,ODORFILTER,OILFILTER,STRAINER,WATERFILTER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiltertypeenum.htm
+    /// </summary>
+    public enum IfcFilterTypeEnum {AIRPARTICLEFILTER,COMPRESSEDAIRFILTER,ODORFILTER,OILFILTER,STRAINER,WATERFILTER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiresuppressionterminaltypeenum.htm
-	/// </summary>
-	public enum IfcFireSuppressionTerminalTypeEnum {BREECHINGINLET,FIREHYDRANT,HOSEREEL,SPRINKLER,SPRINKLERDEFLECTOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfiresuppressionterminaltypeenum.htm
+    /// </summary>
+    public enum IfcFireSuppressionTerminalTypeEnum {BREECHINGINLET,FIREHYDRANT,HOSEREEL,SPRINKLER,SPRINKLERDEFLECTOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowdirectionenum.htm
-	/// </summary>
-	public enum IfcFlowDirectionEnum {SOURCE,SINK,SOURCEANDSINK,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowdirectionenum.htm
+    /// </summary>
+    public enum IfcFlowDirectionEnum {SOURCE,SINK,SOURCEANDSINK,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrumenttypeenum.htm
-	/// </summary>
-	public enum IfcFlowInstrumentTypeEnum {PRESSUREGAUGE,THERMOMETER,AMMETER,FREQUENCYMETER,POWERFACTORMETER,PHASEANGLEMETER,VOLTMETER_PEAK,VOLTMETER_RMS,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowinstrumenttypeenum.htm
+    /// </summary>
+    public enum IfcFlowInstrumentTypeEnum {PRESSUREGAUGE,THERMOMETER,AMMETER,FREQUENCYMETER,POWERFACTORMETER,PHASEANGLEMETER,VOLTMETER_PEAK,VOLTMETER_RMS,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmetertypeenum.htm
-	/// </summary>
-	public enum IfcFlowMeterTypeEnum {ENERGYMETER,GASMETER,OILMETER,WATERMETER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowmetertypeenum.htm
+    /// </summary>
+    public enum IfcFlowMeterTypeEnum {ENERGYMETER,GASMETER,OILMETER,WATERMETER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfootingtypeenum.htm
-	/// </summary>
-	public enum IfcFootingTypeEnum {CAISSON_FOUNDATION,FOOTING_BEAM,PAD_FOOTING,PILE_CAP,STRIP_FOOTING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfootingtypeenum.htm
+    /// </summary>
+    public enum IfcFootingTypeEnum {CAISSON_FOUNDATION,FOOTING_BEAM,PAD_FOOTING,PILE_CAP,STRIP_FOOTING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretypeenum.htm
-	/// </summary>
-	public enum IfcFurnitureTypeEnum {CHAIR,TABLE,DESK,BED,FILECABINET,SHELF,SOFA,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretypeenum.htm
+    /// </summary>
+    public enum IfcFurnitureTypeEnum {CHAIR,TABLE,DESK,BED,FILECABINET,SHELF,SOFA,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeographicelementtypeenum.htm
-	/// </summary>
-	public enum IfcGeographicElementTypeEnum {TERRAIN,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeographicelementtypeenum.htm
+    /// </summary>
+    public enum IfcGeographicElementTypeEnum {TERRAIN,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricprojectionenum.htm
-	/// </summary>
-	public enum IfcGeometricProjectionEnum {GRAPH_VIEW,SKETCH_VIEW,MODEL_VIEW,PLAN_VIEW,REFLECTED_PLAN_VIEW,SECTION_VIEW,ELEVATION_VIEW,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricprojectionenum.htm
+    /// </summary>
+    public enum IfcGeometricProjectionEnum {GRAPH_VIEW,SKETCH_VIEW,MODEL_VIEW,PLAN_VIEW,REFLECTED_PLAN_VIEW,SECTION_VIEW,ELEVATION_VIEW,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcglobalorlocalenum.htm
-	/// </summary>
-	public enum IfcGlobalOrLocalEnum {GLOBAL_COORDS,LOCAL_COORDS}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcglobalorlocalenum.htm
+    /// </summary>
+    public enum IfcGlobalOrLocalEnum {GLOBAL_COORDS,LOCAL_COORDS}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridtypeenum.htm
-	/// </summary>
-	public enum IfcGridTypeEnum {RECTANGULAR,RADIAL,TRIANGULAR,IRREGULAR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridtypeenum.htm
+    /// </summary>
+    public enum IfcGridTypeEnum {RECTANGULAR,RADIAL,TRIANGULAR,IRREGULAR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatexchangertypeenum.htm
-	/// </summary>
-	public enum IfcHeatExchangerTypeEnum {PLATE,SHELLANDTUBE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatexchangertypeenum.htm
+    /// </summary>
+    public enum IfcHeatExchangerTypeEnum {PLATE,SHELLANDTUBE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchumidifiertypeenum.htm
-	/// </summary>
-	public enum IfcHumidifierTypeEnum {STEAMINJECTION,ADIABATICAIRWASHER,ADIABATICPAN,ADIABATICWETTEDELEMENT,ADIABATICATOMIZING,ADIABATICULTRASONIC,ADIABATICRIGIDMEDIA,ADIABATICCOMPRESSEDAIRNOZZLE,ASSISTEDELECTRIC,ASSISTEDNATURALGAS,ASSISTEDPROPANE,ASSISTEDBUTANE,ASSISTEDSTEAM,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchumidifiertypeenum.htm
+    /// </summary>
+    public enum IfcHumidifierTypeEnum {STEAMINJECTION,ADIABATICAIRWASHER,ADIABATICPAN,ADIABATICWETTEDELEMENT,ADIABATICATOMIZING,ADIABATICULTRASONIC,ADIABATICRIGIDMEDIA,ADIABATICCOMPRESSEDAIRNOZZLE,ASSISTEDELECTRIC,ASSISTEDNATURALGAS,ASSISTEDPROPANE,ASSISTEDBUTANE,ASSISTEDSTEAM,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptortypeenum.htm
-	/// </summary>
-	public enum IfcInterceptorTypeEnum {CYCLONIC,GREASE,OIL,PETROL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinterceptortypeenum.htm
+    /// </summary>
+    public enum IfcInterceptorTypeEnum {CYCLONIC,GREASE,OIL,PETROL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinternalorexternalenum.htm
-	/// </summary>
-	public enum IfcInternalOrExternalEnum {INTERNAL,EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinternalorexternalenum.htm
+    /// </summary>
+    public enum IfcInternalOrExternalEnum {INTERNAL,EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventorytypeenum.htm
-	/// </summary>
-	public enum IfcInventoryTypeEnum {ASSETINVENTORY,SPACEINVENTORY,FURNITUREINVENTORY,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventorytypeenum.htm
+    /// </summary>
+    public enum IfcInventoryTypeEnum {ASSETINVENTORY,SPACEINVENTORY,FURNITUREINVENTORY,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcjunctionboxtypeenum.htm
-	/// </summary>
-	public enum IfcJunctionBoxTypeEnum {DATA,POWER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcjunctionboxtypeenum.htm
+    /// </summary>
+    public enum IfcJunctionBoxTypeEnum {DATA,POWER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcknottype.htm
-	/// </summary>
-	public enum IfcKnotType {UNIFORM_KNOTS,QUASI_UNIFORM_KNOTS,PIECEWISE_BEZIER_KNOTS,UNSPECIFIED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcknottype.htm
+    /// </summary>
+    public enum IfcKnotType {UNIFORM_KNOTS,QUASI_UNIFORM_KNOTS,PIECEWISE_BEZIER_KNOTS,UNSPECIFIED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetypeenum.htm
-	/// </summary>
-	public enum IfcLaborResourceTypeEnum {ADMINISTRATION,CARPENTRY,CLEANING,CONCRETE,DRYWALL,ELECTRIC,FINISHING,FLOORING,GENERAL,HVAC,LANDSCAPING,MASONRY,PAINTING,PAVING,PLUMBING,ROOFING,SITEGRADING,STEELWORK,SURVEYING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetypeenum.htm
+    /// </summary>
+    public enum IfcLaborResourceTypeEnum {ADMINISTRATION,CARPENTRY,CLEANING,CONCRETE,DRYWALL,ELECTRIC,FINISHING,FLOORING,GENERAL,HVAC,LANDSCAPING,MASONRY,PAINTING,PAVING,PLUMBING,ROOFING,SITEGRADING,STEELWORK,SURVEYING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclamptypeenum.htm
-	/// </summary>
-	public enum IfcLampTypeEnum {COMPACTFLUORESCENT,FLUORESCENT,HALOGEN,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LED,METALHALIDE,OLED,TUNGSTENFILAMENT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclamptypeenum.htm
+    /// </summary>
+    public enum IfcLampTypeEnum {COMPACTFLUORESCENT,FLUORESCENT,HALOGEN,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LED,METALHALIDE,OLED,TUNGSTENFILAMENT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayersetdirectionenum.htm
-	/// </summary>
-	public enum IfcLayerSetDirectionEnum {AXIS1,AXIS2,AXIS3}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayersetdirectionenum.htm
+    /// </summary>
+    public enum IfcLayerSetDirectionEnum {AXIS1,AXIS2,AXIS3}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributioncurveenum.htm
-	/// </summary>
-	public enum IfcLightDistributionCurveEnum {TYPE_A,TYPE_B,TYPE_C,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributioncurveenum.htm
+    /// </summary>
+    public enum IfcLightDistributionCurveEnum {TYPE_A,TYPE_B,TYPE_C,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightemissionsourceenum.htm
-	/// </summary>
-	public enum IfcLightEmissionSourceEnum {COMPACTFLUORESCENT,FLUORESCENT,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LIGHTEMITTINGDIODE,LOWPRESSURESODIUM,LOWVOLTAGEHALOGEN,MAINVOLTAGEHALOGEN,METALHALIDE,TUNGSTENFILAMENT,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightemissionsourceenum.htm
+    /// </summary>
+    public enum IfcLightEmissionSourceEnum {COMPACTFLUORESCENT,FLUORESCENT,HIGHPRESSUREMERCURY,HIGHPRESSURESODIUM,LIGHTEMITTINGDIODE,LOWPRESSURESODIUM,LOWVOLTAGEHALOGEN,MAINVOLTAGEHALOGEN,METALHALIDE,TUNGSTENFILAMENT,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightfixturetypeenum.htm
-	/// </summary>
-	public enum IfcLightFixtureTypeEnum {POINTSOURCE,DIRECTIONSOURCE,SECURITYLIGHTING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightfixturetypeenum.htm
+    /// </summary>
+    public enum IfcLightFixtureTypeEnum {POINTSOURCE,DIRECTIONSOURCE,SECURITYLIGHTING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcloadgrouptypeenum.htm
-	/// </summary>
-	public enum IfcLoadGroupTypeEnum {LOAD_GROUP,LOAD_CASE,LOAD_COMBINATION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcloadgrouptypeenum.htm
+    /// </summary>
+    public enum IfcLoadGroupTypeEnum {LOAD_GROUP,LOAD_CASE,LOAD_COMBINATION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclogicaloperatorenum.htm
-	/// </summary>
-	public enum IfcLogicalOperatorEnum {LOGICALAND,LOGICALOR,LOGICALXOR,LOGICALNOTAND,LOGICALNOTOR}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclogicaloperatorenum.htm
+    /// </summary>
+    public enum IfcLogicalOperatorEnum {LOGICALAND,LOGICALOR,LOGICALXOR,LOGICALNOTAND,LOGICALNOTOR}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastenertypeenum.htm
-	/// </summary>
-	public enum IfcMechanicalFastenerTypeEnum {ANCHORBOLT,BOLT,DOWEL,NAIL,NAILPLATE,RIVET,SCREW,SHEARCONNECTOR,STAPLE,STUDSHEARCONNECTOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastenertypeenum.htm
+    /// </summary>
+    public enum IfcMechanicalFastenerTypeEnum {ANCHORBOLT,BOLT,DOWEL,NAIL,NAILPLATE,RIVET,SCREW,SHEARCONNECTOR,STAPLE,STUDSHEARCONNECTOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevicetypeenum.htm
-	/// </summary>
-	public enum IfcMedicalDeviceTypeEnum {AIRSTATION,FEEDAIRUNIT,OXYGENGENERATOR,OXYGENPLANT,VACUUMSTATION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevicetypeenum.htm
+    /// </summary>
+    public enum IfcMedicalDeviceTypeEnum {AIRSTATION,FEEDAIRUNIT,OXYGENGENERATOR,OXYGENPLANT,VACUUMSTATION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmembertypeenum.htm
-	/// </summary>
-	public enum IfcMemberTypeEnum {BRACE,CHORD,COLLAR,MEMBER,MULLION,PLATE,POST,PURLIN,RAFTER,STRINGER,STRUT,STUD,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmembertypeenum.htm
+    /// </summary>
+    public enum IfcMemberTypeEnum {BRACE,CHORD,COLLAR,MEMBER,MULLION,PLATE,POST,PURLIN,RAFTER,STRINGER,STRUT,STUD,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmotorconnectiontypeenum.htm
-	/// </summary>
-	public enum IfcMotorConnectionTypeEnum {BELTDRIVE,COUPLING,DIRECTDRIVE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmotorconnectiontypeenum.htm
+    /// </summary>
+    public enum IfcMotorConnectionTypeEnum {BELTDRIVE,COUPLING,DIRECTDRIVE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnullstyle.htm
-	/// </summary>
-	public enum IfcNullStyle {NULL}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnullstyle.htm
+    /// </summary>
+    public enum IfcNullStyle {NULL}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjecttypeenum.htm
-	/// </summary>
-	public enum IfcObjectTypeEnum {PRODUCT,PROCESS,CONTROL,RESOURCE,ACTOR,GROUP,PROJECT,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjecttypeenum.htm
+    /// </summary>
+    public enum IfcObjectTypeEnum {PRODUCT,PROCESS,CONTROL,RESOURCE,ACTOR,GROUP,PROJECT,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectiveenum.htm
-	/// </summary>
-	public enum IfcObjectiveEnum {CODECOMPLIANCE,CODEWAIVER,DESIGNINTENT,EXTERNAL,HEALTHANDSAFETY,MERGECONFLICT,MODELVIEW,PARAMETER,REQUIREMENT,SPECIFICATION,TRIGGERCONDITION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectiveenum.htm
+    /// </summary>
+    public enum IfcObjectiveEnum {CODECOMPLIANCE,CODEWAIVER,DESIGNINTENT,EXTERNAL,HEALTHANDSAFETY,MERGECONFLICT,MODELVIEW,PARAMETER,REQUIREMENT,SPECIFICATION,TRIGGERCONDITION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoccupanttypeenum.htm
-	/// </summary>
-	public enum IfcOccupantTypeEnum {ASSIGNEE,ASSIGNOR,LESSEE,LESSOR,LETTINGAGENT,OWNER,TENANT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoccupanttypeenum.htm
+    /// </summary>
+    public enum IfcOccupantTypeEnum {ASSIGNEE,ASSIGNOR,LESSEE,LESSOR,LETTINGAGENT,OWNER,TENANT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopeningelementtypeenum.htm
-	/// </summary>
-	public enum IfcOpeningElementTypeEnum {OPENING,RECESS,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcopeningelementtypeenum.htm
+    /// </summary>
+    public enum IfcOpeningElementTypeEnum {OPENING,RECESS,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoutlettypeenum.htm
-	/// </summary>
-	public enum IfcOutletTypeEnum {AUDIOVISUALOUTLET,COMMUNICATIONSOUTLET,POWEROUTLET,DATAOUTLET,TELEPHONEOUTLET,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoutlettypeenum.htm
+    /// </summary>
+    public enum IfcOutletTypeEnum {AUDIOVISUALOUTLET,COMMUNICATIONSOUTLET,POWEROUTLET,DATAOUTLET,TELEPHONEOUTLET,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperformancehistorytypeenum.htm
-	/// </summary>
-	public enum IfcPerformanceHistoryTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperformancehistorytypeenum.htm
+    /// </summary>
+    public enum IfcPerformanceHistoryTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermeablecoveringoperationenum.htm
-	/// </summary>
-	public enum IfcPermeableCoveringOperationEnum {GRILL,LOUVER,SCREEN,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermeablecoveringoperationenum.htm
+    /// </summary>
+    public enum IfcPermeableCoveringOperationEnum {GRILL,LOUVER,SCREEN,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermittypeenum.htm
-	/// </summary>
-	public enum IfcPermitTypeEnum {ACCESS,BUILDING,WORK,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpermittypeenum.htm
+    /// </summary>
+    public enum IfcPermitTypeEnum {ACCESS,BUILDING,WORK,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalorvirtualenum.htm
-	/// </summary>
-	public enum IfcPhysicalOrVirtualEnum {PHYSICAL,VIRTUAL,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalorvirtualenum.htm
+    /// </summary>
+    public enum IfcPhysicalOrVirtualEnum {PHYSICAL,VIRTUAL,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpileconstructionenum.htm
-	/// </summary>
-	public enum IfcPileConstructionEnum {CAST_IN_PLACE,COMPOSITE,PRECAST_CONCRETE,PREFAB_STEEL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpileconstructionenum.htm
+    /// </summary>
+    public enum IfcPileConstructionEnum {CAST_IN_PLACE,COMPOSITE,PRECAST_CONCRETE,PREFAB_STEEL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpiletypeenum.htm
-	/// </summary>
-	public enum IfcPileTypeEnum {BORED,DRIVEN,JETGROUTING,COHESION,FRICTION,SUPPORT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpiletypeenum.htm
+    /// </summary>
+    public enum IfcPileTypeEnum {BORED,DRIVEN,JETGROUTING,COHESION,FRICTION,SUPPORT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipefittingtypeenum.htm
-	/// </summary>
-	public enum IfcPipeFittingTypeEnum {BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipefittingtypeenum.htm
+    /// </summary>
+    public enum IfcPipeFittingTypeEnum {BEND,CONNECTOR,ENTRY,EXIT,JUNCTION,OBSTRUCTION,TRANSITION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipesegmenttypeenum.htm
-	/// </summary>
-	public enum IfcPipeSegmentTypeEnum {CULVERT,FLEXIBLESEGMENT,RIGIDSEGMENT,GUTTER,SPOOL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpipesegmenttypeenum.htm
+    /// </summary>
+    public enum IfcPipeSegmentTypeEnum {CULVERT,FLEXIBLESEGMENT,RIGIDSEGMENT,GUTTER,SPOOL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplatetypeenum.htm
-	/// </summary>
-	public enum IfcPlateTypeEnum {CURTAIN_PANEL,SHEET,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplatetypeenum.htm
+    /// </summary>
+    public enum IfcPlateTypeEnum {CURTAIN_PANEL,SHEET,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretypeenum.htm
-	/// </summary>
-	public enum IfcProcedureTypeEnum {ADVICE_CAUTION,ADVICE_NOTE,ADVICE_WARNING,CALIBRATION,DIAGNOSTIC,SHUTDOWN,STARTUP,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretypeenum.htm
+    /// </summary>
+    public enum IfcProcedureTypeEnum {ADVICE_CAUTION,ADVICE_NOTE,ADVICE_WARNING,CALIBRATION,DIAGNOSTIC,SHUTDOWN,STARTUP,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofiletypeenum.htm
-	/// </summary>
-	public enum IfcProfileTypeEnum {CURVE,AREA}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofiletypeenum.htm
+    /// </summary>
+    public enum IfcProfileTypeEnum {CURVE,AREA}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectordertypeenum.htm
-	/// </summary>
-	public enum IfcProjectOrderTypeEnum {CHANGEORDER,MAINTENANCEWORKORDER,MOVEORDER,PURCHASEORDER,WORKORDER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectordertypeenum.htm
+    /// </summary>
+    public enum IfcProjectOrderTypeEnum {CHANGEORDER,MAINTENANCEWORKORDER,MOVEORDER,PURCHASEORDER,WORKORDER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectedortruelengthenum.htm
-	/// </summary>
-	public enum IfcProjectedOrTrueLengthEnum {PROJECTED_LENGTH,TRUE_LENGTH}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectedortruelengthenum.htm
+    /// </summary>
+    public enum IfcProjectedOrTrueLengthEnum {PROJECTED_LENGTH,TRUE_LENGTH}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectionelementtypeenum.htm
-	/// </summary>
-	public enum IfcProjectionElementTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectionelementtypeenum.htm
+    /// </summary>
+    public enum IfcProjectionElementTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplatetypeenum.htm
-	/// </summary>
-	public enum IfcPropertySetTemplateTypeEnum {PSET_TYPEDRIVENONLY,PSET_TYPEDRIVENOVERRIDE,PSET_OCCURRENCEDRIVEN,PSET_PERFORMANCEDRIVEN,QTO_TYPEDRIVENONLY,QTO_TYPEDRIVENOVERRIDE,QTO_OCCURRENCEDRIVEN,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplatetypeenum.htm
+    /// </summary>
+    public enum IfcPropertySetTemplateTypeEnum {PSET_TYPEDRIVENONLY,PSET_TYPEDRIVENOVERRIDE,PSET_OCCURRENCEDRIVEN,PSET_PERFORMANCEDRIVEN,QTO_TYPEDRIVENONLY,QTO_TYPEDRIVENOVERRIDE,QTO_OCCURRENCEDRIVEN,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetrippingunittypeenum.htm
-	/// </summary>
-	public enum IfcProtectiveDeviceTrippingUnitTypeEnum {ELECTRONIC,ELECTROMAGNETIC,RESIDUALCURRENT,THERMAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetrippingunittypeenum.htm
+    /// </summary>
+    public enum IfcProtectiveDeviceTrippingUnitTypeEnum {ELECTRONIC,ELECTROMAGNETIC,RESIDUALCURRENT,THERMAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetypeenum.htm
-	/// </summary>
-	public enum IfcProtectiveDeviceTypeEnum {CIRCUITBREAKER,EARTHLEAKAGECIRCUITBREAKER,EARTHINGSWITCH,FUSEDISCONNECTOR,RESIDUALCURRENTCIRCUITBREAKER,RESIDUALCURRENTSWITCH,VARISTOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprotectivedevicetypeenum.htm
+    /// </summary>
+    public enum IfcProtectiveDeviceTypeEnum {CIRCUITBREAKER,EARTHLEAKAGECIRCUITBREAKER,EARTHINGSWITCH,FUSEDISCONNECTOR,RESIDUALCURRENTCIRCUITBREAKER,RESIDUALCURRENTSWITCH,VARISTOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpumptypeenum.htm
-	/// </summary>
-	public enum IfcPumpTypeEnum {CIRCULATOR,ENDSUCTION,SPLITCASE,SUBMERSIBLEPUMP,SUMPPUMP,VERTICALINLINE,VERTICALTURBINE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpumptypeenum.htm
+    /// </summary>
+    public enum IfcPumpTypeEnum {CIRCULATOR,ENDSUCTION,SPLITCASE,SUBMERSIBLEPUMP,SUMPPUMP,VERTICALINLINE,VERTICALTURBINE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrailingtypeenum.htm
-	/// </summary>
-	public enum IfcRailingTypeEnum {HANDRAIL,GUARDRAIL,BALUSTRADE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrailingtypeenum.htm
+    /// </summary>
+    public enum IfcRailingTypeEnum {HANDRAIL,GUARDRAIL,BALUSTRADE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrampflighttypeenum.htm
-	/// </summary>
-	public enum IfcRampFlightTypeEnum {STRAIGHT,SPIRAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrampflighttypeenum.htm
+    /// </summary>
+    public enum IfcRampFlightTypeEnum {STRAIGHT,SPIRAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramptypeenum.htm
-	/// </summary>
-	public enum IfcRampTypeEnum {STRAIGHT_RUN_RAMP,TWO_STRAIGHT_RUN_RAMP,QUARTER_TURN_RAMP,TWO_QUARTER_TURN_RAMP,HALF_TURN_RAMP,SPIRAL_RAMP,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcramptypeenum.htm
+    /// </summary>
+    public enum IfcRampTypeEnum {STRAIGHT_RUN_RAMP,TWO_STRAIGHT_RUN_RAMP,QUARTER_TURN_RAMP,TWO_QUARTER_TURN_RAMP,HALF_TURN_RAMP,SPIRAL_RAMP,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencetypeenum.htm
-	/// </summary>
-	public enum IfcRecurrenceTypeEnum {DAILY,WEEKLY,MONTHLY_BY_DAY_OF_MONTH,MONTHLY_BY_POSITION,BY_DAY_COUNT,BY_WEEKDAY_COUNT,YEARLY_BY_DAY_OF_MONTH,YEARLY_BY_POSITION}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencetypeenum.htm
+    /// </summary>
+    public enum IfcRecurrenceTypeEnum {DAILY,WEEKLY,MONTHLY_BY_DAY_OF_MONTH,MONTHLY_BY_POSITION,BY_DAY_COUNT,BY_WEEKDAY_COUNT,YEARLY_BY_DAY_OF_MONTH,YEARLY_BY_POSITION}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreflectancemethodenum.htm
-	/// </summary>
-	public enum IfcReflectanceMethodEnum {BLINN,FLAT,GLASS,MATT,METAL,MIRROR,PHONG,PLASTIC,STRAUSS,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreflectancemethodenum.htm
+    /// </summary>
+    public enum IfcReflectanceMethodEnum {BLINN,FLAT,GLASS,MATT,METAL,MIRROR,PHONG,PLASTIC,STRAUSS,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarroleenum.htm
-	/// </summary>
-	public enum IfcReinforcingBarRoleEnum {MAIN,SHEAR,LIGATURE,STUD,PUNCHING,EDGE,RING,ANCHORING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarroleenum.htm
+    /// </summary>
+    public enum IfcReinforcingBarRoleEnum {MAIN,SHEAR,LIGATURE,STUD,PUNCHING,EDGE,RING,ANCHORING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarsurfaceenum.htm
-	/// </summary>
-	public enum IfcReinforcingBarSurfaceEnum {PLAIN,TEXTURED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbarsurfaceenum.htm
+    /// </summary>
+    public enum IfcReinforcingBarSurfaceEnum {PLAIN,TEXTURED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartypeenum.htm
-	/// </summary>
-	public enum IfcReinforcingBarTypeEnum {ANCHORING,EDGE,LIGATURE,MAIN,PUNCHING,RING,SHEAR,STUD,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartypeenum.htm
+    /// </summary>
+    public enum IfcReinforcingBarTypeEnum {ANCHORING,EDGE,LIGATURE,MAIN,PUNCHING,RING,SHEAR,STUD,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingmeshtypeenum.htm
-	/// </summary>
-	public enum IfcReinforcingMeshTypeEnum {USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingmeshtypeenum.htm
+    /// </summary>
+    public enum IfcReinforcingMeshTypeEnum {USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroleenum.htm
-	/// </summary>
-	public enum IfcRoleEnum {SUPPLIER,MANUFACTURER,CONTRACTOR,SUBCONTRACTOR,ARCHITECT,STRUCTURALENGINEER,COSTENGINEER,CLIENT,BUILDINGOWNER,BUILDINGOPERATOR,MECHANICALENGINEER,ELECTRICALENGINEER,PROJECTMANAGER,FACILITIESMANAGER,CIVILENGINEER,COMMISSIONINGENGINEER,ENGINEER,OWNER,CONSULTANT,CONSTRUCTIONMANAGER,FIELDCONSTRUCTIONMANAGER,RESELLER,USERDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcroleenum.htm
+    /// </summary>
+    public enum IfcRoleEnum {SUPPLIER,MANUFACTURER,CONTRACTOR,SUBCONTRACTOR,ARCHITECT,STRUCTURALENGINEER,COSTENGINEER,CLIENT,BUILDINGOWNER,BUILDINGOPERATOR,MECHANICALENGINEER,ELECTRICALENGINEER,PROJECTMANAGER,FACILITIESMANAGER,CIVILENGINEER,COMMISSIONINGENGINEER,ENGINEER,OWNER,CONSULTANT,CONSTRUCTIONMANAGER,FIELDCONSTRUCTIONMANAGER,RESELLER,USERDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrooftypeenum.htm
-	/// </summary>
-	public enum IfcRoofTypeEnum {FLAT_ROOF,SHED_ROOF,GABLE_ROOF,HIP_ROOF,HIPPED_GABLE_ROOF,GAMBREL_ROOF,MANSARD_ROOF,BARREL_ROOF,RAINBOW_ROOF,BUTTERFLY_ROOF,PAVILION_ROOF,DOME_ROOF,FREEFORM,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrooftypeenum.htm
+    /// </summary>
+    public enum IfcRoofTypeEnum {FLAT_ROOF,SHED_ROOF,GABLE_ROOF,HIP_ROOF,HIPPED_GABLE_ROOF,GAMBREL_ROOF,MANSARD_ROOF,BARREL_ROOF,RAINBOW_ROOF,BUTTERFLY_ROOF,PAVILION_ROOF,DOME_ROOF,FREEFORM,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiprefix.htm
-	/// </summary>
-	public enum IfcSIPrefix {EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiprefix.htm
+    /// </summary>
+    public enum IfcSIPrefix {EXA,PETA,TERA,GIGA,MEGA,KILO,HECTO,DECA,DECI,CENTI,MILLI,MICRO,NANO,PICO,FEMTO,ATTO}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiunitname.htm
-	/// </summary>
-	public enum IfcSIUnitName {AMPERE,BECQUEREL,CANDELA,COULOMB,CUBIC_METRE,DEGREE_CELSIUS,FARAD,GRAM,GRAY,HENRY,HERTZ,JOULE,KELVIN,LUMEN,LUX,METRE,MOLE,NEWTON,OHM,PASCAL,RADIAN,SECOND,SIEMENS,SIEVERT,SQUARE_METRE,STERADIAN,TESLA,VOLT,WATT,WEBER}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiunitname.htm
+    /// </summary>
+    public enum IfcSIUnitName {AMPERE,BECQUEREL,CANDELA,COULOMB,CUBIC_METRE,DEGREE_CELSIUS,FARAD,GRAM,GRAY,HENRY,HERTZ,JOULE,KELVIN,LUMEN,LUX,METRE,MOLE,NEWTON,OHM,PASCAL,RADIAN,SECOND,SIEMENS,SIEVERT,SQUARE_METRE,STERADIAN,TESLA,VOLT,WATT,WEBER}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsanitaryterminaltypeenum.htm
-	/// </summary>
-	public enum IfcSanitaryTerminalTypeEnum {BATH,BIDET,CISTERN,SHOWER,SINK,SANITARYFOUNTAIN,TOILETPAN,URINAL,WASHHANDBASIN,WCSEAT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsanitaryterminaltypeenum.htm
+    /// </summary>
+    public enum IfcSanitaryTerminalTypeEnum {BATH,BIDET,CISTERN,SHOWER,SINK,SANITARYFOUNTAIN,TOILETPAN,URINAL,WASHHANDBASIN,WCSEAT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectiontypeenum.htm
-	/// </summary>
-	public enum IfcSectionTypeEnum {UNIFORM,TAPERED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectiontypeenum.htm
+    /// </summary>
+    public enum IfcSectionTypeEnum {UNIFORM,TAPERED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensortypeenum.htm
-	/// </summary>
-	public enum IfcSensorTypeEnum {CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensortypeenum.htm
+    /// </summary>
+    public enum IfcSensorTypeEnum {CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsequenceenum.htm
-	/// </summary>
-	public enum IfcSequenceEnum {START_START,START_FINISH,FINISH_START,FINISH_FINISH,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsequenceenum.htm
+    /// </summary>
+    public enum IfcSequenceEnum {START_START,START_FINISH,FINISH_START,FINISH_FINISH,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshadingdevicetypeenum.htm
-	/// </summary>
-	public enum IfcShadingDeviceTypeEnum {JALOUSIE,SHUTTER,AWNING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshadingdevicetypeenum.htm
+    /// </summary>
+    public enum IfcShadingDeviceTypeEnum {JALOUSIE,SHUTTER,AWNING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplatetypeenum.htm
-	/// </summary>
-	public enum IfcSimplePropertyTemplateTypeEnum {P_SINGLEVALUE,P_ENUMERATEDVALUE,P_BOUNDEDVALUE,P_LISTVALUE,P_TABLEVALUE,P_REFERENCEVALUE,Q_LENGTH,Q_AREA,Q_VOLUME,Q_COUNT,Q_WEIGHT,Q_TIME}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplepropertytemplatetypeenum.htm
+    /// </summary>
+    public enum IfcSimplePropertyTemplateTypeEnum {P_SINGLEVALUE,P_ENUMERATEDVALUE,P_BOUNDEDVALUE,P_LISTVALUE,P_TABLEVALUE,P_REFERENCEVALUE,Q_LENGTH,Q_AREA,Q_VOLUME,Q_COUNT,Q_WEIGHT,Q_TIME}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabtypeenum.htm
-	/// </summary>
-	public enum IfcSlabTypeEnum {FLOOR,ROOF,LANDING,BASESLAB,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslabtypeenum.htm
+    /// </summary>
+    public enum IfcSlabTypeEnum {FLOOR,ROOF,LANDING,BASESLAB,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolardevicetypeenum.htm
-	/// </summary>
-	public enum IfcSolarDeviceTypeEnum {SOLARCOLLECTOR,SOLARPANEL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolardevicetypeenum.htm
+    /// </summary>
+    public enum IfcSolarDeviceTypeEnum {SOLARCOLLECTOR,SOLARPANEL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceheatertypeenum.htm
-	/// </summary>
-	public enum IfcSpaceHeaterTypeEnum {CONVECTOR,RADIATOR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceheatertypeenum.htm
+    /// </summary>
+    public enum IfcSpaceHeaterTypeEnum {CONVECTOR,RADIATOR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspacetypeenum.htm
-	/// </summary>
-	public enum IfcSpaceTypeEnum {SPACE,PARKING,GFA,INTERNAL,EXTERNAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspacetypeenum.htm
+    /// </summary>
+    public enum IfcSpaceTypeEnum {SPACE,PARKING,GFA,INTERNAL,EXTERNAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialzonetypeenum.htm
-	/// </summary>
-	public enum IfcSpatialZoneTypeEnum {CONSTRUCTION,FIRESAFETY,LIGHTING,OCCUPANCY,SECURITY,THERMAL,TRANSPORT,VENTILATION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialzonetypeenum.htm
+    /// </summary>
+    public enum IfcSpatialZoneTypeEnum {CONSTRUCTION,FIRESAFETY,LIGHTING,OCCUPANCY,SECURITY,THERMAL,TRANSPORT,VENTILATION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstackterminaltypeenum.htm
-	/// </summary>
-	public enum IfcStackTerminalTypeEnum {BIRDCAGE,COWL,RAINWATERHOPPER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstackterminaltypeenum.htm
+    /// </summary>
+    public enum IfcStackTerminalTypeEnum {BIRDCAGE,COWL,RAINWATERHOPPER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairflighttypeenum.htm
-	/// </summary>
-	public enum IfcStairFlightTypeEnum {STRAIGHT,WINDER,SPIRAL,CURVED,FREEFORM,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairflighttypeenum.htm
+    /// </summary>
+    public enum IfcStairFlightTypeEnum {STRAIGHT,WINDER,SPIRAL,CURVED,FREEFORM,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairtypeenum.htm
-	/// </summary>
-	public enum IfcStairTypeEnum {STRAIGHT_RUN_STAIR,TWO_STRAIGHT_RUN_STAIR,QUARTER_WINDING_STAIR,QUARTER_TURN_STAIR,HALF_WINDING_STAIR,HALF_TURN_STAIR,TWO_QUARTER_WINDING_STAIR,TWO_QUARTER_TURN_STAIR,THREE_QUARTER_WINDING_STAIR,THREE_QUARTER_TURN_STAIR,SPIRAL_STAIR,DOUBLE_RETURN_STAIR,CURVED_RUN_STAIR,TWO_CURVED_RUN_STAIR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstairtypeenum.htm
+    /// </summary>
+    public enum IfcStairTypeEnum {STRAIGHT_RUN_STAIR,TWO_STRAIGHT_RUN_STAIR,QUARTER_WINDING_STAIR,QUARTER_TURN_STAIR,HALF_WINDING_STAIR,HALF_TURN_STAIR,TWO_QUARTER_WINDING_STAIR,TWO_QUARTER_TURN_STAIR,THREE_QUARTER_WINDING_STAIR,THREE_QUARTER_TURN_STAIR,SPIRAL_STAIR,DOUBLE_RETURN_STAIR,CURVED_RUN_STAIR,TWO_CURVED_RUN_STAIR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstateenum.htm
-	/// </summary>
-	public enum IfcStateEnum {READWRITE,READONLY,LOCKED,READWRITELOCKED,READONLYLOCKED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstateenum.htm
+    /// </summary>
+    public enum IfcStateEnum {READWRITE,READONLY,LOCKED,READWRITELOCKED,READONLYLOCKED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveactivitytypeenum.htm
-	/// </summary>
-	public enum IfcStructuralCurveActivityTypeEnum {CONST,LINEAR,POLYGONAL,EQUIDISTANT,SINUS,PARABOLA,DISCRETE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveactivitytypeenum.htm
+    /// </summary>
+    public enum IfcStructuralCurveActivityTypeEnum {CONST,LINEAR,POLYGONAL,EQUIDISTANT,SINUS,PARABOLA,DISCRETE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvemembertypeenum.htm
-	/// </summary>
-	public enum IfcStructuralCurveMemberTypeEnum {RIGID_JOINED_MEMBER,PIN_JOINED_MEMBER,CABLE,TENSION_MEMBER,COMPRESSION_MEMBER,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurvemembertypeenum.htm
+    /// </summary>
+    public enum IfcStructuralCurveMemberTypeEnum {RIGID_JOINED_MEMBER,PIN_JOINED_MEMBER,CABLE,TENSION_MEMBER,COMPRESSION_MEMBER,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfaceactivitytypeenum.htm
-	/// </summary>
-	public enum IfcStructuralSurfaceActivityTypeEnum {CONST,BILINEAR,DISCRETE,ISOCONTOUR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfaceactivitytypeenum.htm
+    /// </summary>
+    public enum IfcStructuralSurfaceActivityTypeEnum {CONST,BILINEAR,DISCRETE,ISOCONTOUR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacemembertypeenum.htm
-	/// </summary>
-	public enum IfcStructuralSurfaceMemberTypeEnum {BENDING_ELEMENT,MEMBRANE_ELEMENT,SHELL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralsurfacemembertypeenum.htm
+    /// </summary>
+    public enum IfcStructuralSurfaceMemberTypeEnum {BENDING_ELEMENT,MEMBRANE_ELEMENT,SHELL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubcontractresourcetypeenum.htm
-	/// </summary>
-	public enum IfcSubContractResourceTypeEnum {PURCHASE,WORK,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubcontractresourcetypeenum.htm
+    /// </summary>
+    public enum IfcSubContractResourceTypeEnum {PURCHASE,WORK,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacefeaturetypeenum.htm
-	/// </summary>
-	public enum IfcSurfaceFeatureTypeEnum {MARK,TAG,TREATMENT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacefeaturetypeenum.htm
+    /// </summary>
+    public enum IfcSurfaceFeatureTypeEnum {MARK,TAG,TREATMENT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceside.htm
-	/// </summary>
-	public enum IfcSurfaceSide {POSITIVE,NEGATIVE,BOTH}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceside.htm
+    /// </summary>
+    public enum IfcSurfaceSide {POSITIVE,NEGATIVE,BOTH}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcswitchingdevicetypeenum.htm
-	/// </summary>
-	public enum IfcSwitchingDeviceTypeEnum {CONTACTOR,DIMMERSWITCH,EMERGENCYSTOP,KEYPAD,MOMENTARYSWITCH,SELECTORSWITCH,STARTER,SWITCHDISCONNECTOR,TOGGLESWITCH,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcswitchingdevicetypeenum.htm
+    /// </summary>
+    public enum IfcSwitchingDeviceTypeEnum {CONTACTOR,DIMMERSWITCH,EMERGENCYSTOP,KEYPAD,MOMENTARYSWITCH,SELECTORSWITCH,STARTER,SWITCHDISCONNECTOR,TOGGLESWITCH,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystemfurnitureelementtypeenum.htm
-	/// </summary>
-	public enum IfcSystemFurnitureElementTypeEnum {PANEL,WORKSURFACE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsystemfurnitureelementtypeenum.htm
+    /// </summary>
+    public enum IfcSystemFurnitureElementTypeEnum {PANEL,WORKSURFACE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctanktypeenum.htm
-	/// </summary>
-	public enum IfcTankTypeEnum {BASIN,BREAKPRESSURE,EXPANSION,FEEDANDEXPANSION,PRESSUREVESSEL,STORAGE,VESSEL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctanktypeenum.htm
+    /// </summary>
+    public enum IfcTankTypeEnum {BASIN,BREAKPRESSURE,EXPANSION,FEEDANDEXPANSION,PRESSUREVESSEL,STORAGE,VESSEL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctaskdurationenum.htm
-	/// </summary>
-	public enum IfcTaskDurationEnum {ELAPSEDTIME,WORKTIME,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctaskdurationenum.htm
+    /// </summary>
+    public enum IfcTaskDurationEnum {ELAPSEDTIME,WORKTIME,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktypeenum.htm
-	/// </summary>
-	public enum IfcTaskTypeEnum {ATTENDANCE,CONSTRUCTION,DEMOLITION,DISMANTLE,DISPOSAL,INSTALLATION,LOGISTIC,MAINTENANCE,MOVE,OPERATION,REMOVAL,RENOVATION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktypeenum.htm
+    /// </summary>
+    public enum IfcTaskTypeEnum {ATTENDANCE,CONSTRUCTION,DEMOLITION,DISMANTLE,DISPOSAL,INSTALLATION,LOGISTIC,MAINTENANCE,MOVE,OPERATION,REMOVAL,RENOVATION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchortypeenum.htm
-	/// </summary>
-	public enum IfcTendonAnchorTypeEnum {COUPLER,FIXED_END,TENSIONING_END,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchortypeenum.htm
+    /// </summary>
+    public enum IfcTendonAnchorTypeEnum {COUPLER,FIXED_END,TENSIONING_END,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendontypeenum.htm
-	/// </summary>
-	public enum IfcTendonTypeEnum {BAR,COATED,STRAND,WIRE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendontypeenum.htm
+    /// </summary>
+    public enum IfcTendonTypeEnum {BAR,COATED,STRAND,WIRE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextpath.htm
-	/// </summary>
-	public enum IfcTextPath {LEFT,RIGHT,UP,DOWN}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextpath.htm
+    /// </summary>
+    public enum IfcTextPath {LEFT,RIGHT,UP,DOWN}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseriesdatatypeenum.htm
-	/// </summary>
-	public enum IfcTimeSeriesDataTypeEnum {CONTINUOUS,DISCRETE,DISCRETEBINARY,PIECEWISEBINARY,PIECEWISECONSTANT,PIECEWISECONTINUOUS,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseriesdatatypeenum.htm
+    /// </summary>
+    public enum IfcTimeSeriesDataTypeEnum {CONTINUOUS,DISCRETE,DISCRETEBINARY,PIECEWISEBINARY,PIECEWISECONSTANT,PIECEWISECONTINUOUS,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransformertypeenum.htm
-	/// </summary>
-	public enum IfcTransformerTypeEnum {CURRENT,FREQUENCY,INVERTER,RECTIFIER,VOLTAGE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransformertypeenum.htm
+    /// </summary>
+    public enum IfcTransformerTypeEnum {CURRENT,FREQUENCY,INVERTER,RECTIFIER,VOLTAGE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransitioncode.htm
-	/// </summary>
-	public enum IfcTransitionCode {DISCONTINUOUS,CONTINUOUS,CONTSAMEGRADIENT,CONTSAMEGRADIENTSAMECURVATURE}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransitioncode.htm
+    /// </summary>
+    public enum IfcTransitionCode {DISCONTINUOUS,CONTINUOUS,CONTSAMEGRADIENT,CONTSAMEGRADIENTSAMECURVATURE}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransportelementtypeenum.htm
-	/// </summary>
-	public enum IfcTransportElementTypeEnum {ELEVATOR,ESCALATOR,MOVINGWALKWAY,CRANEWAY,LIFTINGGEAR,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctransportelementtypeenum.htm
+    /// </summary>
+    public enum IfcTransportElementTypeEnum {ELEVATOR,ESCALATOR,MOVINGWALKWAY,CRANEWAY,LIFTINGGEAR,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingpreference.htm
-	/// </summary>
-	public enum IfcTrimmingPreference {CARTESIAN,PARAMETER,UNSPECIFIED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingpreference.htm
+    /// </summary>
+    public enum IfcTrimmingPreference {CARTESIAN,PARAMETER,UNSPECIFIED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctubebundletypeenum.htm
-	/// </summary>
-	public enum IfcTubeBundleTypeEnum {FINNED,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctubebundletypeenum.htm
+    /// </summary>
+    public enum IfcTubeBundleTypeEnum {FINNED,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitenum.htm
-	/// </summary>
-	public enum IfcUnitEnum {ABSORBEDDOSEUNIT,AMOUNTOFSUBSTANCEUNIT,AREAUNIT,DOSEEQUIVALENTUNIT,ELECTRICCAPACITANCEUNIT,ELECTRICCHARGEUNIT,ELECTRICCONDUCTANCEUNIT,ELECTRICCURRENTUNIT,ELECTRICRESISTANCEUNIT,ELECTRICVOLTAGEUNIT,ENERGYUNIT,FORCEUNIT,FREQUENCYUNIT,ILLUMINANCEUNIT,INDUCTANCEUNIT,LENGTHUNIT,LUMINOUSFLUXUNIT,LUMINOUSINTENSITYUNIT,MAGNETICFLUXDENSITYUNIT,MAGNETICFLUXUNIT,MASSUNIT,PLANEANGLEUNIT,POWERUNIT,PRESSUREUNIT,RADIOACTIVITYUNIT,SOLIDANGLEUNIT,THERMODYNAMICTEMPERATUREUNIT,TIMEUNIT,VOLUMEUNIT,USERDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitenum.htm
+    /// </summary>
+    public enum IfcUnitEnum {ABSORBEDDOSEUNIT,AMOUNTOFSUBSTANCEUNIT,AREAUNIT,DOSEEQUIVALENTUNIT,ELECTRICCAPACITANCEUNIT,ELECTRICCHARGEUNIT,ELECTRICCONDUCTANCEUNIT,ELECTRICCURRENTUNIT,ELECTRICRESISTANCEUNIT,ELECTRICVOLTAGEUNIT,ENERGYUNIT,FORCEUNIT,FREQUENCYUNIT,ILLUMINANCEUNIT,INDUCTANCEUNIT,LENGTHUNIT,LUMINOUSFLUXUNIT,LUMINOUSINTENSITYUNIT,MAGNETICFLUXDENSITYUNIT,MAGNETICFLUXUNIT,MASSUNIT,PLANEANGLEUNIT,POWERUNIT,PRESSUREUNIT,RADIOACTIVITYUNIT,SOLIDANGLEUNIT,THERMODYNAMICTEMPERATUREUNIT,TIMEUNIT,VOLUMEUNIT,USERDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitarycontrolelementtypeenum.htm
-	/// </summary>
-	public enum IfcUnitaryControlElementTypeEnum {ALARMPANEL,CONTROLPANEL,GASDETECTIONPANEL,INDICATORPANEL,MIMICPANEL,HUMIDISTAT,THERMOSTAT,WEATHERSTATION,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitarycontrolelementtypeenum.htm
+    /// </summary>
+    public enum IfcUnitaryControlElementTypeEnum {ALARMPANEL,CONTROLPANEL,GASDETECTIONPANEL,INDICATORPANEL,MIMICPANEL,HUMIDISTAT,THERMOSTAT,WEATHERSTATION,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitaryequipmenttypeenum.htm
-	/// </summary>
-	public enum IfcUnitaryEquipmentTypeEnum {AIRHANDLER,AIRCONDITIONINGUNIT,DEHUMIDIFIER,SPLITSYSTEM,ROOFTOPUNIT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitaryequipmenttypeenum.htm
+    /// </summary>
+    public enum IfcUnitaryEquipmentTypeEnum {AIRHANDLER,AIRCONDITIONINGUNIT,DEHUMIDIFIER,SPLITSYSTEM,ROOFTOPUNIT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalvetypeenum.htm
-	/// </summary>
-	public enum IfcValveTypeEnum {AIRRELEASE,ANTIVACUUM,CHANGEOVER,CHECK,COMMISSIONING,DIVERTING,DRAWOFFCOCK,DOUBLECHECK,DOUBLEREGULATING,FAUCET,FLUSHING,GASCOCK,GASTAP,ISOLATING,MIXING,PRESSUREREDUCING,PRESSURERELIEF,REGULATING,SAFETYCUTOFF,STEAMTRAP,STOPCOCK,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalvetypeenum.htm
+    /// </summary>
+    public enum IfcValveTypeEnum {AIRRELEASE,ANTIVACUUM,CHANGEOVER,CHECK,COMMISSIONING,DIVERTING,DRAWOFFCOCK,DOUBLECHECK,DOUBLEREGULATING,FAUCET,FLUSHING,GASCOCK,GASTAP,ISOLATING,MIXING,PRESSUREREDUCING,PRESSURERELIEF,REGULATING,SAFETYCUTOFF,STEAMTRAP,STOPCOCK,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvibrationisolatortypeenum.htm
-	/// </summary>
-	public enum IfcVibrationIsolatorTypeEnum {COMPRESSION,SPRING,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvibrationisolatortypeenum.htm
+    /// </summary>
+    public enum IfcVibrationIsolatorTypeEnum {COMPRESSION,SPRING,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvoidingfeaturetypeenum.htm
-	/// </summary>
-	public enum IfcVoidingFeatureTypeEnum {CUTOUT,NOTCH,HOLE,MITER,CHAMFER,EDGE,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvoidingfeaturetypeenum.htm
+    /// </summary>
+    public enum IfcVoidingFeatureTypeEnum {CUTOUT,NOTCH,HOLE,MITER,CHAMFER,EDGE,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwalltypeenum.htm
-	/// </summary>
-	public enum IfcWallTypeEnum {MOVABLE,PARAPET,PARTITIONING,PLUMBINGWALL,SHEAR,SOLIDWALL,STANDARD,POLYGONAL,ELEMENTEDWALL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwalltypeenum.htm
+    /// </summary>
+    public enum IfcWallTypeEnum {MOVABLE,PARAPET,PARTITIONING,PLUMBINGWALL,SHEAR,SOLIDWALL,STANDARD,POLYGONAL,ELEMENTEDWALL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwasteterminaltypeenum.htm
-	/// </summary>
-	public enum IfcWasteTerminalTypeEnum {FLOORTRAP,FLOORWASTE,GULLYSUMP,GULLYTRAP,ROOFDRAIN,WASTEDISPOSALUNIT,WASTETRAP,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwasteterminaltypeenum.htm
+    /// </summary>
+    public enum IfcWasteTerminalTypeEnum {FLOORTRAP,FLOORWASTE,GULLYSUMP,GULLYTRAP,ROOFDRAIN,WASTEDISPOSALUNIT,WASTETRAP,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpaneloperationenum.htm
-	/// </summary>
-	public enum IfcWindowPanelOperationEnum {SIDEHUNGRIGHTHAND,SIDEHUNGLEFTHAND,TILTANDTURNRIGHTHAND,TILTANDTURNLEFTHAND,TOPHUNG,BOTTOMHUNG,PIVOTHORIZONTAL,PIVOTVERTICAL,SLIDINGHORIZONTAL,SLIDINGVERTICAL,REMOVABLECASEMENT,FIXEDCASEMENT,OTHEROPERATION,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpaneloperationenum.htm
+    /// </summary>
+    public enum IfcWindowPanelOperationEnum {SIDEHUNGRIGHTHAND,SIDEHUNGLEFTHAND,TILTANDTURNRIGHTHAND,TILTANDTURNLEFTHAND,TOPHUNG,BOTTOMHUNG,PIVOTHORIZONTAL,PIVOTVERTICAL,SLIDINGHORIZONTAL,SLIDINGVERTICAL,REMOVABLECASEMENT,FIXEDCASEMENT,OTHEROPERATION,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpanelpositionenum.htm
-	/// </summary>
-	public enum IfcWindowPanelPositionEnum {LEFT,MIDDLE,RIGHT,BOTTOM,TOP,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowpanelpositionenum.htm
+    /// </summary>
+    public enum IfcWindowPanelPositionEnum {LEFT,MIDDLE,RIGHT,BOTTOM,TOP,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleconstructionenum.htm
-	/// </summary>
-	public enum IfcWindowStyleConstructionEnum {ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,PLASTIC,OTHER_CONSTRUCTION,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleconstructionenum.htm
+    /// </summary>
+    public enum IfcWindowStyleConstructionEnum {ALUMINIUM,HIGH_GRADE_STEEL,STEEL,WOOD,ALUMINIUM_WOOD,PLASTIC,OTHER_CONSTRUCTION,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleoperationenum.htm
-	/// </summary>
-	public enum IfcWindowStyleOperationEnum {SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowstyleoperationenum.htm
+    /// </summary>
+    public enum IfcWindowStyleOperationEnum {SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypeenum.htm
-	/// </summary>
-	public enum IfcWindowTypeEnum {WINDOW,SKYLIGHT,LIGHTDOME,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypeenum.htm
+    /// </summary>
+    public enum IfcWindowTypeEnum {WINDOW,SKYLIGHT,LIGHTDOME,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypepartitioningenum.htm
-	/// </summary>
-	public enum IfcWindowTypePartitioningEnum {SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindowtypepartitioningenum.htm
+    /// </summary>
+    public enum IfcWindowTypePartitioningEnum {SINGLE_PANEL,DOUBLE_PANEL_VERTICAL,DOUBLE_PANEL_HORIZONTAL,TRIPLE_PANEL_VERTICAL,TRIPLE_PANEL_BOTTOM,TRIPLE_PANEL_TOP,TRIPLE_PANEL_LEFT,TRIPLE_PANEL_RIGHT,TRIPLE_PANEL_HORIZONTAL,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcalendartypeenum.htm
-	/// </summary>
-	public enum IfcWorkCalendarTypeEnum {FIRSTSHIFT,SECONDSHIFT,THIRDSHIFT,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcalendartypeenum.htm
+    /// </summary>
+    public enum IfcWorkCalendarTypeEnum {FIRSTSHIFT,SECONDSHIFT,THIRDSHIFT,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkplantypeenum.htm
-	/// </summary>
-	public enum IfcWorkPlanTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkplantypeenum.htm
+    /// </summary>
+    public enum IfcWorkPlanTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkscheduletypeenum.htm
-	/// </summary>
-	public enum IfcWorkScheduleTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkscheduletypeenum.htm
+    /// </summary>
+    public enum IfcWorkScheduleTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
 
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorselect.htm
