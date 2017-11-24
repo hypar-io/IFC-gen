@@ -10,12 +10,12 @@ namespace STEPExtensions
     /// </summary>
     public static class ListExtensions
     {
-        public static string ToSTEP(this IEnumerable<BaseIfc> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<BaseIfc> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (BaseIfc baseIfc in baseIfcs)
             {
-                values.Add(baseIfc != null ? baseIfc.ToSTEP(indexMap) : "$");
+                values.Add(baseIfc != null ? baseIfc.ToStepValue(indexMap) : "$");
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
@@ -27,12 +27,12 @@ namespace STEPExtensions
     /// </summary>
     public static class ListIntExtensions
     {
-        public static string ToSTEP(this IEnumerable<int> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<int> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (int baseIfc in baseIfcs)
             {
-                values.Add(baseIfc.ToSTEP(indexMap));
+                values.Add(baseIfc.ToStepValue(indexMap));
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
@@ -44,12 +44,12 @@ namespace STEPExtensions
     /// </summary>
     public static class ListDoubleExtensions
     {
-        public static string ToSTEP(this IEnumerable<double> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<double> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (double baseIfc in baseIfcs)
             {
-                values.Add(baseIfc.ToSTEP(indexMap));
+                values.Add(baseIfc.ToStepValue(indexMap));
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
@@ -61,12 +61,12 @@ namespace STEPExtensions
     /// </summary>
     public static class ListBytesExtensions
     {
-        public static string ToSTEP(this IEnumerable<byte[]> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<byte[]> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (byte[] baseIfc in baseIfcs)
             {
-                values.Add(baseIfc.ToSTEP(indexMap));
+                values.Add(baseIfc.ToStepValue(indexMap));
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
@@ -78,7 +78,7 @@ namespace STEPExtensions
     /// </summary>
     public static class ListsExtensions
     {
-        public static string ToSTEP(this IEnumerable<IEnumerable<BaseIfc>> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<IEnumerable<BaseIfc>> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (IEnumerable<BaseIfc> baseIfcList in baseIfcs)
@@ -86,7 +86,7 @@ namespace STEPExtensions
                 List<string> subValues = new List<string>();
                 foreach (BaseIfc baseIfc in baseIfcList)
                 {
-                    subValues.Add(baseIfc.ToSTEP(indexMap));
+                    subValues.Add(baseIfc.ToStepValue(indexMap));
                 }
                 values.Add("(" + string.Join(", ", subValues.ToArray()) + ")");
                 subValues.Clear();
@@ -102,7 +102,7 @@ namespace STEPExtensions
     /// </summary>
     public static class ListsIntExtensions
     {
-        public static string ToSTEP(this IEnumerable<IEnumerable<int>> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<IEnumerable<int>> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (IEnumerable<int> baseIfcList in baseIfcs)
@@ -110,7 +110,7 @@ namespace STEPExtensions
                 List<string> subValues = new List<string>();
                 foreach (int baseIfc in baseIfcList)
                 {
-                    subValues.Add(baseIfc.ToSTEP(indexMap));
+                    subValues.Add(baseIfc.ToStepValue(indexMap));
                 }
                 values.Add("(" + string.Join(", ", subValues.ToArray()) + ")");
                 subValues.Clear();
@@ -125,7 +125,7 @@ namespace STEPExtensions
     /// </summary>
     public static class ListsDoubleExtensions
     {
-        public static string ToSTEP(this IEnumerable<IEnumerable<double>> baseIfcs, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this IEnumerable<IEnumerable<double>> baseIfcs, Dictionary<Guid, int> indexMap)
         {
             List<string> values = new List<string>();
             foreach (IEnumerable<double> baseIfcList in baseIfcs)
@@ -133,7 +133,7 @@ namespace STEPExtensions
                 List<string> subValues = new List<string>();
                 foreach (double baseIfc in baseIfcList)
                 {
-                    subValues.Add(baseIfc.ToSTEP(indexMap));
+                    subValues.Add(baseIfc.ToStepValue(indexMap));
                 }
                 values.Add("(" + string.Join(", ", subValues.ToArray()) + ")");
                 subValues.Clear();
@@ -148,7 +148,7 @@ namespace STEPExtensions
     /// </summary>
     public static class BoolExtensions
     {
-        public static string ToSTEP(this bool value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this bool value, Dictionary<Guid, int> indexMap)
         {
             if (value)
             {
@@ -166,7 +166,7 @@ namespace STEPExtensions
     /// </summary>
     public static class BoolNullableExtensions
     {
-        public static string ToSTEP(this bool? value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this bool? value, Dictionary<Guid, int> indexMap)
         {
             if (value == null)
             {
@@ -187,7 +187,7 @@ namespace STEPExtensions
     /// </summary>
     public static class IntExtensions
     {
-        public static string ToSTEP(this int value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this int value, Dictionary<Guid, int> indexMap)
         {
             return value.ToString();
         }
@@ -198,7 +198,7 @@ namespace STEPExtensions
     /// </summary>
     public static class StringExtensions
     {
-        public static string ToSTEP(this string value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this string value, Dictionary<Guid, int> indexMap)
         {
             return "'" + value.ToString() + "'";
         }
@@ -209,7 +209,7 @@ namespace STEPExtensions
     /// </summary>
     public static class byteExtensions
     {
-        public static string ToSTEP(this byte[] value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this byte[] value, Dictionary<Guid, int> indexMap)
         {
             return value.ToString();
         }
@@ -220,7 +220,7 @@ namespace STEPExtensions
     /// </summary>
     public static class DoubleExtensions
     {
-        public static string ToSTEP(this double value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this double value, Dictionary<Guid, int> indexMap)
         {
             return value.ToString("G", new System.Globalization.CultureInfo("en-US"));
         }
@@ -231,7 +231,7 @@ namespace STEPExtensions
     /// </summary>
     public static class EnumExtensions
     {
-        public static string ToSTEP(this Enum value, Dictionary<Guid, int> indexMap)
+        public static string ToStepValue(this Enum value, Dictionary<Guid, int> indexMap)
         {
             return "." + value.ToString() + ".";
         }

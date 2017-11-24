@@ -70,15 +70,15 @@ namespace IFC4
             Dictionary<Guid, int> indexMap = new Dictionary<Guid, int>();
             int stepIndex = 1;
 			//Generate the STEP index map
-            foreach (KeyValuePair<Guid, BaseIfc> instance in this.Instances)
+            foreach (BaseIfc instance in this.AllInstancesDerivedFromType<BaseIfc>())
             {
-                indexMap.Add(instance.Value.Id, stepIndex);
+                indexMap.Add(instance.Id, stepIndex);
                 stepIndex++;
             }
 
-            foreach (KeyValuePair<Guid, BaseIfc> instance in this.Instances)
+            foreach (BaseIfc instance in this.AllInstancesDerivedFromType<BaseIfc>())
             {
-                string instanceValue = instance.Value.ToSTEP(indexMap);
+                string instanceValue = instance.ToSTEP(indexMap);
 				builder.AppendLine(instanceValue);
                 Debug.WriteLine(DateTime.Now.ToString("hh:mm:ss.fff") + ";" + " Writing line " + instanceValue.Remove(instanceValue.Length-2));
             }
@@ -98,9 +98,9 @@ namespace IFC4
             DateTime now = DateTime.Now;
             hdr += "/* time_stamp */ '" + now.Year + "-" + (now.Month < 10 ? "0" : "") + now.Month + "-" + (now.Day < 10 ? "0" : "") + now.Day + "T" + (now.Hour < 10 ? "0" : "") + now.Hour + ":" + (now.Minute < 10 ? "0" : "") + now.Minute + ":" + (now.Second < 10 ? "0" : "") + now.Second + "',\r\n";
             hdr += "/* author */ ('" + System.Environment.UserName + "'),\r\n";
-            hdr += "/* organization */ ('" + this.AllInstancesOfType<IfcProject>().FirstOrDefault().OwnerHistory.OwningUser.TheOrganization.Name + "'),\r\n";
+            hdr += "/* organization */ ('" + this.AllInstanceOfType<IfcProject>().FirstOrDefault().OwnerHistory.OwningUser.TheOrganization.Name + "'),\r\n";
             hdr += "/* preprocessor_version */ 'IFC-dotnet',\r\n";
-            hdr += "/* originating_system */ '" + typeof(Model).Assembly.GetName().Version + "',\r\n";
+            hdr += "/* originating_system */ '" + typeof(Document).Assembly.GetName().Version + "',\r\n";
 
             hdr += "/* authorization */ 'None');\r\n\r\n";
             hdr += "FILE_SCHEMA (('" + "IFC4" + "'));\r\n";

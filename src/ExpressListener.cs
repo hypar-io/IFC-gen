@@ -60,37 +60,22 @@ namespace IFC4
 			return JsonConvert.SerializeObject(this);
 		}
 
-        public virtual string STEPParameters(ref Dictionary<Guid, int> indexDictionnary)
-        {
-            return """";
-        }
+		public virtual string ToSTEP(Dictionary<Guid, int> indexMap)
+		{
+			string stepIndex = indexMap[this.Id].ToString();
+			string IfcClass = this.GetType().Name.ToUpper();
+			return $""#{stepIndex} = {IfcClass}({this.GetStepParameters(indexMap)})"";
+		}
 
-        public virtual string ToSTEP(ref Dictionary<Guid, int> indexDictionnary)
-        {
-            return string.Format(""{0} = {1}({2});\r\n"",
-                STEPValue(ref indexDictionnary),
-                this.GetType().Name.ToUpper(),
-                this.STEPParameters(ref indexDictionnary));
-        }
+		public virtual string ToStepValue(Dictionary<Guid, int> indexMap)
+		{
+			return $""#{indexMap[Id].ToString()}"";
+		}
 
-        public virtual string STEPValue(ref Dictionary<Guid, int> indexDictionnary)
-        {
-            if (indexDictionnary.ContainsKey(Id))
-            {
-                return ""#"" + indexDictionnary[Id].ToString();
-            }
-            else
-            {
-                if (indexDictionnary.Count == 0)
-                {
-                    indexDictionnary.Add(Id, 1);
-                    return ""#1"";
-                }
-                int index = indexDictionnary.Values.Last() + 1;
-                indexDictionnary.Add(Id, index);
-                return ""#"" + index.ToString();
-            }
-        }
+		public virtual string GetStepParameters(Dictionary<Guid, int> indexMap)
+		{
+			return """";
+		}
     }
 
 	public abstract class Select : BaseIfc

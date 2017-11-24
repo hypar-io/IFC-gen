@@ -74,6 +74,11 @@ namespace Express
 			return generator.AttributeDataString(this);
 		}
 
+		public string ToStepString()
+		{
+			return generator.AttributeStepString(this);
+		}
+
 		public string Assignment()
 		{
 			return generator.AttributeDataAssignment(this);
@@ -300,6 +305,26 @@ namespace Express
 			return propBuilder.ToString();
 		}
 
+		public string StepProperties()
+		{
+			var attrs = Attributes.Where(a=>!a.IsDerived);
+			if(!attrs.Any())
+			{
+				return string.Empty;
+			}
+
+			var propBuilder = new StringBuilder();
+			propBuilder.AppendLine();
+			foreach(var a in attrs)
+			{
+				var prop = a.ToStepString();
+				if(!string.IsNullOrEmpty(prop))
+				{
+					propBuilder.Append(prop);
+				}
+			}
+			return propBuilder.ToString();
+		}
 		internal IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
 		{
 			return  ad	.Where(a=>!a.IsInverse)

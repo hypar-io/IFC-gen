@@ -32,6 +32,16 @@ namespace IFC4.Generators
 			return prop;
         }
 
+		public string AttributeStepString(AttributeData data){
+			var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue(indexMap) : \"$\");\n";
+			
+			if (data.Type.EndsWith("Enum") | data.Type == "bool" | data.Type == "int" | data.Type == "double") 
+            { 
+				step = $"\t\t\tparameters.Add({data.Name}.ToStepValue(indexMap));\n";
+            }
+			return step;
+        }
+
         public string SimpleTypeWrappedType(SimpleType data){
             if(data.IsCollectionType)
             {
@@ -67,6 +77,11 @@ namespace IFC4.Generators
 		{{
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
+
+		public override string ToStepValue(Dictionary<Guid, int> indexMap)
+        {{
+            return Value.ToStepValue(indexMap);
+        }}
 	}}
 ";
 			return result;
@@ -202,11 +217,22 @@ $@"
 		{{
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
+
+		public override string GetStepParameters(Dictionary<Guid, int> indexMap)
+		{{
+			List < string > parameters = new List<string>();
+            string baseStepParameters = base.GetStepParameters(indexMap);
+            if (!string.IsNullOrEmpty(baseStepParameters)) {{ parameters.Add(baseStepParameters);}}
+			{data.StepProperties()}
+			return string.Join("", "", parameters.ToArray());
+		}}
 	}}";
 			return classStr;
         }
 
-		public string FileName{
+
+
+        public string FileName{
 			get{return "IFC.g.cs";}
 		}
 	}
