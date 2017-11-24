@@ -28,9 +28,17 @@ namespace IFC4
 			return JsonConvert.SerializeObject(this);
 		}
 
-		public virtual string ToSTEP()
+		public virtual string ToSTEP(Dictionary<Guid, int> indexMap)
 		{
-			throw new NotImplementedException();
+			string stepIndex = indexMap[this.Id].ToString();
+			string IfcClass = this.GetType().Name.ToUpper();
+			return $"{stepIndex} = {IfcClass}({this.GetStepParameter()})";
+		}
+
+		//protected abstract string[] GetStepParameters();
+		public string GetStepParameter()
+		{
+			return "test";
 		}
 	}
 
