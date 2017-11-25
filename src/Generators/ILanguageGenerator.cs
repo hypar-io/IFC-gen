@@ -3,6 +3,8 @@ using Express;
 namespace IFC4.Generators
 {
     public interface ILanguageGenerator{
+		string Begin();
+		string End();
 		string AttributeDataAssignment(AttributeData data);
 		string AttributeDataType(AttributeData data);
 		string AttributeDataAllocation(AttributeData data);
@@ -16,5 +18,6 @@ namespace IFC4.Generators
         string EntityBaseConstructorParams(Entity data, bool includeOptional);
 		string EntityString(Entity data);
 		string FileName{get;}
+		string ParseType(ExpressParser.SimpleTypeContext context);
 	}
 }
