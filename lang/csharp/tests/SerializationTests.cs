@@ -7,6 +7,7 @@ using System.Xml.Serialization;
 using Xunit;
 using Xunit.Abstractions;
 using IFC4;
+using IFC4.Storage;
 using Newtonsoft.Json;
 using IfcGuid;
 

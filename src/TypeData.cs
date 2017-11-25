@@ -73,15 +73,6 @@ namespace Express
 		{
 			return generator.AttributeDataString(this);
 		}
-
-		public string Assignment()
-		{
-			return generator.AttributeDataAssignment(this);
-		}
-
-		public string Allocation(){
-			return generator.AttributeDataAllocation(this);
-		}
 	}
 
 	public abstract class TypeData
@@ -130,10 +121,6 @@ namespace Express
 		/// <returns></returns>
 		public string WrappedType
 		{
-			get
-			{
-				return generator.SimpleTypeWrappedType(this);
-			}
 			set
 			{
 				wrappedType = value;
@@ -141,11 +128,6 @@ namespace Express
 		}
 
 		public SimpleType(string name, ILanguageGenerator generator) : base(name, generator){}
-
-		private string AsCollection()
-		{
-			return generator.SimpleTypeAsCollection(this);
-		}
 
 		/// <summary>
 		/// Return a string representing the TypeData as an IfcType.
@@ -238,24 +220,6 @@ namespace Express
 		}
 
 		/// <summary>
-		/// Return a set of constructor parameters in the form 'Type name1, Type name2'
-		/// </summary>
-		/// <returns></returns>
-		internal string ConstructorParams(bool includeOptional)
-		{
-			return generator.EntityConstructorParams(this, includeOptional);
-		}
-		
-		/// <summary>
-		/// Return a set of constructor params in the form `name1, name2`.
-		/// </summary>
-		/// <returns></returns>
-		internal string BaseConstructorParams(bool includeOptional)
-		{
-			return generator.EntityBaseConstructorParams(this, includeOptional);
-		}
-
-		/// <summary>
 		/// Determine whether this is the provided type or a sub-type of the provided type.
 		/// </summary>
 		/// <param name="typeName"></param>
@@ -298,51 +262,6 @@ namespace Express
 				}
 			}
 			return propBuilder.ToString();
-		}
-
-		internal IEnumerable<AttributeData> AttributesWithOptional(IEnumerable<AttributeData> ad)
-		{
-			return  ad	.Where(a=>!a.IsInverse)
-						.Where(a=>!a.IsDerived);
-		}
-
-		internal IEnumerable<AttributeData> AttributesWithoutOptional(IEnumerable<AttributeData> ad)
-		{
-			return  ad	.Where(a=>!a.IsInverse)
-						.Where(a=>!a.IsDerived)
-						.Where(a=>!a.IsOptional);
-		}
-
-		public string Assignments(bool includeOptional)
-		{
-			var attrs = includeOptional?AttributesWithOptional(Attributes):AttributesWithoutOptional(Attributes);
-			if(!attrs.Any())
-			{
-				return string.Empty;
-			}
-
-			var assignBuilder = new StringBuilder();
-			foreach(var a in attrs)
-			{
-				var assign = a.Assignment();
-				if(!string.IsNullOrEmpty(assign))
-				{
-					assignBuilder.Append(assign);
-				}
-			}
-			return assignBuilder.ToString();
-		}
-
-		public string Allocations(){
-
-			var allocBuilder = new StringBuilder();
-			foreach(var a in Attributes.Where(a=>!a.IsDerived)){
-				var alloc = a.Allocation();
-				if(!string.IsNullOrEmpty(alloc)){
-					allocBuilder.Append(alloc);
-				}
-			}
-			return allocBuilder.ToString();
 		}
 		
 		/// <summary>

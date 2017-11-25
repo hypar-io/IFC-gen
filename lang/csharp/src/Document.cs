@@ -389,12 +389,12 @@ $@"graph model{{
 			return e;
 		}
 
-		public AddPropertySet(IfcBuildingElementProxy element, List<IfcProperty> properties){
+		/*public IfcPropertySet AddPropertySet(IfcBuildingElementProxy element, List<IfcProperty> properties){
 			var ps = new IfcPropertySet(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()),properties);
 			var def = new IfcPropertySetDefinition(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()));
 			var test = new IfcPropertySetDefinitionSelect();
-			var r = new IfcRelDefinesByProperties(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()), new List<IfcObjectDefinition>{element},);
-		}
+			//var r = new IfcRelDefinesByProperties(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()), new List<IfcObjectDefinition>{element},);
+		}*/
 
 		private void CreateAggregationRelationship(IfcObjectDefinition from, IfcObjectDefinition to){
 			var r = new IfcRelAggregates(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()),from, new List<IfcObjectDefinition>{to});
