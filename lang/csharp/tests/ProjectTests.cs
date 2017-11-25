@@ -5,6 +5,7 @@ using IFC4.Storage;
 using IfcGuid;
 using System;
 using System.Collections.Generic;
+using IFC4.Grpc;
 
 namespace test
 {

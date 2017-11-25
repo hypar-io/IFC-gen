@@ -29,6 +29,8 @@ namespace IFC.Generate
 
 			if(language == "csharp"){
 				generators.Add(new CsharpLanguageGenerator());
+			}else if(language == "proto"){
+				generators.Add(new ProtobufGenerator());
 			}
 
 			using (FileStream fs = new FileStream(expressPath, FileMode.Open))
