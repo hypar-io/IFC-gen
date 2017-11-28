@@ -1,10 +1,14 @@
 using Express;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
 namespace IFC4.Generators{
     public class ProtobufGenerator : ILanguageGenerator{
+
+        internal List<string> listMessages = new List<string>();
+
         public string Begin(){
             return @"
 syntax = ""proto3"";
@@ -13,21 +17,46 @@ option csharp_namespace = ""IFC4.Grpc"";
         }
 
         public string End(){
-            return string.Empty;
+
+            var listMessagesBuilder = new StringBuilder();
+
+            // Write additonal messages that wrap lists.
+            foreach(var lm in listMessages){
+listMessagesBuilder.AppendLine ($@"
+message {lm}{{
+    repeated {lm.Substring(0, lm.Length-5)} Value = 1;
+}}");
+            }
+            return listMessagesBuilder.ToString();
         }
 
         public string AttributeDataString(AttributeData data){
-            if(data.Rank == 0){
-                return "*****";
+            if(data.IsCollection)
+            {
+                // Protocol buffers don't support nested arrays.
+                // We create message types representing the various levels
+                // of nesting. An array MyType[][][] becomes three message types:
+                // MyTypeList2 - repeated MyType; (Named FooList2 to avoid name clash wit other IFC list types.)
+                // MyTypeList3 - repeated MyType2;
+                // MyTypeList4 - repeated MyType3;
+                if(data.Rank > 1){
+                    for(var i=2; i<=data.Rank; i++){
+                        var listTypeName = $"{data.Type}List{data.Rank}";
+                        if(!listMessages.Contains(listTypeName))
+                        listMessages.Add(listTypeName);
+                        var typeNameRank = i==2?string.Empty:(i).ToString();
+                        return 	$"repeated {listTypeName}{typeNameRank} {data.Name}";
+                    }
+                }
+                return 	$"repeated {data.Type} {data.Name}";
             }
-            return $"{data.Type} {data.Name} = 0";
+            return $"{data.Type} {data.Name}";
         }
 
         public string AttributeDataType(AttributeData data){
-            return data.type;
+			return $"{data.type}";
         }
 
-        
         public string SimpleTypeString(SimpleType data){
             return $@"
 message {data.Name}{{
@@ -74,15 +103,24 @@ message {data.Name}{{
 
         public string EntityString(Entity data){
             var fieldBuilder = new StringBuilder();
-            var attrs = data.ParentsAndSelf().SelectMany(p=>p.Attributes).Where(a=>!a.IsDerived);
-            for(var i=0; i<attrs.Count(); i++){
+
+            // Protocol buffers don't support inheritance. We use composition instead.
+            var parents = data.Parents().ToArray();
+            var attrs = data.Attributes.Where(a=>!a.IsDerived);
+            var attrCount = attrs.Count();
+            for(var i=0; i<attrCount; i++){
                 var a = attrs.ElementAt(i);
                 var repeated = a.IsCollection?"repeated ":string.Empty;
-                if(i == attrs.Count() - 1){
-                    fieldBuilder.Append($"\t{repeated}{a.Type} {a.Name}={i+1};");
+                var opt = a.IsOptional? "// optional":string.Empty;
+                if(i == attrCount - 1 && !parents.Any()){
+                    fieldBuilder.Append($"\t{a.ToString()}={i+1}; {opt}");
                 }else{
-                    fieldBuilder.AppendLine($"\t{repeated}{a.Type} {a.Name}={i+1};");
+                    fieldBuilder.AppendLine($"\t{a.ToString()}={i+1}; {opt}");
                 }
+            }
+            
+            if(parents.Any()){
+                fieldBuilder.Append($"\t{parents.First().Name} Parent = {attrCount+1};");
             }
             return $@"
 message {data.Name}{{
