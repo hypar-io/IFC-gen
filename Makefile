@@ -14,7 +14,10 @@ csharp: generate
 
 proto: generate
 	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l proto -o ./lang/proto
-	protoc -I=./lang/proto IFC.g.proto --csharp_out=./lang/csharp/src --grpc_out=./lang/csharp/src --plugin=protoc-gen-grpc=${HOME}/.nuget/packages/grpc.tools/1.7.1/tools/macosx_x64/grpc_csharp_plugin
+	#protoc -I=./lang/proto IFC.g.proto --csharp_out=./lang/csharp/src --grpc_out=./lang/csharp/src --plugin=protoc-gen-grpc=${HOME}/.nuget/packages/grpc.tools/1.7.1/tools/macosx_x64/grpc_csharp_plugin
+
+ts: generate	
+	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l ts -o ./lang/ts
 
 clean:
 	rm -rf ./lang/csharp/src/antlr
