@@ -12,10 +12,14 @@ generate:
 	$(ANTLR) -Dlanguage=CSharp -package STEP -o ./lang/csharp/src/antlr $(GRAMMAR_STEP)
 	
 csharp: ifc-gen
-	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l csharp -o ./lang/csharp/src
+	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l csharp -o ./lang/csharp/src -t ./lang/csharp/tests
+	dotnet build ./lang/csharp/IFC-dotnet.sln
+
+csharp-tests: csharp
+	cd ./lang/csharp/tests/ && dotnet xunit
 
 proto: ifc-gen
-	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l proto -o ./lang/proto
+	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l proto -o ./lang/proto -t ./lang/proto
 
 clean:
 	rm -rf ./lang/csharp/src/antlr

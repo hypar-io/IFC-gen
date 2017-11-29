@@ -14,4 +14,11 @@ namespace IFC4.Generators
 		string FileName{get;}
 		string ParseType(ExpressParser.SimpleTypeContext context);
 	}
+
+	public interface ITestGenerator{
+		string Begin();
+		string End();
+		string EntityTest(Entity data);
+		string FileName{get;}
+	}
 }

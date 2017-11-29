@@ -275,8 +275,16 @@ $@"
 			return classStr;
         }
 
+		public string EntityTest(Entity data){
+			return string.Empty;
+		}
+
 		public string FileName{
 			get{return "IFC.g.cs";}
+		}
+
+		public string TestFileName{
+			get{return "IFC.tests.g.cs";}
 		}
 
 		public string ParseType(ExpressParser.SimpleTypeContext context){

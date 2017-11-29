@@ -79,10 +79,11 @@ namespace Express
 	{
 		public string Name {get;set;}
 		protected ILanguageGenerator generator;
-
-		public TypeData(string name, ILanguageGenerator generator)
+		protected ITestGenerator testGenerator;
+		public TypeData(string name, ILanguageGenerator generator, ITestGenerator testGenerator)
 		{
 			this.generator = generator;
+			this.testGenerator = testGenerator;
 			Name = name;
 		}
 	}
@@ -96,7 +97,7 @@ namespace Express
 		/// <returns></returns>
 		public IEnumerable<string> Values{get;set;}
 
-		public CollectionTypeData(string name, ILanguageGenerator generator) : base(name, generator)
+		public CollectionTypeData(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator)
 		{
 			Values = new List<string>();
 		}
@@ -127,7 +128,7 @@ namespace Express
 			}
 		}
 
-		public SimpleType(string name, ILanguageGenerator generator) : base(name, generator){}
+		public SimpleType(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator){}
 
 		/// <summary>
 		/// Return a string representing the TypeData as an IfcType.
@@ -141,7 +142,7 @@ namespace Express
 
 	public class EnumType : CollectionTypeData
 	{
-		public EnumType(string name, ILanguageGenerator generator) : base(name, generator){}
+		public EnumType(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator){}
 
 		/// <summary>
 		/// Returns a string representing the TypeData as an Enum.
@@ -155,7 +156,7 @@ namespace Express
 
 	public class SelectType : CollectionTypeData
 	{
-		public SelectType(string name, ILanguageGenerator generator) : base(name, generator){}
+		public SelectType(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator){}
 
 		/// <summary>
 		/// Return a string representing the TypeData as a Select.
@@ -179,7 +180,7 @@ namespace Express
 
 		public bool IsAbstract{get;set;}
 
-		public Entity(string name, ILanguageGenerator generator) : base(name, generator)
+		public Entity(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator)
 		{
 			Name = name;
 			Supers = new List<Entity>();
@@ -271,6 +272,10 @@ namespace Express
 		public override string ToString()
 		{
 			return generator.EntityString(this);
+		}
+
+		public string ToTestString(){
+			return testGenerator.EntityTest(this);
 		}
 	}
 }

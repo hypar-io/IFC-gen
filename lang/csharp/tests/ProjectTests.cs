@@ -5,7 +5,7 @@ using IFC4.Storage;
 using IfcGuid;
 using System;
 using System.Collections.Generic;
-using IFC4.Grpc;
+//using IFC4.Grpc;
 
 namespace test
 {
@@ -20,7 +20,7 @@ namespace test
 
         [Fact]
         public void Project(){
-            var doc = new Document(new LocalStorageProvider());
+            /*var doc = new Document(new LocalStorageProvider());
             
             var p = doc.AddProject("Test Project", "A test project.");
             var s = doc.AddSite(p);
@@ -38,6 +38,7 @@ namespace test
 
             // ensure that relationships are correctly generated
             // and have both ends set.
+        
         }
 
         private IfcGloballyUniqueId TestId(){

@@ -9,25 +9,28 @@ namespace Express
 {
 	public class ExpressListener : ExpressBaseListener
 	{
-		private StringBuilder stringBuilder;
-
 		private ILanguageGenerator generator;
 
+		private ITestGenerator testGenerator;
+
 		private Dictionary<string,TypeData> typeGraph = new Dictionary<string,TypeData>();
+
+		public Dictionary<string,TypeData> TypeGraph{
+			get{return typeGraph;}
+		}
 
 		private TypeData currTypeData;
 
 		private List<AttributeData> currAttrDatas = new List<AttributeData>();
 
-		public ExpressListener(ILanguageGenerator generator, StringBuilder stringBuilder)
+		public ExpressListener(ILanguageGenerator generator, ITestGenerator testGenerator)
 		{
-			this.stringBuilder = stringBuilder;
 			this.generator = generator;
+			this.testGenerator = testGenerator;
 		}
 
 		public override void EnterSchemaDecl(ExpressParser.SchemaDeclContext context)
 		{
-			stringBuilder.AppendLine(generator.Begin());
 		}
 
 		public override void ExitSchemaDecl(ExpressParser.SchemaDeclContext context)
@@ -40,16 +43,6 @@ namespace Express
 					continue;
 				}
 			}
-
-			// Write all the entities
-			foreach(var kvp in typeGraph)
-			{
-				var td = kvp.Value;
-				stringBuilder.AppendLine(td.ToString());
-			}
-
-			// Close the main namespace.
-			stringBuilder.AppendLine(generator.End());
 		}
 
 		public override void EnterTypeBody(ExpressParser.TypeBodyContext context)
@@ -59,29 +52,29 @@ namespace Express
 			TypeData td = null;
 			if(context.typeSel().collectionType() != null)
 			{
-				td = new SimpleType(name, generator);
+				td = new SimpleType(name, generator, testGenerator);
 				((SimpleType)td).IsCollectionType = true;
 			}
 			else if(context.typeSel().simpleType() != null)
 			{
-				td = new SimpleType(name, generator);
+				td = new SimpleType(name, generator, testGenerator);
 				// The wrapped type will be discerned on exit so we can 
 				// get it for collection types as well.
 			}
 			else if(context.typeSel().namedType() != null)
 			{
-				td = new SimpleType(name, generator);
+				td = new SimpleType(name, generator, testGenerator);
 				// The wrapped type will be discerned on exit so we can 
 				// get it for collection types as well.
 			}
 			else if(context.typeSel().enumType() != null)
 			{
-				td = new EnumType(name, generator);
+				td = new EnumType(name, generator, testGenerator);
 				((EnumType)td).Values = context.typeSel().enumType().enumValues().GetText().Split(',');
 			}
 			else if(context.typeSel().selectType() != null)
 			{
-				td = new SelectType(name, generator);
+				td = new SelectType(name, generator, testGenerator);
 				((SelectType)td).Values = context.typeSel().selectType().selectValues().GetText().Split(',');
 			}
 
@@ -168,7 +161,7 @@ namespace Express
 			}
 			else
 			{
-				currTypeData = new Entity(name, generator);
+				currTypeData = new Entity(name, generator, testGenerator);
 				typeGraph.Add(name, currTypeData);
 			}
 		}
@@ -191,7 +184,7 @@ namespace Express
 					}
 					else
 					{
-						tdSuper = new Entity(name, generator);
+						tdSuper = new Entity(name, generator, testGenerator);
 						typeGraph.Add(name, tdSuper);
 					}
 					((Entity)currTypeData).Supers.Add(tdSuper);
@@ -211,7 +204,7 @@ namespace Express
 				}
 				else
 				{
-					tdSub = new Entity(name, generator);
+					tdSub = new Entity(name, generator, testGenerator);
 					typeGraph.Add(name, tdSub);
 				}
 				((Entity)currTypeData).Subs.Add(tdSub);

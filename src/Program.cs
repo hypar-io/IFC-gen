@@ -15,6 +15,7 @@ namespace IFC.Generate
 	{
 		private static string language;
 		private static string outDir;
+		private static string outDirTests;
 		private static string expressPath;
 		private static bool showHelp;
 
@@ -25,12 +26,12 @@ namespace IFC.Generate
 				return;
 			}
 
-			List<ILanguageGenerator> generators = new List<ILanguageGenerator>();
+			var generators = new List<Tuple<ILanguageGenerator, ITestGenerator>>();
 
 			if(language == "csharp"){
-				generators.Add(new CsharpLanguageGenerator());
+				generators.Add(new Tuple<ILanguageGenerator, ITestGenerator>(new CsharpLanguageGenerator(), new CsharpTestGenerator()));
 			}else if(language == "proto"){
-				generators.Add(new ProtobufGenerator());
+				generators.Add(new Tuple<ILanguageGenerator, ITestGenerator>(new ProtobufGenerator(), new ProtobufTestGenerator()));
 			}
 
 			using (FileStream fs = new FileStream(expressPath, FileMode.Open))
@@ -44,13 +45,13 @@ namespace IFC.Generate
 
 				var tree = parser.schemaDecl();
 				var walker = new ParseTreeWalker();
-				var sb = new StringBuilder();
+				
+				var testSb = new StringBuilder();
 
 				foreach(var generator in generators){
-					var listener = new Express.ExpressListener(generator, sb);
+					var listener = new Express.ExpressListener(generator.Item1, generator.Item2);
 					walker.Walk(listener, tree);
-					var outPath = Path.Combine(outDir, generator.FileName);
-					File.WriteAllText(outPath,sb.ToString());
+					Generate(listener, outDir, outDirTests, generator.Item1, generator.Item2);
 				}
 				
 				// Write tokens to a file for debugging.
@@ -63,10 +64,38 @@ namespace IFC.Generate
 			}
 		}
 
+		private static void Generate(Express.ExpressListener listener, string outDir, string outDirTests, ILanguageGenerator generator, ITestGenerator testGenerator){
+			var codePath = Path.Combine(outDir, generator.FileName);
+			var testPath = Path.Combine(outDirTests, testGenerator.FileName);
+
+			var codeSb = new StringBuilder();
+			var testSb = new StringBuilder();
+
+			codeSb.AppendLine(generator.Begin());
+			testSb.AppendLine(testGenerator.Begin());
+			foreach(var kvp in listener.TypeGraph)
+			{
+				var td = kvp.Value;
+				codeSb.AppendLine(td.ToString());
+
+				// Only write tests for entities.
+				var entity = td as Express.Entity;
+				if(entity != null){
+					testSb.AppendLine(entity.ToTestString());
+				}
+			}
+			codeSb.AppendLine(generator.End());
+			testSb.AppendLine(testGenerator.End());
+
+			File.WriteAllText(codePath,codeSb.ToString());
+			File.WriteAllText(testPath,testSb.ToString());
+		}
+
 		private static void ParseOptions(string[] args){
 			var p = new OptionSet () {
 				{ "e|express=", "The path the express schema.", v => expressPath = v },
-				{ "o|output=", "The directory in which the output file is written.", v => outDir = v},
+				{ "o|output=", "The directory in which the code is generated.", v => outDir = v},
+				{ "t|test=", "The directory in which the test code is generated.", v => outDirTests = v},
 				{ "l|language=", "The target language (csharp)", v => language = v},
 				{ "h|help",   v => showHelp = v != null },
 			};
