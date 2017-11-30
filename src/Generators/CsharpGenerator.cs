@@ -233,7 +233,7 @@ namespace IFC4
 		/// </summary>
 		public {data.Name}({ConstructorParams(data,false)}):base({BaseConstructorParams(data,false)})
 		{{
-{Allocations(data)}
+{Allocations(data, true)}
 {Assignments(data, false)}
 		}}
 		/// <summary>
@@ -242,7 +242,7 @@ namespace IFC4
 		[JsonConstructor]
 		public {data.Name}({ConstructorParams(data,true)}):base({BaseConstructorParams(data,true)})
 		{{
-{Allocations(data)}
+{Allocations(data, false)}
 {Assignments(data, true)}
 		}}";
 			}
@@ -255,7 +255,7 @@ namespace IFC4
 		[JsonConstructor]
 		public {data.Name}({ConstructorParams(data,false)}):base({BaseConstructorParams(data,false)})
 		{{
-{Allocations(data)}
+{Allocations(data, true)}
 {Assignments(data, false)}
 		}}";
 			}
@@ -340,10 +340,14 @@ $@"
 			return assignBuilder.ToString();
 		}
 
-		private string Allocations(Entity entity){
+		private string Allocations(Entity entity, bool includeOptional){
 
 			var allocBuilder = new StringBuilder();
-			foreach(var a in entity.Attributes.Where(a=>!a.IsDerived)){
+
+			var attrs = entity.Attributes	.Where(a => !a.IsDerived)
+											.Where(a => a.IsInverse || includeOptional && a.IsOptional);
+
+			foreach(var a in attrs){
 				var alloc = Allocation(a);
 				if(!string.IsNullOrEmpty(alloc)){
 					allocBuilder.Append(alloc);
