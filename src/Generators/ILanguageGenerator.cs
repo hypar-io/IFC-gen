@@ -7,6 +7,7 @@ namespace IFC4.Generators
 		string End();
 		string AttributeDataType(AttributeData data);
 		string AttributeDataString(AttributeData data);
+		string AttributeStepString(AttributeData data);
         string SimpleTypeString(SimpleType data);
         string EnumTypeString(EnumType data);
 		string SelectTypeString(SelectType data);

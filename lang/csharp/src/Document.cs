@@ -53,10 +53,109 @@ namespace IFC4
 
 		private IStorageProvider storage;
 
+		public IEnumerable<BaseIfc> Instances{
+			get{return storage.Instances;}
+		}
+
 		public Document(IStorageProvider storage)
 		{
 			this.storage = storage;
 		}
+
+		/// <summary>
+        /// Serialize the model to STEP.
+        /// </summary>
+        /// <param name="filePath">The path to the resulting STEP file.</param>
+        /// <returns>A string representing the model serialized to STEP.</returns>
+        public string ToSTEP(string filePath)
+        {
+            var header = GetHeaderString(filePath);
+			var builder = new StringBuilder(header);
+
+            var indexMap = new Dictionary<Guid, int>();
+            int stepIndex = 1;
+
+			var instances = this.AllInstancesDerivedFromType<BaseIfc>().ToArray();
+
+			//Generate the STEP index map
+            foreach (BaseIfc instance in instances)
+            {
+				Console.WriteLine($"Adding id {instance.Id} of type {instance.GetType().Name} to index map.");
+                indexMap.Add(instance.Id, stepIndex);
+                stepIndex++;
+            }
+
+            foreach (BaseIfc instance in instances)
+            {
+				Console.WriteLine($"Looking up id {instance.Id} for type {instance.GetType().Name}");
+                var instanceValue = instance.ToSTEP(indexMap);
+				builder.AppendLine(instanceValue);
+                Debug.WriteLine(DateTime.Now.ToString("hh:mm:ss.fff") + ";" + " Writing line " + instanceValue.Remove(instanceValue.Length-2));
+            }
+
+			builder.AppendLine(GetFooterString());
+
+            return builder.ToString();
+        }
+
+        private string GetHeaderString(string filePath)
+        {
+
+            string hdr = "ISO-10303-21;\r\nHEADER;\r\nFILE_DESCRIPTION(('ViewDefinition [" + "CoordinationView" + "]'),'2;1');\r\n";
+
+            hdr += "FILE_NAME(\r\n";
+            hdr += "/* name */ '" + Encode(filePath.Replace("\\", "\\\\")) + "',\r\n";
+            DateTime now = DateTime.Now;
+            hdr += "/* time_stamp */ '" + now.Year + "-" + (now.Month < 10 ? "0" : "") + now.Month + "-" + (now.Day < 10 ? "0" : "") + now.Day + "T" + (now.Hour < 10 ? "0" : "") + now.Hour + ":" + (now.Minute < 10 ? "0" : "") + now.Minute + ":" + (now.Second < 10 ? "0" : "") + now.Second + "',\r\n";
+            hdr += "/* author */ ('" + System.Environment.UserName + "'),\r\n";
+            hdr += "/* organization */ ('" + this.AllInstanceOfType<IfcProject>().FirstOrDefault().OwnerHistory.OwningUser.TheOrganization.Name + "'),\r\n";
+            hdr += "/* preprocessor_version */ 'IFC-dotnet',\r\n";
+            hdr += "/* originating_system */ '" + typeof(Document).Assembly.GetName().Version + "',\r\n";
+
+            hdr += "/* authorization */ 'None');\r\n\r\n";
+            hdr += "FILE_SCHEMA (('" + "IFC4" + "'));\r\n";
+            hdr += "ENDSEC;\r\n";
+            hdr += "\r\nDATA;";
+            return hdr;
+        }
+
+        private string GetFooterString() { return "ENDSEC;\r\n\r\nEND-ISO-10303-21;\r\n\r\n"; }
+
+        private static string Encode(string str)
+        {
+            string result = "";
+            int length = str.Length;
+            for (int icounter = 0; icounter < length; icounter++)
+            {
+                char c = str[icounter];
+                if (c == '\r')
+                {
+                    if (icounter + 1 < length)
+                    {
+                        if (str[icounter + 1] == '\n' && icounter + 2 == length)
+                            return result;
+                    }
+                    continue;
+                }
+                if (c == '\n')
+                {
+                    if (icounter + 1 == length)
+                        return result;
+                }
+                if (c == '\'')
+                    result += "''";
+                else
+                {
+                    int i = (int)c;
+                    if (i < 32 || i > 126)
+                        result += "\\X2\\" + string.Format("{0:x4}", i).ToUpper() + "\\X0\\";
+                    else
+                        result += c;
+                }
+            }
+            return result;
+        }
+
 
 		/// <summary>
 		/// Create a Model given a STEP file.
@@ -151,7 +250,9 @@ namespace IFC4
 						continue;
 					}
 
+					
 					var subInstance = ConstructRecursive(instanceDataMap[stepId.Value], instanceDataMap, currLine, errors);
+					Console.WriteLine($"Creating {subInstance.GetType().Name}.");
 					data.Parameters[i] = subInstance;
 					continue;
 				}
@@ -187,7 +288,7 @@ namespace IFC4
 							subInstances.Add(convert);
 						}
 						else if(item is STEP.InstanceData)
-						{
+						{	
 							var subInstance = ConstructRecursive((STEP.InstanceData)item, instanceDataMap, currLine, errors);
 							var convert = Convert(instanceType, subInstance);
 							subInstances.Add(convert);

@@ -32,6 +32,10 @@ namespace IFC4.Storage
 			}
 		}
 
+		public IEnumerable<BaseIfc> Instances{
+			get{return instances.Values;}
+		}
+
 		/// <summary>
 		/// Add an instance to the model.
 		/// </summary>

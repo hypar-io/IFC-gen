@@ -73,6 +73,11 @@ namespace Express
 		{
 			return generator.AttributeDataString(this);
 		}
+
+		public string ToStepString()
+		{
+			return generator.AttributeStepString(this);
+		}
 	}
 
 	public abstract class TypeData
@@ -257,6 +262,27 @@ namespace Express
 			foreach(var a in attrs)
 			{
 				var prop = a.ToString();
+				if(!string.IsNullOrEmpty(prop))
+				{
+					propBuilder.Append(prop);
+				}
+			}
+			return propBuilder.ToString();
+		}
+
+		public string StepProperties()
+		{
+			var attrs = Attributes.Where(a=>!a.IsDerived);
+			if(!attrs.Any())
+			{
+				return string.Empty;
+			}
+
+			var propBuilder = new StringBuilder();
+			propBuilder.AppendLine();
+			foreach(var a in attrs)
+			{
+				var prop = a.ToStepString();
 				if(!string.IsNullOrEmpty(prop))
 				{
 					propBuilder.Append(prop);
