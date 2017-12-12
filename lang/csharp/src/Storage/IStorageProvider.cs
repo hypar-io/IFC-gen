@@ -6,7 +6,7 @@ namespace IFC4.Storage
     public interface IStorageProvider
     {
 		void AddInstance(BaseIfc instance);
-		IEnumerable<BaseIfc> Instances {get;}
+		Dictionary<Guid, BaseIfc> Instances {get;}
 		IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>();
 		IEnumerable<T> AllInstancesOfType<T>();
 		BaseIfc InstanceById(Guid id);

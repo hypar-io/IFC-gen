@@ -46,7 +46,7 @@ namespace IFC4
 		{
 			string stepIndex = indexMap[this.Id].ToString();
 			string IfcClass = this.GetType().Name.ToUpper();
-			return $""#{stepIndex} = {IfcClass}({this.GetStepParameters(indexMap)})"";
+			return $""#{stepIndex} = {IfcClass}({this.GetStepParameters(indexMap)});"";
 		}
 
 		public virtual string ToStepValue(Dictionary<Guid, int> indexMap)
@@ -64,6 +64,11 @@ namespace IFC4
 	{
 		[JsonProperty(""value"")]
 		public dynamic Value {get;protected set;}
+
+		public override string ToStepValue(Dictionary<Guid, int> indexMap)
+		{
+			return $""#{indexMap[Value.Id].ToString()}"";
+		}
 	}
 
 	/// <summary>
@@ -110,8 +115,9 @@ namespace IFC4
         }
 
         public string AttributeDataString(AttributeData data){
-            var opt = data.IsOptional? "// optional":string.Empty;
-			var prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} {opt}\n";
+            var opt = data.IsOptional? "optional":string.Empty;
+			var inverse = data.IsInverse? "inverse":string.Empty;
+			var prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} //{opt} {inverse}\n";
 			return prop;
         }
 

@@ -66,6 +66,8 @@ namespace test
 			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
 			sw.Stop();
 			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
+			var project = model.AllInstanceOfType<IfcProject>().FirstOrDefault();
+			Console.WriteLine(project.ToJSON());
 			ReportErrors(stepPath, errors);
 		}
 

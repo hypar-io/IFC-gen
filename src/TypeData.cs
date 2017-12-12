@@ -272,7 +272,7 @@ namespace Express
 
 		public string StepProperties()
 		{
-			var attrs = Attributes.Where(a=>!a.IsDerived);
+			var attrs = Attributes.Where(a=>!a.IsDerived && !a.IsInverse);
 			if(!attrs.Any())
 			{
 				return string.Empty;

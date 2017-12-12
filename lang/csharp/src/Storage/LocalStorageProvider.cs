@@ -32,8 +32,8 @@ namespace IFC4.Storage
 			}
 		}
 
-		public IEnumerable<BaseIfc> Instances{
-			get{return instances.Values;}
+		public Dictionary<Guid, BaseIfc> Instances{
+			get{return instances;}
 		}
 
 		/// <summary>
