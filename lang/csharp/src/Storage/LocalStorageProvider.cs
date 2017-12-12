@@ -32,6 +32,10 @@ namespace IFC4.Storage
 			}
 		}
 
+		public Dictionary<Guid, BaseIfc> Instances{
+			get{return instances;}
+		}
+
 		/// <summary>
 		/// Add an instance to the model.
 		/// </summary>

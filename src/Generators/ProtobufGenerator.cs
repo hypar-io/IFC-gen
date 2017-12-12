@@ -57,6 +57,10 @@ message {lm}{{
 			return $"{data.type}";
         }
 
+        public string AttributeStepString(AttributeData data){
+            throw new NotImplementedException();
+        }
+
         public string SimpleTypeString(SimpleType data){
             return $@"
 message {data.Name}{{

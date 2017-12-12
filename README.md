@@ -31,6 +31,8 @@ Accelerate the pace of development of IFC-based libraries and services by provid
 
 ## Building
 
+### For macOS
+
 `make`
 
 ## Creating a Language Generator

@@ -22,7 +22,7 @@ namespace IFC4
 		{
 			get{return $"There was an error reading the STEP file at Id, {currId}.";}
 		}
-
+ 
 		public STEPError(int currId)
 		{
 			this.currId = currId;
@@ -56,6 +56,69 @@ namespace IFC4
 		public Document(IStorageProvider storage)
 		{
 			this.storage = storage;
+		}
+
+		/// <summary>
+        /// Serialize the model to STEP.
+        /// </summary>
+        /// <param name="filePath">The path to the resulting STEP file.</param>
+        /// <returns>A string representing the model serialized to STEP.</returns>
+        public string ToSTEP(string filePath)
+        {
+			var builder = new StringBuilder();
+			builder.AppendLine(Begin(filePath));
+            var indexMap = new Dictionary<Guid, int>();
+            int stepIndex = 1;
+
+			//Generate the STEP index map
+            foreach (var instance in storage.Instances.Values)
+            {
+				//Console.WriteLine($"Adding id {instance.Id} of type {instance.GetType().Name} to index map.");
+                indexMap.Add(instance.Id, stepIndex);
+                stepIndex++;
+            }
+
+			//Console.WriteLine($"Index map has {indexMap.Values.Count()} entries.");
+
+            foreach (var instance in storage.Instances.Values)
+            {
+				//Console.WriteLine($"Looking up id {instance.Id} for type {instance.GetType().Name}");
+                var instanceValue = instance.ToSTEP(indexMap);
+				builder.AppendLine(instanceValue);
+            }
+
+			builder.AppendLine(End());
+
+            return builder.ToString();
+        }
+
+        private string Begin(string filePath)
+        {
+			var project = this.AllInstanceOfType<IfcProject>().FirstOrDefault();
+
+            return $@"
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(
+	('ViewDefinition [CoordinationView]'),
+	'2;1');
+FILE_NAME(
+    /* file path */ '{filePath}',
+    /* time_stamp */ '{DateTime.Now.ToString("yyyy-MM-ddTHH:MM:ss")}',
+    /* author */ ('{System.Environment.UserName}'),
+    /* organization */ ('{project.OwnerHistory.OwningUser.TheOrganization.Name}'),
+    /* preprocessor_version */ 'IFC-dotnet',
+    /* originating_system */ '{typeof(Document).Assembly.GetName().Version}',
+	/* authorization */ 'None');
+FILE_SCHEMA (('IFC4'));
+ENDSEC;
+DATA;";
+        }
+
+        private string End() { 
+			return $@"
+ENDSEC;
+END-ISO-10303-21;"; 
 		}
 
 		/// <summary>
@@ -98,9 +161,9 @@ namespace IFC4
 						continue;
 					}
 					
-					var instance = ConstructRecursive(data.Value, listener.InstanceData, data.Key, err);
-					storage.AddInstance(instance);
+					ConstructAndStoreRecursive(data.Value, listener.InstanceData, data.Key, err, 0);
 				}
+				Console.WriteLine($"{storage.Instances.Values.Count()} BaseIfc instances added to the store.");
 				errors = err;
 			}
 		}
@@ -115,50 +178,49 @@ namespace IFC4
 		/// <param name="instanceDataMap">The dictionary containing instance data gathered from the parser.</param>
 		/// <param name="model">The Model in which constructed instances will be stored.</param>
 		/// <returns></returns>
-		private BaseIfc ConstructRecursive(STEP.InstanceData data, Dictionary<int,STEP.InstanceData> instanceDataMap, int currLine, IList<STEPError> errors)
-		{		
-			Debug.WriteLine($"{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
-	
-			for(var i=data.Parameters.Count()-1; i>=0; i--)
-			{
-				var instData = data.Parameters[i] as STEP.InstanceData;
-				if(instData != null)
-				{
-					var subInstance = ConstructRecursive(instData, instanceDataMap, currLine, errors);
-					data.Parameters[i] = subInstance;
-					continue;
-				}
+		private BaseIfc ConstructAndStoreRecursive(STEP.InstanceData data, Dictionary<int,STEP.InstanceData> instanceDataMap, int currLine, IList<STEPError> errors, int level)
+		{
+			var indent = string.Join("",Enumerable.Repeat("\t",level));
 
-				var stepId = data.Parameters[i] as STEP.STEPId;
-				if(stepId != null)
+			//Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
+
+			for(var i=0; i<data.Parameters.Count(); i++)
+			{
+				if(data.Parameters[i] is STEP.InstanceData)
 				{
+					data.Parameters[i] = ConstructAndStoreRecursive((STEP.InstanceData)data.Parameters[i], instanceDataMap, currLine, errors, level);
+				}
+				else if(data.Parameters[i] is STEP.STEPId)
+				{
+					var stepId = data.Parameters[i] as STEP.STEPId;
+
+					// The instance has already been constructed.
+					// Use the id to look it up.
 					if(instanceDataMap.ContainsKey(stepId.Value))
 					{
 						var guid = instanceDataMap[stepId.Value].ConstructedGuid;
-						var existingInst = storage.InstanceById(guid);
-						if(existingInst != null)
+						if(guid != Guid.Empty && storage.Instances.ContainsKey(guid))
 						{
-							data.Parameters[i] = existingInst;
+							//Console.WriteLine($"{indent}Using pre-created instance {stepId.Value}");
+							data.Parameters[i] = storage.Instances[guid];
 							continue;
 						}
 					}
+					// The instance's id cannot be found in the map.
+					// Log an error and set the parameter value to null.
 					else
 					{
-						// A missing identifier results in an error.
-						// set the data to null;
 						errors.Add(new MissingIdError(currLine, stepId.Value));
 						data.Parameters[i] = null;
 						continue;
 					}
 
-					var subInstance = ConstructRecursive(instanceDataMap[stepId.Value], instanceDataMap, currLine, errors);
-					data.Parameters[i] = subInstance;
-					continue;
+					data.Parameters[i] = ConstructAndStoreRecursive(instanceDataMap[stepId.Value], instanceDataMap, currLine, errors, level);
 				}
-
-				var list = data.Parameters[i] as List<object>;
-				if(list != null)
+				else if(data.Parameters[i] is List<object>)
 				{
+					var list = data.Parameters[i] as List<object>;
+
 					// The parameters will have been stored in a List<object> during parsing.
 					// We need to create a List<T> where T is the type expected by the constructor
 					// in the STEP file.
@@ -179,7 +241,7 @@ namespace IFC4
 						if(item is STEP.STEPId)
 						{
 							var id = item as STEP.STEPId;
-							var subInstance = ConstructRecursive(instanceDataMap[id.Value], instanceDataMap, currLine, errors);
+							var subInstance = ConstructAndStoreRecursive(instanceDataMap[id.Value], instanceDataMap, currLine, errors, level);
 
 							// The object must be converted to the type expected in the list
 							// for Select types, this will be a recursive build of the base select type.
@@ -187,8 +249,8 @@ namespace IFC4
 							subInstances.Add(convert);
 						}
 						else if(item is STEP.InstanceData)
-						{
-							var subInstance = ConstructRecursive((STEP.InstanceData)item, instanceDataMap, currLine, errors);
+						{	
+							var subInstance = ConstructAndStoreRecursive((STEP.InstanceData)item, instanceDataMap, currLine, errors, level);
 							var convert = Convert(instanceType, subInstance);
 							subInstances.Add(convert);
 						}
@@ -206,7 +268,7 @@ namespace IFC4
 
 			// Do one final pass on all parameters to ensure
 			// that they are of the correct type.
-			for(var i=data.Parameters.Count-1; i>=0; i--)
+			for(var i=0; i<data.Parameters.Count(); i++)
 			{
 				if(data.Parameters[i] == null)
 				{
@@ -221,16 +283,18 @@ namespace IFC4
 
 			// Construct the instance, assuming that all required sub-instances
 			// have already been constructed.
+			//var instance = (BaseIfc)data.Constructor.Invoke(data.Parameters.ToArray());
 			var instance = (BaseIfc)data.Constructor.Invoke(data.Parameters.ToArray());
-			
+
+			storage.AddInstance(instance);
+			//Console.WriteLine($"Storing {data.Id} as instance {instance.Id} of type {instance.GetType().Name}.");
+
 			if(instanceDataMap.ContainsKey(data.Id))
 			{
 				// We'll only get here if the instance is not being constructed
 				// as a sub-instance.
 				instanceDataMap[data.Id].ConstructedGuid = instance.Id;
 			}
-			
-			Debug.WriteLine($"{currLine},{data.Id} : Constructed type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
 
 			return instance;
 		}

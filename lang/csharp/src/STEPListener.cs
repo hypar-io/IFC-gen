@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using IFC4;
+using System.Globalization;
 
 namespace STEP
 {
@@ -25,7 +26,7 @@ namespace STEP
 		public System.Reflection.ConstructorInfo Constructor{get;set;}
 
 		/// <summary>
-		/// The unique identifer of an BaseIfc instance constructed using this data. 
+		/// The unique identifer of a BaseIfc instance constructed using this data. 
 		/// </summary>
 		/// <returns></returns>
 		public Guid ConstructedGuid{get;set;}
@@ -229,7 +230,7 @@ namespace STEP
 		private dynamic ParseReal(Type t, string value)
 		{
 			double result;
-			if(!double.TryParse(value, out result))
+			if(!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
 			{
 				throw new STEPParserException(typeof(double), value);
 			}
