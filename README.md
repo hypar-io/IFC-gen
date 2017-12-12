@@ -10,17 +10,6 @@ Source files for each target language can be found in the directory correspondin
 
 For per-language build instruction, please see the language folder's `README`.
 
-# Road Map
-- [x] ANTLR grammar for IFC EXPRESS.  
-- [x] `ExpressListener` to generate intermediate type data.  
-- [x] CI/CD integration with Travis.
-- [ ] Generation in all supported languages of ALL types described by the schema.  
-- [ ] Common BDD test suite with test implementations in all supported languages.
-- [ ] Package generation for all supported languages (i.e. Nuget package for IFC-dotnet).
-- [ ] Minimum one local file storage back end and one db back end.
-- [ ] Support for WHERE statements.  
-- [ ] Support for DERIVE statements.  
-
 ## Motivation
 
 Let's say you work in an architecture or engineering firm writing code. Or a software startup that's trying to solve problems in AEC. Where do you go to find a library that reads and writes data in an industry-standard form? Maybe you've looked at the IFC schema and, like many before you, have decided that it's "too complex" or "too heavy" for your needs. Maybe you've even gone and built your own data model to describe building elements. 
@@ -36,6 +25,17 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 - http://ifcopenshell.org
 - https://github.com/jmirtsch/GeometryGymIFC
 - https://github.com/xBimTeam
+
+# Road Map
+- [x] ANTLR grammar for IFC EXPRESS.  
+- [x] `ExpressListener` to generate intermediate type data.  
+- [x] CI/CD integration with Travis.
+- [ ] Generation in all supported languages of ALL types described by the schema.  
+- [ ] Common BDD test suite with test implementations in all supported languages.
+- [ ] Package generation for all supported languages (i.e. Nuget package for IFC-dotnet).
+- [ ] Minimum one local file storage back end and one db back end.
+- [ ] Support for WHERE statements.  
+- [ ] Support for DERIVE statements.  
 
 ## Prerequisites
 
