@@ -44,9 +44,11 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 
 ## Building
 
-### For macOS
-
+### For 'nix
 `make`
+
+### For Windows
+`make.bat`
 
 ## Creating a Language Generator
 Language generators implement the `ILanguageGenerator` interface. You can find implementations of `ILanguageGenerator` in `/Generators`. To create your own language generator do the following:
