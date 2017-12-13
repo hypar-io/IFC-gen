@@ -18,14 +18,16 @@ using System.ComponentModel;
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using System.Linq;
-using STEPExtensions;
+using STEP;
 	
 namespace IFC4
 {
-	public abstract class BaseIfc
+	public abstract class BaseIfc : IConvertibleToSTEP
 	{
 		[JsonProperty(""id"")]
 		public Guid Id{get;}
+
+		public int StepId{get;set;}
 
 		public BaseIfc()
 		{
@@ -42,19 +44,18 @@ namespace IFC4
 			return JsonConvert.SerializeObject(this);
 		}
 
-		public virtual string ToSTEP(Dictionary<Guid, int> indexMap)
+		public virtual string ToSTEP()
 		{
-			string stepIndex = indexMap[this.Id].ToString();
 			string IfcClass = this.GetType().Name.ToUpper();
-			return $""#{stepIndex} = {IfcClass}({this.GetStepParameters(indexMap)});"";
+			return $""#{StepId} = {IfcClass}({this.GetStepParameters()});"";
 		}
 
-		public virtual string ToStepValue(Dictionary<Guid, int> indexMap)
+		public virtual string ToStepValue()
 		{
-			return $""#{indexMap[Id].ToString()}"";
+			return $""#{StepId}"";
 		}
 
-		public virtual string GetStepParameters(Dictionary<Guid, int> indexMap)
+		public virtual string GetStepParameters()
 		{
 			return """";
 		}
@@ -65,27 +66,9 @@ namespace IFC4
 		[JsonProperty(""value"")]
 		public dynamic Value {get;protected set;}
 
-		public override string ToStepValue(Dictionary<Guid, int> indexMap)
+		public override string ToStepValue()
 		{
-			return $""#{indexMap[Value.Id].ToString()}"";
-		}
-	}
-
-	/// <summary>
-	/// A type wrapper for IFC.
-	/// </summary>
-	public class IfcType<T> : BaseIfc
-	{
-		[JsonProperty(""value"")]
-		public T Value{get;set;}
-		public IfcType(T value)
-		{
-			Value = value;
-		}
-
-		public static implicit operator IfcType<T>(T value)
-		{
-			return new IfcType<T>(value);
+			return $""#{Value.StepId}"";
 		}
 	}
 	";
@@ -122,14 +105,14 @@ namespace IFC4
         }
 
 		public string AttributeStepString(AttributeData data){
-			var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue(indexMap) : \"$\");\n";
-			
+			var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue() : \"$\");\n";
+
 			// TODO: Not all enums are called xxxEnum. This emits code which causes 
 			// 'never equal to null' errors. Find a better way to handle enums which don't
 			// end in 'enum'.
 			if (data.Type.EndsWith("Enum") | data.Type == "bool" | data.Type == "int" | data.Type == "double") 
             { 
-				step = $"\t\t\tparameters.Add({data.Name}.ToStepValue(indexMap));\n";
+				step = $"\t\t\tparameters.Add({data.Name}.ToStepValue());\n";
             }
 			return step;
         }
@@ -147,13 +130,18 @@ namespace IFC4
 	$@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
 	/// </summary>
-	public class {data.Name} : IfcType<{WrappedType(data)}>
+	public class {data.Name} : IConvertibleToSTEP
 	{{
-		public {data.Name}({WrappedType(data)} value):base(value){{}}	
+		internal {WrappedType(data)} value;
+
+		public {data.Name}({WrappedType(data)} value)
+		{{
+			this.value = value;
+		}}	
 
 		public static implicit operator {WrappedType(data)}({data.Name} v)
 		{{
-			return v.Value;
+			return v.value;
 		}}
 
 		public static implicit operator {data.Name}({WrappedType(data)} v)
@@ -166,9 +154,9 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
 
-		public override string ToStepValue(Dictionary<Guid, int> indexMap)
+		public string ToStepValue()
         {{
-            return Value.ToStepValue(indexMap);
+            return value.ToStepValue();
         }}
 	}}
 ";
@@ -306,10 +294,10 @@ $@"
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
 
-		public override string GetStepParameters(Dictionary<Guid, int> indexMap)
+		public override string GetStepParameters()
 		{{
 			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters(indexMap);
+            string baseStepParameters = base.GetStepParameters();
             if (!string.IsNullOrEmpty(baseStepParameters)) {{ parameters.Add(baseStepParameters);}}
 			{data.StepProperties()}
 			return string.Join("", "", parameters.ToArray());

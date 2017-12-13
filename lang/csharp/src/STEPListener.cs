@@ -26,10 +26,10 @@ namespace STEP
 		public System.Reflection.ConstructorInfo Constructor{get;set;}
 
 		/// <summary>
-		/// The unique identifer of a BaseIfc instance constructed using this data. 
+		/// The BaseIfc instance constructed using this data. 
 		/// </summary>
 		/// <returns></returns>
-		public Guid ConstructedGuid{get;set;}
+		public BaseIfc ConstructedInstance{get;set;}
 
 		public bool HasDependencies
 		{

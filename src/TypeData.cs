@@ -14,6 +14,10 @@ namespace Express
 	{
 		private ILanguageGenerator generator;
 
+		/// <summary>
+		/// Name will be a type name or a path.
+		/// </summary>
+		/// <returns></returns>
 		public string Name{get;set;}
 
 		internal string type;
@@ -29,12 +33,28 @@ namespace Express
 			}
 		}
 
+		/// <summary>
+		/// Is this attribute INVERSE?
+		/// </summary>
+		/// <returns></returns>
 		public bool IsInverse{get;set;}
 
+		/// <summary>
+		/// Is this attribute DERIVED?
+		/// </summary>
+		/// <returns></returns>
 		public bool IsDerived{get;set;}
 
+		/// <summary>
+		/// Is this attribute marked as OPTIONAL?
+		/// </summary>
+		/// <returns></returns>
 		public bool IsOptional{get;set;}
 
+		/// <summary>
+		/// Is this attribute a SET?
+		/// </summary>
+		/// <returns></returns>
 		public bool IsCollection{get;set;}
 
 		public int Rank{get;set;}
