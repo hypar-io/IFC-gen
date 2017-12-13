@@ -65,10 +65,11 @@ namespace IFC4
         /// <returns>A string representing the model serialized to STEP.</returns>
         public string ToSTEP(string filePath)
         {
+			var sw = new Stopwatch();
+			sw.Start();
+
 			var builder = new StringBuilder();
 			builder.AppendLine(Begin(filePath));
-
-			//Console.WriteLine($"Index map has {indexMap.Values.Count()} entries.");
 
 			var index = 1;
 			foreach(var instance in storage.Instances.Values)
@@ -79,13 +80,15 @@ namespace IFC4
 
             foreach (var instance in storage.Instances.Values)
             {
-				//Console.WriteLine($"Looking up id {instance.Id} for type {instance.GetType().Name}");
                 var instanceValue = instance.ToSTEP();
 				builder.AppendLine(instanceValue);
             }
 
-			builder.AppendLine(End());
+			builder.Append(End());
 
+			sw.Stop();
+			Console.WriteLine($"{sw.Elapsed} for serializing Document to STEP.");
+			
             return builder.ToString();
         }
 
@@ -100,21 +103,20 @@ FILE_DESCRIPTION(
 	('ViewDefinition [CoordinationView]'),
 	'2;1');
 FILE_NAME(
-    /* file path */ '{filePath}',
-    /* time_stamp */ '{DateTime.Now.ToString("yyyy-MM-ddTHH:MM:ss")}',
-    /* author */ ('{System.Environment.UserName}'),
-    /* organization */ ('{project.OwnerHistory.OwningUser.TheOrganization.Name}'),
-    /* preprocessor_version */ 'IFC-dotnet',
-    /* originating_system */ '{typeof(Document).Assembly.GetName().Version}',
-	/* authorization */ 'None');
+    '{filePath}',
+    '{DateTime.Now.ToString("yyyy-MM-ddTHH:MM:ss")}',
+    ('{System.Environment.UserName}'),
+    ('{project.OwnerHistory.OwningUser.TheOrganization.Name}'),
+    'IFC-dotnet',
+    '{typeof(Document).Assembly.GetName().Version}',
+	'None');
 FILE_SCHEMA (('IFC4'));
 ENDSEC;
 DATA;";
         }
 
         private string End() { 
-			return $@"
-ENDSEC;
+			return $@"ENDSEC;
 END-ISO-10303-21;"; 
 		}
 
@@ -135,6 +137,9 @@ END-ISO-10303-21;";
 
 			using (FileStream fs = new FileStream(STEPfilePath, FileMode.Open))
 			{
+				var sw = new Stopwatch();
+				sw.Start();
+
 				var input = new AntlrInputStream(fs);
 				var lexer = new STEP.STEPLexer(input);
 				var tokens = new CommonTokenStream(lexer);
@@ -148,6 +153,11 @@ END-ISO-10303-21;";
 				var listener = new STEP.STEPListener();
 				walker.Walk(listener, tree);
 
+				sw.Stop();
+				Console.WriteLine($"{sw.Elapsed} for parsing STEP file.");
+				sw.Reset();
+
+				sw.Start();
 				var err = new List<STEPError>();
 				foreach(var data in listener.InstanceData)
 				{
@@ -166,8 +176,10 @@ END-ISO-10303-21;";
 				{
 					storage.AddInstance((BaseIfc)data.Value.ConstructedInstance);
 				}
-				//Console.WriteLine($"{storage.Instances.Values.Count()} BaseIfc instances added to the store.");
-				//Console.WriteLine($"{err.Count} errors occurred during reading.");
+
+				sw.Stop();
+				Console.WriteLine($"{sw.Elapsed} for creating instances.");
+
 				errors = err;
 			}
 		}
@@ -312,12 +324,6 @@ END-ISO-10303-21;";
 			return instance;
 		}
 
-		/// <summary>
-		/// 
-		/// </summary>
-		/// <param name="expectedType"></param>
-		/// <param name="value"></param>
-		/// <returns></returns>
 		private static object Convert(Type expectedType, object value)
 		{
 			// Bail out immediately if a direct cast is available.
@@ -337,7 +343,7 @@ END-ISO-10303-21;";
 			}
 		}
 
-				/// <summary>
+		/// <summary>
 		/// Serialize the model to JSON.
 		/// </summary>
 		/// <returns>A string representing the model serialized to JSON. The string will be indented and include type references.</returns>
@@ -347,12 +353,12 @@ END-ISO-10303-21;";
 				Formatting = Formatting.Indented,
 				TypeNameHandling = TypeNameHandling.Objects
 			};
-			var json = JsonConvert.SerializeObject(this, settings);
+			var json = JsonConvert.SerializeObject(this.storage, settings);
 			return json;
 		}
 
 		/// <summary>
-		/// Serialize the model to a DOT graph notation.
+		/// Serialize the document's relationships to a DOT graph notation.
 		/// </summary>
 		/// <returns>A string representing the model serialized in DOT notation.</returns>
 		public string ToDOT()
