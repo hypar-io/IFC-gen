@@ -10,6 +10,22 @@ Source files for each target language can be found in the directory correspondin
 
 For per-language build instruction, please see the language folder's `README`.
 
+## Motivation
+
+Let's say you work in an architecture or engineering firm writing code. Or a software startup that's trying to solve problems in AEC. Where do you go to find a library that reads and writes data in an industry-standard form? Maybe you've looked at the IFC schema and, like many before you, have decided that it's "too complex" or "too heavy" for your needs. Maybe you've even gone and built your own data model to describe building elements. 
+
+As more firms build their own data models to solve the same problem, we get further away from the vision of what IFC was _supposed_ to be. By comparison, it would be as if every software company that makes a browser decided that they were going to create their own markup and styling languages such that the website you've designed to work in one, wouldn't work in any of the others. That's crazy. It seems to me that not speaking the same language is an impediment to technological progress in AEC. 
+
+IFC-gen was created to make generating IFC-compliant software libraries easy, and to ease the updating and testing of those libraries with new releases of the IFC specification. To achieve this goal, IFC-gen has code generation at its core.  What do you want to build? A Python library? An [Open API](https://github.com/OAI/OpenAPI-Specification) specification? A [GraphQL](http://graphql.org) schema? Creating a generator for any of these is as easy as providing a new implementation of `ILanguageGenerator`.
+
+Because IFC is an incredibly broad data model, I have also set the goal of proposing a high-level API for building geometry which will use the generated libraries under the hood, but will provide an interface that is grokable by the lay user. This will most-likely become the focus of work when the underlying code generation mechanisms and STEP reading and writing facilities are stabilized.
+
+If IFC-gen isn't exactly what you're looking for, there are a few other great IFC projects that you might want to check out:
+- http://bimserver.org
+- http://ifcopenshell.org
+- https://github.com/jmirtsch/GeometryGymIFC
+- https://github.com/xBimTeam
+
 # Road Map
 - [x] ANTLR grammar for IFC EXPRESS.  
 - [x] `ExpressListener` to generate intermediate type data.  
@@ -20,9 +36,6 @@ For per-language build instruction, please see the language folder's `README`.
 - [ ] Minimum one local file storage back end and one db back end.
 - [ ] Support for WHERE statements.  
 - [ ] Support for DERIVE statements.  
-
-## Goal
-Accelerate the pace of development of IFC-based libraries and services by providing one EXPRESS-conformant grammar from which to generate ALL IFC libraries.
 
 ## Prerequisites
 
