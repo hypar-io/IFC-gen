@@ -59,58 +59,39 @@ namespace IFC4.Tests
 		[Fact]
 		public void ExampleModel_Deserialize_STEP()
 		{
-			var sw = new System.Diagnostics.Stopwatch();
-			sw.Start();
 			var stepPath = "../../../models/example.ifc";
 			IList<STEPError> errors;
 			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			sw.Stop();
-			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
 			var project = model.AllInstanceOfType<IfcProject>().FirstOrDefault();
-			Console.WriteLine(project.ToJSON());
 			ReportErrors(stepPath, errors);
 		}
 
 		[Fact]
 		public void ExampleModel_Serialize_STEP()
 		{
-			var sw = new System.Diagnostics.Stopwatch();
-			sw.Start();
 			var stepPath = "../../../models/example.ifc";
 			IList<STEPError> errors;
 			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			sw.Stop();
-			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model Example.ifc.");
-			sw.Start();
 			var outputPath = "../../../models/output.ifc";
 			File.WriteAllText(outputPath,model.ToSTEP(outputPath));
-			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for writing the model Example.ifc.");
 			ReportErrors(stepPath, errors);
 		}
 		
 		[Fact]
 		public void OfficeBuilding_Deserialize_STEP()
 		{
-			var sw = new System.Diagnostics.Stopwatch();
-			sw.Start();
 			var stepPath = "../../../models/AC-20-Smiley-West-10-Bldg.ifc";
 			IList<STEPError> errors;
 			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			sw.Stop();
-			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
 			ReportErrors(stepPath, errors);
 		}
 
 		[Fact]
 		public void Hospital_Deserialize_STEP()
 		{
-			var sw = new System.Diagnostics.Stopwatch();
-			sw.Start();
 			var stepPath = "../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc";
 			IList<STEPError> errors;
 			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			sw.Stop();
-			Console.WriteLine($"{sw.Elapsed.ToString()} elapsed for reading the model.");
 			ReportErrors(stepPath, errors);
 		}
 
