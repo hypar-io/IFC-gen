@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using IFC4;
 
@@ -145,11 +146,7 @@ namespace STEP
 
         public static string ToStepValue(this double value)
         {
-            if(value % 1 == 0){
-                return $"{value.ToString("G", new System.Globalization.CultureInfo("en-US"))}.";
-            }
-
-            return value.ToString("G", new System.Globalization.CultureInfo("en-US"));
+            return value.ToString("G9", CultureInfo.InvariantCulture);
         }
 
         public static string ToStepValue(this string value)
