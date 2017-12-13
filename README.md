@@ -34,8 +34,7 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 - [ ] Common BDD test suite with test implementations in all supported languages.
 - [ ] Package generation for all supported languages (i.e. Nuget package for IFC-dotnet).
 - [ ] Minimum one local file storage back end and one db back end.
-- [ ] Support for WHERE statements.  
-- [ ] Support for DERIVE statements.  
+- [ ] Support for reading and writing STEP files per [ISO 10303-21](https://en.wikipedia.org/wiki/ISO_10303-21).  
 
 ## Prerequisites
 
