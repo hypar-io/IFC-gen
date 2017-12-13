@@ -88,7 +88,7 @@ namespace IFC4
 
 			sw.Stop();
 			Console.WriteLine($"{sw.Elapsed} for serializing Document to STEP.");
-			
+
             return builder.ToString();
         }
 
@@ -154,7 +154,7 @@ END-ISO-10303-21;";
 				walker.Walk(listener, tree);
 
 				sw.Stop();
-				Console.WriteLine($"{sw.Elapsed} for parsing STEP file.");
+				Console.WriteLine($"{sw.Elapsed} for parsing STEP file {STEPfilePath}.");
 				sw.Reset();
 
 				sw.Start();
@@ -198,7 +198,7 @@ END-ISO-10303-21;";
 		{
 			var indent = string.Join("",Enumerable.Repeat("\t",level));
 
-			//Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
+			// Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
 
 			for(var i=0; i<data.Parameters.Count(); i++)
 			{
@@ -309,9 +309,14 @@ END-ISO-10303-21;";
 
 			// Construct the instance, assuming that all required sub-instances
 			// have already been constructed.
-			var instance = data.Constructor.Invoke(data.Parameters.ToArray()) as BaseIfc;
+			var instance = data.Constructor.Invoke(data.Parameters.ToArray());
+			
+			if(instance == null)
+			{
+				throw new Exception($"Could not construct an instance of {data.Constructor.DeclaringType} with parameters {data.Parameters}.");
+			}
 
-			if(instance == null){
+			if(instance as BaseIfc == null){
 				// A null instance here means that the instance was not BaseIfc.
 				// This is most likely an inline constructor. We don't store these
 				// and simply return.
@@ -319,7 +324,7 @@ END-ISO-10303-21;";
 			}
 
 			//Console.WriteLine($"Setting instanceDataMap[{data.Id}] constructed instance as {instance.Id} for type {instance.GetType().Name}.");
-			instances[data.Id].ConstructedInstance = instance;
+			instances[data.Id].ConstructedInstance = (BaseIfc)instance;
 
 			return instance;
 		}
