@@ -8,13 +8,12 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Transactions;
 using System.Collections.Generic;
 using IFC4.Storage;
 
 namespace IFC4
 {
-	public abstract class STEPError
+    public abstract class STEPError
 	{
 		protected int currId;
 
@@ -124,6 +123,7 @@ END-ISO-10303-21;";
 		/// Create a Model given a STEP file.
 		/// </summary>
 		/// <param name="STEPfilePath">The path to the STEP file.</param>
+		/// <param name="errors">A list of errors generated during creation of the Document.</param>
 		/// <returns>A Model.</returns>
 		/// <exception cref="FileNotFoundException">The specified file path does not exist.</exception>
 		public Document(string STEPfilePath, IStorageProvider storage, out IList<STEPError> errors)
@@ -186,13 +186,12 @@ END-ISO-10303-21;";
 
 		/// <summary>
 		/// Recursively construct instances provided instance data.
-		/// Construction is recursive because the instance data my include other
+		/// Construction is recursive because the instance data might include other
 		/// instance data or id references to instances which have not yet been
 		/// constructed.
 		/// </summary>
 		/// <param name="data">The instance data from which to construct the instance.</param>
 		/// <param name="instances">The dictionary containing instance data gathered from the parser.</param>
-		/// <param name="model">The Model in which constructed instances will be stored.</param>
 		/// <returns></returns>
 		private static object ConstructAndStoreInstance(STEP.InstanceData data, Dictionary<int,STEP.InstanceData> instances, int currLine, IList<STEPError> errors, int level)
 		{
@@ -316,16 +315,13 @@ END-ISO-10303-21;";
 				throw new Exception($"Could not construct an instance of {data.Constructor.DeclaringType} with parameters {data.Parameters}.");
 			}
 
-			if(instance as BaseIfc == null){
-				// A null instance here means that the instance was not BaseIfc.
-				// This is most likely an inline constructor. We don't store these
-				// and simply return.
-				return instance;
+			// Inline instances will have an id of -1. Don't store these.
+			// But DO return them to be used as constructor parameters.
+			if(data.Id != -1){
+				instances[data.Id].ConstructedInstance = (BaseIfc)instance;
 			}
 
 			//Console.WriteLine($"Setting instanceDataMap[{data.Id}] constructed instance as {instance.Id} for type {instance.GetType().Name}.");
-			instances[data.Id].ConstructedInstance = (BaseIfc)instance;
-
 			return instance;
 		}
 

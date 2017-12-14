@@ -95,6 +95,15 @@ namespace IFC4.Tests
 			ReportErrors(stepPath, errors);
 		}
 
+		[Fact]
+		public void PropertySet_Deserialize_STEP()
+		{
+			var stepPath = "../../../models/propertySet.ifc";
+			IList<STEPError> errors;
+			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
+			ReportErrors(stepPath, errors);
+		}
+
 		private void ReportErrors(string filePath, IEnumerable<STEPError> errors)
 		{	
 			if(!errors.Any())

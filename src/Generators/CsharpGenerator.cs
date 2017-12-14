@@ -68,7 +68,14 @@ namespace IFC4
 
 		public override string ToStepValue()
 		{
-			return $""#{Value.StepId}"";
+			if(Value is Select)
+			{
+				return $""{Value.Value.ToStepValue()}"";
+			}
+			else
+			{
+				return $""{Value.ToStepValue()}"";
+			}
 		}
 	}
 	";

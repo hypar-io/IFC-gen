@@ -53,15 +53,21 @@ namespace IFC4
 				//Console.WriteLine($"Could not construct instance of {select.Name} using a parameter of type {value.GetType()}");
 			}
 
+			// TODO: This is a really expensive recursive try/catch loop
+			// to find a working constructor. 
 			foreach(var t in select.BaseType.GetGenericArguments())
 			{
-				if(t.IsAssignableFrom(typeof(Select)))
+				try
 				{
 					var result = ReconstructSelectFromLeaf(t, value);
 					if(result != null)
 					{
 						return Activator.CreateInstance(select, new object[]{result});
 					}
+				}
+				catch
+				{
+					continue;
 				}
 			}
 
