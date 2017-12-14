@@ -38,7 +38,7 @@ namespace IFC4
 			return $"#{StepId} = {IfcClass}({this.GetStepParameters()});";
 		}
 
-		public virtual string ToStepValue()
+		public virtual string ToStepValue(bool isSelectOption = false)
 		{
 			return $"#{StepId}";
 		}
@@ -54,15 +54,15 @@ namespace IFC4
 		[JsonProperty("value")]
 		public dynamic Value {get;protected set;}
 
-		public override string ToStepValue()
+		public override string ToStepValue(bool isSelectOption = true)
 		{
 			if(Value is Select)
 			{
-				return $"{Value.Value.ToStepValue()}";
+				return $"{Value.Value.ToStepValue(isSelectOption)}";
 			}
 			else
 			{
-				return $"{Value.ToStepValue()}";
+				return $"{Value.ToStepValue(isSelectOption)}";
 			}
 		}
 	}
@@ -94,9 +94,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAbsorbedDoseMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -127,9 +134,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAccelerationMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -160,9 +174,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAmountOfSubstanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -193,9 +214,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAngularVelocityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -226,9 +254,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAreaDensityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -259,9 +294,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAreaMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -292,9 +334,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcBoolean>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -325,9 +374,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcBoxAlignment>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -358,9 +414,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCardinalPointReference>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -391,9 +454,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcComplexNumber>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -424,9 +494,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCompoundPlaneAngleMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -457,9 +534,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcContextDependentMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -490,9 +574,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCountMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -523,9 +614,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCurvatureMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -556,9 +654,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDate>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -589,9 +694,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDateTime>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -622,9 +734,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDayInMonthNumber>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -655,9 +774,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDayInWeekNumber>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -688,9 +814,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDescriptiveMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -721,9 +854,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDimensionCount>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -754,9 +894,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDoseEquivalentMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -787,9 +934,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDuration>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -820,9 +974,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDynamicViscosityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -853,9 +1014,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricCapacitanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -886,9 +1054,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricChargeMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -919,9 +1094,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricConductanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -952,9 +1134,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricCurrentMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -985,9 +1174,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricResistanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1018,9 +1214,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricVoltageMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1051,9 +1254,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcEnergyMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1084,9 +1294,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontStyle>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1117,9 +1334,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontVariant>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1150,9 +1374,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontWeight>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1183,9 +1414,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcForceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1216,9 +1454,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFrequencyMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1249,9 +1494,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcGloballyUniqueId>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1282,9 +1534,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcHeatFluxDensityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1315,9 +1574,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcHeatingValueMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1348,9 +1614,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIdentifier>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1381,9 +1654,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIlluminanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1414,9 +1694,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcInductanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1447,9 +1734,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcInteger>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1480,9 +1774,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIntegerCountRateMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1513,9 +1814,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIonConcentrationMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1546,9 +1854,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIsothermalMoistureCapacityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1579,9 +1894,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcKinematicViscosityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1612,9 +1934,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLabel>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1645,9 +1974,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLanguageId>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1678,9 +2014,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLengthMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1711,9 +2054,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearForceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1744,9 +2094,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearMomentMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1777,9 +2134,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearStiffnessMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1810,9 +2174,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearVelocityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1843,9 +2214,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLogical>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1876,9 +2254,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousFluxMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1909,9 +2294,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousIntensityDistributionMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1942,9 +2334,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousIntensityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -1975,9 +2374,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMagneticFluxDensityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2008,9 +2414,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMagneticFluxMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2041,9 +2454,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassDensityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2074,9 +2494,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassFlowRateMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2107,9 +2534,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2140,9 +2574,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassPerLengthMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2173,9 +2614,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfElasticityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2206,9 +2654,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfLinearSubgradeReactionMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2239,9 +2694,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2272,9 +2734,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2305,9 +2774,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMoistureDiffusivityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2338,9 +2814,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMolecularWeightMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2371,9 +2854,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMomentOfInertiaMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2404,9 +2894,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMonetaryMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2437,9 +2934,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMonthInYearNumber>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2470,9 +2974,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNonNegativeLengthMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2503,9 +3014,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNormalisedRatioMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2536,9 +3054,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNumericMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2569,9 +3094,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPHMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2602,9 +3134,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcParameterValue>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2635,9 +3174,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPlanarForceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2668,9 +3214,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPlaneAngleMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2701,9 +3254,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositiveLengthMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2734,9 +3294,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositivePlaneAngleMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2767,9 +3334,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositiveRatioMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2800,9 +3374,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPowerMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2833,9 +3414,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPresentableText>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2866,9 +3454,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPressureMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2899,9 +3494,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSet>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2932,9 +3534,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRadioActivityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2965,9 +3574,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRatioMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -2998,9 +3614,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcReal>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3031,9 +3654,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalFrequencyMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3064,9 +3694,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalMassMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3097,9 +3734,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalStiffnessMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3130,9 +3774,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSectionModulusMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3163,9 +3814,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSectionalAreaIntegralMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3196,9 +3854,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcShearModulusMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3229,9 +3894,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSolidAngleMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3262,9 +3934,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPowerLevelMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3295,9 +3974,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPowerMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3328,9 +4014,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPressureLevelMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3361,9 +4054,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPressureMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3394,9 +4094,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecificHeatCapacityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3427,9 +4134,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecularExponent>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3460,9 +4174,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecularRoughness>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3493,9 +4214,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTemperatureGradientMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3526,9 +4254,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTemperatureRateOfChangeMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3559,9 +4294,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcText>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3592,9 +4334,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextAlignment>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3625,9 +4374,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextDecoration>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3658,9 +4414,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextFontName>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3691,9 +4454,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextTransformation>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3724,9 +4494,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalAdmittanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3757,9 +4534,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalConductivityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3790,9 +4574,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalExpansionCoefficientMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3823,9 +4614,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalResistanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3856,9 +4654,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalTransmittanceMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3889,9 +4694,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermodynamicTemperatureMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3922,9 +4734,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTime>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3955,9 +4774,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTimeMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -3988,9 +4814,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTimeStamp>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4021,9 +4854,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTorqueMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4054,9 +4894,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcURIReference>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4087,9 +4934,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVaporPermeabilityMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4120,9 +4974,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVolumeMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4153,9 +5014,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVolumetricFlowRateMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4186,9 +5054,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcWarpingConstantMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 
@@ -4219,9 +5094,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcWarpingMomentMeasure>(json);
 		}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {
-            return value.ToStepValue();
+			if(isSelectOption)
+			{
+				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
+			}
+			else
+			{
+				return value.ToStepValue(isSelectOption);
+			}
         }
 	}
 

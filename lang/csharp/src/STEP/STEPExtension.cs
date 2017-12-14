@@ -11,18 +11,18 @@ namespace STEP
     /// </summary>
     public static class STEPExtensions
     {
-        public static string ToStepValue(this IEnumerable<IConvertibleToSTEP> list)
+        public static string ToStepValue(this IEnumerable<IConvertibleToSTEP> list, bool isSelectOption = false)
         {
             List<string> values = new List<string>();
             foreach (var item in list)
             {
-                values.Add(item.ToStepValue());
+                values.Add(item.ToStepValue(isSelectOption));
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
         }
 
-        public static string ToStepValue(this IEnumerable<IEnumerable<IConvertibleToSTEP>> lists)
+        public static string ToStepValue(this IEnumerable<IEnumerable<IConvertibleToSTEP>> lists, bool isSelectOption = false)
         {
             var values = new List<string>();
             foreach (var list in lists)
@@ -30,7 +30,7 @@ namespace STEP
                 List<string> subValues = new List<string>();
                 foreach (var item in list)
                 {
-                    subValues.Add(item.ToStepValue());
+                    subValues.Add(item.ToStepValue(isSelectOption));
                 }
                 values.Add("(" + string.Join(", ", subValues.ToArray()) + ")");
                 subValues.Clear();
@@ -39,40 +39,40 @@ namespace STEP
             return $"({string.Join(", ", values.ToArray())})";
         }
 
-        public static string ToStepValue(this IEnumerable<int> list)
+        public static string ToStepValue(this IEnumerable<int> list, bool isSelectOption = false)
         {
             List<string> values = new List<string>();
             foreach (var item in list)
             {
-                values.Add(item.ToStepValue());
+                values.Add(item.ToStepValue(isSelectOption));
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
         }
 
-        public static string ToStepValue(this IEnumerable<double> list)
+        public static string ToStepValue(this IEnumerable<double> list, bool isSelectOption = false)
         {
             List<string> values = new List<string>();
             foreach (var item in list)
             {
-                values.Add(item.ToStepValue());
+                values.Add(item.ToStepValue(isSelectOption));
             }
             if (values.Count == 0) return "$";
             return "(" + string.Join(", ", values.ToArray()) + ")";
         }
 
-        public static string ToStepValue(this IEnumerable<byte[]> list)
+        public static string ToStepValue(this IEnumerable<byte[]> list, bool isSelectOption = false)
         {
             List<string> values = new List<string>();
             foreach (var item in list)
             {
-                values.Add(item.ToStepValue());
+                values.Add(item.ToStepValue(isSelectOption));
             }
             if (values.Count == 0) return "$";
             return $"({string.Join(", ", values.ToArray())})";
         }
 
-        public static string ToStepValue(this IEnumerable<IEnumerable<int>> lists)
+        public static string ToStepValue(this IEnumerable<IEnumerable<int>> lists, bool isSelectOption = false)
         {
             var values = new List<string>();
             foreach (var list in lists)
@@ -80,7 +80,7 @@ namespace STEP
                 List<string> subValues = new List<string>();
                 foreach (int item in list)
                 {
-                    subValues.Add(item.ToStepValue());
+                    subValues.Add(item.ToStepValue(isSelectOption));
                 }
                 values.Add($"({string.Join(", ", subValues.ToArray())})");
                 subValues.Clear();
@@ -89,7 +89,7 @@ namespace STEP
             return $"({string.Join(", ", values.ToArray())})";
         }
 
-        public static string ToStepValue(this IEnumerable<IEnumerable<double>> lists)
+        public static string ToStepValue(this IEnumerable<IEnumerable<double>> lists, bool isSelectOption = false)
         {
             var values = new List<string>();
             foreach (var list in lists)
@@ -97,7 +97,7 @@ namespace STEP
                 List<string> subValues = new List<string>();
                 foreach (double item in list)
                 {
-                    subValues.Add(item.ToStepValue());
+                    subValues.Add(item.ToStepValue(isSelectOption));
                 }
                 values.Add($"({string.Join(", ", subValues.ToArray())})");
                 subValues.Clear();
@@ -106,19 +106,19 @@ namespace STEP
             return $"({string.Join(", ", values.ToArray())})";
         }
 
-        public static string ToStepValue(this bool value)
+        public static string ToStepValue(this bool value, bool isSelectOption = false)
         {
             if (value)
             {
-                return ".TRUE.";
+                return ".T.";
             }
             else
             {
-                return ".FALSE.";
+                return ".F.";
             }
         }
 
-        public static string ToStepValue(this bool? value)
+        public static string ToStepValue(this bool? value, bool isSelectOption = false)
         {
             if (value == null)
             {
@@ -126,35 +126,35 @@ namespace STEP
             }
             else if (value == true)
             {
-                return ".TRUE.";
+                return ".T.";
             }
             else
             {
-                return ".FALSE.";
+                return ".F.";
             }
         }
 
-        public static string ToStepValue(this int value)
+        public static string ToStepValue(this int value, bool isSelectOption = false)
         {
             return value.ToString();
         }
 
-        public static string ToStepValue(this byte[] value)
+        public static string ToStepValue(this byte[] value, bool isSelectOption = false)
         {
             return value.ToString();
         }
 
-        public static string ToStepValue(this double value)
+        public static string ToStepValue(this double value, bool isSelectOption = false)
         {
             return value.ToString("G9", CultureInfo.InvariantCulture);
         }
 
-        public static string ToStepValue(this string value)
+        public static string ToStepValue(this string value, bool isSelectOption = false)
         {
             return "'" + value.ToString() + "'";
         }
 
-        public static string ToStepValue(this Enum value)
+        public static string ToStepValue(this Enum value, bool isSelectOption = false)
         {
             return "." + value.ToString() + ".";
         }

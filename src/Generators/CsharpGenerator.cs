@@ -50,7 +50,7 @@ namespace IFC4
 			return $""#{StepId} = {IfcClass}({this.GetStepParameters()});"";
 		}
 
-		public virtual string ToStepValue()
+		public virtual string ToStepValue(bool isSelectOption = false)
 		{
 			return $""#{StepId}"";
 		}
@@ -66,15 +66,15 @@ namespace IFC4
 		[JsonProperty(""value"")]
 		public dynamic Value {get;protected set;}
 
-		public override string ToStepValue()
+		public override string ToStepValue(bool isSelectOption = true)
 		{
 			if(Value is Select)
 			{
-				return $""{Value.Value.ToStepValue()}"";
+				return $""{Value.Value.ToStepValue(isSelectOption)}"";
 			}
 			else
 			{
-				return $""{Value.ToStepValue()}"";
+				return $""{Value.ToStepValue(isSelectOption)}"";
 			}
 		}
 	}
@@ -161,9 +161,16 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
 
-		public string ToStepValue()
+		public string ToStepValue(bool isSelectOption = false)
         {{
-            return value.ToStepValue();
+			if(isSelectOption)
+			{{
+				return $""{{GetType().Name.ToUpper()}}({{value.ToStepValue(isSelectOption)}})"";
+			}}
+			else
+			{{
+				return value.ToStepValue(isSelectOption);
+			}}
         }}
 	}}
 ";
