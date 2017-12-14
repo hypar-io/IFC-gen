@@ -7,7 +7,7 @@ using IFC4;
 namespace STEP
 {
     /// <summary>
-    /// An extention to write lists to STEP
+    /// Extensions for writing objects to STEP.
     /// </summary>
     public static class STEPExtensions
     {
