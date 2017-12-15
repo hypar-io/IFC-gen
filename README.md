@@ -53,3 +53,6 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 Language generators implement the `ILanguageGenerator` interface. You can find implementations of `ILanguageGenerator` in `/Generators`. To create your own language generator do the following:
 - Place an implementation of `ILanguageGenerator` in `/Generators`.
 - Extend the command line options parsing in `Program.cs` to support your target language.
+
+## Debugging the Parser
+Due to the size of the IFC schema, debugging the parser can be painful. I recommend creating a `debug.exp` in the root directory that contains only the entities that you are trying to debug, then using `make debug_parser`. This make step will generate the parser based on the debug schema, and will run `IFC-gen` outputting tokens to the console for debugging. 
