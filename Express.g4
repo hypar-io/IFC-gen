@@ -41,7 +41,8 @@ arrayType
 	;
 
 assignmentStmt
-	: varRef ':=' expression ';'
+	: varRef ':=' (expression|derivedPath|'[]') ';' // IFC Allow assignment of derived path value. Ex: V1  := IfcNormalise(Arg1)\IfcDirection.DirectionRatios;
+													// IFC Allow assignment of empty array. Ex: Surfs := [];
 	;
 
 attrDef
@@ -113,6 +114,7 @@ collectionTypeSel
 	: collectionType
 	| namedType
 	| simpleType
+	| genericType // IFC Generic types in collections. Ex: ARRAY [Low1:U1] OF ARRAY [Low2:U2] OF GENERIC : T
 	;
 
 compoundStmt
@@ -339,7 +341,9 @@ incrementControl
 	;
 
 init
-	: ':=' (expression | '[]')	// IFC Empty collection initialization. Ex: NamedUnitNames : SET OF IfcUnitEnum := [];
+	: ':=' (expression | '[]' | UNKNOWN)	// IFC Empty collection initialization. Ex: NamedUnitNames : SET OF IfcUnitEnum := [];
+											// IFC Allow assignment to UNKNOWN. Ex: P : LOGICAL := UNKNOWN;
+
 	;
 
 integerType
@@ -861,7 +865,7 @@ NOT : 'NOT' ;
 NUMBER : 'NUMBER' ;
 NVL : 'NVL' ;
 ODD : 'ODD' ;
-OF : 'OF' ;
+OF : 'OF' | 'Of' ; // IFC Inconsistent capitalization. Ex: (UnitElements : SET [1:?] Of IfcDerivedUnitElement)
 ONEOF : 'ONEOF' ;
 OPTIONAL : 'OPTIONAL' ;
 OR : 'OR' ;
@@ -914,13 +918,13 @@ SimpleId
 
 fragment
 PathFragment
-	: SimpleId ('.' SimpleId|'[' IntegerLiteral ']')*
-	| SimpleId ('.' SimpleId|'[' IndexExpr ']')*
+	: SimpleId ('.' SimpleId | IndexExpr)*
 	;
 
 // IFC Added to support indexing operationg Ex: Knots[i-1]
+fragment
 IndexExpr
-	: (SimpleId|IntegerLiteral) ('+'|'-') (SimpleId|IntegerLiteral) 
+	: SimpleId '[' (SimpleId|IntegerLiteral) (('+'|'-') (SimpleId|IntegerLiteral))* ']'
 	;
 
 Path
