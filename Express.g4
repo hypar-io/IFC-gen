@@ -55,6 +55,7 @@ attributes
 
 attrRef
 	: SimpleId
+	| Path // IFC: Ex: U[2].DirectionRatios[1] := -U[2].DirectionRatios[1];
 	;
 
 bagType
@@ -186,6 +187,13 @@ derivedRedef
 	: attrRef ':' collectionTypeSel init ';'
 	;
 
+// IFC Ex: IfcNormalise(IfcCrossProduct(D1,D2))\IfcVector.Orientation
+// This is a path whose first fragment is an expression, and whose
+// second fragment is a path to the property on the resulting object.
+derivedPath
+	: expression '\\' Path
+	;
+
 domainRule
 	: labelDef ':' logicalExpr
 	;
@@ -196,8 +204,10 @@ domainRules
 
 element
 	: expression ':' repetition
-	| StringLiteral // IFC: ['thing1','thing2']
-	| RealLiteral // IFC: [0.0,1.0]
+	| StringLiteral // IFC: Ex: ['thing1','thing2']
+	| RealLiteral // IFC: Ex: [0.0,1.0]
+	| expression // IFC expressions in aggregate literals.
+	| derivedPath // IFC derived paths in aggregate literals.
 	;
 
 embeddedRemark
@@ -270,7 +280,7 @@ factor
 	;
 
 formalParam
-	: paramDef (',' paramDef)* ':' allTypeSel
+	: paramDef (',' paramDef)* ':' ((('Generic' ':')? allTypeSel)|collectionType) //IFC parameter type can be collection. Ex: UnitElements : SET [1:?] OF IfcDerivedUnitElement
 	;
 
 formalParams	
@@ -282,7 +292,7 @@ funcDef
 	;
 
 funcHead
-	: FUNCTION funcDef formalParams* ':' allTypeSel ';'
+	: FUNCTION funcDef formalParams* ':' ('Generic' ':')? (allTypeSel | listType) ';' // IFC allow listType and Generic
 	;
 
 funcRef
@@ -329,7 +339,7 @@ incrementControl
 	;
 
 init
-	: ':=' expression
+	: ':=' (expression | '[]')	// IFC Empty collection initialization. Ex: NamedUnitNames : SET OF IfcUnitEnum := [];
 	;
 
 integerType
@@ -393,7 +403,7 @@ localRules
 	;
 
 localVar
-	: varDef (',' varDef)* ';' collectionTypeSel init? ';'
+	: varDef (',' varDef)* ':' (collectionTypeSel|conformantType) init? ';' // IFC Conformant types as local variables. Ex: NamedUnitNames : SET OF IfcUnitEnum := [];
 	;
 
 logicalExpr
@@ -521,6 +531,7 @@ repetition
 
 returnStmt
 	: RETURN ('(' expression ')')? ';'
+	| RETURN ('(' UNKNOWN ')')? ';'	// IFC Ex: RETURN (UNKNOWN);
 	;
 
 ruleDecl
@@ -685,7 +696,10 @@ tailRemark
 
 term
 	: factor (('*'|'/'|DIV|MOD|AND|'||') factor)*
+	| TRUE	// IFC Allow TRUE and FALSE Ex: Result : BOOLEAN := TRUE;
+	| FALSE
 	| Path
+	| arrayType
 	;
 
 typeBody
@@ -901,6 +915,12 @@ SimpleId
 fragment
 PathFragment
 	: SimpleId ('.' SimpleId|'[' IntegerLiteral ']')*
+	| SimpleId ('.' SimpleId|'[' IndexExpr ']')*
+	;
+
+// IFC Added to support indexing operationg Ex: Knots[i-1]
+IndexExpr
+	: (SimpleId|IntegerLiteral) ('+'|'-') (SimpleId|IntegerLiteral) 
 	;
 
 Path
@@ -972,10 +992,6 @@ Comments
 // IFC: Skip rules
 Rules
 	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
-
-// IFC: Skip functions
-Functions
-	: 'FUNCTION ' SimpleId .*? 'END_FUNCTION;' -> skip ;
 
 
 
