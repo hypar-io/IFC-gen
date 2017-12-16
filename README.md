@@ -2,8 +2,6 @@
 
 # IFC-gen is EXPERIMENTAL currently. I appreciate pull requests, but collaborators should expect that breaking changes may occur.
 
-# IFC-gen  
-
 IFC-gen is a library for generating an IFC library for use in the language of your choice. The code generator uses [ANTLR](http://www.antlr.org) to parse the `Express.g4` grammar file and generate a parser. The parser is capable of reading the IFC object model as described in EXPRESS format in `IFC4.exp`. In addition, IFC-gen uses the STEP grammar described in `STEP.g4` to generate a STEP parser whose generated files are output in the target language directory. The code generator is a dotnet core project containing an interface, `ILanguageGenerator`, which is implemented by classes which generate code.
 
 Source files for each target language can be found in the directory corresponding to the language's name. For example, the source code for the C# IFC library generator can be found in the `/lang/csharp` folder. 
@@ -26,7 +24,7 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 - https://github.com/jmirtsch/GeometryGymIFC
 - https://github.com/xBimTeam
 
-# Road Map
+## Road Map
 - [x] ANTLR grammar for IFC EXPRESS.  
 - [x] `ExpressListener` to generate intermediate type data.  
 - [x] CI/CD integration with Travis.
@@ -48,6 +46,9 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 
 ### For Windows
 `make.bat`
+
+## Contributing
+Check out issues marked [help wanted](https://github.com/ikeough/IFC-gen/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 
 ## Creating a Language Generator
 Language generators implement the `ILanguageGenerator` interface. You can find implementations of `ILanguageGenerator` in `/Generators`. To create your own language generator do the following:
