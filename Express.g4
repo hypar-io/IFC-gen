@@ -539,7 +539,7 @@ returnStmt
 	;
 
 ruleDecl
-	: ruleHead prolog stmts domainRules END_RULE ';'
+	: ruleHead prolog stmts? domainRules END_RULE ';' // IFC Statements are optional in rules.
 	;
 
 ruleDef
@@ -997,8 +997,8 @@ Comments
 	: '(*' .*? '*)' -> skip ;
 
 // IFC: Skip rules
-Rules
-	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
+// Rules
+//	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
 
 
 
