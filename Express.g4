@@ -282,7 +282,7 @@ factor
 	;
 
 formalParam
-	: paramDef (',' paramDef)* ':' ((('Generic' ':')? allTypeSel)|collectionType) //IFC parameter type can be collection. Ex: UnitElements : SET [1:?] OF IfcDerivedUnitElement
+	: paramDef (',' paramDef)* ':' (allTypeSel|collectionType) //IFC parameter type can be collection. Ex: UnitElements : SET [1:?] OF IfcDerivedUnitElement
 	;
 
 formalParams	
@@ -294,7 +294,7 @@ funcDef
 	;
 
 funcHead
-	: FUNCTION funcDef formalParams* ':' ('Generic' ':')? (allTypeSel | listType) ';' // IFC allow listType and Generic
+	: FUNCTION funcDef formalParams* ':' (allTypeSel | listType) ';' // IFC allow listType.
 	;
 
 funcRef
@@ -842,7 +842,10 @@ FOR : 'FOR' ;
 FORMAT : 'FORMAT' ;
 FROM : 'FROM' ;
 FUNCTION : 'FUNCTION' ;
-GENERIC : 'GENERIC' ;
+GENERIC 
+	: 'GENERIC' 
+	| 'Generic' 
+	;
 HIBOUND : 'HIBOUND' ;
 HIINDEX : 'HIINDEX' ;
 IF : 'IF' ;
