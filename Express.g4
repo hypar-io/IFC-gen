@@ -294,7 +294,7 @@ funcDef
 	;
 
 funcHead
-	: FUNCTION funcDef formalParams* ':' (allTypeSel | listType) ';' // IFC allow listType.
+	: FUNCTION funcDef formalParams* ':' (allTypeSel | listType | arrayType | setType) ';' // IFC allow list, array, and set types.
 	;
 
 funcRef
