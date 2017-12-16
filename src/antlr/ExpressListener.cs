@@ -452,6 +452,16 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitDerivedRedef([NotNull] ExpressParser.DerivedRedefContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.derivedPath"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterDerivedPath([NotNull] ExpressParser.DerivedPathContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.derivedPath"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitDerivedPath([NotNull] ExpressParser.DerivedPathContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.domainRule"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

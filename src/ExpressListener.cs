@@ -13,13 +13,20 @@ namespace Express
 
 		private ITestGenerator testGenerator;
 
-		private Dictionary<string,TypeData> typeGraph = new Dictionary<string,TypeData>();
+		private Dictionary<string,TypeData> typeData = new Dictionary<string,TypeData>();
 
-		public Dictionary<string,TypeData> TypeGraph{
-			get{return typeGraph;}
+		private Dictionary<string,FunctionData> functionData = new Dictionary<string, FunctionData>();
+
+		public Dictionary<string,TypeData> TypeData{
+			get{return typeData;}
 		}
 
-		private TypeData currTypeData;
+        public Dictionary<string, FunctionData> FunctionData 
+		{ 
+			get{return functionData;} 
+		}
+
+        private TypeData currTypeData;
 
 		private List<AttributeData> currAttrDatas = new List<AttributeData>();
 
@@ -37,7 +44,7 @@ namespace Express
 		public override void ExitSchemaDecl(ExpressParser.SchemaDeclContext context)
 		{	
 			// Set the IsRelationshipReference on all attribute data.
-			foreach(var td in typeGraph.Values.Where(td=>td is Entity).Cast<Entity>())
+			foreach(var td in typeData.Values.Where(td=>td is Entity).Cast<Entity>())
 			{
 				if(!td.Subs.Any())
 				{
@@ -80,7 +87,7 @@ namespace Express
 			}
 
 			currTypeData = td;
-			typeGraph.Add(name, td);
+			typeData.Add(name, td);
 		}
 
 		public override void ExitSimpleType(ExpressParser.SimpleTypeContext context)
@@ -156,14 +163,14 @@ namespace Express
 		{
 			var name = context.entityDef().SimpleId().GetText();
 
-			if(typeGraph.ContainsKey(name))
+			if(typeData.ContainsKey(name))
 			{
-				currTypeData = (Entity)typeGraph[name];
+				currTypeData = (Entity)typeData[name];
 			}
 			else
 			{
 				currTypeData = new Entity(name, generator, testGenerator);
-				typeGraph.Add(name, currTypeData);
+				typeData.Add(name, currTypeData);
 			}
 		}
 
@@ -179,14 +186,14 @@ namespace Express
 				{
 					var name = superRef.supertypeFactor()[0].entityRef().SimpleId().GetText();
 					Entity tdSuper = null;
-					if(typeGraph.ContainsKey(name))
+					if(typeData.ContainsKey(name))
 					{
-						tdSuper = (Entity)typeGraph[name];
+						tdSuper = (Entity)typeData[name];
 					}
 					else
 					{
 						tdSuper = new Entity(name, generator, testGenerator);
-						typeGraph.Add(name, tdSuper);
+						typeData.Add(name, tdSuper);
 					}
 					((Entity)currTypeData).Supers.Add(tdSuper);
 				}
@@ -199,14 +206,14 @@ namespace Express
 			{
 				var name = subRef.SimpleId().GetText();
 				Entity tdSub = null;
-				if(typeGraph.ContainsKey(name))
+				if(typeData.ContainsKey(name))
 				{
-					tdSub = (Entity)typeGraph[name];
+					tdSub = (Entity)typeData[name];
 				}
 				else
 				{
 					tdSub = new Entity(name, generator, testGenerator);
-					typeGraph.Add(name, tdSub);
+					typeData.Add(name, tdSub);
 				}
 				((Entity)currTypeData).Subs.Add(tdSub);
 			}
@@ -281,6 +288,12 @@ namespace Express
 		public override void ExitEntityDecl(ExpressParser.EntityDeclContext context)
 		{
 			currTypeData = null;
+		}
+
+		public override void EnterFuncHead(ExpressParser.FuncHeadContext context)
+		{
+			var name = context.funcDef().SimpleId().GetText();
+			functionData.Add(context.funcDef().SimpleId().GetText(), new Express.FunctionData(name));
 		}
 	}
 }

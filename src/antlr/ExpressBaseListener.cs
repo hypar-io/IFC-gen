@@ -540,6 +540,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitDerivedRedef([NotNull] ExpressParser.DerivedRedefContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.derivedPath"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterDerivedPath([NotNull] ExpressParser.DerivedPathContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.derivedPath"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitDerivedPath([NotNull] ExpressParser.DerivedPathContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.domainRule"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>

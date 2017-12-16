@@ -18,6 +18,7 @@ namespace IFC.Generate
 		private static string outDirTests;
 		private static string expressPath;
 		private static bool showHelp;
+		private static bool outputTokens;
 
 		static void Main(string[] args)
 		{
@@ -26,12 +27,13 @@ namespace IFC.Generate
 				return;
 			}
 
-			var generators = new List<Tuple<ILanguageGenerator, ITestGenerator>>();
+			var generators = new List<Tuple<ILanguageGenerator, ITestGenerator, IFunctionsGenerator>>();
 
 			if(language == "csharp"){
-				generators.Add(new Tuple<ILanguageGenerator, ITestGenerator>(new CsharpLanguageGenerator(), new CsharpTestGenerator()));
+				generators.Add(new Tuple<ILanguageGenerator, ITestGenerator, IFunctionsGenerator>(
+					new CsharpLanguageGenerator(), new CsharpTestGenerator(), new CsharpFunctionsGenerator()));
 			}else if(language == "proto"){
-				generators.Add(new Tuple<ILanguageGenerator, ITestGenerator>(new ProtobufGenerator(), new ProtobufTestGenerator()));
+				generators.Add(new Tuple<ILanguageGenerator, ITestGenerator, IFunctionsGenerator>(new ProtobufGenerator(), new ProtobufTestGenerator(), null));
 			}
 
 			using (FileStream fs = new FileStream(expressPath, FileMode.Open))
@@ -51,20 +53,25 @@ namespace IFC.Generate
 				foreach(var generator in generators){
 					var listener = new Express.ExpressListener(generator.Item1, generator.Item2);
 					walker.Walk(listener, tree);
-					Generate(listener, outDir, outDirTests, generator.Item1, generator.Item2);
+					Generate(listener, outDir, outDirTests, generator.Item1, generator.Item2, generator.Item3);
 				}
 				
-				// Write tokens to a file for debugging.
-				/*var tokenStr = new StringBuilder();
+				if(!outputTokens)
+				{
+					return;
+				}
+				
+				var tokenStr = new StringBuilder();
 				foreach(var t in tokens.GetTokens())
 				{
 					tokenStr.AppendLine(t.ToString());
 				}
-				File.WriteAllText("tokens.txt",tokenStr.ToString());*/
+				Console.WriteLine(tokenStr);
 			}
 		}
 
-		private static void Generate(Express.ExpressListener listener, string outDir, string outDirTests, ILanguageGenerator generator, ITestGenerator testGenerator){
+		private static void Generate(Express.ExpressListener listener, string outDir, string outDirTests, 
+		ILanguageGenerator generator, ITestGenerator testGenerator, IFunctionsGenerator functionsGenerator){
 			var codePath = Path.Combine(outDir, generator.FileName);
 			var testPath = Path.Combine(outDirTests, testGenerator.FileName);
 
@@ -73,7 +80,7 @@ namespace IFC.Generate
 
 			codeSb.AppendLine(generator.Begin());
 			testSb.AppendLine(testGenerator.Begin());
-			foreach(var kvp in listener.TypeGraph)
+			foreach(var kvp in listener.TypeData)
 			{
 				var td = kvp.Value;
 				codeSb.AppendLine(td.ToString());
@@ -89,6 +96,12 @@ namespace IFC.Generate
 
 			File.WriteAllText(codePath,codeSb.ToString());
 			File.WriteAllText(testPath,testSb.ToString());
+
+			if(functionsGenerator != null)
+			{	
+				var functionsPath = Path.Combine(outDir, functionsGenerator.FileName);
+				File.WriteAllText(functionsPath, functionsGenerator.Generate(listener.FunctionData.Values));
+			}
 		}
 
 		private static void ParseOptions(string[] args){
@@ -97,6 +110,7 @@ namespace IFC.Generate
 				{ "o|output=", "The directory in which the code is generated.", v => outDir = v},
 				{ "t|test=", "The directory in which the test code is generated.", v => outDirTests = v},
 				{ "l|language=", "The target language (csharp)", v => language = v},
+				{ "p|tokens", "Output tokens to stdout during parsing.", v => outputTokens = v != null},
 				{ "h|help",   v => showHelp = v != null },
 			};
 			

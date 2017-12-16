@@ -324,4 +324,14 @@ namespace Express
 			return testGenerator.EntityTest(this);
 		}
 	}
+
+	public class FunctionData
+	{
+		public string Name{get;set;}
+
+		public FunctionData(string name)
+		{
+			Name = name;
+		}
+	}
 }
