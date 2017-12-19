@@ -282,7 +282,7 @@ factor
 	;
 
 formalParam
-	: paramDef (',' paramDef)* ':' (allTypeSel|collectionType) //IFC parameter type can be collection. Ex: UnitElements : SET [1:?] OF IfcDerivedUnitElement
+	: paramDef (',' paramDef)* ':' returnTypeChoice //IFC parameter type can be collection. Ex: UnitElements : SET [1:?] OF IfcDerivedUnitElement
 	;
 
 formalParams	
@@ -294,7 +294,12 @@ funcDef
 	;
 
 funcHead
-	: FUNCTION funcDef formalParams* ':' (allTypeSel | listType | arrayType | setType) ';' // IFC allow list, array, and set types.
+	: FUNCTION funcDef formalParams* ':' returnTypeChoice ';' // IFC allow list, array, and set types.
+	;
+
+returnTypeChoice
+	: allTypeSel
+	| collectionType
 	;
 
 funcRef
