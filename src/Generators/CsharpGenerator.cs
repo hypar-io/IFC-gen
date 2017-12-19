@@ -102,13 +102,13 @@ namespace IFC4
             return string.Empty;
         }
 
-        public string AttributeDataType(AttributeData data)
+        public string AttributeDataType(bool isCollection, int rank, string type)
         {
-            if (data.IsCollection)
+            if (isCollection)
             {
-                return $"{string.Join("", Enumerable.Repeat("List<", data.Rank))}{data.type}{string.Join("", Enumerable.Repeat(">", data.Rank))}";
+                return $"{string.Join("", Enumerable.Repeat("List<", rank))}{type}{string.Join("", Enumerable.Repeat(">", rank))}";
             }
-            return data.type;
+            return type;
         }
 
         public string AttributeDataString(AttributeData data)
@@ -133,16 +133,16 @@ namespace IFC4
             return step;
         }
 
-        private string WrappedType(SimpleType data)
+        private string WrappedType(WrapperType data)
         {
             if (data.IsCollectionType)
             {
-                return $"{string.Join("", Enumerable.Repeat("List<", data.Rank))}{data.wrappedType}{string.Join("", Enumerable.Repeat(">", data.Rank))}";
+                return $"{string.Join("", Enumerable.Repeat("List<", data.Rank))}{data.WrappedType}{string.Join("", Enumerable.Repeat(">", data.Rank))}";
             }
-            return data.wrappedType;
+            return data.WrappedType;
         }
 
-        public string SimpleTypeString(SimpleType data)
+        public string SimpleTypeString(WrapperType data)
         {
             var result =
     $@"	/// <summary>
@@ -350,7 +350,7 @@ $@"
             get { return "IFC.tests.g.cs"; }
         }
 
-        public string ParseType(ExpressParser.SimpleTypeContext context)
+        public string ParseSimpleType(ExpressParser.SimpleTypeContext context)
         {
             var type = string.Empty;
             if (context.binaryType() != null)
