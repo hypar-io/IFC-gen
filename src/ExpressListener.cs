@@ -44,10 +44,11 @@ namespace Express
 			TypeData td = null;
 			int rank = 0;
 			bool returnsCollection = false;
+			var isGeneric = false;
 
 			if(context.typeSel().collectionType() != null)
 			{
-				var wrappedType = ParseCollectionType(context.typeSel().collectionType(), ref rank, ref returnsCollection);
+				var wrappedType = ParseCollectionType(context.typeSel().collectionType(), ref rank, ref returnsCollection, ref isGeneric);
 				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
 			}
 			else if(context.typeSel().simpleType() != null)
@@ -154,6 +155,7 @@ namespace Express
 							var rank = 0;
 							var isCollection = false;
 							var name = "";
+							var isGeneric = false;
 							if(attrDef.SimpleId() != null)
 							{
 								name = attrDef.SimpleId().GetText();
@@ -162,8 +164,8 @@ namespace Express
 							{
 								name = attrDef.Path().GetText();
 							}
-							var type = ParseCollectionTypeSel(expl.explDef().collectionTypeSel(), ref rank, ref isCollection);
-							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, optional, false);
+							var type = ParseCollectionTypeSel(expl.explDef().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, isGeneric, false, optional, false);
 							entity.Attributes.Add(ad);
 
 							if(ad.Type == null)
@@ -178,6 +180,7 @@ namespace Express
 						var isCollection = false;
 						var name = "";
 						var attrRef = expl.explRedef().attrRef();
+						var isGeneric = false;
 						if(attrRef.SimpleId() != null)
 						{
 							name = attrRef.SimpleId().GetText();
@@ -187,8 +190,8 @@ namespace Express
 							name = attrRef.Path().GetText();
 						}
 						var optional = expl.explRedef().OPTIONAL() != null;
-						var type = ParseCollectionTypeSel(expl.explRedef().collectionTypeSel(), ref rank, ref isCollection);
-						var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, optional, false);
+						var type = ParseCollectionTypeSel(expl.explRedef().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
+						var ad = new AttributeData(generator, name, type, rank, isCollection, isGeneric, false, optional, false);
 						entity.Attributes.Add(ad);
 
 						if(ad.Type == null)
@@ -206,6 +209,7 @@ namespace Express
 						var name = "";
 						var rank = 0;
 						bool isCollection = false;
+						bool isGeneric = false;
 						if(derAttr.deriveDef() != null)
 						{
 							if(derAttr.deriveDef().attrDef().SimpleId() != null)
@@ -216,8 +220,8 @@ namespace Express
 							{
 								name = derAttr.deriveDef().attrDef().Path().GetText();
 							}
-							var type = ParseCollectionTypeSel(derAttr.deriveDef().collectionTypeSel(), ref rank, ref isCollection);
-							var ad = new AttributeData(generator, name, type, rank, isCollection, false, true);
+							var type = ParseCollectionTypeSel(derAttr.deriveDef().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, isGeneric, true, false, false);
 							entity.Attributes.Add(ad);
 						}
 						else if(derAttr.derivedRedef() != null)
@@ -230,8 +234,8 @@ namespace Express
 							{
 								name = derAttr.derivedRedef().attrRef().Path().GetText();
 							}
-							var type = ParseCollectionTypeSel(derAttr.derivedRedef().collectionTypeSel(), ref rank, ref isCollection);
-							var ad = new AttributeData(generator, name, type, rank, isCollection, false, true);
+							var type = ParseCollectionTypeSel(derAttr.derivedRedef().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, isGeneric, true, false, false);
 							entity.Attributes.Add(ad);
 						}
 					}
@@ -308,7 +312,7 @@ namespace Express
 			}
 			else if(context.returnTypeChoice().collectionType() != null)
 			{
-				fType = ParseCollectionType(context.returnTypeChoice().collectionType(), ref fRank, ref fCollection);
+				fType = ParseCollectionType(context.returnTypeChoice().collectionType(), ref fRank, ref fCollection, ref fGeneric);
 			}
 
 			var parameters = new List<ParameterData>();
@@ -328,17 +332,17 @@ namespace Express
 					}
 					else if(p.returnTypeChoice().collectionType() != null)
 					{
-						pType = ParseCollectionType(p.returnTypeChoice().collectionType(), ref pRank, ref pCollection);
+						pType = ParseCollectionType(p.returnTypeChoice().collectionType(), ref pRank, ref pCollection, ref pGeneric);
 					}
 					foreach(var def in p.paramDef())
 					{
 						var pName = def.SimpleId().GetText();
-						parameters.Add(new ParameterData(pName, pCollection, pRank, pGeneric, pType));
+						parameters.Add(new ParameterData(generator, pName, pCollection, pRank, pGeneric, pType));
 					}
 				}
 			}
 
-			var returnType = new TypeReference(fType, fCollection, fRank, fGeneric);
+			var returnType = new TypeReference(generator, fType, fCollection, fRank, fGeneric);
 			var fd =  new Express.FunctionData(fName, returnType, parameters);
 			funcData.Add(context.funcDef().SimpleId().GetText(), fd);
 		}
@@ -432,36 +436,36 @@ namespace Express
 			return null;
 		}
 
-		private string ParseCollectionType(ExpressParser.CollectionTypeContext context, ref int rank, ref bool isCollection)
+		private string ParseCollectionType(ExpressParser.CollectionTypeContext context, ref int rank, ref bool isCollection, ref bool isGeneric)
 		{
 			rank++;
 			isCollection = true;
 			
 			if(context.arrayType() != null)
 			{	
-				return ParseCollectionTypeSel(context.arrayType().collectionTypeSel(), ref rank, ref isCollection);
+				return ParseCollectionTypeSel(context.arrayType().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
 			}
 			else if(context.listType() != null)
 			{
-				return ParseCollectionTypeSel(context.listType().collectionTypeSel(), ref rank, ref isCollection);
+				return ParseCollectionTypeSel(context.listType().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
 			}
 			else if(context.setType() != null)
 			{
-				return ParseCollectionTypeSel(context.setType().collectionTypeSel(), ref rank, ref isCollection);
+				return ParseCollectionTypeSel(context.setType().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
 			}
 			else if(context.bagType() != null)
 			{
-				return ParseCollectionTypeSel(context.bagType().collectionTypeSel(), ref rank, ref isCollection);
+				return ParseCollectionTypeSel(context.bagType().collectionTypeSel(), ref rank, ref isCollection, ref isGeneric);
 			}
 
 			throw new Exception("I could not parse the collection type.");
 		}
 
-		private string ParseCollectionTypeSel(ExpressParser.CollectionTypeSelContext context, ref int rank, ref bool isCollection)
+		private string ParseCollectionTypeSel(ExpressParser.CollectionTypeSelContext context, ref int rank, ref bool isCollection, ref bool isGeneric)
 		{
 			if(context.collectionType() != null)
 			{	
-				return ParseCollectionType(context.collectionType(), ref rank, ref isCollection);
+				return ParseCollectionType(context.collectionType(), ref rank, ref isCollection, ref isGeneric);
 			}
 			else if(context.simpleType() != null)
 			{
@@ -473,6 +477,7 @@ namespace Express
 			}
 			else if(context.genericType() != null)
 			{
+				isGeneric = true;
 				return "T";
 			}
 
