@@ -102,12 +102,25 @@ namespace IFC4
             return string.Empty;
         }
 
-        public string AttributeDataType(bool isCollection, int rank, string type)
+        public string AttributeDataType(bool isCollection, int rank, string type, bool isGeneric)
         {
             if (isCollection)
             {
                 return $"{string.Join("", Enumerable.Repeat("List<", rank))}{type}{string.Join("", Enumerable.Repeat(">", rank))}";
             }
+
+            // Item is used in functions.
+            if(isGeneric)
+            {
+                return "T";
+            }
+
+            // https://github.com/ikeough/IFC-gen/issues/25
+            if(type == "IfcSiUnitName")
+            {
+                return "IfcSIUnitName";
+            }
+
             return type;
         }
 
