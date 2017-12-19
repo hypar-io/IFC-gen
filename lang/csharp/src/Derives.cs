@@ -4,8 +4,7 @@ using System.Linq;
 
 namespace IFC4
 {
-    /* 
-    public partial class IfcAxis1Placement
+    /*public partial class IfcAxis1Placement
     {
         public IfcDirection Z
         {
@@ -121,52 +120,5 @@ namespace IFC4
         {
             get{return LocalOrigin.Dim;}
         }
-    }
-
-    public partial class IfcCartesianTransformationOperator2D
-    {
-        public List<List<IfcDirection>> U
-        {
-            get{return }
-        }
-    }
-
-    internal static class Functions
-    {
-        public static List<List<IfcDirection>> IfcBaseAxis(int dim, IfcDirection axis1, IfcDirection axis2, IfcDirection axis3 )
-        {
-            throw new NotImplementedException();
-        }
-
-        public static object IfcBooleanChoose(bool b)
-        public static IfcDimensionCount HIINDEX(List<IfcLengthMeasure> measures)
-        {
-            throw new NotImplementedException();
-        }
-        public static IfcDirection NVL(double scale, double value)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<List<IfcDirection>> IfcBuild2Axes(IfcDirection direction)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<List<IfcDirection>> IfcBuildAxes(IfcDirection axis, IfcDirection refDirection)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<IfcCartesianPoint> IfcListToArray(List<IfcCartesianPoint> controlPointList, int value, int upperIndexOnControlPoints)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static List<List<List<IfcCartesianPoint>>> IfcMakeArrayOfArray(List<List<IfcCartesianPoint>> controlPointsList, int value1,int vUpper,int value2, int vUpper)
-        {
-            throw new NotImplementedException();
-        }
-    }
-    */
+    }*/
 }
