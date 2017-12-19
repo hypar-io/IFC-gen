@@ -70,7 +70,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcabsorbeddosemeasure.htm
 	/// </summary>
-	public class IfcAbsorbedDoseMeasure : IConvertibleToSTEP
+	public class IfcAbsorbedDoseMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -94,7 +94,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAbsorbedDoseMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -110,7 +110,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaccelerationmeasure.htm
 	/// </summary>
-	public class IfcAccelerationMeasure : IConvertibleToSTEP
+	public class IfcAccelerationMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -134,7 +134,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAccelerationMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -150,7 +150,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcamountofsubstancemeasure.htm
 	/// </summary>
-	public class IfcAmountOfSubstanceMeasure : IConvertibleToSTEP
+	public class IfcAmountOfSubstanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -174,7 +174,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAmountOfSubstanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -190,7 +190,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcangularvelocitymeasure.htm
 	/// </summary>
-	public class IfcAngularVelocityMeasure : IConvertibleToSTEP
+	public class IfcAngularVelocityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -214,7 +214,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAngularVelocityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -230,7 +230,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcareadensitymeasure.htm
 	/// </summary>
-	public class IfcAreaDensityMeasure : IConvertibleToSTEP
+	public class IfcAreaDensityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -254,7 +254,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAreaDensityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -270,7 +270,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcareameasure.htm
 	/// </summary>
-	public class IfcAreaMeasure : IConvertibleToSTEP
+	public class IfcAreaMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -294,7 +294,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAreaMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -310,7 +310,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboolean.htm
 	/// </summary>
-	public class IfcBoolean : IConvertibleToSTEP
+	public class IfcBoolean : BaseIfc
 	{
 		internal bool value;
 
@@ -334,7 +334,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcBoolean>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -350,7 +350,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboxalignment.htm
 	/// </summary>
-	public class IfcBoxAlignment : IConvertibleToSTEP
+	public class IfcBoxAlignment : BaseIfc
 	{
 		internal IfcLabel value;
 
@@ -374,7 +374,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcBoxAlignment>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -390,7 +390,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccardinalpointreference.htm
 	/// </summary>
-	public class IfcCardinalPointReference : IConvertibleToSTEP
+	public class IfcCardinalPointReference : BaseIfc
 	{
 		internal int value;
 
@@ -414,7 +414,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCardinalPointReference>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -430,7 +430,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexnumber.htm
 	/// </summary>
-	public class IfcComplexNumber : IConvertibleToSTEP
+	public class IfcComplexNumber : BaseIfc
 	{
 		internal List<double> value;
 
@@ -454,7 +454,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcComplexNumber>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -470,7 +470,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompoundplaneanglemeasure.htm
 	/// </summary>
-	public class IfcCompoundPlaneAngleMeasure : IConvertibleToSTEP
+	public class IfcCompoundPlaneAngleMeasure : BaseIfc
 	{
 		internal List<int> value;
 
@@ -494,7 +494,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCompoundPlaneAngleMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -510,7 +510,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontextdependentmeasure.htm
 	/// </summary>
-	public class IfcContextDependentMeasure : IConvertibleToSTEP
+	public class IfcContextDependentMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -534,7 +534,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcContextDependentMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -550,7 +550,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccountmeasure.htm
 	/// </summary>
-	public class IfcCountMeasure : IConvertibleToSTEP
+	public class IfcCountMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -574,7 +574,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCountMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -590,7 +590,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvaturemeasure.htm
 	/// </summary>
-	public class IfcCurvatureMeasure : IConvertibleToSTEP
+	public class IfcCurvatureMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -614,7 +614,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCurvatureMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -630,7 +630,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdate.htm
 	/// </summary>
-	public class IfcDate : IConvertibleToSTEP
+	public class IfcDate : BaseIfc
 	{
 		internal string value;
 
@@ -654,7 +654,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDate>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -670,7 +670,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdatetime.htm
 	/// </summary>
-	public class IfcDateTime : IConvertibleToSTEP
+	public class IfcDateTime : BaseIfc
 	{
 		internal string value;
 
@@ -694,7 +694,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDateTime>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -710,7 +710,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdayinmonthnumber.htm
 	/// </summary>
-	public class IfcDayInMonthNumber : IConvertibleToSTEP
+	public class IfcDayInMonthNumber : BaseIfc
 	{
 		internal int value;
 
@@ -734,7 +734,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDayInMonthNumber>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -750,7 +750,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdayinweeknumber.htm
 	/// </summary>
-	public class IfcDayInWeekNumber : IConvertibleToSTEP
+	public class IfcDayInWeekNumber : BaseIfc
 	{
 		internal int value;
 
@@ -774,7 +774,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDayInWeekNumber>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -790,7 +790,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdescriptivemeasure.htm
 	/// </summary>
-	public class IfcDescriptiveMeasure : IConvertibleToSTEP
+	public class IfcDescriptiveMeasure : BaseIfc
 	{
 		internal string value;
 
@@ -814,7 +814,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDescriptiveMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -830,7 +830,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdimensioncount.htm
 	/// </summary>
-	public class IfcDimensionCount : IConvertibleToSTEP
+	public class IfcDimensionCount : BaseIfc
 	{
 		internal int value;
 
@@ -854,7 +854,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDimensionCount>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -870,7 +870,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoseequivalentmeasure.htm
 	/// </summary>
-	public class IfcDoseEquivalentMeasure : IConvertibleToSTEP
+	public class IfcDoseEquivalentMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -894,7 +894,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDoseEquivalentMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -910,7 +910,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcduration.htm
 	/// </summary>
-	public class IfcDuration : IConvertibleToSTEP
+	public class IfcDuration : BaseIfc
 	{
 		internal string value;
 
@@ -934,7 +934,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDuration>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -950,7 +950,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdynamicviscositymeasure.htm
 	/// </summary>
-	public class IfcDynamicViscosityMeasure : IConvertibleToSTEP
+	public class IfcDynamicViscosityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -974,7 +974,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDynamicViscosityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -990,7 +990,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectriccapacitancemeasure.htm
 	/// </summary>
-	public class IfcElectricCapacitanceMeasure : IConvertibleToSTEP
+	public class IfcElectricCapacitanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1014,7 +1014,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricCapacitanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1030,7 +1030,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricchargemeasure.htm
 	/// </summary>
-	public class IfcElectricChargeMeasure : IConvertibleToSTEP
+	public class IfcElectricChargeMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1054,7 +1054,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricChargeMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1070,7 +1070,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricconductancemeasure.htm
 	/// </summary>
-	public class IfcElectricConductanceMeasure : IConvertibleToSTEP
+	public class IfcElectricConductanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1094,7 +1094,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricConductanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1110,7 +1110,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectriccurrentmeasure.htm
 	/// </summary>
-	public class IfcElectricCurrentMeasure : IConvertibleToSTEP
+	public class IfcElectricCurrentMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1134,7 +1134,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricCurrentMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1150,7 +1150,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricresistancemeasure.htm
 	/// </summary>
-	public class IfcElectricResistanceMeasure : IConvertibleToSTEP
+	public class IfcElectricResistanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1174,7 +1174,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricResistanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1190,7 +1190,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelectricvoltagemeasure.htm
 	/// </summary>
-	public class IfcElectricVoltageMeasure : IConvertibleToSTEP
+	public class IfcElectricVoltageMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1214,7 +1214,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricVoltageMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1230,7 +1230,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcenergymeasure.htm
 	/// </summary>
-	public class IfcEnergyMeasure : IConvertibleToSTEP
+	public class IfcEnergyMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1254,7 +1254,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcEnergyMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1270,7 +1270,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfontstyle.htm
 	/// </summary>
-	public class IfcFontStyle : IConvertibleToSTEP
+	public class IfcFontStyle : BaseIfc
 	{
 		internal string value;
 
@@ -1294,7 +1294,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontStyle>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1310,7 +1310,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfontvariant.htm
 	/// </summary>
-	public class IfcFontVariant : IConvertibleToSTEP
+	public class IfcFontVariant : BaseIfc
 	{
 		internal string value;
 
@@ -1334,7 +1334,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontVariant>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1350,7 +1350,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfontweight.htm
 	/// </summary>
-	public class IfcFontWeight : IConvertibleToSTEP
+	public class IfcFontWeight : BaseIfc
 	{
 		internal string value;
 
@@ -1374,7 +1374,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontWeight>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1390,7 +1390,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcforcemeasure.htm
 	/// </summary>
-	public class IfcForceMeasure : IConvertibleToSTEP
+	public class IfcForceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1414,7 +1414,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcForceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1430,7 +1430,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfrequencymeasure.htm
 	/// </summary>
-	public class IfcFrequencyMeasure : IConvertibleToSTEP
+	public class IfcFrequencyMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1454,7 +1454,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFrequencyMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1470,7 +1470,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgloballyuniqueid.htm
 	/// </summary>
-	public class IfcGloballyUniqueId : IConvertibleToSTEP
+	public class IfcGloballyUniqueId : BaseIfc
 	{
 		internal string value;
 
@@ -1494,7 +1494,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcGloballyUniqueId>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1510,7 +1510,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatfluxdensitymeasure.htm
 	/// </summary>
-	public class IfcHeatFluxDensityMeasure : IConvertibleToSTEP
+	public class IfcHeatFluxDensityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1534,7 +1534,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcHeatFluxDensityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1550,7 +1550,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcheatingvaluemeasure.htm
 	/// </summary>
-	public class IfcHeatingValueMeasure : IConvertibleToSTEP
+	public class IfcHeatingValueMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1574,7 +1574,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcHeatingValueMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1590,7 +1590,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcidentifier.htm
 	/// </summary>
-	public class IfcIdentifier : IConvertibleToSTEP
+	public class IfcIdentifier : BaseIfc
 	{
 		internal string value;
 
@@ -1614,7 +1614,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIdentifier>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1630,7 +1630,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcilluminancemeasure.htm
 	/// </summary>
-	public class IfcIlluminanceMeasure : IConvertibleToSTEP
+	public class IfcIlluminanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1654,7 +1654,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIlluminanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1670,7 +1670,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinductancemeasure.htm
 	/// </summary>
-	public class IfcInductanceMeasure : IConvertibleToSTEP
+	public class IfcInductanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1694,7 +1694,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcInductanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1710,7 +1710,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinteger.htm
 	/// </summary>
-	public class IfcInteger : IConvertibleToSTEP
+	public class IfcInteger : BaseIfc
 	{
 		internal int value;
 
@@ -1734,7 +1734,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcInteger>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1750,7 +1750,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcintegercountratemeasure.htm
 	/// </summary>
-	public class IfcIntegerCountRateMeasure : IConvertibleToSTEP
+	public class IfcIntegerCountRateMeasure : BaseIfc
 	{
 		internal int value;
 
@@ -1774,7 +1774,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIntegerCountRateMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1790,7 +1790,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcionconcentrationmeasure.htm
 	/// </summary>
-	public class IfcIonConcentrationMeasure : IConvertibleToSTEP
+	public class IfcIonConcentrationMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1814,7 +1814,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIonConcentrationMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1830,7 +1830,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcisothermalmoisturecapacitymeasure.htm
 	/// </summary>
-	public class IfcIsothermalMoistureCapacityMeasure : IConvertibleToSTEP
+	public class IfcIsothermalMoistureCapacityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1854,7 +1854,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIsothermalMoistureCapacityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1870,7 +1870,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifckinematicviscositymeasure.htm
 	/// </summary>
-	public class IfcKinematicViscosityMeasure : IConvertibleToSTEP
+	public class IfcKinematicViscosityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -1894,7 +1894,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcKinematicViscosityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1910,7 +1910,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclabel.htm
 	/// </summary>
-	public class IfcLabel : IConvertibleToSTEP
+	public class IfcLabel : BaseIfc
 	{
 		internal string value;
 
@@ -1934,7 +1934,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLabel>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1950,7 +1950,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclanguageid.htm
 	/// </summary>
-	public class IfcLanguageId : IConvertibleToSTEP
+	public class IfcLanguageId : BaseIfc
 	{
 		internal IfcIdentifier value;
 
@@ -1974,7 +1974,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLanguageId>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -1990,7 +1990,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclengthmeasure.htm
 	/// </summary>
-	public class IfcLengthMeasure : IConvertibleToSTEP
+	public class IfcLengthMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2014,7 +2014,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLengthMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2030,7 +2030,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearforcemeasure.htm
 	/// </summary>
-	public class IfcLinearForceMeasure : IConvertibleToSTEP
+	public class IfcLinearForceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2054,7 +2054,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearForceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2070,7 +2070,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearmomentmeasure.htm
 	/// </summary>
-	public class IfcLinearMomentMeasure : IConvertibleToSTEP
+	public class IfcLinearMomentMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2094,7 +2094,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearMomentMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2110,7 +2110,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearstiffnessmeasure.htm
 	/// </summary>
-	public class IfcLinearStiffnessMeasure : IConvertibleToSTEP
+	public class IfcLinearStiffnessMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2134,7 +2134,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearStiffnessMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2150,7 +2150,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearvelocitymeasure.htm
 	/// </summary>
-	public class IfcLinearVelocityMeasure : IConvertibleToSTEP
+	public class IfcLinearVelocityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2174,7 +2174,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearVelocityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2190,7 +2190,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclogical.htm
 	/// </summary>
-	public class IfcLogical : IConvertibleToSTEP
+	public class IfcLogical : BaseIfc
 	{
 		internal bool? value;
 
@@ -2214,7 +2214,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLogical>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2230,7 +2230,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcluminousfluxmeasure.htm
 	/// </summary>
-	public class IfcLuminousFluxMeasure : IConvertibleToSTEP
+	public class IfcLuminousFluxMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2254,7 +2254,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousFluxMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2270,7 +2270,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcluminousintensitydistributionmeasure.htm
 	/// </summary>
-	public class IfcLuminousIntensityDistributionMeasure : IConvertibleToSTEP
+	public class IfcLuminousIntensityDistributionMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2294,7 +2294,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousIntensityDistributionMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2310,7 +2310,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcluminousintensitymeasure.htm
 	/// </summary>
-	public class IfcLuminousIntensityMeasure : IConvertibleToSTEP
+	public class IfcLuminousIntensityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2334,7 +2334,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousIntensityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2350,7 +2350,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmagneticfluxdensitymeasure.htm
 	/// </summary>
-	public class IfcMagneticFluxDensityMeasure : IConvertibleToSTEP
+	public class IfcMagneticFluxDensityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2374,7 +2374,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMagneticFluxDensityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2390,7 +2390,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmagneticfluxmeasure.htm
 	/// </summary>
-	public class IfcMagneticFluxMeasure : IConvertibleToSTEP
+	public class IfcMagneticFluxMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2414,7 +2414,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMagneticFluxMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2430,7 +2430,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassdensitymeasure.htm
 	/// </summary>
-	public class IfcMassDensityMeasure : IConvertibleToSTEP
+	public class IfcMassDensityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2454,7 +2454,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassDensityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2470,7 +2470,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassflowratemeasure.htm
 	/// </summary>
-	public class IfcMassFlowRateMeasure : IConvertibleToSTEP
+	public class IfcMassFlowRateMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2494,7 +2494,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassFlowRateMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2510,7 +2510,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassmeasure.htm
 	/// </summary>
-	public class IfcMassMeasure : IConvertibleToSTEP
+	public class IfcMassMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2534,7 +2534,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2550,7 +2550,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmassperlengthmeasure.htm
 	/// </summary>
-	public class IfcMassPerLengthMeasure : IConvertibleToSTEP
+	public class IfcMassPerLengthMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2574,7 +2574,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassPerLengthMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2590,7 +2590,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofelasticitymeasure.htm
 	/// </summary>
-	public class IfcModulusOfElasticityMeasure : IConvertibleToSTEP
+	public class IfcModulusOfElasticityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2614,7 +2614,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfElasticityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2630,7 +2630,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusoflinearsubgradereactionmeasure.htm
 	/// </summary>
-	public class IfcModulusOfLinearSubgradeReactionMeasure : IConvertibleToSTEP
+	public class IfcModulusOfLinearSubgradeReactionMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2654,7 +2654,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfLinearSubgradeReactionMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2670,7 +2670,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofrotationalsubgradereactionmeasure.htm
 	/// </summary>
-	public class IfcModulusOfRotationalSubgradeReactionMeasure : IConvertibleToSTEP
+	public class IfcModulusOfRotationalSubgradeReactionMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2694,7 +2694,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2710,7 +2710,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofsubgradereactionmeasure.htm
 	/// </summary>
-	public class IfcModulusOfSubgradeReactionMeasure : IConvertibleToSTEP
+	public class IfcModulusOfSubgradeReactionMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2734,7 +2734,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2750,7 +2750,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmoisturediffusivitymeasure.htm
 	/// </summary>
-	public class IfcMoistureDiffusivityMeasure : IConvertibleToSTEP
+	public class IfcMoistureDiffusivityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2774,7 +2774,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMoistureDiffusivityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2790,7 +2790,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmolecularweightmeasure.htm
 	/// </summary>
-	public class IfcMolecularWeightMeasure : IConvertibleToSTEP
+	public class IfcMolecularWeightMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2814,7 +2814,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMolecularWeightMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2830,7 +2830,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmomentofinertiameasure.htm
 	/// </summary>
-	public class IfcMomentOfInertiaMeasure : IConvertibleToSTEP
+	public class IfcMomentOfInertiaMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2854,7 +2854,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMomentOfInertiaMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2870,7 +2870,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmonetarymeasure.htm
 	/// </summary>
-	public class IfcMonetaryMeasure : IConvertibleToSTEP
+	public class IfcMonetaryMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -2894,7 +2894,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMonetaryMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2910,7 +2910,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmonthinyearnumber.htm
 	/// </summary>
-	public class IfcMonthInYearNumber : IConvertibleToSTEP
+	public class IfcMonthInYearNumber : BaseIfc
 	{
 		internal int value;
 
@@ -2934,7 +2934,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMonthInYearNumber>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2950,7 +2950,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnonnegativelengthmeasure.htm
 	/// </summary>
-	public class IfcNonNegativeLengthMeasure : IConvertibleToSTEP
+	public class IfcNonNegativeLengthMeasure : BaseIfc
 	{
 		internal IfcLengthMeasure value;
 
@@ -2974,7 +2974,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNonNegativeLengthMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -2990,7 +2990,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnormalisedratiomeasure.htm
 	/// </summary>
-	public class IfcNormalisedRatioMeasure : IConvertibleToSTEP
+	public class IfcNormalisedRatioMeasure : BaseIfc
 	{
 		internal IfcRatioMeasure value;
 
@@ -3014,7 +3014,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNormalisedRatioMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3030,7 +3030,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnumericmeasure.htm
 	/// </summary>
-	public class IfcNumericMeasure : IConvertibleToSTEP
+	public class IfcNumericMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3054,7 +3054,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNumericMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3070,7 +3070,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphmeasure.htm
 	/// </summary>
-	public class IfcPHMeasure : IConvertibleToSTEP
+	public class IfcPHMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3094,7 +3094,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPHMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3110,7 +3110,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcparametervalue.htm
 	/// </summary>
-	public class IfcParameterValue : IConvertibleToSTEP
+	public class IfcParameterValue : BaseIfc
 	{
 		internal double value;
 
@@ -3134,7 +3134,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcParameterValue>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3150,7 +3150,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarforcemeasure.htm
 	/// </summary>
-	public class IfcPlanarForceMeasure : IConvertibleToSTEP
+	public class IfcPlanarForceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3174,7 +3174,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPlanarForceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3190,7 +3190,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplaneanglemeasure.htm
 	/// </summary>
-	public class IfcPlaneAngleMeasure : IConvertibleToSTEP
+	public class IfcPlaneAngleMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3214,7 +3214,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPlaneAngleMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3230,7 +3230,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositivelengthmeasure.htm
 	/// </summary>
-	public class IfcPositiveLengthMeasure : IConvertibleToSTEP
+	public class IfcPositiveLengthMeasure : BaseIfc
 	{
 		internal IfcLengthMeasure value;
 
@@ -3254,7 +3254,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositiveLengthMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3270,7 +3270,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositiveplaneanglemeasure.htm
 	/// </summary>
-	public class IfcPositivePlaneAngleMeasure : IConvertibleToSTEP
+	public class IfcPositivePlaneAngleMeasure : BaseIfc
 	{
 		internal IfcPlaneAngleMeasure value;
 
@@ -3294,7 +3294,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositivePlaneAngleMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3310,7 +3310,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositiveratiomeasure.htm
 	/// </summary>
-	public class IfcPositiveRatioMeasure : IConvertibleToSTEP
+	public class IfcPositiveRatioMeasure : BaseIfc
 	{
 		internal IfcRatioMeasure value;
 
@@ -3334,7 +3334,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositiveRatioMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3350,7 +3350,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpowermeasure.htm
 	/// </summary>
-	public class IfcPowerMeasure : IConvertibleToSTEP
+	public class IfcPowerMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3374,7 +3374,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPowerMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3390,7 +3390,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentabletext.htm
 	/// </summary>
-	public class IfcPresentableText : IConvertibleToSTEP
+	public class IfcPresentableText : BaseIfc
 	{
 		internal string value;
 
@@ -3414,7 +3414,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPresentableText>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3430,7 +3430,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpressuremeasure.htm
 	/// </summary>
-	public class IfcPressureMeasure : IConvertibleToSTEP
+	public class IfcPressureMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3454,7 +3454,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPressureMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3470,7 +3470,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionset.htm
 	/// </summary>
-	public class IfcPropertySetDefinitionSet : IConvertibleToSTEP
+	public class IfcPropertySetDefinitionSet : BaseIfc
 	{
 		internal List<IfcPropertySetDefinition> value;
 
@@ -3494,7 +3494,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSet>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3510,7 +3510,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcradioactivitymeasure.htm
 	/// </summary>
-	public class IfcRadioActivityMeasure : IConvertibleToSTEP
+	public class IfcRadioActivityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3534,7 +3534,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRadioActivityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3550,7 +3550,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcratiomeasure.htm
 	/// </summary>
-	public class IfcRatioMeasure : IConvertibleToSTEP
+	public class IfcRatioMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3574,7 +3574,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRatioMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3590,7 +3590,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreal.htm
 	/// </summary>
-	public class IfcReal : IConvertibleToSTEP
+	public class IfcReal : BaseIfc
 	{
 		internal double value;
 
@@ -3614,7 +3614,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcReal>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3630,7 +3630,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalfrequencymeasure.htm
 	/// </summary>
-	public class IfcRotationalFrequencyMeasure : IConvertibleToSTEP
+	public class IfcRotationalFrequencyMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3654,7 +3654,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalFrequencyMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3670,7 +3670,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalmassmeasure.htm
 	/// </summary>
-	public class IfcRotationalMassMeasure : IConvertibleToSTEP
+	public class IfcRotationalMassMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3694,7 +3694,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalMassMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3710,7 +3710,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalstiffnessmeasure.htm
 	/// </summary>
-	public class IfcRotationalStiffnessMeasure : IConvertibleToSTEP
+	public class IfcRotationalStiffnessMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3734,7 +3734,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalStiffnessMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3750,7 +3750,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionmodulusmeasure.htm
 	/// </summary>
-	public class IfcSectionModulusMeasure : IConvertibleToSTEP
+	public class IfcSectionModulusMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3774,7 +3774,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSectionModulusMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3790,7 +3790,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionalareaintegralmeasure.htm
 	/// </summary>
-	public class IfcSectionalAreaIntegralMeasure : IConvertibleToSTEP
+	public class IfcSectionalAreaIntegralMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3814,7 +3814,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSectionalAreaIntegralMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3830,7 +3830,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshearmodulusmeasure.htm
 	/// </summary>
-	public class IfcShearModulusMeasure : IConvertibleToSTEP
+	public class IfcShearModulusMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3854,7 +3854,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcShearModulusMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3870,7 +3870,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidanglemeasure.htm
 	/// </summary>
-	public class IfcSolidAngleMeasure : IConvertibleToSTEP
+	public class IfcSolidAngleMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3894,7 +3894,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSolidAngleMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3910,7 +3910,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpowerlevelmeasure.htm
 	/// </summary>
-	public class IfcSoundPowerLevelMeasure : IConvertibleToSTEP
+	public class IfcSoundPowerLevelMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3934,7 +3934,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPowerLevelMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3950,7 +3950,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpowermeasure.htm
 	/// </summary>
-	public class IfcSoundPowerMeasure : IConvertibleToSTEP
+	public class IfcSoundPowerMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -3974,7 +3974,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPowerMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -3990,7 +3990,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpressurelevelmeasure.htm
 	/// </summary>
-	public class IfcSoundPressureLevelMeasure : IConvertibleToSTEP
+	public class IfcSoundPressureLevelMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4014,7 +4014,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPressureLevelMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4030,7 +4030,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsoundpressuremeasure.htm
 	/// </summary>
-	public class IfcSoundPressureMeasure : IConvertibleToSTEP
+	public class IfcSoundPressureMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4054,7 +4054,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPressureMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4070,7 +4070,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecificheatcapacitymeasure.htm
 	/// </summary>
-	public class IfcSpecificHeatCapacityMeasure : IConvertibleToSTEP
+	public class IfcSpecificHeatCapacityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4094,7 +4094,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecificHeatCapacityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4110,7 +4110,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularexponent.htm
 	/// </summary>
-	public class IfcSpecularExponent : IConvertibleToSTEP
+	public class IfcSpecularExponent : BaseIfc
 	{
 		internal double value;
 
@@ -4134,7 +4134,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecularExponent>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4150,7 +4150,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularroughness.htm
 	/// </summary>
-	public class IfcSpecularRoughness : IConvertibleToSTEP
+	public class IfcSpecularRoughness : BaseIfc
 	{
 		internal double value;
 
@@ -4174,7 +4174,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecularRoughness>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4190,7 +4190,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctemperaturegradientmeasure.htm
 	/// </summary>
-	public class IfcTemperatureGradientMeasure : IConvertibleToSTEP
+	public class IfcTemperatureGradientMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4214,7 +4214,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTemperatureGradientMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4230,7 +4230,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctemperaturerateofchangemeasure.htm
 	/// </summary>
-	public class IfcTemperatureRateOfChangeMeasure : IConvertibleToSTEP
+	public class IfcTemperatureRateOfChangeMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4254,7 +4254,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTemperatureRateOfChangeMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4270,7 +4270,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctext.htm
 	/// </summary>
-	public class IfcText : IConvertibleToSTEP
+	public class IfcText : BaseIfc
 	{
 		internal string value;
 
@@ -4294,7 +4294,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcText>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4310,7 +4310,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextalignment.htm
 	/// </summary>
-	public class IfcTextAlignment : IConvertibleToSTEP
+	public class IfcTextAlignment : BaseIfc
 	{
 		internal string value;
 
@@ -4334,7 +4334,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextAlignment>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4350,7 +4350,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextdecoration.htm
 	/// </summary>
-	public class IfcTextDecoration : IConvertibleToSTEP
+	public class IfcTextDecoration : BaseIfc
 	{
 		internal string value;
 
@@ -4374,7 +4374,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextDecoration>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4390,7 +4390,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextfontname.htm
 	/// </summary>
-	public class IfcTextFontName : IConvertibleToSTEP
+	public class IfcTextFontName : BaseIfc
 	{
 		internal string value;
 
@@ -4414,7 +4414,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextFontName>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4430,7 +4430,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexttransformation.htm
 	/// </summary>
-	public class IfcTextTransformation : IConvertibleToSTEP
+	public class IfcTextTransformation : BaseIfc
 	{
 		internal string value;
 
@@ -4454,7 +4454,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextTransformation>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4470,7 +4470,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermaladmittancemeasure.htm
 	/// </summary>
-	public class IfcThermalAdmittanceMeasure : IConvertibleToSTEP
+	public class IfcThermalAdmittanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4494,7 +4494,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalAdmittanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4510,7 +4510,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermalconductivitymeasure.htm
 	/// </summary>
-	public class IfcThermalConductivityMeasure : IConvertibleToSTEP
+	public class IfcThermalConductivityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4534,7 +4534,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalConductivityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4550,7 +4550,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermalexpansioncoefficientmeasure.htm
 	/// </summary>
-	public class IfcThermalExpansionCoefficientMeasure : IConvertibleToSTEP
+	public class IfcThermalExpansionCoefficientMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4574,7 +4574,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalExpansionCoefficientMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4590,7 +4590,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermalresistancemeasure.htm
 	/// </summary>
-	public class IfcThermalResistanceMeasure : IConvertibleToSTEP
+	public class IfcThermalResistanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4614,7 +4614,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalResistanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4630,7 +4630,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermaltransmittancemeasure.htm
 	/// </summary>
-	public class IfcThermalTransmittanceMeasure : IConvertibleToSTEP
+	public class IfcThermalTransmittanceMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4654,7 +4654,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalTransmittanceMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4670,7 +4670,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcthermodynamictemperaturemeasure.htm
 	/// </summary>
-	public class IfcThermodynamicTemperatureMeasure : IConvertibleToSTEP
+	public class IfcThermodynamicTemperatureMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4694,7 +4694,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermodynamicTemperatureMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4710,7 +4710,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctime.htm
 	/// </summary>
-	public class IfcTime : IConvertibleToSTEP
+	public class IfcTime : BaseIfc
 	{
 		internal string value;
 
@@ -4734,7 +4734,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTime>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4750,7 +4750,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimemeasure.htm
 	/// </summary>
-	public class IfcTimeMeasure : IConvertibleToSTEP
+	public class IfcTimeMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4774,7 +4774,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTimeMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4790,7 +4790,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimestamp.htm
 	/// </summary>
-	public class IfcTimeStamp : IConvertibleToSTEP
+	public class IfcTimeStamp : BaseIfc
 	{
 		internal int value;
 
@@ -4814,7 +4814,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTimeStamp>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4830,7 +4830,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctorquemeasure.htm
 	/// </summary>
-	public class IfcTorqueMeasure : IConvertibleToSTEP
+	public class IfcTorqueMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4854,7 +4854,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTorqueMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4870,7 +4870,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcurireference.htm
 	/// </summary>
-	public class IfcURIReference : IConvertibleToSTEP
+	public class IfcURIReference : BaseIfc
 	{
 		internal string value;
 
@@ -4894,7 +4894,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcURIReference>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4910,7 +4910,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvaporpermeabilitymeasure.htm
 	/// </summary>
-	public class IfcVaporPermeabilityMeasure : IConvertibleToSTEP
+	public class IfcVaporPermeabilityMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4934,7 +4934,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVaporPermeabilityMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4950,7 +4950,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvolumemeasure.htm
 	/// </summary>
-	public class IfcVolumeMeasure : IConvertibleToSTEP
+	public class IfcVolumeMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -4974,7 +4974,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVolumeMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -4990,7 +4990,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvolumetricflowratemeasure.htm
 	/// </summary>
-	public class IfcVolumetricFlowRateMeasure : IConvertibleToSTEP
+	public class IfcVolumetricFlowRateMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -5014,7 +5014,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVolumetricFlowRateMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -5030,7 +5030,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingconstantmeasure.htm
 	/// </summary>
-	public class IfcWarpingConstantMeasure : IConvertibleToSTEP
+	public class IfcWarpingConstantMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -5054,7 +5054,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcWarpingConstantMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{
@@ -5070,7 +5070,7 @@ namespace IFC4
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingmomentmeasure.htm
 	/// </summary>
-	public class IfcWarpingMomentMeasure : IConvertibleToSTEP
+	public class IfcWarpingMomentMeasure : BaseIfc
 	{
 		internal double value;
 
@@ -5094,7 +5094,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcWarpingMomentMeasure>(json);
 		}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
 			{

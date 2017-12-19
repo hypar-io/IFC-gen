@@ -161,7 +161,7 @@ namespace IFC4
     $@"	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
 	/// </summary>
-	public class {data.Name} : IConvertibleToSTEP
+	public class {data.Name} : BaseIfc
 	{{
 		internal {WrappedType(data)} value;
 
@@ -185,7 +185,7 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
 
-		public string ToStepValue(bool isSelectOption = false)
+		public override string ToStepValue(bool isSelectOption = false)
         {{
 			if(isSelectOption)
 			{{
