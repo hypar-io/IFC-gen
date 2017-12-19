@@ -15,20 +15,15 @@ namespace Express
 
 		private Dictionary<string,TypeData> typeData = new Dictionary<string,TypeData>();
 
-		private Dictionary<string,FunctionData> functionData = new Dictionary<string, FunctionData>();
+		private Dictionary<string,FunctionData> funcData = new Dictionary<string, FunctionData>();
 
 		public Dictionary<string,TypeData> TypeData{
 			get{return typeData;}
 		}
 
-        public Dictionary<string, FunctionData> FunctionData 
-		{ 
-			get{return functionData;} 
+		public Dictionary<string,FunctionData> FunctionData{
+			get{return funcData;}
 		}
-
-        private TypeData currTypeData;
-
-		private List<AttributeData> currAttrDatas = new List<AttributeData>();
 
 		public ExpressListener(ILanguageGenerator generator, ITestGenerator testGenerator)
 		{
@@ -41,259 +36,440 @@ namespace Express
 			
 		}
 
-		public override void ExitSchemaDecl(ExpressParser.SchemaDeclContext context)
-		{	
-			// Set the IsRelationshipReference on all attribute data.
-			foreach(var td in typeData.Values.Where(td=>td is Entity).Cast<Entity>())
-			{
-				if(!td.Subs.Any())
-				{
-					continue;
-				}
-			}
-		}
-
+		// TYPE
 		public override void EnterTypeBody(ExpressParser.TypeBodyContext context)
 		{
 			var name = context.typeDef().SimpleId().GetText();
 
 			TypeData td = null;
+			int rank = 0;
+			bool returnsCollection = false;
+
 			if(context.typeSel().collectionType() != null)
 			{
-				td = new SimpleType(name, generator, testGenerator);
-				((SimpleType)td).IsCollectionType = true;
+				var wrappedType = ParseCollectionType(context.typeSel().collectionType(), ref rank, ref returnsCollection);
+				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
 			}
 			else if(context.typeSel().simpleType() != null)
-			{
-				td = new SimpleType(name, generator, testGenerator);
-				// The wrapped type will be discerned on exit so we can 
-				// get it for collection types as well.
+			{	
+				var wrappedType = ParseSimpleType(context.typeSel().simpleType());
+				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
 			}
 			else if(context.typeSel().namedType() != null)
 			{
-				td = new SimpleType(name, generator, testGenerator);
-				// The wrapped type will be discerned on exit so we can 
-				// get it for collection types as well.
+				var wrappedType = ParseNamedType(context.typeSel().namedType());
+				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
 			}
 			else if(context.typeSel().enumType() != null)
 			{
-				td = new EnumType(name, generator, testGenerator);
-				((EnumType)td).Values = context.typeSel().enumType().enumValues().GetText().Split(',');
+				var values = context.typeSel().enumType().enumValues().GetText().Split(',');
+				td = new EnumType(name, generator, testGenerator, values);
 			}
 			else if(context.typeSel().selectType() != null)
 			{
-				td = new SelectType(name, generator, testGenerator);
-				((SelectType)td).Values = context.typeSel().selectType().selectValues().GetText().Split(',');
+				var values = context.typeSel().selectType().selectValues().GetText().Split(',');
+				td = new SelectType(name, generator, testGenerator, values);
 			}
 
-			currTypeData = td;
 			typeData.Add(name, td);
 		}
 
-		public override void ExitSimpleType(ExpressParser.SimpleTypeContext context)
+		// ENTITY
+		public override void EnterEntityDecl(ExpressParser.EntityDeclContext context)
 		{
-			if(currTypeData is SimpleType)
-			{
-				((SimpleType)currTypeData).WrappedType = ParseSimpleType(context);
+			Entity entity;
+			var entityName = context.entityHead().entityDef().SimpleId().GetText();
+
+			if(typeData.ContainsKey(entityName))
+			{	
+				// TypeData was created previously possible as a reference
+				// to a sub or super type.
+				entity = (Entity)typeData[entityName];
 			}
-			else if(currTypeData is Entity)
+			else{
+				entity = new Entity(entityName, generator, testGenerator);
+				typeData.Add(entityName, entity);
+			}
+
+			var subSuper = context.entityHead().subSuper();
+
+			// SUPERTYPE
+			if(subSuper.supertypeDecl() != null)
 			{
-				foreach(var ad in currAttrDatas)
+				var super = subSuper.supertypeDecl();
+				entity.IsAbstract = super.ABSTRACT() != null;
+				var factor = super.supertypeExpr().supertypeFactor();
+				
+				// IFC: Use choice only.
+				if(factor[0].choice() != null)
 				{
-					ad.Type = ParseSimpleType(context);
+					foreach(var superRef in factor[0].choice().supertypeExpr())
+					{
+						var superName = superRef.supertypeFactor()[0].entityRef().SimpleId().GetText();
+						Entity sup;
+						if(typeData.ContainsKey(superName))
+						{
+							sup = (Entity)typeData[superName];
+						}
+						else
+						{
+							sup = new Entity(superName, generator, testGenerator);
+							typeData.Add(superName, sup);
+						}
+						entity.Supers.Add(sup);
+					}
 				}
+			}
+
+			// SUBTYPE
+			if(subSuper.subtypeDecl() != null)
+			{
+				foreach(var subRef in subSuper.subtypeDecl().entityRef())
+				{
+					var subName = subRef.SimpleId().GetText();
+					Entity sub;
+					if(typeData.ContainsKey(subName))
+					{
+						sub = (Entity)typeData[subName];
+					}
+					else
+					{
+						sub = new Entity(subName, generator, testGenerator);
+						typeData.Add(subName, sub);
+					}
+					entity.Subs.Add(sub);
+				}
+			}
+
+			if(context.entityBody().attributes() != null)
+			{
+				var attrs = context.entityBody().attributes();
+				foreach(var expl in attrs.explicitClause())
+				{
+					if(expl.explDef() != null)
+					{
+						var optional = expl.explDef().OPTIONAL() != null;
+						foreach(var attrDef in expl.explDef().attrDef())
+						{
+							var rank = 0;
+							var isCollection = false;
+							var name = "";
+							if(attrDef.SimpleId() != null)
+							{
+								name = attrDef.SimpleId().GetText();
+							}
+							else if(attrDef.Path() != null)
+							{
+								name = attrDef.Path().GetText();
+							}
+							var type = ParseCollectionTypeSel(expl.explDef().collectionTypeSel(), ref rank, ref isCollection);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, optional, false);
+							entity.Attributes.Add(ad);
+
+							if(ad.Type == null)
+							{
+								throw new Exception($"The Type of attribute data, {ad.Name}, is null.");
+							}
+						}
+					}
+					else if(expl.explRedef() != null)
+					{
+						var rank = 0;
+						var isCollection = false;
+						var name = "";
+						var attrRef = expl.explRedef().attrRef();
+						if(attrRef.SimpleId() != null)
+						{
+							name = attrRef.SimpleId().GetText();
+						}
+						else if (attrRef.Path() != null)
+						{
+							name = attrRef.Path().GetText();
+						}
+						var optional = expl.explRedef().OPTIONAL() != null;
+						var type = ParseCollectionTypeSel(expl.explRedef().collectionTypeSel(), ref rank, ref isCollection);
+						var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, optional, false);
+						entity.Attributes.Add(ad);
+
+						if(ad.Type == null)
+						{
+							throw new Exception($"The Type of attribute data, {ad.Name}, is null.");
+						}
+					}
+				}
+
+				// DERIVE
+				foreach(var der in attrs.deriveClause())
+				{
+					foreach(var derAttr in der.derivedAttr())
+					{
+						var name = "";
+						var rank = 0;
+						bool isCollection = false;
+						if(derAttr.deriveDef() != null)
+						{
+							if(derAttr.deriveDef().attrDef().SimpleId() != null)
+							{
+								name = derAttr.deriveDef().attrDef().SimpleId().GetText();
+							}
+							else if(derAttr.deriveDef().attrDef().Path() != null)
+							{
+								name = derAttr.deriveDef().attrDef().Path().GetText();
+							}
+							var type = ParseCollectionTypeSel(derAttr.deriveDef().collectionTypeSel(), ref rank, ref isCollection);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, true);
+							entity.Attributes.Add(ad);
+						}
+						else if(derAttr.derivedRedef() != null)
+						{
+							if(derAttr.derivedRedef().attrRef().SimpleId() != null)
+							{
+								name = derAttr.derivedRedef().attrRef().SimpleId().GetText();
+							}
+							else if(derAttr.derivedRedef().attrRef().Path() != null)
+							{
+								name = derAttr.derivedRedef().attrRef().Path().GetText();
+							}
+							var type = ParseCollectionTypeSel(derAttr.derivedRedef().collectionTypeSel(), ref rank, ref isCollection);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, true);
+							entity.Attributes.Add(ad);
+						}
+					}
+					
+				}
+
+				// INVERSE
+				foreach(var inv in attrs.inverseClause())
+				{
+					foreach(var invAttr in inv.inverseAttr())
+					{
+						var name = "";
+						var rank = 0;
+						bool isCollection = false;
+
+						if(invAttr.inverseDef() != null)
+						{
+							if(invAttr.inverseDef().attrDef().SimpleId() != null)
+							{
+								name = invAttr.inverseDef().attrDef().SimpleId().GetText();
+							}
+							else if(invAttr.inverseDef().attrDef().Path() != null)
+							{
+								name = invAttr.inverseDef().attrDef().Path().GetText();
+							}
+							var type = ParseInverseType(invAttr.inverseDef().inverseType(), ref isCollection, ref rank);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, true);
+							entity.Attributes.Add(ad);
+						}
+						else if(invAttr.inverseRedef() != null)
+						{
+							if(invAttr.inverseRedef().attrRef()[0].SimpleId() != null)
+							{
+								name = invAttr.inverseRedef().attrRef()[0].SimpleId().GetText();
+							}
+							else if(invAttr.inverseRedef().attrRef()[0].Path() != null)
+							{
+								name = invAttr.inverseRedef().attrRef()[0].Path().GetText();
+							}
+							var type = ParseInverseType(invAttr.inverseRedef().inverseType(), ref isCollection, ref rank);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, true);
+							entity.Attributes.Add(ad);
+						}
+					}
+				}
+			}
+
+			if(entity.Attributes.Any(a=>a.IsCollection && a.Rank == 0))
+			{
+				throw new Exception($"I found an attribute with IsCollection=true, but a rank of 0.");
 			}
 		}
 
-		public override void ExitNamedType(ExpressParser.NamedTypeContext context)
+		// FUNCTION
+		public override void EnterFuncHead(ExpressParser.FuncHeadContext context)
 		{
-			string t = null;
-			if(context.typeRef() != null)
+			var fName = context.funcDef().SimpleId().GetText();
+			var fCollection = false;
+			var fRank = 0;
+			var fGeneric = false;
+			var fType = "";
+
+			// Parse the return type
+			if(context.returnTypeChoice().allTypeSel() != null)
 			{
-				t = context.typeRef().SimpleId().GetText();
+				fType = ParseAllTypeSel(context.returnTypeChoice().allTypeSel(), ref fCollection, ref fGeneric);
 			}
-			else if(context.entityRef() != null)
+			else if(context.returnTypeChoice().collectionType() != null)
 			{
-				t = context.entityRef().SimpleId().GetText();
+				fType = ParseCollectionType(context.returnTypeChoice().collectionType(), ref fRank, ref fCollection);
 			}
 
-			if(currTypeData is SimpleType)
+			var parameters = new List<ParameterData>();
+
+			foreach(var formalParam in context.formalParams())
 			{
-				((SimpleType)currTypeData).WrappedType = t;
-			}
-			else if(currTypeData is Entity)
-			{
-				foreach(var ad in currAttrDatas)
+				foreach(var p in formalParam.formalParam())
 				{
-					ad.Type = t;
+					var pCollection = false;
+					var pGeneric = false;
+					var pRank = 0;
+					var pType = "";
+				
+					if(p.returnTypeChoice().allTypeSel() != null)
+					{
+						pType = ParseAllTypeSel(p.returnTypeChoice().allTypeSel(), ref pCollection, ref pGeneric);
+					}
+					else if(p.returnTypeChoice().collectionType() != null)
+					{
+						pType = ParseCollectionType(p.returnTypeChoice().collectionType(), ref pRank, ref pCollection);
+					}
+					foreach(var def in p.paramDef())
+					{
+						var pName = def.SimpleId().GetText();
+						parameters.Add(new ParameterData(pName, pCollection, pRank, pGeneric, pType));
+					}
 				}
 			}
+
+			var returnType = new TypeReference(fType, fCollection, fRank, fGeneric);
+			var fd =  new Express.FunctionData(fName, returnType, parameters);
+			funcData.Add(context.funcDef().SimpleId().GetText(), fd);
 		}
 
-		public override void ExitTypeBody(ExpressParser.TypeBodyContext context)
+		private string ParseInverseType(ExpressParser.InverseTypeContext context, ref bool isCollection, ref int rank)
 		{
-			currTypeData = null;
-		}
-
-		public override void EnterCollectionType(ExpressParser.CollectionTypeContext context)
-		{
-			if(context.Parent.Parent is ExpressParser.TypeBodyContext)
+			if(context.SET() != null || context.BAG() != null)
 			{
-				var simple = (SimpleType)currTypeData;
-				simple.IsCollectionType = true;
-				simple.Rank ++;
+				isCollection = true;
+				rank++;
 			}
+			return context.entityRef().SimpleId().GetText();
+		}
 
-			if(currAttrDatas.Any())
+		private string ParseAllTypeSel(ExpressParser.AllTypeSelContext context, ref bool isCollection, ref bool isGeneric)
+		{
+			if(context.simpleType() != null)
 			{
-				foreach(var ad in currAttrDatas)
+				return ParseSimpleType(context.simpleType());
+			}
+			else if(context.namedType() != null)
+			{
+				if(context.namedType().typeRef() != null)
 				{
-					ad.IsCollection = true;
-					ad.Rank ++;
+					return context.namedType().typeRef().SimpleId().GetText();
+				}
+				else if(context.namedType().entityRef() != null)
+				{
+					return context.namedType().entityRef().SimpleId().GetText();
 				}
 			}
+			else if(context.pseudoType() != null)
+			{
+				if(context.pseudoType().genericType() != null)
+				{
+					isGeneric = true;
+					return context.pseudoType().genericType().typeLabel().SimpleId().GetText();
+				}
+			}
+			else if(context.aggregateType() != null)
+			{
+				// not used in IFC
+				throw new NotImplementedException();
+			}
+			else if(context.conformantType() != null)
+			{
+				return ParseConformantType(context.conformantType(), ref isCollection, ref isGeneric);
+			}
+
+			throw new Exception($"I could not parse the all type selection with context: {context.GetText()}");
+		}
+
+		private string ParseConformantType(ExpressParser.ConformantTypeContext context, ref bool isCollection, ref bool isGeneric)
+		{
+			if(context.conformantArray() != null)
+			{
+				return ParseAllTypeSel(context.conformantArray().allTypeSel(), ref isCollection, ref isGeneric);
+			}
+			else if(context.conformantBag() != null)
+			{
+				return ParseAllTypeSel(context.conformantBag().allTypeSel(), ref isCollection, ref isGeneric);
+			}
+			else if(context.conformantList() != null)
+			{
+				return ParseAllTypeSel(context.conformantList().allTypeSel(), ref isCollection, ref isGeneric);
+			}
+			else if(context.conformantSet() != null)
+			{
+				return ParseAllTypeSel(context.conformantSet().allTypeSel(), ref isCollection, ref isGeneric);
+			}
+
+			throw new Exception($"I could not parse the conformant type with context: {context.GetText()}");
 		}
 
 		private string ParseSimpleType(ExpressParser.SimpleTypeContext context)
 		{
-			return generator.ParseType(context);
+			return generator.ParseSimpleType(context);
 		}
 
-		public override void EnterEntityHead(ExpressParser.EntityHeadContext context)
+		private string ParseNamedType(ExpressParser.NamedTypeContext context)
 		{
-			var name = context.entityDef().SimpleId().GetText();
+			if(context.typeRef() != null)
+			{
+				return context.typeRef().SimpleId().GetText();
+			}
+			else if(context.entityRef() != null)
+			{
+				return context.entityRef().SimpleId().GetText();
+			}
 
-			if(typeData.ContainsKey(name))
-			{
-				currTypeData = (Entity)typeData[name];
-			}
-			else
-			{
-				currTypeData = new Entity(name, generator, testGenerator);
-				typeData.Add(name, currTypeData);
-			}
+			return null;
 		}
 
-		public override void EnterSupertypeDecl(ExpressParser.SupertypeDeclContext context)
+		private string ParseCollectionType(ExpressParser.CollectionTypeContext context, ref int rank, ref bool isCollection)
 		{
-			((Entity)currTypeData).IsAbstract = context.ABSTRACT() != null;
-			var factor = context.supertypeExpr().supertypeFactor();
+			rank++;
+			isCollection = true;
 			
-			// IFC: Use choice only.
-			if(factor[0].choice() != null)
+			if(context.arrayType() != null)
+			{	
+				return ParseCollectionTypeSel(context.arrayType().collectionTypeSel(), ref rank, ref isCollection);
+			}
+			else if(context.listType() != null)
 			{
-				foreach(var superRef in factor[0].choice().supertypeExpr())
-				{
-					var name = superRef.supertypeFactor()[0].entityRef().SimpleId().GetText();
-					Entity tdSuper = null;
-					if(typeData.ContainsKey(name))
-					{
-						tdSuper = (Entity)typeData[name];
-					}
-					else
-					{
-						tdSuper = new Entity(name, generator, testGenerator);
-						typeData.Add(name, tdSuper);
-					}
-					((Entity)currTypeData).Supers.Add(tdSuper);
-				}
+				return ParseCollectionTypeSel(context.listType().collectionTypeSel(), ref rank, ref isCollection);
 			}
-		}
-
-		public override void EnterSubtypeDecl(ExpressParser.SubtypeDeclContext context)
-		{
-			foreach(var subRef in context.entityRef())
+			else if(context.setType() != null)
 			{
-				var name = subRef.SimpleId().GetText();
-				Entity tdSub = null;
-				if(typeData.ContainsKey(name))
-				{
-					tdSub = (Entity)typeData[name];
-				}
-				else
-				{
-					tdSub = new Entity(name, generator, testGenerator);
-					typeData.Add(name, tdSub);
-				}
-				((Entity)currTypeData).Subs.Add(tdSub);
+				return ParseCollectionTypeSel(context.setType().collectionTypeSel(), ref rank, ref isCollection);
 			}
-		}
-
-		public override void EnterExplDef(ExpressParser.ExplDefContext context)
-		{
-			var cad = new AttributeData(generator);
-			cad.IsOptional = context.OPTIONAL() != null;
-			currAttrDatas.Add(cad);
-			((Entity)currTypeData).Attributes.Add(cad);
-		}
-
-		public override void EnterDeriveDef(ExpressParser.DeriveDefContext context)
-		{
-			var cad = new AttributeData(generator);
-			cad.IsDerived = true;
-			currAttrDatas.Add(cad);
-			((Entity)currTypeData).Attributes.Add(cad);
-		}
-
-		public override void EnterInverseDef(ExpressParser.InverseDefContext context)
-		{
-			var cad = new AttributeData(generator);
-			cad.IsInverse = true;
-			currAttrDatas.Add(cad);
-			((Entity)currTypeData).Attributes.Add(cad);
-		}
-
-		public override void EnterInverseType(ExpressParser.InverseTypeContext context){
-			foreach(var ad in currAttrDatas)
+			else if(context.bagType() != null)
 			{
-				ad.IsCollection = true;
-				ad.Rank ++;
+				return ParseCollectionTypeSel(context.bagType().collectionTypeSel(), ref rank, ref isCollection);
 			}
+
+			throw new Exception("I could not parse the collection type.");
 		}
 
-		public override void EnterEntityRef(ExpressParser.EntityRefContext context)
+		private string ParseCollectionTypeSel(ExpressParser.CollectionTypeSelContext context, ref int rank, ref bool isCollection)
 		{
-			foreach(var ad in currAttrDatas){
-				ad.Type = context.SimpleId().GetText();
+			if(context.collectionType() != null)
+			{	
+				return ParseCollectionType(context.collectionType(), ref rank, ref isCollection);
 			}
-		}
-
-		public override void EnterAttrDef(ExpressParser.AttrDefContext context)
-		{
-			if(context.SimpleId() != null)
+			else if(context.simpleType() != null)
 			{
-				currAttrDatas.Last().Name = context.SimpleId().GetText();
+				return ParseSimpleType(context.simpleType());
 			}
-			else if(context.Path() != null)
+			else if(context.namedType() != null)
 			{
-				currAttrDatas.Last().Name = context.Path().GetText();
+				return ParseNamedType(context.namedType());
 			}
-		}
+			else if(context.genericType() != null)
+			{
+				return "T";
+			}
 
-		public override void ExitExplDef(ExpressParser.ExplDefContext context)
-		{
-			currAttrDatas.Clear();
-		}
-
-		public override void ExitDeriveDef(ExpressParser.DeriveDefContext context)
-		{
-			currAttrDatas.Clear();
-		}
-
-		public override void ExitInverseDef(ExpressParser.InverseDefContext context)
-		{
-			currAttrDatas.Clear();
-		}
-
-		public override void ExitEntityDecl(ExpressParser.EntityDeclContext context)
-		{
-			currTypeData = null;
-		}
-
-		public override void EnterFuncHead(ExpressParser.FuncHeadContext context)
-		{
-			var name = context.funcDef().SimpleId().GetText();
-			functionData.Add(context.funcDef().SimpleId().GetText(), new Express.FunctionData(name));
+			throw new Exception($"I could not parse te collection type selection with context: {context.GetText()}");
 		}
 	}
 }
