@@ -61,7 +61,7 @@ message {lm}{{
             return $"{data.Type} {data.Name}";
         }
 
-        public string AttributeDataType(bool isCollection, int rank, string type)
+        public string AttributeDataType(bool isCollection, int rank, string type, bool isGeneric)
         {
             return $"{type}";
         }
