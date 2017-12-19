@@ -28,9 +28,8 @@ namespace IFC4.Generators
         /// AttributeDataType is called when generating a string representing
         /// the language target's equivalent of a type for an attribute.
         /// </summary>
-        /// <param name="data"></param>
         /// <returns></returns>
-        string AttributeDataType(AttributeData data);
+        string AttributeDataType(bool isCollection, int rank, string type);
 
         /// <summary>
         /// AttributeDataString is called when generating a string representing
@@ -53,7 +52,7 @@ namespace IFC4.Generators
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        string SimpleTypeString(SimpleType data);
+        string SimpleTypeString(WrapperType data);
 
         /// <summary>
         /// EnumTypeString is called when an enum type is generated.
@@ -89,7 +88,7 @@ namespace IFC4.Generators
         /// </summary>
         /// <param name="context"></param>
         /// <returns></returns>
-        string ParseType(ExpressParser.SimpleTypeContext context);
+        string ParseSimpleType(ExpressParser.SimpleTypeContext context);
     }
 
     public interface IFunctionsGenerator
