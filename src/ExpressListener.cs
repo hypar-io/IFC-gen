@@ -246,6 +246,8 @@ namespace Express
 						var name = "";
 						var rank = 0;
 						bool isCollection = false;
+						bool optional = false;
+						bool inverse = true;
 
 						if(invAttr.inverseDef() != null)
 						{
@@ -258,7 +260,7 @@ namespace Express
 								name = invAttr.inverseDef().attrDef().Path().GetText();
 							}
 							var type = ParseInverseType(invAttr.inverseDef().inverseType(), ref isCollection, ref rank);
-							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, true);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, optional, inverse);
 							entity.Attributes.Add(ad);
 						}
 						else if(invAttr.inverseRedef() != null)
@@ -272,7 +274,7 @@ namespace Express
 								name = invAttr.inverseRedef().attrRef()[0].Path().GetText();
 							}
 							var type = ParseInverseType(invAttr.inverseRedef().inverseType(), ref isCollection, ref rank);
-							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, true);
+							var ad = new AttributeData(generator, name, type, rank, isCollection, false, false, optional, inverse);
 							entity.Attributes.Add(ad);
 						}
 					}
@@ -281,7 +283,12 @@ namespace Express
 
 			if(entity.Attributes.Any(a=>a.IsCollection && a.Rank == 0))
 			{
-				throw new Exception($"I found an attribute with IsCollection=true, but a rank of 0.");
+				throw new Exception("I found an attribute with IsCollection=true, but a rank of 0.");
+			}
+
+			if(entity.Attributes.Any(a=>a.IsInverse && a.IsOptional))
+			{
+				throw new Exception("I found an attribute with IsInverse=true, but marked as not optional.");
 			}
 		}
 
