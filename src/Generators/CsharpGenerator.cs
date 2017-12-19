@@ -115,7 +115,7 @@ namespace IFC4
         {
             var opt = data.IsOptional ? "optional" : string.Empty;
             var inverse = data.IsInverse ? "inverse" : string.Empty;
-            var prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} //{opt} {inverse}\n";
+            var prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} // {opt} {inverse}\n";
             return prop;
         }
 
