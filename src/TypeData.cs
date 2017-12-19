@@ -13,12 +13,15 @@ namespace Express
     /// </summary>
     public class TypeReference
     {
+        protected ILanguageGenerator generator;
+
         /// <summary>
         /// Name will be a type name or a path.
         /// </summary>
         /// <returns></returns>
-        public TypeReference(string type, bool isCollection, int rank, bool isGeneric)
+        public TypeReference(ILanguageGenerator generator, string type, bool isCollection, int rank, bool isGeneric)
         {
+            this.generator = generator;
             this.IsCollection = isCollection;
             this.Rank = rank;
             this.IsGeneric = isGeneric;
@@ -31,7 +34,13 @@ namespace Express
         /// The name of the Type that is referenced.
         /// </summary>
         /// <returns></returns>
-        public virtual string Type { get; }
+        public string Type
+        {
+            get
+            {
+                return generator.AttributeDataType(IsCollection, Rank, type, IsGeneric);
+            }
+        }
 
         /// <summary>
         /// Is this attribute a collection type such as ARRAY, SET, LIST, or BAG?
@@ -54,53 +63,6 @@ namespace Express
     public class ParameterData : TypeReference
     {
         public string Name { get; }
-
-        public ParameterData(string name, bool isCollection, int rank, bool isGeneric, string type) : base(type, isCollection, rank, isGeneric)
-        {
-            this.Name = name;
-        }
-    }
-
-    /// <summary>
-    /// AttributeData stores information about type attributes.
-    /// </summary>
-    public class AttributeData : ParameterData
-    {
-        private ILanguageGenerator generator;
-
-        public override string Type
-        {
-            get
-            {
-                return generator.AttributeDataType(IsCollection, Rank, type);
-            }
-        }
-
-        /// <summary>
-        /// Is this attribute INVERSE?
-        /// </summary>
-        /// <returns></returns>
-        public bool IsInverse { get; }
-
-        /// <summary>
-        /// Is this attribute DERIVED?
-        /// </summary>
-        /// <returns></returns>
-        public bool IsDerived { get; }
-
-        /// <summary>
-        /// Is this attribute marked as OPTIONAL?
-        /// </summary>
-        /// <returns></returns>
-        public bool IsOptional { get; }
-
-        public AttributeData(ILanguageGenerator generator, string name, string type, int rank, bool isCollection, bool isGeneric, bool isDerived = false, bool isOptional = false, bool isInverse = false) : base(name, isCollection, rank, isGeneric, type)
-        {
-            this.generator = generator;
-            this.IsDerived = isDerived;
-            this.IsOptional = isOptional;
-            this.IsInverse = isInverse;
-        }
 
         /// <summary>
         /// A string representing the parameter corresponding to an attribute's info.
@@ -125,6 +87,43 @@ namespace Express
                 }
                 return Char.ToLowerInvariant(name[0]) + name.Substring(1);
             }
+        }
+
+        public ParameterData(ILanguageGenerator generator, string name, bool isCollection, int rank, bool isGeneric, string type) : base(generator, type, isCollection, rank, isGeneric)
+        {
+            this.Name = name;
+        }
+    }
+
+    /// <summary>
+    /// AttributeData stores information about type attributes.
+    /// </summary>
+    public class AttributeData : ParameterData
+    {
+        /// <summary>
+        /// Is this attribute INVERSE?
+        /// </summary>
+        /// <returns></returns>
+        public bool IsInverse { get; }
+
+        /// <summary>
+        /// Is this attribute DERIVED?
+        /// </summary>
+        /// <returns></returns>
+        public bool IsDerived { get; }
+
+        /// <summary>
+        /// Is this attribute marked as OPTIONAL?
+        /// </summary>
+        /// <returns></returns>
+        public bool IsOptional { get; }
+
+        public AttributeData(ILanguageGenerator generator, string name, string type, int rank, bool isCollection, bool isGeneric, bool isDerived = false, bool isOptional = false, bool isInverse = false) : 
+            base(generator, name, isCollection, rank, isGeneric, type)
+        {
+            this.IsDerived = isDerived;
+            this.IsOptional = isOptional;
+            this.IsInverse = isInverse;
         }
 
         public override string ToString()
@@ -152,7 +151,7 @@ namespace Express
         public FunctionData(string name, TypeReference returnType, List<ParameterData> parameterData)
         {
             this.Name = name;
-            this.Parameters = new List<ParameterData>();
+            this.Parameters = parameterData;
             this.ReturnType = returnType;
         }
     }
