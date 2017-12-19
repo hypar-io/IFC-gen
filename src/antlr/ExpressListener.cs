@@ -702,6 +702,16 @@ public interface IExpressListener : IParseTreeListener {
 	/// <param name="context">The parse tree.</param>
 	void ExitFuncHead([NotNull] ExpressParser.FuncHeadContext context);
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.returnTypeChoice"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void EnterReturnTypeChoice([NotNull] ExpressParser.ReturnTypeChoiceContext context);
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.returnTypeChoice"/>.
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	void ExitReturnTypeChoice([NotNull] ExpressParser.ReturnTypeChoiceContext context);
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.funcRef"/>.
 	/// </summary>
 	/// <param name="context">The parse tree.</param>

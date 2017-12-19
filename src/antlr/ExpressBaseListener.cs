@@ -840,6 +840,18 @@ public partial class ExpressBaseListener : IExpressListener {
 	/// <param name="context">The parse tree.</param>
 	public virtual void ExitFuncHead([NotNull] ExpressParser.FuncHeadContext context) { }
 	/// <summary>
+	/// Enter a parse tree produced by <see cref="ExpressParser.returnTypeChoice"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void EnterReturnTypeChoice([NotNull] ExpressParser.ReturnTypeChoiceContext context) { }
+	/// <summary>
+	/// Exit a parse tree produced by <see cref="ExpressParser.returnTypeChoice"/>.
+	/// <para>The default implementation does nothing.</para>
+	/// </summary>
+	/// <param name="context">The parse tree.</param>
+	public virtual void ExitReturnTypeChoice([NotNull] ExpressParser.ReturnTypeChoiceContext context) { }
+	/// <summary>
 	/// Enter a parse tree produced by <see cref="ExpressParser.funcRef"/>.
 	/// <para>The default implementation does nothing.</para>
 	/// </summary>
