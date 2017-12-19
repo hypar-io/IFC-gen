@@ -61,9 +61,9 @@ message {lm}{{
             return $"{data.Type} {data.Name}";
         }
 
-        public string AttributeDataType(AttributeData data)
+        public string AttributeDataType(bool isCollection, int rank, string type)
         {
-            return $"{data.type}";
+            return $"{type}";
         }
 
         public string AttributeStepString(AttributeData data)
@@ -71,11 +71,11 @@ message {lm}{{
             throw new NotImplementedException();
         }
 
-        public string SimpleTypeString(SimpleType data)
+        public string SimpleTypeString(WrapperType data)
         {
             return $@"
 message {data.Name}{{
-    {data.wrappedType} Value = 1;
+    {data.WrappedType} Value = 1;
 }}";
         }
 
@@ -164,7 +164,7 @@ message {data.Name}{{
             get { return "IFC.g.proto"; }
         }
 
-        public string ParseType(ExpressParser.SimpleTypeContext context)
+        public string ParseSimpleType(ExpressParser.SimpleTypeContext context)
         {
             var type = string.Empty;
             if (context.binaryType() != null)
