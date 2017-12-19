@@ -29,7 +29,7 @@ namespace IFC4.Generators
         /// the language target's equivalent of a type for an attribute.
         /// </summary>
         /// <returns></returns>
-        string AttributeDataType(bool isCollection, int rank, string type);
+        string AttributeDataType(bool isCollection, int rank, string type, bool isGeneric);
 
         /// <summary>
         /// AttributeDataString is called when generating a string representing
