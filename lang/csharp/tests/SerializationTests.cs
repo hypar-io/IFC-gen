@@ -1,121 +1,119 @@
+using Elements;
+using Elements.Storage;
+using Newtonsoft.Json;
+using STEP;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Xml.Serialization;
 using Xunit;
 using Xunit.Abstractions;
-using IFC4;
-using IFC4.Storage;
-using Newtonsoft.Json;
-using IfcGuid;
 
 namespace IFC4.Tests
 {
-	public class SerializationTests
-	{
-		private readonly ITestOutputHelper output;
+    public class SerializationTests
+    {
+        private readonly ITestOutputHelper output;
 
-		public SerializationTests(ITestOutputHelper output)
-		{
-			this.output = output;
-		}
+        public SerializationTests(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
 
-		[Fact]
-		public void SerializeProject()
-		{
-			var id = new IfcGloballyUniqueId("12345");
-			
-			var p1 = new IfcProject(id);
-			p1.Name = "Test Project";
-			p1.Description = "A test of IFC-dotnet.";
-			
-			var p2 = JsonConvert.DeserializeObject<IfcProject>(p1.ToJSON());
-			//Assert.Equal(p1.Name.Value, p2.Name.Value);
-			//Assert.Equal(p1.Description.Value, p2.Description.Value);
+        [Fact]
+        public void SerializeProject()
+        {
+            var id = new IfcGloballyUniqueId("12345");
 
-			var wall = new IfcWall(new IfcGloballyUniqueId("wall1"));
-		}
+            var p1 = new IfcProject(id);
+            p1.Name = "Test Project";
+            p1.Description = "A test of IFC-dotnet.";
 
-		[Fact]
-		public void ExampleModel_Serialize_JSON()
-		{
-			var stepPath = "../../../models/example.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			var json = model.ToJSON();
-		}
+            var p2 = JsonConvert.DeserializeObject<IfcProject>(p1.ToJSON());
+            //Assert.Equal(p1.Name.Value, p2.Name.Value);
+            //Assert.Equal(p1.Description.Value, p2.Description.Value);
 
-		[Fact]
-		public void ExampleModel_Serialize_DOT()
-		{
-			var stepPath = "../../../models/example.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			var dot = model.ToDOT();
-		}
+            var wall = new IfcWall(new IfcGloballyUniqueId("wall1"));
+        }
 
-		[Fact]
-		public void ExampleModel_Deserialize_STEP()
-		{
-			var stepPath = "../../../models/example.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			var project = model.AllInstanceOfType<IfcProject>().FirstOrDefault();
-			ReportErrors(stepPath, errors);
-		}
+        [Fact]
+        public void ExampleModel_Serialize_JSON()
+        {
+            var stepPath = "../../../models/example.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            var json = model.ToJSON();
+        }
 
-		[Fact]
-		public void ExampleModel_Serialize_STEP()
-		{
-			var stepPath = "../../../models/example.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			var outputPath = "../../../models/output.ifc";
-			File.WriteAllText(outputPath,model.ToSTEP(outputPath));
-			ReportErrors(stepPath, errors);
-		}
-		
-		[Fact]
-		public void OfficeBuilding_Deserialize_STEP()
-		{
-			var stepPath = "../../../models/AC-20-Smiley-West-10-Bldg.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			ReportErrors(stepPath, errors);
-		}
+        [Fact]
+        public void ExampleModel_Serialize_DOT()
+        {
+            var stepPath = "../../../models/example.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            var dot = model.ToDOT();
+        }
 
-		[Fact]
-		public void Hospital_Deserialize_STEP()
-		{
-			var stepPath = "../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			ReportErrors(stepPath, errors);
-		}
+        [Fact]
+        public void ExampleModel_Deserialize_STEP()
+        {
+            var stepPath = "../../../models/example.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            var project = model.AllInstanceOfType<IfcProject>().FirstOrDefault();
+            ReportErrors(stepPath, errors);
+        }
 
-		[Fact]
-		public void PropertySet_Deserialize_STEP()
-		{
-			var stepPath = "../../../models/propertySet.ifc";
-			IList<STEPError> errors;
-			var model = new Document(stepPath, new LocalStorageProvider(), out errors);
-			ReportErrors(stepPath, errors);
-		}
+        [Fact]
+        public void ExampleModel_Serialize_STEP()
+        {
+            var stepPath = "../../../models/example.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            var outputPath = "../../../models/output.ifc";
+            File.WriteAllText(outputPath, model.ToSTEP(outputPath));
+            ReportErrors(stepPath, errors);
+        }
 
-		private void ReportErrors(string filePath, IEnumerable<STEPError> errors)
-		{	
-			if(!errors.Any())
-			{
-				return;
-			}
+        [Fact]
+        public void OfficeBuilding_Deserialize_STEP()
+        {
+            var stepPath = "../../../models/AC-20-Smiley-West-10-Bldg.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            ReportErrors(stepPath, errors);
+        }
 
-			Console.WriteLine($"The following errors occurred while parsing {filePath}:");
-			foreach(var e in errors)
-			{
-				Console.WriteLine(e.Message);
-			}
-		}
-	}
+        [Fact]
+        public void Hospital_Deserialize_STEP()
+        {
+            var stepPath = "../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            ReportErrors(stepPath, errors);
+        }
+
+        [Fact]
+        public void PropertySet_Deserialize_STEP()
+        {
+            var stepPath = "../../../models/propertySet.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+            ReportErrors(stepPath, errors);
+        }
+
+        private void ReportErrors(string filePath, IEnumerable<STEPError> errors)
+        {
+            if (!errors.Any())
+            {
+                return;
+            }
+
+            Console.WriteLine($"The following errors occurred while parsing {filePath}:");
+            foreach (var e in errors)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
+    }
 }

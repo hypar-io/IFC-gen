@@ -94,6 +94,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAbsorbedDoseMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -133,6 +138,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAccelerationMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -174,6 +184,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAmountOfSubstanceMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -213,6 +228,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAngularVelocityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -254,6 +274,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcAreaDensityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -293,6 +318,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAreaMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -334,6 +364,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcBoolean>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -373,6 +408,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoxAlignment>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -414,6 +454,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCardinalPointReference>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -453,6 +498,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcComplexNumber>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -494,6 +544,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCompoundPlaneAngleMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -533,6 +588,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcContextDependentMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -574,6 +634,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcCountMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -613,6 +678,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurvatureMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -654,6 +724,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDate>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -693,6 +768,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDateTime>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -734,6 +814,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDayInMonthNumber>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -773,6 +858,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDayInWeekNumber>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -814,6 +904,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDescriptiveMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -853,6 +948,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDimensionCount>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -894,6 +994,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDoseEquivalentMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -933,6 +1038,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuration>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -974,6 +1084,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcDynamicViscosityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1013,6 +1128,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricCapacitanceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1054,6 +1174,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricChargeMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1093,6 +1218,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricConductanceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1134,6 +1264,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricCurrentMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1173,6 +1308,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricResistanceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1214,6 +1354,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcElectricVoltageMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1253,6 +1398,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEnergyMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1294,6 +1444,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontStyle>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1333,6 +1488,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFontVariant>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1374,6 +1534,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFontWeight>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1413,6 +1578,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcForceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1454,6 +1624,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcFrequencyMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1493,6 +1668,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGloballyUniqueId>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1534,6 +1714,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcHeatFluxDensityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1573,6 +1758,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcHeatingValueMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1614,6 +1804,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIdentifier>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1653,6 +1848,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIlluminanceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1694,6 +1894,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcInductanceMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1733,6 +1938,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcInteger>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1774,6 +1984,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIntegerCountRateMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1813,6 +2028,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIonConcentrationMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1854,6 +2074,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcIsothermalMoistureCapacityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1893,6 +2118,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcKinematicViscosityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -1934,6 +2164,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLabel>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -1973,6 +2208,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLanguageId>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2014,6 +2254,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLengthMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2053,6 +2298,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLinearForceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2094,6 +2344,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearMomentMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2133,6 +2388,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLinearStiffnessMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2174,6 +2434,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLinearVelocityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2213,6 +2478,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLogical>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2254,6 +2524,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousFluxMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2293,6 +2568,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLuminousIntensityDistributionMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2334,6 +2614,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcLuminousIntensityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2373,6 +2658,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMagneticFluxDensityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2414,6 +2704,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMagneticFluxMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2453,6 +2748,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMassDensityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2494,6 +2794,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassFlowRateMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2533,6 +2838,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMassMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2574,6 +2884,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMassPerLengthMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2613,6 +2928,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcModulusOfElasticityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2654,6 +2974,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfLinearSubgradeReactionMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2693,6 +3018,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2734,6 +3064,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2773,6 +3108,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMoistureDiffusivityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2814,6 +3154,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMolecularWeightMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2853,6 +3198,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMomentOfInertiaMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2894,6 +3244,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcMonetaryMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -2933,6 +3288,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMonthInYearNumber>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -2974,6 +3334,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNonNegativeLengthMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3013,6 +3378,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcNormalisedRatioMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3054,6 +3424,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcNumericMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3093,6 +3468,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPHMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3134,6 +3514,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcParameterValue>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3173,6 +3558,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlanarForceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3214,6 +3604,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPlaneAngleMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3253,6 +3648,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPositiveLengthMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3294,6 +3694,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPositivePlaneAngleMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3333,6 +3738,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPositiveRatioMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3374,6 +3784,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPowerMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3413,6 +3828,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPresentableText>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3454,6 +3874,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcPressureMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3493,6 +3918,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSet>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3534,6 +3964,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRadioActivityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3573,6 +4008,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRatioMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3614,6 +4054,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcReal>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3653,6 +4098,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRotationalFrequencyMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3694,6 +4144,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcRotationalMassMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3733,6 +4188,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRotationalStiffnessMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3774,6 +4234,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSectionModulusMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3813,6 +4278,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSectionalAreaIntegralMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3854,6 +4324,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcShearModulusMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3893,6 +4368,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSolidAngleMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -3934,6 +4414,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPowerLevelMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -3973,6 +4458,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSoundPowerMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4014,6 +4504,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSoundPressureLevelMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4053,6 +4548,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSoundPressureMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4094,6 +4594,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecificHeatCapacityMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4133,6 +4638,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpecularExponent>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4174,6 +4684,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcSpecularRoughness>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4213,6 +4728,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTemperatureGradientMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4254,6 +4774,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTemperatureRateOfChangeMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4293,6 +4818,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcText>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4334,6 +4864,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextAlignment>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4373,6 +4908,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextDecoration>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4414,6 +4954,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTextFontName>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4453,6 +4998,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextTransformation>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4494,6 +5044,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalAdmittanceMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4533,6 +5088,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcThermalConductivityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4574,6 +5134,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalExpansionCoefficientMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4613,6 +5178,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcThermalResistanceMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4654,6 +5224,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcThermalTransmittanceMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4693,6 +5268,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcThermodynamicTemperatureMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4734,6 +5314,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTime>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4773,6 +5358,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTimeMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4814,6 +5404,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcTimeStamp>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4853,6 +5448,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTorqueMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4894,6 +5494,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcURIReference>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -4933,6 +5538,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVaporPermeabilityMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -4974,6 +5584,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcVolumeMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -5013,6 +5628,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVolumetricFlowRateMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {
@@ -5054,6 +5674,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<IfcWarpingConstantMeasure>(json);
 		}
 
+        public override string ToString()
+        {
+            return value.ToString();
+        }
+
 		public override string ToStepValue(bool isSelectOption = false)
         {
 			if(isSelectOption)
@@ -5093,6 +5718,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWarpingMomentMeasure>(json);
 		}
+
+        public override string ToString()
+        {
+            return value.ToString();
+        }
 
 		public override string ToStepValue(bool isSelectOption = false)
         {

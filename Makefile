@@ -16,7 +16,7 @@ generate_debug:
 	$(ANTLR) -Dlanguage=CSharp -package Express -o ./src/antlr $(GRAMMAR_IFC)
 
 csharp: default
-	dotnet $(DEBUG_OUT)/IFC-gen.dll -e $(SCHEMA) -l csharp -o ./lang/csharp/src -t ./lang/csharp/tests
+	dotnet $(DEBUG_OUT)/IFC-gen.dll -e $(SCHEMA) -l csharp -o ./lang/csharp/src/IFC4 -t ./lang/csharp/tests
 	dotnet build ./lang/csharp/IFC-dotnet.sln
 
 csharp-tests: csharp
@@ -27,7 +27,7 @@ proto: default
 
 debug_parser: generate_debug
 	dotnet build ./src/IFC-gen.csproj
-	dotnet $(DEBUG_OUT)/IFC-gen.dll -e ./debug.exp -l csharp -o ./lang/csharp/src -t ./lang/csharp/tests/ -p
+	dotnet $(DEBUG_OUT)/IFC-gen.dll -e ./debug.exp -l csharp -o ./lang/csharp/src/IFC4 -t ./lang/csharp/tests/ -p
 
 clean:
 	rm -rf ./lang/csharp/src/antlr

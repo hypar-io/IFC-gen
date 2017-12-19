@@ -1,15 +1,14 @@
-using Xunit;
-using Xunit.Abstractions;
-using IFC4;
-using IFC4.Storage;
-using IfcGuid;
+using Elements;
+using Elements.Storage;
 using System;
-using System.Collections.Generic;
-//using IFC4.Grpc;
+using System.IO;
+using Xunit;
 
-namespace test
+namespace IFC4.Tests
 {
-    public class ProjectTests{
+    public class Elements
+    {
+
         [Fact]
         public void CanConstructAProject()
         {
@@ -19,15 +18,20 @@ namespace test
         }
 
         [Fact]
-        public void Project(){
-            /*var doc = new Document(new LocalStorageProvider());
-            
-            var p = doc.AddProject("Test Project", "A test project.");
-            var s = doc.AddSite(p);
+        public void Project()
+        {
+            var m = new Model(new LocalStorageProvider());
+
+            var p = m.AddProject("Test Project", "A test project.");
+            var stepPath = "../../../models/project_test.ifc";
+            File.WriteAllText(stepPath, m.ToSTEP(stepPath));
+
+            /*var s = doc.AddSite(p);
             var b = doc.AddBuilding(s);
             var storey = doc.AddBuildingStorey(b, 0.0);
             var e = doc.AddBuildingElement(storey, "Test", "A test element.");
-            
+            */
+
             /*var properties = new List<IfcProperty>();
             var p1 = new IfcPropertySingleValue(new IfcIdentifier("foo"));
             p1.NominalValue = new IfcPositiveLengthMeasure(new IfcLengthMeasure(2.0));
@@ -38,11 +42,12 @@ namespace test
 
             // ensure that relationships are correctly generated
             // and have both ends set.
-        
+
         }
 
-        private IfcGloballyUniqueId TestId(){
-            return IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid());
+        private IfcGloballyUniqueId TestId()
+        {
+            return IfcGuid.ToIfcGuid(Guid.NewGuid());
         }
     }
 }

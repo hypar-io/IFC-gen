@@ -185,6 +185,11 @@ namespace IFC4
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
 
+        public override string ToString()
+        {{
+            return value.ToString();
+        }}
+
 		public override string ToStepValue(bool isSelectOption = false)
         {{
 			if(isSelectOption)

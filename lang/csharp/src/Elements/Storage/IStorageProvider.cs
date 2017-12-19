@@ -1,7 +1,8 @@
+using IFC4;
 using System;
 using System.Collections.Generic;
 
-namespace IFC4.Storage
+namespace Elements.Storage
 {
     public interface IStorageProvider
     {

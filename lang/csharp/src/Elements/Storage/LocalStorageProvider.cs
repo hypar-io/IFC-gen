@@ -1,8 +1,9 @@
+using IFC4;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 
-namespace IFC4.Storage
+namespace Elements.Storage
 {
 	/// <summary>
 	/// LocalStorageProvider provides an in memory implementation of IStorageProvider.

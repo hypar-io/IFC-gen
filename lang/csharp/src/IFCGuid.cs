@@ -1,7 +1,7 @@
 using System;
 using System.Diagnostics;
 
-namespace IfcGuid
+namespace IFC4
 {
   /// <summary>
   /// Conversion methods between an IFC 
