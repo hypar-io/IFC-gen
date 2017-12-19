@@ -17,6 +17,7 @@ namespace IFC4.Generators
         {
             return $@"
 using System;
+using System.Collections.Generic;
 
 namespace IFC4
 {{
@@ -32,8 +33,9 @@ namespace IFC4
             var functionsBuilder = new StringBuilder();
             foreach(var f in functionDatas)
             {
+                var parameters = string.Join(",", f.Parameters.Select(p=>$"{p.Type} {p.ParameterName}"));
                 var func = $@"
-        public static void {f.Name}()
+        public static {f.ReturnType.Type} {f.Name}{(f.ReturnType.IsGeneric?"<T>":"")}({parameters})
         {{
             throw new NotImplementedException();
         }}";
