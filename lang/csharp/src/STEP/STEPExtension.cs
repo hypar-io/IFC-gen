@@ -11,6 +11,8 @@ namespace STEP
     /// </summary>
     public static class STEPExtensions
     {
+        private const string NULLTOKEN = "$";
+
         public static string ToStepValue(this IEnumerable<IConvertibleToSTEP> list, bool isSelectOption = false)
         {
             List<string> values = new List<string>();
@@ -141,6 +143,11 @@ namespace STEP
 
         public static string ToStepValue(this byte[] value, bool isSelectOption = false)
         {
+            if(value == null)
+            {
+                return NULLTOKEN;
+            }
+
             return value.ToString();
         }
 
@@ -151,6 +158,10 @@ namespace STEP
 
         public static string ToStepValue(this string value, bool isSelectOption = false)
         {
+            if(value == null)
+            {
+                return NULLTOKEN;
+            }
             return "'" + value.ToString() + "'";
         }
 

@@ -1,53 +1,32 @@
 using Elements;
 using Elements.Storage;
+using IFC4;
 using System;
 using System.IO;
 using Xunit;
 
-namespace IFC4.Tests
+namespace Elements.Tests
 {
-    public class Elements
+    public class ElementsTests
     {
-
-        [Fact]
-        public void CanConstructAProject()
-        {
-            var id = new IfcGloballyUniqueId(TestId());
-            var p = new IfcProject(id);
-            Assert.NotNull(p);
-        }
+        private const string BASELINES = "../../../baselines/";
 
         [Fact]
         public void Project()
         {
-            var m = new Model(new LocalStorageProvider());
+            var storage = new LocalStorageProvider();
 
-            var p = m.AddProject("Test Project", "A test project.");
-            var stepPath = "../../../models/project_test.ifc";
-            File.WriteAllText(stepPath, m.ToSTEP(stepPath));
+            // Create some basic information about the model.
+            var address = Model.CreateAddress(storage, "Office", "12345 Sesame Street", "Gotham", null, "New York", "10005", "USA");
+            var user = Model.CreateUser(storage, "ikeough", "Ian", "Keough", "foo@bar.com", IfcRoleEnum.ARCHITECT);
 
-            /*var s = doc.AddSite(p);
-            var b = doc.AddBuilding(s);
-            var storey = doc.AddBuildingStorey(b, 0.0);
-            var e = doc.AddBuildingElement(storey, "Test", "A test element.");
-            */
+            // Create the model.
+            var m = new Model(storage, "Test Project", "A test project for the Elements API.", address, user);
 
-            /*var properties = new List<IfcProperty>();
-            var p1 = new IfcPropertySingleValue(new IfcIdentifier("foo"));
-            p1.NominalValue = new IfcPositiveLengthMeasure(new IfcLengthMeasure(2.0));
-            p1.Unit = new IfcUnit(new IfcSIUnit(new IfcDimensionalExponents(1,1,1,1,1,1,1), IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE));
-            var pset = new IfcPropertySet(IfcGuid.IfcGuid.ToIfcGuid(Guid.NewGuid()), properties);
-            */
-            //Assert.Equal(5, doc.AllInstanceOfType<IfcRelAggregates>().Count());
-
-            // ensure that relationships are correctly generated
-            // and have both ends set.
-
-        }
-
-        private IfcGloballyUniqueId TestId()
-        {
-            return IfcGuid.ToIfcGuid(Guid.NewGuid());
+            // Write the model to STEP.
+            var stepPath = Path.Combine(BASELINES, "project.ifc");
+            var step = m.ToSTEP(stepPath);
+            File.WriteAllText(stepPath, step);
         }
     }
 }

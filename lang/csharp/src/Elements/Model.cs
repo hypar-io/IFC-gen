@@ -18,13 +18,117 @@ namespace Elements
     /// <summary>
     /// A Model contains a number of Elements.
     /// </summary>
-    public class Model
+    public class Model : IInstanceQuery
     {
-        private IStorageProvider storage;
+        private IDictionary<Guid, BaseIfc>  storage;
+        private const string APPNAME = "IFC-dotnet";
 
-        public Model(IStorageProvider storage)
+        public Model(IDictionary<Guid, BaseIfc>  storage, string name, string description, IfcAddress address, IfcPerson user)
         {
             this.storage = storage;
+
+            this.storage.Add(address.Id, address);
+            this.storage.Add(user.Id, user);
+
+            // Create an organization to own the Project
+            var org = new IfcOrganization("Test", "Test Organization", "An organization to test model creation.", 
+                            new List<IfcActorRole>(), new List<IfcAddress>(){address});
+            this.storage.Add(org.Id, org);
+            
+            // Create an organization for app creation.
+            var appOrg = new IfcOrganization(APPNAME);
+            this.storage.Add(appOrg.Id, appOrg);
+
+            // Create an authoring application.
+            var v = org.GetType().Assembly.GetName().Version.ToString();
+            var app = new IfcApplication(appOrg, v, APPNAME, APPNAME);
+            this.storage.Add(app.Id, app);
+
+            // Create an person and history for the owner history.
+            var personAndOrg = new IfcPersonAndOrganization(user, org);
+            this.storage.Add(personAndOrg.Id, personAndOrg);
+
+            // Create an owner history for the project.
+            var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
+            this.storage.Add(history.Id, history);
+
+            // Create the project.
+            var proj = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, name, description, null, null, null, null, null);   
+            this.storage.Add(proj.Id, proj);
+
+            /*
+            #7 = IFCUNITASSIGNMENT((#8, #9, #10, #11, #15, #16, #17, #18, #19));
+            #8 = IFCSIUNIT(*, .LENGTHUNIT., .MILLI., .METRE.);
+            #9 = IFCSIUNIT(*, .AREAUNIT., $, .SQUARE_METRE.);
+            #10 = IFCSIUNIT(*, .VOLUMEUNIT., $, .CUBIC_METRE.);
+            #11 = IFCCONVERSIONBASEDUNIT(#12, .PLANEANGLEUNIT., 'DEGREE', #13);
+            #12 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
+            #13 = IFCMEASUREWITHUNIT(IFCPLANEANGLEMEASURE(1.745E-2), #14);
+            #14 = IFCSIUNIT(*, .PLANEANGLEUNIT., $, .RADIAN.);
+            #15 = IFCSIUNIT(*, .SOLIDANGLEUNIT., $, .STERADIAN.);
+            #16 = IFCSIUNIT(*, .MASSUNIT., $, .GRAM.);
+            #17 = IFCSIUNIT(*, .TIMEUNIT., $, .SECOND.);
+            #18 = IFCSIUNIT(*, .THERMODYNAMICTEMPERATUREUNIT., $, .DEGREE_CELSIUS.);
+            #19 = IFCSIUNIT(*, .LUMINOUSINTENSITYUNIT., $, .LUMEN.);
+             */
+
+            var lengthUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE));
+            this.storage.Add(lengthUnit.Id, lengthUnit);
+
+            var areaUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.AREAUNIT, IfcSIUnitName.SQUARE_METRE));
+            this.storage.Add(areaUnit.Id, areaUnit);
+
+            var volumeUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.VOLUMEUNIT, IfcSIUnitName.CUBIC_METRE));
+            this.storage.Add(volumeUnit.Id, volumeUnit);
+
+            var solidAngleUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.SOLIDANGLEUNIT, IfcSIUnitName.STERADIAN));
+            this.storage.Add(solidAngleUnit.Id, solidAngleUnit);
+
+            var massUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.MASSUNIT, IfcSIUnitName.GRAM));
+            this.storage.Add(massUnit.Id, massUnit);
+
+            var timeUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.TIMEUNIT, IfcSIUnitName.SECOND));
+            this.storage.Add(timeUnit.Id, timeUnit);
+
+            var thermUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IfcSIUnitName.DEGREE_CELSIUS));
+            this.storage.Add(thermUnit.Id, thermUnit);
+
+            var lumUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.LUMINOUSINTENSITYUNIT, IfcSIUnitName.LUMEN));
+            this.storage.Add(lumUnit.Id, lumUnit);
+
+            var planeAngleUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.PLANEANGLEUNIT, IfcSIUnitName.RADIAN));
+            this.storage.Add(planeAngleUnit.Id, planeAngleUnit);
+
+            var measure = new IfcMeasureWithUnit(new IfcValue(new IfcMeasureValue(new IfcPlaneAngleMeasure(1.745e-2))), planeAngleUnit);
+            this.storage.Add(measure.Id, measure);
+
+            var dimExp = new IfcDimensionalExponents(0,0,0,0,0,0,0);
+            this.storage.Add(dimExp.Id, dimExp);
+
+            var degree = new IfcUnit(new IfcConversionBasedUnit(dimExp, IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", measure));
+            this.storage.Add(degree.Id, degree);
+
+            var units = new List<IfcUnit>{lengthUnit, areaUnit, volumeUnit, solidAngleUnit, massUnit, timeUnit, thermUnit, lumUnit, planeAngleUnit, degree};
+            var unitAss = new IfcUnitAssignment(units);
+            this.storage.Add(unitAss.Id, unitAss);
+        }
+
+        private int UnixNow()
+        {
+            return (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+        }
+
+        public static IfcAddress CreateAddress(IDictionary<Guid, BaseIfc> storage, string description, string street, string city, string poBox, string state, string postalCode, string country)
+        {
+            var lines = new List<IfcLabel>(){street};
+            return new IfcPostalAddress(IfcAddressTypeEnum.OFFICE, description, null, null, lines, poBox, city, state, postalCode, country);
+        }
+
+        public static IfcPerson CreateUser(IDictionary<Guid, BaseIfc> storage, string userId, string lastName, string firstName, string emailAddress, IfcRoleEnum role)
+        {
+            var r = new IfcActorRole(role);
+            storage.Add(r.Id, r);
+            return new IfcPerson(userId, lastName, firstName, null, null, null, new List<IfcActorRole>{r}, null);
         }
 
         /// <summary>
@@ -34,7 +138,7 @@ namespace Elements
         /// <param name="errors">A list of errors generated during creation of the Document.</param>
         /// <returns>A Model.</returns>
         /// <exception cref="FileNotFoundException">The specified file path does not exist.</exception>
-        public Model(string STEPfilePath, IStorageProvider storage, out IList<STEPError> errors)
+        public Model(string STEPfilePath, IDictionary<Guid, BaseIfc> storage, out IList<STEPError> errors)
         {
             if (!File.Exists(STEPfilePath))
             {
@@ -82,7 +186,8 @@ namespace Elements
                 // Transfer the constructed instances to storage.
                 foreach (var data in listener.InstanceData)
                 {
-                    storage.AddInstance((BaseIfc)data.Value.ConstructedInstance);
+                    var inst = (BaseIfc)data.Value.ConstructedInstance;
+                    storage.Add(inst.Id, inst);
                 }
 
                 sw.Stop();
@@ -106,15 +211,15 @@ namespace Elements
             builder.AppendLine(Begin(filePath));
 
             var index = 1;
-            foreach (var instance in storage.Instances.Values)
+            foreach (var element in storage.Values)
             {
-                instance.StepId = index;
+                element.StepId = index;
                 index++;
             }
 
-            foreach (var instance in storage.Instances.Values)
+            foreach (var element in storage.Values)
             {
-                var instanceValue = instance.ToSTEP();
+                var instanceValue = element.ToSTEP();
                 builder.AppendLine(instanceValue);
             }
 
@@ -128,7 +233,7 @@ namespace Elements
 
         private string Begin(string filePath)
         {
-            var project = this.AllInstanceOfType<IfcProject>().FirstOrDefault();
+            var project = AllInstancesOfType<IfcProject>().FirstOrDefault();
 
             return $@"
 ISO-10303-21;
@@ -337,7 +442,7 @@ END-ISO-10303-21;";
         /// <returns>A string representing the model serialized in DOT notation.</returns>
         public string ToDOT()
         {
-            var relationships = storage.AllInstancesDerivedFromType<IfcRelationship>();
+            var relationships = AllInstancesDerivedFromType<IfcRelationship>();
             var visited = new List<Guid>();  // Ids of visited nodes;
 
             var relations = new StringBuilder();
@@ -375,131 +480,19 @@ $@"graph model{{
             return graph;
         }
 
-        public IEnumerable<T> AllInstanceOfType<T>()
+        		
+		#region IElementQuery
+
+        public IEnumerable<Tifc> AllInstancesDerivedFromType<Tifc>()
         {
-            return storage.AllInstancesOfType<T>();
+            return storage.Values.Where(e=>typeof(Tifc).IsAssignableFrom(e.GetType())).Cast<Tifc>();
         }
 
-        public IEnumerable<BaseIfc> AllInstancesDerivedFromType<T>()
+        public IEnumerable<Tifc> AllInstancesOfType<Tifc>()
         {
-            return storage.AllInstancesDerivedFromType<T>();
+            return storage.Values.Where(e=>e.GetType() == typeof(Tifc)).Cast<Tifc>();
         }
 
-        public BaseIfc InstanceById(Guid id)
-        {
-            return storage.InstanceById(id);
-        }
-
-        public IfcProject AddProject(string name, string description)
-        {
-			var timeStamp = ConvertToUnixTimestamp(DateTime.UtcNow);
-
-			var role = new IfcActorRole(IfcRoleEnum.ARCHITECT);
-			storage.AddInstance(role);
-
-			var address = new IfcPostalAddress(IfcAddressTypeEnum.OFFICE, "Office", null, null, null, null, null, null, null, null);
-			storage.AddInstance(address);
-
-			var person = new IfcPerson("ikeough", "Keough", "Ian", null, null, null, new List<IfcActorRole>{role}, new List<IfcAddress>{address});
-			storage.AddInstance(person);
-
-			var org = new IfcOrganization("hypar", "Hypar", "Hypar", new List<IfcActorRole>{role}, new List<IfcAddress>(){address});
-			storage.AddInstance(org);
-
-			var personAndOrg = new IfcPersonAndOrganization(person, org);
-			storage.AddInstance(personAndOrg);
-
-			var application = new IfcApplication(org, "0.0.1", "Hypar", "Hypar");
-			storage.AddInstance(application);
-
-			var history = new IfcOwnerHistory(personAndOrg, application, timeStamp);
-			storage.AddInstance(history);
-
-			var p = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, name, description, null, null, null, null, null);
-
-            storage.AddInstance(p);
-            return p;
-        }
-
-		private static int ConvertToUnixTimestamp(DateTime date)
-		{
-			DateTime origin = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-			TimeSpan diff = date.ToUniversalTime() - origin;
-			return (int)Math.Floor(diff.TotalSeconds);
-		}
-
-        public IfcSite AddSite(IfcProject project, string name = "", string description = "")
-        {
-            var s = new IfcSite(IfcGuid.ToIfcGuid(Guid.NewGuid()));
-            s.Name = name;
-            s.Description = description;
-            storage.AddInstance(s);
-            CreateAggregationRelationship(project, s);
-            return s;
-        }
-
-        public bool RemoveSite(Guid id)
-        {
-            var s = storage.InstanceById(id);
-            if (s == null)
-            {
-                return false;
-            }
-            storage.RemoveInstance(id);
-            RemoveAggregationRelationships(s);
-            return true;
-        }
-
-        public IfcBuilding AddBuilding(IfcSite site, string name = "", string description = "")
-        {
-            var b = new IfcBuilding(IfcGuid.ToIfcGuid(Guid.NewGuid()));
-            b.Name = name;
-            b.Description = description;
-            storage.AddInstance(b);
-            CreateAggregationRelationship(site, b);
-            return b;
-        }
-
-        public void RemoveBuilding(Guid id, bool delete = false)
-        {
-            var i = storage.InstanceById(id);
-            storage.RemoveInstance(i.Id);
-        }
-
-        public IfcBuildingStorey AddBuildingStorey(IfcBuilding building, double elevation, string name = "")
-        {
-            var s = new IfcBuildingStorey(IfcGuid.ToIfcGuid(Guid.NewGuid()));
-            s.Elevation = elevation;
-            s.Name = name;
-            storage.AddInstance(s);
-            CreateAggregationRelationship(building, s);
-            return s;
-        }
-
-        public IfcBuildingElementProxy AddBuildingElement(IfcBuildingStorey storey, string name = "", string description = "")
-        {
-            var e = new IfcBuildingElementProxy(IfcGuid.ToIfcGuid(Guid.NewGuid()));
-            e.Name = name;
-            e.Description = description;
-            storage.AddInstance(e);
-            CreateAggregationRelationship(storey, e);
-            return e;
-        }
-
-        private void CreateAggregationRelationship(IfcObjectDefinition from, IfcObjectDefinition to)
-        {
-            var r = new IfcRelAggregates(IfcGuid.ToIfcGuid(Guid.NewGuid()), from, new List<IfcObjectDefinition> { to });
-            from.Decomposes.Add(r);
-            storage.AddInstance(r);
-        }
-
-        private void RemoveAggregationRelationships(BaseIfc obj)
-        {
-            var relationships = storage.AllInstancesOfType<IfcRelAggregates>().Where(r => r.RelatedObjects.Contains(obj)).ToList();
-            for (var i = relationships.Count() - 1; i >= 0; i--)
-            {
-                storage.RemoveInstance(relationships[i].Id);
-            }
-        }
+		#endregion
     }
 }

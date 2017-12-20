@@ -60,7 +60,7 @@ namespace IFC4.Tests
             var stepPath = "../../../models/example.ifc";
             IList<STEPError> errors;
             var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            var project = model.AllInstanceOfType<IfcProject>().FirstOrDefault();
+            var project = model.AllInstancesOfType<IfcProject>().FirstOrDefault();
             ReportErrors(stepPath, errors);
         }
 
