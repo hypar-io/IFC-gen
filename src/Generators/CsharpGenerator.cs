@@ -62,25 +62,7 @@ namespace IFC4
 			return """";
 		}
     }
-
-	public abstract class Select : BaseIfc
-	{
-		[JsonProperty(""value"")]
-		public dynamic Value {get;protected set;}
-
-		public override string ToStepValue(bool isSelectOption = true)
-		{
-			if(Value is Select)
-			{
-				return $""{Value.Value.ToStepValue(isSelectOption)}"";
-			}
-			else
-			{
-				return $""{Value.ToStepValue(isSelectOption)}"";
-			}
-		}
-	}
-	";
+    ";
         }
 
         public string End()
@@ -165,41 +147,14 @@ namespace IFC4
 	{{
 		internal {WrappedType(data)} value;
 
-		public {data.Name}({WrappedType(data)} value)
-		{{
-			this.value = value;
-		}}	
-
-		public static implicit operator {WrappedType(data)}({data.Name} v)
-		{{
-			return v.value;
-		}}
-
-		public static implicit operator {data.Name}({WrappedType(data)} v)
-		{{
-			return new {data.Name}(v);
-		}}	
-
-		public static {data.Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{data.Name}>(json);
-		}}
-
-        public override string ToString()
-        {{
-            return value.ToString();
-        }}
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {{
-			if(isSelectOption)
-			{{
-				return $""{{GetType().Name.ToUpper()}}({{value.ToStepValue(isSelectOption)}})"";
-			}}
-			else
-			{{
-				return value.ToStepValue(isSelectOption);
-			}}
+		public {data.Name}({WrappedType(data)} value){{ this.value = value; }}	
+		public static implicit operator {WrappedType(data)}({data.Name} v){{ return v.value; }}
+		public static implicit operator {data.Name}({WrappedType(data)} v){{ return new {data.Name}(v); }}	
+		public static {data.Name} FromJSON(string json){{ return JsonConvert.DeserializeObject<{data.Name}>(json); }}
+        public override string ToString(){{ return value.ToString(); }}
+		public override string ToStepValue(bool isSelectOption = false){{
+			if(isSelectOption){{ return $""{{GetType().Name.ToUpper()}}({{value.ToStepValue(isSelectOption)}})""; }}
+			else{{ return value.ToStepValue(isSelectOption); }}
         }}
 	}}
 ";
@@ -219,24 +174,48 @@ namespace IFC4
 
         public string SelectTypeString(SelectType data)
         {
+            var subTypes = new StringBuilder();
+            foreach(var value in data.Values)
+            {
+                // There is one select in IFC that 
+                // has an option which is an enum, which
+                // does not inherit from BaseIfc.
+                if(value == "IfcNullStyle")
+                {
+                    continue;
+                }
+
+                var subType = 
+    $@"
+    public class {data.Name}{value} : {data.Name}
+    {{
+        private readonly {value} value;
+        public {data.Name}{value}({value} value) : base({data.Name}Type.{value}){{ this.value = value; }}
+        public override string ToStepValue(bool isSelectOption = false){{ return value.ToStepValue(isSelectOption); }}
+        public override string ToSTEP(){{ return $""#{{value.StepId}} = {{value.GetType().Name.ToUpper()}}({{value.GetStepParameters()}});""; }}
+    }}";
+                subTypes.AppendLine(subType);
+            }
+
             var constructors = new StringBuilder();
             foreach (var value in data.Values)
             {
                 constructors.AppendLine($"\t\tpublic {data.Name}({value} value):base(value){{}}");
             }
             var result =
-    $@"	/// <summary>
+    $@"	
+    public enum {data.Name}Type{{ {string.Join(",", data.Values)} }}
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<{data.Name}>))]
-	public class {data.Name} : IfcSelect<{string.Join(",", data.Values)}>
-	{{
-{constructors}
-		public static {data.Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{data.Name}>(json);
-		}}
-	}}
+	public abstract class {data.Name} : BaseIfc
+    {{
+        private readonly {data.Name}Type selectType;
+        public {data.Name}({data.Name}Type selectType){{ this.selectType = selectType; }}
+        public static {data.Name} FromJSON(string json){{ return JsonConvert.DeserializeObject<{data.Name}>(json); }}
+    }}
+{subTypes}
 ";
             return result;
         }

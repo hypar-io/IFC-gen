@@ -51,66 +51,60 @@ namespace Elements
             // Create an owner history for the project.
             var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
             this.storage.Add(history.Id, history);
+            
+            var lu = new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE);
+            this.storage.Add(lu.Id, lu);
+            var lengthUnit = new IfcUnitIfcNamedUnit(lu);
+            
+            var au = new IfcSIUnit(null, IfcUnitEnum.AREAUNIT, IfcSIUnitName.SQUARE_METRE);
+            this.storage.Add(au.Id, au);
+            var areaUnit = new IfcUnitIfcNamedUnit(au);
+            
+            var vu = new IfcSIUnit(null, IfcUnitEnum.VOLUMEUNIT, IfcSIUnitName.CUBIC_METRE);
+            this.storage.Add(vu.Id, vu);
+            var volumeUnit = new IfcUnitIfcNamedUnit(vu);
 
-            // Create the project.
-            var proj = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, name, description, null, null, null, null, null);   
-            this.storage.Add(proj.Id, proj);
+            var sau = new IfcSIUnit(null, IfcUnitEnum.SOLIDANGLEUNIT, IfcSIUnitName.STERADIAN);
+            this.storage.Add(sau.Id, sau);
+            var solidAngleUnit = new IfcUnitIfcNamedUnit(sau);
+            
+            var mu = new IfcSIUnit(null, IfcUnitEnum.MASSUNIT, IfcSIUnitName.GRAM);
+            this.storage.Add(mu.Id, mu);
+            var massUnit = new IfcUnitIfcNamedUnit(mu);
 
-            /*
-            #7 = IFCUNITASSIGNMENT((#8, #9, #10, #11, #15, #16, #17, #18, #19));
-            #8 = IFCSIUNIT(*, .LENGTHUNIT., .MILLI., .METRE.);
-            #9 = IFCSIUNIT(*, .AREAUNIT., $, .SQUARE_METRE.);
-            #10 = IFCSIUNIT(*, .VOLUMEUNIT., $, .CUBIC_METRE.);
-            #11 = IFCCONVERSIONBASEDUNIT(#12, .PLANEANGLEUNIT., 'DEGREE', #13);
-            #12 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
-            #13 = IFCMEASUREWITHUNIT(IFCPLANEANGLEMEASURE(1.745E-2), #14);
-            #14 = IFCSIUNIT(*, .PLANEANGLEUNIT., $, .RADIAN.);
-            #15 = IFCSIUNIT(*, .SOLIDANGLEUNIT., $, .STERADIAN.);
-            #16 = IFCSIUNIT(*, .MASSUNIT., $, .GRAM.);
-            #17 = IFCSIUNIT(*, .TIMEUNIT., $, .SECOND.);
-            #18 = IFCSIUNIT(*, .THERMODYNAMICTEMPERATUREUNIT., $, .DEGREE_CELSIUS.);
-            #19 = IFCSIUNIT(*, .LUMINOUSINTENSITYUNIT., $, .LUMEN.);
-             */
+            var tu = new IfcSIUnit(null, IfcUnitEnum.TIMEUNIT, IfcSIUnitName.SECOND);
+            this.storage.Add(tu.Id, tu);
+            var timeUnit = new IfcUnitIfcNamedUnit(tu);
 
-            var lengthUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE));
-            this.storage.Add(lengthUnit.Id, lengthUnit);
-
-            var areaUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.AREAUNIT, IfcSIUnitName.SQUARE_METRE));
-            this.storage.Add(areaUnit.Id, areaUnit);
-
-            var volumeUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.VOLUMEUNIT, IfcSIUnitName.CUBIC_METRE));
-            this.storage.Add(volumeUnit.Id, volumeUnit);
-
-            var solidAngleUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.SOLIDANGLEUNIT, IfcSIUnitName.STERADIAN));
-            this.storage.Add(solidAngleUnit.Id, solidAngleUnit);
-
-            var massUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.MASSUNIT, IfcSIUnitName.GRAM));
-            this.storage.Add(massUnit.Id, massUnit);
-
-            var timeUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.TIMEUNIT, IfcSIUnitName.SECOND));
-            this.storage.Add(timeUnit.Id, timeUnit);
-
-            var thermUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IfcSIUnitName.DEGREE_CELSIUS));
-            this.storage.Add(thermUnit.Id, thermUnit);
-
-            var lumUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.LUMINOUSINTENSITYUNIT, IfcSIUnitName.LUMEN));
-            this.storage.Add(lumUnit.Id, lumUnit);
-
-            var planeAngleUnit = new IfcUnit(new IfcSIUnit(null, IfcUnitEnum.PLANEANGLEUNIT, IfcSIUnitName.RADIAN));
-            this.storage.Add(planeAngleUnit.Id, planeAngleUnit);
-
-            var measure = new IfcMeasureWithUnit(new IfcValue(new IfcMeasureValue(new IfcPlaneAngleMeasure(1.745e-2))), planeAngleUnit);
+            var thu = new IfcSIUnit(null, IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IfcSIUnitName.DEGREE_CELSIUS);
+            this.storage.Add(thu.Id, thu);
+            var thermUnit = new IfcUnitIfcNamedUnit(thu);
+            
+            var lmu = new IfcSIUnit(null, IfcUnitEnum.LUMINOUSINTENSITYUNIT, IfcSIUnitName.LUMEN);
+            this.storage.Add(lmu.Id, lmu);
+            var lumUnit = new IfcUnitIfcNamedUnit(lmu);
+            
+            var pau = new IfcSIUnit(null, IfcUnitEnum.PLANEANGLEUNIT, IfcSIUnitName.RADIAN);
+            this.storage.Add(pau.Id, pau);
+            var planeAngleUnit = new IfcUnitIfcNamedUnit(pau);
+           
+            var measure = new IfcMeasureWithUnit(new IfcValueIfcMeasureValue(new IfcMeasureValueIfcPlaneAngleMeasure(1.745e-2)), planeAngleUnit);
             this.storage.Add(measure.Id, measure);
 
             var dimExp = new IfcDimensionalExponents(0,0,0,0,0,0,0);
             this.storage.Add(dimExp.Id, dimExp);
 
-            var degree = new IfcUnit(new IfcConversionBasedUnit(dimExp, IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", measure));
-            this.storage.Add(degree.Id, degree);
-
+            var du = new IfcConversionBasedUnit(dimExp, IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", measure);
+            this.storage.Add(du.Id, du);
+            var degree = new IfcUnitIfcNamedUnit(du);
+            
             var units = new List<IfcUnit>{lengthUnit, areaUnit, volumeUnit, solidAngleUnit, massUnit, timeUnit, thermUnit, lumUnit, planeAngleUnit, degree};
             var unitAss = new IfcUnitAssignment(units);
             this.storage.Add(unitAss.Id, unitAss);
+
+            // Create the project.
+            var proj = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, name, description, null, null, null, null, unitAss);   
+            this.storage.Add(proj.Id, proj);
         }
 
         private int UnixNow()

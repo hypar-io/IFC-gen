@@ -48,25 +48,7 @@ namespace IFC4
 			return "";
 		}
     }
-
-	public abstract class Select : BaseIfc
-	{
-		[JsonProperty("value")]
-		public dynamic Value {get;protected set;}
-
-		public override string ToStepValue(bool isSelectOption = true)
-		{
-			if(Value is Select)
-			{
-				return $"{Value.Value.ToStepValue(isSelectOption)}";
-			}
-			else
-			{
-				return $"{Value.ToStepValue(isSelectOption)}";
-			}
-		}
-	}
-	
+    
 	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcabsorbeddosemeasure.htm
 	/// </summary>
@@ -74,41 +56,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcAbsorbedDoseMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcAbsorbedDoseMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcAbsorbedDoseMeasure(double v)
-		{
-			return new IfcAbsorbedDoseMeasure(v);
-		}	
-
-		public static IfcAbsorbedDoseMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAbsorbedDoseMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcAbsorbedDoseMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcAbsorbedDoseMeasure v){ return v.value; }
+		public static implicit operator IfcAbsorbedDoseMeasure(double v){ return new IfcAbsorbedDoseMeasure(v); }	
+		public static IfcAbsorbedDoseMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAbsorbedDoseMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -119,41 +74,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcAccelerationMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcAccelerationMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcAccelerationMeasure(double v)
-		{
-			return new IfcAccelerationMeasure(v);
-		}	
-
-		public static IfcAccelerationMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAccelerationMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcAccelerationMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcAccelerationMeasure v){ return v.value; }
+		public static implicit operator IfcAccelerationMeasure(double v){ return new IfcAccelerationMeasure(v); }	
+		public static IfcAccelerationMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAccelerationMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -164,41 +92,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcAmountOfSubstanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcAmountOfSubstanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcAmountOfSubstanceMeasure(double v)
-		{
-			return new IfcAmountOfSubstanceMeasure(v);
-		}	
-
-		public static IfcAmountOfSubstanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAmountOfSubstanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcAmountOfSubstanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcAmountOfSubstanceMeasure v){ return v.value; }
+		public static implicit operator IfcAmountOfSubstanceMeasure(double v){ return new IfcAmountOfSubstanceMeasure(v); }	
+		public static IfcAmountOfSubstanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAmountOfSubstanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -209,41 +110,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcAngularVelocityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcAngularVelocityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcAngularVelocityMeasure(double v)
-		{
-			return new IfcAngularVelocityMeasure(v);
-		}	
-
-		public static IfcAngularVelocityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAngularVelocityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcAngularVelocityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcAngularVelocityMeasure v){ return v.value; }
+		public static implicit operator IfcAngularVelocityMeasure(double v){ return new IfcAngularVelocityMeasure(v); }	
+		public static IfcAngularVelocityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAngularVelocityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -254,41 +128,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcAreaDensityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcAreaDensityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcAreaDensityMeasure(double v)
-		{
-			return new IfcAreaDensityMeasure(v);
-		}	
-
-		public static IfcAreaDensityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAreaDensityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcAreaDensityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcAreaDensityMeasure v){ return v.value; }
+		public static implicit operator IfcAreaDensityMeasure(double v){ return new IfcAreaDensityMeasure(v); }	
+		public static IfcAreaDensityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAreaDensityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -299,41 +146,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcAreaMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcAreaMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcAreaMeasure(double v)
-		{
-			return new IfcAreaMeasure(v);
-		}	
-
-		public static IfcAreaMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAreaMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcAreaMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcAreaMeasure v){ return v.value; }
+		public static implicit operator IfcAreaMeasure(double v){ return new IfcAreaMeasure(v); }	
+		public static IfcAreaMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAreaMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -344,41 +164,14 @@ namespace IFC4
 	{
 		internal bool value;
 
-		public IfcBoolean(bool value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator bool(IfcBoolean v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcBoolean(bool v)
-		{
-			return new IfcBoolean(v);
-		}	
-
-		public static IfcBoolean FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcBoolean>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcBoolean(bool value){ this.value = value; }	
+		public static implicit operator bool(IfcBoolean v){ return v.value; }
+		public static implicit operator IfcBoolean(bool v){ return new IfcBoolean(v); }	
+		public static IfcBoolean FromJSON(string json){ return JsonConvert.DeserializeObject<IfcBoolean>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -389,41 +182,14 @@ namespace IFC4
 	{
 		internal IfcLabel value;
 
-		public IfcBoxAlignment(IfcLabel value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcLabel(IfcBoxAlignment v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcBoxAlignment(IfcLabel v)
-		{
-			return new IfcBoxAlignment(v);
-		}	
-
-		public static IfcBoxAlignment FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcBoxAlignment>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcBoxAlignment(IfcLabel value){ this.value = value; }	
+		public static implicit operator IfcLabel(IfcBoxAlignment v){ return v.value; }
+		public static implicit operator IfcBoxAlignment(IfcLabel v){ return new IfcBoxAlignment(v); }	
+		public static IfcBoxAlignment FromJSON(string json){ return JsonConvert.DeserializeObject<IfcBoxAlignment>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -434,41 +200,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcCardinalPointReference(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcCardinalPointReference v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcCardinalPointReference(int v)
-		{
-			return new IfcCardinalPointReference(v);
-		}	
-
-		public static IfcCardinalPointReference FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCardinalPointReference>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcCardinalPointReference(int value){ this.value = value; }	
+		public static implicit operator int(IfcCardinalPointReference v){ return v.value; }
+		public static implicit operator IfcCardinalPointReference(int v){ return new IfcCardinalPointReference(v); }	
+		public static IfcCardinalPointReference FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCardinalPointReference>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -479,41 +218,14 @@ namespace IFC4
 	{
 		internal List<double> value;
 
-		public IfcComplexNumber(List<double> value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator List<double>(IfcComplexNumber v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcComplexNumber(List<double> v)
-		{
-			return new IfcComplexNumber(v);
-		}	
-
-		public static IfcComplexNumber FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcComplexNumber>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcComplexNumber(List<double> value){ this.value = value; }	
+		public static implicit operator List<double>(IfcComplexNumber v){ return v.value; }
+		public static implicit operator IfcComplexNumber(List<double> v){ return new IfcComplexNumber(v); }	
+		public static IfcComplexNumber FromJSON(string json){ return JsonConvert.DeserializeObject<IfcComplexNumber>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -524,41 +236,14 @@ namespace IFC4
 	{
 		internal List<int> value;
 
-		public IfcCompoundPlaneAngleMeasure(List<int> value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator List<int>(IfcCompoundPlaneAngleMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcCompoundPlaneAngleMeasure(List<int> v)
-		{
-			return new IfcCompoundPlaneAngleMeasure(v);
-		}	
-
-		public static IfcCompoundPlaneAngleMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCompoundPlaneAngleMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcCompoundPlaneAngleMeasure(List<int> value){ this.value = value; }	
+		public static implicit operator List<int>(IfcCompoundPlaneAngleMeasure v){ return v.value; }
+		public static implicit operator IfcCompoundPlaneAngleMeasure(List<int> v){ return new IfcCompoundPlaneAngleMeasure(v); }	
+		public static IfcCompoundPlaneAngleMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCompoundPlaneAngleMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -569,41 +254,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcContextDependentMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcContextDependentMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcContextDependentMeasure(double v)
-		{
-			return new IfcContextDependentMeasure(v);
-		}	
-
-		public static IfcContextDependentMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcContextDependentMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcContextDependentMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcContextDependentMeasure v){ return v.value; }
+		public static implicit operator IfcContextDependentMeasure(double v){ return new IfcContextDependentMeasure(v); }	
+		public static IfcContextDependentMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcContextDependentMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -614,41 +272,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcCountMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcCountMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcCountMeasure(double v)
-		{
-			return new IfcCountMeasure(v);
-		}	
-
-		public static IfcCountMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCountMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcCountMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcCountMeasure v){ return v.value; }
+		public static implicit operator IfcCountMeasure(double v){ return new IfcCountMeasure(v); }	
+		public static IfcCountMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCountMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -659,41 +290,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcCurvatureMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcCurvatureMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcCurvatureMeasure(double v)
-		{
-			return new IfcCurvatureMeasure(v);
-		}	
-
-		public static IfcCurvatureMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCurvatureMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcCurvatureMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcCurvatureMeasure v){ return v.value; }
+		public static implicit operator IfcCurvatureMeasure(double v){ return new IfcCurvatureMeasure(v); }	
+		public static IfcCurvatureMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCurvatureMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -704,41 +308,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcDate(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcDate v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDate(string v)
-		{
-			return new IfcDate(v);
-		}	
-
-		public static IfcDate FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDate>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDate(string value){ this.value = value; }	
+		public static implicit operator string(IfcDate v){ return v.value; }
+		public static implicit operator IfcDate(string v){ return new IfcDate(v); }	
+		public static IfcDate FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDate>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -749,41 +326,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcDateTime(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcDateTime v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDateTime(string v)
-		{
-			return new IfcDateTime(v);
-		}	
-
-		public static IfcDateTime FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDateTime>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDateTime(string value){ this.value = value; }	
+		public static implicit operator string(IfcDateTime v){ return v.value; }
+		public static implicit operator IfcDateTime(string v){ return new IfcDateTime(v); }	
+		public static IfcDateTime FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDateTime>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -794,41 +344,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcDayInMonthNumber(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcDayInMonthNumber v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDayInMonthNumber(int v)
-		{
-			return new IfcDayInMonthNumber(v);
-		}	
-
-		public static IfcDayInMonthNumber FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDayInMonthNumber>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDayInMonthNumber(int value){ this.value = value; }	
+		public static implicit operator int(IfcDayInMonthNumber v){ return v.value; }
+		public static implicit operator IfcDayInMonthNumber(int v){ return new IfcDayInMonthNumber(v); }	
+		public static IfcDayInMonthNumber FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDayInMonthNumber>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -839,41 +362,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcDayInWeekNumber(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcDayInWeekNumber v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDayInWeekNumber(int v)
-		{
-			return new IfcDayInWeekNumber(v);
-		}	
-
-		public static IfcDayInWeekNumber FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDayInWeekNumber>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDayInWeekNumber(int value){ this.value = value; }	
+		public static implicit operator int(IfcDayInWeekNumber v){ return v.value; }
+		public static implicit operator IfcDayInWeekNumber(int v){ return new IfcDayInWeekNumber(v); }	
+		public static IfcDayInWeekNumber FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDayInWeekNumber>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -884,41 +380,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcDescriptiveMeasure(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcDescriptiveMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDescriptiveMeasure(string v)
-		{
-			return new IfcDescriptiveMeasure(v);
-		}	
-
-		public static IfcDescriptiveMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDescriptiveMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDescriptiveMeasure(string value){ this.value = value; }	
+		public static implicit operator string(IfcDescriptiveMeasure v){ return v.value; }
+		public static implicit operator IfcDescriptiveMeasure(string v){ return new IfcDescriptiveMeasure(v); }	
+		public static IfcDescriptiveMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDescriptiveMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -929,41 +398,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcDimensionCount(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcDimensionCount v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDimensionCount(int v)
-		{
-			return new IfcDimensionCount(v);
-		}	
-
-		public static IfcDimensionCount FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDimensionCount>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDimensionCount(int value){ this.value = value; }	
+		public static implicit operator int(IfcDimensionCount v){ return v.value; }
+		public static implicit operator IfcDimensionCount(int v){ return new IfcDimensionCount(v); }	
+		public static IfcDimensionCount FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDimensionCount>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -974,41 +416,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcDoseEquivalentMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcDoseEquivalentMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDoseEquivalentMeasure(double v)
-		{
-			return new IfcDoseEquivalentMeasure(v);
-		}	
-
-		public static IfcDoseEquivalentMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDoseEquivalentMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDoseEquivalentMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcDoseEquivalentMeasure v){ return v.value; }
+		public static implicit operator IfcDoseEquivalentMeasure(double v){ return new IfcDoseEquivalentMeasure(v); }	
+		public static IfcDoseEquivalentMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDoseEquivalentMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1019,41 +434,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcDuration(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcDuration v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDuration(string v)
-		{
-			return new IfcDuration(v);
-		}	
-
-		public static IfcDuration FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDuration>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDuration(string value){ this.value = value; }	
+		public static implicit operator string(IfcDuration v){ return v.value; }
+		public static implicit operator IfcDuration(string v){ return new IfcDuration(v); }	
+		public static IfcDuration FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDuration>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1064,41 +452,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcDynamicViscosityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcDynamicViscosityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcDynamicViscosityMeasure(double v)
-		{
-			return new IfcDynamicViscosityMeasure(v);
-		}	
-
-		public static IfcDynamicViscosityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDynamicViscosityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcDynamicViscosityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcDynamicViscosityMeasure v){ return v.value; }
+		public static implicit operator IfcDynamicViscosityMeasure(double v){ return new IfcDynamicViscosityMeasure(v); }	
+		public static IfcDynamicViscosityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDynamicViscosityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1109,41 +470,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcElectricCapacitanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcElectricCapacitanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcElectricCapacitanceMeasure(double v)
-		{
-			return new IfcElectricCapacitanceMeasure(v);
-		}	
-
-		public static IfcElectricCapacitanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcElectricCapacitanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcElectricCapacitanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcElectricCapacitanceMeasure v){ return v.value; }
+		public static implicit operator IfcElectricCapacitanceMeasure(double v){ return new IfcElectricCapacitanceMeasure(v); }	
+		public static IfcElectricCapacitanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcElectricCapacitanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1154,41 +488,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcElectricChargeMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcElectricChargeMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcElectricChargeMeasure(double v)
-		{
-			return new IfcElectricChargeMeasure(v);
-		}	
-
-		public static IfcElectricChargeMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcElectricChargeMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcElectricChargeMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcElectricChargeMeasure v){ return v.value; }
+		public static implicit operator IfcElectricChargeMeasure(double v){ return new IfcElectricChargeMeasure(v); }	
+		public static IfcElectricChargeMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcElectricChargeMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1199,41 +506,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcElectricConductanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcElectricConductanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcElectricConductanceMeasure(double v)
-		{
-			return new IfcElectricConductanceMeasure(v);
-		}	
-
-		public static IfcElectricConductanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcElectricConductanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcElectricConductanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcElectricConductanceMeasure v){ return v.value; }
+		public static implicit operator IfcElectricConductanceMeasure(double v){ return new IfcElectricConductanceMeasure(v); }	
+		public static IfcElectricConductanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcElectricConductanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1244,41 +524,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcElectricCurrentMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcElectricCurrentMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcElectricCurrentMeasure(double v)
-		{
-			return new IfcElectricCurrentMeasure(v);
-		}	
-
-		public static IfcElectricCurrentMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcElectricCurrentMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcElectricCurrentMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcElectricCurrentMeasure v){ return v.value; }
+		public static implicit operator IfcElectricCurrentMeasure(double v){ return new IfcElectricCurrentMeasure(v); }	
+		public static IfcElectricCurrentMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcElectricCurrentMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1289,41 +542,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcElectricResistanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcElectricResistanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcElectricResistanceMeasure(double v)
-		{
-			return new IfcElectricResistanceMeasure(v);
-		}	
-
-		public static IfcElectricResistanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcElectricResistanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcElectricResistanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcElectricResistanceMeasure v){ return v.value; }
+		public static implicit operator IfcElectricResistanceMeasure(double v){ return new IfcElectricResistanceMeasure(v); }	
+		public static IfcElectricResistanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcElectricResistanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1334,41 +560,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcElectricVoltageMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcElectricVoltageMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcElectricVoltageMeasure(double v)
-		{
-			return new IfcElectricVoltageMeasure(v);
-		}	
-
-		public static IfcElectricVoltageMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcElectricVoltageMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcElectricVoltageMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcElectricVoltageMeasure v){ return v.value; }
+		public static implicit operator IfcElectricVoltageMeasure(double v){ return new IfcElectricVoltageMeasure(v); }	
+		public static IfcElectricVoltageMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcElectricVoltageMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1379,41 +578,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcEnergyMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcEnergyMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcEnergyMeasure(double v)
-		{
-			return new IfcEnergyMeasure(v);
-		}	
-
-		public static IfcEnergyMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcEnergyMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcEnergyMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcEnergyMeasure v){ return v.value; }
+		public static implicit operator IfcEnergyMeasure(double v){ return new IfcEnergyMeasure(v); }	
+		public static IfcEnergyMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcEnergyMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1424,41 +596,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcFontStyle(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcFontStyle v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcFontStyle(string v)
-		{
-			return new IfcFontStyle(v);
-		}	
-
-		public static IfcFontStyle FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcFontStyle>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcFontStyle(string value){ this.value = value; }	
+		public static implicit operator string(IfcFontStyle v){ return v.value; }
+		public static implicit operator IfcFontStyle(string v){ return new IfcFontStyle(v); }	
+		public static IfcFontStyle FromJSON(string json){ return JsonConvert.DeserializeObject<IfcFontStyle>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1469,41 +614,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcFontVariant(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcFontVariant v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcFontVariant(string v)
-		{
-			return new IfcFontVariant(v);
-		}	
-
-		public static IfcFontVariant FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcFontVariant>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcFontVariant(string value){ this.value = value; }	
+		public static implicit operator string(IfcFontVariant v){ return v.value; }
+		public static implicit operator IfcFontVariant(string v){ return new IfcFontVariant(v); }	
+		public static IfcFontVariant FromJSON(string json){ return JsonConvert.DeserializeObject<IfcFontVariant>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1514,41 +632,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcFontWeight(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcFontWeight v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcFontWeight(string v)
-		{
-			return new IfcFontWeight(v);
-		}	
-
-		public static IfcFontWeight FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcFontWeight>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcFontWeight(string value){ this.value = value; }	
+		public static implicit operator string(IfcFontWeight v){ return v.value; }
+		public static implicit operator IfcFontWeight(string v){ return new IfcFontWeight(v); }	
+		public static IfcFontWeight FromJSON(string json){ return JsonConvert.DeserializeObject<IfcFontWeight>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1559,41 +650,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcForceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcForceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcForceMeasure(double v)
-		{
-			return new IfcForceMeasure(v);
-		}	
-
-		public static IfcForceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcForceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcForceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcForceMeasure v){ return v.value; }
+		public static implicit operator IfcForceMeasure(double v){ return new IfcForceMeasure(v); }	
+		public static IfcForceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcForceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1604,41 +668,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcFrequencyMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcFrequencyMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcFrequencyMeasure(double v)
-		{
-			return new IfcFrequencyMeasure(v);
-		}	
-
-		public static IfcFrequencyMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcFrequencyMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcFrequencyMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcFrequencyMeasure v){ return v.value; }
+		public static implicit operator IfcFrequencyMeasure(double v){ return new IfcFrequencyMeasure(v); }	
+		public static IfcFrequencyMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcFrequencyMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1649,41 +686,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcGloballyUniqueId(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcGloballyUniqueId v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcGloballyUniqueId(string v)
-		{
-			return new IfcGloballyUniqueId(v);
-		}	
-
-		public static IfcGloballyUniqueId FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcGloballyUniqueId>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcGloballyUniqueId(string value){ this.value = value; }	
+		public static implicit operator string(IfcGloballyUniqueId v){ return v.value; }
+		public static implicit operator IfcGloballyUniqueId(string v){ return new IfcGloballyUniqueId(v); }	
+		public static IfcGloballyUniqueId FromJSON(string json){ return JsonConvert.DeserializeObject<IfcGloballyUniqueId>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1694,41 +704,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcHeatFluxDensityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcHeatFluxDensityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcHeatFluxDensityMeasure(double v)
-		{
-			return new IfcHeatFluxDensityMeasure(v);
-		}	
-
-		public static IfcHeatFluxDensityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcHeatFluxDensityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcHeatFluxDensityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcHeatFluxDensityMeasure v){ return v.value; }
+		public static implicit operator IfcHeatFluxDensityMeasure(double v){ return new IfcHeatFluxDensityMeasure(v); }	
+		public static IfcHeatFluxDensityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcHeatFluxDensityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1739,41 +722,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcHeatingValueMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcHeatingValueMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcHeatingValueMeasure(double v)
-		{
-			return new IfcHeatingValueMeasure(v);
-		}	
-
-		public static IfcHeatingValueMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcHeatingValueMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcHeatingValueMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcHeatingValueMeasure v){ return v.value; }
+		public static implicit operator IfcHeatingValueMeasure(double v){ return new IfcHeatingValueMeasure(v); }	
+		public static IfcHeatingValueMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcHeatingValueMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1784,41 +740,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcIdentifier(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcIdentifier v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcIdentifier(string v)
-		{
-			return new IfcIdentifier(v);
-		}	
-
-		public static IfcIdentifier FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcIdentifier>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcIdentifier(string value){ this.value = value; }	
+		public static implicit operator string(IfcIdentifier v){ return v.value; }
+		public static implicit operator IfcIdentifier(string v){ return new IfcIdentifier(v); }	
+		public static IfcIdentifier FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIdentifier>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1829,41 +758,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcIlluminanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcIlluminanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcIlluminanceMeasure(double v)
-		{
-			return new IfcIlluminanceMeasure(v);
-		}	
-
-		public static IfcIlluminanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcIlluminanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcIlluminanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcIlluminanceMeasure v){ return v.value; }
+		public static implicit operator IfcIlluminanceMeasure(double v){ return new IfcIlluminanceMeasure(v); }	
+		public static IfcIlluminanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIlluminanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1874,41 +776,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcInductanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcInductanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcInductanceMeasure(double v)
-		{
-			return new IfcInductanceMeasure(v);
-		}	
-
-		public static IfcInductanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcInductanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcInductanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcInductanceMeasure v){ return v.value; }
+		public static implicit operator IfcInductanceMeasure(double v){ return new IfcInductanceMeasure(v); }	
+		public static IfcInductanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcInductanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1919,41 +794,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcInteger(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcInteger v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcInteger(int v)
-		{
-			return new IfcInteger(v);
-		}	
-
-		public static IfcInteger FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcInteger>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcInteger(int value){ this.value = value; }	
+		public static implicit operator int(IfcInteger v){ return v.value; }
+		public static implicit operator IfcInteger(int v){ return new IfcInteger(v); }	
+		public static IfcInteger FromJSON(string json){ return JsonConvert.DeserializeObject<IfcInteger>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -1964,41 +812,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcIntegerCountRateMeasure(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcIntegerCountRateMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcIntegerCountRateMeasure(int v)
-		{
-			return new IfcIntegerCountRateMeasure(v);
-		}	
-
-		public static IfcIntegerCountRateMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcIntegerCountRateMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcIntegerCountRateMeasure(int value){ this.value = value; }	
+		public static implicit operator int(IfcIntegerCountRateMeasure v){ return v.value; }
+		public static implicit operator IfcIntegerCountRateMeasure(int v){ return new IfcIntegerCountRateMeasure(v); }	
+		public static IfcIntegerCountRateMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIntegerCountRateMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2009,41 +830,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcIonConcentrationMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcIonConcentrationMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcIonConcentrationMeasure(double v)
-		{
-			return new IfcIonConcentrationMeasure(v);
-		}	
-
-		public static IfcIonConcentrationMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcIonConcentrationMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcIonConcentrationMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcIonConcentrationMeasure v){ return v.value; }
+		public static implicit operator IfcIonConcentrationMeasure(double v){ return new IfcIonConcentrationMeasure(v); }	
+		public static IfcIonConcentrationMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIonConcentrationMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2054,41 +848,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcIsothermalMoistureCapacityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcIsothermalMoistureCapacityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcIsothermalMoistureCapacityMeasure(double v)
-		{
-			return new IfcIsothermalMoistureCapacityMeasure(v);
-		}	
-
-		public static IfcIsothermalMoistureCapacityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcIsothermalMoistureCapacityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcIsothermalMoistureCapacityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcIsothermalMoistureCapacityMeasure v){ return v.value; }
+		public static implicit operator IfcIsothermalMoistureCapacityMeasure(double v){ return new IfcIsothermalMoistureCapacityMeasure(v); }	
+		public static IfcIsothermalMoistureCapacityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIsothermalMoistureCapacityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2099,41 +866,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcKinematicViscosityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcKinematicViscosityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcKinematicViscosityMeasure(double v)
-		{
-			return new IfcKinematicViscosityMeasure(v);
-		}	
-
-		public static IfcKinematicViscosityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcKinematicViscosityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcKinematicViscosityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcKinematicViscosityMeasure v){ return v.value; }
+		public static implicit operator IfcKinematicViscosityMeasure(double v){ return new IfcKinematicViscosityMeasure(v); }	
+		public static IfcKinematicViscosityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcKinematicViscosityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2144,41 +884,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcLabel(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcLabel v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLabel(string v)
-		{
-			return new IfcLabel(v);
-		}	
-
-		public static IfcLabel FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLabel>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLabel(string value){ this.value = value; }	
+		public static implicit operator string(IfcLabel v){ return v.value; }
+		public static implicit operator IfcLabel(string v){ return new IfcLabel(v); }	
+		public static IfcLabel FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLabel>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2189,41 +902,14 @@ namespace IFC4
 	{
 		internal IfcIdentifier value;
 
-		public IfcLanguageId(IfcIdentifier value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcIdentifier(IfcLanguageId v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLanguageId(IfcIdentifier v)
-		{
-			return new IfcLanguageId(v);
-		}	
-
-		public static IfcLanguageId FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLanguageId>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLanguageId(IfcIdentifier value){ this.value = value; }	
+		public static implicit operator IfcIdentifier(IfcLanguageId v){ return v.value; }
+		public static implicit operator IfcLanguageId(IfcIdentifier v){ return new IfcLanguageId(v); }	
+		public static IfcLanguageId FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLanguageId>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2234,41 +920,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLengthMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLengthMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLengthMeasure(double v)
-		{
-			return new IfcLengthMeasure(v);
-		}	
-
-		public static IfcLengthMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLengthMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLengthMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLengthMeasure v){ return v.value; }
+		public static implicit operator IfcLengthMeasure(double v){ return new IfcLengthMeasure(v); }	
+		public static IfcLengthMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLengthMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2279,41 +938,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLinearForceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLinearForceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLinearForceMeasure(double v)
-		{
-			return new IfcLinearForceMeasure(v);
-		}	
-
-		public static IfcLinearForceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLinearForceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLinearForceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLinearForceMeasure v){ return v.value; }
+		public static implicit operator IfcLinearForceMeasure(double v){ return new IfcLinearForceMeasure(v); }	
+		public static IfcLinearForceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLinearForceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2324,41 +956,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLinearMomentMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLinearMomentMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLinearMomentMeasure(double v)
-		{
-			return new IfcLinearMomentMeasure(v);
-		}	
-
-		public static IfcLinearMomentMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLinearMomentMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLinearMomentMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLinearMomentMeasure v){ return v.value; }
+		public static implicit operator IfcLinearMomentMeasure(double v){ return new IfcLinearMomentMeasure(v); }	
+		public static IfcLinearMomentMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLinearMomentMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2369,41 +974,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLinearStiffnessMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLinearStiffnessMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLinearStiffnessMeasure(double v)
-		{
-			return new IfcLinearStiffnessMeasure(v);
-		}	
-
-		public static IfcLinearStiffnessMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLinearStiffnessMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLinearStiffnessMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLinearStiffnessMeasure v){ return v.value; }
+		public static implicit operator IfcLinearStiffnessMeasure(double v){ return new IfcLinearStiffnessMeasure(v); }	
+		public static IfcLinearStiffnessMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLinearStiffnessMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2414,41 +992,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLinearVelocityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLinearVelocityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLinearVelocityMeasure(double v)
-		{
-			return new IfcLinearVelocityMeasure(v);
-		}	
-
-		public static IfcLinearVelocityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLinearVelocityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLinearVelocityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLinearVelocityMeasure v){ return v.value; }
+		public static implicit operator IfcLinearVelocityMeasure(double v){ return new IfcLinearVelocityMeasure(v); }	
+		public static IfcLinearVelocityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLinearVelocityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2459,41 +1010,14 @@ namespace IFC4
 	{
 		internal bool? value;
 
-		public IfcLogical(bool? value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator bool?(IfcLogical v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLogical(bool? v)
-		{
-			return new IfcLogical(v);
-		}	
-
-		public static IfcLogical FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLogical>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLogical(bool? value){ this.value = value; }	
+		public static implicit operator bool?(IfcLogical v){ return v.value; }
+		public static implicit operator IfcLogical(bool? v){ return new IfcLogical(v); }	
+		public static IfcLogical FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLogical>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2504,41 +1028,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLuminousFluxMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLuminousFluxMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLuminousFluxMeasure(double v)
-		{
-			return new IfcLuminousFluxMeasure(v);
-		}	
-
-		public static IfcLuminousFluxMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLuminousFluxMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLuminousFluxMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLuminousFluxMeasure v){ return v.value; }
+		public static implicit operator IfcLuminousFluxMeasure(double v){ return new IfcLuminousFluxMeasure(v); }	
+		public static IfcLuminousFluxMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLuminousFluxMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2549,41 +1046,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLuminousIntensityDistributionMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLuminousIntensityDistributionMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLuminousIntensityDistributionMeasure(double v)
-		{
-			return new IfcLuminousIntensityDistributionMeasure(v);
-		}	
-
-		public static IfcLuminousIntensityDistributionMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLuminousIntensityDistributionMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLuminousIntensityDistributionMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLuminousIntensityDistributionMeasure v){ return v.value; }
+		public static implicit operator IfcLuminousIntensityDistributionMeasure(double v){ return new IfcLuminousIntensityDistributionMeasure(v); }	
+		public static IfcLuminousIntensityDistributionMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLuminousIntensityDistributionMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2594,41 +1064,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcLuminousIntensityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcLuminousIntensityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcLuminousIntensityMeasure(double v)
-		{
-			return new IfcLuminousIntensityMeasure(v);
-		}	
-
-		public static IfcLuminousIntensityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLuminousIntensityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcLuminousIntensityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcLuminousIntensityMeasure v){ return v.value; }
+		public static implicit operator IfcLuminousIntensityMeasure(double v){ return new IfcLuminousIntensityMeasure(v); }	
+		public static IfcLuminousIntensityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLuminousIntensityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2639,41 +1082,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMagneticFluxDensityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMagneticFluxDensityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMagneticFluxDensityMeasure(double v)
-		{
-			return new IfcMagneticFluxDensityMeasure(v);
-		}	
-
-		public static IfcMagneticFluxDensityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMagneticFluxDensityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMagneticFluxDensityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMagneticFluxDensityMeasure v){ return v.value; }
+		public static implicit operator IfcMagneticFluxDensityMeasure(double v){ return new IfcMagneticFluxDensityMeasure(v); }	
+		public static IfcMagneticFluxDensityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMagneticFluxDensityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2684,41 +1100,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMagneticFluxMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMagneticFluxMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMagneticFluxMeasure(double v)
-		{
-			return new IfcMagneticFluxMeasure(v);
-		}	
-
-		public static IfcMagneticFluxMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMagneticFluxMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMagneticFluxMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMagneticFluxMeasure v){ return v.value; }
+		public static implicit operator IfcMagneticFluxMeasure(double v){ return new IfcMagneticFluxMeasure(v); }	
+		public static IfcMagneticFluxMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMagneticFluxMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2729,41 +1118,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMassDensityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMassDensityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMassDensityMeasure(double v)
-		{
-			return new IfcMassDensityMeasure(v);
-		}	
-
-		public static IfcMassDensityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMassDensityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMassDensityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMassDensityMeasure v){ return v.value; }
+		public static implicit operator IfcMassDensityMeasure(double v){ return new IfcMassDensityMeasure(v); }	
+		public static IfcMassDensityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMassDensityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2774,41 +1136,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMassFlowRateMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMassFlowRateMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMassFlowRateMeasure(double v)
-		{
-			return new IfcMassFlowRateMeasure(v);
-		}	
-
-		public static IfcMassFlowRateMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMassFlowRateMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMassFlowRateMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMassFlowRateMeasure v){ return v.value; }
+		public static implicit operator IfcMassFlowRateMeasure(double v){ return new IfcMassFlowRateMeasure(v); }	
+		public static IfcMassFlowRateMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMassFlowRateMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2819,41 +1154,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMassMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMassMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMassMeasure(double v)
-		{
-			return new IfcMassMeasure(v);
-		}	
-
-		public static IfcMassMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMassMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMassMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMassMeasure v){ return v.value; }
+		public static implicit operator IfcMassMeasure(double v){ return new IfcMassMeasure(v); }	
+		public static IfcMassMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMassMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2864,41 +1172,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMassPerLengthMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMassPerLengthMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMassPerLengthMeasure(double v)
-		{
-			return new IfcMassPerLengthMeasure(v);
-		}	
-
-		public static IfcMassPerLengthMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMassPerLengthMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMassPerLengthMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMassPerLengthMeasure v){ return v.value; }
+		public static implicit operator IfcMassPerLengthMeasure(double v){ return new IfcMassPerLengthMeasure(v); }	
+		public static IfcMassPerLengthMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMassPerLengthMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2909,41 +1190,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcModulusOfElasticityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcModulusOfElasticityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcModulusOfElasticityMeasure(double v)
-		{
-			return new IfcModulusOfElasticityMeasure(v);
-		}	
-
-		public static IfcModulusOfElasticityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfElasticityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcModulusOfElasticityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcModulusOfElasticityMeasure v){ return v.value; }
+		public static implicit operator IfcModulusOfElasticityMeasure(double v){ return new IfcModulusOfElasticityMeasure(v); }	
+		public static IfcModulusOfElasticityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfElasticityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2954,41 +1208,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcModulusOfLinearSubgradeReactionMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcModulusOfLinearSubgradeReactionMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcModulusOfLinearSubgradeReactionMeasure(double v)
-		{
-			return new IfcModulusOfLinearSubgradeReactionMeasure(v);
-		}	
-
-		public static IfcModulusOfLinearSubgradeReactionMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfLinearSubgradeReactionMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcModulusOfLinearSubgradeReactionMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcModulusOfLinearSubgradeReactionMeasure v){ return v.value; }
+		public static implicit operator IfcModulusOfLinearSubgradeReactionMeasure(double v){ return new IfcModulusOfLinearSubgradeReactionMeasure(v); }	
+		public static IfcModulusOfLinearSubgradeReactionMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfLinearSubgradeReactionMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -2999,41 +1226,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcModulusOfRotationalSubgradeReactionMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcModulusOfRotationalSubgradeReactionMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcModulusOfRotationalSubgradeReactionMeasure(double v)
-		{
-			return new IfcModulusOfRotationalSubgradeReactionMeasure(v);
-		}	
-
-		public static IfcModulusOfRotationalSubgradeReactionMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcModulusOfRotationalSubgradeReactionMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcModulusOfRotationalSubgradeReactionMeasure v){ return v.value; }
+		public static implicit operator IfcModulusOfRotationalSubgradeReactionMeasure(double v){ return new IfcModulusOfRotationalSubgradeReactionMeasure(v); }	
+		public static IfcModulusOfRotationalSubgradeReactionMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3044,41 +1244,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcModulusOfSubgradeReactionMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcModulusOfSubgradeReactionMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcModulusOfSubgradeReactionMeasure(double v)
-		{
-			return new IfcModulusOfSubgradeReactionMeasure(v);
-		}	
-
-		public static IfcModulusOfSubgradeReactionMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcModulusOfSubgradeReactionMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcModulusOfSubgradeReactionMeasure v){ return v.value; }
+		public static implicit operator IfcModulusOfSubgradeReactionMeasure(double v){ return new IfcModulusOfSubgradeReactionMeasure(v); }	
+		public static IfcModulusOfSubgradeReactionMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3089,41 +1262,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMoistureDiffusivityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMoistureDiffusivityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMoistureDiffusivityMeasure(double v)
-		{
-			return new IfcMoistureDiffusivityMeasure(v);
-		}	
-
-		public static IfcMoistureDiffusivityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMoistureDiffusivityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMoistureDiffusivityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMoistureDiffusivityMeasure v){ return v.value; }
+		public static implicit operator IfcMoistureDiffusivityMeasure(double v){ return new IfcMoistureDiffusivityMeasure(v); }	
+		public static IfcMoistureDiffusivityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMoistureDiffusivityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3134,41 +1280,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMolecularWeightMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMolecularWeightMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMolecularWeightMeasure(double v)
-		{
-			return new IfcMolecularWeightMeasure(v);
-		}	
-
-		public static IfcMolecularWeightMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMolecularWeightMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMolecularWeightMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMolecularWeightMeasure v){ return v.value; }
+		public static implicit operator IfcMolecularWeightMeasure(double v){ return new IfcMolecularWeightMeasure(v); }	
+		public static IfcMolecularWeightMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMolecularWeightMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3179,41 +1298,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMomentOfInertiaMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMomentOfInertiaMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMomentOfInertiaMeasure(double v)
-		{
-			return new IfcMomentOfInertiaMeasure(v);
-		}	
-
-		public static IfcMomentOfInertiaMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMomentOfInertiaMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMomentOfInertiaMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMomentOfInertiaMeasure v){ return v.value; }
+		public static implicit operator IfcMomentOfInertiaMeasure(double v){ return new IfcMomentOfInertiaMeasure(v); }	
+		public static IfcMomentOfInertiaMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMomentOfInertiaMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3224,41 +1316,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcMonetaryMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcMonetaryMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMonetaryMeasure(double v)
-		{
-			return new IfcMonetaryMeasure(v);
-		}	
-
-		public static IfcMonetaryMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMonetaryMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMonetaryMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcMonetaryMeasure v){ return v.value; }
+		public static implicit operator IfcMonetaryMeasure(double v){ return new IfcMonetaryMeasure(v); }	
+		public static IfcMonetaryMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMonetaryMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3269,41 +1334,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcMonthInYearNumber(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcMonthInYearNumber v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcMonthInYearNumber(int v)
-		{
-			return new IfcMonthInYearNumber(v);
-		}	
-
-		public static IfcMonthInYearNumber FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMonthInYearNumber>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcMonthInYearNumber(int value){ this.value = value; }	
+		public static implicit operator int(IfcMonthInYearNumber v){ return v.value; }
+		public static implicit operator IfcMonthInYearNumber(int v){ return new IfcMonthInYearNumber(v); }	
+		public static IfcMonthInYearNumber FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMonthInYearNumber>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3314,41 +1352,14 @@ namespace IFC4
 	{
 		internal IfcLengthMeasure value;
 
-		public IfcNonNegativeLengthMeasure(IfcLengthMeasure value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcLengthMeasure(IfcNonNegativeLengthMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcNonNegativeLengthMeasure(IfcLengthMeasure v)
-		{
-			return new IfcNonNegativeLengthMeasure(v);
-		}	
-
-		public static IfcNonNegativeLengthMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcNonNegativeLengthMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcNonNegativeLengthMeasure(IfcLengthMeasure value){ this.value = value; }	
+		public static implicit operator IfcLengthMeasure(IfcNonNegativeLengthMeasure v){ return v.value; }
+		public static implicit operator IfcNonNegativeLengthMeasure(IfcLengthMeasure v){ return new IfcNonNegativeLengthMeasure(v); }	
+		public static IfcNonNegativeLengthMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcNonNegativeLengthMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3359,41 +1370,14 @@ namespace IFC4
 	{
 		internal IfcRatioMeasure value;
 
-		public IfcNormalisedRatioMeasure(IfcRatioMeasure value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcRatioMeasure(IfcNormalisedRatioMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcNormalisedRatioMeasure(IfcRatioMeasure v)
-		{
-			return new IfcNormalisedRatioMeasure(v);
-		}	
-
-		public static IfcNormalisedRatioMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcNormalisedRatioMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcNormalisedRatioMeasure(IfcRatioMeasure value){ this.value = value; }	
+		public static implicit operator IfcRatioMeasure(IfcNormalisedRatioMeasure v){ return v.value; }
+		public static implicit operator IfcNormalisedRatioMeasure(IfcRatioMeasure v){ return new IfcNormalisedRatioMeasure(v); }	
+		public static IfcNormalisedRatioMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcNormalisedRatioMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3404,41 +1388,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcNumericMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcNumericMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcNumericMeasure(double v)
-		{
-			return new IfcNumericMeasure(v);
-		}	
-
-		public static IfcNumericMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcNumericMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcNumericMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcNumericMeasure v){ return v.value; }
+		public static implicit operator IfcNumericMeasure(double v){ return new IfcNumericMeasure(v); }	
+		public static IfcNumericMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcNumericMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3449,41 +1406,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcPHMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcPHMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPHMeasure(double v)
-		{
-			return new IfcPHMeasure(v);
-		}	
-
-		public static IfcPHMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPHMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPHMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcPHMeasure v){ return v.value; }
+		public static implicit operator IfcPHMeasure(double v){ return new IfcPHMeasure(v); }	
+		public static IfcPHMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPHMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3494,41 +1424,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcParameterValue(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcParameterValue v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcParameterValue(double v)
-		{
-			return new IfcParameterValue(v);
-		}	
-
-		public static IfcParameterValue FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcParameterValue>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcParameterValue(double value){ this.value = value; }	
+		public static implicit operator double(IfcParameterValue v){ return v.value; }
+		public static implicit operator IfcParameterValue(double v){ return new IfcParameterValue(v); }	
+		public static IfcParameterValue FromJSON(string json){ return JsonConvert.DeserializeObject<IfcParameterValue>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3539,41 +1442,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcPlanarForceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcPlanarForceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPlanarForceMeasure(double v)
-		{
-			return new IfcPlanarForceMeasure(v);
-		}	
-
-		public static IfcPlanarForceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPlanarForceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPlanarForceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcPlanarForceMeasure v){ return v.value; }
+		public static implicit operator IfcPlanarForceMeasure(double v){ return new IfcPlanarForceMeasure(v); }	
+		public static IfcPlanarForceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPlanarForceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3584,41 +1460,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcPlaneAngleMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcPlaneAngleMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPlaneAngleMeasure(double v)
-		{
-			return new IfcPlaneAngleMeasure(v);
-		}	
-
-		public static IfcPlaneAngleMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPlaneAngleMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPlaneAngleMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcPlaneAngleMeasure v){ return v.value; }
+		public static implicit operator IfcPlaneAngleMeasure(double v){ return new IfcPlaneAngleMeasure(v); }	
+		public static IfcPlaneAngleMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPlaneAngleMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3629,41 +1478,14 @@ namespace IFC4
 	{
 		internal IfcLengthMeasure value;
 
-		public IfcPositiveLengthMeasure(IfcLengthMeasure value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcLengthMeasure(IfcPositiveLengthMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPositiveLengthMeasure(IfcLengthMeasure v)
-		{
-			return new IfcPositiveLengthMeasure(v);
-		}	
-
-		public static IfcPositiveLengthMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPositiveLengthMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPositiveLengthMeasure(IfcLengthMeasure value){ this.value = value; }	
+		public static implicit operator IfcLengthMeasure(IfcPositiveLengthMeasure v){ return v.value; }
+		public static implicit operator IfcPositiveLengthMeasure(IfcLengthMeasure v){ return new IfcPositiveLengthMeasure(v); }	
+		public static IfcPositiveLengthMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPositiveLengthMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3674,41 +1496,14 @@ namespace IFC4
 	{
 		internal IfcPlaneAngleMeasure value;
 
-		public IfcPositivePlaneAngleMeasure(IfcPlaneAngleMeasure value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcPlaneAngleMeasure(IfcPositivePlaneAngleMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPositivePlaneAngleMeasure(IfcPlaneAngleMeasure v)
-		{
-			return new IfcPositivePlaneAngleMeasure(v);
-		}	
-
-		public static IfcPositivePlaneAngleMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPositivePlaneAngleMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPositivePlaneAngleMeasure(IfcPlaneAngleMeasure value){ this.value = value; }	
+		public static implicit operator IfcPlaneAngleMeasure(IfcPositivePlaneAngleMeasure v){ return v.value; }
+		public static implicit operator IfcPositivePlaneAngleMeasure(IfcPlaneAngleMeasure v){ return new IfcPositivePlaneAngleMeasure(v); }	
+		public static IfcPositivePlaneAngleMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPositivePlaneAngleMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3719,41 +1514,14 @@ namespace IFC4
 	{
 		internal IfcRatioMeasure value;
 
-		public IfcPositiveRatioMeasure(IfcRatioMeasure value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator IfcRatioMeasure(IfcPositiveRatioMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPositiveRatioMeasure(IfcRatioMeasure v)
-		{
-			return new IfcPositiveRatioMeasure(v);
-		}	
-
-		public static IfcPositiveRatioMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPositiveRatioMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPositiveRatioMeasure(IfcRatioMeasure value){ this.value = value; }	
+		public static implicit operator IfcRatioMeasure(IfcPositiveRatioMeasure v){ return v.value; }
+		public static implicit operator IfcPositiveRatioMeasure(IfcRatioMeasure v){ return new IfcPositiveRatioMeasure(v); }	
+		public static IfcPositiveRatioMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPositiveRatioMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3764,41 +1532,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcPowerMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcPowerMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPowerMeasure(double v)
-		{
-			return new IfcPowerMeasure(v);
-		}	
-
-		public static IfcPowerMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPowerMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPowerMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcPowerMeasure v){ return v.value; }
+		public static implicit operator IfcPowerMeasure(double v){ return new IfcPowerMeasure(v); }	
+		public static IfcPowerMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPowerMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3809,41 +1550,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcPresentableText(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcPresentableText v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPresentableText(string v)
-		{
-			return new IfcPresentableText(v);
-		}	
-
-		public static IfcPresentableText FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPresentableText>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPresentableText(string value){ this.value = value; }	
+		public static implicit operator string(IfcPresentableText v){ return v.value; }
+		public static implicit operator IfcPresentableText(string v){ return new IfcPresentableText(v); }	
+		public static IfcPresentableText FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPresentableText>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3854,41 +1568,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcPressureMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcPressureMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPressureMeasure(double v)
-		{
-			return new IfcPressureMeasure(v);
-		}	
-
-		public static IfcPressureMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPressureMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPressureMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcPressureMeasure v){ return v.value; }
+		public static implicit operator IfcPressureMeasure(double v){ return new IfcPressureMeasure(v); }	
+		public static IfcPressureMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPressureMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3899,41 +1586,14 @@ namespace IFC4
 	{
 		internal List<IfcPropertySetDefinition> value;
 
-		public IfcPropertySetDefinitionSet(List<IfcPropertySetDefinition> value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator List<IfcPropertySetDefinition>(IfcPropertySetDefinitionSet v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcPropertySetDefinitionSet(List<IfcPropertySetDefinition> v)
-		{
-			return new IfcPropertySetDefinitionSet(v);
-		}	
-
-		public static IfcPropertySetDefinitionSet FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSet>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcPropertySetDefinitionSet(List<IfcPropertySetDefinition> value){ this.value = value; }	
+		public static implicit operator List<IfcPropertySetDefinition>(IfcPropertySetDefinitionSet v){ return v.value; }
+		public static implicit operator IfcPropertySetDefinitionSet(List<IfcPropertySetDefinition> v){ return new IfcPropertySetDefinitionSet(v); }	
+		public static IfcPropertySetDefinitionSet FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSet>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3944,41 +1604,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcRadioActivityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcRadioActivityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcRadioActivityMeasure(double v)
-		{
-			return new IfcRadioActivityMeasure(v);
-		}	
-
-		public static IfcRadioActivityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcRadioActivityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcRadioActivityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcRadioActivityMeasure v){ return v.value; }
+		public static implicit operator IfcRadioActivityMeasure(double v){ return new IfcRadioActivityMeasure(v); }	
+		public static IfcRadioActivityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcRadioActivityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -3989,41 +1622,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcRatioMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcRatioMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcRatioMeasure(double v)
-		{
-			return new IfcRatioMeasure(v);
-		}	
-
-		public static IfcRatioMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcRatioMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcRatioMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcRatioMeasure v){ return v.value; }
+		public static implicit operator IfcRatioMeasure(double v){ return new IfcRatioMeasure(v); }	
+		public static IfcRatioMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcRatioMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4034,41 +1640,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcReal(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcReal v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcReal(double v)
-		{
-			return new IfcReal(v);
-		}	
-
-		public static IfcReal FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcReal>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcReal(double value){ this.value = value; }	
+		public static implicit operator double(IfcReal v){ return v.value; }
+		public static implicit operator IfcReal(double v){ return new IfcReal(v); }	
+		public static IfcReal FromJSON(string json){ return JsonConvert.DeserializeObject<IfcReal>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4079,41 +1658,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcRotationalFrequencyMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcRotationalFrequencyMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcRotationalFrequencyMeasure(double v)
-		{
-			return new IfcRotationalFrequencyMeasure(v);
-		}	
-
-		public static IfcRotationalFrequencyMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcRotationalFrequencyMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcRotationalFrequencyMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcRotationalFrequencyMeasure v){ return v.value; }
+		public static implicit operator IfcRotationalFrequencyMeasure(double v){ return new IfcRotationalFrequencyMeasure(v); }	
+		public static IfcRotationalFrequencyMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcRotationalFrequencyMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4124,41 +1676,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcRotationalMassMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcRotationalMassMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcRotationalMassMeasure(double v)
-		{
-			return new IfcRotationalMassMeasure(v);
-		}	
-
-		public static IfcRotationalMassMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcRotationalMassMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcRotationalMassMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcRotationalMassMeasure v){ return v.value; }
+		public static implicit operator IfcRotationalMassMeasure(double v){ return new IfcRotationalMassMeasure(v); }	
+		public static IfcRotationalMassMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcRotationalMassMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4169,41 +1694,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcRotationalStiffnessMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcRotationalStiffnessMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcRotationalStiffnessMeasure(double v)
-		{
-			return new IfcRotationalStiffnessMeasure(v);
-		}	
-
-		public static IfcRotationalStiffnessMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcRotationalStiffnessMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcRotationalStiffnessMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcRotationalStiffnessMeasure v){ return v.value; }
+		public static implicit operator IfcRotationalStiffnessMeasure(double v){ return new IfcRotationalStiffnessMeasure(v); }	
+		public static IfcRotationalStiffnessMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcRotationalStiffnessMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4214,41 +1712,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSectionModulusMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSectionModulusMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSectionModulusMeasure(double v)
-		{
-			return new IfcSectionModulusMeasure(v);
-		}	
-
-		public static IfcSectionModulusMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSectionModulusMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSectionModulusMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSectionModulusMeasure v){ return v.value; }
+		public static implicit operator IfcSectionModulusMeasure(double v){ return new IfcSectionModulusMeasure(v); }	
+		public static IfcSectionModulusMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSectionModulusMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4259,41 +1730,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSectionalAreaIntegralMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSectionalAreaIntegralMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSectionalAreaIntegralMeasure(double v)
-		{
-			return new IfcSectionalAreaIntegralMeasure(v);
-		}	
-
-		public static IfcSectionalAreaIntegralMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSectionalAreaIntegralMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSectionalAreaIntegralMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSectionalAreaIntegralMeasure v){ return v.value; }
+		public static implicit operator IfcSectionalAreaIntegralMeasure(double v){ return new IfcSectionalAreaIntegralMeasure(v); }	
+		public static IfcSectionalAreaIntegralMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSectionalAreaIntegralMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4304,41 +1748,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcShearModulusMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcShearModulusMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcShearModulusMeasure(double v)
-		{
-			return new IfcShearModulusMeasure(v);
-		}	
-
-		public static IfcShearModulusMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcShearModulusMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcShearModulusMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcShearModulusMeasure v){ return v.value; }
+		public static implicit operator IfcShearModulusMeasure(double v){ return new IfcShearModulusMeasure(v); }	
+		public static IfcShearModulusMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcShearModulusMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4349,41 +1766,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSolidAngleMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSolidAngleMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSolidAngleMeasure(double v)
-		{
-			return new IfcSolidAngleMeasure(v);
-		}	
-
-		public static IfcSolidAngleMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSolidAngleMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSolidAngleMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSolidAngleMeasure v){ return v.value; }
+		public static implicit operator IfcSolidAngleMeasure(double v){ return new IfcSolidAngleMeasure(v); }	
+		public static IfcSolidAngleMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSolidAngleMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4394,41 +1784,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSoundPowerLevelMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSoundPowerLevelMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSoundPowerLevelMeasure(double v)
-		{
-			return new IfcSoundPowerLevelMeasure(v);
-		}	
-
-		public static IfcSoundPowerLevelMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSoundPowerLevelMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSoundPowerLevelMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSoundPowerLevelMeasure v){ return v.value; }
+		public static implicit operator IfcSoundPowerLevelMeasure(double v){ return new IfcSoundPowerLevelMeasure(v); }	
+		public static IfcSoundPowerLevelMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSoundPowerLevelMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4439,41 +1802,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSoundPowerMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSoundPowerMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSoundPowerMeasure(double v)
-		{
-			return new IfcSoundPowerMeasure(v);
-		}	
-
-		public static IfcSoundPowerMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSoundPowerMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSoundPowerMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSoundPowerMeasure v){ return v.value; }
+		public static implicit operator IfcSoundPowerMeasure(double v){ return new IfcSoundPowerMeasure(v); }	
+		public static IfcSoundPowerMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSoundPowerMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4484,41 +1820,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSoundPressureLevelMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSoundPressureLevelMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSoundPressureLevelMeasure(double v)
-		{
-			return new IfcSoundPressureLevelMeasure(v);
-		}	
-
-		public static IfcSoundPressureLevelMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSoundPressureLevelMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSoundPressureLevelMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSoundPressureLevelMeasure v){ return v.value; }
+		public static implicit operator IfcSoundPressureLevelMeasure(double v){ return new IfcSoundPressureLevelMeasure(v); }	
+		public static IfcSoundPressureLevelMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSoundPressureLevelMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4529,41 +1838,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSoundPressureMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSoundPressureMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSoundPressureMeasure(double v)
-		{
-			return new IfcSoundPressureMeasure(v);
-		}	
-
-		public static IfcSoundPressureMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSoundPressureMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSoundPressureMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSoundPressureMeasure v){ return v.value; }
+		public static implicit operator IfcSoundPressureMeasure(double v){ return new IfcSoundPressureMeasure(v); }	
+		public static IfcSoundPressureMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSoundPressureMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4574,41 +1856,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSpecificHeatCapacityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSpecificHeatCapacityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSpecificHeatCapacityMeasure(double v)
-		{
-			return new IfcSpecificHeatCapacityMeasure(v);
-		}	
-
-		public static IfcSpecificHeatCapacityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSpecificHeatCapacityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSpecificHeatCapacityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcSpecificHeatCapacityMeasure v){ return v.value; }
+		public static implicit operator IfcSpecificHeatCapacityMeasure(double v){ return new IfcSpecificHeatCapacityMeasure(v); }	
+		public static IfcSpecificHeatCapacityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSpecificHeatCapacityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4619,41 +1874,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSpecularExponent(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSpecularExponent v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSpecularExponent(double v)
-		{
-			return new IfcSpecularExponent(v);
-		}	
-
-		public static IfcSpecularExponent FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSpecularExponent>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSpecularExponent(double value){ this.value = value; }	
+		public static implicit operator double(IfcSpecularExponent v){ return v.value; }
+		public static implicit operator IfcSpecularExponent(double v){ return new IfcSpecularExponent(v); }	
+		public static IfcSpecularExponent FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSpecularExponent>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4664,41 +1892,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcSpecularRoughness(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcSpecularRoughness v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcSpecularRoughness(double v)
-		{
-			return new IfcSpecularRoughness(v);
-		}	
-
-		public static IfcSpecularRoughness FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSpecularRoughness>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcSpecularRoughness(double value){ this.value = value; }	
+		public static implicit operator double(IfcSpecularRoughness v){ return v.value; }
+		public static implicit operator IfcSpecularRoughness(double v){ return new IfcSpecularRoughness(v); }	
+		public static IfcSpecularRoughness FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSpecularRoughness>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4709,41 +1910,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcTemperatureGradientMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcTemperatureGradientMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTemperatureGradientMeasure(double v)
-		{
-			return new IfcTemperatureGradientMeasure(v);
-		}	
-
-		public static IfcTemperatureGradientMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTemperatureGradientMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTemperatureGradientMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcTemperatureGradientMeasure v){ return v.value; }
+		public static implicit operator IfcTemperatureGradientMeasure(double v){ return new IfcTemperatureGradientMeasure(v); }	
+		public static IfcTemperatureGradientMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTemperatureGradientMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4754,41 +1928,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcTemperatureRateOfChangeMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcTemperatureRateOfChangeMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTemperatureRateOfChangeMeasure(double v)
-		{
-			return new IfcTemperatureRateOfChangeMeasure(v);
-		}	
-
-		public static IfcTemperatureRateOfChangeMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTemperatureRateOfChangeMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTemperatureRateOfChangeMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcTemperatureRateOfChangeMeasure v){ return v.value; }
+		public static implicit operator IfcTemperatureRateOfChangeMeasure(double v){ return new IfcTemperatureRateOfChangeMeasure(v); }	
+		public static IfcTemperatureRateOfChangeMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTemperatureRateOfChangeMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4799,41 +1946,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcText(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcText v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcText(string v)
-		{
-			return new IfcText(v);
-		}	
-
-		public static IfcText FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcText>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcText(string value){ this.value = value; }	
+		public static implicit operator string(IfcText v){ return v.value; }
+		public static implicit operator IfcText(string v){ return new IfcText(v); }	
+		public static IfcText FromJSON(string json){ return JsonConvert.DeserializeObject<IfcText>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4844,41 +1964,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcTextAlignment(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcTextAlignment v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTextAlignment(string v)
-		{
-			return new IfcTextAlignment(v);
-		}	
-
-		public static IfcTextAlignment FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTextAlignment>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTextAlignment(string value){ this.value = value; }	
+		public static implicit operator string(IfcTextAlignment v){ return v.value; }
+		public static implicit operator IfcTextAlignment(string v){ return new IfcTextAlignment(v); }	
+		public static IfcTextAlignment FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTextAlignment>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4889,41 +1982,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcTextDecoration(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcTextDecoration v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTextDecoration(string v)
-		{
-			return new IfcTextDecoration(v);
-		}	
-
-		public static IfcTextDecoration FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTextDecoration>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTextDecoration(string value){ this.value = value; }	
+		public static implicit operator string(IfcTextDecoration v){ return v.value; }
+		public static implicit operator IfcTextDecoration(string v){ return new IfcTextDecoration(v); }	
+		public static IfcTextDecoration FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTextDecoration>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4934,41 +2000,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcTextFontName(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcTextFontName v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTextFontName(string v)
-		{
-			return new IfcTextFontName(v);
-		}	
-
-		public static IfcTextFontName FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTextFontName>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTextFontName(string value){ this.value = value; }	
+		public static implicit operator string(IfcTextFontName v){ return v.value; }
+		public static implicit operator IfcTextFontName(string v){ return new IfcTextFontName(v); }	
+		public static IfcTextFontName FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTextFontName>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -4979,41 +2018,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcTextTransformation(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcTextTransformation v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTextTransformation(string v)
-		{
-			return new IfcTextTransformation(v);
-		}	
-
-		public static IfcTextTransformation FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTextTransformation>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTextTransformation(string value){ this.value = value; }	
+		public static implicit operator string(IfcTextTransformation v){ return v.value; }
+		public static implicit operator IfcTextTransformation(string v){ return new IfcTextTransformation(v); }	
+		public static IfcTextTransformation FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTextTransformation>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5024,41 +2036,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcThermalAdmittanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcThermalAdmittanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcThermalAdmittanceMeasure(double v)
-		{
-			return new IfcThermalAdmittanceMeasure(v);
-		}	
-
-		public static IfcThermalAdmittanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcThermalAdmittanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcThermalAdmittanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcThermalAdmittanceMeasure v){ return v.value; }
+		public static implicit operator IfcThermalAdmittanceMeasure(double v){ return new IfcThermalAdmittanceMeasure(v); }	
+		public static IfcThermalAdmittanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcThermalAdmittanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5069,41 +2054,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcThermalConductivityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcThermalConductivityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcThermalConductivityMeasure(double v)
-		{
-			return new IfcThermalConductivityMeasure(v);
-		}	
-
-		public static IfcThermalConductivityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcThermalConductivityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcThermalConductivityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcThermalConductivityMeasure v){ return v.value; }
+		public static implicit operator IfcThermalConductivityMeasure(double v){ return new IfcThermalConductivityMeasure(v); }	
+		public static IfcThermalConductivityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcThermalConductivityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5114,41 +2072,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcThermalExpansionCoefficientMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcThermalExpansionCoefficientMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcThermalExpansionCoefficientMeasure(double v)
-		{
-			return new IfcThermalExpansionCoefficientMeasure(v);
-		}	
-
-		public static IfcThermalExpansionCoefficientMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcThermalExpansionCoefficientMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcThermalExpansionCoefficientMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcThermalExpansionCoefficientMeasure v){ return v.value; }
+		public static implicit operator IfcThermalExpansionCoefficientMeasure(double v){ return new IfcThermalExpansionCoefficientMeasure(v); }	
+		public static IfcThermalExpansionCoefficientMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcThermalExpansionCoefficientMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5159,41 +2090,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcThermalResistanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcThermalResistanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcThermalResistanceMeasure(double v)
-		{
-			return new IfcThermalResistanceMeasure(v);
-		}	
-
-		public static IfcThermalResistanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcThermalResistanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcThermalResistanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcThermalResistanceMeasure v){ return v.value; }
+		public static implicit operator IfcThermalResistanceMeasure(double v){ return new IfcThermalResistanceMeasure(v); }	
+		public static IfcThermalResistanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcThermalResistanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5204,41 +2108,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcThermalTransmittanceMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcThermalTransmittanceMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcThermalTransmittanceMeasure(double v)
-		{
-			return new IfcThermalTransmittanceMeasure(v);
-		}	
-
-		public static IfcThermalTransmittanceMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcThermalTransmittanceMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcThermalTransmittanceMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcThermalTransmittanceMeasure v){ return v.value; }
+		public static implicit operator IfcThermalTransmittanceMeasure(double v){ return new IfcThermalTransmittanceMeasure(v); }	
+		public static IfcThermalTransmittanceMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcThermalTransmittanceMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5249,41 +2126,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcThermodynamicTemperatureMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcThermodynamicTemperatureMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcThermodynamicTemperatureMeasure(double v)
-		{
-			return new IfcThermodynamicTemperatureMeasure(v);
-		}	
-
-		public static IfcThermodynamicTemperatureMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcThermodynamicTemperatureMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcThermodynamicTemperatureMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcThermodynamicTemperatureMeasure v){ return v.value; }
+		public static implicit operator IfcThermodynamicTemperatureMeasure(double v){ return new IfcThermodynamicTemperatureMeasure(v); }	
+		public static IfcThermodynamicTemperatureMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcThermodynamicTemperatureMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5294,41 +2144,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcTime(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcTime v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTime(string v)
-		{
-			return new IfcTime(v);
-		}	
-
-		public static IfcTime FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTime>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTime(string value){ this.value = value; }	
+		public static implicit operator string(IfcTime v){ return v.value; }
+		public static implicit operator IfcTime(string v){ return new IfcTime(v); }	
+		public static IfcTime FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTime>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5339,41 +2162,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcTimeMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcTimeMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTimeMeasure(double v)
-		{
-			return new IfcTimeMeasure(v);
-		}	
-
-		public static IfcTimeMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTimeMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTimeMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcTimeMeasure v){ return v.value; }
+		public static implicit operator IfcTimeMeasure(double v){ return new IfcTimeMeasure(v); }	
+		public static IfcTimeMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTimeMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5384,41 +2180,14 @@ namespace IFC4
 	{
 		internal int value;
 
-		public IfcTimeStamp(int value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator int(IfcTimeStamp v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTimeStamp(int v)
-		{
-			return new IfcTimeStamp(v);
-		}	
-
-		public static IfcTimeStamp FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTimeStamp>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTimeStamp(int value){ this.value = value; }	
+		public static implicit operator int(IfcTimeStamp v){ return v.value; }
+		public static implicit operator IfcTimeStamp(int v){ return new IfcTimeStamp(v); }	
+		public static IfcTimeStamp FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTimeStamp>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5429,41 +2198,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcTorqueMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcTorqueMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcTorqueMeasure(double v)
-		{
-			return new IfcTorqueMeasure(v);
-		}	
-
-		public static IfcTorqueMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTorqueMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcTorqueMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcTorqueMeasure v){ return v.value; }
+		public static implicit operator IfcTorqueMeasure(double v){ return new IfcTorqueMeasure(v); }	
+		public static IfcTorqueMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTorqueMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5474,41 +2216,14 @@ namespace IFC4
 	{
 		internal string value;
 
-		public IfcURIReference(string value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator string(IfcURIReference v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcURIReference(string v)
-		{
-			return new IfcURIReference(v);
-		}	
-
-		public static IfcURIReference FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcURIReference>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcURIReference(string value){ this.value = value; }	
+		public static implicit operator string(IfcURIReference v){ return v.value; }
+		public static implicit operator IfcURIReference(string v){ return new IfcURIReference(v); }	
+		public static IfcURIReference FromJSON(string json){ return JsonConvert.DeserializeObject<IfcURIReference>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5519,41 +2234,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcVaporPermeabilityMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcVaporPermeabilityMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcVaporPermeabilityMeasure(double v)
-		{
-			return new IfcVaporPermeabilityMeasure(v);
-		}	
-
-		public static IfcVaporPermeabilityMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcVaporPermeabilityMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcVaporPermeabilityMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcVaporPermeabilityMeasure v){ return v.value; }
+		public static implicit operator IfcVaporPermeabilityMeasure(double v){ return new IfcVaporPermeabilityMeasure(v); }	
+		public static IfcVaporPermeabilityMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcVaporPermeabilityMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5564,41 +2252,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcVolumeMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcVolumeMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcVolumeMeasure(double v)
-		{
-			return new IfcVolumeMeasure(v);
-		}	
-
-		public static IfcVolumeMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcVolumeMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcVolumeMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcVolumeMeasure v){ return v.value; }
+		public static implicit operator IfcVolumeMeasure(double v){ return new IfcVolumeMeasure(v); }	
+		public static IfcVolumeMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcVolumeMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5609,41 +2270,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcVolumetricFlowRateMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcVolumetricFlowRateMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcVolumetricFlowRateMeasure(double v)
-		{
-			return new IfcVolumetricFlowRateMeasure(v);
-		}	
-
-		public static IfcVolumetricFlowRateMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcVolumetricFlowRateMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcVolumetricFlowRateMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcVolumetricFlowRateMeasure v){ return v.value; }
+		public static implicit operator IfcVolumetricFlowRateMeasure(double v){ return new IfcVolumetricFlowRateMeasure(v); }	
+		public static IfcVolumetricFlowRateMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcVolumetricFlowRateMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5654,41 +2288,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcWarpingConstantMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcWarpingConstantMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcWarpingConstantMeasure(double v)
-		{
-			return new IfcWarpingConstantMeasure(v);
-		}	
-
-		public static IfcWarpingConstantMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcWarpingConstantMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcWarpingConstantMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcWarpingConstantMeasure v){ return v.value; }
+		public static implicit operator IfcWarpingConstantMeasure(double v){ return new IfcWarpingConstantMeasure(v); }	
+		public static IfcWarpingConstantMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcWarpingConstantMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -5699,41 +2306,14 @@ namespace IFC4
 	{
 		internal double value;
 
-		public IfcWarpingMomentMeasure(double value)
-		{
-			this.value = value;
-		}	
-
-		public static implicit operator double(IfcWarpingMomentMeasure v)
-		{
-			return v.value;
-		}
-
-		public static implicit operator IfcWarpingMomentMeasure(double v)
-		{
-			return new IfcWarpingMomentMeasure(v);
-		}	
-
-		public static IfcWarpingMomentMeasure FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcWarpingMomentMeasure>(json);
-		}
-
-        public override string ToString()
-        {
-            return value.ToString();
-        }
-
-		public override string ToStepValue(bool isSelectOption = false)
-        {
-			if(isSelectOption)
-			{
-				return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})";
-			}
-			else
-			{
-				return value.ToStepValue(isSelectOption);
-			}
+		public IfcWarpingMomentMeasure(double value){ this.value = value; }	
+		public static implicit operator double(IfcWarpingMomentMeasure v){ return v.value; }
+		public static implicit operator IfcWarpingMomentMeasure(double v){ return new IfcWarpingMomentMeasure(v); }	
+		public static IfcWarpingMomentMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcWarpingMomentMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
         }
 	}
 
@@ -6767,1036 +3347,2935 @@ namespace IFC4
     /// </summary>
     public enum IfcWorkScheduleTypeEnum {ACTUAL,BASELINE,PLANNED,USERDEFINED,NOTDEFINED}
 
-	/// <summary>
+	
+    public enum IfcActorSelectType{ IfcOrganization,IfcPerson,IfcPersonAndOrganization }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcActorSelect>))]
-	public class IfcActorSelect : IfcSelect<IfcOrganization,IfcPerson,IfcPersonAndOrganization>
-	{
-		public IfcActorSelect(IfcOrganization value):base(value){}
-		public IfcActorSelect(IfcPerson value):base(value){}
-		public IfcActorSelect(IfcPersonAndOrganization value):base(value){}
+	public abstract class IfcActorSelect : BaseIfc
+    {
+        private readonly IfcActorSelectType selectType;
+        public IfcActorSelect(IfcActorSelectType selectType){ this.selectType = selectType; }
+        public static IfcActorSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcActorSelect>(json); }
+    }
 
-		public static IfcActorSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcActorSelect>(json);
-		}
-	}
+    public class IfcActorSelectIfcOrganization : IfcActorSelect
+    {
+        private readonly IfcOrganization value;
+        public IfcActorSelectIfcOrganization(IfcOrganization value) : base(IfcActorSelectType.IfcOrganization){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcActorSelectIfcPerson : IfcActorSelect
+    {
+        private readonly IfcPerson value;
+        public IfcActorSelectIfcPerson(IfcPerson value) : base(IfcActorSelectType.IfcPerson){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcActorSelectIfcPersonAndOrganization : IfcActorSelect
+    {
+        private readonly IfcPersonAndOrganization value;
+        public IfcActorSelectIfcPersonAndOrganization(IfcPersonAndOrganization value) : base(IfcActorSelectType.IfcPersonAndOrganization){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcAppliedValueSelectType{ IfcMeasureWithUnit,IfcReference,IfcValue }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcappliedvalueselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcAppliedValueSelect>))]
-	public class IfcAppliedValueSelect : IfcSelect<IfcMeasureWithUnit,IfcReference,IfcValue>
-	{
-		public IfcAppliedValueSelect(IfcMeasureWithUnit value):base(value){}
-		public IfcAppliedValueSelect(IfcReference value):base(value){}
-		public IfcAppliedValueSelect(IfcValue value):base(value){}
+	public abstract class IfcAppliedValueSelect : BaseIfc
+    {
+        private readonly IfcAppliedValueSelectType selectType;
+        public IfcAppliedValueSelect(IfcAppliedValueSelectType selectType){ this.selectType = selectType; }
+        public static IfcAppliedValueSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAppliedValueSelect>(json); }
+    }
 
-		public static IfcAppliedValueSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAppliedValueSelect>(json);
-		}
-	}
+    public class IfcAppliedValueSelectIfcMeasureWithUnit : IfcAppliedValueSelect
+    {
+        private readonly IfcMeasureWithUnit value;
+        public IfcAppliedValueSelectIfcMeasureWithUnit(IfcMeasureWithUnit value) : base(IfcAppliedValueSelectType.IfcMeasureWithUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcAppliedValueSelectIfcReference : IfcAppliedValueSelect
+    {
+        private readonly IfcReference value;
+        public IfcAppliedValueSelectIfcReference(IfcReference value) : base(IfcAppliedValueSelectType.IfcReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcAppliedValueSelectIfcValue : IfcAppliedValueSelect
+    {
+        private readonly IfcValue value;
+        public IfcAppliedValueSelectIfcValue(IfcValue value) : base(IfcAppliedValueSelectType.IfcValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcAxis2PlacementType{ IfcAxis2Placement2D,IfcAxis2Placement3D }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcAxis2Placement>))]
-	public class IfcAxis2Placement : IfcSelect<IfcAxis2Placement2D,IfcAxis2Placement3D>
-	{
-		public IfcAxis2Placement(IfcAxis2Placement2D value):base(value){}
-		public IfcAxis2Placement(IfcAxis2Placement3D value):base(value){}
+	public abstract class IfcAxis2Placement : BaseIfc
+    {
+        private readonly IfcAxis2PlacementType selectType;
+        public IfcAxis2Placement(IfcAxis2PlacementType selectType){ this.selectType = selectType; }
+        public static IfcAxis2Placement FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAxis2Placement>(json); }
+    }
 
-		public static IfcAxis2Placement FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcAxis2Placement>(json);
-		}
-	}
+    public class IfcAxis2PlacementIfcAxis2Placement2D : IfcAxis2Placement
+    {
+        private readonly IfcAxis2Placement2D value;
+        public IfcAxis2PlacementIfcAxis2Placement2D(IfcAxis2Placement2D value) : base(IfcAxis2PlacementType.IfcAxis2Placement2D){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcAxis2PlacementIfcAxis2Placement3D : IfcAxis2Placement
+    {
+        private readonly IfcAxis2Placement3D value;
+        public IfcAxis2PlacementIfcAxis2Placement3D(IfcAxis2Placement3D value) : base(IfcAxis2PlacementType.IfcAxis2Placement3D){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcBendingParameterSelectType{ IfcLengthMeasure,IfcPlaneAngleMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbendingparameterselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcBendingParameterSelect>))]
-	public class IfcBendingParameterSelect : IfcSelect<IfcLengthMeasure,IfcPlaneAngleMeasure>
-	{
-		public IfcBendingParameterSelect(IfcLengthMeasure value):base(value){}
-		public IfcBendingParameterSelect(IfcPlaneAngleMeasure value):base(value){}
+	public abstract class IfcBendingParameterSelect : BaseIfc
+    {
+        private readonly IfcBendingParameterSelectType selectType;
+        public IfcBendingParameterSelect(IfcBendingParameterSelectType selectType){ this.selectType = selectType; }
+        public static IfcBendingParameterSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcBendingParameterSelect>(json); }
+    }
 
-		public static IfcBendingParameterSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcBendingParameterSelect>(json);
-		}
-	}
+    public class IfcBendingParameterSelectIfcLengthMeasure : IfcBendingParameterSelect
+    {
+        private readonly IfcLengthMeasure value;
+        public IfcBendingParameterSelectIfcLengthMeasure(IfcLengthMeasure value) : base(IfcBendingParameterSelectType.IfcLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcBendingParameterSelectIfcPlaneAngleMeasure : IfcBendingParameterSelect
+    {
+        private readonly IfcPlaneAngleMeasure value;
+        public IfcBendingParameterSelectIfcPlaneAngleMeasure(IfcPlaneAngleMeasure value) : base(IfcBendingParameterSelectType.IfcPlaneAngleMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcBooleanOperandType{ IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanoperand.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcBooleanOperand>))]
-	public class IfcBooleanOperand : IfcSelect<IfcBooleanResult,IfcCsgPrimitive3D,IfcHalfSpaceSolid,IfcSolidModel>
-	{
-		public IfcBooleanOperand(IfcBooleanResult value):base(value){}
-		public IfcBooleanOperand(IfcCsgPrimitive3D value):base(value){}
-		public IfcBooleanOperand(IfcHalfSpaceSolid value):base(value){}
-		public IfcBooleanOperand(IfcSolidModel value):base(value){}
+	public abstract class IfcBooleanOperand : BaseIfc
+    {
+        private readonly IfcBooleanOperandType selectType;
+        public IfcBooleanOperand(IfcBooleanOperandType selectType){ this.selectType = selectType; }
+        public static IfcBooleanOperand FromJSON(string json){ return JsonConvert.DeserializeObject<IfcBooleanOperand>(json); }
+    }
 
-		public static IfcBooleanOperand FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcBooleanOperand>(json);
-		}
-	}
+    public class IfcBooleanOperandIfcBooleanResult : IfcBooleanOperand
+    {
+        private readonly IfcBooleanResult value;
+        public IfcBooleanOperandIfcBooleanResult(IfcBooleanResult value) : base(IfcBooleanOperandType.IfcBooleanResult){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcBooleanOperandIfcCsgPrimitive3D : IfcBooleanOperand
+    {
+        private readonly IfcCsgPrimitive3D value;
+        public IfcBooleanOperandIfcCsgPrimitive3D(IfcCsgPrimitive3D value) : base(IfcBooleanOperandType.IfcCsgPrimitive3D){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcBooleanOperandIfcHalfSpaceSolid : IfcBooleanOperand
+    {
+        private readonly IfcHalfSpaceSolid value;
+        public IfcBooleanOperandIfcHalfSpaceSolid(IfcHalfSpaceSolid value) : base(IfcBooleanOperandType.IfcHalfSpaceSolid){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcBooleanOperandIfcSolidModel : IfcBooleanOperand
+    {
+        private readonly IfcSolidModel value;
+        public IfcBooleanOperandIfcSolidModel(IfcSolidModel value) : base(IfcBooleanOperandType.IfcSolidModel){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcClassificationReferenceSelectType{ IfcClassification,IfcClassificationReference }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationreferenceselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcClassificationReferenceSelect>))]
-	public class IfcClassificationReferenceSelect : IfcSelect<IfcClassification,IfcClassificationReference>
-	{
-		public IfcClassificationReferenceSelect(IfcClassification value):base(value){}
-		public IfcClassificationReferenceSelect(IfcClassificationReference value):base(value){}
+	public abstract class IfcClassificationReferenceSelect : BaseIfc
+    {
+        private readonly IfcClassificationReferenceSelectType selectType;
+        public IfcClassificationReferenceSelect(IfcClassificationReferenceSelectType selectType){ this.selectType = selectType; }
+        public static IfcClassificationReferenceSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcClassificationReferenceSelect>(json); }
+    }
 
-		public static IfcClassificationReferenceSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcClassificationReferenceSelect>(json);
-		}
-	}
+    public class IfcClassificationReferenceSelectIfcClassification : IfcClassificationReferenceSelect
+    {
+        private readonly IfcClassification value;
+        public IfcClassificationReferenceSelectIfcClassification(IfcClassification value) : base(IfcClassificationReferenceSelectType.IfcClassification){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcClassificationReferenceSelectIfcClassificationReference : IfcClassificationReferenceSelect
+    {
+        private readonly IfcClassificationReference value;
+        public IfcClassificationReferenceSelectIfcClassificationReference(IfcClassificationReference value) : base(IfcClassificationReferenceSelectType.IfcClassificationReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcClassificationSelectType{ IfcClassification,IfcClassificationReference }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassificationselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcClassificationSelect>))]
-	public class IfcClassificationSelect : IfcSelect<IfcClassification,IfcClassificationReference>
-	{
-		public IfcClassificationSelect(IfcClassification value):base(value){}
-		public IfcClassificationSelect(IfcClassificationReference value):base(value){}
+	public abstract class IfcClassificationSelect : BaseIfc
+    {
+        private readonly IfcClassificationSelectType selectType;
+        public IfcClassificationSelect(IfcClassificationSelectType selectType){ this.selectType = selectType; }
+        public static IfcClassificationSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcClassificationSelect>(json); }
+    }
 
-		public static IfcClassificationSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcClassificationSelect>(json);
-		}
-	}
+    public class IfcClassificationSelectIfcClassification : IfcClassificationSelect
+    {
+        private readonly IfcClassification value;
+        public IfcClassificationSelectIfcClassification(IfcClassification value) : base(IfcClassificationSelectType.IfcClassification){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcClassificationSelectIfcClassificationReference : IfcClassificationSelect
+    {
+        private readonly IfcClassificationReference value;
+        public IfcClassificationSelectIfcClassificationReference(IfcClassificationReference value) : base(IfcClassificationSelectType.IfcClassificationReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcColourType{ IfcColourSpecification,IfcPreDefinedColour }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolour.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcColour>))]
-	public class IfcColour : IfcSelect<IfcColourSpecification,IfcPreDefinedColour>
-	{
-		public IfcColour(IfcColourSpecification value):base(value){}
-		public IfcColour(IfcPreDefinedColour value):base(value){}
+	public abstract class IfcColour : BaseIfc
+    {
+        private readonly IfcColourType selectType;
+        public IfcColour(IfcColourType selectType){ this.selectType = selectType; }
+        public static IfcColour FromJSON(string json){ return JsonConvert.DeserializeObject<IfcColour>(json); }
+    }
 
-		public static IfcColour FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcColour>(json);
-		}
-	}
+    public class IfcColourIfcColourSpecification : IfcColour
+    {
+        private readonly IfcColourSpecification value;
+        public IfcColourIfcColourSpecification(IfcColourSpecification value) : base(IfcColourType.IfcColourSpecification){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcColourIfcPreDefinedColour : IfcColour
+    {
+        private readonly IfcPreDefinedColour value;
+        public IfcColourIfcPreDefinedColour(IfcPreDefinedColour value) : base(IfcColourType.IfcPreDefinedColour){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcColourOrFactorType{ IfcColourRgb,IfcNormalisedRatioMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourorfactor.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcColourOrFactor>))]
-	public class IfcColourOrFactor : IfcSelect<IfcColourRgb,IfcNormalisedRatioMeasure>
-	{
-		public IfcColourOrFactor(IfcColourRgb value):base(value){}
-		public IfcColourOrFactor(IfcNormalisedRatioMeasure value):base(value){}
+	public abstract class IfcColourOrFactor : BaseIfc
+    {
+        private readonly IfcColourOrFactorType selectType;
+        public IfcColourOrFactor(IfcColourOrFactorType selectType){ this.selectType = selectType; }
+        public static IfcColourOrFactor FromJSON(string json){ return JsonConvert.DeserializeObject<IfcColourOrFactor>(json); }
+    }
 
-		public static IfcColourOrFactor FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcColourOrFactor>(json);
-		}
-	}
+    public class IfcColourOrFactorIfcColourRgb : IfcColourOrFactor
+    {
+        private readonly IfcColourRgb value;
+        public IfcColourOrFactorIfcColourRgb(IfcColourRgb value) : base(IfcColourOrFactorType.IfcColourRgb){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcColourOrFactorIfcNormalisedRatioMeasure : IfcColourOrFactor
+    {
+        private readonly IfcNormalisedRatioMeasure value;
+        public IfcColourOrFactorIfcNormalisedRatioMeasure(IfcNormalisedRatioMeasure value) : base(IfcColourOrFactorType.IfcNormalisedRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcCoordinateReferenceSystemSelectType{ IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinatereferencesystemselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcCoordinateReferenceSystemSelect>))]
-	public class IfcCoordinateReferenceSystemSelect : IfcSelect<IfcCoordinateReferenceSystem,IfcGeometricRepresentationContext>
-	{
-		public IfcCoordinateReferenceSystemSelect(IfcCoordinateReferenceSystem value):base(value){}
-		public IfcCoordinateReferenceSystemSelect(IfcGeometricRepresentationContext value):base(value){}
+	public abstract class IfcCoordinateReferenceSystemSelect : BaseIfc
+    {
+        private readonly IfcCoordinateReferenceSystemSelectType selectType;
+        public IfcCoordinateReferenceSystemSelect(IfcCoordinateReferenceSystemSelectType selectType){ this.selectType = selectType; }
+        public static IfcCoordinateReferenceSystemSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCoordinateReferenceSystemSelect>(json); }
+    }
 
-		public static IfcCoordinateReferenceSystemSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCoordinateReferenceSystemSelect>(json);
-		}
-	}
+    public class IfcCoordinateReferenceSystemSelectIfcCoordinateReferenceSystem : IfcCoordinateReferenceSystemSelect
+    {
+        private readonly IfcCoordinateReferenceSystem value;
+        public IfcCoordinateReferenceSystemSelectIfcCoordinateReferenceSystem(IfcCoordinateReferenceSystem value) : base(IfcCoordinateReferenceSystemSelectType.IfcCoordinateReferenceSystem){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcCoordinateReferenceSystemSelectIfcGeometricRepresentationContext : IfcCoordinateReferenceSystemSelect
+    {
+        private readonly IfcGeometricRepresentationContext value;
+        public IfcCoordinateReferenceSystemSelectIfcGeometricRepresentationContext(IfcGeometricRepresentationContext value) : base(IfcCoordinateReferenceSystemSelectType.IfcGeometricRepresentationContext){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcCsgSelectType{ IfcBooleanResult,IfcCsgPrimitive3D }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcCsgSelect>))]
-	public class IfcCsgSelect : IfcSelect<IfcBooleanResult,IfcCsgPrimitive3D>
-	{
-		public IfcCsgSelect(IfcBooleanResult value):base(value){}
-		public IfcCsgSelect(IfcCsgPrimitive3D value):base(value){}
+	public abstract class IfcCsgSelect : BaseIfc
+    {
+        private readonly IfcCsgSelectType selectType;
+        public IfcCsgSelect(IfcCsgSelectType selectType){ this.selectType = selectType; }
+        public static IfcCsgSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCsgSelect>(json); }
+    }
 
-		public static IfcCsgSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCsgSelect>(json);
-		}
-	}
+    public class IfcCsgSelectIfcBooleanResult : IfcCsgSelect
+    {
+        private readonly IfcBooleanResult value;
+        public IfcCsgSelectIfcBooleanResult(IfcBooleanResult value) : base(IfcCsgSelectType.IfcBooleanResult){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcCsgSelectIfcCsgPrimitive3D : IfcCsgSelect
+    {
+        private readonly IfcCsgPrimitive3D value;
+        public IfcCsgSelectIfcCsgPrimitive3D(IfcCsgPrimitive3D value) : base(IfcCsgSelectType.IfcCsgPrimitive3D){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcCurveFontOrScaledCurveFontSelectType{ IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvefontorscaledcurvefontselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcCurveFontOrScaledCurveFontSelect>))]
-	public class IfcCurveFontOrScaledCurveFontSelect : IfcSelect<IfcCurveStyleFontAndScaling,IfcCurveStyleFontSelect>
-	{
-		public IfcCurveFontOrScaledCurveFontSelect(IfcCurveStyleFontAndScaling value):base(value){}
-		public IfcCurveFontOrScaledCurveFontSelect(IfcCurveStyleFontSelect value):base(value){}
+	public abstract class IfcCurveFontOrScaledCurveFontSelect : BaseIfc
+    {
+        private readonly IfcCurveFontOrScaledCurveFontSelectType selectType;
+        public IfcCurveFontOrScaledCurveFontSelect(IfcCurveFontOrScaledCurveFontSelectType selectType){ this.selectType = selectType; }
+        public static IfcCurveFontOrScaledCurveFontSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCurveFontOrScaledCurveFontSelect>(json); }
+    }
 
-		public static IfcCurveFontOrScaledCurveFontSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCurveFontOrScaledCurveFontSelect>(json);
-		}
-	}
+    public class IfcCurveFontOrScaledCurveFontSelectIfcCurveStyleFontAndScaling : IfcCurveFontOrScaledCurveFontSelect
+    {
+        private readonly IfcCurveStyleFontAndScaling value;
+        public IfcCurveFontOrScaledCurveFontSelectIfcCurveStyleFontAndScaling(IfcCurveStyleFontAndScaling value) : base(IfcCurveFontOrScaledCurveFontSelectType.IfcCurveStyleFontAndScaling){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcCurveFontOrScaledCurveFontSelectIfcCurveStyleFontSelect : IfcCurveFontOrScaledCurveFontSelect
+    {
+        private readonly IfcCurveStyleFontSelect value;
+        public IfcCurveFontOrScaledCurveFontSelectIfcCurveStyleFontSelect(IfcCurveStyleFontSelect value) : base(IfcCurveFontOrScaledCurveFontSelectType.IfcCurveStyleFontSelect){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcCurveOnSurfaceType{ IfcCompositeCurveOnSurface,IfcPcurve }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveonsurface.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcCurveOnSurface>))]
-	public class IfcCurveOnSurface : IfcSelect<IfcCompositeCurveOnSurface,IfcPcurve>
-	{
-		public IfcCurveOnSurface(IfcCompositeCurveOnSurface value):base(value){}
-		public IfcCurveOnSurface(IfcPcurve value):base(value){}
+	public abstract class IfcCurveOnSurface : BaseIfc
+    {
+        private readonly IfcCurveOnSurfaceType selectType;
+        public IfcCurveOnSurface(IfcCurveOnSurfaceType selectType){ this.selectType = selectType; }
+        public static IfcCurveOnSurface FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCurveOnSurface>(json); }
+    }
 
-		public static IfcCurveOnSurface FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCurveOnSurface>(json);
-		}
-	}
+    public class IfcCurveOnSurfaceIfcCompositeCurveOnSurface : IfcCurveOnSurface
+    {
+        private readonly IfcCompositeCurveOnSurface value;
+        public IfcCurveOnSurfaceIfcCompositeCurveOnSurface(IfcCompositeCurveOnSurface value) : base(IfcCurveOnSurfaceType.IfcCompositeCurveOnSurface){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcCurveOnSurfaceIfcPcurve : IfcCurveOnSurface
+    {
+        private readonly IfcPcurve value;
+        public IfcCurveOnSurfaceIfcPcurve(IfcPcurve value) : base(IfcCurveOnSurfaceType.IfcPcurve){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcCurveOrEdgeCurveType{ IfcBoundedCurve,IfcEdgeCurve }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveoredgecurve.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcCurveOrEdgeCurve>))]
-	public class IfcCurveOrEdgeCurve : IfcSelect<IfcBoundedCurve,IfcEdgeCurve>
-	{
-		public IfcCurveOrEdgeCurve(IfcBoundedCurve value):base(value){}
-		public IfcCurveOrEdgeCurve(IfcEdgeCurve value):base(value){}
+	public abstract class IfcCurveOrEdgeCurve : BaseIfc
+    {
+        private readonly IfcCurveOrEdgeCurveType selectType;
+        public IfcCurveOrEdgeCurve(IfcCurveOrEdgeCurveType selectType){ this.selectType = selectType; }
+        public static IfcCurveOrEdgeCurve FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCurveOrEdgeCurve>(json); }
+    }
 
-		public static IfcCurveOrEdgeCurve FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCurveOrEdgeCurve>(json);
-		}
-	}
+    public class IfcCurveOrEdgeCurveIfcBoundedCurve : IfcCurveOrEdgeCurve
+    {
+        private readonly IfcBoundedCurve value;
+        public IfcCurveOrEdgeCurveIfcBoundedCurve(IfcBoundedCurve value) : base(IfcCurveOrEdgeCurveType.IfcBoundedCurve){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcCurveOrEdgeCurveIfcEdgeCurve : IfcCurveOrEdgeCurve
+    {
+        private readonly IfcEdgeCurve value;
+        public IfcCurveOrEdgeCurveIfcEdgeCurve(IfcEdgeCurve value) : base(IfcCurveOrEdgeCurveType.IfcEdgeCurve){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcCurveStyleFontSelectType{ IfcCurveStyleFont,IfcPreDefinedCurveFont }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcCurveStyleFontSelect>))]
-	public class IfcCurveStyleFontSelect : IfcSelect<IfcCurveStyleFont,IfcPreDefinedCurveFont>
-	{
-		public IfcCurveStyleFontSelect(IfcCurveStyleFont value):base(value){}
-		public IfcCurveStyleFontSelect(IfcPreDefinedCurveFont value):base(value){}
+	public abstract class IfcCurveStyleFontSelect : BaseIfc
+    {
+        private readonly IfcCurveStyleFontSelectType selectType;
+        public IfcCurveStyleFontSelect(IfcCurveStyleFontSelectType selectType){ this.selectType = selectType; }
+        public static IfcCurveStyleFontSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCurveStyleFontSelect>(json); }
+    }
 
-		public static IfcCurveStyleFontSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcCurveStyleFontSelect>(json);
-		}
-	}
+    public class IfcCurveStyleFontSelectIfcCurveStyleFont : IfcCurveStyleFontSelect
+    {
+        private readonly IfcCurveStyleFont value;
+        public IfcCurveStyleFontSelectIfcCurveStyleFont(IfcCurveStyleFont value) : base(IfcCurveStyleFontSelectType.IfcCurveStyleFont){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcCurveStyleFontSelectIfcPreDefinedCurveFont : IfcCurveStyleFontSelect
+    {
+        private readonly IfcPreDefinedCurveFont value;
+        public IfcCurveStyleFontSelectIfcPreDefinedCurveFont(IfcPreDefinedCurveFont value) : base(IfcCurveStyleFontSelectType.IfcPreDefinedCurveFont){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcDefinitionSelectType{ IfcObjectDefinition,IfcPropertyDefinition }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdefinitionselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcDefinitionSelect>))]
-	public class IfcDefinitionSelect : IfcSelect<IfcObjectDefinition,IfcPropertyDefinition>
-	{
-		public IfcDefinitionSelect(IfcObjectDefinition value):base(value){}
-		public IfcDefinitionSelect(IfcPropertyDefinition value):base(value){}
+	public abstract class IfcDefinitionSelect : BaseIfc
+    {
+        private readonly IfcDefinitionSelectType selectType;
+        public IfcDefinitionSelect(IfcDefinitionSelectType selectType){ this.selectType = selectType; }
+        public static IfcDefinitionSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDefinitionSelect>(json); }
+    }
 
-		public static IfcDefinitionSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDefinitionSelect>(json);
-		}
-	}
+    public class IfcDefinitionSelectIfcObjectDefinition : IfcDefinitionSelect
+    {
+        private readonly IfcObjectDefinition value;
+        public IfcDefinitionSelectIfcObjectDefinition(IfcObjectDefinition value) : base(IfcDefinitionSelectType.IfcObjectDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcDefinitionSelectIfcPropertyDefinition : IfcDefinitionSelect
+    {
+        private readonly IfcPropertyDefinition value;
+        public IfcDefinitionSelectIfcPropertyDefinition(IfcPropertyDefinition value) : base(IfcDefinitionSelectType.IfcPropertyDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcDerivedMeasureValueType{ IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedmeasurevalue.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcDerivedMeasureValue>))]
-	public class IfcDerivedMeasureValue : IfcSelect<IfcAbsorbedDoseMeasure,IfcAccelerationMeasure,IfcAngularVelocityMeasure,IfcAreaDensityMeasure,IfcCompoundPlaneAngleMeasure,IfcCurvatureMeasure,IfcDoseEquivalentMeasure,IfcDynamicViscosityMeasure,IfcElectricCapacitanceMeasure,IfcElectricChargeMeasure,IfcElectricConductanceMeasure,IfcElectricResistanceMeasure,IfcElectricVoltageMeasure,IfcEnergyMeasure,IfcForceMeasure,IfcFrequencyMeasure,IfcHeatFluxDensityMeasure,IfcHeatingValueMeasure,IfcIlluminanceMeasure,IfcInductanceMeasure,IfcIntegerCountRateMeasure,IfcIonConcentrationMeasure,IfcIsothermalMoistureCapacityMeasure,IfcKinematicViscosityMeasure,IfcLinearForceMeasure,IfcLinearMomentMeasure,IfcLinearStiffnessMeasure,IfcLinearVelocityMeasure,IfcLuminousFluxMeasure,IfcLuminousIntensityDistributionMeasure,IfcMagneticFluxDensityMeasure,IfcMagneticFluxMeasure,IfcMassDensityMeasure,IfcMassFlowRateMeasure,IfcMassPerLengthMeasure,IfcModulusOfElasticityMeasure,IfcModulusOfLinearSubgradeReactionMeasure,IfcModulusOfRotationalSubgradeReactionMeasure,IfcModulusOfSubgradeReactionMeasure,IfcMoistureDiffusivityMeasure,IfcMolecularWeightMeasure,IfcMomentOfInertiaMeasure,IfcMonetaryMeasure,IfcPHMeasure,IfcPlanarForceMeasure,IfcPowerMeasure,IfcPressureMeasure,IfcRadioActivityMeasure,IfcRotationalFrequencyMeasure,IfcRotationalMassMeasure,IfcRotationalStiffnessMeasure,IfcSectionModulusMeasure,IfcSectionalAreaIntegralMeasure,IfcShearModulusMeasure,IfcSoundPowerLevelMeasure,IfcSoundPowerMeasure,IfcSoundPressureLevelMeasure,IfcSoundPressureMeasure,IfcSpecificHeatCapacityMeasure,IfcTemperatureGradientMeasure,IfcTemperatureRateOfChangeMeasure,IfcThermalAdmittanceMeasure,IfcThermalConductivityMeasure,IfcThermalExpansionCoefficientMeasure,IfcThermalResistanceMeasure,IfcThermalTransmittanceMeasure,IfcTorqueMeasure,IfcVaporPermeabilityMeasure,IfcVolumetricFlowRateMeasure,IfcWarpingConstantMeasure,IfcWarpingMomentMeasure>
-	{
-		public IfcDerivedMeasureValue(IfcAbsorbedDoseMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcAccelerationMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcAngularVelocityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcAreaDensityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcCompoundPlaneAngleMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcCurvatureMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcDoseEquivalentMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcDynamicViscosityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcElectricCapacitanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcElectricChargeMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcElectricConductanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcElectricResistanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcElectricVoltageMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcEnergyMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcForceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcFrequencyMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcHeatFluxDensityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcHeatingValueMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcIlluminanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcInductanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcIntegerCountRateMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcIonConcentrationMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcIsothermalMoistureCapacityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcKinematicViscosityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcLinearForceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcLinearMomentMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcLinearStiffnessMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcLinearVelocityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcLuminousFluxMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcLuminousIntensityDistributionMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMagneticFluxDensityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMagneticFluxMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMassDensityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMassFlowRateMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMassPerLengthMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcModulusOfElasticityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcModulusOfLinearSubgradeReactionMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcModulusOfRotationalSubgradeReactionMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcModulusOfSubgradeReactionMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMoistureDiffusivityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMolecularWeightMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMomentOfInertiaMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcMonetaryMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcPHMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcPlanarForceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcPowerMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcPressureMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcRadioActivityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcRotationalFrequencyMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcRotationalMassMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcRotationalStiffnessMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSectionModulusMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSectionalAreaIntegralMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcShearModulusMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSoundPowerLevelMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSoundPowerMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSoundPressureLevelMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSoundPressureMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcSpecificHeatCapacityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcTemperatureGradientMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcTemperatureRateOfChangeMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcThermalAdmittanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcThermalConductivityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcThermalExpansionCoefficientMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcThermalResistanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcThermalTransmittanceMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcTorqueMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcVaporPermeabilityMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcVolumetricFlowRateMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcWarpingConstantMeasure value):base(value){}
-		public IfcDerivedMeasureValue(IfcWarpingMomentMeasure value):base(value){}
+	public abstract class IfcDerivedMeasureValue : BaseIfc
+    {
+        private readonly IfcDerivedMeasureValueType selectType;
+        public IfcDerivedMeasureValue(IfcDerivedMeasureValueType selectType){ this.selectType = selectType; }
+        public static IfcDerivedMeasureValue FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDerivedMeasureValue>(json); }
+    }
 
-		public static IfcDerivedMeasureValue FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDerivedMeasureValue>(json);
-		}
-	}
+    public class IfcDerivedMeasureValueIfcAbsorbedDoseMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcAbsorbedDoseMeasure value;
+        public IfcDerivedMeasureValueIfcAbsorbedDoseMeasure(IfcAbsorbedDoseMeasure value) : base(IfcDerivedMeasureValueType.IfcAbsorbedDoseMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcDerivedMeasureValueIfcAccelerationMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcAccelerationMeasure value;
+        public IfcDerivedMeasureValueIfcAccelerationMeasure(IfcAccelerationMeasure value) : base(IfcDerivedMeasureValueType.IfcAccelerationMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcAngularVelocityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcAngularVelocityMeasure value;
+        public IfcDerivedMeasureValueIfcAngularVelocityMeasure(IfcAngularVelocityMeasure value) : base(IfcDerivedMeasureValueType.IfcAngularVelocityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcAreaDensityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcAreaDensityMeasure value;
+        public IfcDerivedMeasureValueIfcAreaDensityMeasure(IfcAreaDensityMeasure value) : base(IfcDerivedMeasureValueType.IfcAreaDensityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcCompoundPlaneAngleMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcCompoundPlaneAngleMeasure value;
+        public IfcDerivedMeasureValueIfcCompoundPlaneAngleMeasure(IfcCompoundPlaneAngleMeasure value) : base(IfcDerivedMeasureValueType.IfcCompoundPlaneAngleMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcCurvatureMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcCurvatureMeasure value;
+        public IfcDerivedMeasureValueIfcCurvatureMeasure(IfcCurvatureMeasure value) : base(IfcDerivedMeasureValueType.IfcCurvatureMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcDoseEquivalentMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcDoseEquivalentMeasure value;
+        public IfcDerivedMeasureValueIfcDoseEquivalentMeasure(IfcDoseEquivalentMeasure value) : base(IfcDerivedMeasureValueType.IfcDoseEquivalentMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcDynamicViscosityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcDynamicViscosityMeasure value;
+        public IfcDerivedMeasureValueIfcDynamicViscosityMeasure(IfcDynamicViscosityMeasure value) : base(IfcDerivedMeasureValueType.IfcDynamicViscosityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcElectricCapacitanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcElectricCapacitanceMeasure value;
+        public IfcDerivedMeasureValueIfcElectricCapacitanceMeasure(IfcElectricCapacitanceMeasure value) : base(IfcDerivedMeasureValueType.IfcElectricCapacitanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcElectricChargeMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcElectricChargeMeasure value;
+        public IfcDerivedMeasureValueIfcElectricChargeMeasure(IfcElectricChargeMeasure value) : base(IfcDerivedMeasureValueType.IfcElectricChargeMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcElectricConductanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcElectricConductanceMeasure value;
+        public IfcDerivedMeasureValueIfcElectricConductanceMeasure(IfcElectricConductanceMeasure value) : base(IfcDerivedMeasureValueType.IfcElectricConductanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcElectricResistanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcElectricResistanceMeasure value;
+        public IfcDerivedMeasureValueIfcElectricResistanceMeasure(IfcElectricResistanceMeasure value) : base(IfcDerivedMeasureValueType.IfcElectricResistanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcElectricVoltageMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcElectricVoltageMeasure value;
+        public IfcDerivedMeasureValueIfcElectricVoltageMeasure(IfcElectricVoltageMeasure value) : base(IfcDerivedMeasureValueType.IfcElectricVoltageMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcEnergyMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcEnergyMeasure value;
+        public IfcDerivedMeasureValueIfcEnergyMeasure(IfcEnergyMeasure value) : base(IfcDerivedMeasureValueType.IfcEnergyMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcForceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcForceMeasure value;
+        public IfcDerivedMeasureValueIfcForceMeasure(IfcForceMeasure value) : base(IfcDerivedMeasureValueType.IfcForceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcFrequencyMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcFrequencyMeasure value;
+        public IfcDerivedMeasureValueIfcFrequencyMeasure(IfcFrequencyMeasure value) : base(IfcDerivedMeasureValueType.IfcFrequencyMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcHeatFluxDensityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcHeatFluxDensityMeasure value;
+        public IfcDerivedMeasureValueIfcHeatFluxDensityMeasure(IfcHeatFluxDensityMeasure value) : base(IfcDerivedMeasureValueType.IfcHeatFluxDensityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcHeatingValueMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcHeatingValueMeasure value;
+        public IfcDerivedMeasureValueIfcHeatingValueMeasure(IfcHeatingValueMeasure value) : base(IfcDerivedMeasureValueType.IfcHeatingValueMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcIlluminanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcIlluminanceMeasure value;
+        public IfcDerivedMeasureValueIfcIlluminanceMeasure(IfcIlluminanceMeasure value) : base(IfcDerivedMeasureValueType.IfcIlluminanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcInductanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcInductanceMeasure value;
+        public IfcDerivedMeasureValueIfcInductanceMeasure(IfcInductanceMeasure value) : base(IfcDerivedMeasureValueType.IfcInductanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcIntegerCountRateMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcIntegerCountRateMeasure value;
+        public IfcDerivedMeasureValueIfcIntegerCountRateMeasure(IfcIntegerCountRateMeasure value) : base(IfcDerivedMeasureValueType.IfcIntegerCountRateMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcIonConcentrationMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcIonConcentrationMeasure value;
+        public IfcDerivedMeasureValueIfcIonConcentrationMeasure(IfcIonConcentrationMeasure value) : base(IfcDerivedMeasureValueType.IfcIonConcentrationMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcIsothermalMoistureCapacityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcIsothermalMoistureCapacityMeasure value;
+        public IfcDerivedMeasureValueIfcIsothermalMoistureCapacityMeasure(IfcIsothermalMoistureCapacityMeasure value) : base(IfcDerivedMeasureValueType.IfcIsothermalMoistureCapacityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcKinematicViscosityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcKinematicViscosityMeasure value;
+        public IfcDerivedMeasureValueIfcKinematicViscosityMeasure(IfcKinematicViscosityMeasure value) : base(IfcDerivedMeasureValueType.IfcKinematicViscosityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcLinearForceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcLinearForceMeasure value;
+        public IfcDerivedMeasureValueIfcLinearForceMeasure(IfcLinearForceMeasure value) : base(IfcDerivedMeasureValueType.IfcLinearForceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcLinearMomentMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcLinearMomentMeasure value;
+        public IfcDerivedMeasureValueIfcLinearMomentMeasure(IfcLinearMomentMeasure value) : base(IfcDerivedMeasureValueType.IfcLinearMomentMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcLinearStiffnessMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcLinearStiffnessMeasure value;
+        public IfcDerivedMeasureValueIfcLinearStiffnessMeasure(IfcLinearStiffnessMeasure value) : base(IfcDerivedMeasureValueType.IfcLinearStiffnessMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcLinearVelocityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcLinearVelocityMeasure value;
+        public IfcDerivedMeasureValueIfcLinearVelocityMeasure(IfcLinearVelocityMeasure value) : base(IfcDerivedMeasureValueType.IfcLinearVelocityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcLuminousFluxMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcLuminousFluxMeasure value;
+        public IfcDerivedMeasureValueIfcLuminousFluxMeasure(IfcLuminousFluxMeasure value) : base(IfcDerivedMeasureValueType.IfcLuminousFluxMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcLuminousIntensityDistributionMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcLuminousIntensityDistributionMeasure value;
+        public IfcDerivedMeasureValueIfcLuminousIntensityDistributionMeasure(IfcLuminousIntensityDistributionMeasure value) : base(IfcDerivedMeasureValueType.IfcLuminousIntensityDistributionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMagneticFluxDensityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMagneticFluxDensityMeasure value;
+        public IfcDerivedMeasureValueIfcMagneticFluxDensityMeasure(IfcMagneticFluxDensityMeasure value) : base(IfcDerivedMeasureValueType.IfcMagneticFluxDensityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMagneticFluxMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMagneticFluxMeasure value;
+        public IfcDerivedMeasureValueIfcMagneticFluxMeasure(IfcMagneticFluxMeasure value) : base(IfcDerivedMeasureValueType.IfcMagneticFluxMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMassDensityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMassDensityMeasure value;
+        public IfcDerivedMeasureValueIfcMassDensityMeasure(IfcMassDensityMeasure value) : base(IfcDerivedMeasureValueType.IfcMassDensityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMassFlowRateMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMassFlowRateMeasure value;
+        public IfcDerivedMeasureValueIfcMassFlowRateMeasure(IfcMassFlowRateMeasure value) : base(IfcDerivedMeasureValueType.IfcMassFlowRateMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMassPerLengthMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMassPerLengthMeasure value;
+        public IfcDerivedMeasureValueIfcMassPerLengthMeasure(IfcMassPerLengthMeasure value) : base(IfcDerivedMeasureValueType.IfcMassPerLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcModulusOfElasticityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcModulusOfElasticityMeasure value;
+        public IfcDerivedMeasureValueIfcModulusOfElasticityMeasure(IfcModulusOfElasticityMeasure value) : base(IfcDerivedMeasureValueType.IfcModulusOfElasticityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcModulusOfLinearSubgradeReactionMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcModulusOfLinearSubgradeReactionMeasure value;
+        public IfcDerivedMeasureValueIfcModulusOfLinearSubgradeReactionMeasure(IfcModulusOfLinearSubgradeReactionMeasure value) : base(IfcDerivedMeasureValueType.IfcModulusOfLinearSubgradeReactionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcModulusOfRotationalSubgradeReactionMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcModulusOfRotationalSubgradeReactionMeasure value;
+        public IfcDerivedMeasureValueIfcModulusOfRotationalSubgradeReactionMeasure(IfcModulusOfRotationalSubgradeReactionMeasure value) : base(IfcDerivedMeasureValueType.IfcModulusOfRotationalSubgradeReactionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcModulusOfSubgradeReactionMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcModulusOfSubgradeReactionMeasure value;
+        public IfcDerivedMeasureValueIfcModulusOfSubgradeReactionMeasure(IfcModulusOfSubgradeReactionMeasure value) : base(IfcDerivedMeasureValueType.IfcModulusOfSubgradeReactionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMoistureDiffusivityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMoistureDiffusivityMeasure value;
+        public IfcDerivedMeasureValueIfcMoistureDiffusivityMeasure(IfcMoistureDiffusivityMeasure value) : base(IfcDerivedMeasureValueType.IfcMoistureDiffusivityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMolecularWeightMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMolecularWeightMeasure value;
+        public IfcDerivedMeasureValueIfcMolecularWeightMeasure(IfcMolecularWeightMeasure value) : base(IfcDerivedMeasureValueType.IfcMolecularWeightMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMomentOfInertiaMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMomentOfInertiaMeasure value;
+        public IfcDerivedMeasureValueIfcMomentOfInertiaMeasure(IfcMomentOfInertiaMeasure value) : base(IfcDerivedMeasureValueType.IfcMomentOfInertiaMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcMonetaryMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcMonetaryMeasure value;
+        public IfcDerivedMeasureValueIfcMonetaryMeasure(IfcMonetaryMeasure value) : base(IfcDerivedMeasureValueType.IfcMonetaryMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcPHMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcPHMeasure value;
+        public IfcDerivedMeasureValueIfcPHMeasure(IfcPHMeasure value) : base(IfcDerivedMeasureValueType.IfcPHMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcPlanarForceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcPlanarForceMeasure value;
+        public IfcDerivedMeasureValueIfcPlanarForceMeasure(IfcPlanarForceMeasure value) : base(IfcDerivedMeasureValueType.IfcPlanarForceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcPowerMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcPowerMeasure value;
+        public IfcDerivedMeasureValueIfcPowerMeasure(IfcPowerMeasure value) : base(IfcDerivedMeasureValueType.IfcPowerMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcPressureMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcPressureMeasure value;
+        public IfcDerivedMeasureValueIfcPressureMeasure(IfcPressureMeasure value) : base(IfcDerivedMeasureValueType.IfcPressureMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcRadioActivityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcRadioActivityMeasure value;
+        public IfcDerivedMeasureValueIfcRadioActivityMeasure(IfcRadioActivityMeasure value) : base(IfcDerivedMeasureValueType.IfcRadioActivityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcRotationalFrequencyMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcRotationalFrequencyMeasure value;
+        public IfcDerivedMeasureValueIfcRotationalFrequencyMeasure(IfcRotationalFrequencyMeasure value) : base(IfcDerivedMeasureValueType.IfcRotationalFrequencyMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcRotationalMassMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcRotationalMassMeasure value;
+        public IfcDerivedMeasureValueIfcRotationalMassMeasure(IfcRotationalMassMeasure value) : base(IfcDerivedMeasureValueType.IfcRotationalMassMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcRotationalStiffnessMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcRotationalStiffnessMeasure value;
+        public IfcDerivedMeasureValueIfcRotationalStiffnessMeasure(IfcRotationalStiffnessMeasure value) : base(IfcDerivedMeasureValueType.IfcRotationalStiffnessMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSectionModulusMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSectionModulusMeasure value;
+        public IfcDerivedMeasureValueIfcSectionModulusMeasure(IfcSectionModulusMeasure value) : base(IfcDerivedMeasureValueType.IfcSectionModulusMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSectionalAreaIntegralMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSectionalAreaIntegralMeasure value;
+        public IfcDerivedMeasureValueIfcSectionalAreaIntegralMeasure(IfcSectionalAreaIntegralMeasure value) : base(IfcDerivedMeasureValueType.IfcSectionalAreaIntegralMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcShearModulusMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcShearModulusMeasure value;
+        public IfcDerivedMeasureValueIfcShearModulusMeasure(IfcShearModulusMeasure value) : base(IfcDerivedMeasureValueType.IfcShearModulusMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSoundPowerLevelMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSoundPowerLevelMeasure value;
+        public IfcDerivedMeasureValueIfcSoundPowerLevelMeasure(IfcSoundPowerLevelMeasure value) : base(IfcDerivedMeasureValueType.IfcSoundPowerLevelMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSoundPowerMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSoundPowerMeasure value;
+        public IfcDerivedMeasureValueIfcSoundPowerMeasure(IfcSoundPowerMeasure value) : base(IfcDerivedMeasureValueType.IfcSoundPowerMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSoundPressureLevelMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSoundPressureLevelMeasure value;
+        public IfcDerivedMeasureValueIfcSoundPressureLevelMeasure(IfcSoundPressureLevelMeasure value) : base(IfcDerivedMeasureValueType.IfcSoundPressureLevelMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSoundPressureMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSoundPressureMeasure value;
+        public IfcDerivedMeasureValueIfcSoundPressureMeasure(IfcSoundPressureMeasure value) : base(IfcDerivedMeasureValueType.IfcSoundPressureMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcSpecificHeatCapacityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcSpecificHeatCapacityMeasure value;
+        public IfcDerivedMeasureValueIfcSpecificHeatCapacityMeasure(IfcSpecificHeatCapacityMeasure value) : base(IfcDerivedMeasureValueType.IfcSpecificHeatCapacityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcTemperatureGradientMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcTemperatureGradientMeasure value;
+        public IfcDerivedMeasureValueIfcTemperatureGradientMeasure(IfcTemperatureGradientMeasure value) : base(IfcDerivedMeasureValueType.IfcTemperatureGradientMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcTemperatureRateOfChangeMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcTemperatureRateOfChangeMeasure value;
+        public IfcDerivedMeasureValueIfcTemperatureRateOfChangeMeasure(IfcTemperatureRateOfChangeMeasure value) : base(IfcDerivedMeasureValueType.IfcTemperatureRateOfChangeMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcThermalAdmittanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcThermalAdmittanceMeasure value;
+        public IfcDerivedMeasureValueIfcThermalAdmittanceMeasure(IfcThermalAdmittanceMeasure value) : base(IfcDerivedMeasureValueType.IfcThermalAdmittanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcThermalConductivityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcThermalConductivityMeasure value;
+        public IfcDerivedMeasureValueIfcThermalConductivityMeasure(IfcThermalConductivityMeasure value) : base(IfcDerivedMeasureValueType.IfcThermalConductivityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcThermalExpansionCoefficientMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcThermalExpansionCoefficientMeasure value;
+        public IfcDerivedMeasureValueIfcThermalExpansionCoefficientMeasure(IfcThermalExpansionCoefficientMeasure value) : base(IfcDerivedMeasureValueType.IfcThermalExpansionCoefficientMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcThermalResistanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcThermalResistanceMeasure value;
+        public IfcDerivedMeasureValueIfcThermalResistanceMeasure(IfcThermalResistanceMeasure value) : base(IfcDerivedMeasureValueType.IfcThermalResistanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcThermalTransmittanceMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcThermalTransmittanceMeasure value;
+        public IfcDerivedMeasureValueIfcThermalTransmittanceMeasure(IfcThermalTransmittanceMeasure value) : base(IfcDerivedMeasureValueType.IfcThermalTransmittanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcTorqueMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcTorqueMeasure value;
+        public IfcDerivedMeasureValueIfcTorqueMeasure(IfcTorqueMeasure value) : base(IfcDerivedMeasureValueType.IfcTorqueMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcVaporPermeabilityMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcVaporPermeabilityMeasure value;
+        public IfcDerivedMeasureValueIfcVaporPermeabilityMeasure(IfcVaporPermeabilityMeasure value) : base(IfcDerivedMeasureValueType.IfcVaporPermeabilityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcVolumetricFlowRateMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcVolumetricFlowRateMeasure value;
+        public IfcDerivedMeasureValueIfcVolumetricFlowRateMeasure(IfcVolumetricFlowRateMeasure value) : base(IfcDerivedMeasureValueType.IfcVolumetricFlowRateMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcWarpingConstantMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcWarpingConstantMeasure value;
+        public IfcDerivedMeasureValueIfcWarpingConstantMeasure(IfcWarpingConstantMeasure value) : base(IfcDerivedMeasureValueType.IfcWarpingConstantMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcDerivedMeasureValueIfcWarpingMomentMeasure : IfcDerivedMeasureValue
+    {
+        private readonly IfcWarpingMomentMeasure value;
+        public IfcDerivedMeasureValueIfcWarpingMomentMeasure(IfcWarpingMomentMeasure value) : base(IfcDerivedMeasureValueType.IfcWarpingMomentMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcDocumentSelectType{ IfcDocumentInformation,IfcDocumentReference }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcDocumentSelect>))]
-	public class IfcDocumentSelect : IfcSelect<IfcDocumentInformation,IfcDocumentReference>
-	{
-		public IfcDocumentSelect(IfcDocumentInformation value):base(value){}
-		public IfcDocumentSelect(IfcDocumentReference value):base(value){}
+	public abstract class IfcDocumentSelect : BaseIfc
+    {
+        private readonly IfcDocumentSelectType selectType;
+        public IfcDocumentSelect(IfcDocumentSelectType selectType){ this.selectType = selectType; }
+        public static IfcDocumentSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcDocumentSelect>(json); }
+    }
 
-		public static IfcDocumentSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcDocumentSelect>(json);
-		}
-	}
+    public class IfcDocumentSelectIfcDocumentInformation : IfcDocumentSelect
+    {
+        private readonly IfcDocumentInformation value;
+        public IfcDocumentSelectIfcDocumentInformation(IfcDocumentInformation value) : base(IfcDocumentSelectType.IfcDocumentInformation){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcDocumentSelectIfcDocumentReference : IfcDocumentSelect
+    {
+        private readonly IfcDocumentReference value;
+        public IfcDocumentSelectIfcDocumentReference(IfcDocumentReference value) : base(IfcDocumentSelectType.IfcDocumentReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcFillStyleSelectType{ IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillstyleselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcFillStyleSelect>))]
-	public class IfcFillStyleSelect : IfcSelect<IfcColour,IfcExternallyDefinedHatchStyle,IfcFillAreaStyleHatching,IfcFillAreaStyleTiles>
-	{
-		public IfcFillStyleSelect(IfcColour value):base(value){}
-		public IfcFillStyleSelect(IfcExternallyDefinedHatchStyle value):base(value){}
-		public IfcFillStyleSelect(IfcFillAreaStyleHatching value):base(value){}
-		public IfcFillStyleSelect(IfcFillAreaStyleTiles value):base(value){}
+	public abstract class IfcFillStyleSelect : BaseIfc
+    {
+        private readonly IfcFillStyleSelectType selectType;
+        public IfcFillStyleSelect(IfcFillStyleSelectType selectType){ this.selectType = selectType; }
+        public static IfcFillStyleSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcFillStyleSelect>(json); }
+    }
 
-		public static IfcFillStyleSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcFillStyleSelect>(json);
-		}
-	}
+    public class IfcFillStyleSelectIfcColour : IfcFillStyleSelect
+    {
+        private readonly IfcColour value;
+        public IfcFillStyleSelectIfcColour(IfcColour value) : base(IfcFillStyleSelectType.IfcColour){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcFillStyleSelectIfcExternallyDefinedHatchStyle : IfcFillStyleSelect
+    {
+        private readonly IfcExternallyDefinedHatchStyle value;
+        public IfcFillStyleSelectIfcExternallyDefinedHatchStyle(IfcExternallyDefinedHatchStyle value) : base(IfcFillStyleSelectType.IfcExternallyDefinedHatchStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcFillStyleSelectIfcFillAreaStyleHatching : IfcFillStyleSelect
+    {
+        private readonly IfcFillAreaStyleHatching value;
+        public IfcFillStyleSelectIfcFillAreaStyleHatching(IfcFillAreaStyleHatching value) : base(IfcFillStyleSelectType.IfcFillAreaStyleHatching){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcFillStyleSelectIfcFillAreaStyleTiles : IfcFillStyleSelect
+    {
+        private readonly IfcFillAreaStyleTiles value;
+        public IfcFillStyleSelectIfcFillAreaStyleTiles(IfcFillAreaStyleTiles value) : base(IfcFillStyleSelectType.IfcFillAreaStyleTiles){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcGeometricSetSelectType{ IfcCurve,IfcPoint,IfcSurface }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricsetselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcGeometricSetSelect>))]
-	public class IfcGeometricSetSelect : IfcSelect<IfcCurve,IfcPoint,IfcSurface>
-	{
-		public IfcGeometricSetSelect(IfcCurve value):base(value){}
-		public IfcGeometricSetSelect(IfcPoint value):base(value){}
-		public IfcGeometricSetSelect(IfcSurface value):base(value){}
+	public abstract class IfcGeometricSetSelect : BaseIfc
+    {
+        private readonly IfcGeometricSetSelectType selectType;
+        public IfcGeometricSetSelect(IfcGeometricSetSelectType selectType){ this.selectType = selectType; }
+        public static IfcGeometricSetSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcGeometricSetSelect>(json); }
+    }
 
-		public static IfcGeometricSetSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcGeometricSetSelect>(json);
-		}
-	}
+    public class IfcGeometricSetSelectIfcCurve : IfcGeometricSetSelect
+    {
+        private readonly IfcCurve value;
+        public IfcGeometricSetSelectIfcCurve(IfcCurve value) : base(IfcGeometricSetSelectType.IfcCurve){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcGeometricSetSelectIfcPoint : IfcGeometricSetSelect
+    {
+        private readonly IfcPoint value;
+        public IfcGeometricSetSelectIfcPoint(IfcPoint value) : base(IfcGeometricSetSelectType.IfcPoint){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcGeometricSetSelectIfcSurface : IfcGeometricSetSelect
+    {
+        private readonly IfcSurface value;
+        public IfcGeometricSetSelectIfcSurface(IfcSurface value) : base(IfcGeometricSetSelectType.IfcSurface){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcGridPlacementDirectionSelectType{ IfcDirection,IfcVirtualGridIntersection }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacementdirectionselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcGridPlacementDirectionSelect>))]
-	public class IfcGridPlacementDirectionSelect : IfcSelect<IfcDirection,IfcVirtualGridIntersection>
-	{
-		public IfcGridPlacementDirectionSelect(IfcDirection value):base(value){}
-		public IfcGridPlacementDirectionSelect(IfcVirtualGridIntersection value):base(value){}
+	public abstract class IfcGridPlacementDirectionSelect : BaseIfc
+    {
+        private readonly IfcGridPlacementDirectionSelectType selectType;
+        public IfcGridPlacementDirectionSelect(IfcGridPlacementDirectionSelectType selectType){ this.selectType = selectType; }
+        public static IfcGridPlacementDirectionSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcGridPlacementDirectionSelect>(json); }
+    }
 
-		public static IfcGridPlacementDirectionSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcGridPlacementDirectionSelect>(json);
-		}
-	}
+    public class IfcGridPlacementDirectionSelectIfcDirection : IfcGridPlacementDirectionSelect
+    {
+        private readonly IfcDirection value;
+        public IfcGridPlacementDirectionSelectIfcDirection(IfcDirection value) : base(IfcGridPlacementDirectionSelectType.IfcDirection){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcGridPlacementDirectionSelectIfcVirtualGridIntersection : IfcGridPlacementDirectionSelect
+    {
+        private readonly IfcVirtualGridIntersection value;
+        public IfcGridPlacementDirectionSelectIfcVirtualGridIntersection(IfcVirtualGridIntersection value) : base(IfcGridPlacementDirectionSelectType.IfcVirtualGridIntersection){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcHatchLineDistanceSelectType{ IfcPositiveLengthMeasure,IfcVector }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchatchlinedistanceselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcHatchLineDistanceSelect>))]
-	public class IfcHatchLineDistanceSelect : IfcSelect<IfcPositiveLengthMeasure,IfcVector>
-	{
-		public IfcHatchLineDistanceSelect(IfcPositiveLengthMeasure value):base(value){}
-		public IfcHatchLineDistanceSelect(IfcVector value):base(value){}
+	public abstract class IfcHatchLineDistanceSelect : BaseIfc
+    {
+        private readonly IfcHatchLineDistanceSelectType selectType;
+        public IfcHatchLineDistanceSelect(IfcHatchLineDistanceSelectType selectType){ this.selectType = selectType; }
+        public static IfcHatchLineDistanceSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcHatchLineDistanceSelect>(json); }
+    }
 
-		public static IfcHatchLineDistanceSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcHatchLineDistanceSelect>(json);
-		}
-	}
+    public class IfcHatchLineDistanceSelectIfcPositiveLengthMeasure : IfcHatchLineDistanceSelect
+    {
+        private readonly IfcPositiveLengthMeasure value;
+        public IfcHatchLineDistanceSelectIfcPositiveLengthMeasure(IfcPositiveLengthMeasure value) : base(IfcHatchLineDistanceSelectType.IfcPositiveLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcHatchLineDistanceSelectIfcVector : IfcHatchLineDistanceSelect
+    {
+        private readonly IfcVector value;
+        public IfcHatchLineDistanceSelectIfcVector(IfcVector value) : base(IfcHatchLineDistanceSelectType.IfcVector){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcLayeredItemType{ IfcRepresentation,IfcRepresentationItem }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclayereditem.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcLayeredItem>))]
-	public class IfcLayeredItem : IfcSelect<IfcRepresentation,IfcRepresentationItem>
-	{
-		public IfcLayeredItem(IfcRepresentation value):base(value){}
-		public IfcLayeredItem(IfcRepresentationItem value):base(value){}
+	public abstract class IfcLayeredItem : BaseIfc
+    {
+        private readonly IfcLayeredItemType selectType;
+        public IfcLayeredItem(IfcLayeredItemType selectType){ this.selectType = selectType; }
+        public static IfcLayeredItem FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLayeredItem>(json); }
+    }
 
-		public static IfcLayeredItem FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLayeredItem>(json);
-		}
-	}
+    public class IfcLayeredItemIfcRepresentation : IfcLayeredItem
+    {
+        private readonly IfcRepresentation value;
+        public IfcLayeredItemIfcRepresentation(IfcRepresentation value) : base(IfcLayeredItemType.IfcRepresentation){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcLayeredItemIfcRepresentationItem : IfcLayeredItem
+    {
+        private readonly IfcRepresentationItem value;
+        public IfcLayeredItemIfcRepresentationItem(IfcRepresentationItem value) : base(IfcLayeredItemType.IfcRepresentationItem){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcLibrarySelectType{ IfcLibraryInformation,IfcLibraryReference }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcLibrarySelect>))]
-	public class IfcLibrarySelect : IfcSelect<IfcLibraryInformation,IfcLibraryReference>
-	{
-		public IfcLibrarySelect(IfcLibraryInformation value):base(value){}
-		public IfcLibrarySelect(IfcLibraryReference value):base(value){}
+	public abstract class IfcLibrarySelect : BaseIfc
+    {
+        private readonly IfcLibrarySelectType selectType;
+        public IfcLibrarySelect(IfcLibrarySelectType selectType){ this.selectType = selectType; }
+        public static IfcLibrarySelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLibrarySelect>(json); }
+    }
 
-		public static IfcLibrarySelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLibrarySelect>(json);
-		}
-	}
+    public class IfcLibrarySelectIfcLibraryInformation : IfcLibrarySelect
+    {
+        private readonly IfcLibraryInformation value;
+        public IfcLibrarySelectIfcLibraryInformation(IfcLibraryInformation value) : base(IfcLibrarySelectType.IfcLibraryInformation){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcLibrarySelectIfcLibraryReference : IfcLibrarySelect
+    {
+        private readonly IfcLibraryReference value;
+        public IfcLibrarySelectIfcLibraryReference(IfcLibraryReference value) : base(IfcLibrarySelectType.IfcLibraryReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcLightDistributionDataSourceSelectType{ IfcExternalReference,IfcLightIntensityDistribution }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondatasourceselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcLightDistributionDataSourceSelect>))]
-	public class IfcLightDistributionDataSourceSelect : IfcSelect<IfcExternalReference,IfcLightIntensityDistribution>
-	{
-		public IfcLightDistributionDataSourceSelect(IfcExternalReference value):base(value){}
-		public IfcLightDistributionDataSourceSelect(IfcLightIntensityDistribution value):base(value){}
+	public abstract class IfcLightDistributionDataSourceSelect : BaseIfc
+    {
+        private readonly IfcLightDistributionDataSourceSelectType selectType;
+        public IfcLightDistributionDataSourceSelect(IfcLightDistributionDataSourceSelectType selectType){ this.selectType = selectType; }
+        public static IfcLightDistributionDataSourceSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLightDistributionDataSourceSelect>(json); }
+    }
 
-		public static IfcLightDistributionDataSourceSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcLightDistributionDataSourceSelect>(json);
-		}
-	}
+    public class IfcLightDistributionDataSourceSelectIfcExternalReference : IfcLightDistributionDataSourceSelect
+    {
+        private readonly IfcExternalReference value;
+        public IfcLightDistributionDataSourceSelectIfcExternalReference(IfcExternalReference value) : base(IfcLightDistributionDataSourceSelectType.IfcExternalReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcLightDistributionDataSourceSelectIfcLightIntensityDistribution : IfcLightDistributionDataSourceSelect
+    {
+        private readonly IfcLightIntensityDistribution value;
+        public IfcLightDistributionDataSourceSelectIfcLightIntensityDistribution(IfcLightIntensityDistribution value) : base(IfcLightDistributionDataSourceSelectType.IfcLightIntensityDistribution){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcMaterialSelectType{ IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcMaterialSelect>))]
-	public class IfcMaterialSelect : IfcSelect<IfcMaterialDefinition,IfcMaterialList,IfcMaterialUsageDefinition>
-	{
-		public IfcMaterialSelect(IfcMaterialDefinition value):base(value){}
-		public IfcMaterialSelect(IfcMaterialList value):base(value){}
-		public IfcMaterialSelect(IfcMaterialUsageDefinition value):base(value){}
+	public abstract class IfcMaterialSelect : BaseIfc
+    {
+        private readonly IfcMaterialSelectType selectType;
+        public IfcMaterialSelect(IfcMaterialSelectType selectType){ this.selectType = selectType; }
+        public static IfcMaterialSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMaterialSelect>(json); }
+    }
 
-		public static IfcMaterialSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMaterialSelect>(json);
-		}
-	}
+    public class IfcMaterialSelectIfcMaterialDefinition : IfcMaterialSelect
+    {
+        private readonly IfcMaterialDefinition value;
+        public IfcMaterialSelectIfcMaterialDefinition(IfcMaterialDefinition value) : base(IfcMaterialSelectType.IfcMaterialDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcMaterialSelectIfcMaterialList : IfcMaterialSelect
+    {
+        private readonly IfcMaterialList value;
+        public IfcMaterialSelectIfcMaterialList(IfcMaterialList value) : base(IfcMaterialSelectType.IfcMaterialList){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMaterialSelectIfcMaterialUsageDefinition : IfcMaterialSelect
+    {
+        private readonly IfcMaterialUsageDefinition value;
+        public IfcMaterialSelectIfcMaterialUsageDefinition(IfcMaterialUsageDefinition value) : base(IfcMaterialSelectType.IfcMaterialUsageDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcMeasureValueType{ IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmeasurevalue.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcMeasureValue>))]
-	public class IfcMeasureValue : IfcSelect<IfcAmountOfSubstanceMeasure,IfcAreaMeasure,IfcComplexNumber,IfcContextDependentMeasure,IfcCountMeasure,IfcDescriptiveMeasure,IfcElectricCurrentMeasure,IfcLengthMeasure,IfcLuminousIntensityMeasure,IfcMassMeasure,IfcNonNegativeLengthMeasure,IfcNormalisedRatioMeasure,IfcNumericMeasure,IfcParameterValue,IfcPlaneAngleMeasure,IfcPositiveLengthMeasure,IfcPositivePlaneAngleMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure,IfcSolidAngleMeasure,IfcThermodynamicTemperatureMeasure,IfcTimeMeasure,IfcVolumeMeasure>
-	{
-		public IfcMeasureValue(IfcAmountOfSubstanceMeasure value):base(value){}
-		public IfcMeasureValue(IfcAreaMeasure value):base(value){}
-		public IfcMeasureValue(IfcComplexNumber value):base(value){}
-		public IfcMeasureValue(IfcContextDependentMeasure value):base(value){}
-		public IfcMeasureValue(IfcCountMeasure value):base(value){}
-		public IfcMeasureValue(IfcDescriptiveMeasure value):base(value){}
-		public IfcMeasureValue(IfcElectricCurrentMeasure value):base(value){}
-		public IfcMeasureValue(IfcLengthMeasure value):base(value){}
-		public IfcMeasureValue(IfcLuminousIntensityMeasure value):base(value){}
-		public IfcMeasureValue(IfcMassMeasure value):base(value){}
-		public IfcMeasureValue(IfcNonNegativeLengthMeasure value):base(value){}
-		public IfcMeasureValue(IfcNormalisedRatioMeasure value):base(value){}
-		public IfcMeasureValue(IfcNumericMeasure value):base(value){}
-		public IfcMeasureValue(IfcParameterValue value):base(value){}
-		public IfcMeasureValue(IfcPlaneAngleMeasure value):base(value){}
-		public IfcMeasureValue(IfcPositiveLengthMeasure value):base(value){}
-		public IfcMeasureValue(IfcPositivePlaneAngleMeasure value):base(value){}
-		public IfcMeasureValue(IfcPositiveRatioMeasure value):base(value){}
-		public IfcMeasureValue(IfcRatioMeasure value):base(value){}
-		public IfcMeasureValue(IfcSolidAngleMeasure value):base(value){}
-		public IfcMeasureValue(IfcThermodynamicTemperatureMeasure value):base(value){}
-		public IfcMeasureValue(IfcTimeMeasure value):base(value){}
-		public IfcMeasureValue(IfcVolumeMeasure value):base(value){}
+	public abstract class IfcMeasureValue : BaseIfc
+    {
+        private readonly IfcMeasureValueType selectType;
+        public IfcMeasureValue(IfcMeasureValueType selectType){ this.selectType = selectType; }
+        public static IfcMeasureValue FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMeasureValue>(json); }
+    }
 
-		public static IfcMeasureValue FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMeasureValue>(json);
-		}
-	}
+    public class IfcMeasureValueIfcAmountOfSubstanceMeasure : IfcMeasureValue
+    {
+        private readonly IfcAmountOfSubstanceMeasure value;
+        public IfcMeasureValueIfcAmountOfSubstanceMeasure(IfcAmountOfSubstanceMeasure value) : base(IfcMeasureValueType.IfcAmountOfSubstanceMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcMeasureValueIfcAreaMeasure : IfcMeasureValue
+    {
+        private readonly IfcAreaMeasure value;
+        public IfcMeasureValueIfcAreaMeasure(IfcAreaMeasure value) : base(IfcMeasureValueType.IfcAreaMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcComplexNumber : IfcMeasureValue
+    {
+        private readonly IfcComplexNumber value;
+        public IfcMeasureValueIfcComplexNumber(IfcComplexNumber value) : base(IfcMeasureValueType.IfcComplexNumber){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcContextDependentMeasure : IfcMeasureValue
+    {
+        private readonly IfcContextDependentMeasure value;
+        public IfcMeasureValueIfcContextDependentMeasure(IfcContextDependentMeasure value) : base(IfcMeasureValueType.IfcContextDependentMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcCountMeasure : IfcMeasureValue
+    {
+        private readonly IfcCountMeasure value;
+        public IfcMeasureValueIfcCountMeasure(IfcCountMeasure value) : base(IfcMeasureValueType.IfcCountMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcDescriptiveMeasure : IfcMeasureValue
+    {
+        private readonly IfcDescriptiveMeasure value;
+        public IfcMeasureValueIfcDescriptiveMeasure(IfcDescriptiveMeasure value) : base(IfcMeasureValueType.IfcDescriptiveMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcElectricCurrentMeasure : IfcMeasureValue
+    {
+        private readonly IfcElectricCurrentMeasure value;
+        public IfcMeasureValueIfcElectricCurrentMeasure(IfcElectricCurrentMeasure value) : base(IfcMeasureValueType.IfcElectricCurrentMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcLengthMeasure : IfcMeasureValue
+    {
+        private readonly IfcLengthMeasure value;
+        public IfcMeasureValueIfcLengthMeasure(IfcLengthMeasure value) : base(IfcMeasureValueType.IfcLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcLuminousIntensityMeasure : IfcMeasureValue
+    {
+        private readonly IfcLuminousIntensityMeasure value;
+        public IfcMeasureValueIfcLuminousIntensityMeasure(IfcLuminousIntensityMeasure value) : base(IfcMeasureValueType.IfcLuminousIntensityMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcMassMeasure : IfcMeasureValue
+    {
+        private readonly IfcMassMeasure value;
+        public IfcMeasureValueIfcMassMeasure(IfcMassMeasure value) : base(IfcMeasureValueType.IfcMassMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcNonNegativeLengthMeasure : IfcMeasureValue
+    {
+        private readonly IfcNonNegativeLengthMeasure value;
+        public IfcMeasureValueIfcNonNegativeLengthMeasure(IfcNonNegativeLengthMeasure value) : base(IfcMeasureValueType.IfcNonNegativeLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcNormalisedRatioMeasure : IfcMeasureValue
+    {
+        private readonly IfcNormalisedRatioMeasure value;
+        public IfcMeasureValueIfcNormalisedRatioMeasure(IfcNormalisedRatioMeasure value) : base(IfcMeasureValueType.IfcNormalisedRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcNumericMeasure : IfcMeasureValue
+    {
+        private readonly IfcNumericMeasure value;
+        public IfcMeasureValueIfcNumericMeasure(IfcNumericMeasure value) : base(IfcMeasureValueType.IfcNumericMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcParameterValue : IfcMeasureValue
+    {
+        private readonly IfcParameterValue value;
+        public IfcMeasureValueIfcParameterValue(IfcParameterValue value) : base(IfcMeasureValueType.IfcParameterValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcPlaneAngleMeasure : IfcMeasureValue
+    {
+        private readonly IfcPlaneAngleMeasure value;
+        public IfcMeasureValueIfcPlaneAngleMeasure(IfcPlaneAngleMeasure value) : base(IfcMeasureValueType.IfcPlaneAngleMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcPositiveLengthMeasure : IfcMeasureValue
+    {
+        private readonly IfcPositiveLengthMeasure value;
+        public IfcMeasureValueIfcPositiveLengthMeasure(IfcPositiveLengthMeasure value) : base(IfcMeasureValueType.IfcPositiveLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcPositivePlaneAngleMeasure : IfcMeasureValue
+    {
+        private readonly IfcPositivePlaneAngleMeasure value;
+        public IfcMeasureValueIfcPositivePlaneAngleMeasure(IfcPositivePlaneAngleMeasure value) : base(IfcMeasureValueType.IfcPositivePlaneAngleMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcPositiveRatioMeasure : IfcMeasureValue
+    {
+        private readonly IfcPositiveRatioMeasure value;
+        public IfcMeasureValueIfcPositiveRatioMeasure(IfcPositiveRatioMeasure value) : base(IfcMeasureValueType.IfcPositiveRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcRatioMeasure : IfcMeasureValue
+    {
+        private readonly IfcRatioMeasure value;
+        public IfcMeasureValueIfcRatioMeasure(IfcRatioMeasure value) : base(IfcMeasureValueType.IfcRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcSolidAngleMeasure : IfcMeasureValue
+    {
+        private readonly IfcSolidAngleMeasure value;
+        public IfcMeasureValueIfcSolidAngleMeasure(IfcSolidAngleMeasure value) : base(IfcMeasureValueType.IfcSolidAngleMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcThermodynamicTemperatureMeasure : IfcMeasureValue
+    {
+        private readonly IfcThermodynamicTemperatureMeasure value;
+        public IfcMeasureValueIfcThermodynamicTemperatureMeasure(IfcThermodynamicTemperatureMeasure value) : base(IfcMeasureValueType.IfcThermodynamicTemperatureMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcTimeMeasure : IfcMeasureValue
+    {
+        private readonly IfcTimeMeasure value;
+        public IfcMeasureValueIfcTimeMeasure(IfcTimeMeasure value) : base(IfcMeasureValueType.IfcTimeMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMeasureValueIfcVolumeMeasure : IfcMeasureValue
+    {
+        private readonly IfcVolumeMeasure value;
+        public IfcMeasureValueIfcVolumeMeasure(IfcVolumeMeasure value) : base(IfcMeasureValueType.IfcVolumeMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcMetricValueSelectType{ IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetricvalueselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcMetricValueSelect>))]
-	public class IfcMetricValueSelect : IfcSelect<IfcAppliedValue,IfcMeasureWithUnit,IfcReference,IfcTable,IfcTimeSeries,IfcValue>
-	{
-		public IfcMetricValueSelect(IfcAppliedValue value):base(value){}
-		public IfcMetricValueSelect(IfcMeasureWithUnit value):base(value){}
-		public IfcMetricValueSelect(IfcReference value):base(value){}
-		public IfcMetricValueSelect(IfcTable value):base(value){}
-		public IfcMetricValueSelect(IfcTimeSeries value):base(value){}
-		public IfcMetricValueSelect(IfcValue value):base(value){}
+	public abstract class IfcMetricValueSelect : BaseIfc
+    {
+        private readonly IfcMetricValueSelectType selectType;
+        public IfcMetricValueSelect(IfcMetricValueSelectType selectType){ this.selectType = selectType; }
+        public static IfcMetricValueSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcMetricValueSelect>(json); }
+    }
 
-		public static IfcMetricValueSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcMetricValueSelect>(json);
-		}
-	}
+    public class IfcMetricValueSelectIfcAppliedValue : IfcMetricValueSelect
+    {
+        private readonly IfcAppliedValue value;
+        public IfcMetricValueSelectIfcAppliedValue(IfcAppliedValue value) : base(IfcMetricValueSelectType.IfcAppliedValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcMetricValueSelectIfcMeasureWithUnit : IfcMetricValueSelect
+    {
+        private readonly IfcMeasureWithUnit value;
+        public IfcMetricValueSelectIfcMeasureWithUnit(IfcMeasureWithUnit value) : base(IfcMetricValueSelectType.IfcMeasureWithUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMetricValueSelectIfcReference : IfcMetricValueSelect
+    {
+        private readonly IfcReference value;
+        public IfcMetricValueSelectIfcReference(IfcReference value) : base(IfcMetricValueSelectType.IfcReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMetricValueSelectIfcTable : IfcMetricValueSelect
+    {
+        private readonly IfcTable value;
+        public IfcMetricValueSelectIfcTable(IfcTable value) : base(IfcMetricValueSelectType.IfcTable){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMetricValueSelectIfcTimeSeries : IfcMetricValueSelect
+    {
+        private readonly IfcTimeSeries value;
+        public IfcMetricValueSelectIfcTimeSeries(IfcTimeSeries value) : base(IfcMetricValueSelectType.IfcTimeSeries){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcMetricValueSelectIfcValue : IfcMetricValueSelect
+    {
+        private readonly IfcValue value;
+        public IfcMetricValueSelectIfcValue(IfcValue value) : base(IfcMetricValueSelectType.IfcValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcModulusOfRotationalSubgradeReactionSelectType{ IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofrotationalsubgradereactionselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcModulusOfRotationalSubgradeReactionSelect>))]
-	public class IfcModulusOfRotationalSubgradeReactionSelect : IfcSelect<IfcBoolean,IfcModulusOfRotationalSubgradeReactionMeasure>
-	{
-		public IfcModulusOfRotationalSubgradeReactionSelect(IfcBoolean value):base(value){}
-		public IfcModulusOfRotationalSubgradeReactionSelect(IfcModulusOfRotationalSubgradeReactionMeasure value):base(value){}
+	public abstract class IfcModulusOfRotationalSubgradeReactionSelect : BaseIfc
+    {
+        private readonly IfcModulusOfRotationalSubgradeReactionSelectType selectType;
+        public IfcModulusOfRotationalSubgradeReactionSelect(IfcModulusOfRotationalSubgradeReactionSelectType selectType){ this.selectType = selectType; }
+        public static IfcModulusOfRotationalSubgradeReactionSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionSelect>(json); }
+    }
 
-		public static IfcModulusOfRotationalSubgradeReactionSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfRotationalSubgradeReactionSelect>(json);
-		}
-	}
+    public class IfcModulusOfRotationalSubgradeReactionSelectIfcBoolean : IfcModulusOfRotationalSubgradeReactionSelect
+    {
+        private readonly IfcBoolean value;
+        public IfcModulusOfRotationalSubgradeReactionSelectIfcBoolean(IfcBoolean value) : base(IfcModulusOfRotationalSubgradeReactionSelectType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcModulusOfRotationalSubgradeReactionSelectIfcModulusOfRotationalSubgradeReactionMeasure : IfcModulusOfRotationalSubgradeReactionSelect
+    {
+        private readonly IfcModulusOfRotationalSubgradeReactionMeasure value;
+        public IfcModulusOfRotationalSubgradeReactionSelectIfcModulusOfRotationalSubgradeReactionMeasure(IfcModulusOfRotationalSubgradeReactionMeasure value) : base(IfcModulusOfRotationalSubgradeReactionSelectType.IfcModulusOfRotationalSubgradeReactionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcModulusOfSubgradeReactionSelectType{ IfcBoolean,IfcModulusOfSubgradeReactionMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusofsubgradereactionselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcModulusOfSubgradeReactionSelect>))]
-	public class IfcModulusOfSubgradeReactionSelect : IfcSelect<IfcBoolean,IfcModulusOfSubgradeReactionMeasure>
-	{
-		public IfcModulusOfSubgradeReactionSelect(IfcBoolean value):base(value){}
-		public IfcModulusOfSubgradeReactionSelect(IfcModulusOfSubgradeReactionMeasure value):base(value){}
+	public abstract class IfcModulusOfSubgradeReactionSelect : BaseIfc
+    {
+        private readonly IfcModulusOfSubgradeReactionSelectType selectType;
+        public IfcModulusOfSubgradeReactionSelect(IfcModulusOfSubgradeReactionSelectType selectType){ this.selectType = selectType; }
+        public static IfcModulusOfSubgradeReactionSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionSelect>(json); }
+    }
 
-		public static IfcModulusOfSubgradeReactionSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfSubgradeReactionSelect>(json);
-		}
-	}
+    public class IfcModulusOfSubgradeReactionSelectIfcBoolean : IfcModulusOfSubgradeReactionSelect
+    {
+        private readonly IfcBoolean value;
+        public IfcModulusOfSubgradeReactionSelectIfcBoolean(IfcBoolean value) : base(IfcModulusOfSubgradeReactionSelectType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcModulusOfSubgradeReactionSelectIfcModulusOfSubgradeReactionMeasure : IfcModulusOfSubgradeReactionSelect
+    {
+        private readonly IfcModulusOfSubgradeReactionMeasure value;
+        public IfcModulusOfSubgradeReactionSelectIfcModulusOfSubgradeReactionMeasure(IfcModulusOfSubgradeReactionMeasure value) : base(IfcModulusOfSubgradeReactionSelectType.IfcModulusOfSubgradeReactionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcModulusOfTranslationalSubgradeReactionSelectType{ IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmodulusoftranslationalsubgradereactionselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcModulusOfTranslationalSubgradeReactionSelect>))]
-	public class IfcModulusOfTranslationalSubgradeReactionSelect : IfcSelect<IfcBoolean,IfcModulusOfLinearSubgradeReactionMeasure>
-	{
-		public IfcModulusOfTranslationalSubgradeReactionSelect(IfcBoolean value):base(value){}
-		public IfcModulusOfTranslationalSubgradeReactionSelect(IfcModulusOfLinearSubgradeReactionMeasure value):base(value){}
+	public abstract class IfcModulusOfTranslationalSubgradeReactionSelect : BaseIfc
+    {
+        private readonly IfcModulusOfTranslationalSubgradeReactionSelectType selectType;
+        public IfcModulusOfTranslationalSubgradeReactionSelect(IfcModulusOfTranslationalSubgradeReactionSelectType selectType){ this.selectType = selectType; }
+        public static IfcModulusOfTranslationalSubgradeReactionSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcModulusOfTranslationalSubgradeReactionSelect>(json); }
+    }
 
-		public static IfcModulusOfTranslationalSubgradeReactionSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcModulusOfTranslationalSubgradeReactionSelect>(json);
-		}
-	}
+    public class IfcModulusOfTranslationalSubgradeReactionSelectIfcBoolean : IfcModulusOfTranslationalSubgradeReactionSelect
+    {
+        private readonly IfcBoolean value;
+        public IfcModulusOfTranslationalSubgradeReactionSelectIfcBoolean(IfcBoolean value) : base(IfcModulusOfTranslationalSubgradeReactionSelectType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcModulusOfTranslationalSubgradeReactionSelectIfcModulusOfLinearSubgradeReactionMeasure : IfcModulusOfTranslationalSubgradeReactionSelect
+    {
+        private readonly IfcModulusOfLinearSubgradeReactionMeasure value;
+        public IfcModulusOfTranslationalSubgradeReactionSelectIfcModulusOfLinearSubgradeReactionMeasure(IfcModulusOfLinearSubgradeReactionMeasure value) : base(IfcModulusOfTranslationalSubgradeReactionSelectType.IfcModulusOfLinearSubgradeReactionMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcObjectReferenceSelectType{ IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectreferenceselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcObjectReferenceSelect>))]
-	public class IfcObjectReferenceSelect : IfcSelect<IfcAddress,IfcAppliedValue,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcTable,IfcTimeSeries>
-	{
-		public IfcObjectReferenceSelect(IfcAddress value):base(value){}
-		public IfcObjectReferenceSelect(IfcAppliedValue value):base(value){}
-		public IfcObjectReferenceSelect(IfcExternalReference value):base(value){}
-		public IfcObjectReferenceSelect(IfcMaterialDefinition value):base(value){}
-		public IfcObjectReferenceSelect(IfcOrganization value):base(value){}
-		public IfcObjectReferenceSelect(IfcPerson value):base(value){}
-		public IfcObjectReferenceSelect(IfcPersonAndOrganization value):base(value){}
-		public IfcObjectReferenceSelect(IfcTable value):base(value){}
-		public IfcObjectReferenceSelect(IfcTimeSeries value):base(value){}
+	public abstract class IfcObjectReferenceSelect : BaseIfc
+    {
+        private readonly IfcObjectReferenceSelectType selectType;
+        public IfcObjectReferenceSelect(IfcObjectReferenceSelectType selectType){ this.selectType = selectType; }
+        public static IfcObjectReferenceSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcObjectReferenceSelect>(json); }
+    }
 
-		public static IfcObjectReferenceSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcObjectReferenceSelect>(json);
-		}
-	}
+    public class IfcObjectReferenceSelectIfcAddress : IfcObjectReferenceSelect
+    {
+        private readonly IfcAddress value;
+        public IfcObjectReferenceSelectIfcAddress(IfcAddress value) : base(IfcObjectReferenceSelectType.IfcAddress){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcObjectReferenceSelectIfcAppliedValue : IfcObjectReferenceSelect
+    {
+        private readonly IfcAppliedValue value;
+        public IfcObjectReferenceSelectIfcAppliedValue(IfcAppliedValue value) : base(IfcObjectReferenceSelectType.IfcAppliedValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcExternalReference : IfcObjectReferenceSelect
+    {
+        private readonly IfcExternalReference value;
+        public IfcObjectReferenceSelectIfcExternalReference(IfcExternalReference value) : base(IfcObjectReferenceSelectType.IfcExternalReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcMaterialDefinition : IfcObjectReferenceSelect
+    {
+        private readonly IfcMaterialDefinition value;
+        public IfcObjectReferenceSelectIfcMaterialDefinition(IfcMaterialDefinition value) : base(IfcObjectReferenceSelectType.IfcMaterialDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcOrganization : IfcObjectReferenceSelect
+    {
+        private readonly IfcOrganization value;
+        public IfcObjectReferenceSelectIfcOrganization(IfcOrganization value) : base(IfcObjectReferenceSelectType.IfcOrganization){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcPerson : IfcObjectReferenceSelect
+    {
+        private readonly IfcPerson value;
+        public IfcObjectReferenceSelectIfcPerson(IfcPerson value) : base(IfcObjectReferenceSelectType.IfcPerson){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcPersonAndOrganization : IfcObjectReferenceSelect
+    {
+        private readonly IfcPersonAndOrganization value;
+        public IfcObjectReferenceSelectIfcPersonAndOrganization(IfcPersonAndOrganization value) : base(IfcObjectReferenceSelectType.IfcPersonAndOrganization){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcTable : IfcObjectReferenceSelect
+    {
+        private readonly IfcTable value;
+        public IfcObjectReferenceSelectIfcTable(IfcTable value) : base(IfcObjectReferenceSelectType.IfcTable){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcObjectReferenceSelectIfcTimeSeries : IfcObjectReferenceSelect
+    {
+        private readonly IfcTimeSeries value;
+        public IfcObjectReferenceSelectIfcTimeSeries(IfcTimeSeries value) : base(IfcObjectReferenceSelectType.IfcTimeSeries){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcPointOrVertexPointType{ IfcPoint,IfcVertexPoint }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointorvertexpoint.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcPointOrVertexPoint>))]
-	public class IfcPointOrVertexPoint : IfcSelect<IfcPoint,IfcVertexPoint>
-	{
-		public IfcPointOrVertexPoint(IfcPoint value):base(value){}
-		public IfcPointOrVertexPoint(IfcVertexPoint value):base(value){}
+	public abstract class IfcPointOrVertexPoint : BaseIfc
+    {
+        private readonly IfcPointOrVertexPointType selectType;
+        public IfcPointOrVertexPoint(IfcPointOrVertexPointType selectType){ this.selectType = selectType; }
+        public static IfcPointOrVertexPoint FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPointOrVertexPoint>(json); }
+    }
 
-		public static IfcPointOrVertexPoint FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPointOrVertexPoint>(json);
-		}
-	}
+    public class IfcPointOrVertexPointIfcPoint : IfcPointOrVertexPoint
+    {
+        private readonly IfcPoint value;
+        public IfcPointOrVertexPointIfcPoint(IfcPoint value) : base(IfcPointOrVertexPointType.IfcPoint){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcPointOrVertexPointIfcVertexPoint : IfcPointOrVertexPoint
+    {
+        private readonly IfcVertexPoint value;
+        public IfcPointOrVertexPointIfcVertexPoint(IfcVertexPoint value) : base(IfcPointOrVertexPointType.IfcVertexPoint){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcPresentationStyleSelectType{ IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationstyleselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcPresentationStyleSelect>))]
-	public class IfcPresentationStyleSelect : IfcSelect<IfcCurveStyle,IfcFillAreaStyle,IfcNullStyle,IfcSurfaceStyle,IfcTextStyle>
-	{
-		public IfcPresentationStyleSelect(IfcCurveStyle value):base(value){}
-		public IfcPresentationStyleSelect(IfcFillAreaStyle value):base(value){}
-		public IfcPresentationStyleSelect(IfcNullStyle value):base(value){}
-		public IfcPresentationStyleSelect(IfcSurfaceStyle value):base(value){}
-		public IfcPresentationStyleSelect(IfcTextStyle value):base(value){}
+	public abstract class IfcPresentationStyleSelect : BaseIfc
+    {
+        private readonly IfcPresentationStyleSelectType selectType;
+        public IfcPresentationStyleSelect(IfcPresentationStyleSelectType selectType){ this.selectType = selectType; }
+        public static IfcPresentationStyleSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPresentationStyleSelect>(json); }
+    }
 
-		public static IfcPresentationStyleSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPresentationStyleSelect>(json);
-		}
-	}
+    public class IfcPresentationStyleSelectIfcCurveStyle : IfcPresentationStyleSelect
+    {
+        private readonly IfcCurveStyle value;
+        public IfcPresentationStyleSelectIfcCurveStyle(IfcCurveStyle value) : base(IfcPresentationStyleSelectType.IfcCurveStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcPresentationStyleSelectIfcFillAreaStyle : IfcPresentationStyleSelect
+    {
+        private readonly IfcFillAreaStyle value;
+        public IfcPresentationStyleSelectIfcFillAreaStyle(IfcFillAreaStyle value) : base(IfcPresentationStyleSelectType.IfcFillAreaStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcPresentationStyleSelectIfcSurfaceStyle : IfcPresentationStyleSelect
+    {
+        private readonly IfcSurfaceStyle value;
+        public IfcPresentationStyleSelectIfcSurfaceStyle(IfcSurfaceStyle value) : base(IfcPresentationStyleSelectType.IfcSurfaceStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcPresentationStyleSelectIfcTextStyle : IfcPresentationStyleSelect
+    {
+        private readonly IfcTextStyle value;
+        public IfcPresentationStyleSelectIfcTextStyle(IfcTextStyle value) : base(IfcPresentationStyleSelectType.IfcTextStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcProcessSelectType{ IfcProcess,IfcTypeProcess }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocessselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcProcessSelect>))]
-	public class IfcProcessSelect : IfcSelect<IfcProcess,IfcTypeProcess>
-	{
-		public IfcProcessSelect(IfcProcess value):base(value){}
-		public IfcProcessSelect(IfcTypeProcess value):base(value){}
+	public abstract class IfcProcessSelect : BaseIfc
+    {
+        private readonly IfcProcessSelectType selectType;
+        public IfcProcessSelect(IfcProcessSelectType selectType){ this.selectType = selectType; }
+        public static IfcProcessSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcProcessSelect>(json); }
+    }
 
-		public static IfcProcessSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcProcessSelect>(json);
-		}
-	}
+    public class IfcProcessSelectIfcProcess : IfcProcessSelect
+    {
+        private readonly IfcProcess value;
+        public IfcProcessSelectIfcProcess(IfcProcess value) : base(IfcProcessSelectType.IfcProcess){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcProcessSelectIfcTypeProcess : IfcProcessSelect
+    {
+        private readonly IfcTypeProcess value;
+        public IfcProcessSelectIfcTypeProcess(IfcTypeProcess value) : base(IfcProcessSelectType.IfcTypeProcess){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcProductRepresentationSelectType{ IfcProductDefinitionShape,IfcRepresentationMap }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductrepresentationselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcProductRepresentationSelect>))]
-	public class IfcProductRepresentationSelect : IfcSelect<IfcProductDefinitionShape,IfcRepresentationMap>
-	{
-		public IfcProductRepresentationSelect(IfcProductDefinitionShape value):base(value){}
-		public IfcProductRepresentationSelect(IfcRepresentationMap value):base(value){}
+	public abstract class IfcProductRepresentationSelect : BaseIfc
+    {
+        private readonly IfcProductRepresentationSelectType selectType;
+        public IfcProductRepresentationSelect(IfcProductRepresentationSelectType selectType){ this.selectType = selectType; }
+        public static IfcProductRepresentationSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcProductRepresentationSelect>(json); }
+    }
 
-		public static IfcProductRepresentationSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcProductRepresentationSelect>(json);
-		}
-	}
+    public class IfcProductRepresentationSelectIfcProductDefinitionShape : IfcProductRepresentationSelect
+    {
+        private readonly IfcProductDefinitionShape value;
+        public IfcProductRepresentationSelectIfcProductDefinitionShape(IfcProductDefinitionShape value) : base(IfcProductRepresentationSelectType.IfcProductDefinitionShape){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcProductRepresentationSelectIfcRepresentationMap : IfcProductRepresentationSelect
+    {
+        private readonly IfcRepresentationMap value;
+        public IfcProductRepresentationSelectIfcRepresentationMap(IfcRepresentationMap value) : base(IfcProductRepresentationSelectType.IfcRepresentationMap){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcProductSelectType{ IfcProduct,IfcTypeProduct }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproductselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcProductSelect>))]
-	public class IfcProductSelect : IfcSelect<IfcProduct,IfcTypeProduct>
-	{
-		public IfcProductSelect(IfcProduct value):base(value){}
-		public IfcProductSelect(IfcTypeProduct value):base(value){}
+	public abstract class IfcProductSelect : BaseIfc
+    {
+        private readonly IfcProductSelectType selectType;
+        public IfcProductSelect(IfcProductSelectType selectType){ this.selectType = selectType; }
+        public static IfcProductSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcProductSelect>(json); }
+    }
 
-		public static IfcProductSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcProductSelect>(json);
-		}
-	}
+    public class IfcProductSelectIfcProduct : IfcProductSelect
+    {
+        private readonly IfcProduct value;
+        public IfcProductSelectIfcProduct(IfcProduct value) : base(IfcProductSelectType.IfcProduct){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcProductSelectIfcTypeProduct : IfcProductSelect
+    {
+        private readonly IfcTypeProduct value;
+        public IfcProductSelectIfcTypeProduct(IfcTypeProduct value) : base(IfcProductSelectType.IfcTypeProduct){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcPropertySetDefinitionSelectType{ IfcPropertySetDefinition,IfcPropertySetDefinitionSet }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcPropertySetDefinitionSelect>))]
-	public class IfcPropertySetDefinitionSelect : IfcSelect<IfcPropertySetDefinition,IfcPropertySetDefinitionSet>
-	{
-		public IfcPropertySetDefinitionSelect(IfcPropertySetDefinition value):base(value){}
-		public IfcPropertySetDefinitionSelect(IfcPropertySetDefinitionSet value):base(value){}
+	public abstract class IfcPropertySetDefinitionSelect : BaseIfc
+    {
+        private readonly IfcPropertySetDefinitionSelectType selectType;
+        public IfcPropertySetDefinitionSelect(IfcPropertySetDefinitionSelectType selectType){ this.selectType = selectType; }
+        public static IfcPropertySetDefinitionSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSelect>(json); }
+    }
 
-		public static IfcPropertySetDefinitionSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcPropertySetDefinitionSelect>(json);
-		}
-	}
+    public class IfcPropertySetDefinitionSelectIfcPropertySetDefinition : IfcPropertySetDefinitionSelect
+    {
+        private readonly IfcPropertySetDefinition value;
+        public IfcPropertySetDefinitionSelectIfcPropertySetDefinition(IfcPropertySetDefinition value) : base(IfcPropertySetDefinitionSelectType.IfcPropertySetDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcPropertySetDefinitionSelectIfcPropertySetDefinitionSet : IfcPropertySetDefinitionSelect
+    {
+        private readonly IfcPropertySetDefinitionSet value;
+        public IfcPropertySetDefinitionSelectIfcPropertySetDefinitionSet(IfcPropertySetDefinitionSet value) : base(IfcPropertySetDefinitionSelectType.IfcPropertySetDefinitionSet){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcResourceObjectSelectType{ IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceobjectselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcResourceObjectSelect>))]
-	public class IfcResourceObjectSelect : IfcSelect<IfcActorRole,IfcAppliedValue,IfcApproval,IfcConstraint,IfcContextDependentUnit,IfcConversionBasedUnit,IfcExternalInformation,IfcExternalReference,IfcMaterialDefinition,IfcOrganization,IfcPerson,IfcPersonAndOrganization,IfcPhysicalQuantity,IfcProfileDef,IfcPropertyAbstraction,IfcTimeSeries>
-	{
-		public IfcResourceObjectSelect(IfcActorRole value):base(value){}
-		public IfcResourceObjectSelect(IfcAppliedValue value):base(value){}
-		public IfcResourceObjectSelect(IfcApproval value):base(value){}
-		public IfcResourceObjectSelect(IfcConstraint value):base(value){}
-		public IfcResourceObjectSelect(IfcContextDependentUnit value):base(value){}
-		public IfcResourceObjectSelect(IfcConversionBasedUnit value):base(value){}
-		public IfcResourceObjectSelect(IfcExternalInformation value):base(value){}
-		public IfcResourceObjectSelect(IfcExternalReference value):base(value){}
-		public IfcResourceObjectSelect(IfcMaterialDefinition value):base(value){}
-		public IfcResourceObjectSelect(IfcOrganization value):base(value){}
-		public IfcResourceObjectSelect(IfcPerson value):base(value){}
-		public IfcResourceObjectSelect(IfcPersonAndOrganization value):base(value){}
-		public IfcResourceObjectSelect(IfcPhysicalQuantity value):base(value){}
-		public IfcResourceObjectSelect(IfcProfileDef value):base(value){}
-		public IfcResourceObjectSelect(IfcPropertyAbstraction value):base(value){}
-		public IfcResourceObjectSelect(IfcTimeSeries value):base(value){}
+	public abstract class IfcResourceObjectSelect : BaseIfc
+    {
+        private readonly IfcResourceObjectSelectType selectType;
+        public IfcResourceObjectSelect(IfcResourceObjectSelectType selectType){ this.selectType = selectType; }
+        public static IfcResourceObjectSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcResourceObjectSelect>(json); }
+    }
 
-		public static IfcResourceObjectSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcResourceObjectSelect>(json);
-		}
-	}
+    public class IfcResourceObjectSelectIfcActorRole : IfcResourceObjectSelect
+    {
+        private readonly IfcActorRole value;
+        public IfcResourceObjectSelectIfcActorRole(IfcActorRole value) : base(IfcResourceObjectSelectType.IfcActorRole){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcResourceObjectSelectIfcAppliedValue : IfcResourceObjectSelect
+    {
+        private readonly IfcAppliedValue value;
+        public IfcResourceObjectSelectIfcAppliedValue(IfcAppliedValue value) : base(IfcResourceObjectSelectType.IfcAppliedValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcApproval : IfcResourceObjectSelect
+    {
+        private readonly IfcApproval value;
+        public IfcResourceObjectSelectIfcApproval(IfcApproval value) : base(IfcResourceObjectSelectType.IfcApproval){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcConstraint : IfcResourceObjectSelect
+    {
+        private readonly IfcConstraint value;
+        public IfcResourceObjectSelectIfcConstraint(IfcConstraint value) : base(IfcResourceObjectSelectType.IfcConstraint){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcContextDependentUnit : IfcResourceObjectSelect
+    {
+        private readonly IfcContextDependentUnit value;
+        public IfcResourceObjectSelectIfcContextDependentUnit(IfcContextDependentUnit value) : base(IfcResourceObjectSelectType.IfcContextDependentUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcConversionBasedUnit : IfcResourceObjectSelect
+    {
+        private readonly IfcConversionBasedUnit value;
+        public IfcResourceObjectSelectIfcConversionBasedUnit(IfcConversionBasedUnit value) : base(IfcResourceObjectSelectType.IfcConversionBasedUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcExternalInformation : IfcResourceObjectSelect
+    {
+        private readonly IfcExternalInformation value;
+        public IfcResourceObjectSelectIfcExternalInformation(IfcExternalInformation value) : base(IfcResourceObjectSelectType.IfcExternalInformation){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcExternalReference : IfcResourceObjectSelect
+    {
+        private readonly IfcExternalReference value;
+        public IfcResourceObjectSelectIfcExternalReference(IfcExternalReference value) : base(IfcResourceObjectSelectType.IfcExternalReference){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcMaterialDefinition : IfcResourceObjectSelect
+    {
+        private readonly IfcMaterialDefinition value;
+        public IfcResourceObjectSelectIfcMaterialDefinition(IfcMaterialDefinition value) : base(IfcResourceObjectSelectType.IfcMaterialDefinition){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcOrganization : IfcResourceObjectSelect
+    {
+        private readonly IfcOrganization value;
+        public IfcResourceObjectSelectIfcOrganization(IfcOrganization value) : base(IfcResourceObjectSelectType.IfcOrganization){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcPerson : IfcResourceObjectSelect
+    {
+        private readonly IfcPerson value;
+        public IfcResourceObjectSelectIfcPerson(IfcPerson value) : base(IfcResourceObjectSelectType.IfcPerson){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcPersonAndOrganization : IfcResourceObjectSelect
+    {
+        private readonly IfcPersonAndOrganization value;
+        public IfcResourceObjectSelectIfcPersonAndOrganization(IfcPersonAndOrganization value) : base(IfcResourceObjectSelectType.IfcPersonAndOrganization){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcPhysicalQuantity : IfcResourceObjectSelect
+    {
+        private readonly IfcPhysicalQuantity value;
+        public IfcResourceObjectSelectIfcPhysicalQuantity(IfcPhysicalQuantity value) : base(IfcResourceObjectSelectType.IfcPhysicalQuantity){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcProfileDef : IfcResourceObjectSelect
+    {
+        private readonly IfcProfileDef value;
+        public IfcResourceObjectSelectIfcProfileDef(IfcProfileDef value) : base(IfcResourceObjectSelectType.IfcProfileDef){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcPropertyAbstraction : IfcResourceObjectSelect
+    {
+        private readonly IfcPropertyAbstraction value;
+        public IfcResourceObjectSelectIfcPropertyAbstraction(IfcPropertyAbstraction value) : base(IfcResourceObjectSelectType.IfcPropertyAbstraction){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcResourceObjectSelectIfcTimeSeries : IfcResourceObjectSelect
+    {
+        private readonly IfcTimeSeries value;
+        public IfcResourceObjectSelectIfcTimeSeries(IfcTimeSeries value) : base(IfcResourceObjectSelectType.IfcTimeSeries){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcResourceSelectType{ IfcResource,IfcTypeResource }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcResourceSelect>))]
-	public class IfcResourceSelect : IfcSelect<IfcResource,IfcTypeResource>
-	{
-		public IfcResourceSelect(IfcResource value):base(value){}
-		public IfcResourceSelect(IfcTypeResource value):base(value){}
+	public abstract class IfcResourceSelect : BaseIfc
+    {
+        private readonly IfcResourceSelectType selectType;
+        public IfcResourceSelect(IfcResourceSelectType selectType){ this.selectType = selectType; }
+        public static IfcResourceSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcResourceSelect>(json); }
+    }
 
-		public static IfcResourceSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcResourceSelect>(json);
-		}
-	}
+    public class IfcResourceSelectIfcResource : IfcResourceSelect
+    {
+        private readonly IfcResource value;
+        public IfcResourceSelectIfcResource(IfcResource value) : base(IfcResourceSelectType.IfcResource){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcResourceSelectIfcTypeResource : IfcResourceSelect
+    {
+        private readonly IfcTypeResource value;
+        public IfcResourceSelectIfcTypeResource(IfcTypeResource value) : base(IfcResourceSelectType.IfcTypeResource){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcRotationalStiffnessSelectType{ IfcBoolean,IfcRotationalStiffnessMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrotationalstiffnessselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcRotationalStiffnessSelect>))]
-	public class IfcRotationalStiffnessSelect : IfcSelect<IfcBoolean,IfcRotationalStiffnessMeasure>
-	{
-		public IfcRotationalStiffnessSelect(IfcBoolean value):base(value){}
-		public IfcRotationalStiffnessSelect(IfcRotationalStiffnessMeasure value):base(value){}
+	public abstract class IfcRotationalStiffnessSelect : BaseIfc
+    {
+        private readonly IfcRotationalStiffnessSelectType selectType;
+        public IfcRotationalStiffnessSelect(IfcRotationalStiffnessSelectType selectType){ this.selectType = selectType; }
+        public static IfcRotationalStiffnessSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcRotationalStiffnessSelect>(json); }
+    }
 
-		public static IfcRotationalStiffnessSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcRotationalStiffnessSelect>(json);
-		}
-	}
+    public class IfcRotationalStiffnessSelectIfcBoolean : IfcRotationalStiffnessSelect
+    {
+        private readonly IfcBoolean value;
+        public IfcRotationalStiffnessSelectIfcBoolean(IfcBoolean value) : base(IfcRotationalStiffnessSelectType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcRotationalStiffnessSelectIfcRotationalStiffnessMeasure : IfcRotationalStiffnessSelect
+    {
+        private readonly IfcRotationalStiffnessMeasure value;
+        public IfcRotationalStiffnessSelectIfcRotationalStiffnessMeasure(IfcRotationalStiffnessMeasure value) : base(IfcRotationalStiffnessSelectType.IfcRotationalStiffnessMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcShellType{ IfcClosedShell,IfcOpenShell }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshell.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcShell>))]
-	public class IfcShell : IfcSelect<IfcClosedShell,IfcOpenShell>
-	{
-		public IfcShell(IfcClosedShell value):base(value){}
-		public IfcShell(IfcOpenShell value):base(value){}
+	public abstract class IfcShell : BaseIfc
+    {
+        private readonly IfcShellType selectType;
+        public IfcShell(IfcShellType selectType){ this.selectType = selectType; }
+        public static IfcShell FromJSON(string json){ return JsonConvert.DeserializeObject<IfcShell>(json); }
+    }
 
-		public static IfcShell FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcShell>(json);
-		}
-	}
+    public class IfcShellIfcClosedShell : IfcShell
+    {
+        private readonly IfcClosedShell value;
+        public IfcShellIfcClosedShell(IfcClosedShell value) : base(IfcShellType.IfcClosedShell){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcShellIfcOpenShell : IfcShell
+    {
+        private readonly IfcOpenShell value;
+        public IfcShellIfcOpenShell(IfcOpenShell value) : base(IfcShellType.IfcOpenShell){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSimpleValueType{ IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsimplevalue.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSimpleValue>))]
-	public class IfcSimpleValue : IfcSelect<IfcBoolean,IfcDate,IfcDateTime,IfcDuration,IfcIdentifier,IfcInteger,IfcLabel,IfcLogical,IfcReal,IfcText,IfcTime,IfcTimeStamp>
-	{
-		public IfcSimpleValue(IfcBoolean value):base(value){}
-		public IfcSimpleValue(IfcDate value):base(value){}
-		public IfcSimpleValue(IfcDateTime value):base(value){}
-		public IfcSimpleValue(IfcDuration value):base(value){}
-		public IfcSimpleValue(IfcIdentifier value):base(value){}
-		public IfcSimpleValue(IfcInteger value):base(value){}
-		public IfcSimpleValue(IfcLabel value):base(value){}
-		public IfcSimpleValue(IfcLogical value):base(value){}
-		public IfcSimpleValue(IfcReal value):base(value){}
-		public IfcSimpleValue(IfcText value):base(value){}
-		public IfcSimpleValue(IfcTime value):base(value){}
-		public IfcSimpleValue(IfcTimeStamp value):base(value){}
+	public abstract class IfcSimpleValue : BaseIfc
+    {
+        private readonly IfcSimpleValueType selectType;
+        public IfcSimpleValue(IfcSimpleValueType selectType){ this.selectType = selectType; }
+        public static IfcSimpleValue FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSimpleValue>(json); }
+    }
 
-		public static IfcSimpleValue FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSimpleValue>(json);
-		}
-	}
+    public class IfcSimpleValueIfcBoolean : IfcSimpleValue
+    {
+        private readonly IfcBoolean value;
+        public IfcSimpleValueIfcBoolean(IfcBoolean value) : base(IfcSimpleValueType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSimpleValueIfcDate : IfcSimpleValue
+    {
+        private readonly IfcDate value;
+        public IfcSimpleValueIfcDate(IfcDate value) : base(IfcSimpleValueType.IfcDate){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcDateTime : IfcSimpleValue
+    {
+        private readonly IfcDateTime value;
+        public IfcSimpleValueIfcDateTime(IfcDateTime value) : base(IfcSimpleValueType.IfcDateTime){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcDuration : IfcSimpleValue
+    {
+        private readonly IfcDuration value;
+        public IfcSimpleValueIfcDuration(IfcDuration value) : base(IfcSimpleValueType.IfcDuration){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcIdentifier : IfcSimpleValue
+    {
+        private readonly IfcIdentifier value;
+        public IfcSimpleValueIfcIdentifier(IfcIdentifier value) : base(IfcSimpleValueType.IfcIdentifier){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcInteger : IfcSimpleValue
+    {
+        private readonly IfcInteger value;
+        public IfcSimpleValueIfcInteger(IfcInteger value) : base(IfcSimpleValueType.IfcInteger){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcLabel : IfcSimpleValue
+    {
+        private readonly IfcLabel value;
+        public IfcSimpleValueIfcLabel(IfcLabel value) : base(IfcSimpleValueType.IfcLabel){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcLogical : IfcSimpleValue
+    {
+        private readonly IfcLogical value;
+        public IfcSimpleValueIfcLogical(IfcLogical value) : base(IfcSimpleValueType.IfcLogical){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcReal : IfcSimpleValue
+    {
+        private readonly IfcReal value;
+        public IfcSimpleValueIfcReal(IfcReal value) : base(IfcSimpleValueType.IfcReal){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcText : IfcSimpleValue
+    {
+        private readonly IfcText value;
+        public IfcSimpleValueIfcText(IfcText value) : base(IfcSimpleValueType.IfcText){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcTime : IfcSimpleValue
+    {
+        private readonly IfcTime value;
+        public IfcSimpleValueIfcTime(IfcTime value) : base(IfcSimpleValueType.IfcTime){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSimpleValueIfcTimeStamp : IfcSimpleValue
+    {
+        private readonly IfcTimeStamp value;
+        public IfcSimpleValueIfcTimeStamp(IfcTimeStamp value) : base(IfcSimpleValueType.IfcTimeStamp){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSizeSelectType{ IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsizeselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSizeSelect>))]
-	public class IfcSizeSelect : IfcSelect<IfcDescriptiveMeasure,IfcLengthMeasure,IfcNormalisedRatioMeasure,IfcPositiveLengthMeasure,IfcPositiveRatioMeasure,IfcRatioMeasure>
-	{
-		public IfcSizeSelect(IfcDescriptiveMeasure value):base(value){}
-		public IfcSizeSelect(IfcLengthMeasure value):base(value){}
-		public IfcSizeSelect(IfcNormalisedRatioMeasure value):base(value){}
-		public IfcSizeSelect(IfcPositiveLengthMeasure value):base(value){}
-		public IfcSizeSelect(IfcPositiveRatioMeasure value):base(value){}
-		public IfcSizeSelect(IfcRatioMeasure value):base(value){}
+	public abstract class IfcSizeSelect : BaseIfc
+    {
+        private readonly IfcSizeSelectType selectType;
+        public IfcSizeSelect(IfcSizeSelectType selectType){ this.selectType = selectType; }
+        public static IfcSizeSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSizeSelect>(json); }
+    }
 
-		public static IfcSizeSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSizeSelect>(json);
-		}
-	}
+    public class IfcSizeSelectIfcDescriptiveMeasure : IfcSizeSelect
+    {
+        private readonly IfcDescriptiveMeasure value;
+        public IfcSizeSelectIfcDescriptiveMeasure(IfcDescriptiveMeasure value) : base(IfcSizeSelectType.IfcDescriptiveMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSizeSelectIfcLengthMeasure : IfcSizeSelect
+    {
+        private readonly IfcLengthMeasure value;
+        public IfcSizeSelectIfcLengthMeasure(IfcLengthMeasure value) : base(IfcSizeSelectType.IfcLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSizeSelectIfcNormalisedRatioMeasure : IfcSizeSelect
+    {
+        private readonly IfcNormalisedRatioMeasure value;
+        public IfcSizeSelectIfcNormalisedRatioMeasure(IfcNormalisedRatioMeasure value) : base(IfcSizeSelectType.IfcNormalisedRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSizeSelectIfcPositiveLengthMeasure : IfcSizeSelect
+    {
+        private readonly IfcPositiveLengthMeasure value;
+        public IfcSizeSelectIfcPositiveLengthMeasure(IfcPositiveLengthMeasure value) : base(IfcSizeSelectType.IfcPositiveLengthMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSizeSelectIfcPositiveRatioMeasure : IfcSizeSelect
+    {
+        private readonly IfcPositiveRatioMeasure value;
+        public IfcSizeSelectIfcPositiveRatioMeasure(IfcPositiveRatioMeasure value) : base(IfcSizeSelectType.IfcPositiveRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSizeSelectIfcRatioMeasure : IfcSizeSelect
+    {
+        private readonly IfcRatioMeasure value;
+        public IfcSizeSelectIfcRatioMeasure(IfcRatioMeasure value) : base(IfcSizeSelectType.IfcRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSolidOrShellType{ IfcClosedShell,IfcSolidModel }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsolidorshell.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSolidOrShell>))]
-	public class IfcSolidOrShell : IfcSelect<IfcClosedShell,IfcSolidModel>
-	{
-		public IfcSolidOrShell(IfcClosedShell value):base(value){}
-		public IfcSolidOrShell(IfcSolidModel value):base(value){}
+	public abstract class IfcSolidOrShell : BaseIfc
+    {
+        private readonly IfcSolidOrShellType selectType;
+        public IfcSolidOrShell(IfcSolidOrShellType selectType){ this.selectType = selectType; }
+        public static IfcSolidOrShell FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSolidOrShell>(json); }
+    }
 
-		public static IfcSolidOrShell FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSolidOrShell>(json);
-		}
-	}
+    public class IfcSolidOrShellIfcClosedShell : IfcSolidOrShell
+    {
+        private readonly IfcClosedShell value;
+        public IfcSolidOrShellIfcClosedShell(IfcClosedShell value) : base(IfcSolidOrShellType.IfcClosedShell){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSolidOrShellIfcSolidModel : IfcSolidOrShell
+    {
+        private readonly IfcSolidModel value;
+        public IfcSolidOrShellIfcSolidModel(IfcSolidModel value) : base(IfcSolidOrShellType.IfcSolidModel){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSpaceBoundarySelectType{ IfcExternalSpatialElement,IfcSpace }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspaceboundaryselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSpaceBoundarySelect>))]
-	public class IfcSpaceBoundarySelect : IfcSelect<IfcExternalSpatialElement,IfcSpace>
-	{
-		public IfcSpaceBoundarySelect(IfcExternalSpatialElement value):base(value){}
-		public IfcSpaceBoundarySelect(IfcSpace value):base(value){}
+	public abstract class IfcSpaceBoundarySelect : BaseIfc
+    {
+        private readonly IfcSpaceBoundarySelectType selectType;
+        public IfcSpaceBoundarySelect(IfcSpaceBoundarySelectType selectType){ this.selectType = selectType; }
+        public static IfcSpaceBoundarySelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSpaceBoundarySelect>(json); }
+    }
 
-		public static IfcSpaceBoundarySelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSpaceBoundarySelect>(json);
-		}
-	}
+    public class IfcSpaceBoundarySelectIfcExternalSpatialElement : IfcSpaceBoundarySelect
+    {
+        private readonly IfcExternalSpatialElement value;
+        public IfcSpaceBoundarySelectIfcExternalSpatialElement(IfcExternalSpatialElement value) : base(IfcSpaceBoundarySelectType.IfcExternalSpatialElement){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSpaceBoundarySelectIfcSpace : IfcSpaceBoundarySelect
+    {
+        private readonly IfcSpace value;
+        public IfcSpaceBoundarySelectIfcSpace(IfcSpace value) : base(IfcSpaceBoundarySelectType.IfcSpace){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSpecularHighlightSelectType{ IfcSpecularExponent,IfcSpecularRoughness }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspecularhighlightselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSpecularHighlightSelect>))]
-	public class IfcSpecularHighlightSelect : IfcSelect<IfcSpecularExponent,IfcSpecularRoughness>
-	{
-		public IfcSpecularHighlightSelect(IfcSpecularExponent value):base(value){}
-		public IfcSpecularHighlightSelect(IfcSpecularRoughness value):base(value){}
+	public abstract class IfcSpecularHighlightSelect : BaseIfc
+    {
+        private readonly IfcSpecularHighlightSelectType selectType;
+        public IfcSpecularHighlightSelect(IfcSpecularHighlightSelectType selectType){ this.selectType = selectType; }
+        public static IfcSpecularHighlightSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSpecularHighlightSelect>(json); }
+    }
 
-		public static IfcSpecularHighlightSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSpecularHighlightSelect>(json);
-		}
-	}
+    public class IfcSpecularHighlightSelectIfcSpecularExponent : IfcSpecularHighlightSelect
+    {
+        private readonly IfcSpecularExponent value;
+        public IfcSpecularHighlightSelectIfcSpecularExponent(IfcSpecularExponent value) : base(IfcSpecularHighlightSelectType.IfcSpecularExponent){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSpecularHighlightSelectIfcSpecularRoughness : IfcSpecularHighlightSelect
+    {
+        private readonly IfcSpecularRoughness value;
+        public IfcSpecularHighlightSelectIfcSpecularRoughness(IfcSpecularRoughness value) : base(IfcSpecularHighlightSelectType.IfcSpecularRoughness){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcStructuralActivityAssignmentSelectType{ IfcElement,IfcStructuralItem }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivityassignmentselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcStructuralActivityAssignmentSelect>))]
-	public class IfcStructuralActivityAssignmentSelect : IfcSelect<IfcElement,IfcStructuralItem>
-	{
-		public IfcStructuralActivityAssignmentSelect(IfcElement value):base(value){}
-		public IfcStructuralActivityAssignmentSelect(IfcStructuralItem value):base(value){}
+	public abstract class IfcStructuralActivityAssignmentSelect : BaseIfc
+    {
+        private readonly IfcStructuralActivityAssignmentSelectType selectType;
+        public IfcStructuralActivityAssignmentSelect(IfcStructuralActivityAssignmentSelectType selectType){ this.selectType = selectType; }
+        public static IfcStructuralActivityAssignmentSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcStructuralActivityAssignmentSelect>(json); }
+    }
 
-		public static IfcStructuralActivityAssignmentSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcStructuralActivityAssignmentSelect>(json);
-		}
-	}
+    public class IfcStructuralActivityAssignmentSelectIfcElement : IfcStructuralActivityAssignmentSelect
+    {
+        private readonly IfcElement value;
+        public IfcStructuralActivityAssignmentSelectIfcElement(IfcElement value) : base(IfcStructuralActivityAssignmentSelectType.IfcElement){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcStructuralActivityAssignmentSelectIfcStructuralItem : IfcStructuralActivityAssignmentSelect
+    {
+        private readonly IfcStructuralItem value;
+        public IfcStructuralActivityAssignmentSelectIfcStructuralItem(IfcStructuralItem value) : base(IfcStructuralActivityAssignmentSelectType.IfcStructuralItem){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcStyleAssignmentSelectType{ IfcPresentationStyle,IfcPresentationStyleAssignment }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyleassignmentselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcStyleAssignmentSelect>))]
-	public class IfcStyleAssignmentSelect : IfcSelect<IfcPresentationStyle,IfcPresentationStyleAssignment>
-	{
-		public IfcStyleAssignmentSelect(IfcPresentationStyle value):base(value){}
-		public IfcStyleAssignmentSelect(IfcPresentationStyleAssignment value):base(value){}
+	public abstract class IfcStyleAssignmentSelect : BaseIfc
+    {
+        private readonly IfcStyleAssignmentSelectType selectType;
+        public IfcStyleAssignmentSelect(IfcStyleAssignmentSelectType selectType){ this.selectType = selectType; }
+        public static IfcStyleAssignmentSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcStyleAssignmentSelect>(json); }
+    }
 
-		public static IfcStyleAssignmentSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcStyleAssignmentSelect>(json);
-		}
-	}
+    public class IfcStyleAssignmentSelectIfcPresentationStyle : IfcStyleAssignmentSelect
+    {
+        private readonly IfcPresentationStyle value;
+        public IfcStyleAssignmentSelectIfcPresentationStyle(IfcPresentationStyle value) : base(IfcStyleAssignmentSelectType.IfcPresentationStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcStyleAssignmentSelectIfcPresentationStyleAssignment : IfcStyleAssignmentSelect
+    {
+        private readonly IfcPresentationStyleAssignment value;
+        public IfcStyleAssignmentSelectIfcPresentationStyleAssignment(IfcPresentationStyleAssignment value) : base(IfcStyleAssignmentSelectType.IfcPresentationStyleAssignment){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSurfaceOrFaceSurfaceType{ IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceorfacesurface.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSurfaceOrFaceSurface>))]
-	public class IfcSurfaceOrFaceSurface : IfcSelect<IfcFaceBasedSurfaceModel,IfcFaceSurface,IfcSurface>
-	{
-		public IfcSurfaceOrFaceSurface(IfcFaceBasedSurfaceModel value):base(value){}
-		public IfcSurfaceOrFaceSurface(IfcFaceSurface value):base(value){}
-		public IfcSurfaceOrFaceSurface(IfcSurface value):base(value){}
+	public abstract class IfcSurfaceOrFaceSurface : BaseIfc
+    {
+        private readonly IfcSurfaceOrFaceSurfaceType selectType;
+        public IfcSurfaceOrFaceSurface(IfcSurfaceOrFaceSurfaceType selectType){ this.selectType = selectType; }
+        public static IfcSurfaceOrFaceSurface FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSurfaceOrFaceSurface>(json); }
+    }
 
-		public static IfcSurfaceOrFaceSurface FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSurfaceOrFaceSurface>(json);
-		}
-	}
+    public class IfcSurfaceOrFaceSurfaceIfcFaceBasedSurfaceModel : IfcSurfaceOrFaceSurface
+    {
+        private readonly IfcFaceBasedSurfaceModel value;
+        public IfcSurfaceOrFaceSurfaceIfcFaceBasedSurfaceModel(IfcFaceBasedSurfaceModel value) : base(IfcSurfaceOrFaceSurfaceType.IfcFaceBasedSurfaceModel){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSurfaceOrFaceSurfaceIfcFaceSurface : IfcSurfaceOrFaceSurface
+    {
+        private readonly IfcFaceSurface value;
+        public IfcSurfaceOrFaceSurfaceIfcFaceSurface(IfcFaceSurface value) : base(IfcSurfaceOrFaceSurfaceType.IfcFaceSurface){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSurfaceOrFaceSurfaceIfcSurface : IfcSurfaceOrFaceSurface
+    {
+        private readonly IfcSurface value;
+        public IfcSurfaceOrFaceSurfaceIfcSurface(IfcSurface value) : base(IfcSurfaceOrFaceSurfaceType.IfcSurface){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcSurfaceStyleElementSelectType{ IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyleelementselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcSurfaceStyleElementSelect>))]
-	public class IfcSurfaceStyleElementSelect : IfcSelect<IfcExternallyDefinedSurfaceStyle,IfcSurfaceStyleLighting,IfcSurfaceStyleRefraction,IfcSurfaceStyleShading,IfcSurfaceStyleWithTextures>
-	{
-		public IfcSurfaceStyleElementSelect(IfcExternallyDefinedSurfaceStyle value):base(value){}
-		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleLighting value):base(value){}
-		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleRefraction value):base(value){}
-		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleShading value):base(value){}
-		public IfcSurfaceStyleElementSelect(IfcSurfaceStyleWithTextures value):base(value){}
+	public abstract class IfcSurfaceStyleElementSelect : BaseIfc
+    {
+        private readonly IfcSurfaceStyleElementSelectType selectType;
+        public IfcSurfaceStyleElementSelect(IfcSurfaceStyleElementSelectType selectType){ this.selectType = selectType; }
+        public static IfcSurfaceStyleElementSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSurfaceStyleElementSelect>(json); }
+    }
 
-		public static IfcSurfaceStyleElementSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcSurfaceStyleElementSelect>(json);
-		}
-	}
+    public class IfcSurfaceStyleElementSelectIfcExternallyDefinedSurfaceStyle : IfcSurfaceStyleElementSelect
+    {
+        private readonly IfcExternallyDefinedSurfaceStyle value;
+        public IfcSurfaceStyleElementSelectIfcExternallyDefinedSurfaceStyle(IfcExternallyDefinedSurfaceStyle value) : base(IfcSurfaceStyleElementSelectType.IfcExternallyDefinedSurfaceStyle){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcSurfaceStyleElementSelectIfcSurfaceStyleLighting : IfcSurfaceStyleElementSelect
+    {
+        private readonly IfcSurfaceStyleLighting value;
+        public IfcSurfaceStyleElementSelectIfcSurfaceStyleLighting(IfcSurfaceStyleLighting value) : base(IfcSurfaceStyleElementSelectType.IfcSurfaceStyleLighting){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSurfaceStyleElementSelectIfcSurfaceStyleRefraction : IfcSurfaceStyleElementSelect
+    {
+        private readonly IfcSurfaceStyleRefraction value;
+        public IfcSurfaceStyleElementSelectIfcSurfaceStyleRefraction(IfcSurfaceStyleRefraction value) : base(IfcSurfaceStyleElementSelectType.IfcSurfaceStyleRefraction){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSurfaceStyleElementSelectIfcSurfaceStyleShading : IfcSurfaceStyleElementSelect
+    {
+        private readonly IfcSurfaceStyleShading value;
+        public IfcSurfaceStyleElementSelectIfcSurfaceStyleShading(IfcSurfaceStyleShading value) : base(IfcSurfaceStyleElementSelectType.IfcSurfaceStyleShading){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcSurfaceStyleElementSelectIfcSurfaceStyleWithTextures : IfcSurfaceStyleElementSelect
+    {
+        private readonly IfcSurfaceStyleWithTextures value;
+        public IfcSurfaceStyleElementSelectIfcSurfaceStyleWithTextures(IfcSurfaceStyleWithTextures value) : base(IfcSurfaceStyleElementSelectType.IfcSurfaceStyleWithTextures){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcTextFontSelectType{ IfcExternallyDefinedTextFont,IfcPreDefinedTextFont }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextfontselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcTextFontSelect>))]
-	public class IfcTextFontSelect : IfcSelect<IfcExternallyDefinedTextFont,IfcPreDefinedTextFont>
-	{
-		public IfcTextFontSelect(IfcExternallyDefinedTextFont value):base(value){}
-		public IfcTextFontSelect(IfcPreDefinedTextFont value):base(value){}
+	public abstract class IfcTextFontSelect : BaseIfc
+    {
+        private readonly IfcTextFontSelectType selectType;
+        public IfcTextFontSelect(IfcTextFontSelectType selectType){ this.selectType = selectType; }
+        public static IfcTextFontSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTextFontSelect>(json); }
+    }
 
-		public static IfcTextFontSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTextFontSelect>(json);
-		}
-	}
+    public class IfcTextFontSelectIfcExternallyDefinedTextFont : IfcTextFontSelect
+    {
+        private readonly IfcExternallyDefinedTextFont value;
+        public IfcTextFontSelectIfcExternallyDefinedTextFont(IfcExternallyDefinedTextFont value) : base(IfcTextFontSelectType.IfcExternallyDefinedTextFont){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcTextFontSelectIfcPreDefinedTextFont : IfcTextFontSelect
+    {
+        private readonly IfcPreDefinedTextFont value;
+        public IfcTextFontSelectIfcPreDefinedTextFont(IfcPreDefinedTextFont value) : base(IfcTextFontSelectType.IfcPreDefinedTextFont){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcTimeOrRatioSelectType{ IfcDuration,IfcRatioMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeorratioselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcTimeOrRatioSelect>))]
-	public class IfcTimeOrRatioSelect : IfcSelect<IfcDuration,IfcRatioMeasure>
-	{
-		public IfcTimeOrRatioSelect(IfcDuration value):base(value){}
-		public IfcTimeOrRatioSelect(IfcRatioMeasure value):base(value){}
+	public abstract class IfcTimeOrRatioSelect : BaseIfc
+    {
+        private readonly IfcTimeOrRatioSelectType selectType;
+        public IfcTimeOrRatioSelect(IfcTimeOrRatioSelectType selectType){ this.selectType = selectType; }
+        public static IfcTimeOrRatioSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTimeOrRatioSelect>(json); }
+    }
 
-		public static IfcTimeOrRatioSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTimeOrRatioSelect>(json);
-		}
-	}
+    public class IfcTimeOrRatioSelectIfcDuration : IfcTimeOrRatioSelect
+    {
+        private readonly IfcDuration value;
+        public IfcTimeOrRatioSelectIfcDuration(IfcDuration value) : base(IfcTimeOrRatioSelectType.IfcDuration){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcTimeOrRatioSelectIfcRatioMeasure : IfcTimeOrRatioSelect
+    {
+        private readonly IfcRatioMeasure value;
+        public IfcTimeOrRatioSelectIfcRatioMeasure(IfcRatioMeasure value) : base(IfcTimeOrRatioSelectType.IfcRatioMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcTranslationalStiffnessSelectType{ IfcBoolean,IfcLinearStiffnessMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctranslationalstiffnessselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcTranslationalStiffnessSelect>))]
-	public class IfcTranslationalStiffnessSelect : IfcSelect<IfcBoolean,IfcLinearStiffnessMeasure>
-	{
-		public IfcTranslationalStiffnessSelect(IfcBoolean value):base(value){}
-		public IfcTranslationalStiffnessSelect(IfcLinearStiffnessMeasure value):base(value){}
+	public abstract class IfcTranslationalStiffnessSelect : BaseIfc
+    {
+        private readonly IfcTranslationalStiffnessSelectType selectType;
+        public IfcTranslationalStiffnessSelect(IfcTranslationalStiffnessSelectType selectType){ this.selectType = selectType; }
+        public static IfcTranslationalStiffnessSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTranslationalStiffnessSelect>(json); }
+    }
 
-		public static IfcTranslationalStiffnessSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTranslationalStiffnessSelect>(json);
-		}
-	}
+    public class IfcTranslationalStiffnessSelectIfcBoolean : IfcTranslationalStiffnessSelect
+    {
+        private readonly IfcBoolean value;
+        public IfcTranslationalStiffnessSelectIfcBoolean(IfcBoolean value) : base(IfcTranslationalStiffnessSelectType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcTranslationalStiffnessSelectIfcLinearStiffnessMeasure : IfcTranslationalStiffnessSelect
+    {
+        private readonly IfcLinearStiffnessMeasure value;
+        public IfcTranslationalStiffnessSelectIfcLinearStiffnessMeasure(IfcLinearStiffnessMeasure value) : base(IfcTranslationalStiffnessSelectType.IfcLinearStiffnessMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcTrimmingSelectType{ IfcCartesianPoint,IfcParameterValue }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmingselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcTrimmingSelect>))]
-	public class IfcTrimmingSelect : IfcSelect<IfcCartesianPoint,IfcParameterValue>
-	{
-		public IfcTrimmingSelect(IfcCartesianPoint value):base(value){}
-		public IfcTrimmingSelect(IfcParameterValue value):base(value){}
+	public abstract class IfcTrimmingSelect : BaseIfc
+    {
+        private readonly IfcTrimmingSelectType selectType;
+        public IfcTrimmingSelect(IfcTrimmingSelectType selectType){ this.selectType = selectType; }
+        public static IfcTrimmingSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTrimmingSelect>(json); }
+    }
 
-		public static IfcTrimmingSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcTrimmingSelect>(json);
-		}
-	}
+    public class IfcTrimmingSelectIfcCartesianPoint : IfcTrimmingSelect
+    {
+        private readonly IfcCartesianPoint value;
+        public IfcTrimmingSelectIfcCartesianPoint(IfcCartesianPoint value) : base(IfcTrimmingSelectType.IfcCartesianPoint){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcTrimmingSelectIfcParameterValue : IfcTrimmingSelect
+    {
+        private readonly IfcParameterValue value;
+        public IfcTrimmingSelectIfcParameterValue(IfcParameterValue value) : base(IfcTrimmingSelectType.IfcParameterValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcUnitType{ IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunit.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcUnit>))]
-	public class IfcUnit : IfcSelect<IfcDerivedUnit,IfcMonetaryUnit,IfcNamedUnit>
-	{
-		public IfcUnit(IfcDerivedUnit value):base(value){}
-		public IfcUnit(IfcMonetaryUnit value):base(value){}
-		public IfcUnit(IfcNamedUnit value):base(value){}
+	public abstract class IfcUnit : BaseIfc
+    {
+        private readonly IfcUnitType selectType;
+        public IfcUnit(IfcUnitType selectType){ this.selectType = selectType; }
+        public static IfcUnit FromJSON(string json){ return JsonConvert.DeserializeObject<IfcUnit>(json); }
+    }
 
-		public static IfcUnit FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcUnit>(json);
-		}
-	}
+    public class IfcUnitIfcDerivedUnit : IfcUnit
+    {
+        private readonly IfcDerivedUnit value;
+        public IfcUnitIfcDerivedUnit(IfcDerivedUnit value) : base(IfcUnitType.IfcDerivedUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcUnitIfcMonetaryUnit : IfcUnit
+    {
+        private readonly IfcMonetaryUnit value;
+        public IfcUnitIfcMonetaryUnit(IfcMonetaryUnit value) : base(IfcUnitType.IfcMonetaryUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcUnitIfcNamedUnit : IfcUnit
+    {
+        private readonly IfcNamedUnit value;
+        public IfcUnitIfcNamedUnit(IfcNamedUnit value) : base(IfcUnitType.IfcNamedUnit){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcValueType{ IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvalue.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcValue>))]
-	public class IfcValue : IfcSelect<IfcDerivedMeasureValue,IfcMeasureValue,IfcSimpleValue>
-	{
-		public IfcValue(IfcDerivedMeasureValue value):base(value){}
-		public IfcValue(IfcMeasureValue value):base(value){}
-		public IfcValue(IfcSimpleValue value):base(value){}
+	public abstract class IfcValue : BaseIfc
+    {
+        private readonly IfcValueType selectType;
+        public IfcValue(IfcValueType selectType){ this.selectType = selectType; }
+        public static IfcValue FromJSON(string json){ return JsonConvert.DeserializeObject<IfcValue>(json); }
+    }
 
-		public static IfcValue FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcValue>(json);
-		}
-	}
+    public class IfcValueIfcDerivedMeasureValue : IfcValue
+    {
+        private readonly IfcDerivedMeasureValue value;
+        public IfcValueIfcDerivedMeasureValue(IfcDerivedMeasureValue value) : base(IfcValueType.IfcDerivedMeasureValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcValueIfcMeasureValue : IfcValue
+    {
+        private readonly IfcMeasureValue value;
+        public IfcValueIfcMeasureValue(IfcMeasureValue value) : base(IfcValueType.IfcMeasureValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcValueIfcSimpleValue : IfcValue
+    {
+        private readonly IfcSimpleValue value;
+        public IfcValueIfcSimpleValue(IfcSimpleValue value) : base(IfcValueType.IfcSimpleValue){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcVectorOrDirectionType{ IfcDirection,IfcVector }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvectorordirection.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcVectorOrDirection>))]
-	public class IfcVectorOrDirection : IfcSelect<IfcDirection,IfcVector>
-	{
-		public IfcVectorOrDirection(IfcDirection value):base(value){}
-		public IfcVectorOrDirection(IfcVector value):base(value){}
+	public abstract class IfcVectorOrDirection : BaseIfc
+    {
+        private readonly IfcVectorOrDirectionType selectType;
+        public IfcVectorOrDirection(IfcVectorOrDirectionType selectType){ this.selectType = selectType; }
+        public static IfcVectorOrDirection FromJSON(string json){ return JsonConvert.DeserializeObject<IfcVectorOrDirection>(json); }
+    }
 
-		public static IfcVectorOrDirection FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcVectorOrDirection>(json);
-		}
-	}
+    public class IfcVectorOrDirectionIfcDirection : IfcVectorOrDirection
+    {
+        private readonly IfcDirection value;
+        public IfcVectorOrDirectionIfcDirection(IfcDirection value) : base(IfcVectorOrDirectionType.IfcDirection){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
 
-	/// <summary>
+    public class IfcVectorOrDirectionIfcVector : IfcVectorOrDirection
+    {
+        private readonly IfcVector value;
+        public IfcVectorOrDirectionIfcVector(IfcVector value) : base(IfcVectorOrDirectionType.IfcVector){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+
+	
+    public enum IfcWarpingStiffnessSelectType{ IfcBoolean,IfcWarpingMomentMeasure }
+    
+    /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwarpingstiffnessselect.htm
 	/// </summary>
-	[TypeConverter(typeof(SelectConverter<IfcWarpingStiffnessSelect>))]
-	public class IfcWarpingStiffnessSelect : IfcSelect<IfcBoolean,IfcWarpingMomentMeasure>
-	{
-		public IfcWarpingStiffnessSelect(IfcBoolean value):base(value){}
-		public IfcWarpingStiffnessSelect(IfcWarpingMomentMeasure value):base(value){}
+	public abstract class IfcWarpingStiffnessSelect : BaseIfc
+    {
+        private readonly IfcWarpingStiffnessSelectType selectType;
+        public IfcWarpingStiffnessSelect(IfcWarpingStiffnessSelectType selectType){ this.selectType = selectType; }
+        public static IfcWarpingStiffnessSelect FromJSON(string json){ return JsonConvert.DeserializeObject<IfcWarpingStiffnessSelect>(json); }
+    }
 
-		public static IfcWarpingStiffnessSelect FromJSON(string json)
-		{
-			return JsonConvert.DeserializeObject<IfcWarpingStiffnessSelect>(json);
-		}
-	}
+    public class IfcWarpingStiffnessSelectIfcBoolean : IfcWarpingStiffnessSelect
+    {
+        private readonly IfcBoolean value;
+        public IfcWarpingStiffnessSelectIfcBoolean(IfcBoolean value) : base(IfcWarpingStiffnessSelectType.IfcBoolean){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
+    public class IfcWarpingStiffnessSelectIfcWarpingMomentMeasure : IfcWarpingStiffnessSelect
+    {
+        private readonly IfcWarpingMomentMeasure value;
+        public IfcWarpingStiffnessSelectIfcWarpingMomentMeasure(IfcWarpingMomentMeasure value) : base(IfcWarpingStiffnessSelectType.IfcWarpingMomentMeasure){ this.value = value; }
+        public override string ToStepValue(bool isSelectOption = false){ return value.ToStepValue(isSelectOption); }
+        public override string ToSTEP(){ return $"#{value.StepId} = {value.GetType().Name.ToUpper()}({value.GetStepParameters()});"; }
+    }
+
 
 
 	/// <summary>

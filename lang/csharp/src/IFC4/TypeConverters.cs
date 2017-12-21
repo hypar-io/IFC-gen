@@ -10,7 +10,7 @@ namespace IFC4
 	/// their choices. This converter walls the selection tree to a valid leaf
 	/// and converts.
 	/// </summary>
-	internal class SelectConverter <TSelect>: TypeConverter
+	/*internal class SelectConverter <TSelect>: TypeConverter
 	{
 		public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
 		{
@@ -78,5 +78,5 @@ namespace IFC4
 		{
 			return (TSelect)ReconstructSelectFromLeaf(typeof(TSelect), value);
 		}
-	}
+	}*/
 }
