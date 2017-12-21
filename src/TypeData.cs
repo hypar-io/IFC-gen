@@ -334,7 +334,7 @@ namespace Express
 
         public string Properties()
         {
-            var attrs = Attributes.Where(a => !a.IsDerived);
+            var attrs = Attributes;
             if (!attrs.Any())
             {
                 return string.Empty;

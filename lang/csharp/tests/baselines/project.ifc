@@ -6,7 +6,7 @@ FILE_DESCRIPTION(
 	'2;1');
 FILE_NAME(
     '../../../baselines/project.ifc',
-    '2017-12-21T12:12:13',
+    '2017-12-21T13:12:52',
     ('ikeough'),
     ('Test Organization'),
     'IFC-dotnet',
@@ -22,7 +22,7 @@ DATA;
 #5 = IFCORGANIZATION($, 'IFC-dotnet', $, $, $);
 #6 = IFCAPPLICATION(#5, '0.0.1.0', 'IFC-dotnet', 'IFC-dotnet');
 #7 = IFCPERSONANDORGANIZATION(#3, #4, $);
-#8 = IFCOWNERHISTORY(#7, #6, .READWRITE., .NOCHANGE., $, $, $, 1513888153);
+#8 = IFCOWNERHISTORY(#7, #6, .READWRITE., .NOCHANGE., $, $, $, 1513891132);
 #9 = IFCSIUNIT($, .LENGTHUNIT., .EXA., .METRE.);
 #10 = IFCSIUNIT($, .AREAUNIT., .EXA., .SQUARE_METRE.);
 #11 = IFCSIUNIT($, .VOLUMEUNIT., .EXA., .CUBIC_METRE.);
@@ -36,6 +36,6 @@ DATA;
 #19 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
 #20 = IFCCONVERSIONBASEDUNIT(#19, .PLANEANGLEUNIT., 'DEGREE', #18);
 #21 = IFCUNITASSIGNMENT((#9, #10, #11, #12, #13, #14, #15, #16, #17, #20));
-#22 = IFCPROJECT('0GLqVFzQTExffFiSzGcTdh', #8, 'Test Project', 'A test project for the Elements API.', $, $, $, $, #21);
+#22 = IFCPROJECT('13XdBc11nB09TIDj4VQucT', #8, 'Test Project', 'A test project for the Elements API.', $, $, $, $, #21);
 ENDSEC;
 END-ISO-10303-21;

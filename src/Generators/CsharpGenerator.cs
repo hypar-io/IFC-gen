@@ -108,9 +108,28 @@ namespace IFC4
 
         public string AttributeDataString(AttributeData data)
         {
-            var opt = data.IsOptional ? "optional" : string.Empty;
-            var inverse = data.IsInverse ? "inverse" : string.Empty;
-            var prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} // {opt} {inverse}\n";
+            var prop = string.Empty;
+            if(data.IsDerived)
+            {
+                var isNew = data.IsDerived && data.Name.Contains("SELF") ? "new " : string.Empty;
+                var name = data.Name;
+                if(name.Contains("SELF\\"))
+                {
+                    // This path points to a property in the inheritance chain.
+                    name = name.Split(".").Last();
+                }
+                prop = $"\t\t{isNew}public {data.Type} {name}{{get{{throw new NotImplementedException(\"Derived property logic has been implemented for {name}.\");}}}} // derived\n";
+            }
+            else
+            {   
+                var tags = new List<string>();
+                if(data.IsOptional) tags.Add("optional");
+                if(data.IsInverse) tags.Add("inverse");
+                var opt = data.IsOptional ? "optional" : string.Empty;
+                var inverse = data.IsInverse ? "inverse" : string.Empty;
+                prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} {(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}\n";
+            }
+
             return prop;
         }
 
