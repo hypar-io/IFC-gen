@@ -66,7 +66,7 @@ message {lm}{{
             return $"{type}";
         }
 
-        public string AttributeStepString(AttributeData data)
+        public string AttributeStepString(AttributeData data, bool isDerivedInChild)
         {
             throw new NotImplementedException();
         }

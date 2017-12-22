@@ -62,7 +62,7 @@ namespace Express
     /// </summary>
     public class ParameterData : TypeReference
     {
-        public string Name { get; }
+        public string Name { get; protected set;}
 
         /// <summary>
         /// A string representing the parameter corresponding to an attribute's info.
@@ -78,13 +78,6 @@ namespace Express
                     name = "op";
                 }
 
-                // Sometimes the name will be of the format SELF\IfcGeometricRepresentationContext.TrueNorth
-                // This won't work as a parameter name. Split it and takes the last part.
-                var split = name.Split('.');
-                if (split.Count() > 1)
-                {
-                    name = split.Last();
-                }
                 return Char.ToLowerInvariant(name[0]) + name.Substring(1);
             }
         }
@@ -113,6 +106,13 @@ namespace Express
         public bool IsDerived { get; }
 
         /// <summary>
+        /// Does this attribute hide a parent's attribute by
+        /// the same name?
+        /// </summary>
+        /// <returns></returns>
+        public bool HidesParentAttributeOfSameName{get;}
+
+        /// <summary>
         /// Is this attribute marked as OPTIONAL?
         /// </summary>
         /// <returns></returns>
@@ -124,6 +124,15 @@ namespace Express
             this.IsDerived = isDerived;
             this.IsOptional = isOptional;
             this.IsInverse = isInverse;
+
+            // A derived attribute which replaces a base class's version of
+            // the attribute will have a name that is a path to the 
+            // parent class' attribute of the form SELF\IfcNamedUnit.Dimensions.
+            if(isDerived && Name.Contains("SELF\\"))
+            {
+                HidesParentAttributeOfSameName = true;
+                Name = Name.Split('.').Last();
+            }
         }
 
         public override string ToString()
@@ -131,9 +140,9 @@ namespace Express
             return generator.AttributeDataString(this);
         }
 
-        public string ToStepString()
+        public string ToStepString(bool isDerivedInChild)
         {
-            return generator.AttributeStepString(this);
+            return generator.AttributeStepString(this, isDerivedInChild);
         }
     }
 
@@ -354,8 +363,18 @@ namespace Express
         }
 
         public string StepProperties()
-        {
-            var attrs = Attributes.Where(a => !a.IsDerived && !a.IsInverse);
+        {   
+            // Build a set of step properties for all parent classes and this class.
+            var attrs = this.ParentsAndSelf().
+                                Reverse().
+                                SelectMany(t=>t.Attributes).
+                                Where(a => !a.IsInverse && !a.IsDerived);
+
+            var derAttrs = this.ParentsAndSelf().
+                                Reverse().
+                                SelectMany(t=>t.Attributes).
+                                Where(a=>!a.IsInverse && a.IsDerived && a.HidesParentAttributeOfSameName);
+
             if (!attrs.Any())
             {
                 return string.Empty;
@@ -365,7 +384,16 @@ namespace Express
             propBuilder.AppendLine();
             foreach (var a in attrs)
             {
-                var prop = a.ToStepString();
+                // Attributes which are hidden by a derived attribute
+                // of the same name in a child need to be written to 
+                // STEP as *.
+                var isDerivedInChild = false;
+                if(derAttrs.Any(d=>d.Name == a.Name))
+                {
+                    isDerivedInChild = true;
+                }
+
+                var prop = a.ToStepString(isDerivedInChild);
                 if (!string.IsNullOrEmpty(prop))
                 {
                     propBuilder.Append(prop);

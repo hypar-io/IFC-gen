@@ -44,8 +44,9 @@ namespace IFC4.Generators
         /// ToStep method is written.
         /// </summary>
         /// <param name="data"></param>
+        /// <param name="isDerivedInChild"></param>
         /// <returns></returns>
-        string AttributeStepString(AttributeData data);
+        string AttributeStepString(AttributeData data, bool isDerivedInChild);
 
         /// <summary>
         /// SimpleTypeString is called when an IFCType<T> is generated.

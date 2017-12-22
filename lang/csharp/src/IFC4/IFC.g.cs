@@ -6311,19 +6311,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcActionRequest>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Status != null ? Status.ToStepValue() : "$");
 			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6358,17 +6363,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcControl>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -6404,17 +6399,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcActor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(TheActor != null ? TheActor.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6446,17 +6445,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOccupant>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(TheActor != null ? TheActor.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6500,17 +6504,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcObject>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -6550,19 +6544,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcActorRole>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Role.ToStepValue());
 			parameters.Add(UserDefinedRole != null ? UserDefinedRole.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6594,17 +6587,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcActuator>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6637,15 +6637,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionControlElement>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6678,17 +6686,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcActuatorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6717,15 +6733,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionControlElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -6767,19 +6775,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAddress>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Purpose.ToStepValue());
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-			parameters.Add(UserDefinedPurpose != null ? UserDefinedPurpose.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -6824,13 +6820,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPostalAddress>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Purpose.ToStepValue());
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(UserDefinedPurpose != null ? UserDefinedPurpose.ToStepValue() : "$");
 			parameters.Add(InternalLocation != null ? InternalLocation.ToStepValue() : "$");
 			parameters.Add(AddressLines != null ? AddressLines.ToStepValue() : "$");
 			parameters.Add(PostalBox != null ? PostalBox.ToStepValue() : "$");
@@ -6839,8 +6836,9 @@ namespace IFC4
 			parameters.Add(PostalCode != null ? PostalCode.ToStepValue() : "$");
 			parameters.Add(Country != null ? Country.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6886,13 +6884,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTelecomAddress>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Purpose.ToStepValue());
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(UserDefinedPurpose != null ? UserDefinedPurpose.ToStepValue() : "$");
 			parameters.Add(TelephoneNumbers != null ? TelephoneNumbers.ToStepValue() : "$");
 			parameters.Add(FacsimileNumbers != null ? FacsimileNumbers.ToStepValue() : "$");
 			parameters.Add(PagerNumber != null ? PagerNumber.ToStepValue() : "$");
@@ -6900,8 +6899,9 @@ namespace IFC4
 			parameters.Add(WWWHomePageURL != null ? WWWHomePageURL.ToStepValue() : "$");
 			parameters.Add(MessagingIDs != null ? MessagingIDs.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6922,15 +6922,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAdvancedBrep>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Outer != null ? Outer.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6954,17 +6955,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAdvancedBrepWithVoids>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Outer != null ? Outer.ToStepValue() : "$");
 			parameters.Add(Voids != null ? Voids.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -6988,17 +6989,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcManifoldSolidBrep>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Outer != null ? Outer.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -7019,15 +7010,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAdvancedFace>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Bounds != null ? Bounds.ToStepValue() : "$");
+			parameters.Add(FaceSurface != null ? FaceSurface.ToStepValue() : "$");
+			parameters.Add(SameSense.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7053,18 +7047,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFaceSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Bounds != null ? Bounds.ToStepValue() : "$");
 			parameters.Add(FaceSurface != null ? FaceSurface.ToStepValue() : "$");
 			parameters.Add(SameSense.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7096,17 +7090,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAirTerminal>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7135,15 +7136,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowTerminal>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7175,17 +7184,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAirTerminalBox>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7214,15 +7230,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowController>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7255,17 +7279,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAirTerminalBoxType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7294,15 +7326,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowControllerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -7335,17 +7359,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAirTerminalType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7374,15 +7406,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowTerminalType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -7414,17 +7438,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAirToAirHeatRecovery>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7453,15 +7484,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEnergyConversionDevice>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7494,17 +7533,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAirToAirHeatRecoveryType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7533,15 +7580,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEnergyConversionDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -7573,17 +7612,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAlarm>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7616,17 +7662,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAlarmType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7659,15 +7713,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAnnotation>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7704,18 +7765,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProduct>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
-			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -7751,18 +7801,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAnnotationFillArea>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(OuterBoundary != null ? OuterBoundary.ToStepValue() : "$");
 			parameters.Add(InnerBoundaries != null ? InnerBoundaries.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7783,15 +7832,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeometricRepresentationItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -7821,20 +7862,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcApplication>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ApplicationDeveloper != null ? ApplicationDeveloper.ToStepValue() : "$");
 			parameters.Add(Version != null ? Version.ToStepValue() : "$");
 			parameters.Add(ApplicationFullName != null ? ApplicationFullName.ToStepValue() : "$");
 			parameters.Add(ApplicationIdentifier != null ? ApplicationIdentifier.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7888,13 +7928,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAppliedValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(AppliedValue != null ? AppliedValue.ToStepValue() : "$");
@@ -7906,8 +7944,9 @@ namespace IFC4
 			parameters.Add(ArithmeticOperator.ToStepValue());
 			parameters.Add(Components != null ? Components.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -7936,15 +7975,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCostValue>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(AppliedValue != null ? AppliedValue.ToStepValue() : "$");
+			parameters.Add(UnitBasis != null ? UnitBasis.ToStepValue() : "$");
+			parameters.Add(ApplicableDate != null ? ApplicableDate.ToStepValue() : "$");
+			parameters.Add(FixedUntilDate != null ? FixedUntilDate.ToStepValue() : "$");
+			parameters.Add(Category != null ? Category.ToStepValue() : "$");
+			parameters.Add(Condition != null ? Condition.ToStepValue() : "$");
+			parameters.Add(ArithmeticOperator.ToStepValue());
+			parameters.Add(Components != null ? Components.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8007,13 +8056,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcApproval>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Identifier != null ? Identifier.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
@@ -8024,8 +8071,9 @@ namespace IFC4
 			parameters.Add(RequestingApproval != null ? RequestingApproval.ToStepValue() : "$");
 			parameters.Add(GivingApproval != null ? GivingApproval.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8061,18 +8109,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcApprovalRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingApproval != null ? RelatingApproval.ToStepValue() : "$");
 			parameters.Add(RelatedApprovals != null ? RelatedApprovals.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8106,18 +8155,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcResourceLevelRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -8150,17 +8188,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcArbitraryClosedProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
 			parameters.Add(OuterCurve != null ? OuterCurve.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8193,17 +8232,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcArbitraryProfileDefWithVoids>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(OuterCurve != null ? OuterCurve.ToStepValue() : "$");
 			parameters.Add(InnerCurves != null ? InnerCurves.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8244,18 +8285,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ProfileType.ToStepValue());
 			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8288,17 +8328,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcArbitraryOpenProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
 			parameters.Add(Curve != null ? Curve.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8331,17 +8372,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCenterLineProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Curve != null ? Curve.ToStepValue() : "$");
 			parameters.Add(Thickness != null ? Thickness.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8389,13 +8432,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAsset>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(OriginalValue != null ? OriginalValue.ToStepValue() : "$");
 			parameters.Add(CurrentValue != null ? CurrentValue.ToStepValue() : "$");
@@ -8406,8 +8452,9 @@ namespace IFC4
 			parameters.Add(IncorporationDate != null ? IncorporationDate.ToStepValue() : "$");
 			parameters.Add(DepreciatedValue != null ? DepreciatedValue.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8440,15 +8487,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGroup>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8507,13 +8559,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAsymmetricIShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(BottomFlangeWidth != null ? BottomFlangeWidth.ToStepValue() : "$");
 			parameters.Add(OverallDepth != null ? OverallDepth.ToStepValue() : "$");
 			parameters.Add(WebThickness != null ? WebThickness.ToStepValue() : "$");
@@ -8527,8 +8580,9 @@ namespace IFC4
 			parameters.Add(TopFlangeEdgeRadius != null ? TopFlangeEdgeRadius.ToStepValue() : "$");
 			parameters.Add(TopFlangeSlope != null ? TopFlangeSlope.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8560,17 +8614,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcParameterizedProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Position != null ? Position.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -8602,17 +8646,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAudioVisualAppliance>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8645,17 +8696,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAudioVisualApplianceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8688,17 +8747,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAxis1Placement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
 			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8723,17 +8782,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlacement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Location != null ? Location.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -8766,17 +8815,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAxis2Placement2D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
 			parameters.Add(RefDirection != null ? RefDirection.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8811,18 +8860,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcAxis2Placement3D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
 			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
 			parameters.Add(RefDirection != null ? RefDirection.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8856,21 +8905,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBSplineCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Degree.ToStepValue());
-			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
-			parameters.Add(CurveForm != null ? CurveForm.ToStepValue() : "$");
-			parameters.Add(ClosedCurve != null ? ClosedCurve.ToStepValue() : "$");
-			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -8899,19 +8934,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBSplineCurveWithKnots>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Degree.ToStepValue());
+			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
+			parameters.Add(CurveForm != null ? CurveForm.ToStepValue() : "$");
+			parameters.Add(ClosedCurve != null ? ClosedCurve.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 			parameters.Add(KnotMultiplicities != null ? KnotMultiplicities.ToStepValue() : "$");
 			parameters.Add(Knots != null ? Knots.ToStepValue() : "$");
 			parameters.Add(KnotSpec != null ? KnotSpec.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -8932,15 +8971,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundedCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -8965,17 +8996,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRationalBSplineCurveWithKnots>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Degree.ToStepValue());
+			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
+			parameters.Add(CurveForm != null ? CurveForm.ToStepValue() : "$");
+			parameters.Add(ClosedCurve != null ? ClosedCurve.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
+			parameters.Add(KnotMultiplicities != null ? KnotMultiplicities.ToStepValue() : "$");
+			parameters.Add(Knots != null ? Knots.ToStepValue() : "$");
+			parameters.Add(KnotSpec != null ? KnotSpec.ToStepValue() : "$");
 			parameters.Add(WeightsData != null ? WeightsData.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9014,23 +9052,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBSplineSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(UDegree.ToStepValue());
-			parameters.Add(VDegree.ToStepValue());
-			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
-			parameters.Add(SurfaceForm != null ? SurfaceForm.ToStepValue() : "$");
-			parameters.Add(UClosed != null ? UClosed.ToStepValue() : "$");
-			parameters.Add(VClosed != null ? VClosed.ToStepValue() : "$");
-			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9064,21 +9086,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBSplineSurfaceWithKnots>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(UDegree.ToStepValue());
+			parameters.Add(VDegree.ToStepValue());
+			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
+			parameters.Add(SurfaceForm != null ? SurfaceForm.ToStepValue() : "$");
+			parameters.Add(UClosed != null ? UClosed.ToStepValue() : "$");
+			parameters.Add(VClosed != null ? VClosed.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 			parameters.Add(UMultiplicities != null ? UMultiplicities.ToStepValue() : "$");
 			parameters.Add(VMultiplicities != null ? VMultiplicities.ToStepValue() : "$");
 			parameters.Add(UKnots != null ? UKnots.ToStepValue() : "$");
 			parameters.Add(VKnots != null ? VKnots.ToStepValue() : "$");
 			parameters.Add(KnotSpec != null ? KnotSpec.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9099,15 +9127,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundedSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9132,17 +9152,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRationalBSplineSurfaceWithKnots>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(UDegree.ToStepValue());
+			parameters.Add(VDegree.ToStepValue());
+			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
+			parameters.Add(SurfaceForm != null ? SurfaceForm.ToStepValue() : "$");
+			parameters.Add(UClosed != null ? UClosed.ToStepValue() : "$");
+			parameters.Add(VClosed != null ? VClosed.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
+			parameters.Add(UMultiplicities != null ? UMultiplicities.ToStepValue() : "$");
+			parameters.Add(VMultiplicities != null ? VMultiplicities.ToStepValue() : "$");
+			parameters.Add(UKnots != null ? UKnots.ToStepValue() : "$");
+			parameters.Add(VKnots != null ? VKnots.ToStepValue() : "$");
+			parameters.Add(KnotSpec != null ? KnotSpec.ToStepValue() : "$");
 			parameters.Add(WeightsData != null ? WeightsData.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9174,17 +9205,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBeam>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9213,15 +9251,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBeamStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9254,15 +9301,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9295,17 +9334,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBeamType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9334,15 +9381,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9378,18 +9417,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBlobTexture>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(RepeatS.ToStepValue());
+			parameters.Add(RepeatT.ToStepValue());
+			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
+			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
+			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
 			parameters.Add(RasterFormat != null ? RasterFormat.ToStepValue() : "$");
 			parameters.Add(RasterCode != null ? RasterCode.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9438,21 +9481,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceTexture>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(RepeatS.ToStepValue());
-			parameters.Add(RepeatT.ToStepValue());
-			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
-			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
-			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9480,19 +9509,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBlock>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(XLength != null ? XLength.ToStepValue() : "$");
 			parameters.Add(YLength != null ? YLength.ToStepValue() : "$");
 			parameters.Add(ZLength != null ? ZLength.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9517,17 +9546,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCsgPrimitive3D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Position != null ? Position.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9559,17 +9578,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoiler>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9602,17 +9628,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoilerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9633,15 +9667,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBooleanClippingResult>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Operator != null ? Operator.ToStepValue() : "$");
+			parameters.Add(FirstOperand != null ? FirstOperand.ToStepValue() : "$");
+			parameters.Add(SecondOperand != null ? SecondOperand.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9670,19 +9707,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBooleanResult>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Operator != null ? Operator.ToStepValue() : "$");
 			parameters.Add(FirstOperand != null ? FirstOperand.ToStepValue() : "$");
 			parameters.Add(SecondOperand != null ? SecondOperand.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9714,17 +9750,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundaryCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -9766,13 +9792,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundaryEdgeCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessByLengthX != null ? TranslationalStiffnessByLengthX.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessByLengthY != null ? TranslationalStiffnessByLengthY.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessByLengthZ != null ? TranslationalStiffnessByLengthZ.ToStepValue() : "$");
@@ -9780,8 +9805,9 @@ namespace IFC4
 			parameters.Add(RotationalStiffnessByLengthY != null ? RotationalStiffnessByLengthY.ToStepValue() : "$");
 			parameters.Add(RotationalStiffnessByLengthZ != null ? RotationalStiffnessByLengthZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9817,19 +9843,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundaryFaceCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessByAreaX != null ? TranslationalStiffnessByAreaX.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessByAreaY != null ? TranslationalStiffnessByAreaY.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessByAreaZ != null ? TranslationalStiffnessByAreaZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9871,13 +9897,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundaryNodeCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessX != null ? TranslationalStiffnessX.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessY != null ? TranslationalStiffnessY.ToStepValue() : "$");
 			parameters.Add(TranslationalStiffnessZ != null ? TranslationalStiffnessZ.ToStepValue() : "$");
@@ -9885,8 +9910,9 @@ namespace IFC4
 			parameters.Add(RotationalStiffnessY != null ? RotationalStiffnessY.ToStepValue() : "$");
 			parameters.Add(RotationalStiffnessZ != null ? RotationalStiffnessZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9907,15 +9933,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundaryCurve>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Segments != null ? Segments.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9936,15 +9964,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOuterBoundaryCurve>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Segments != null ? Segments.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -9967,15 +9997,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCompositeCurveOnSurface>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Segments != null ? Segments.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10007,17 +10039,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundaryNodeConditionWarping>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(TranslationalStiffnessX != null ? TranslationalStiffnessX.ToStepValue() : "$");
+			parameters.Add(TranslationalStiffnessY != null ? TranslationalStiffnessY.ToStepValue() : "$");
+			parameters.Add(TranslationalStiffnessZ != null ? TranslationalStiffnessZ.ToStepValue() : "$");
+			parameters.Add(RotationalStiffnessX != null ? RotationalStiffnessX.ToStepValue() : "$");
+			parameters.Add(RotationalStiffnessY != null ? RotationalStiffnessY.ToStepValue() : "$");
+			parameters.Add(RotationalStiffnessZ != null ? RotationalStiffnessZ.ToStepValue() : "$");
 			parameters.Add(WarpingStiffness != null ? WarpingStiffness.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10045,18 +10083,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCompositeCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Segments != null ? Segments.ToStepValue() : "$");
 			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10080,17 +10117,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPolyline>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Points != null ? Points.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10122,21 +10158,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTrimmedCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisCurve != null ? BasisCurve.ToStepValue() : "$");
 			parameters.Add(Trim1 != null ? Trim1.ToStepValue() : "$");
 			parameters.Add(Trim2 != null ? Trim2.ToStepValue() : "$");
 			parameters.Add(SenseAgreement.ToStepValue());
 			parameters.Add(MasterRepresentation != null ? MasterRepresentation.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10159,15 +10194,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -10195,19 +10222,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurveBoundedPlane>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisSurface != null ? BasisSurface.ToStepValue() : "$");
 			parameters.Add(OuterBoundary != null ? OuterBoundary.ToStepValue() : "$");
 			parameters.Add(InnerBoundaries != null ? InnerBoundaries.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10235,19 +10261,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurveBoundedSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisSurface != null ? BasisSurface.ToStepValue() : "$");
 			parameters.Add(Boundaries != null ? Boundaries.ToStepValue() : "$");
 			parameters.Add(ImplicitOuter.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10283,13 +10308,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRectangularTrimmedSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisSurface != null ? BasisSurface.ToStepValue() : "$");
 			parameters.Add(U1 != null ? U1.ToStepValue() : "$");
 			parameters.Add(V1 != null ? V1.ToStepValue() : "$");
@@ -10298,8 +10321,9 @@ namespace IFC4
 			parameters.Add(Usense.ToStepValue());
 			parameters.Add(Vsense.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10322,15 +10346,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -10361,20 +10377,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoundingBox>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Corner != null ? Corner.ToStepValue() : "$");
 			parameters.Add(XDim != null ? XDim.ToStepValue() : "$");
 			parameters.Add(YDim != null ? YDim.ToStepValue() : "$");
 			parameters.Add(ZDim != null ? ZDim.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10398,17 +10413,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBoxedHalfSpace>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(BaseSurface != null ? BaseSurface.ToStepValue() : "$");
+			parameters.Add(AgreementFlag.ToStepValue());
 			parameters.Add(Enclosure != null ? Enclosure.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10435,18 +10451,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcHalfSpaceSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BaseSurface != null ? BaseSurface.ToStepValue() : "$");
 			parameters.Add(AgreementFlag.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10482,19 +10497,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuilding>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(CompositionType.ToStepValue());
 			parameters.Add(ElevationOfRefHeight != null ? ElevationOfRefHeight.ToStepValue() : "$");
 			parameters.Add(ElevationOfTerrain != null ? ElevationOfTerrain.ToStepValue() : "$");
 			parameters.Add(BuildingAddress != null ? BuildingAddress.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10526,17 +10549,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpatialStructureElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(CompositionType.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -10568,17 +10581,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingElementProxy>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10610,17 +10630,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcChimney>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10652,17 +10679,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcColumn>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10700,17 +10734,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCovering>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10742,17 +10783,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurtainWall>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10792,21 +10840,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDoor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(OverallHeight != null ? OverallHeight.ToStepValue() : "$");
 			parameters.Add(OverallWidth != null ? OverallWidth.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(UserDefinedOperationType != null ? UserDefinedOperationType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10838,17 +10893,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFooting>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10880,17 +10942,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMember>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10924,18 +10993,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPile>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(ConstructionType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -10967,17 +11043,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11009,17 +11092,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRailing>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11051,17 +11141,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRamp>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11093,17 +11190,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRampFlight>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11135,17 +11239,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRoof>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11177,17 +11288,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcShadingDevice>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11219,17 +11337,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSlab>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11261,17 +11386,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStair>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11311,21 +11443,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStairFlight>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(NumberOfRiser.ToStepValue());
 			parameters.Add(NumberOfTreads.ToStepValue());
 			parameters.Add(RiserHeight != null ? RiserHeight.ToStepValue() : "$");
 			parameters.Add(TreadLength != null ? TreadLength.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11357,17 +11496,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWall>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11407,21 +11553,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWindow>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(OverallHeight != null ? OverallHeight.ToStepValue() : "$");
 			parameters.Add(OverallWidth != null ? OverallWidth.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(PartitioningType.ToStepValue());
 			parameters.Add(UserDefinedPartitioningType != null ? UserDefinedPartitioningType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11486,17 +11639,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -11528,17 +11671,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingElementPart>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11567,15 +11717,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementComponent>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -11608,17 +11750,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingElementPartType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11647,15 +11797,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementComponentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -11688,17 +11830,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingElementProxyType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11731,17 +11881,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcChimneyType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11774,17 +11932,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcColumnType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11817,17 +11983,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoveringType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11860,17 +12034,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurtainWallType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11910,20 +12092,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDoorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(ParameterTakesPrecedence.ToStepValue());
 			parameters.Add(UserDefinedOperationType != null ? UserDefinedOperationType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11956,17 +12146,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFootingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -11999,17 +12197,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMemberType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12042,17 +12248,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPileType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12085,17 +12299,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlateType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12128,17 +12350,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRailingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12171,17 +12401,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRampFlightType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12214,17 +12452,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRampType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12257,17 +12503,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRoofType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12300,17 +12554,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcShadingDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12343,17 +12605,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSlabType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12386,17 +12656,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStairFlightType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12429,17 +12707,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStairType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12472,17 +12758,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWallType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12522,20 +12816,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWindowType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(PartitioningType.ToStepValue());
 			parameters.Add(ParameterTakesPrecedence.ToStepValue());
 			parameters.Add(UserDefinedPartitioningType != null ? UserDefinedPartitioningType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12567,17 +12869,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -12609,17 +12901,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingStorey>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(CompositionType.ToStepValue());
 			parameters.Add(Elevation != null ? Elevation.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12651,17 +12951,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBuildingSystem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12694,15 +12998,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSystem>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12734,17 +13043,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBurner>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12777,17 +13093,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcBurnerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12831,21 +13155,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 			parameters.Add(Width != null ? Width.ToStepValue() : "$");
 			parameters.Add(WallThickness != null ? WallThickness.ToStepValue() : "$");
 			parameters.Add(Girth != null ? Girth.ToStepValue() : "$");
 			parameters.Add(InternalFilletRadius != null ? InternalFilletRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12877,17 +13203,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableCarrierFitting>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12916,15 +13249,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowFitting>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12957,17 +13298,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableCarrierFittingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -12996,15 +13345,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowFittingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -13036,17 +13377,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableCarrierSegment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13075,15 +13423,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowSegment>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13116,17 +13472,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableCarrierSegmentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13155,15 +13519,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowSegmentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -13195,17 +13551,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableFitting>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13238,17 +13601,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableFittingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13280,17 +13651,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableSegment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13323,17 +13701,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCableSegmentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13358,17 +13744,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianPoint>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Coordinates != null ? Coordinates.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13389,15 +13774,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPoint>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -13418,15 +13795,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianPointList>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -13450,17 +13819,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianPointList3D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(CoordList != null ? CoordList.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13501,20 +13869,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianTransformationOperator>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
-			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
-			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
-			parameters.Add(Scale.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -13545,15 +13900,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianTransformationOperator2D>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
+			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
+			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
+			parameters.Add(Scale.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13586,17 +13945,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianTransformationOperator3D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
+			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
+			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
+			parameters.Add(Scale.ToStepValue());
 			parameters.Add(Axis3 != null ? Axis3.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13629,17 +13991,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianTransformationOperator2DnonUniform>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
+			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
+			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
+			parameters.Add(Scale.ToStepValue());
 			parameters.Add(Scale2.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13675,18 +14040,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCartesianTransformationOperator3DnonUniform>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
+			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
+			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
+			parameters.Add(Scale.ToStepValue());
+			parameters.Add(Axis3 != null ? Axis3.ToStepValue() : "$");
 			parameters.Add(Scale2.ToStepValue());
 			parameters.Add(Scale3.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13718,17 +14087,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcChiller>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13761,17 +14137,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcChillerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13795,17 +14179,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCircle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13829,17 +14213,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConic>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Position != null ? Position.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -13872,17 +14246,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCircleHollowProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 			parameters.Add(WallThickness != null ? WallThickness.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13915,17 +14292,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCircleProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13954,15 +14333,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCivilElement>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -13991,15 +14378,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCivilElementType>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14051,13 +14447,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcClassification>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Source != null ? Source.ToStepValue() : "$");
 			parameters.Add(Edition != null ? Edition.ToStepValue() : "$");
 			parameters.Add(EditionDate != null ? EditionDate.ToStepValue() : "$");
@@ -14066,8 +14460,9 @@ namespace IFC4
 			parameters.Add(Location != null ? Location.ToStepValue() : "$");
 			parameters.Add(ReferenceTokens != null ? ReferenceTokens.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14088,15 +14483,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternalInformation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -14138,19 +14525,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcClassificationReference>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(ReferencedSource != null ? ReferencedSource.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Sort != null ? Sort.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14189,19 +14578,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternalReference>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Location != null ? Location.ToStepValue() : "$");
-			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -14222,15 +14599,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcClosedShell>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(CfsFaces != null ? CfsFaces.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14254,17 +14632,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectedFaceSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(CfsFaces != null ? CfsFaces.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14296,17 +14673,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoil>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14339,17 +14723,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoilType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14388,19 +14780,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcColourRgb>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Red != null ? Red.ToStepValue() : "$");
 			parameters.Add(Green != null ? Green.ToStepValue() : "$");
 			parameters.Add(Blue != null ? Blue.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14432,17 +14824,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcColourSpecification>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -14466,17 +14848,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcColourRgbList>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ColourList != null ? ColourList.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14497,15 +14878,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPresentationItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -14534,15 +14907,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcColumnStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14574,17 +14956,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCommunicationsAppliance>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14617,17 +15006,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCommunicationsApplianceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14663,18 +15060,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcComplexProperty>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(UsageName != null ? UsageName.ToStepValue() : "$");
 			parameters.Add(HasProperties != null ? HasProperties.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14721,18 +15119,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProperty>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -14769,19 +15156,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcComplexPropertyTemplate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(UsageName != null ? UsageName.ToStepValue() : "$");
 			parameters.Add(TemplateType.ToStepValue());
 			parameters.Add(HasPropertyTemplates != null ? HasPropertyTemplates.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14817,15 +15207,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyTemplate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -14856,19 +15238,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCompositeCurveSegment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Transition != null ? Transition.ToStepValue() : "$");
 			parameters.Add(SameSense.ToStepValue());
 			parameters.Add(ParentCurve != null ? ParentCurve.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14892,17 +15273,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReparametrisedCompositeCurveSegment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Transition != null ? Transition.ToStepValue() : "$");
+			parameters.Add(SameSense.ToStepValue());
+			parameters.Add(ParentCurve != null ? ParentCurve.ToStepValue() : "$");
 			parameters.Add(ParamLength != null ? ParamLength.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14937,18 +15320,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCompositeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
 			parameters.Add(Profiles != null ? Profiles.ToStepValue() : "$");
 			parameters.Add(Label != null ? Label.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -14980,17 +15364,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCompressor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15019,15 +15410,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowMovingDevice>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15060,17 +15459,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCompressorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15099,15 +15506,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowMovingDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -15139,17 +15538,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCondenser>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15182,17 +15588,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCondenserType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15218,18 +15632,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEllipse>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(SemiAxis1 != null ? SemiAxis1.ToStepValue() : "$");
 			parameters.Add(SemiAxis2 != null ? SemiAxis2.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15250,15 +15664,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOpenShell>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(CfsFaces != null ? CfsFaces.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15279,15 +15694,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTopologicalRepresentationItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -15322,18 +15729,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectionCurveGeometry>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(CurveOnRelatingElement != null ? CurveOnRelatingElement.ToStepValue() : "$");
 			parameters.Add(CurveOnRelatedElement != null ? CurveOnRelatedElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15354,15 +15760,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectionGeometry>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -15397,18 +15795,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectionPointGeometry>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(PointOnRelatingElement != null ? PointOnRelatingElement.ToStepValue() : "$");
 			parameters.Add(PointOnRelatedElement != null ? PointOnRelatedElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15443,18 +15840,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectionSurfaceGeometry>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(SurfaceOnRelatingElement != null ? SurfaceOnRelatingElement.ToStepValue() : "$");
 			parameters.Add(SurfaceOnRelatedElement != null ? SurfaceOnRelatedElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15489,18 +15885,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectionVolumeGeometry>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(VolumeOnRelatingElement != null ? VolumeOnRelatingElement.ToStepValue() : "$");
 			parameters.Add(VolumeOnRelatedElement != null ? VolumeOnRelatedElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15536,19 +15931,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConnectionPointEccentricity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(PointOnRelatingElement != null ? PointOnRelatingElement.ToStepValue() : "$");
+			parameters.Add(PointOnRelatedElement != null ? PointOnRelatedElement.ToStepValue() : "$");
 			parameters.Add(EccentricityInX != null ? EccentricityInX.ToStepValue() : "$");
 			parameters.Add(EccentricityInY != null ? EccentricityInY.ToStepValue() : "$");
 			parameters.Add(EccentricityInZ != null ? EccentricityInZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15600,23 +15996,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstraint>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-			parameters.Add(ConstraintGrade.ToStepValue());
-			parameters.Add(ConstraintSource != null ? ConstraintSource.ToStepValue() : "$");
-			parameters.Add(CreatingActor != null ? CreatingActor.ToStepValue() : "$");
-			parameters.Add(CreationTime != null ? CreationTime.ToStepValue() : "$");
-			parameters.Add(UserDefinedGrade != null ? UserDefinedGrade.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -15656,20 +16036,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMetric>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ConstraintGrade.ToStepValue());
+			parameters.Add(ConstraintSource != null ? ConstraintSource.ToStepValue() : "$");
+			parameters.Add(CreatingActor != null ? CreatingActor.ToStepValue() : "$");
+			parameters.Add(CreationTime != null ? CreationTime.ToStepValue() : "$");
+			parameters.Add(UserDefinedGrade != null ? UserDefinedGrade.ToStepValue() : "$");
 			parameters.Add(Benchmark.ToStepValue());
 			parameters.Add(ValueSource != null ? ValueSource.ToStepValue() : "$");
 			parameters.Add(DataValue != null ? DataValue.ToStepValue() : "$");
 			parameters.Add(ReferencePath != null ? ReferencePath.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15709,20 +16095,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcObjective>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ConstraintGrade.ToStepValue());
+			parameters.Add(ConstraintSource != null ? ConstraintSource.ToStepValue() : "$");
+			parameters.Add(CreatingActor != null ? CreatingActor.ToStepValue() : "$");
+			parameters.Add(CreationTime != null ? CreationTime.ToStepValue() : "$");
+			parameters.Add(UserDefinedGrade != null ? UserDefinedGrade.ToStepValue() : "$");
 			parameters.Add(BenchmarkValues != null ? BenchmarkValues.ToStepValue() : "$");
 			parameters.Add(LogicalAggregator.ToStepValue());
 			parameters.Add(ObjectiveQualifier.ToStepValue());
 			parameters.Add(UserDefinedQualifier != null ? UserDefinedQualifier.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15754,17 +16146,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionEquipmentResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15801,19 +16202,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
-			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
-			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -15846,17 +16235,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionEquipmentResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15891,18 +16290,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
-			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -15934,17 +16322,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionMaterialResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -15977,17 +16374,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionMaterialResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16019,17 +16426,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionProductResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16062,17 +16478,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConstructionProductResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16104,17 +16530,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCrewResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16146,17 +16581,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLaborResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16188,17 +16632,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSubContractResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16235,18 +16688,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
-			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -16279,17 +16721,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCrewResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16322,17 +16774,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLaborResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16365,17 +16827,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSubContractResourceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
+			parameters.Add(BaseCosts != null ? BaseCosts.ToStepValue() : "$");
+			parameters.Add(BaseQuantity != null ? BaseQuantity.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16414,19 +16886,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTypeResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
-			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
-			parameters.Add(ResourceType != null ? ResourceType.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -16473,21 +16933,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcContext>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
-			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
-			parameters.Add(Phase != null ? Phase.ToStepValue() : "$");
-			parameters.Add(RepresentationContexts != null ? RepresentationContexts.ToStepValue() : "$");
-			parameters.Add(UnitsInContext != null ? UnitsInContext.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -16516,15 +16962,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProject>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(Phase != null ? Phase.ToStepValue() : "$");
+			parameters.Add(RepresentationContexts != null ? RepresentationContexts.ToStepValue() : "$");
+			parameters.Add(UnitsInContext != null ? UnitsInContext.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16553,15 +17008,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProjectLibrary>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(Phase != null ? Phase.ToStepValue() : "$");
+			parameters.Add(RepresentationContexts != null ? RepresentationContexts.ToStepValue() : "$");
+			parameters.Add(UnitsInContext != null ? UnitsInContext.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16612,15 +17076,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcObjectDefinition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -16646,17 +17102,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcContextDependentUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Dimensions != null ? Dimensions.ToStepValue() : "$");
+			parameters.Add(UnitType.ToStepValue());
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16682,18 +17139,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcNamedUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Dimensions != null ? Dimensions.ToStepValue() : "$");
-			parameters.Add(UnitType.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -16731,19 +17177,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCostItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(CostValues != null ? CostValues.ToStepValue() : "$");
 			parameters.Add(CostQuantities != null ? CostQuantities.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16781,20 +17232,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCostSchedule>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Status != null ? Status.ToStepValue() : "$");
 			parameters.Add(SubmittedOn != null ? SubmittedOn.ToStepValue() : "$");
 			parameters.Add(UpdateDate != null ? UpdateDate.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16829,18 +17285,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPerformanceHistory>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(LifeCyclePhase != null ? LifeCyclePhase.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16876,19 +17337,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPermit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Status != null ? Status.ToStepValue() : "$");
 			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16924,19 +17390,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProjectOrder>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Status != null ? Status.ToStepValue() : "$");
 			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -16974,19 +17445,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWorkCalendar>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(WorkingTimes != null ? WorkingTimes.ToStepValue() : "$");
 			parameters.Add(ExceptionTimes != null ? ExceptionTimes.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17033,23 +17509,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWorkControl>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(CreationDate != null ? CreationDate.ToStepValue() : "$");
-			parameters.Add(Creators != null ? Creators.ToStepValue() : "$");
-			parameters.Add(Purpose != null ? Purpose.ToStepValue() : "$");
-			parameters.Add(Duration != null ? Duration.ToStepValue() : "$");
-			parameters.Add(TotalFloat != null ? TotalFloat.ToStepValue() : "$");
-			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
-			parameters.Add(FinishTime != null ? FinishTime.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -17081,17 +17541,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcController>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17124,17 +17591,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcControllerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17162,18 +17637,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConversionBasedUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Dimensions != null ? Dimensions.ToStepValue() : "$");
+			parameters.Add(UnitType.ToStepValue());
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(ConversionFactor != null ? ConversionFactor.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17197,17 +17673,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcConversionBasedUnitWithOffset>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Dimensions != null ? Dimensions.ToStepValue() : "$");
+			parameters.Add(UnitType.ToStepValue());
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(ConversionFactor != null ? ConversionFactor.ToStepValue() : "$");
 			parameters.Add(ConversionOffset != null ? ConversionOffset.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17239,17 +17718,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCooledBeam>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17282,17 +17768,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCooledBeamType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17324,17 +17818,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoolingTower>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17367,17 +17868,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoolingTowerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17403,18 +17912,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoordinateOperation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(SourceCRS != null ? SourceCRS.ToStepValue() : "$");
-			parameters.Add(TargetCRS != null ? TargetCRS.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -17459,13 +17957,13 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMapConversion>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SourceCRS != null ? SourceCRS.ToStepValue() : "$");
+			parameters.Add(TargetCRS != null ? TargetCRS.ToStepValue() : "$");
 			parameters.Add(Eastings != null ? Eastings.ToStepValue() : "$");
 			parameters.Add(Northings != null ? Northings.ToStepValue() : "$");
 			parameters.Add(OrthogonalHeight != null ? OrthogonalHeight.ToStepValue() : "$");
@@ -17473,8 +17971,9 @@ namespace IFC4
 			parameters.Add(XAxisOrdinate != null ? XAxisOrdinate.ToStepValue() : "$");
 			parameters.Add(Scale != null ? Scale.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17513,20 +18012,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCoordinateReferenceSystem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-			parameters.Add(GeodeticDatum != null ? GeodeticDatum.ToStepValue() : "$");
-			parameters.Add(VerticalDatum != null ? VerticalDatum.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -17562,19 +18048,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProjectedCRS>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(GeodeticDatum != null ? GeodeticDatum.ToStepValue() : "$");
+			parameters.Add(VerticalDatum != null ? VerticalDatum.ToStepValue() : "$");
 			parameters.Add(MapProjection != null ? MapProjection.ToStepValue() : "$");
 			parameters.Add(MapZone != null ? MapZone.ToStepValue() : "$");
 			parameters.Add(MapUnit != null ? MapUnit.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17602,19 +18091,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRectangularPyramid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(XLength != null ? XLength.ToStepValue() : "$");
 			parameters.Add(YLength != null ? YLength.ToStepValue() : "$");
 			parameters.Add(Height != null ? Height.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17640,18 +18129,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRightCircularCone>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Height != null ? Height.ToStepValue() : "$");
 			parameters.Add(BottomRadius != null ? BottomRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17677,18 +18166,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRightCircularCylinder>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Height != null ? Height.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17712,17 +18201,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSphere>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17746,17 +18235,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCsgSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TreeRootExpression != null ? TreeRootExpression.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17779,15 +18267,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSolidModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -17830,21 +18310,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurrencyRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingMonetaryUnit != null ? RelatingMonetaryUnit.ToStepValue() : "$");
 			parameters.Add(RelatedMonetaryUnit != null ? RelatedMonetaryUnit.ToStepValue() : "$");
 			parameters.Add(ExchangeRate != null ? ExchangeRate.ToStepValue() : "$");
 			parameters.Add(RateDateTime != null ? RateDateTime.ToStepValue() : "$");
 			parameters.Add(RateSource != null ? RateSource.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17870,18 +18351,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLine>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Pnt != null ? Pnt.ToStepValue() : "$");
 			parameters.Add(Dir != null ? Dir.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17909,19 +18389,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOffsetCurve2D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisCurve != null ? BasisCurve.ToStepValue() : "$");
 			parameters.Add(Distance != null ? Distance.ToStepValue() : "$");
 			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17951,20 +18430,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOffsetCurve3D>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisCurve != null ? BasisCurve.ToStepValue() : "$");
 			parameters.Add(Distance != null ? Distance.ToStepValue() : "$");
 			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 			parameters.Add(RefDirection != null ? RefDirection.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -17990,18 +18468,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPcurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisSurface != null ? BasisSurface.ToStepValue() : "$");
 			parameters.Add(ReferenceCurve != null ? ReferenceCurve.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18039,20 +18516,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurveStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(CurveFont != null ? CurveFont.ToStepValue() : "$");
 			parameters.Add(CurveWidth != null ? CurveWidth.ToStepValue() : "$");
 			parameters.Add(CurveColour != null ? CurveColour.ToStepValue() : "$");
 			parameters.Add(ModelOrDraughting.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18084,17 +18561,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPresentationStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -18129,18 +18596,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurveStyleFont>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(PatternList != null ? PatternList.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18178,19 +18644,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurveStyleFontAndScaling>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(CurveFont != null ? CurveFont.ToStepValue() : "$");
 			parameters.Add(CurveFontScaling != null ? CurveFontScaling.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18216,18 +18681,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCurveStyleFontPattern>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(VisibleSegmentLength != null ? VisibleSegmentLength.ToStepValue() : "$");
 			parameters.Add(InvisibleSegmentLength != null ? InvisibleSegmentLength.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18251,17 +18715,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcCylindricalSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18285,17 +18749,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementarySurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Position != null ? Position.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -18327,17 +18781,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDamper>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18370,17 +18831,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDamperType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18418,19 +18887,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDerivedProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
 			parameters.Add(ParentProfile != null ? ParentProfile.ToStepValue() : "$");
 			parameters.Add(Operator != null ? Operator.ToStepValue() : "$");
 			parameters.Add(Label != null ? Label.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18461,15 +18931,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMirroredProfileDef>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(ParentProfile != null ? ParentProfile.ToStepValue() : "$");
+			parameters.Add("*");
+			parameters.Add(Label != null ? Label.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18508,19 +18983,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDerivedUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Elements != null ? Elements.ToStepValue() : "$");
 			parameters.Add(UnitType.ToStepValue());
 			parameters.Add(UserDefinedType != null ? UserDefinedType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18546,18 +19020,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDerivedUnitElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(Exponent.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18593,13 +19066,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDimensionalExponents>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(LengthExponent.ToStepValue());
 			parameters.Add(MassExponent.ToStepValue());
 			parameters.Add(TimeExponent.ToStepValue());
@@ -18608,8 +19079,9 @@ namespace IFC4
 			parameters.Add(AmountOfSubstanceExponent.ToStepValue());
 			parameters.Add(LuminousIntensityExponent.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18634,17 +19106,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDirection>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(DirectionRatios != null ? DirectionRatios.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18676,17 +19147,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDiscreteAccessory>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18719,17 +19197,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDiscreteAccessoryType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18761,17 +19247,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionChamberElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18804,15 +19297,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionFlowElement>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18845,17 +19346,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionChamberElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18884,15 +19393,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionFlowElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -18921,15 +19422,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionCircuit>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -18963,18 +19471,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionSystem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19006,17 +19518,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowInstrument>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19048,17 +19567,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProtectiveDeviceTrippingUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19090,17 +19616,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSensor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19132,17 +19665,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcUnitaryControlElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19175,15 +19715,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionElement>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19216,17 +19764,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowInstrumentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19259,17 +19815,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProtectiveDeviceTrippingUnitType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19302,17 +19866,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSensorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19345,17 +19917,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcUnitaryControlElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19384,15 +19964,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionElementType>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19421,15 +20010,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowStorageDevice>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19458,15 +20055,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowTreatmentDevice>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19495,15 +20100,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowStorageDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -19532,15 +20129,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowTreatmentDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -19576,19 +20165,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDistributionPort>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(FlowDirection.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(SystemType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19627,15 +20222,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPort>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -19714,13 +20301,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDocumentInformation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
@@ -19739,8 +20324,9 @@ namespace IFC4
 			parameters.Add(Confidentiality.ToStepValue());
 			parameters.Add(Status.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19778,19 +20364,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDocumentInformationRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingDocument != null ? RelatingDocument.ToStepValue() : "$");
 			parameters.Add(RelatedDocuments != null ? RelatedDocuments.ToStepValue() : "$");
 			parameters.Add(RelationshipType != null ? RelationshipType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19827,18 +20414,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDocumentReference>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(ReferencedDocument != null ? ReferencedDocument.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19867,15 +20456,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDoorStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(OverallHeight != null ? OverallHeight.ToStepValue() : "$");
+			parameters.Add(OverallWidth != null ? OverallWidth.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
+			parameters.Add(OperationType.ToStepValue());
+			parameters.Add(UserDefinedOperationType != null ? UserDefinedOperationType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19931,13 +20533,15 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDoorLiningProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(LiningDepth != null ? LiningDepth.ToStepValue() : "$");
 			parameters.Add(LiningThickness != null ? LiningThickness.ToStepValue() : "$");
 			parameters.Add(ThresholdDepth != null ? ThresholdDepth.ToStepValue() : "$");
@@ -19952,8 +20556,9 @@ namespace IFC4
 			parameters.Add(LiningToPanelOffsetX != null ? LiningToPanelOffsetX.ToStepValue() : "$");
 			parameters.Add(LiningToPanelOffsetY != null ? LiningToPanelOffsetY.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -19982,15 +20587,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPreDefinedPropertySet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -20032,21 +20629,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDoorPanelProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(PanelDepth != null ? PanelDepth.ToStepValue() : "$");
 			parameters.Add(PanelOperation.ToStepValue());
 			parameters.Add(PanelWidth != null ? PanelWidth.ToStepValue() : "$");
 			parameters.Add(PanelPosition.ToStepValue());
 			parameters.Add(ShapeAspectStyle != null ? ShapeAspectStyle.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20088,20 +20688,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDoorStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(ConstructionType.ToStepValue());
 			parameters.Add(ParameterTakesPrecedence.ToStepValue());
 			parameters.Add(Sizeable.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20139,18 +20746,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTypeProduct>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
 			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
 			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20171,15 +20783,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDraughtingPreDefinedColour>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20200,15 +20813,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPreDefinedColour>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -20229,15 +20834,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDraughtingPreDefinedCurveFont>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20258,15 +20864,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPreDefinedCurveFont>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -20298,17 +20896,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuctFitting>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20341,17 +20946,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuctFittingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20383,17 +20996,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuctSegment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20426,17 +21046,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuctSegmentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20468,17 +21096,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuctSilencer>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20511,17 +21146,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcDuctSilencerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20547,18 +21190,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEdge>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(EdgeStart != null ? EdgeStart.ToStepValue() : "$");
 			parameters.Add(EdgeEnd != null ? EdgeEnd.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20584,18 +21226,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEdgeCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(EdgeStart != null ? EdgeStart.ToStepValue() : "$");
+			parameters.Add(EdgeEnd != null ? EdgeEnd.ToStepValue() : "$");
 			parameters.Add(EdgeGeometry != null ? EdgeGeometry.ToStepValue() : "$");
 			parameters.Add(SameSense.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20623,18 +21266,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOrientedEdge>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add("*");
+			parameters.Add("*");
 			parameters.Add(EdgeElement != null ? EdgeElement.ToStepValue() : "$");
 			parameters.Add(Orientation.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20658,17 +21302,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSubedge>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(EdgeStart != null ? EdgeStart.ToStepValue() : "$");
+			parameters.Add(EdgeEnd != null ? EdgeEnd.ToStepValue() : "$");
 			parameters.Add(ParentEdge != null ? ParentEdge.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20693,17 +21338,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEdgeLoop>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(EdgeList != null ? EdgeList.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20724,15 +21368,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLoop>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20764,17 +21407,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricAppliance>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20807,17 +21457,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricApplianceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20849,17 +21507,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricDistributionBoard>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20892,17 +21557,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricDistributionBoardType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20934,17 +21607,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricFlowStorageDevice>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -20977,17 +21657,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricFlowStorageDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21019,17 +21707,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricGenerator>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21062,17 +21757,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricGeneratorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21104,17 +21807,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricMotor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21147,17 +21857,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricMotorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21189,17 +21907,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricTimeControl>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21232,17 +21957,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElectricTimeControlType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21276,18 +22009,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementAssembly>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(AssemblyPlace.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21316,15 +22056,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFeatureElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -21353,15 +22085,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFurnishingElement>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21393,17 +22133,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeographicElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21435,17 +22182,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTransportElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21474,15 +22228,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVirtualElement>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21515,17 +22277,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementAssemblyType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21557,17 +22327,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFastener>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21603,19 +22380,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMechanicalFastener>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(NominalLength != null ? NominalLength.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21647,17 +22431,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcingElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(SteelGrade != null ? SteelGrade.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -21689,17 +22463,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVibrationIsolator>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21732,17 +22513,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFastenerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21779,19 +22568,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMechanicalFastenerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(NominalLength != null ? NominalLength.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21820,15 +22617,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcingElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -21861,17 +22650,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVibrationIsolatorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21906,18 +22703,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcElementQuantity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(MethodOfMeasurement != null ? MethodOfMeasurement.ToStepValue() : "$");
 			parameters.Add(Quantities != null ? Quantities.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -21946,15 +22746,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantitySet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -21983,15 +22775,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFurnishingElementType>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22024,17 +22825,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeographicElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22067,17 +22876,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTransportElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22098,15 +22915,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlane>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22142,18 +22960,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEllipseProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(SemiAxis1 != null ? SemiAxis1.ToStepValue() : "$");
 			parameters.Add(SemiAxis2 != null ? SemiAxis2.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22185,17 +23005,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEngine>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22227,17 +23054,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEvaporativeCooler>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22269,17 +23103,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEvaporator>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22311,17 +23152,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcHeatExchanger>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22353,17 +23201,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcHumidifier>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22395,17 +23250,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMotorConnection>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22437,17 +23299,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSolarDevice>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22479,17 +23348,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTransformer>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22521,17 +23397,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTubeBundle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22563,17 +23446,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcUnitaryEquipment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22606,17 +23496,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEngineType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22649,17 +23547,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEvaporativeCoolerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22692,17 +23598,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEvaporatorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22735,17 +23649,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcHeatExchangerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22778,17 +23700,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcHumidifierType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22821,17 +23751,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMotorConnectionType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22864,17 +23802,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSolarDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22907,17 +23853,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTransformerType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22950,17 +23904,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTubeBundleType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -22993,17 +23955,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcUnitaryEquipmentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23041,20 +24011,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEvent>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(EventTriggerType.ToStepValue());
 			parameters.Add(UserDefinedEventTriggerType != null ? UserDefinedEventTriggerType.ToStepValue() : "$");
 			parameters.Add(EventOccurenceTime != null ? EventOccurenceTime.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23097,18 +24073,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProcess>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
-			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23146,20 +24111,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEventTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
 			parameters.Add(ActualDate != null ? ActualDate.ToStepValue() : "$");
 			parameters.Add(EarlyDate != null ? EarlyDate.ToStepValue() : "$");
 			parameters.Add(LateDate != null ? LateDate.ToStepValue() : "$");
 			parameters.Add(ScheduleDate != null ? ScheduleDate.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23195,19 +24162,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSchedulingTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(DataOrigin.ToStepValue());
-			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23245,19 +24200,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcEventType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ProcessType != null ? ProcessType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(EventTriggerType.ToStepValue());
 			parameters.Add(UserDefinedEventTriggerType != null ? UserDefinedEventTriggerType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23296,19 +24259,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTypeProcess>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
-			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
-			parameters.Add(ProcessType != null ? ProcessType.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23345,19 +24296,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExtendedProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-			parameters.Add(Properties != null ? Properties.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23390,17 +24329,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Properties != null ? Properties.ToStepValue() : "$");
 			parameters.Add(Material != null ? Material.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23433,17 +24374,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProfileProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Properties != null ? Properties.ToStepValue() : "$");
 			parameters.Add(ProfileDefinition != null ? ProfileDefinition.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23467,15 +24410,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyAbstraction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23524,13 +24459,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLibraryInformation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Version != null ? Version.ToStepValue() : "$");
 			parameters.Add(Publisher != null ? Publisher.ToStepValue() : "$");
@@ -23538,8 +24471,9 @@ namespace IFC4
 			parameters.Add(Location != null ? Location.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23568,15 +24502,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternallyDefinedHatchStyle>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23605,15 +24542,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternallyDefinedSurfaceStyle>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23642,15 +24582,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternallyDefinedTextFont>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23689,19 +24632,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLibraryReference>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Location != null ? Location.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Language != null ? Language.ToStepValue() : "$");
 			parameters.Add(ReferencedLibrary != null ? ReferencedLibrary.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23737,18 +24682,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternalReferenceRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingReference != null ? RelatingReference.ToStepValue() : "$");
 			parameters.Add(RelatedResourceObjects != null ? RelatedResourceObjects.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23783,17 +24729,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternalSpatialElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23822,15 +24775,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExternalSpatialStructureElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23871,17 +24816,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpatialElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -23917,18 +24852,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExtrudedAreaSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(ExtrudedDirection != null ? ExtrudedDirection.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -23961,17 +24897,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcExtrudedAreaSolidTapered>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(ExtrudedDirection != null ? ExtrudedDirection.ToStepValue() : "$");
+			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 			parameters.Add(EndSweptArea != null ? EndSweptArea.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24006,18 +24945,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSweptAreaSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
-			parameters.Add(Position != null ? Position.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -24043,17 +24971,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFace>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Bounds != null ? Bounds.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24078,17 +25005,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFaceBasedSurfaceModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(FbsmFaces != null ? FbsmFaces.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24114,18 +25040,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFaceBound>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Bound != null ? Bound.ToStepValue() : "$");
 			parameters.Add(Orientation.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24146,15 +25071,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFaceOuterBound>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Bound != null ? Bound.ToStepValue() : "$");
+			parameters.Add(Orientation.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24175,15 +25102,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFacetedBrep>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Outer != null ? Outer.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24207,17 +25135,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFacetedBrepWithVoids>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Outer != null ? Outer.ToStepValue() : "$");
 			parameters.Add(Voids != null ? Voids.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24259,13 +25187,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFailureConnectionCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(TensionFailureX != null ? TensionFailureX.ToStepValue() : "$");
 			parameters.Add(TensionFailureY != null ? TensionFailureY.ToStepValue() : "$");
 			parameters.Add(TensionFailureZ != null ? TensionFailureZ.ToStepValue() : "$");
@@ -24273,8 +25200,9 @@ namespace IFC4
 			parameters.Add(CompressionFailureY != null ? CompressionFailureY.ToStepValue() : "$");
 			parameters.Add(CompressionFailureZ != null ? CompressionFailureZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24306,17 +25234,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralConnectionCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -24348,17 +25266,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFan>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24391,17 +25316,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFanType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24432,15 +25365,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFeatureElementAddition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -24471,15 +25396,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFeatureElementSubtraction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -24511,17 +25428,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceFeature>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24553,17 +25477,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProjectionElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24598,17 +25529,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOpeningElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24640,17 +25578,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVoidingFeature>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24685,18 +25630,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFillAreaStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(FillStyles != null ? FillStyles.ToStepValue() : "$");
 			parameters.Add(ModelorDraughting.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24739,21 +25684,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFillAreaStyleHatching>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(HatchLineAppearance != null ? HatchLineAppearance.ToStepValue() : "$");
 			parameters.Add(StartOfNextHatchLine != null ? StartOfNextHatchLine.ToStepValue() : "$");
 			parameters.Add(PointOfReferenceHatchLine != null ? PointOfReferenceHatchLine.ToStepValue() : "$");
 			parameters.Add(PatternStart != null ? PatternStart.ToStepValue() : "$");
 			parameters.Add(HatchLineAngle != null ? HatchLineAngle.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24781,19 +25725,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFillAreaStyleTiles>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TilingPattern != null ? TilingPattern.ToStepValue() : "$");
 			parameters.Add(Tiles != null ? Tiles.ToStepValue() : "$");
 			parameters.Add(TilingScale != null ? TilingScale.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24825,17 +25768,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFilter>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24868,17 +25818,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFilterType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24910,17 +25868,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFireSuppressionTerminal>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -24953,17 +25918,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFireSuppressionTerminalType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25003,20 +25976,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFixedReferenceSweptAreaSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Directrix != null ? Directrix.ToStepValue() : "$");
 			parameters.Add(StartParam != null ? StartParam.ToStepValue() : "$");
 			parameters.Add(EndParam != null ? EndParam.ToStepValue() : "$");
 			parameters.Add(FixedReference != null ? FixedReference.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25048,17 +26022,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowMeter>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25090,17 +26071,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProtectiveDevice>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25132,17 +26120,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSwitchingDevice>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25174,17 +26169,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcValve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25217,17 +26219,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFlowMeterType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25260,17 +26270,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProtectiveDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25303,17 +26321,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSwitchingDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25346,17 +26372,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcValveType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25388,17 +26422,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcJunctionBox>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25430,17 +26471,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPipeFitting>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25473,17 +26521,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcJunctionBoxType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25516,17 +26572,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPipeFittingType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25558,17 +26622,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPump>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25601,17 +26672,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPumpType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25643,17 +26722,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPipeSegment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25686,17 +26772,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPipeSegmentType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25728,17 +26822,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTank>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25771,17 +26872,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTankType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25813,17 +26922,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLamp>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25855,17 +26971,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightFixture>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25897,17 +27020,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMedicalDevice>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25939,17 +27069,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOutlet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -25981,17 +27118,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSanitaryTerminal>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26023,17 +27167,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpaceHeater>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26065,17 +27216,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStackTerminal>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26107,17 +27265,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWasteTerminal>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26150,17 +27315,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLampType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26193,17 +27366,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightFixtureType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26236,17 +27417,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMedicalDeviceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26279,17 +27468,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOutletType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26322,17 +27519,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSanitaryTerminalType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26365,17 +27570,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpaceHeaterType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26408,17 +27621,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStackTerminalType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26451,17 +27672,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWasteTerminalType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26493,17 +27722,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcInterceptor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26536,17 +27772,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcInterceptorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26578,17 +27822,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFurniture>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26620,17 +27871,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSystemFurnitureElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26665,18 +27923,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcFurnitureType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(AssemblyPlace.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26708,17 +27974,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSystemFurnitureElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26739,15 +28013,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeometricCurveSet>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Elements != null ? Elements.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26772,17 +28047,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeometricSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Elements != null ? Elements.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26825,20 +28099,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeometricRepresentationContext>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ContextIdentifier != null ? ContextIdentifier.ToStepValue() : "$");
+			parameters.Add(ContextType != null ? ContextType.ToStepValue() : "$");
 			parameters.Add(CoordinateSpaceDimension != null ? CoordinateSpaceDimension.ToStepValue() : "$");
 			parameters.Add(Precision.ToStepValue());
 			parameters.Add(WorldCoordinateSystem != null ? WorldCoordinateSystem.ToStepValue() : "$");
 			parameters.Add(TrueNorth != null ? TrueNorth.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26882,20 +28157,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGeometricRepresentationSubContext>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ContextIdentifier != null ? ContextIdentifier.ToStepValue() : "$");
+			parameters.Add(ContextType != null ? ContextType.ToStepValue() : "$");
+			parameters.Add("*");
+			parameters.Add("*");
+			parameters.Add("*");
+			parameters.Add("*");
 			parameters.Add(ParentContext != null ? ParentContext.ToStepValue() : "$");
 			parameters.Add(TargetScale != null ? TargetScale.ToStepValue() : "$");
 			parameters.Add(TargetView.ToStepValue());
 			parameters.Add(UserDefinedTargetView != null ? UserDefinedTargetView.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -26932,18 +28212,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRepresentationContext>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ContextIdentifier != null ? ContextIdentifier.ToStepValue() : "$");
-			parameters.Add(ContextType != null ? ContextType.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -26982,20 +28251,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightSource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(LightColour != null ? LightColour.ToStepValue() : "$");
-			parameters.Add(AmbientIntensity != null ? AmbientIntensity.ToStepValue() : "$");
-			parameters.Add(Intensity != null ? Intensity.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -27021,18 +28277,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlanarExtent>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(SizeInX != null ? SizeInX.ToStepValue() : "$");
 			parameters.Add(SizeInY != null ? SizeInY.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27061,19 +28316,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSectionedSpine>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(SpineCurve != null ? SpineCurve.ToStepValue() : "$");
 			parameters.Add(CrossSections != null ? CrossSections.ToStepValue() : "$");
 			parameters.Add(CrossSectionPositions != null ? CrossSectionPositions.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27098,17 +28352,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcShellBasedSurfaceModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(SbsmBoundary != null ? SbsmBoundary.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27129,15 +28382,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTessellatedItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -27165,19 +28410,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextLiteral>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Literal != null ? Literal.ToStepValue() : "$");
 			parameters.Add(Placement != null ? Placement.ToStepValue() : "$");
 			parameters.Add(Path != null ? Path.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27204,18 +28448,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVector>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Orientation != null ? Orientation.ToStepValue() : "$");
 			parameters.Add(Magnitude != null ? Magnitude.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27241,15 +28484,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRepresentationItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -27293,20 +28528,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGrid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(UAxes != null ? UAxes.ToStepValue() : "$");
 			parameters.Add(VAxes != null ? VAxes.ToStepValue() : "$");
 			parameters.Add(WAxes != null ? WAxes.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27356,19 +28597,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGridAxis>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(AxisTag != null ? AxisTag.ToStepValue() : "$");
 			parameters.Add(AxisCurve != null ? AxisCurve.ToStepValue() : "$");
 			parameters.Add(SameSense != null ? SameSense.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27403,18 +28643,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcGridPlacement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(PlacementLocation != null ? PlacementLocation.ToStepValue() : "$");
 			parameters.Add(PlacementRefDirection != null ? PlacementRefDirection.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27440,15 +28679,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcObjectPlacement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -27491,13 +28722,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcInventory>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Jurisdiction != null ? Jurisdiction.ToStepValue() : "$");
 			parameters.Add(ResponsiblePersons != null ? ResponsiblePersons.ToStepValue() : "$");
@@ -27505,8 +28739,9 @@ namespace IFC4
 			parameters.Add(CurrentValue != null ? CurrentValue.ToStepValue() : "$");
 			parameters.Add(OriginalValue != null ? OriginalValue.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27555,21 +28790,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadGroup>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(ActionType.ToStepValue());
 			parameters.Add(ActionSource.ToStepValue());
 			parameters.Add(Coefficient != null ? Coefficient.ToStepValue() : "$");
 			parameters.Add(Purpose != null ? Purpose.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27610,19 +28849,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralResultGroup>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(TheoryType.ToStepValue());
 			parameters.Add(ResultForLoadGroup != null ? ResultForLoadGroup.ToStepValue() : "$");
 			parameters.Add(IsLinear.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27648,18 +28891,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPolygonalBoundedHalfSpace>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(BaseSurface != null ? BaseSurface.ToStepValue() : "$");
+			parameters.Add(AgreementFlag.ToStepValue());
 			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(PolygonalBoundary != null ? PolygonalBoundary.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27707,13 +28951,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(OverallWidth != null ? OverallWidth.ToStepValue() : "$");
 			parameters.Add(OverallDepth != null ? OverallDepth.ToStepValue() : "$");
 			parameters.Add(WebThickness != null ? WebThickness.ToStepValue() : "$");
@@ -27722,8 +28967,9 @@ namespace IFC4
 			parameters.Add(FlangeEdgeRadius != null ? FlangeEdgeRadius.ToStepValue() : "$");
 			parameters.Add(FlangeSlope != null ? FlangeSlope.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27756,17 +29002,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcImageTexture>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(RepeatS.ToStepValue());
+			parameters.Add(RepeatT.ToStepValue());
+			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
+			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
+			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
 			parameters.Add(URLReference != null ? URLReference.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27807,20 +29057,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIndexedColourMap>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(MappedTo != null ? MappedTo.ToStepValue() : "$");
 			parameters.Add(Overrides != null ? Overrides.ToStepValue() : "$");
 			parameters.Add(Colours != null ? Colours.ToStepValue() : "$");
 			parameters.Add(ColourIndex != null ? ColourIndex.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27846,18 +29095,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIndexedTextureMap>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(MappedTo != null ? MappedTo.ToStepValue() : "$");
-			parameters.Add(TexCoords != null ? TexCoords.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -27890,17 +29128,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIndexedTriangleTextureMap>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Maps != null ? Maps.ToStepValue() : "$");
+			parameters.Add(MappedTo != null ? MappedTo.ToStepValue() : "$");
+			parameters.Add(TexCoords != null ? TexCoords.ToStepValue() : "$");
 			parameters.Add(TexCoordIndex != null ? TexCoordIndex.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -27924,17 +29164,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextureCoordinate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Maps != null ? Maps.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -27967,17 +29197,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIrregularTimeSeries>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
+			parameters.Add(EndTime != null ? EndTime.ToStepValue() : "$");
+			parameters.Add(TimeSeriesDataType.ToStepValue());
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(Values != null ? Values.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28031,24 +29268,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTimeSeries>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
-			parameters.Add(EndTime != null ? EndTime.ToStepValue() : "$");
-			parameters.Add(TimeSeriesDataType.ToStepValue());
-			parameters.Add(DataOrigin.ToStepValue());
-			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
-			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -28074,18 +29294,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcIrregularTimeSeriesValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TimeStamp != null ? TimeStamp.ToStepValue() : "$");
 			parameters.Add(ListValues != null ? ListValues.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28129,13 +29348,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 			parameters.Add(Width != null ? Width.ToStepValue() : "$");
 			parameters.Add(Thickness != null ? Thickness.ToStepValue() : "$");
@@ -28143,8 +29363,9 @@ namespace IFC4
 			parameters.Add(EdgeRadius != null ? EdgeRadius.ToStepValue() : "$");
 			parameters.Add(LegSlope != null ? LegSlope.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28180,18 +29401,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLagTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
 			parameters.Add(LagValue != null ? LagValue.ToStepValue() : "$");
 			parameters.Add(DurationType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28219,19 +29442,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightDistributionData>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(MainPlaneAngle != null ? MainPlaneAngle.ToStepValue() : "$");
 			parameters.Add(SecondaryPlaneAngle != null ? SecondaryPlaneAngle.ToStepValue() : "$");
 			parameters.Add(LuminousIntensity != null ? LuminousIntensity.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28257,18 +29479,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightIntensityDistribution>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(LightDistributionCurve.ToStepValue());
 			parameters.Add(DistributionData != null ? DistributionData.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28297,15 +29518,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightSourceAmbient>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(LightColour != null ? LightColour.ToStepValue() : "$");
+			parameters.Add(AmbientIntensity != null ? AmbientIntensity.ToStepValue() : "$");
+			parameters.Add(Intensity != null ? Intensity.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28338,17 +29563,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightSourceDirectional>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(LightColour != null ? LightColour.ToStepValue() : "$");
+			parameters.Add(AmbientIntensity != null ? AmbientIntensity.ToStepValue() : "$");
+			parameters.Add(Intensity != null ? Intensity.ToStepValue() : "$");
 			parameters.Add(Orientation != null ? Orientation.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28395,13 +29623,15 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightSourceGoniometric>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(LightColour != null ? LightColour.ToStepValue() : "$");
+			parameters.Add(AmbientIntensity != null ? AmbientIntensity.ToStepValue() : "$");
+			parameters.Add(Intensity != null ? Intensity.ToStepValue() : "$");
 			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(ColourAppearance != null ? ColourAppearance.ToStepValue() : "$");
 			parameters.Add(ColourTemperature != null ? ColourTemperature.ToStepValue() : "$");
@@ -28409,8 +29639,9 @@ namespace IFC4
 			parameters.Add(LightEmissionSource.ToStepValue());
 			parameters.Add(LightDistributionDataSource != null ? LightDistributionDataSource.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28455,21 +29686,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightSourcePositional>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(LightColour != null ? LightColour.ToStepValue() : "$");
+			parameters.Add(AmbientIntensity != null ? AmbientIntensity.ToStepValue() : "$");
+			parameters.Add(Intensity != null ? Intensity.ToStepValue() : "$");
 			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 			parameters.Add(ConstantAttenuation != null ? ConstantAttenuation.ToStepValue() : "$");
 			parameters.Add(DistanceAttenuation != null ? DistanceAttenuation.ToStepValue() : "$");
 			parameters.Add(QuadricAttenuation != null ? QuadricAttenuation.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28510,20 +29744,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLightSourceSpot>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(LightColour != null ? LightColour.ToStepValue() : "$");
+			parameters.Add(AmbientIntensity != null ? AmbientIntensity.ToStepValue() : "$");
+			parameters.Add(Intensity != null ? Intensity.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
+			parameters.Add(ConstantAttenuation != null ? ConstantAttenuation.ToStepValue() : "$");
+			parameters.Add(DistanceAttenuation != null ? DistanceAttenuation.ToStepValue() : "$");
+			parameters.Add(QuadricAttenuation != null ? QuadricAttenuation.ToStepValue() : "$");
 			parameters.Add(Orientation != null ? Orientation.ToStepValue() : "$");
 			parameters.Add(ConcentrationExponent != null ? ConcentrationExponent.ToStepValue() : "$");
 			parameters.Add(SpreadAngle != null ? SpreadAngle.ToStepValue() : "$");
 			parameters.Add(BeamWidthAngle != null ? BeamWidthAngle.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28558,18 +29800,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcLocalPlacement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(PlacementRelTo != null ? PlacementRelTo.ToStepValue() : "$");
 			parameters.Add(RelativePlacement != null ? RelativePlacement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28593,17 +29834,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPolyLoop>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Polygon != null ? Polygon.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28627,17 +29867,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVertexLoop>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(LoopVertex != null ? LoopVertex.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28663,18 +29902,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMappedItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(MappingSource != null ? MappingSource.ToStepValue() : "$");
 			parameters.Add(MappingTarget != null ? MappingTarget.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28720,19 +29958,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterial>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Category != null ? Category.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28760,15 +29997,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialDefinition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -28794,18 +30023,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialClassificationRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(MaterialClassifications != null ? MaterialClassifications.ToStepValue() : "$");
 			parameters.Add(ClassifiedMaterial != null ? ClassifiedMaterial.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28847,21 +30075,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialConstituent>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Material != null ? Material.ToStepValue() : "$");
 			parameters.Add(Fraction != null ? Fraction.ToStepValue() : "$");
 			parameters.Add(Category != null ? Category.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28898,19 +30125,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialConstituentSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(MaterialConstituents != null ? MaterialConstituents.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -28956,13 +30182,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialLayer>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Material != null ? Material.ToStepValue() : "$");
 			parameters.Add(LayerThickness != null ? LayerThickness.ToStepValue() : "$");
 			parameters.Add(IsVentilated != null ? IsVentilated.ToStepValue() : "$");
@@ -28971,8 +30195,9 @@ namespace IFC4
 			parameters.Add(Category != null ? Category.ToStepValue() : "$");
 			parameters.Add(Priority != null ? Priority.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29010,19 +30235,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialLayerSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(MaterialLayers != null ? MaterialLayers.ToStepValue() : "$");
 			parameters.Add(LayerSetName != null ? LayerSetName.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29066,13 +30290,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialProfile>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Material != null ? Material.ToStepValue() : "$");
@@ -29080,8 +30302,9 @@ namespace IFC4
 			parameters.Add(Priority != null ? Priority.ToStepValue() : "$");
 			parameters.Add(Category != null ? Category.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29120,20 +30343,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialProfileSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(MaterialProfiles != null ? MaterialProfiles.ToStepValue() : "$");
 			parameters.Add(CompositeProfile != null ? CompositeProfile.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29166,17 +30388,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialDefinitionRepresentation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Representations != null ? Representations.ToStepValue() : "$");
 			parameters.Add(RepresentedMaterial != null ? RepresentedMaterial.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29213,19 +30437,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProductRepresentation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-			parameters.Add(Representations != null ? Representations.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -29261,18 +30473,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialLayerWithOffsets>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Material != null ? Material.ToStepValue() : "$");
+			parameters.Add(LayerThickness != null ? LayerThickness.ToStepValue() : "$");
+			parameters.Add(IsVentilated != null ? IsVentilated.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Category != null ? Category.ToStepValue() : "$");
+			parameters.Add(Priority != null ? Priority.ToStepValue() : "$");
 			parameters.Add(OffsetDirection.ToStepValue());
 			parameters.Add(OffsetValues != null ? OffsetValues.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29316,21 +30534,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialLayerSetUsage>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ForLayerSet != null ? ForLayerSet.ToStepValue() : "$");
 			parameters.Add(LayerSetDirection.ToStepValue());
 			parameters.Add(DirectionSense.ToStepValue());
 			parameters.Add(OffsetFromReferenceLine != null ? OffsetFromReferenceLine.ToStepValue() : "$");
 			parameters.Add(ReferenceExtent != null ? ReferenceExtent.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29354,15 +30571,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialUsageDefinition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -29386,17 +30595,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialList>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Materials != null ? Materials.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29429,17 +30637,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialProfileWithOffsets>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Material != null ? Material.ToStepValue() : "$");
+			parameters.Add(Profile != null ? Profile.ToStepValue() : "$");
+			parameters.Add(Priority != null ? Priority.ToStepValue() : "$");
+			parameters.Add(Category != null ? Category.ToStepValue() : "$");
 			parameters.Add(OffsetValues != null ? OffsetValues.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29476,19 +30689,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialProfileSetUsage>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ForProfileSet != null ? ForProfileSet.ToStepValue() : "$");
 			parameters.Add(CardinalPoint != null ? CardinalPoint.ToStepValue() : "$");
 			parameters.Add(ReferenceExtent != null ? ReferenceExtent.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29523,18 +30735,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialProfileSetUsageTapering>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ForProfileSet != null ? ForProfileSet.ToStepValue() : "$");
+			parameters.Add(CardinalPoint != null ? CardinalPoint.ToStepValue() : "$");
+			parameters.Add(ReferenceExtent != null ? ReferenceExtent.ToStepValue() : "$");
 			parameters.Add(ForProfileEndSet != null ? ForProfileEndSet.ToStepValue() : "$");
 			parameters.Add(CardinalEndPoint != null ? CardinalEndPoint.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29572,19 +30786,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMaterialRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingMaterial != null ? RelatingMaterial.ToStepValue() : "$");
 			parameters.Add(RelatedMaterials != null ? RelatedMaterials.ToStepValue() : "$");
 			parameters.Add(Expression != null ? Expression.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29610,18 +30825,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMeasureWithUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ValueComponent != null ? ValueComponent.ToStepValue() : "$");
 			parameters.Add(UnitComponent != null ? UnitComponent.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29650,15 +30864,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMemberStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29682,17 +30905,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcMonetaryUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Currency != null ? Currency.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29728,18 +30950,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSIUnit>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add("*");
+			parameters.Add(UnitType.ToStepValue());
 			parameters.Add(Prefix != null ? Prefix.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29777,18 +31000,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTypeObject>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
 			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29827,20 +31053,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRoot>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
-			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -29869,15 +31082,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOpeningStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29929,21 +31151,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOrganization>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Roles != null ? Roles.ToStepValue() : "$");
 			parameters.Add(Addresses != null ? Addresses.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -29979,18 +31200,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOrganizationRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingOrganization != null ? RelatingOrganization.ToStepValue() : "$");
 			parameters.Add(RelatedOrganizations != null ? RelatedOrganizations.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30039,13 +31261,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcOwnerHistory>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(OwningUser != null ? OwningUser.ToStepValue() : "$");
 			parameters.Add(OwningApplication != null ? OwningApplication.ToStepValue() : "$");
 			parameters.Add(State.ToStepValue());
@@ -30055,8 +31275,9 @@ namespace IFC4
 			parameters.Add(LastModifyingApplication != null ? LastModifyingApplication.ToStepValue() : "$");
 			parameters.Add(CreationDate != null ? CreationDate.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30092,18 +31313,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRectangleProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(XDim != null ? XDim.ToStepValue() : "$");
 			parameters.Add(YDim != null ? YDim.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30155,13 +31378,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 			parameters.Add(FlangeWidth != null ? FlangeWidth.ToStepValue() : "$");
 			parameters.Add(WebThickness != null ? WebThickness.ToStepValue() : "$");
@@ -30172,8 +31396,9 @@ namespace IFC4
 			parameters.Add(WebSlope != null ? WebSlope.ToStepValue() : "$");
 			parameters.Add(FlangeSlope != null ? FlangeSlope.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30215,20 +31440,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTrapeziumProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(BottomXDim != null ? BottomXDim.ToStepValue() : "$");
 			parameters.Add(TopXDim != null ? TopXDim.ToStepValue() : "$");
 			parameters.Add(YDim != null ? YDim.ToStepValue() : "$");
 			parameters.Add(TopXOffset != null ? TopXOffset.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30276,13 +31503,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcUShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 			parameters.Add(FlangeWidth != null ? FlangeWidth.ToStepValue() : "$");
 			parameters.Add(WebThickness != null ? WebThickness.ToStepValue() : "$");
@@ -30291,8 +31519,9 @@ namespace IFC4
 			parameters.Add(EdgeRadius != null ? EdgeRadius.ToStepValue() : "$");
 			parameters.Add(FlangeSlope != null ? FlangeSlope.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30338,13 +31567,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcZShapeProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 			parameters.Add(FlangeWidth != null ? FlangeWidth.ToStepValue() : "$");
 			parameters.Add(WebThickness != null ? WebThickness.ToStepValue() : "$");
@@ -30352,8 +31582,9 @@ namespace IFC4
 			parameters.Add(FilletRadius != null ? FilletRadius.ToStepValue() : "$");
 			parameters.Add(EdgeRadius != null ? EdgeRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30377,17 +31608,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPath>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(EdgeList != null ? EdgeList.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30429,21 +31659,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPermeableCoveringProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(PanelPosition.ToStepValue());
 			parameters.Add(FrameDepth != null ? FrameDepth.ToStepValue() : "$");
 			parameters.Add(FrameThickness != null ? FrameThickness.ToStepValue() : "$");
 			parameters.Add(ShapeAspectStyle != null ? ShapeAspectStyle.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30497,13 +31730,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPerson>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
 			parameters.Add(FamilyName != null ? FamilyName.ToStepValue() : "$");
 			parameters.Add(GivenName != null ? GivenName.ToStepValue() : "$");
@@ -30513,8 +31744,9 @@ namespace IFC4
 			parameters.Add(Roles != null ? Roles.ToStepValue() : "$");
 			parameters.Add(Addresses != null ? Addresses.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30553,19 +31785,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPersonAndOrganization>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ThePerson != null ? ThePerson.ToStepValue() : "$");
 			parameters.Add(TheOrganization != null ? TheOrganization.ToStepValue() : "$");
 			parameters.Add(Roles != null ? Roles.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30605,20 +31836,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPhysicalComplexQuantity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(HasQuantities != null ? HasQuantities.ToStepValue() : "$");
 			parameters.Add(Discrimination != null ? Discrimination.ToStepValue() : "$");
 			parameters.Add(Quality != null ? Quality.ToStepValue() : "$");
 			parameters.Add(Usage != null ? Usage.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30659,18 +31891,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPhysicalQuantity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-			parameters.Add(Description != null ? Description.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -30702,17 +31923,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPhysicalSimpleQuantity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -30747,18 +31958,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantityArea>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(AreaValue != null ? AreaValue.ToStepValue() : "$");
 			parameters.Add(Formula != null ? Formula.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30793,18 +32006,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantityCount>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(CountValue != null ? CountValue.ToStepValue() : "$");
 			parameters.Add(Formula != null ? Formula.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30839,18 +32054,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantityLength>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(LengthValue != null ? LengthValue.ToStepValue() : "$");
 			parameters.Add(Formula != null ? Formula.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30885,18 +32102,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantityTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(TimeValue != null ? TimeValue.ToStepValue() : "$");
 			parameters.Add(Formula != null ? Formula.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30931,18 +32150,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantityVolume>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(VolumeValue != null ? VolumeValue.ToStepValue() : "$");
 			parameters.Add(Formula != null ? Formula.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -30977,18 +32198,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcQuantityWeight>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(WeightValue != null ? WeightValue.ToStepValue() : "$");
 			parameters.Add(Formula != null ? Formula.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31030,20 +32253,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPixelTexture>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(RepeatS.ToStepValue());
+			parameters.Add(RepeatT.ToStepValue());
+			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
+			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
+			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
 			parameters.Add(Width != null ? Width.ToStepValue() : "$");
 			parameters.Add(Height != null ? Height.ToStepValue() : "$");
 			parameters.Add(ColourComponents != null ? ColourComponents.ToStepValue() : "$");
 			parameters.Add(Pixel != null ? Pixel.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31067,17 +32294,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlanarBox>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SizeInX != null ? SizeInX.ToStepValue() : "$");
+			parameters.Add(SizeInY != null ? SizeInY.ToStepValue() : "$");
 			parameters.Add(Placement != null ? Placement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31106,15 +32334,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPlateStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31141,18 +32378,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPointOnCurve>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisCurve != null ? BasisCurve.ToStepValue() : "$");
 			parameters.Add(PointParameter != null ? PointParameter.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31181,19 +32417,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPointOnSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(BasisSurface != null ? BasisSurface.ToStepValue() : "$");
 			parameters.Add(PointParameterU != null ? PointParameterU.ToStepValue() : "$");
 			parameters.Add(PointParameterV != null ? PointParameterV.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31217,17 +32452,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPreDefinedItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -31248,15 +32473,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPreDefinedTextFont>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -31277,15 +32494,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPreDefinedProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -31329,13 +32538,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcementBarProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TotalCrossSectionArea != null ? TotalCrossSectionArea.ToStepValue() : "$");
 			parameters.Add(SteelGrade != null ? SteelGrade.ToStepValue() : "$");
 			parameters.Add(BarSurface.ToStepValue());
@@ -31343,8 +32550,9 @@ namespace IFC4
 			parameters.Add(NominalBarDiameter != null ? NominalBarDiameter.ToStepValue() : "$");
 			parameters.Add(BarCount != null ? BarCount.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31382,19 +32590,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSectionProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(SectionType.ToStepValue());
 			parameters.Add(StartProfile != null ? StartProfile.ToStepValue() : "$");
 			parameters.Add(EndProfile != null ? EndProfile.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31441,13 +32648,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSectionReinforcementProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(LongitudinalStartPosition != null ? LongitudinalStartPosition.ToStepValue() : "$");
 			parameters.Add(LongitudinalEndPosition != null ? LongitudinalEndPosition.ToStepValue() : "$");
 			parameters.Add(TransversePosition != null ? TransversePosition.ToStepValue() : "$");
@@ -31455,8 +32660,9 @@ namespace IFC4
 			parameters.Add(SectionDefinition != null ? SectionDefinition.ToStepValue() : "$");
 			parameters.Add(CrossSectionReinforcementDefinitions != null ? CrossSectionReinforcementDefinitions.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31491,18 +32697,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcementDefinitionProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(DefinitionType != null ? DefinitionType.ToStepValue() : "$");
 			parameters.Add(ReinforcementSectionDefinitions != null ? ReinforcementSectionDefinitions.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31556,13 +32765,15 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWindowLiningProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(LiningDepth != null ? LiningDepth.ToStepValue() : "$");
 			parameters.Add(LiningThickness != null ? LiningThickness.ToStepValue() : "$");
 			parameters.Add(TransomThickness != null ? TransomThickness.ToStepValue() : "$");
@@ -31576,8 +32787,9 @@ namespace IFC4
 			parameters.Add(LiningToPanelOffsetX != null ? LiningToPanelOffsetX.ToStepValue() : "$");
 			parameters.Add(LiningToPanelOffsetY != null ? LiningToPanelOffsetY.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31619,21 +32831,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWindowPanelProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(PanelPosition.ToStepValue());
 			parameters.Add(FrameDepth != null ? FrameDepth.ToStepValue() : "$");
 			parameters.Add(FrameThickness != null ? FrameThickness.ToStepValue() : "$");
 			parameters.Add(ShapeAspectStyle != null ? ShapeAspectStyle.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31672,15 +32887,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertySetDefinition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -31722,21 +32929,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextStyleFontModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(FontFamily != null ? FontFamily.ToStepValue() : "$");
 			parameters.Add(FontStyle != null ? FontStyle.ToStepValue() : "$");
 			parameters.Add(FontVariant != null ? FontVariant.ToStepValue() : "$");
 			parameters.Add(FontWeight != null ? FontWeight.ToStepValue() : "$");
 			parameters.Add(FontSize != null ? FontSize.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31766,20 +32973,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceStyleLighting>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(DiffuseTransmissionColour != null ? DiffuseTransmissionColour.ToStepValue() : "$");
 			parameters.Add(DiffuseReflectionColour != null ? DiffuseReflectionColour.ToStepValue() : "$");
 			parameters.Add(TransmissionColour != null ? TransmissionColour.ToStepValue() : "$");
 			parameters.Add(ReflectanceColour != null ? ReflectanceColour.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31813,18 +33019,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceStyleRefraction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(RefractionIndex != null ? RefractionIndex.ToStepValue() : "$");
 			parameters.Add(DispersionFactor != null ? DispersionFactor.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31848,17 +33053,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceStyleShading>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(SurfaceColour != null ? SurfaceColour.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31882,17 +33086,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceStyleWithTextures>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Textures != null ? Textures.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31927,18 +33130,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextStyleForDefinedFont>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Colour != null ? Colour.ToStepValue() : "$");
 			parameters.Add(BackgroundColour != null ? BackgroundColour.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -31982,13 +33184,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextStyleTextModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TextIndent != null ? TextIndent.ToStepValue() : "$");
 			parameters.Add(TextAlign != null ? TextAlign.ToStepValue() : "$");
 			parameters.Add(TextDecoration != null ? TextDecoration.ToStepValue() : "$");
@@ -31997,8 +33197,9 @@ namespace IFC4
 			parameters.Add(TextTransform != null ? TextTransform.ToStepValue() : "$");
 			parameters.Add(LineHeight != null ? LineHeight.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32022,17 +33223,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextureVertex>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Coordinates != null ? Coordinates.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32056,17 +33256,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextureVertexList>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TexCoordsList != null ? TexCoordsList.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32106,20 +33305,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPresentationLayerAssignment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(AssignedItems != null ? AssignedItems.ToStepValue() : "$");
 			parameters.Add(Identifier != null ? Identifier.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32161,20 +33359,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPresentationLayerWithStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(AssignedItems != null ? AssignedItems.ToStepValue() : "$");
+			parameters.Add(Identifier != null ? Identifier.ToStepValue() : "$");
 			parameters.Add(LayerOn != null ? LayerOn.ToStepValue() : "$");
 			parameters.Add(LayerFrozen != null ? LayerFrozen.ToStepValue() : "$");
 			parameters.Add(LayerBlocked != null ? LayerBlocked.ToStepValue() : "$");
 			parameters.Add(LayerStyles != null ? LayerStyles.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32210,18 +33411,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Side != null ? Side.ToStepValue() : "$");
 			parameters.Add(Styles != null ? Styles.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32260,20 +33461,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(TextCharacterAppearance != null ? TextCharacterAppearance.ToStepValue() : "$");
 			parameters.Add(TextStyle != null ? TextStyle.ToStepValue() : "$");
 			parameters.Add(TextFontStyle != null ? TextFontStyle.ToStepValue() : "$");
 			parameters.Add(ModelOrDraughting.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32297,17 +33498,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPresentationStyleAssignment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Styles != null ? Styles.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32339,17 +33539,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProcedure>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32382,17 +33588,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProcedureType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ProcessType != null ? ProcessType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32435,13 +33649,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTask>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 			parameters.Add(Status != null ? Status.ToStepValue() : "$");
 			parameters.Add(WorkMethod != null ? WorkMethod.ToStepValue() : "$");
 			parameters.Add(IsMilestone.ToStepValue());
@@ -32449,8 +33668,9 @@ namespace IFC4
 			parameters.Add(TaskTime != null ? TaskTime.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32485,18 +33705,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProxy>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(ProxyType.ToStepValue());
 			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32535,18 +33761,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralActivity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
-			parameters.Add(GlobalOrLocal.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -32579,15 +33794,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -32623,15 +33830,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcProductDefinitionShape>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(Representations != null ? Representations.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32660,15 +33870,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSimpleProperty>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -32706,19 +33908,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyEnumeration>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(EnumerationValues != null ? EnumerationValues.ToStepValue() : "$");
 			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32756,20 +33957,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyBoundedValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(UpperBoundValue != null ? UpperBoundValue.ToStepValue() : "$");
 			parameters.Add(LowerBoundValue != null ? LowerBoundValue.ToStepValue() : "$");
 			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(SetPointValue != null ? SetPointValue.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32805,15 +34007,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyDefinition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -32842,15 +34036,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyTemplateDefinition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -32888,19 +34074,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyDependencyRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(DependingProperty != null ? DependingProperty.ToStepValue() : "$");
 			parameters.Add(DependantProperty != null ? DependantProperty.ToStepValue() : "$");
 			parameters.Add(Expression != null ? Expression.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32935,18 +34122,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyEnumeratedValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(EnumerationValues != null ? EnumerationValues.ToStepValue() : "$");
 			parameters.Add(EnumerationReference != null ? EnumerationReference.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -32981,18 +34169,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyListValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(ListValues != null ? ListValues.ToStepValue() : "$");
 			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33026,18 +34215,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyReferenceValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(UsageName != null ? UsageName.ToStepValue() : "$");
 			parameters.Add(PropertyReference != null ? PropertyReference.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33070,17 +34260,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertySet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(HasProperties != null ? HasProperties.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33120,19 +34313,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertySetTemplate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(TemplateType.ToStepValue());
 			parameters.Add(ApplicableEntity != null ? ApplicableEntity.ToStepValue() : "$");
 			parameters.Add(HasPropertyTemplates != null ? HasPropertyTemplates.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33166,18 +34362,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertySingleValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(NominalValue != null ? NominalValue.ToStepValue() : "$");
 			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33221,13 +34418,13 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcPropertyTableValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(DefiningValues != null ? DefiningValues.ToStepValue() : "$");
 			parameters.Add(DefinedValues != null ? DefinedValues.ToStepValue() : "$");
 			parameters.Add(Expression != null ? Expression.ToStepValue() : "$");
@@ -33235,8 +34432,9 @@ namespace IFC4
 			parameters.Add(DefinedUnit != null ? DefinedUnit.ToStepValue() : "$");
 			parameters.Add(CurveInterpolation.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33282,13 +34480,15 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSimplePropertyTemplate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(TemplateType.ToStepValue());
 			parameters.Add(PrimaryMeasureType != null ? PrimaryMeasureType.ToStepValue() : "$");
 			parameters.Add(SecondaryMeasureType != null ? SecondaryMeasureType.ToStepValue() : "$");
@@ -33298,8 +34498,9 @@ namespace IFC4
 			parameters.Add(Expression != null ? Expression.ToStepValue() : "$");
 			parameters.Add(AccessState.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33336,19 +34537,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRectangleHollowProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(XDim != null ? XDim.ToStepValue() : "$");
+			parameters.Add(YDim != null ? YDim.ToStepValue() : "$");
 			parameters.Add(WallThickness != null ? WallThickness.ToStepValue() : "$");
 			parameters.Add(InnerFilletRadius != null ? InnerFilletRadius.ToStepValue() : "$");
 			parameters.Add(OuterFilletRadius != null ? OuterFilletRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33381,17 +34586,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRoundedRectangleProfileDef>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ProfileType.ToStepValue());
+			parameters.Add(ProfileName != null ? ProfileName.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(XDim != null ? XDim.ToStepValue() : "$");
+			parameters.Add(YDim != null ? YDim.ToStepValue() : "$");
 			parameters.Add(RoundingRadius != null ? RoundingRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33442,13 +34651,11 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRecurrencePattern>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(RecurrenceType.ToStepValue());
 			parameters.Add(DayComponent != null ? DayComponent.ToStepValue() : "$");
 			parameters.Add(WeekdayComponent != null ? WeekdayComponent.ToStepValue() : "$");
@@ -33458,8 +34665,9 @@ namespace IFC4
 			parameters.Add(Occurrences != null ? Occurrences.ToStepValue() : "$");
 			parameters.Add(TimePeriods != null ? TimePeriods.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33500,21 +34708,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReference>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(TypeIdentifier != null ? TypeIdentifier.ToStepValue() : "$");
 			parameters.Add(AttributeIdentifier != null ? AttributeIdentifier.ToStepValue() : "$");
 			parameters.Add(InstanceName != null ? InstanceName.ToStepValue() : "$");
 			parameters.Add(ListPositions != null ? ListPositions.ToStepValue() : "$");
 			parameters.Add(InnerReference != null ? InnerReference.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33550,18 +34757,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRegularTimeSeries>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
+			parameters.Add(EndTime != null ? EndTime.ToStepValue() : "$");
+			parameters.Add(TimeSeriesDataType.ToStepValue());
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
+			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(TimeStep != null ? TimeStep.ToStepValue() : "$");
 			parameters.Add(Values != null ? Values.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33601,21 +34815,29 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcingBar>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(SteelGrade != null ? SteelGrade.ToStepValue() : "$");
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(CrossSectionArea != null ? CrossSectionArea.ToStepValue() : "$");
 			parameters.Add(BarLength != null ? BarLength.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(BarSurface.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33661,13 +34883,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcingBarType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(CrossSectionArea != null ? CrossSectionArea.ToStepValue() : "$");
@@ -33676,8 +34905,9 @@ namespace IFC4
 			parameters.Add(BendingShapeCode != null ? BendingShapeCode.ToStepValue() : "$");
 			parameters.Add(BendingParameters != null ? BendingParameters.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33725,13 +34955,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcingMesh>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(SteelGrade != null ? SteelGrade.ToStepValue() : "$");
 			parameters.Add(MeshLength != null ? MeshLength.ToStepValue() : "$");
 			parameters.Add(MeshWidth != null ? MeshWidth.ToStepValue() : "$");
 			parameters.Add(LongitudinalBarNominalDiameter != null ? LongitudinalBarNominalDiameter.ToStepValue() : "$");
@@ -33742,8 +34979,9 @@ namespace IFC4
 			parameters.Add(TransverseBarSpacing != null ? TransverseBarSpacing.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33789,13 +35027,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTendon>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(SteelGrade != null ? SteelGrade.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(CrossSectionArea != null ? CrossSectionArea.ToStepValue() : "$");
@@ -33805,8 +35050,9 @@ namespace IFC4
 			parameters.Add(AnchorageSlip != null ? AnchorageSlip.ToStepValue() : "$");
 			parameters.Add(MinCurvatureRadius != null ? MinCurvatureRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33838,17 +35084,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTendonAnchor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(SteelGrade != null ? SteelGrade.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33902,13 +35156,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcReinforcingMeshType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(MeshLength != null ? MeshLength.ToStepValue() : "$");
 			parameters.Add(MeshWidth != null ? MeshWidth.ToStepValue() : "$");
@@ -33921,8 +35182,9 @@ namespace IFC4
 			parameters.Add(BendingShapeCode != null ? BendingShapeCode.ToStepValue() : "$");
 			parameters.Add(BendingParameters != null ? BendingParameters.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -33955,17 +35217,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTendonAnchorType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34004,20 +35274,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTendonType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(CrossSectionArea != null ? CrossSectionArea.ToStepValue() : "$");
 			parameters.Add(SheethDiameter != null ? SheethDiameter.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34053,18 +35331,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAggregates>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingObject != null ? RelatingObject.ToStepValue() : "$");
 			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34093,15 +35374,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDecomposes>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -34136,18 +35409,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssigns>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
-			parameters.Add(RelatedObjectsType.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -34182,18 +35444,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToActor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
 			parameters.Add(RelatingActor != null ? RelatingActor.ToStepValue() : "$");
 			parameters.Add(ActingRole != null ? ActingRole.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34226,17 +35493,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToControl>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
 			parameters.Add(RelatingControl != null ? RelatingControl.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34269,17 +35541,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToGroup>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
 			parameters.Add(RelatingGroup != null ? RelatingGroup.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34314,18 +35591,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToProcess>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
 			parameters.Add(RelatingProcess != null ? RelatingProcess.ToStepValue() : "$");
 			parameters.Add(QuantityInProcess != null ? QuantityInProcess.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34358,17 +35640,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToProduct>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
 			parameters.Add(RelatingProduct != null ? RelatingProduct.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34401,17 +35688,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToResource>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
 			parameters.Add(RelatingResource != null ? RelatingResource.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34440,15 +35732,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -34481,17 +35765,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssignsToGroupByFactor>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
+			parameters.Add(RelatedObjectsType.ToStepValue());
+			parameters.Add(RelatingGroup != null ? RelatingGroup.ToStepValue() : "$");
 			parameters.Add(Factor != null ? Factor.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34524,17 +35814,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociates>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -34567,17 +35847,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociatesApproval>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingApproval != null ? RelatingApproval.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34610,17 +35894,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociatesClassification>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingClassification != null ? RelatingClassification.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34655,18 +35943,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociatesConstraint>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(Intent != null ? Intent.ToStepValue() : "$");
 			parameters.Add(RelatingConstraint != null ? RelatingConstraint.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34699,17 +35991,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociatesDocument>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingDocument != null ? RelatingDocument.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34742,17 +36038,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociatesLibrary>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingLibrary != null ? RelatingLibrary.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34785,17 +36085,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelAssociatesMaterial>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingMaterial != null ? RelatingMaterial.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34824,15 +36128,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnects>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -34870,19 +36166,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsElements>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(ConnectionGeometry != null ? ConnectionGeometry.ToStepValue() : "$");
 			parameters.Add(RelatingElement != null ? RelatingElement.ToStepValue() : "$");
 			parameters.Add(RelatedElement != null ? RelatedElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34918,18 +36217,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsPortToElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingPort != null ? RelatingPort.ToStepValue() : "$");
 			parameters.Add(RelatedElement != null ? RelatedElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -34967,19 +36269,22 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsPorts>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingPort != null ? RelatingPort.ToStepValue() : "$");
 			parameters.Add(RelatedPort != null ? RelatedPort.ToStepValue() : "$");
 			parameters.Add(RealizingElement != null ? RealizingElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35015,18 +36320,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsStructuralActivity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingElement != null ? RelatingElement.ToStepValue() : "$");
 			parameters.Add(RelatedStructuralActivity != null ? RelatedStructuralActivity.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35070,13 +36378,15 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsStructuralMember>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingStructuralMember != null ? RelatingStructuralMember.ToStepValue() : "$");
 			parameters.Add(RelatedStructuralConnection != null ? RelatedStructuralConnection.ToStepValue() : "$");
 			parameters.Add(AppliedCondition != null ? AppliedCondition.ToStepValue() : "$");
@@ -35084,8 +36394,9 @@ namespace IFC4
 			parameters.Add(SupportedLength != null ? SupportedLength.ToStepValue() : "$");
 			parameters.Add(ConditionCoordinateSystem != null ? ConditionCoordinateSystem.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35121,18 +36432,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelContainedInSpatialStructure>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedElements != null ? RelatedElements.ToStepValue() : "$");
 			parameters.Add(RelatingStructure != null ? RelatingStructure.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35168,18 +36482,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelCoversBldgElements>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingBuildingElement != null ? RelatingBuildingElement.ToStepValue() : "$");
 			parameters.Add(RelatedCoverings != null ? RelatedCoverings.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35215,18 +36532,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelCoversSpaces>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingSpace != null ? RelatingSpace.ToStepValue() : "$");
 			parameters.Add(RelatedCoverings != null ? RelatedCoverings.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35262,18 +36582,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelFillsElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingOpeningElement != null ? RelatingOpeningElement.ToStepValue() : "$");
 			parameters.Add(RelatedBuildingElement != null ? RelatedBuildingElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35309,18 +36632,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelFlowControlElements>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedControlElements != null ? RelatedControlElements.ToStepValue() : "$");
 			parameters.Add(RelatingFlowElement != null ? RelatingFlowElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35363,21 +36689,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelInterferesElements>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingElement != null ? RelatingElement.ToStepValue() : "$");
 			parameters.Add(RelatedElement != null ? RelatedElement.ToStepValue() : "$");
 			parameters.Add(InterferenceGeometry != null ? InterferenceGeometry.ToStepValue() : "$");
 			parameters.Add(InterferenceType != null ? InterferenceType.ToStepValue() : "$");
 			parameters.Add(ImpliedOrder != null ? ImpliedOrder.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35413,18 +36742,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelReferencedInSpatialStructure>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedElements != null ? RelatedElements.ToStepValue() : "$");
 			parameters.Add(RelatingStructure != null ? RelatingStructure.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35466,21 +36798,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelSequence>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingProcess != null ? RelatingProcess.ToStepValue() : "$");
 			parameters.Add(RelatedProcess != null ? RelatedProcess.ToStepValue() : "$");
 			parameters.Add(TimeLag != null ? TimeLag.ToStepValue() : "$");
 			parameters.Add(SequenceType.ToStepValue());
 			parameters.Add(UserDefinedSequenceType != null ? UserDefinedSequenceType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35516,18 +36851,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelServicesBuildings>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingSystem != null ? RelatingSystem.ToStepValue() : "$");
 			parameters.Add(RelatedBuildings != null ? RelatedBuildings.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35571,21 +36909,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelSpaceBoundary>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingSpace != null ? RelatingSpace.ToStepValue() : "$");
 			parameters.Add(RelatedBuildingElement != null ? RelatedBuildingElement.ToStepValue() : "$");
 			parameters.Add(ConnectionGeometry != null ? ConnectionGeometry.ToStepValue() : "$");
 			parameters.Add(PhysicalOrVirtualBoundary.ToStepValue());
 			parameters.Add(InternalOrExternalBoundary.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35627,20 +36968,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsPathElements>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ConnectionGeometry != null ? ConnectionGeometry.ToStepValue() : "$");
+			parameters.Add(RelatingElement != null ? RelatingElement.ToStepValue() : "$");
+			parameters.Add(RelatedElement != null ? RelatedElement.ToStepValue() : "$");
 			parameters.Add(RelatingPriorities != null ? RelatingPriorities.ToStepValue() : "$");
 			parameters.Add(RelatedPriorities != null ? RelatedPriorities.ToStepValue() : "$");
 			parameters.Add(RelatedConnectionType.ToStepValue());
 			parameters.Add(RelatingConnectionType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35675,18 +37022,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsWithRealizingElements>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ConnectionGeometry != null ? ConnectionGeometry.ToStepValue() : "$");
+			parameters.Add(RelatingElement != null ? RelatingElement.ToStepValue() : "$");
+			parameters.Add(RelatedElement != null ? RelatedElement.ToStepValue() : "$");
 			parameters.Add(RealizingElements != null ? RealizingElements.ToStepValue() : "$");
 			parameters.Add(ConnectionType != null ? ConnectionType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35719,17 +37072,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelConnectsWithEccentricity>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatingStructuralMember != null ? RelatingStructuralMember.ToStepValue() : "$");
+			parameters.Add(RelatedStructuralConnection != null ? RelatedStructuralConnection.ToStepValue() : "$");
+			parameters.Add(AppliedCondition != null ? AppliedCondition.ToStepValue() : "$");
+			parameters.Add(AdditionalConditions != null ? AdditionalConditions.ToStepValue() : "$");
+			parameters.Add(SupportedLength != null ? SupportedLength.ToStepValue() : "$");
+			parameters.Add(ConditionCoordinateSystem != null ? ConditionCoordinateSystem.ToStepValue() : "$");
 			parameters.Add(ConnectionConstraint != null ? ConnectionConstraint.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35765,18 +37127,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDeclares>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingContext != null ? RelatingContext.ToStepValue() : "$");
 			parameters.Add(RelatedDefinitions != null ? RelatedDefinitions.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35812,18 +37177,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelNests>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingObject != null ? RelatingObject.ToStepValue() : "$");
 			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35859,18 +37227,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelProjectsElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingElement != null ? RelatingElement.ToStepValue() : "$");
 			parameters.Add(RelatedFeatureElement != null ? RelatedFeatureElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35906,18 +37277,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelVoidsElement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingBuildingElement != null ? RelatingBuildingElement.ToStepValue() : "$");
 			parameters.Add(RelatedOpeningElement != null ? RelatedOpeningElement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -35946,15 +37320,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDefines>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -35990,18 +37356,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDefinesByObject>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingObject != null ? RelatingObject.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36037,18 +37406,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDefinesByProperties>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingPropertyDefinition != null ? RelatingPropertyDefinition.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36084,18 +37456,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDefinesByTemplate>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedPropertySets != null ? RelatedPropertySets.ToStepValue() : "$");
 			parameters.Add(RelatingTemplate != null ? RelatingTemplate.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36131,18 +37506,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelDefinesByType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedObjects != null ? RelatedObjects.ToStepValue() : "$");
 			parameters.Add(RelatingType != null ? RelatingType.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36177,17 +37555,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelSpaceBoundary1stLevel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatingSpace != null ? RelatingSpace.ToStepValue() : "$");
+			parameters.Add(RelatedBuildingElement != null ? RelatedBuildingElement.ToStepValue() : "$");
+			parameters.Add(ConnectionGeometry != null ? ConnectionGeometry.ToStepValue() : "$");
+			parameters.Add(PhysicalOrVirtualBoundary.ToStepValue());
+			parameters.Add(InternalOrExternalBoundary.ToStepValue());
 			parameters.Add(ParentBoundary != null ? ParentBoundary.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36222,17 +37608,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRelSpaceBoundary2ndLevel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(RelatingSpace != null ? RelatingSpace.ToStepValue() : "$");
+			parameters.Add(RelatedBuildingElement != null ? RelatedBuildingElement.ToStepValue() : "$");
+			parameters.Add(ConnectionGeometry != null ? ConnectionGeometry.ToStepValue() : "$");
+			parameters.Add(PhysicalOrVirtualBoundary.ToStepValue());
+			parameters.Add(InternalOrExternalBoundary.ToStepValue());
+			parameters.Add(ParentBoundary != null ? ParentBoundary.ToStepValue() : "$");
 			parameters.Add(CorrespondingBoundary != null ? CorrespondingBoundary.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36281,20 +37676,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRepresentation>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ContextOfItems != null ? ContextOfItems.ToStepValue() : "$");
-			parameters.Add(RepresentationIdentifier != null ? RepresentationIdentifier.ToStepValue() : "$");
-			parameters.Add(RepresentationType != null ? RepresentationType.ToStepValue() : "$");
-			parameters.Add(Items != null ? Items.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -36327,15 +37709,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcShapeModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -36364,15 +37738,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStyleModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -36409,19 +37775,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStyledItem>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Item != null ? Item.ToStepValue() : "$");
 			parameters.Add(Styles != null ? Styles.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36451,18 +37816,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRepresentationMap>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(MappingOrigin != null ? MappingOrigin.ToStepValue() : "$");
 			parameters.Add(MappedRepresentation != null ? MappedRepresentation.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36498,18 +37862,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcResourceApprovalRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatedResourceObjects != null ? RelatedResourceObjects.ToStepValue() : "$");
 			parameters.Add(RelatingApproval != null ? RelatingApproval.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36545,18 +37910,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcResourceConstraintRelationship>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(RelatingConstraint != null ? RelatingConstraint.ToStepValue() : "$");
 			parameters.Add(RelatedResourceObjects != null ? RelatedResourceObjects.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36616,13 +37982,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcResourceTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
 			parameters.Add(ScheduleWork != null ? ScheduleWork.ToStepValue() : "$");
 			parameters.Add(ScheduleUsage != null ? ScheduleUsage.ToStepValue() : "$");
 			parameters.Add(ScheduleStart != null ? ScheduleStart.ToStepValue() : "$");
@@ -36639,8 +38006,9 @@ namespace IFC4
 			parameters.Add(RemainingUsage != null ? RemainingUsage.ToStepValue() : "$");
 			parameters.Add(Completion != null ? Completion.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36677,18 +38045,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRevolvedAreaSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
 			parameters.Add(Angle != null ? Angle.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36721,17 +38090,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcRevolvedAreaSolidTapered>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
+			parameters.Add(Angle != null ? Angle.ToStepValue() : "$");
 			parameters.Add(EndSweptArea != null ? EndSweptArea.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36795,13 +38167,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTaskTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
 			parameters.Add(DurationType.ToStepValue());
 			parameters.Add(ScheduleDuration != null ? ScheduleDuration.ToStepValue() : "$");
 			parameters.Add(ScheduleStart != null ? ScheduleStart.ToStepValue() : "$");
@@ -36820,8 +38193,9 @@ namespace IFC4
 			parameters.Add(RemainingTime != null ? RemainingTime.ToStepValue() : "$");
 			parameters.Add(Completion != null ? Completion.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36857,19 +38231,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWorkTime>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
 			parameters.Add(RecurrencePattern != null ? RecurrencePattern.ToStepValue() : "$");
 			parameters.Add(Start != null ? Start.ToStepValue() : "$");
 			parameters.Add(Finish != null ? Finish.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36911,21 +38287,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcShapeAspect>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ShapeRepresentations != null ? ShapeRepresentations.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(ProductDefinitional != null ? ProductDefinitional.ToStepValue() : "$");
 			parameters.Add(PartOfProductDefinitionShape != null ? PartOfProductDefinitionShape.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36954,15 +38329,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcShapeRepresentation>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ContextOfItems != null ? ContextOfItems.ToStepValue() : "$");
+			parameters.Add(RepresentationIdentifier != null ? RepresentationIdentifier.ToStepValue() : "$");
+			parameters.Add(RepresentationType != null ? RepresentationType.ToStepValue() : "$");
+			parameters.Add(Items != null ? Items.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -36991,15 +38370,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTopologyRepresentation>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ContextOfItems != null ? ContextOfItems.ToStepValue() : "$");
+			parameters.Add(RepresentationIdentifier != null ? RepresentationIdentifier.ToStepValue() : "$");
+			parameters.Add(RepresentationType != null ? RepresentationType.ToStepValue() : "$");
+			parameters.Add(Items != null ? Items.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37039,21 +38422,29 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSite>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(CompositionType.ToStepValue());
 			parameters.Add(RefLatitude != null ? RefLatitude.ToStepValue() : "$");
 			parameters.Add(RefLongitude != null ? RefLongitude.ToStepValue() : "$");
 			parameters.Add(RefElevation != null ? RefElevation.ToStepValue() : "$");
 			parameters.Add(LandTitleNumber != null ? LandTitleNumber.ToStepValue() : "$");
 			parameters.Add(SiteAddress != null ? SiteAddress.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37082,15 +38473,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSlabElementedCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37119,15 +38519,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSlabStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37163,19 +38572,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSlippageConnectionCondition>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(SlippageX != null ? SlippageX.ToStepValue() : "$");
 			parameters.Add(SlippageY != null ? SlippageY.ToStepValue() : "$");
 			parameters.Add(SlippageZ != null ? SlippageZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37217,21 +38626,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSweptDiskSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Directrix != null ? Directrix.ToStepValue() : "$");
 			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
 			parameters.Add(InnerRadius != null ? InnerRadius.ToStepValue() : "$");
 			parameters.Add(StartParam != null ? StartParam.ToStepValue() : "$");
 			parameters.Add(EndParam != null ? EndParam.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37271,18 +38679,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpace>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
+			parameters.Add(CompositionType.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(ElevationWithFlooring != null ? ElevationWithFlooring.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37317,18 +38733,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpaceType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37357,15 +38781,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpatialStructureElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -37397,17 +38813,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpatialZone>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37439,17 +38862,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpatialElementType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -37484,18 +38897,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSpatialZoneType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37527,17 +38948,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralAction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(DestabilizingLoad.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -37572,18 +38983,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralCurveAction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
+			parameters.Add(DestabilizingLoad.ToStepValue());
 			parameters.Add(ProjectedOrTrue.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37612,15 +39032,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralPointAction>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
+			parameters.Add(DestabilizingLoad.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37655,18 +39085,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralSurfaceAction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
+			parameters.Add(DestabilizingLoad.ToStepValue());
 			parameters.Add(ProjectedOrTrue.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37695,15 +39134,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralReaction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -37746,21 +39177,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralAnalysisModel>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(OrientationOf2DPlane != null ? OrientationOf2DPlane.ToStepValue() : "$");
 			parameters.Add(LoadedBy != null ? LoadedBy.ToStepValue() : "$");
 			parameters.Add(HasResults != null ? HasResults.ToStepValue() : "$");
 			parameters.Add(SharedPlacement != null ? SharedPlacement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37795,17 +39230,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralConnection>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(AppliedCondition != null ? AppliedCondition.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -37838,17 +39263,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralCurveConnection>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedCondition != null ? AppliedCondition.ToStepValue() : "$");
 			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37880,17 +39312,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralPointConnection>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedCondition != null ? AppliedCondition.ToStepValue() : "$");
 			parameters.Add(ConditionCoordinateSystem != null ? ConditionCoordinateSystem.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37919,15 +39358,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralSurfaceConnection>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedCondition != null ? AppliedCondition.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -37956,15 +39403,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLinearAction>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
+			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(ProjectedOrTrue.ToStepValue());
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38000,18 +39459,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralCurveMember>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38040,15 +39505,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralCurveMemberVarying>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
+			parameters.Add(Axis != null ? Axis.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38081,15 +39555,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralMember>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -38122,17 +39588,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralCurveReaction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38164,17 +39638,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoad>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Name != null ? Name.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -38210,18 +39674,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadConfiguration>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Values != null ? Values.ToStepValue() : "$");
 			parameters.Add(Locations != null ? Locations.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38250,15 +39714,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadOrResult>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -38291,17 +39747,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadCase>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
+			parameters.Add(ActionType.ToStepValue());
+			parameters.Add(ActionSource.ToStepValue());
+			parameters.Add(Coefficient != null ? Coefficient.ToStepValue() : "$");
+			parameters.Add(Purpose != null ? Purpose.ToStepValue() : "$");
 			parameters.Add(SelfWeightCoefficients != null ? SelfWeightCoefficients.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38343,13 +39808,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadLinearForce>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(LinearForceX != null ? LinearForceX.ToStepValue() : "$");
 			parameters.Add(LinearForceY != null ? LinearForceY.ToStepValue() : "$");
 			parameters.Add(LinearForceZ != null ? LinearForceZ.ToStepValue() : "$");
@@ -38357,8 +39821,9 @@ namespace IFC4
 			parameters.Add(LinearMomentY != null ? LinearMomentY.ToStepValue() : "$");
 			parameters.Add(LinearMomentZ != null ? LinearMomentZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38387,15 +39852,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadStatic>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -38433,19 +39890,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceReinforcementArea>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(SurfaceReinforcement1 != null ? SurfaceReinforcement1.ToStepValue() : "$");
 			parameters.Add(SurfaceReinforcement2 != null ? SurfaceReinforcement2.ToStepValue() : "$");
 			parameters.Add(ShearReinforcement != null ? ShearReinforcement.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38481,19 +39938,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadPlanarForce>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(PlanarForceX != null ? PlanarForceX.ToStepValue() : "$");
 			parameters.Add(PlanarForceY != null ? PlanarForceY.ToStepValue() : "$");
 			parameters.Add(PlanarForceZ != null ? PlanarForceZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38535,13 +39992,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadSingleDisplacement>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(DisplacementX != null ? DisplacementX.ToStepValue() : "$");
 			parameters.Add(DisplacementY != null ? DisplacementY.ToStepValue() : "$");
 			parameters.Add(DisplacementZ != null ? DisplacementZ.ToStepValue() : "$");
@@ -38549,8 +40005,9 @@ namespace IFC4
 			parameters.Add(RotationalDisplacementRY != null ? RotationalDisplacementRY.ToStepValue() : "$");
 			parameters.Add(RotationalDisplacementRZ != null ? RotationalDisplacementRZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38582,17 +40039,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadSingleDisplacementDistortion>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DisplacementX != null ? DisplacementX.ToStepValue() : "$");
+			parameters.Add(DisplacementY != null ? DisplacementY.ToStepValue() : "$");
+			parameters.Add(DisplacementZ != null ? DisplacementZ.ToStepValue() : "$");
+			parameters.Add(RotationalDisplacementRX != null ? RotationalDisplacementRX.ToStepValue() : "$");
+			parameters.Add(RotationalDisplacementRY != null ? RotationalDisplacementRY.ToStepValue() : "$");
+			parameters.Add(RotationalDisplacementRZ != null ? RotationalDisplacementRZ.ToStepValue() : "$");
 			parameters.Add(Distortion != null ? Distortion.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38634,13 +40097,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadSingleForce>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(ForceX != null ? ForceX.ToStepValue() : "$");
 			parameters.Add(ForceY != null ? ForceY.ToStepValue() : "$");
 			parameters.Add(ForceZ != null ? ForceZ.ToStepValue() : "$");
@@ -38648,8 +40110,9 @@ namespace IFC4
 			parameters.Add(MomentY != null ? MomentY.ToStepValue() : "$");
 			parameters.Add(MomentZ != null ? MomentZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38681,17 +40144,23 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadSingleForceWarping>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(ForceX != null ? ForceX.ToStepValue() : "$");
+			parameters.Add(ForceY != null ? ForceY.ToStepValue() : "$");
+			parameters.Add(ForceZ != null ? ForceZ.ToStepValue() : "$");
+			parameters.Add(MomentX != null ? MomentX.ToStepValue() : "$");
+			parameters.Add(MomentY != null ? MomentY.ToStepValue() : "$");
+			parameters.Add(MomentZ != null ? MomentZ.ToStepValue() : "$");
 			parameters.Add(WarpingMoment != null ? WarpingMoment.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38727,19 +40196,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralLoadTemperature>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(DeltaTConstant != null ? DeltaTConstant.ToStepValue() : "$");
 			parameters.Add(DeltaTY != null ? DeltaTY.ToStepValue() : "$");
 			parameters.Add(DeltaTZ != null ? DeltaTZ.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38774,18 +40243,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralSurfaceMember>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(Thickness != null ? Thickness.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38814,15 +40289,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralPlanarAction>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
+			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(ProjectedOrTrue.ToStepValue());
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38851,15 +40338,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralPointReaction>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38892,17 +40388,25 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralSurfaceReaction>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
+			parameters.Add(GlobalOrLocal.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38931,15 +40435,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStructuralSurfaceMemberVarying>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
+			parameters.Add(Thickness != null ? Thickness.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -38968,15 +40481,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcStyledRepresentation>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(ContextOfItems != null ? ContextOfItems.ToStepValue() : "$");
+			parameters.Add(RepresentationIdentifier != null ? RepresentationIdentifier.ToStepValue() : "$");
+			parameters.Add(RepresentationType != null ? RepresentationType.ToStepValue() : "$");
+			parameters.Add(Items != null ? Items.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39011,18 +40528,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSweptSurface>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(SweptCurve != null ? SweptCurve.ToStepValue() : "$");
-			parameters.Add(Position != null ? Position.ToStepValue() : "$");
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -39062,20 +40568,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceCurveSweptAreaSolid>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptArea != null ? SweptArea.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(Directrix != null ? Directrix.ToStepValue() : "$");
 			parameters.Add(StartParam != null ? StartParam.ToStepValue() : "$");
 			parameters.Add(EndParam != null ? EndParam.ToStepValue() : "$");
 			parameters.Add(ReferenceSurface != null ? ReferenceSurface.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39112,18 +40619,19 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceOfLinearExtrusion>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptCurve != null ? SweptCurve.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(ExtrudedDirection != null ? ExtrudedDirection.ToStepValue() : "$");
 			parameters.Add(Depth != null ? Depth.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39157,17 +40665,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceOfRevolution>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SweptCurve != null ? SweptCurve.ToStepValue() : "$");
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(AxisPosition != null ? AxisPosition.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39214,13 +40723,12 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSurfaceStyleRendering>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(SurfaceColour != null ? SurfaceColour.ToStepValue() : "$");
 			parameters.Add(Transparency != null ? Transparency.ToStepValue() : "$");
 			parameters.Add(DiffuseColour != null ? DiffuseColour.ToStepValue() : "$");
 			parameters.Add(TransmissionColour != null ? TransmissionColour.ToStepValue() : "$");
@@ -39230,8 +40738,9 @@ namespace IFC4
 			parameters.Add(SpecularHighlight != null ? SpecularHighlight.ToStepValue() : "$");
 			parameters.Add(ReflectanceMethod.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39263,17 +40772,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcSweptDiskSolidPolygonal>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Directrix != null ? Directrix.ToStepValue() : "$");
+			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
+			parameters.Add(InnerRadius != null ? InnerRadius.ToStepValue() : "$");
+			parameters.Add(StartParam != null ? StartParam.ToStepValue() : "$");
+			parameters.Add(EndParam != null ? EndParam.ToStepValue() : "$");
 			parameters.Add(FilletRadius != null ? FilletRadius.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39305,17 +40818,21 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcZone>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39356,19 +40873,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTable>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Rows != null ? Rows.ToStepValue() : "$");
 			parameters.Add(Columns != null ? Columns.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39408,21 +40924,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTableColumn>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Identifier != null ? Identifier.ToStepValue() : "$");
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(Unit != null ? Unit.ToStepValue() : "$");
 			parameters.Add(ReferencePath != null ? ReferencePath.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39458,18 +40973,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTableRow>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(RowCells != null ? RowCells.ToStepValue() : "$");
 			parameters.Add(IsHeading.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39502,17 +41016,36 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTaskTimeRecurring>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(DataOrigin.ToStepValue());
+			parameters.Add(UserDefinedDataOrigin != null ? UserDefinedDataOrigin.ToStepValue() : "$");
+			parameters.Add(DurationType.ToStepValue());
+			parameters.Add(ScheduleDuration != null ? ScheduleDuration.ToStepValue() : "$");
+			parameters.Add(ScheduleStart != null ? ScheduleStart.ToStepValue() : "$");
+			parameters.Add(ScheduleFinish != null ? ScheduleFinish.ToStepValue() : "$");
+			parameters.Add(EarlyStart != null ? EarlyStart.ToStepValue() : "$");
+			parameters.Add(EarlyFinish != null ? EarlyFinish.ToStepValue() : "$");
+			parameters.Add(LateStart != null ? LateStart.ToStepValue() : "$");
+			parameters.Add(LateFinish != null ? LateFinish.ToStepValue() : "$");
+			parameters.Add(FreeFloat != null ? FreeFloat.ToStepValue() : "$");
+			parameters.Add(TotalFloat != null ? TotalFloat.ToStepValue() : "$");
+			parameters.Add(IsCritical.ToStepValue());
+			parameters.Add(StatusTime != null ? StatusTime.ToStepValue() : "$");
+			parameters.Add(ActualDuration != null ? ActualDuration.ToStepValue() : "$");
+			parameters.Add(ActualStart != null ? ActualStart.ToStepValue() : "$");
+			parameters.Add(ActualFinish != null ? ActualFinish.ToStepValue() : "$");
+			parameters.Add(RemainingTime != null ? RemainingTime.ToStepValue() : "$");
+			parameters.Add(Completion != null ? Completion.ToStepValue() : "$");
 			parameters.Add(Recurrance != null ? Recurrance.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39547,18 +41080,26 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTaskType>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
+			parameters.Add(ProcessType != null ? ProcessType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(WorkMethod != null ? WorkMethod.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39602,19 +41143,7 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTessellatedFaceSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			parameters.Add(Coordinates != null ? Coordinates.ToStepValue() : "$");
-			parameters.Add(Normals != null ? Normals.ToStepValue() : "$");
-			parameters.Add(Closed.ToStepValue());
-
-			return string.Join(", ", parameters.ToArray());
-		}
+        
 	}
 
 	/// <summary>
@@ -39651,18 +41180,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTriangulatedFaceSet>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Coordinates != null ? Coordinates.ToStepValue() : "$");
+			parameters.Add(Normals != null ? Normals.ToStepValue() : "$");
+			parameters.Add(Closed.ToStepValue());
 			parameters.Add(CoordIndex != null ? CoordIndex.ToStepValue() : "$");
 			parameters.Add(NormalIndex != null ? NormalIndex.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39688,18 +41219,20 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextLiteralWithExtent>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Literal != null ? Literal.ToStepValue() : "$");
+			parameters.Add(Placement != null ? Placement.ToStepValue() : "$");
+			parameters.Add(Path != null ? Path.ToStepValue() : "$");
 			parameters.Add(Extent != null ? Extent.ToStepValue() : "$");
 			parameters.Add(BoxAlignment != null ? BoxAlignment.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39735,18 +41268,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextureCoordinateGenerator>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Maps != null ? Maps.ToStepValue() : "$");
 			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
 			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39772,18 +41305,18 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTextureMap>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(Maps != null ? Maps.ToStepValue() : "$");
 			parameters.Add(Vertices != null ? Vertices.ToStepValue() : "$");
 			parameters.Add(MappedTo != null ? MappedTo.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39809,18 +41342,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTimePeriod>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
 			parameters.Add(EndTime != null ? EndTime.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39844,17 +41376,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcTimeSeriesValue>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(ListValues != null ? ListValues.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39875,15 +41406,14 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVertex>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39925,20 +41455,27 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWindowStyle>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ApplicableOccurrence != null ? ApplicableOccurrence.ToStepValue() : "$");
+			parameters.Add(HasPropertySets != null ? HasPropertySets.ToStepValue() : "$");
+			parameters.Add(RepresentationMaps != null ? RepresentationMaps.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(ConstructionType.ToStepValue());
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(ParameterTakesPrecedence.ToStepValue());
 			parameters.Add(Sizeable.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39962,17 +41499,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcUnitAssignment>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(Units != null ? Units.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -39996,17 +41532,16 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVertexPoint>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(VertexGeometry != null ? VertexGeometry.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -40032,18 +41567,17 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcVirtualGridIntersection>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
 			parameters.Add(IntersectingAxes != null ? IntersectingAxes.ToStepValue() : "$");
 			parameters.Add(OffsetDistances != null ? OffsetDistances.ToStepValue() : "$");
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -40072,15 +41606,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWallElementedCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -40109,15 +41652,24 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWallStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -40146,15 +41698,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWindowStandardCase>(json);
 		}
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
+			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
+			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
+			parameters.Add(OverallHeight != null ? OverallHeight.ToStepValue() : "$");
+			parameters.Add(OverallWidth != null ? OverallWidth.ToStepValue() : "$");
+			parameters.Add(PredefinedType.ToStepValue());
+			parameters.Add(PartitioningType.ToStepValue());
+			parameters.Add(UserDefinedPartitioningType != null ? UserDefinedPartitioningType.ToStepValue() : "$");
 
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -40186,17 +41751,29 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWorkPlan>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(CreationDate != null ? CreationDate.ToStepValue() : "$");
+			parameters.Add(Creators != null ? Creators.ToStepValue() : "$");
+			parameters.Add(Purpose != null ? Purpose.ToStepValue() : "$");
+			parameters.Add(Duration != null ? Duration.ToStepValue() : "$");
+			parameters.Add(TotalFloat != null ? TotalFloat.ToStepValue() : "$");
+			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
+			parameters.Add(FinishTime != null ? FinishTime.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 
 	/// <summary>
@@ -40228,16 +41805,28 @@ namespace IFC4
 		{
 			return JsonConvert.DeserializeObject<IfcWorkSchedule>(json);
 		}
-
-		public override string GetStepParameters()
-		{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) { parameters.Add(baseStepParameters);}
-			
+        
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+            
+			parameters.Add(GlobalId != null ? GlobalId.ToStepValue() : "$");
+			parameters.Add(OwnerHistory != null ? OwnerHistory.ToStepValue() : "$");
+			parameters.Add(Name != null ? Name.ToStepValue() : "$");
+			parameters.Add(Description != null ? Description.ToStepValue() : "$");
+			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
+			parameters.Add(Identification != null ? Identification.ToStepValue() : "$");
+			parameters.Add(CreationDate != null ? CreationDate.ToStepValue() : "$");
+			parameters.Add(Creators != null ? Creators.ToStepValue() : "$");
+			parameters.Add(Purpose != null ? Purpose.ToStepValue() : "$");
+			parameters.Add(Duration != null ? Duration.ToStepValue() : "$");
+			parameters.Add(TotalFloat != null ? TotalFloat.ToStepValue() : "$");
+			parameters.Add(StartTime != null ? StartTime.ToStepValue() : "$");
+			parameters.Add(FinishTime != null ? FinishTime.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
-			return string.Join(", ", parameters.ToArray());
-		}
+            return string.Join(", ", parameters.ToArray());
+        }
+            
 	}
 }

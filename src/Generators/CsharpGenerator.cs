@@ -111,13 +111,8 @@ namespace IFC4
             var prop = string.Empty;
             if(data.IsDerived)
             {
-                var isNew = data.IsDerived && data.Name.Contains("SELF") ? "new " : string.Empty;
+                var isNew = data.IsDerived && data.HidesParentAttributeOfSameName ? "new " : string.Empty;
                 var name = data.Name;
-                if(name.Contains("SELF\\"))
-                {
-                    // This path points to a property in the inheritance chain.
-                    name = name.Split(".").Last();
-                }
                 prop = $"\t\t{isNew}public {data.Type} {name}{{get{{throw new NotImplementedException(\"Derived property logic has been implemented for {name}.\");}}}} // derived\n";
             }
             else
@@ -133,9 +128,15 @@ namespace IFC4
             return prop;
         }
 
-        public string AttributeStepString(AttributeData data)
+        public string AttributeStepString(AttributeData data, bool isDerivedInChild)
         {
             var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue() : \"$\");\n";
+
+            if(isDerivedInChild)
+            {
+                step = "\t\t\tparameters.Add(\"*\");\n";
+                return step;
+            }
 
             // TODO: Not all enums are called xxxEnum. This emits code which causes 
             // 'never equal to null' errors. Find a better way to handle enums which don't
@@ -338,17 +339,27 @@ $@"
 		{{
 			return JsonConvert.DeserializeObject<{data.Name}>(json);
 		}}
-
-		public override string GetStepParameters()
-		{{
-			var parameters = new List<string>();
-            string baseStepParameters = base.GetStepParameters();
-            if (!string.IsNullOrEmpty(baseStepParameters)) {{ parameters.Add(baseStepParameters);}}
-			{data.StepProperties()}
-			return string.Join("", "", parameters.ToArray());
-		}}
+        {StepParameters(data)}
 	}}";
             return classStr;
+        }
+
+        public string StepParameters(Entity data)
+        {
+            if(data.IsAbstract)
+            {
+                return string.Empty;
+            }
+
+            var stepParameters = $@"
+        public override string GetStepParameters()
+        {{
+            var parameters = new List<string>();
+            {data.StepProperties()}
+            return string.Join("", "", parameters.ToArray());
+        }}
+            ";
+            return stepParameters;
         }
 
         public string EntityTest(Entity data)
