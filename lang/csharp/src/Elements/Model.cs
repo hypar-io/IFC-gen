@@ -23,29 +23,25 @@ namespace Elements
         private IDictionary<Guid, BaseIfc>  storage;
         private const string APPNAME = "IFC-dotnet";
 
-        public Model(IDictionary<Guid, BaseIfc>  storage, string name, string description, IfcAddress address, IfcPerson user)
+        public Model(IDictionary<Guid, BaseIfc>  storage, string name, string description, IfcAddress address, IfcPerson user, IfcOrganization owner)
         {
             this.storage = storage;
 
             this.storage.Add(address.Id, address);
             this.storage.Add(user.Id, user);
-
-            // Create an organization to own the Project
-            var org = new IfcOrganization("Test", "Test Organization", "An organization to test model creation.", 
-                            new List<IfcActorRole>(), new List<IfcAddress>(){address});
-            this.storage.Add(org.Id, org);
+            this.storage.Add(owner.Id, owner);
             
             // Create an organization for app creation.
             var appOrg = new IfcOrganization(APPNAME);
             this.storage.Add(appOrg.Id, appOrg);
 
             // Create an authoring application.
-            var v = org.GetType().Assembly.GetName().Version.ToString();
+            var v = owner.GetType().Assembly.GetName().Version.ToString();
             var app = new IfcApplication(appOrg, v, APPNAME, APPNAME);
             this.storage.Add(app.Id, app);
 
             // Create an person and history for the owner history.
-            var personAndOrg = new IfcPersonAndOrganization(user, org);
+            var personAndOrg = new IfcPersonAndOrganization(user, owner);
             this.storage.Add(personAndOrg.Id, personAndOrg);
 
             // Create an owner history for the project.
@@ -123,6 +119,13 @@ namespace Elements
             var r = new IfcActorRole(role);
             storage.Add(r.Id, r);
             return new IfcPerson(userId, lastName, firstName, null, null, null, new List<IfcActorRole>{r}, null);
+        }
+
+        public static IfcOrganization CreateOrganization(string name, string description, IfcAddress address)
+        {
+            // Create an organization to own the Project
+            return new IfcOrganization(name, name, description, 
+                            new List<IfcActorRole>(), new List<IfcAddress>(){address});
         }
 
         /// <summary>
@@ -403,7 +406,7 @@ END-ISO-10303-21;";
             {
                 return value;
             }
-
+            
             var converter = TypeDescriptor.GetConverter(expectedType);
             if (converter != null && converter.CanConvertFrom(value.GetType()))
             {

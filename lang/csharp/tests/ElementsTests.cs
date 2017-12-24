@@ -19,9 +19,10 @@ namespace Elements.Tests
             // Create some basic information about the model.
             var address = Model.CreateAddress(storage, "Office", "12345 Sesame Street", "Gotham", null, "New York", "10005", "USA");
             var user = Model.CreateUser(storage, "ikeough", "Ian", "Keough", "foo@bar.com", IfcRoleEnum.ARCHITECT);
-
+            var org = Model.CreateOrganization("Test", "A test organization for model creation.", address);
+            
             // Create the model.
-            var m = new Model(storage, "Test Project", "A test project for the Elements API.", address, user);
+            var m = new Model(storage, "Test Project", "A test project for the Elements API.", address, user, org);
 
             // Write the model to STEP.
             var stepPath = Path.Combine(BASELINES, "project.ifc");
