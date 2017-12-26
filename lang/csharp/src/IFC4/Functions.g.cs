@@ -216,6 +216,5 @@ namespace IFC4
         {
             throw new NotImplementedException();
         }
-
     }
 }
