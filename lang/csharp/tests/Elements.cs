@@ -4,12 +4,20 @@ using IFC4;
 using System;
 using System.IO;
 using Xunit;
+using Xunit.Abstractions;
 
 namespace Elements.Tests
 {
-    public class ElementsTests
+    public class Elements
     {
         private const string BASELINES = "../../../baselines/";
+
+        private readonly ITestOutputHelper output;
+
+        public Elements(ITestOutputHelper output)
+        {
+            this.output = output;
+        }
 
         [Fact]
         public void Project()
