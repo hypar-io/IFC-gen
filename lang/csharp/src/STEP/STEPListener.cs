@@ -137,6 +137,8 @@ namespace STEP
 
 		private InstanceData ParseConstructor(int id, STEPParser.ConstructorContext context, Type ifcType = null)
 		{
+			//Console.WriteLine($"Parsing constructor {id}.");
+
 			var typeName = context.TypeRef().GetText();
 			
 			// If a type has been passed in, we're parsing a constructor
@@ -158,7 +160,6 @@ namespace STEP
 			if(ctorChain.Any())
 			{
 				var chain = string.Join("=>", ctorChain.Select(c=>c.DeclaringType.Name));
-				//Console.WriteLine($"Found constructor chain of {chain}=>{ctor.DeclaringType.Name}");
 			}
 			var ctorParams = ctor.GetParameters();
 
