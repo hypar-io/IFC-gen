@@ -15,7 +15,7 @@ generate:
 generate_debug:
 	$(ANTLR) -Dlanguage=CSharp -package Express -o ./src/antlr $(GRAMMAR_IFC)
 
-csharp: default
+csharp:
 	dotnet $(DEBUG_OUT)/IFC-gen.dll -e $(SCHEMA) -l csharp -o ./lang/csharp/src/IFC4 -t ./lang/csharp/tests
 	dotnet build ./lang/csharp/IFC-dotnet.sln
 
