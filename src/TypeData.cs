@@ -350,13 +350,12 @@ namespace Express
             }
 
             var propBuilder = new StringBuilder();
-            propBuilder.AppendLine();
             foreach (var a in attrs)
             {
                 var prop = a.ToString();
                 if (!string.IsNullOrEmpty(prop))
                 {
-                    propBuilder.Append(prop);
+                    propBuilder.AppendLine(prop);
                 }
             }
             return propBuilder.ToString();
@@ -381,7 +380,6 @@ namespace Express
             }
 
             var propBuilder = new StringBuilder();
-            propBuilder.AppendLine();
             foreach (var a in attrs)
             {
                 // Attributes which are hidden by a derived attribute
@@ -396,7 +394,7 @@ namespace Express
                 var prop = a.ToStepString(isDerivedInChild);
                 if (!string.IsNullOrEmpty(prop))
                 {
-                    propBuilder.Append(prop);
+                    propBuilder.AppendLine(prop);
                 }
             }
             return propBuilder.ToString();

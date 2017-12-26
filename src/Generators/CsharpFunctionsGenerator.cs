@@ -41,7 +41,7 @@ namespace IFC4
         }}";
                 functionsBuilder.AppendLine(func);
             }
-            return functionsBuilder.ToString();
+            return functionsBuilder.ToString().TrimEnd('\n');
         } 
     }
 }

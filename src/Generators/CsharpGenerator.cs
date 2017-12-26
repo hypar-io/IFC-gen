@@ -79,14 +79,14 @@ namespace IFC4
 
         public string Assignment(AttributeData data)
         {
-            return $"\t\t\t{data.Name} = {data.ParameterName};\n";
+            return $"\t\t\t{data.Name} = {data.ParameterName};";
         }
 
         public string Allocation(AttributeData data)
         {
             if (data.IsCollection)
             {
-                return $"\t\t\t{data.Name} = new {data.Type}();\n";
+                return $"\t\t\t{data.Name} = new {data.Type}();";
             }
             return string.Empty;
         }
@@ -120,7 +120,7 @@ namespace IFC4
             {
                 var isNew = data.IsDerived && data.HidesParentAttributeOfSameName ? "new " : string.Empty;
                 var name = data.Name;
-                prop = $"\t\t{isNew}public {data.Type} {name}{{get{{throw new NotImplementedException(\"Derived property logic has been implemented for {name}.\");}}}} // derived\n";
+                prop = $"\t\t{isNew}public {data.Type} {name}{{get{{throw new NotImplementedException(\"Derived property logic has been implemented for {name}.\");}}}} // derived";
             }
             else
             {   
@@ -129,7 +129,7 @@ namespace IFC4
                 if(data.IsInverse) tags.Add("inverse");
                 var opt = data.IsOptional ? "optional" : string.Empty;
                 var inverse = data.IsInverse ? "inverse" : string.Empty;
-                prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} {(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}\n";
+                prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} {(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}";
             }
 
             return prop;
@@ -137,11 +137,11 @@ namespace IFC4
 
         public string AttributeStepString(AttributeData data, bool isDerivedInChild)
         {
-            var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue() : \"$\");\n";
+            var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue() : \"$\");";
 
             if(isDerivedInChild)
             {
-                step = "\t\t\tparameters.Add(\"*\");\n";
+                step = "\t\t\tparameters.Add(\"*\");";
                 return step;
             }
 
@@ -150,7 +150,7 @@ namespace IFC4
             // end in 'enum'.
             if (data.Type.EndsWith("Enum") | data.Type == "bool" | data.Type == "int" | data.Type == "double")
             {
-                step = $"\t\t\tparameters.Add({data.Name}.ToStepValue());\n";
+                step = $"\t\t\tparameters.Add({data.Name}.ToStepValue());";
             }
             return step;
         }
@@ -219,7 +219,7 @@ namespace IFC4
     $@"	
     public class {data.Name} : Select
     {{
-{constructors}
+{constructors.ToString()}
     }}
 ";
             return result;
@@ -319,12 +319,11 @@ $@"
 	/// <see href=""http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm""/>
 	/// </summary>
 	public {modifier} partial class {data.Name} : {super}
-	{{{data.Properties()}{constructors}
-		public static {newMod} {data.Name} FromJSON(string json)
-		{{
-			return JsonConvert.DeserializeObject<{data.Name}>(json);
-		}}
-        {StepParameters(data)}
+	{{
+{data.Properties()}
+{constructors}
+		public static {newMod} {data.Name} FromJSON(string json){{ return JsonConvert.DeserializeObject<{data.Name}>(json); }}
+{StepParameters(data)}
 	}}";
             return classStr;
         }
@@ -340,10 +339,9 @@ $@"
         public override string GetStepParameters()
         {{
             var parameters = new List<string>();
-            {data.StepProperties()}
+{data.StepProperties()}
             return string.Join("", "", parameters.ToArray());
-        }}
-            ";
+        }}";
             return stepParameters;
         }
 
@@ -410,7 +408,7 @@ $@"
                 var assign = Assignment(a);
                 if (!string.IsNullOrEmpty(assign))
                 {
-                    assignBuilder.Append(assign);
+                    assignBuilder.AppendLine(assign);
                 }
             }
             return assignBuilder.ToString();
@@ -429,7 +427,7 @@ $@"
                 var alloc = Allocation(a);
                 if (!string.IsNullOrEmpty(alloc))
                 {
-                    allocBuilder.Append(alloc);
+                    allocBuilder.AppendLine(alloc);
                 }
             }
             return allocBuilder.ToString();
