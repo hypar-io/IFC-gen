@@ -5,7 +5,7 @@ GRAMMAR_STEP=$(CURR_DIR)/STEP.g4
 SCHEMA=$(CURR_DIR)/IFC4.exp
 DEBUG_OUT=$(CURR_DIR)/src/bin/Debug/netcoreapp2.0
 
-default: generate
+default:
 	dotnet build ./src/IFC-gen.csproj
 
 generate:
@@ -15,7 +15,7 @@ generate:
 generate_debug:
 	$(ANTLR) -Dlanguage=CSharp -package Express -o ./src/antlr $(GRAMMAR_IFC)
 
-csharp:
+csharp: default
 	dotnet $(DEBUG_OUT)/IFC-gen.dll -e $(SCHEMA) -l csharp -o ./lang/csharp/src/IFC4 -t ./lang/csharp/tests
 	dotnet build ./lang/csharp/IFC-dotnet.sln
 
