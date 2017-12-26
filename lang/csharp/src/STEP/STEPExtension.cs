@@ -153,6 +153,10 @@ namespace STEP
 
         public static string ToStepValue(this double value, bool isSelectOption = false)
         {
+            if(value % 1 == 0)
+            {
+                return value.ToString("0.0", CultureInfo.InvariantCulture);
+            }
             return value.ToString("G9", CultureInfo.InvariantCulture);
         }
 
