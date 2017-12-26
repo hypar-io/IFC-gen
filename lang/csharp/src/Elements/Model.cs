@@ -23,6 +23,11 @@ namespace Elements
         private IDictionary<Guid, BaseIfc>  storage;
         private const string APPNAME = "IFC-dotnet";
 
+        public IEnumerable<BaseIfc> AllInstances
+        {
+            get{return storage.Values;}
+        }
+        
         public Model(IDictionary<Guid, BaseIfc>  storage, string name, string description, IfcAddress address, IfcPerson user, IfcOrganization owner)
         {
             this.storage = storage;
@@ -385,7 +390,6 @@ END-ISO-10303-21;";
             //Console.WriteLine($"Setting instanceDataMap[{data.Id}] constructed instance as {instance.Id} for type {instance.GetType().Name}.");
             return instance;
         }
-
         private static object CoerceObject(object value, Type to)
         {
             if(value == null)
@@ -414,25 +418,6 @@ END-ISO-10303-21;";
                 }
             }
             return result; 
-        }
-
-        private static object Convert(Type expectedType, object value)
-        {
-            // Bail out immediately if a direct cast is available.
-            if (expectedType.IsAssignableFrom(value.GetType()))
-            {
-                return value;
-            }
-            
-            var converter = TypeDescriptor.GetConverter(expectedType);
-            if (converter != null && converter.CanConvertFrom(value.GetType()))
-            {
-                return converter.ConvertFrom(value);
-            }
-            else
-            {
-                throw new Exception($"There was no type converter available to convert from {value.GetType()} to {expectedType}.");
-            }
         }
 
         /// <summary>
