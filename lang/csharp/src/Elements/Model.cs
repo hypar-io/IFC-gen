@@ -408,7 +408,6 @@ END-ISO-10303-21;";
                         // will be the constructed instance.
                         for(var y=ctorChain.Count-1; y>=0; y--)
                         {
-                            Console.WriteLine($"Constructing chain...{ctorChain[y].DeclaringType.Name}.");
                             result = ctorChain[y].Invoke(new object[]{result});
                         }
                     }
