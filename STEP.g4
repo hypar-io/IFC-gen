@@ -144,7 +144,7 @@ Enum
 	;
 
 RealLiteral
-	: '-'? Digits '.' Digits* (('e'|'E') '-'? Digits)? // IFC: Scientific 'E' was not supported.
+	: '-'? Digits '.'? Digits* (('e'|'E') '-'? Digits)? // IFC: Scientific 'E' was not supported.
 	;
 
 DATA : 'DATA' ; 
