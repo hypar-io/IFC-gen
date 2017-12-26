@@ -1,0 +1,25 @@
+
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(
+	('ViewDefinition [CoordinationView]'),
+	'2;1');
+FILE_NAME(
+    '../../../models/output.ifc',
+    '2017-12-25T22:12:53',
+    ('ikeough'),
+    ('RDF'),
+    'IFC-dotnet',
+    '0.0.1.0',
+	'None');
+FILE_SCHEMA (('IFC4'));
+ENDSEC;
+DATA;
+
+#20 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 1E-05, #21, #23);
+#21 = IFCAXIS2PLACEMENT3D(#22, $, $);
+#22 = IFCCARTESIANPOINT((0, 0, 0));
+#23 = IFCDIRECTION((0, 1, 0));
+
+ENDSEC;
+END-ISO-10303-21;
