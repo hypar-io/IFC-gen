@@ -120,7 +120,9 @@ namespace IFC4
             {
                 var isNew = data.IsDerived && data.HidesParentAttributeOfSameName ? "new " : string.Empty;
                 var name = data.Name;
-                prop = $"\t\t{isNew}public {data.Type} {name}{{get{{throw new NotImplementedException(\"Derived property logic has been implemented for {name}.\");}}}} // derived";
+                prop = $@"
+        [JsonIgnore]
+        {isNew}public {data.Type} {name}{{get{{throw new NotImplementedException($""Derived property logic has been implemented for {name}."");}}}} // derived";
             }
             else
             {   
