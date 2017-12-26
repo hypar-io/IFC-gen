@@ -23,6 +23,7 @@ namespace STEP
 		public Type Type{get;set;}
 		public List<object> Parameters{get;set;}
 
+		public List<System.Reflection.ConstructorInfo> ConstructorChain{get;set;}
 		public System.Reflection.ConstructorInfo Constructor{get;set;}
 
 		/// <summary>
@@ -39,12 +40,13 @@ namespace STEP
 			}
 		}
 
-		public InstanceData(int id, Type type, List<object> parameters, System.Reflection.ConstructorInfo ctorInfo)
+		public InstanceData(int id, Type type, List<object> parameters,System.Reflection.ConstructorInfo ctor, List<System.Reflection.ConstructorInfo> ctorChain = null)
 		{
 			Id = id;
 			Type = type;
 			Parameters = parameters;
-			Constructor = ctorInfo;
+			Constructor = ctor;
+			ConstructorChain = ctorChain;
 		}
 	}
 
@@ -86,17 +88,63 @@ namespace STEP
 			}
 		}
 
-		private System.Reflection.ConstructorInfo GetMostLikelyConstructorForType(Type t)
+		private System.Reflection.ConstructorInfo GetConstructorForType(Type required, ref List<System.Reflection.ConstructorInfo> ctorChain, Type fromSTEP = null)
 		{
-			return t.GetConstructors().OrderBy(c=>c.GetParameters().Count()).Last();
+			if(fromSTEP == null || required.IsAssignableFrom(fromSTEP))
+			{
+				return required.GetConstructors().OrderBy(c=>c.GetParameters().Count()).Last();
+			}
+
+			if(typeof(Select).IsAssignableFrom(required))
+			{
+				System.Reflection.ConstructorInfo ctor;
+				if(TypeHasConstructorForSelectChoice(required, fromSTEP, out ctor, ref ctorChain))
+				{
+					return ctor;
+				}
+			}
+
+			throw new Exception($"I could not find a constructor which would create a {required} from a {fromSTEP}.");
 		}
 
-		private InstanceData ParseConstructor(int id, STEPParser.ConstructorContext context)
+		internal static bool TypeHasConstructorForSelectChoice(Type t, Type choice, out System.Reflection.ConstructorInfo ctor, ref List<System.Reflection.ConstructorInfo> cTorChain)
 		{
-			//Console.WriteLine($"Parsing context: {currId.Value} {context.GetText()}");
+			var ctors = t.GetConstructors().ToArray();
+			ctor = ctors.FirstOrDefault(c=>c.GetParameters()[0].ParameterType.IsAssignableFrom(choice));
+			if(ctor != null)
+			{
+				// You've found a constructor that takes the choice type.
+				return true;
+			}
 
+			// No select constructor could be found that could construct the type directly.
+			// See if any of the params are selects and test those selects' constructors for a parameter
+			// of foundType.
+			foreach(var c in ctors.Where(c=>c.GetParameters().Any(p=>typeof(Select).IsAssignableFrom(p.ParameterType))))
+			{
+				foreach(var p in c.GetParameters())
+				{
+					if(TypeHasConstructorForSelectChoice(p.ParameterType, choice, out ctor, ref cTorChain))
+					{
+						cTorChain.Add(c);
+						return true;
+					}
+				}
+			}
+
+			return false;
+		} 
+
+		private InstanceData ParseConstructor(int id, STEPParser.ConstructorContext context, Type ifcType = null)
+		{
 			var typeName = context.TypeRef().GetText();
-			var ifcType = types.FirstOrDefault(t=>t.Name.ToUpper() == typeName);
+			
+			// If a type has been passed in, we're parsing a constructor
+			// as a parameter of a constructor.
+			if(ifcType == null)
+			{
+				ifcType = types.FirstOrDefault(t=>t.Name.ToUpper() == typeName);
+			}
 
 			if(ifcType == null)
 			{
@@ -104,7 +152,14 @@ namespace STEP
 			}
 
 			// Use the constructor which includes all non-optional parameters.
-			var ctor = GetMostLikelyConstructorForType(ifcType);
+			var ctorChain = new List<System.Reflection.ConstructorInfo>();
+			var ctor = GetConstructorForType(ifcType, ref ctorChain, types.FirstOrDefault(t=>t.Name.ToUpper() == typeName));
+
+			if(ctorChain.Any())
+			{
+				var chain = string.Join("=>", ctorChain.Select(c=>c.DeclaringType.Name));
+				//Console.WriteLine($"Found constructor chain of {chain}=>{ctor.DeclaringType.Name}");
+			}
 			var ctorParams = ctor.GetParameters();
 
 			var constructorParams = new List<object>();
@@ -118,7 +173,12 @@ namespace STEP
 
 				if(p.constructor() != null)
 				{
-					constructorParams.Add(ParseConstructor(-1, p.constructor()));
+					// If the parameter is a constructor, it may be a constructor
+					// for a type that is used as a select. 
+					// In this case, we will need to find the select
+					// for which the type is a parameter, and construct an instance
+					// of the select instead.
+					constructorParams.Add(ParseConstructor(-1, p.constructor(), pType));
 				}
 				else if(p.collection() != null)
 				{
@@ -167,7 +227,7 @@ namespace STEP
 				throw new STEPParameterMismatchException(ifcType, ctorParams.Count(), constructorParams.Count());
 			}
 		
-			return new InstanceData(id, ifcType, constructorParams, ctor);
+			return new InstanceData(id, ifcType, constructorParams, ctor, ctorChain);
 		}
 
 		private dynamic ParseBoolLogical(Type t, string value)
@@ -245,10 +305,12 @@ namespace STEP
 
 		private object CreateIfcTypeOrUseConstructorParameterTypeToConstruct<TValue>(Type typeToConstruct, TValue value)
 		{
-			var cTor = GetMostLikelyConstructorForType(typeToConstruct);
-			var cTorParam = cTor.GetParameters()[0];
+			var ctorChain = new List<System.Reflection.ConstructorInfo>();
+			var ctor = GetConstructorForType(typeToConstruct, ref ctorChain);
+			var cTorParam = ctor.GetParameters()[0];
 
-			if(cTorParam.ParameterType == typeof(TValue))
+			//Console.WriteLine($"TValue:{typeof(TValue).Name}, ParameterType:{cTorParam.ParameterType.Name}");
+			if(typeof(TValue).IsAssignableFrom(cTorParam.ParameterType))
 			{
 				return Activator.CreateInstance(typeToConstruct, new object[]{value});
 			}
@@ -307,8 +369,6 @@ namespace STEP
 
 		private dynamic ParseCollection(Type t, STEPParser.CollectionContext value)
 		{
-			//Console.WriteLine(t.Name);
-
 			// Ex: #25 = IFCDIRECTION((1., 0., 0.));
 			// IfcDirection takes a List<double> as its input parameters, so we get the type argument - double - and
 			// do the coercion for all the items.
@@ -319,6 +379,7 @@ namespace STEP
 
 			Type collectionType;
 			System.Reflection.ConstructorInfo ctor = null;
+			var ctorChain = new List<System.Reflection.ConstructorInfo>();
 
 			if(t.IsGenericType)
 			{
@@ -326,7 +387,7 @@ namespace STEP
 			}
 			else
 			{
-				ctor = GetMostLikelyConstructorForType(t);
+				ctor = GetConstructorForType(t, ref ctorChain);
 				collectionType = ctor.GetParameters()[0].ParameterType.GetGenericArguments()[0];
 			} 
 
@@ -362,8 +423,7 @@ namespace STEP
 
 			if(ctor != null)
 			{
-				//Console.WriteLine($"Found implicit constructor of type, {t}");
-				return new InstanceData(-1, t, new List<object>(){result}, ctor);
+				return new InstanceData(-1, t, new List<object>(){result}, ctor, ctorChain);
 			}
 
 			return result;

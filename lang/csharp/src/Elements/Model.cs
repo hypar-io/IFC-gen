@@ -50,41 +50,41 @@ namespace Elements
             
             var lu = new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE);
             this.storage.Add(lu.Id, lu);
-            var lengthUnit = new IfcUnitIfcNamedUnit(lu);
+            var lengthUnit = new IfcUnit(lu);
             
             var au = new IfcSIUnit(null, IfcUnitEnum.AREAUNIT, IfcSIUnitName.SQUARE_METRE);
             this.storage.Add(au.Id, au);
-            var areaUnit = new IfcUnitIfcNamedUnit(au);
+            var areaUnit = new IfcUnit(au);
             
             var vu = new IfcSIUnit(null, IfcUnitEnum.VOLUMEUNIT, IfcSIUnitName.CUBIC_METRE);
             this.storage.Add(vu.Id, vu);
-            var volumeUnit = new IfcUnitIfcNamedUnit(vu);
+            var volumeUnit = new IfcUnit(vu);
 
             var sau = new IfcSIUnit(null, IfcUnitEnum.SOLIDANGLEUNIT, IfcSIUnitName.STERADIAN);
             this.storage.Add(sau.Id, sau);
-            var solidAngleUnit = new IfcUnitIfcNamedUnit(sau);
+            var solidAngleUnit = new IfcUnit(sau);
             
             var mu = new IfcSIUnit(null, IfcUnitEnum.MASSUNIT, IfcSIUnitName.GRAM);
             this.storage.Add(mu.Id, mu);
-            var massUnit = new IfcUnitIfcNamedUnit(mu);
+            var massUnit = new IfcUnit(mu);
 
             var tu = new IfcSIUnit(null, IfcUnitEnum.TIMEUNIT, IfcSIUnitName.SECOND);
             this.storage.Add(tu.Id, tu);
-            var timeUnit = new IfcUnitIfcNamedUnit(tu);
+            var timeUnit = new IfcUnit(tu);
 
             var thu = new IfcSIUnit(null, IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IfcSIUnitName.DEGREE_CELSIUS);
             this.storage.Add(thu.Id, thu);
-            var thermUnit = new IfcUnitIfcNamedUnit(thu);
+            var thermUnit = new IfcUnit(thu);
             
             var lmu = new IfcSIUnit(null, IfcUnitEnum.LUMINOUSINTENSITYUNIT, IfcSIUnitName.LUMEN);
             this.storage.Add(lmu.Id, lmu);
-            var lumUnit = new IfcUnitIfcNamedUnit(lmu);
+            var lumUnit = new IfcUnit(lmu);
             
             var pau = new IfcSIUnit(null, IfcUnitEnum.PLANEANGLEUNIT, IfcSIUnitName.RADIAN);
             this.storage.Add(pau.Id, pau);
-            var planeAngleUnit = new IfcUnitIfcNamedUnit(pau);
+            var planeAngleUnit = new IfcUnit(pau);
            
-            var measure = new IfcMeasureWithUnit(new IfcValueIfcMeasureValue(new IfcMeasureValueIfcPlaneAngleMeasure(1.745e-2)), planeAngleUnit);
+            var measure = new IfcMeasureWithUnit(new IfcValue(new IfcMeasureValue(new IfcPlaneAngleMeasure(1.745e-2))), planeAngleUnit);
             this.storage.Add(measure.Id, measure);
 
             var dimExp = new IfcDimensionalExponents(0,0,0,0,0,0,0);
@@ -92,7 +92,7 @@ namespace Elements
 
             var du = new IfcConversionBasedUnit(dimExp, IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", measure);
             this.storage.Add(du.Id, du);
-            var degree = new IfcUnitIfcNamedUnit(du);
+            var degree = new IfcUnit(du);
             
             var units = new List<IfcUnit>{lengthUnit, areaUnit, volumeUnit, solidAngleUnit, massUnit, timeUnit, thermUnit, lumUnit, planeAngleUnit, degree};
             var unitAss = new IfcUnitAssignment(units);
@@ -270,7 +270,7 @@ END-ISO-10303-21;";
         {
             var indent = string.Join("", Enumerable.Repeat("\t", level));
 
-            // Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
+            //Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
 
             for (var i = 0; i < data.Parameters.Count(); i++)
             {
@@ -301,8 +301,8 @@ END-ISO-10303-21;";
                         data.Parameters[i] = null;
                         continue;
                     }
-
-                    data.Parameters[i] = ConstructAndStoreInstance(instances[stepId.Value], instances, currLine, errors, level);
+                    
+                    data.Parameters[i] = ConstructAndStoreInstance(instances[stepId.Value], instances, currLine, errors, level);        
                 }
                 else if (data.Parameters[i] is List<object>)
                 {
@@ -334,29 +334,26 @@ END-ISO-10303-21;";
                             {
                                 if (instances[id.Value].ConstructedInstance != null)
                                 {
-                                    var existing = Convert(instanceType, instances[id.Value].ConstructedInstance);
+                                    var existing = CoerceObject(instances[id.Value].ConstructedInstance, instanceType);
                                     subInstances.Add(existing);
                                     continue;
                                 }
                             }
                             var subInstance = ConstructAndStoreInstance(instances[id.Value], instances, currLine, errors, level);
-
-                            // The object must be converted to the type expected in the list
-                            // for Select types, this will be a recursive build of the base select type.
-                            var convert = Convert(instanceType, subInstance);
-                            subInstances.Add(convert);
+                            var coerce = CoerceObject(subInstance, instanceType);
+                            subInstances.Add(coerce);
                         }
                         else if (item is STEP.InstanceData)
                         {
                             var subInstance = ConstructAndStoreInstance((STEP.InstanceData)item, instances, currLine, errors, level);
-                            var convert = Convert(instanceType, subInstance);
-                            subInstances.Add(convert);
+                            var coerce = CoerceObject(subInstance, instanceType);
+                            subInstances.Add(coerce);
                         }
                         else
                         {
                             var subInstance = item;
-                            var convert = Convert(instanceType, subInstance);
-                            subInstances.Add(convert);
+                            var coerce = CoerceObject(subInstance, instanceType);
+                            subInstances.Add(coerce);
                         }
                     }
                     // Replace the list of STEPId with a list of instance references.
@@ -364,21 +361,11 @@ END-ISO-10303-21;";
                 }
             }
 
-            // Do one final pass on all parameters to ensure
-            // that they are of the correct type.
-            for (var i = 0; i < data.Parameters.Count(); i++)
+            for(var i=0; i<data.Parameters.Count; i++)
             {
-                if (data.Parameters[i] == null)
-                {
-                    continue;
-                }
-
-                var pType = data.Parameters[i].GetType();
-                var expectedType = data.Constructor.GetParameters()[i].ParameterType;
-
-                data.Parameters[i] = Convert(expectedType, data.Parameters[i]);
+                data.Parameters[i] = CoerceObject(data.Parameters[i],data.Constructor.GetParameters()[i].ParameterType); 
             }
-
+            
             // Construct the instance, assuming that all required sub-instances
             // have already been constructed.
             var instance = data.Constructor.Invoke(data.Parameters.ToArray());
@@ -397,6 +384,37 @@ END-ISO-10303-21;";
 
             //Console.WriteLine($"Setting instanceDataMap[{data.Id}] constructed instance as {instance.Id} for type {instance.GetType().Name}.");
             return instance;
+        }
+
+        private static object CoerceObject(object value, Type to)
+        {
+            if(value == null)
+            {
+                return null;
+            }
+
+            var result = value;
+            if(typeof(Select).IsAssignableFrom(to))
+            {
+                var ctorChain = new List<System.Reflection.ConstructorInfo>();
+                System.Reflection.ConstructorInfo ctor = null;
+                if(STEPListener.TypeHasConstructorForSelectChoice(to, value.GetType(), out ctor, ref ctorChain))
+                {
+                    result = ctor.Invoke(new object[]{value});
+                    if(ctorChain.Any())
+                    {
+                        // Construct the necessary wrappers working
+                        // backwards. For the first constructor, the parameter
+                        // will be the constructed instance.
+                        for(var y=ctorChain.Count-1; y>=0; y--)
+                        {
+                            Console.WriteLine($"Constructing chain...{ctorChain[y].DeclaringType.Name}.");
+                            result = ctorChain[y].Invoke(new object[]{result});
+                        }
+                    }
+                }
+            }
+            return result; 
         }
 
         private static object Convert(Type expectedType, object value)

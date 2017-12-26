@@ -62,6 +62,13 @@ namespace IFC4
 			return """";
 		}
     }
+
+    public abstract class Select : BaseIfc
+    {
+        protected BaseIfc choice;
+        public override string ToStepValue(bool isSelectOption = false){{ return choice.ToStepValue(isSelectOption); }}
+        public override string ToSTEP(){{ return $""#{{choice.StepId}} = {{choice.GetType().Name.ToUpper()}}({{choice.GetStepParameters()}});""; }}
+    }
     ";
         }
 
@@ -194,7 +201,7 @@ namespace IFC4
 
         public string SelectTypeString(SelectType data)
         {
-            var subTypes = new StringBuilder();
+            var constructors = new StringBuilder();
             foreach(var value in data.Values)
             {
                 // There is one select in IFC that 
@@ -205,37 +212,15 @@ namespace IFC4
                     continue;
                 }
 
-                var subType = 
-    $@"
-    public class {data.Name}{value} : {data.Name}
-    {{
-        private readonly {value} value;
-        public {data.Name}{value}({value} value) : base({data.Name}Type.{value}){{ this.value = value; }}
-        public override string ToStepValue(bool isSelectOption = false){{ return value.ToStepValue(isSelectOption); }}
-        public override string ToSTEP(){{ return $""#{{value.StepId}} = {{value.GetType().Name.ToUpper()}}({{value.GetStepParameters()}});""; }}
-    }}";
-                subTypes.AppendLine(subType);
+                constructors.AppendLine($"\t\tpublic {data.Name}({value} choice){{ this.choice = choice; }}");
             }
 
-            var constructors = new StringBuilder();
-            foreach (var value in data.Values)
-            {
-                constructors.AppendLine($"\t\tpublic {data.Name}({value} value):base(value){{}}");
-            }
             var result =
     $@"	
-    public enum {data.Name}Type{{ {string.Join(",", data.Values)} }}
-    
-    /// <summary>
-	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
-	/// </summary>
-	public abstract class {data.Name} : BaseIfc
+    public class {data.Name} : Select
     {{
-        private readonly {data.Name}Type selectType;
-        public {data.Name}({data.Name}Type selectType){{ this.selectType = selectType; }}
-        public static {data.Name} FromJSON(string json){{ return JsonConvert.DeserializeObject<{data.Name}>(json); }}
+{constructors}
     }}
-{subTypes}
 ";
             return result;
         }
