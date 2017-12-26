@@ -5796,7 +5796,9 @@ namespace IFC4
 	public  partial class IfcAxis1Placement : IfcPlacement
 	{
 		public IfcDirection Axis{get;set;} // optional
-		public IfcDirection Z{get{throw new NotImplementedException("Derived property logic has been implemented for Z.");}} // derived
+
+        [JsonIgnore]
+        public IfcDirection Z{get{throw new NotImplementedException($"Derived property logic has been implemented for Z.");}} // derived
 
 
 		/// <summary>
@@ -5834,7 +5836,9 @@ namespace IFC4
 	public abstract partial class IfcPlacement : IfcGeometricRepresentationItem
 	{
 		public IfcCartesianPoint Location{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -5856,7 +5860,9 @@ namespace IFC4
 	public  partial class IfcAxis2Placement2D : IfcPlacement
 	{
 		public IfcDirection RefDirection{get;set;} // optional
-		public List<IfcDirection> P{get{throw new NotImplementedException("Derived property logic has been implemented for P.");}} // derived
+
+        [JsonIgnore]
+        public List<IfcDirection> P{get{throw new NotImplementedException($"Derived property logic has been implemented for P.");}} // derived
 
 
 		/// <summary>
@@ -5895,7 +5901,9 @@ namespace IFC4
 	{
 		public IfcDirection Axis{get;set;} // optional
 		public IfcDirection RefDirection{get;set;} // optional
-		public List<IfcDirection> P{get{throw new NotImplementedException("Derived property logic has been implemented for P.");}} // derived
+
+        [JsonIgnore]
+        public List<IfcDirection> P{get{throw new NotImplementedException($"Derived property logic has been implemented for P.");}} // derived
 
 
 		/// <summary>
@@ -5939,8 +5947,12 @@ namespace IFC4
 		public IfcBSplineCurveForm CurveForm{get;set;} 
 		public bool? ClosedCurve{get;set;} 
 		public bool? SelfIntersect{get;set;} 
-		public int UpperIndexOnControlPoints{get{throw new NotImplementedException("Derived property logic has been implemented for UpperIndexOnControlPoints.");}} // derived
-		public List<IfcCartesianPoint> ControlPoints{get{throw new NotImplementedException("Derived property logic has been implemented for ControlPoints.");}} // derived
+
+        [JsonIgnore]
+        public int UpperIndexOnControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for UpperIndexOnControlPoints.");}} // derived
+
+        [JsonIgnore]
+        public List<IfcCartesianPoint> ControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for ControlPoints.");}} // derived
 
 
 		/// <summary>
@@ -5968,7 +5980,9 @@ namespace IFC4
 		public List<int> KnotMultiplicities{get;set;} 
 		public List<IfcParameterValue> Knots{get;set;} 
 		public IfcKnotType KnotSpec{get;set;} 
-		public int UpperIndexOnKnots{get{throw new NotImplementedException("Derived property logic has been implemented for UpperIndexOnKnots.");}} // derived
+
+        [JsonIgnore]
+        public int UpperIndexOnKnots{get{throw new NotImplementedException($"Derived property logic has been implemented for UpperIndexOnKnots.");}} // derived
 
 
 		/// <summary>
@@ -6025,7 +6039,9 @@ namespace IFC4
 	public  partial class IfcRationalBSplineCurveWithKnots : IfcBSplineCurveWithKnots
 	{
 		public List<double> WeightsData{get;set;} 
-		public List<double> Weights{get{throw new NotImplementedException("Derived property logic has been implemented for Weights.");}} // derived
+
+        [JsonIgnore]
+        public List<double> Weights{get{throw new NotImplementedException($"Derived property logic has been implemented for Weights.");}} // derived
 
 
 		/// <summary>
@@ -6068,9 +6084,15 @@ namespace IFC4
 		public bool? UClosed{get;set;} 
 		public bool? VClosed{get;set;} 
 		public bool? SelfIntersect{get;set;} 
-		public int UUpper{get{throw new NotImplementedException("Derived property logic has been implemented for UUpper.");}} // derived
-		public int VUpper{get{throw new NotImplementedException("Derived property logic has been implemented for VUpper.");}} // derived
-		public List<List<IfcCartesianPoint>> ControlPoints{get{throw new NotImplementedException("Derived property logic has been implemented for ControlPoints.");}} // derived
+
+        [JsonIgnore]
+        public int UUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for UUpper.");}} // derived
+
+        [JsonIgnore]
+        public int VUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for VUpper.");}} // derived
+
+        [JsonIgnore]
+        public List<List<IfcCartesianPoint>> ControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for ControlPoints.");}} // derived
 
 
 		/// <summary>
@@ -6102,8 +6124,12 @@ namespace IFC4
 		public List<IfcParameterValue> UKnots{get;set;} 
 		public List<IfcParameterValue> VKnots{get;set;} 
 		public IfcKnotType KnotSpec{get;set;} 
-		public int KnotVUpper{get{throw new NotImplementedException("Derived property logic has been implemented for KnotVUpper.");}} // derived
-		public int KnotUUpper{get{throw new NotImplementedException("Derived property logic has been implemented for KnotUUpper.");}} // derived
+
+        [JsonIgnore]
+        public int KnotVUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for KnotVUpper.");}} // derived
+
+        [JsonIgnore]
+        public int KnotUUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for KnotUUpper.");}} // derived
 
 
 		/// <summary>
@@ -6166,7 +6192,9 @@ namespace IFC4
 	public  partial class IfcRationalBSplineSurfaceWithKnots : IfcBSplineSurfaceWithKnots
 	{
 		public List<List<double>> WeightsData{get;set;} 
-		public List<List<double>> Weights{get{throw new NotImplementedException("Derived property logic has been implemented for Weights.");}} // derived
+
+        [JsonIgnore]
+        public List<List<double>> Weights{get{throw new NotImplementedException($"Derived property logic has been implemented for Weights.");}} // derived
 
 
 		/// <summary>
@@ -6523,7 +6551,9 @@ namespace IFC4
 	public abstract partial class IfcCsgPrimitive3D : IfcGeometricRepresentationItem
 	{
 		public IfcAxis2Placement3D Position{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -6665,7 +6695,9 @@ namespace IFC4
 		public IfcBooleanOperator Operator{get;set;} 
 		public IfcBooleanOperand FirstOperand{get;set;} 
 		public IfcBooleanOperand SecondOperand{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -6927,7 +6959,9 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCompositeCurveOnSurface : IfcCompositeCurve
 	{
-		public List<IfcSurface> BasisSurface{get{throw new NotImplementedException("Derived property logic has been implemented for BasisSurface.");}} // derived
+
+        [JsonIgnore]
+        public List<IfcSurface> BasisSurface{get{throw new NotImplementedException($"Derived property logic has been implemented for BasisSurface.");}} // derived
 
 
 		/// <summary>
@@ -7000,8 +7034,12 @@ namespace IFC4
 	{
 		public List<IfcCompositeCurveSegment> Segments{get;set;} 
 		public bool? SelfIntersect{get;set;} 
-		public int NSegments{get{throw new NotImplementedException("Derived property logic has been implemented for NSegments.");}} // derived
-		public bool? ClosedCurve{get{throw new NotImplementedException("Derived property logic has been implemented for ClosedCurve.");}} // derived
+
+        [JsonIgnore]
+        public int NSegments{get{throw new NotImplementedException($"Derived property logic has been implemented for NSegments.");}} // derived
+
+        [JsonIgnore]
+        public bool? ClosedCurve{get{throw new NotImplementedException($"Derived property logic has been implemented for ClosedCurve.");}} // derived
 
 
 		/// <summary>
@@ -7099,7 +7137,9 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcCurve : IfcGeometricRepresentationItem
 	{
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -7233,7 +7273,9 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcSurface : IfcGeometricRepresentationItem
 	{
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -7257,7 +7299,9 @@ namespace IFC4
 		public IfcPositiveLengthMeasure XDim{get;set;} 
 		public IfcPositiveLengthMeasure YDim{get;set;} 
 		public IfcPositiveLengthMeasure ZDim{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -7323,7 +7367,9 @@ namespace IFC4
 	{
 		public IfcSurface BaseSurface{get;set;} 
 		public bool AgreementFlag{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -10302,7 +10348,9 @@ namespace IFC4
 	public  partial class IfcCartesianPoint : IfcPoint
 	{
 		public List<IfcLengthMeasure> Coordinates{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -10400,8 +10448,12 @@ namespace IFC4
 		public IfcDirection Axis2{get;set;} // optional
 		public IfcCartesianPoint LocalOrigin{get;set;} 
 		public double Scale{get;set;} // optional
-		public double Scl{get{throw new NotImplementedException("Derived property logic has been implemented for Scl.");}} // derived
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public double Scl{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -10434,7 +10486,9 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator2D : IfcCartesianTransformationOperator
 	{
-		public List<IfcDirection> U{get{throw new NotImplementedException("Derived property logic has been implemented for U.");}} // derived
+
+        [JsonIgnore]
+        public List<IfcDirection> U{get{throw new NotImplementedException($"Derived property logic has been implemented for U.");}} // derived
 
 
 		/// <summary>
@@ -10473,7 +10527,9 @@ namespace IFC4
 	public  partial class IfcCartesianTransformationOperator3D : IfcCartesianTransformationOperator
 	{
 		public IfcDirection Axis3{get;set;} // optional
-		public List<IfcDirection> U{get{throw new NotImplementedException("Derived property logic has been implemented for U.");}} // derived
+
+        [JsonIgnore]
+        public List<IfcDirection> U{get{throw new NotImplementedException($"Derived property logic has been implemented for U.");}} // derived
 
 
 		/// <summary>
@@ -10514,7 +10570,9 @@ namespace IFC4
 	public  partial class IfcCartesianTransformationOperator2DnonUniform : IfcCartesianTransformationOperator2D
 	{
 		public double Scale2{get;set;} // optional
-		public double Scl2{get{throw new NotImplementedException("Derived property logic has been implemented for Scl2.");}} // derived
+
+        [JsonIgnore]
+        public double Scl2{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl2.");}} // derived
 
 
 		/// <summary>
@@ -10556,8 +10614,12 @@ namespace IFC4
 	{
 		public double Scale2{get;set;} // optional
 		public double Scale3{get;set;} // optional
-		public double Scl2{get{throw new NotImplementedException("Derived property logic has been implemented for Scl2.");}} // derived
-		public double Scl3{get{throw new NotImplementedException("Derived property logic has been implemented for Scl3.");}} // derived
+
+        [JsonIgnore]
+        public double Scl2{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl2.");}} // derived
+
+        [JsonIgnore]
+        public double Scl3{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl3.");}} // derived
 
 
 		/// <summary>
@@ -11640,7 +11702,9 @@ namespace IFC4
 		public IfcTransitionCode Transition{get;set;} 
 		public bool SameSense{get;set;} 
 		public IfcCurve ParentCurve{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 		public List<IfcCompositeCurve> UsingCurves{get;set;} // inverse
 
 
@@ -14374,7 +14438,9 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcSolidModel : IfcGeometricRepresentationItem
 	{
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -14956,7 +15022,9 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcMirroredProfileDef : IfcDerivedProfileDef
 	{
-		new public IfcCartesianTransformationOperator2D Operator{get{throw new NotImplementedException("Derived property logic has been implemented for Operator.");}} // derived
+
+        [JsonIgnore]
+        new public IfcCartesianTransformationOperator2D Operator{get{throw new NotImplementedException($"Derived property logic has been implemented for Operator.");}} // derived
 
 
 		/// <summary>
@@ -14998,7 +15066,9 @@ namespace IFC4
 		public List<IfcDerivedUnitElement> Elements{get;set;} 
 		public IfcDerivedUnitEnum UnitType{get;set;} 
 		public IfcLabel UserDefinedType{get;set;} // optional
-		public IfcDimensionalExponents Dimensions{get{throw new NotImplementedException("Derived property logic has been implemented for Dimensions.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionalExponents Dimensions{get{throw new NotImplementedException($"Derived property logic has been implemented for Dimensions.");}} // derived
 
 
 		/// <summary>
@@ -15118,7 +15188,9 @@ namespace IFC4
 	public  partial class IfcDirection : IfcGeometricRepresentationItem
 	{
 		public List<double> DirectionRatios{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -17073,8 +17145,12 @@ namespace IFC4
 	{
 		public IfcEdge EdgeElement{get;set;} 
 		public bool Orientation{get;set;} 
-		new public IfcVertex EdgeStart{get{throw new NotImplementedException("Derived property logic has been implemented for EdgeStart.");}} // derived
-		new public IfcVertex EdgeEnd{get{throw new NotImplementedException("Derived property logic has been implemented for EdgeEnd.");}} // derived
+
+        [JsonIgnore]
+        new public IfcVertex EdgeStart{get{throw new NotImplementedException($"Derived property logic has been implemented for EdgeStart.");}} // derived
+
+        [JsonIgnore]
+        new public IfcVertex EdgeEnd{get{throw new NotImplementedException($"Derived property logic has been implemented for EdgeEnd.");}} // derived
 
 
 		/// <summary>
@@ -17137,7 +17213,9 @@ namespace IFC4
 	public  partial class IfcEdgeLoop : IfcLoop
 	{
 		public List<IfcOrientedEdge> EdgeList{get;set;} 
-		public int Ne{get{throw new NotImplementedException("Derived property logic has been implemented for Ne.");}} // derived
+
+        [JsonIgnore]
+        public int Ne{get{throw new NotImplementedException($"Derived property logic has been implemented for Ne.");}} // derived
 
 
 		/// <summary>
@@ -20446,7 +20524,9 @@ namespace IFC4
 	public  partial class IfcFaceBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
 		public List<IfcConnectedFaceSet> FbsmFaces{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -23177,7 +23257,9 @@ namespace IFC4
 	public  partial class IfcGeometricSet : IfcGeometricRepresentationItem
 	{
 		public List<IfcGeometricSetSelect> Elements{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -23261,10 +23343,18 @@ namespace IFC4
 		public IfcPositiveRatioMeasure TargetScale{get;set;} // optional
 		public IfcGeometricProjectionEnum TargetView{get;set;} 
 		public IfcLabel UserDefinedTargetView{get;set;} // optional
-		new public IfcAxis2Placement WorldCoordinateSystem{get{throw new NotImplementedException("Derived property logic has been implemented for WorldCoordinateSystem.");}} // derived
-		new public IfcDimensionCount CoordinateSpaceDimension{get{throw new NotImplementedException("Derived property logic has been implemented for CoordinateSpaceDimension.");}} // derived
-		new public IfcDirection TrueNorth{get{throw new NotImplementedException("Derived property logic has been implemented for TrueNorth.");}} // derived
-		new public double Precision{get{throw new NotImplementedException("Derived property logic has been implemented for Precision.");}} // derived
+
+        [JsonIgnore]
+        new public IfcAxis2Placement WorldCoordinateSystem{get{throw new NotImplementedException($"Derived property logic has been implemented for WorldCoordinateSystem.");}} // derived
+
+        [JsonIgnore]
+        new public IfcDimensionCount CoordinateSpaceDimension{get{throw new NotImplementedException($"Derived property logic has been implemented for CoordinateSpaceDimension.");}} // derived
+
+        [JsonIgnore]
+        new public IfcDirection TrueNorth{get{throw new NotImplementedException($"Derived property logic has been implemented for TrueNorth.");}} // derived
+
+        [JsonIgnore]
+        new public double Precision{get{throw new NotImplementedException($"Derived property logic has been implemented for Precision.");}} // derived
 
 
 		/// <summary>
@@ -23418,7 +23508,9 @@ namespace IFC4
 		public IfcCompositeCurve SpineCurve{get;set;} 
 		public List<IfcProfileDef> CrossSections{get;set;} 
 		public List<IfcAxis2Placement3D> CrossSectionPositions{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -23451,7 +23543,9 @@ namespace IFC4
 	public  partial class IfcShellBasedSurfaceModel : IfcGeometricRepresentationItem
 	{
 		public List<IfcShell> SbsmBoundary{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -23534,7 +23628,9 @@ namespace IFC4
 	{
 		public IfcDirection Orientation{get;set;} 
 		public IfcLengthMeasure Magnitude{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -25134,7 +25230,9 @@ namespace IFC4
 		public List<IfcMaterialLayer> MaterialLayers{get;set;} 
 		public IfcLabel LayerSetName{get;set;} // optional
 		public IfcText Description{get;set;} // optional
-		public IfcLengthMeasure TotalThickness{get{throw new NotImplementedException("Derived property logic has been implemented for TotalThickness.");}} // derived
+
+        [JsonIgnore]
+        public IfcLengthMeasure TotalThickness{get{throw new NotImplementedException($"Derived property logic has been implemented for TotalThickness.");}} // derived
 
 
 		/// <summary>
@@ -25775,7 +25873,9 @@ namespace IFC4
 	{
 		public IfcSIPrefix Prefix{get;set;} // optional
 		public IfcSIUnitName Name{get;set;} 
-		new public IfcDimensionalExponents Dimensions{get{throw new NotImplementedException("Derived property logic has been implemented for Dimensions.");}} // derived
+
+        [JsonIgnore]
+        new public IfcDimensionalExponents Dimensions{get{throw new NotImplementedException($"Derived property logic has been implemented for Dimensions.");}} // derived
 
 
 		/// <summary>
@@ -27080,7 +27180,9 @@ namespace IFC4
 	{
 		public IfcCurve BasisCurve{get;set;} 
 		public IfcParameterValue PointParameter{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -27113,7 +27215,9 @@ namespace IFC4
 		public IfcSurface BasisSurface{get;set;} 
 		public IfcParameterValue PointParameterU{get;set;} 
 		public IfcParameterValue PointParameterV{get;set;} 
-		public IfcDimensionCount Dim{get{throw new NotImplementedException("Derived property logic has been implemented for Dim.");}} // derived
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
 
 
 		/// <summary>
@@ -32202,7 +32306,9 @@ namespace IFC4
 	{
 		public IfcAxis1Placement Axis{get;set;} 
 		public IfcPlaneAngleMeasure Angle{get;set;} 
-		public IfcLine AxisLine{get{throw new NotImplementedException("Derived property logic has been implemented for AxisLine.");}} // derived
+
+        [JsonIgnore]
+        public IfcLine AxisLine{get{throw new NotImplementedException($"Derived property logic has been implemented for AxisLine.");}} // derived
 
 
 		/// <summary>
@@ -34542,7 +34648,9 @@ namespace IFC4
 	{
 		public IfcDirection ExtrudedDirection{get;set;} 
 		public IfcLengthMeasure Depth{get;set;} 
-		public IfcVector ExtrusionAxis{get{throw new NotImplementedException("Derived property logic has been implemented for ExtrusionAxis.");}} // derived
+
+        [JsonIgnore]
+        public IfcVector ExtrusionAxis{get{throw new NotImplementedException($"Derived property logic has been implemented for ExtrusionAxis.");}} // derived
 
 
 		/// <summary>
@@ -34585,7 +34693,9 @@ namespace IFC4
 	public  partial class IfcSurfaceOfRevolution : IfcSweptSurface
 	{
 		public IfcAxis1Placement AxisPosition{get;set;} 
-		public IfcLine AxisLine{get{throw new NotImplementedException("Derived property logic has been implemented for AxisLine.");}} // derived
+
+        [JsonIgnore]
+        public IfcLine AxisLine{get{throw new NotImplementedException($"Derived property logic has been implemented for AxisLine.");}} // derived
 
 
 		/// <summary>
@@ -34768,9 +34878,15 @@ namespace IFC4
 		public IfcLabel Name{get;set;} // optional
 		public List<IfcTableRow> Rows{get;set;} // optional
 		public List<IfcTableColumn> Columns{get;set;} // optional
-		public int NumberOfCellsInRow{get{throw new NotImplementedException("Derived property logic has been implemented for NumberOfCellsInRow.");}} // derived
-		public int NumberOfHeadings{get{throw new NotImplementedException("Derived property logic has been implemented for NumberOfHeadings.");}} // derived
-		public int NumberOfDataRows{get{throw new NotImplementedException("Derived property logic has been implemented for NumberOfDataRows.");}} // derived
+
+        [JsonIgnore]
+        public int NumberOfCellsInRow{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfCellsInRow.");}} // derived
+
+        [JsonIgnore]
+        public int NumberOfHeadings{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfHeadings.");}} // derived
+
+        [JsonIgnore]
+        public int NumberOfDataRows{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfDataRows.");}} // derived
 
 
 		/// <summary>
@@ -35050,7 +35166,9 @@ namespace IFC4
 	{
 		public List<List<int>> CoordIndex{get;set;} 
 		public List<List<int>> NormalIndex{get;set;} // optional
-		public int NumberOfTriangles{get{throw new NotImplementedException("Derived property logic has been implemented for NumberOfTriangles.");}} // derived
+
+        [JsonIgnore]
+        public int NumberOfTriangles{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfTriangles.");}} // derived
 
 
 		/// <summary>
