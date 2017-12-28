@@ -1,7 +1,7 @@
 grammar Express;
 
 actualParams
-	: '(' parameter (',' parameter)* ')'
+	: '(' ('--' SimpleId)? parameter (',' ('--' SimpleId)? parameter)* ')' // IFC Named parameters. Ex: -- Axis1 IfcRepresentationItem() || IfcGeometricRepresentationItem() || IfcDirection([-1., 0.])
 	;
 
 aggregateExpr
