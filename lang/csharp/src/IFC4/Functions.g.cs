@@ -7,6 +7,11 @@ namespace IFC4
     public static class Functions
     {
         
+        public static IfcSurface IfcAssociatedSurface(IfcPcurve arg)
+        {
+            throw new NotImplementedException();
+        }
+
         public static List<IfcDirection> IfcBaseAxis(int dim,IfcDirection axis1,IfcDirection axis2,IfcDirection axis3)
         {
             throw new NotImplementedException();
@@ -23,6 +28,11 @@ namespace IFC4
         }
 
         public static List<IfcDirection> IfcBuildAxes(IfcDirection axis,IfcDirection refDirection)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool IfcConsecutiveSegments(List<IfcSegmentIndexSelect> segments)
         {
             throw new NotImplementedException();
         }
@@ -137,6 +147,11 @@ namespace IFC4
             throw new NotImplementedException();
         }
 
+        public static IfcDimensionCount IfcPointListDim(IfcCartesianPointList pointList)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool? IfcSameAxis2Placement(IfcAxis2Placement ap1,IfcAxis2Placement ap2,double epsilon)
         {
             throw new NotImplementedException();
@@ -192,7 +207,17 @@ namespace IFC4
             throw new NotImplementedException();
         }
 
+        public static bool? IfcUniqueDefinitionNames(List<IfcRelDefinesByProperties> relations)
+        {
+            throw new NotImplementedException();
+        }
+
         public static bool? IfcUniquePropertyName(List<IfcProperty> properties)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool? IfcUniquePropertySetNames(List<IfcPropertySetDefinition> properties)
         {
             throw new NotImplementedException();
         }

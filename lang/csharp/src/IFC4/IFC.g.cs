@@ -57,6 +57,23 @@ namespace IFC4
     }
     
 	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstrippedoptional.htm
+	/// </summary>
+	public class IfcStrippedOptional : BaseIfc
+	{
+		internal bool value;
+
+		public IfcStrippedOptional(bool value){ this.value = value; }	
+		public static implicit operator bool(IfcStrippedOptional v){ return v.value; }
+		public static implicit operator IfcStrippedOptional(bool v){ return new IfcStrippedOptional(v); }	
+		public static IfcStrippedOptional FromJSON(string json){ return JsonConvert.DeserializeObject<IfcStrippedOptional>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
+        }
+	}
+	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcabsorbeddosemeasure.htm
 	/// </summary>
 	public class IfcAbsorbedDoseMeasure : BaseIfc
@@ -125,6 +142,23 @@ namespace IFC4
         }
 	}
 	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarcindex.htm
+	/// </summary>
+	public class IfcArcIndex : BaseIfc
+	{
+		internal List<IfcPositiveInteger> value;
+
+		public IfcArcIndex(List<IfcPositiveInteger> value){ this.value = value; }	
+		public static implicit operator List<IfcPositiveInteger>(IfcArcIndex v){ return v.value; }
+		public static implicit operator IfcArcIndex(List<IfcPositiveInteger> v){ return new IfcArcIndex(v); }	
+		public static IfcArcIndex FromJSON(string json){ return JsonConvert.DeserializeObject<IfcArcIndex>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
+        }
+	}
+	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcareadensitymeasure.htm
 	/// </summary>
 	public class IfcAreaDensityMeasure : BaseIfc
@@ -152,6 +186,23 @@ namespace IFC4
 		public static implicit operator double(IfcAreaMeasure v){ return v.value; }
 		public static implicit operator IfcAreaMeasure(double v){ return new IfcAreaMeasure(v); }	
 		public static IfcAreaMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcAreaMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
+        }
+	}
+	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbinary.htm
+	/// </summary>
+	public class IfcBinary : BaseIfc
+	{
+		internal byte[] value;
+
+		public IfcBinary(byte[] value){ this.value = value; }	
+		public static implicit operator byte[](IfcBinary v){ return v.value; }
+		public static implicit operator IfcBinary(byte[] v){ return new IfcBinary(v); }	
+		public static IfcBinary FromJSON(string json){ return JsonConvert.DeserializeObject<IfcBinary>(json); }
         public override string ToString(){ return value.ToString(); }
 		public override string ToStepValue(bool isSelectOption = false){
 			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
@@ -890,6 +941,23 @@ namespace IFC4
         }
 	}
 	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclineindex.htm
+	/// </summary>
+	public class IfcLineIndex : BaseIfc
+	{
+		internal List<IfcPositiveInteger> value;
+
+		public IfcLineIndex(List<IfcPositiveInteger> value){ this.value = value; }	
+		public static implicit operator List<IfcPositiveInteger>(IfcLineIndex v){ return v.value; }
+		public static implicit operator IfcLineIndex(List<IfcPositiveInteger> v){ return new IfcLineIndex(v); }	
+		public static IfcLineIndex FromJSON(string json){ return JsonConvert.DeserializeObject<IfcLineIndex>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
+        }
+	}
+	/// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclinearforcemeasure.htm
 	/// </summary>
 	public class IfcLinearForceMeasure : BaseIfc
@@ -1393,6 +1461,23 @@ namespace IFC4
 		public static implicit operator double(IfcPlaneAngleMeasure v){ return v.value; }
 		public static implicit operator IfcPlaneAngleMeasure(double v){ return new IfcPlaneAngleMeasure(v); }	
 		public static IfcPlaneAngleMeasure FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPlaneAngleMeasure>(json); }
+        public override string ToString(){ return value.ToString(); }
+		public override string ToStepValue(bool isSelectOption = false){
+			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
+			else{ return value.ToStepValue(isSelectOption); }
+        }
+	}
+	/// <summary>
+	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositiveinteger.htm
+	/// </summary>
+	public class IfcPositiveInteger : BaseIfc
+	{
+		internal IfcInteger value;
+
+		public IfcPositiveInteger(IfcInteger value){ this.value = value; }	
+		public static implicit operator IfcInteger(IfcPositiveInteger v){ return v.value; }
+		public static implicit operator IfcPositiveInteger(IfcInteger v){ return new IfcPositiveInteger(v); }	
+		public static IfcPositiveInteger FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPositiveInteger>(json); }
         public override string ToString(){ return value.ToString(); }
 		public override string ToStepValue(bool isSelectOption = false){
 			if(isSelectOption){ return $"{GetType().Name.ToUpper()}({value.ToStepValue(isSelectOption)})"; }
@@ -2285,7 +2370,7 @@ namespace IFC4
 	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelementproxytypeenum.htm
     /// </summary>
-    public enum IfcBuildingElementProxyTypeEnum {COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,USERDEFINED,NOTDEFINED}
+    public enum IfcBuildingElementProxyTypeEnum {COMPLEX,ELEMENT,PARTIAL,PROVISIONFORVOID,PROVISIONFORSPACE,USERDEFINED,NOTDEFINED}
 	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingsystemtypeenum.htm
     /// </summary>
@@ -2533,7 +2618,7 @@ namespace IFC4
 	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialelementtypeenum.htm
     /// </summary>
-    public enum IfcExternalSpatialElementTypeEnum {EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFIEND}
+    public enum IfcExternalSpatialElementTypeEnum {EXTERNAL,EXTERNAL_EARTH,EXTERNAL_WATER,EXTERNAL_FIRE,USERDEFINED,NOTDEFINED}
 	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfantypeenum.htm
     /// </summary>
@@ -2723,6 +2808,10 @@ namespace IFC4
     /// </summary>
     public enum IfcPlateTypeEnum {CURTAIN_PANEL,SHEET,USERDEFINED,NOTDEFINED}
 	/// <summary>
+    /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpreferredsurfacecurverepresentation.htm
+    /// </summary>
+    public enum IfcPreferredSurfaceCurveRepresentation {CURVE3D,PCURVE_S1,PCURVE_S2}
+	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproceduretypeenum.htm
     /// </summary>
     public enum IfcProcedureTypeEnum {ADVICE_CAUTION,ADVICE_NOTE,ADVICE_WARNING,CALIBRATION,DIAGNOSTIC,SHUTDOWN,STARTUP,USERDEFINED,NOTDEFINED}
@@ -2821,7 +2910,7 @@ namespace IFC4
 	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsensortypeenum.htm
     /// </summary>
-    public enum IfcSensorTypeEnum {CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED}
+    public enum IfcSensorTypeEnum {COSENSOR,CO2SENSOR,CONDUCTANCESENSOR,CONTACTSENSOR,FIRESENSOR,FLOWSENSOR,FROSTSENSOR,GASSENSOR,HEATSENSOR,HUMIDITYSENSOR,IDENTIFIERSENSOR,IONCONCENTRATIONSENSOR,LEVELSENSOR,LIGHTSENSOR,MOISTURESENSOR,MOVEMENTSENSOR,PHSENSOR,PRESSURESENSOR,RADIATIONSENSOR,RADIOACTIVITYSENSOR,SMOKESENSOR,SOUNDSENSOR,TEMPERATURESENSOR,WINDSENSOR,USERDEFINED,NOTDEFINED}
 	/// <summary>
     /// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsequenceenum.htm
     /// </summary>
@@ -3059,6 +3148,7 @@ namespace IFC4
 		public IfcBooleanOperand(IfcCsgPrimitive3D choice){ this.choice = choice; }
 		public IfcBooleanOperand(IfcHalfSpaceSolid choice){ this.choice = choice; }
 		public IfcBooleanOperand(IfcSolidModel choice){ this.choice = choice; }
+		public IfcBooleanOperand(IfcTessellatedFaceSet choice){ this.choice = choice; }
 
     }
 	
@@ -3115,6 +3205,7 @@ namespace IFC4
     {
 		public IfcCurveOnSurface(IfcCompositeCurveOnSurface choice){ this.choice = choice; }
 		public IfcCurveOnSurface(IfcPcurve choice){ this.choice = choice; }
+		public IfcCurveOnSurface(IfcSurfaceCurve choice){ this.choice = choice; }
 
     }
 	
@@ -3435,6 +3526,13 @@ namespace IFC4
 
     }
 	
+    public class IfcSegmentIndexSelect : Select
+    {
+		public IfcSegmentIndexSelect(IfcArcIndex choice){ this.choice = choice; }
+		public IfcSegmentIndexSelect(IfcLineIndex choice){ this.choice = choice; }
+
+    }
+	
     public class IfcShell : Select
     {
 		public IfcShell(IfcClosedShell choice){ this.choice = choice; }
@@ -3444,6 +3542,7 @@ namespace IFC4
 	
     public class IfcSimpleValue : Select
     {
+		public IfcSimpleValue(IfcBinary choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcBoolean choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcDate choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcDateTime choice){ this.choice = choice; }
@@ -3452,6 +3551,7 @@ namespace IFC4
 		public IfcSimpleValue(IfcInteger choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcLabel choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcLogical choice){ this.choice = choice; }
+		public IfcSimpleValue(IfcPositiveInteger choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcReal choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcText choice){ this.choice = choice; }
 		public IfcSimpleValue(IfcTime choice){ this.choice = choice; }
@@ -4238,7 +4338,7 @@ namespace IFC4
 		/// Construct a IfcAdvancedFace with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcAdvancedFace(List<IfcFaceBound> bounds,IfcSurface faceSurface,bool sameSense):base(bounds,faceSurface,sameSense)
+		public IfcAdvancedFace(List<IfcFaceBound> bounds,IfcSurface faceSurface,IfcBoolean sameSense):base(bounds,faceSurface,sameSense)
 		{
 
 
@@ -4250,7 +4350,7 @@ namespace IFC4
             var parameters = new List<string>();
 			parameters.Add(Bounds != null ? Bounds.ToStepValue() : "$");
 			parameters.Add(FaceSurface != null ? FaceSurface.ToStepValue() : "$");
-			parameters.Add(SameSense.ToStepValue());
+			parameters.Add(SameSense != null ? SameSense.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -4261,14 +4361,14 @@ namespace IFC4
 	public  partial class IfcFaceSurface : IfcFace
 	{
 		public IfcSurface FaceSurface{get;set;} 
-		public bool SameSense{get;set;} 
+		public IfcBoolean SameSense{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcFaceSurface with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcFaceSurface(List<IfcFaceBound> bounds,IfcSurface faceSurface,bool sameSense):base(bounds)
+		public IfcFaceSurface(List<IfcFaceBound> bounds,IfcSurface faceSurface,IfcBoolean sameSense):base(bounds)
 		{
 
 			FaceSurface = faceSurface;
@@ -4282,7 +4382,7 @@ namespace IFC4
             var parameters = new List<string>();
 			parameters.Add(Bounds != null ? Bounds.ToStepValue() : "$");
 			parameters.Add(FaceSurface != null ? FaceSurface.ToStepValue() : "$");
-			parameters.Add(SameSense.ToStepValue());
+			parameters.Add(SameSense != null ? SameSense.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -5942,14 +6042,14 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcBSplineCurve : IfcBoundedCurve
 	{
-		public int Degree{get;set;} 
+		public IfcInteger Degree{get;set;} 
 		public List<IfcCartesianPoint> ControlPointsList{get;set;} 
 		public IfcBSplineCurveForm CurveForm{get;set;} 
-		public bool? ClosedCurve{get;set;} 
-		public bool? SelfIntersect{get;set;} 
+		public IfcLogical ClosedCurve{get;set;} 
+		public IfcLogical SelfIntersect{get;set;} 
 
         [JsonIgnore]
-        public int UpperIndexOnControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for UpperIndexOnControlPoints.");}} // derived
+        public IfcInteger UpperIndexOnControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for UpperIndexOnControlPoints.");}} // derived
 
         [JsonIgnore]
         public List<IfcCartesianPoint> ControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for ControlPoints.");}} // derived
@@ -5959,7 +6059,7 @@ namespace IFC4
 		/// Construct a IfcBSplineCurve with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBSplineCurve(int degree,List<IfcCartesianPoint> controlPointsList,IfcBSplineCurveForm curveForm,bool? closedCurve,bool? selfIntersect):base()
+		public IfcBSplineCurve(IfcInteger degree,List<IfcCartesianPoint> controlPointsList,IfcBSplineCurveForm curveForm,IfcLogical closedCurve,IfcLogical selfIntersect):base()
 		{
 
 			Degree = degree;
@@ -5977,19 +6077,19 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcBSplineCurveWithKnots : IfcBSplineCurve
 	{
-		public List<int> KnotMultiplicities{get;set;} 
+		public List<IfcInteger> KnotMultiplicities{get;set;} 
 		public List<IfcParameterValue> Knots{get;set;} 
 		public IfcKnotType KnotSpec{get;set;} 
 
         [JsonIgnore]
-        public int UpperIndexOnKnots{get{throw new NotImplementedException($"Derived property logic has been implemented for UpperIndexOnKnots.");}} // derived
+        public IfcInteger UpperIndexOnKnots{get{throw new NotImplementedException($"Derived property logic has been implemented for UpperIndexOnKnots.");}} // derived
 
 
 		/// <summary>
 		/// Construct a IfcBSplineCurveWithKnots with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBSplineCurveWithKnots(int degree,List<IfcCartesianPoint> controlPointsList,IfcBSplineCurveForm curveForm,bool? closedCurve,bool? selfIntersect,List<int> knotMultiplicities,List<IfcParameterValue> knots,IfcKnotType knotSpec):base(degree,controlPointsList,curveForm,closedCurve,selfIntersect)
+		public IfcBSplineCurveWithKnots(IfcInteger degree,List<IfcCartesianPoint> controlPointsList,IfcBSplineCurveForm curveForm,IfcLogical closedCurve,IfcLogical selfIntersect,List<IfcInteger> knotMultiplicities,List<IfcParameterValue> knots,IfcKnotType knotSpec):base(degree,controlPointsList,curveForm,closedCurve,selfIntersect)
 		{
 
 			KnotMultiplicities = knotMultiplicities;
@@ -6002,7 +6102,7 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(Degree.ToStepValue());
+			parameters.Add(Degree != null ? Degree.ToStepValue() : "$");
 			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
 			parameters.Add(CurveForm != null ? CurveForm.ToStepValue() : "$");
 			parameters.Add(ClosedCurve != null ? ClosedCurve.ToStepValue() : "$");
@@ -6038,17 +6138,17 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRationalBSplineCurveWithKnots : IfcBSplineCurveWithKnots
 	{
-		public List<double> WeightsData{get;set;} 
+		public List<IfcReal> WeightsData{get;set;} 
 
         [JsonIgnore]
-        public List<double> Weights{get{throw new NotImplementedException($"Derived property logic has been implemented for Weights.");}} // derived
+        public List<IfcReal> Weights{get{throw new NotImplementedException($"Derived property logic has been implemented for Weights.");}} // derived
 
 
 		/// <summary>
 		/// Construct a IfcRationalBSplineCurveWithKnots with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcRationalBSplineCurveWithKnots(int degree,List<IfcCartesianPoint> controlPointsList,IfcBSplineCurveForm curveForm,bool? closedCurve,bool? selfIntersect,List<int> knotMultiplicities,List<IfcParameterValue> knots,IfcKnotType knotSpec,List<double> weightsData):base(degree,controlPointsList,curveForm,closedCurve,selfIntersect,knotMultiplicities,knots,knotSpec)
+		public IfcRationalBSplineCurveWithKnots(IfcInteger degree,List<IfcCartesianPoint> controlPointsList,IfcBSplineCurveForm curveForm,IfcLogical closedCurve,IfcLogical selfIntersect,List<IfcInteger> knotMultiplicities,List<IfcParameterValue> knots,IfcKnotType knotSpec,List<IfcReal> weightsData):base(degree,controlPointsList,curveForm,closedCurve,selfIntersect,knotMultiplicities,knots,knotSpec)
 		{
 
 			WeightsData = weightsData;
@@ -6059,7 +6159,7 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(Degree.ToStepValue());
+			parameters.Add(Degree != null ? Degree.ToStepValue() : "$");
 			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
 			parameters.Add(CurveForm != null ? CurveForm.ToStepValue() : "$");
 			parameters.Add(ClosedCurve != null ? ClosedCurve.ToStepValue() : "$");
@@ -6077,19 +6177,19 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcBSplineSurface : IfcBoundedSurface
 	{
-		public int UDegree{get;set;} 
-		public int VDegree{get;set;} 
+		public IfcInteger UDegree{get;set;} 
+		public IfcInteger VDegree{get;set;} 
 		public List<List<IfcCartesianPoint>> ControlPointsList{get;set;} 
 		public IfcBSplineSurfaceForm SurfaceForm{get;set;} 
-		public bool? UClosed{get;set;} 
-		public bool? VClosed{get;set;} 
-		public bool? SelfIntersect{get;set;} 
+		public IfcLogical UClosed{get;set;} 
+		public IfcLogical VClosed{get;set;} 
+		public IfcLogical SelfIntersect{get;set;} 
 
         [JsonIgnore]
-        public int UUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for UUpper.");}} // derived
+        public IfcInteger UUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for UUpper.");}} // derived
 
         [JsonIgnore]
-        public int VUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for VUpper.");}} // derived
+        public IfcInteger VUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for VUpper.");}} // derived
 
         [JsonIgnore]
         public List<List<IfcCartesianPoint>> ControlPoints{get{throw new NotImplementedException($"Derived property logic has been implemented for ControlPoints.");}} // derived
@@ -6099,7 +6199,7 @@ namespace IFC4
 		/// Construct a IfcBSplineSurface with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBSplineSurface(int uDegree,int vDegree,List<List<IfcCartesianPoint>> controlPointsList,IfcBSplineSurfaceForm surfaceForm,bool? uClosed,bool? vClosed,bool? selfIntersect):base()
+		public IfcBSplineSurface(IfcInteger uDegree,IfcInteger vDegree,List<List<IfcCartesianPoint>> controlPointsList,IfcBSplineSurfaceForm surfaceForm,IfcLogical uClosed,IfcLogical vClosed,IfcLogical selfIntersect):base()
 		{
 
 			UDegree = uDegree;
@@ -6119,24 +6219,24 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcBSplineSurfaceWithKnots : IfcBSplineSurface
 	{
-		public List<int> UMultiplicities{get;set;} 
-		public List<int> VMultiplicities{get;set;} 
+		public List<IfcInteger> UMultiplicities{get;set;} 
+		public List<IfcInteger> VMultiplicities{get;set;} 
 		public List<IfcParameterValue> UKnots{get;set;} 
 		public List<IfcParameterValue> VKnots{get;set;} 
 		public IfcKnotType KnotSpec{get;set;} 
 
         [JsonIgnore]
-        public int KnotVUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for KnotVUpper.");}} // derived
+        public IfcInteger KnotVUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for KnotVUpper.");}} // derived
 
         [JsonIgnore]
-        public int KnotUUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for KnotUUpper.");}} // derived
+        public IfcInteger KnotUUpper{get{throw new NotImplementedException($"Derived property logic has been implemented for KnotUUpper.");}} // derived
 
 
 		/// <summary>
 		/// Construct a IfcBSplineSurfaceWithKnots with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBSplineSurfaceWithKnots(int uDegree,int vDegree,List<List<IfcCartesianPoint>> controlPointsList,IfcBSplineSurfaceForm surfaceForm,bool? uClosed,bool? vClosed,bool? selfIntersect,List<int> uMultiplicities,List<int> vMultiplicities,List<IfcParameterValue> uKnots,List<IfcParameterValue> vKnots,IfcKnotType knotSpec):base(uDegree,vDegree,controlPointsList,surfaceForm,uClosed,vClosed,selfIntersect)
+		public IfcBSplineSurfaceWithKnots(IfcInteger uDegree,IfcInteger vDegree,List<List<IfcCartesianPoint>> controlPointsList,IfcBSplineSurfaceForm surfaceForm,IfcLogical uClosed,IfcLogical vClosed,IfcLogical selfIntersect,List<IfcInteger> uMultiplicities,List<IfcInteger> vMultiplicities,List<IfcParameterValue> uKnots,List<IfcParameterValue> vKnots,IfcKnotType knotSpec):base(uDegree,vDegree,controlPointsList,surfaceForm,uClosed,vClosed,selfIntersect)
 		{
 
 			UMultiplicities = uMultiplicities;
@@ -6151,8 +6251,8 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(UDegree.ToStepValue());
-			parameters.Add(VDegree.ToStepValue());
+			parameters.Add(UDegree != null ? UDegree.ToStepValue() : "$");
+			parameters.Add(VDegree != null ? VDegree.ToStepValue() : "$");
 			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
 			parameters.Add(SurfaceForm != null ? SurfaceForm.ToStepValue() : "$");
 			parameters.Add(UClosed != null ? UClosed.ToStepValue() : "$");
@@ -6191,17 +6291,17 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRationalBSplineSurfaceWithKnots : IfcBSplineSurfaceWithKnots
 	{
-		public List<List<double>> WeightsData{get;set;} 
+		public List<List<IfcReal>> WeightsData{get;set;} 
 
         [JsonIgnore]
-        public List<List<double>> Weights{get{throw new NotImplementedException($"Derived property logic has been implemented for Weights.");}} // derived
+        public List<List<IfcReal>> Weights{get{throw new NotImplementedException($"Derived property logic has been implemented for Weights.");}} // derived
 
 
 		/// <summary>
 		/// Construct a IfcRationalBSplineSurfaceWithKnots with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcRationalBSplineSurfaceWithKnots(int uDegree,int vDegree,List<List<IfcCartesianPoint>> controlPointsList,IfcBSplineSurfaceForm surfaceForm,bool? uClosed,bool? vClosed,bool? selfIntersect,List<int> uMultiplicities,List<int> vMultiplicities,List<IfcParameterValue> uKnots,List<IfcParameterValue> vKnots,IfcKnotType knotSpec,List<List<double>> weightsData):base(uDegree,vDegree,controlPointsList,surfaceForm,uClosed,vClosed,selfIntersect,uMultiplicities,vMultiplicities,uKnots,vKnots,knotSpec)
+		public IfcRationalBSplineSurfaceWithKnots(IfcInteger uDegree,IfcInteger vDegree,List<List<IfcCartesianPoint>> controlPointsList,IfcBSplineSurfaceForm surfaceForm,IfcLogical uClosed,IfcLogical vClosed,IfcLogical selfIntersect,List<IfcInteger> uMultiplicities,List<IfcInteger> vMultiplicities,List<IfcParameterValue> uKnots,List<IfcParameterValue> vKnots,IfcKnotType knotSpec,List<List<IfcReal>> weightsData):base(uDegree,vDegree,controlPointsList,surfaceForm,uClosed,vClosed,selfIntersect,uMultiplicities,vMultiplicities,uKnots,vKnots,knotSpec)
 		{
 
 			WeightsData = weightsData;
@@ -6212,8 +6312,8 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(UDegree.ToStepValue());
-			parameters.Add(VDegree.ToStepValue());
+			parameters.Add(UDegree != null ? UDegree.ToStepValue() : "$");
+			parameters.Add(VDegree != null ? VDegree.ToStepValue() : "$");
 			parameters.Add(ControlPointsList != null ? ControlPointsList.ToStepValue() : "$");
 			parameters.Add(SurfaceForm != null ? SurfaceForm.ToStepValue() : "$");
 			parameters.Add(UClosed != null ? UClosed.ToStepValue() : "$");
@@ -6320,7 +6420,6 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcBuildingElement : IfcElement
 	{
-		public List<IfcRelCoversBldgElements> HasCoverings{get;set;} // inverse
 
 
 		/// <summary>
@@ -6328,7 +6427,6 @@ namespace IFC4
 		/// </summary>
 		public IfcBuildingElement(IfcGloballyUniqueId globalId):base(globalId)
 		{
-			HasCoverings = new List<IfcRelCoversBldgElements>();
 
 
 		}
@@ -6338,7 +6436,6 @@ namespace IFC4
 		[JsonConstructor]
 		public IfcBuildingElement(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcIdentifier tag):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,tag)
 		{
-			HasCoverings = new List<IfcRelCoversBldgElements>();
 
 
 		}
@@ -6424,13 +6521,13 @@ namespace IFC4
 	public  partial class IfcBlobTexture : IfcSurfaceTexture
 	{
 		public IfcIdentifier RasterFormat{get;set;} 
-		public byte[] RasterCode{get;set;} 
+		public IfcBinary RasterCode{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcBlobTexture with all required attributes.
 		/// </summary>
-		public IfcBlobTexture(bool repeatS,bool repeatT,IfcIdentifier rasterFormat,byte[] rasterCode):base(repeatS,repeatT)
+		public IfcBlobTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcIdentifier rasterFormat,IfcBinary rasterCode):base(repeatS,repeatT)
 		{
 
 			RasterFormat = rasterFormat;
@@ -6441,7 +6538,7 @@ namespace IFC4
 		/// Construct a IfcBlobTexture with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBlobTexture(bool repeatS,bool repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter,IfcIdentifier rasterFormat,byte[] rasterCode):base(repeatS,repeatT,mode,textureTransform,parameter)
+		public IfcBlobTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter,IfcIdentifier rasterFormat,IfcBinary rasterCode):base(repeatS,repeatT,mode,textureTransform,parameter)
 		{
 
 			RasterFormat = rasterFormat;
@@ -6453,8 +6550,8 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(RepeatS.ToStepValue());
-			parameters.Add(RepeatT.ToStepValue());
+			parameters.Add(RepeatS != null ? RepeatS.ToStepValue() : "$");
+			parameters.Add(RepeatT != null ? RepeatT.ToStepValue() : "$");
 			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
 			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
 			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
@@ -6469,8 +6566,8 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcSurfaceTexture : IfcPresentationItem
 	{
-		public bool RepeatS{get;set;} 
-		public bool RepeatT{get;set;} 
+		public IfcBoolean RepeatS{get;set;} 
+		public IfcBoolean RepeatT{get;set;} 
 		public IfcIdentifier Mode{get;set;} // optional
 		public IfcCartesianTransformationOperator2D TextureTransform{get;set;} // optional
 		public List<IfcIdentifier> Parameter{get;set;} // optional
@@ -6481,7 +6578,7 @@ namespace IFC4
 		/// <summary>
 		/// Construct a IfcSurfaceTexture with all required attributes.
 		/// </summary>
-		public IfcSurfaceTexture(bool repeatS,bool repeatT):base()
+		public IfcSurfaceTexture(IfcBoolean repeatS,IfcBoolean repeatT):base()
 		{
 			Parameter = new List<IfcIdentifier>();
 			IsMappedBy = new List<IfcTextureCoordinate>();
@@ -6495,7 +6592,7 @@ namespace IFC4
 		/// Construct a IfcSurfaceTexture with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcSurfaceTexture(bool repeatS,bool repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter):base()
+		public IfcSurfaceTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter):base()
 		{
 			IsMappedBy = new List<IfcTextureCoordinate>();
 			UsedInStyles = new List<IfcSurfaceStyleWithTextures>();
@@ -6911,7 +7008,7 @@ namespace IFC4
 		/// Construct a IfcBoundaryCurve with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBoundaryCurve(List<IfcCompositeCurveSegment> segments,bool? selfIntersect):base(segments,selfIntersect)
+		public IfcBoundaryCurve(List<IfcCompositeCurveSegment> segments,IfcLogical selfIntersect):base(segments,selfIntersect)
 		{
 
 
@@ -6938,7 +7035,7 @@ namespace IFC4
 		/// Construct a IfcOuterBoundaryCurve with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcOuterBoundaryCurve(List<IfcCompositeCurveSegment> segments,bool? selfIntersect):base(segments,selfIntersect)
+		public IfcOuterBoundaryCurve(List<IfcCompositeCurveSegment> segments,IfcLogical selfIntersect):base(segments,selfIntersect)
 		{
 
 
@@ -6968,7 +7065,7 @@ namespace IFC4
 		/// Construct a IfcCompositeCurveOnSurface with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCompositeCurveOnSurface(List<IfcCompositeCurveSegment> segments,bool? selfIntersect):base(segments,selfIntersect)
+		public IfcCompositeCurveOnSurface(List<IfcCompositeCurveSegment> segments,IfcLogical selfIntersect):base(segments,selfIntersect)
 		{
 
 
@@ -7033,20 +7130,20 @@ namespace IFC4
 	public  partial class IfcCompositeCurve : IfcBoundedCurve
 	{
 		public List<IfcCompositeCurveSegment> Segments{get;set;} 
-		public bool? SelfIntersect{get;set;} 
+		public IfcLogical SelfIntersect{get;set;} 
 
         [JsonIgnore]
-        public int NSegments{get{throw new NotImplementedException($"Derived property logic has been implemented for NSegments.");}} // derived
+        public IfcInteger NSegments{get{throw new NotImplementedException($"Derived property logic has been implemented for NSegments.");}} // derived
 
         [JsonIgnore]
-        public bool? ClosedCurve{get{throw new NotImplementedException($"Derived property logic has been implemented for ClosedCurve.");}} // derived
+        public IfcLogical ClosedCurve{get{throw new NotImplementedException($"Derived property logic has been implemented for ClosedCurve.");}} // derived
 
 
 		/// <summary>
 		/// Construct a IfcCompositeCurve with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCompositeCurve(List<IfcCompositeCurveSegment> segments,bool? selfIntersect):base()
+		public IfcCompositeCurve(List<IfcCompositeCurveSegment> segments,IfcLogical selfIntersect):base()
 		{
 
 			Segments = segments;
@@ -7058,6 +7155,50 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
+			parameters.Add(Segments != null ? Segments.ToStepValue() : "$");
+			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedpolycurve.htm"/>
+	/// </summary>
+	public  partial class IfcIndexedPolyCurve : IfcBoundedCurve
+	{
+		public IfcCartesianPointList Points{get;set;} 
+		public List<IfcSegmentIndexSelect> Segments{get;set;} // optional
+		public IfcBoolean SelfIntersect{get;set;} // optional
+
+
+		/// <summary>
+		/// Construct a IfcIndexedPolyCurve with all required attributes.
+		/// </summary>
+		public IfcIndexedPolyCurve(IfcCartesianPointList points):base()
+		{
+			Segments = new List<IfcSegmentIndexSelect>();
+
+			Points = points;
+
+		}
+		/// <summary>
+		/// Construct a IfcIndexedPolyCurve with required and optional attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcIndexedPolyCurve(IfcCartesianPointList points,List<IfcSegmentIndexSelect> segments,IfcBoolean selfIntersect):base()
+		{
+
+			Points = points;
+			Segments = segments;
+			SelfIntersect = selfIntersect;
+
+		}
+		public static new IfcIndexedPolyCurve FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIndexedPolyCurve>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Points != null ? Points.ToStepValue() : "$");
 			parameters.Add(Segments != null ? Segments.ToStepValue() : "$");
 			parameters.Add(SelfIntersect != null ? SelfIntersect.ToStepValue() : "$");
 
@@ -7100,7 +7241,7 @@ namespace IFC4
 		public IfcCurve BasisCurve{get;set;} 
 		public List<IfcTrimmingSelect> Trim1{get;set;} 
 		public List<IfcTrimmingSelect> Trim2{get;set;} 
-		public bool SenseAgreement{get;set;} 
+		public IfcBoolean SenseAgreement{get;set;} 
 		public IfcTrimmingPreference MasterRepresentation{get;set;} 
 
 
@@ -7108,7 +7249,7 @@ namespace IFC4
 		/// Construct a IfcTrimmedCurve with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTrimmedCurve(IfcCurve basisCurve,List<IfcTrimmingSelect> trim1,List<IfcTrimmingSelect> trim2,bool senseAgreement,IfcTrimmingPreference masterRepresentation):base()
+		public IfcTrimmedCurve(IfcCurve basisCurve,List<IfcTrimmingSelect> trim1,List<IfcTrimmingSelect> trim2,IfcBoolean senseAgreement,IfcTrimmingPreference masterRepresentation):base()
 		{
 
 			BasisCurve = basisCurve;
@@ -7126,7 +7267,7 @@ namespace IFC4
 			parameters.Add(BasisCurve != null ? BasisCurve.ToStepValue() : "$");
 			parameters.Add(Trim1 != null ? Trim1.ToStepValue() : "$");
 			parameters.Add(Trim2 != null ? Trim2.ToStepValue() : "$");
-			parameters.Add(SenseAgreement.ToStepValue());
+			parameters.Add(SenseAgreement != null ? SenseAgreement.ToStepValue() : "$");
 			parameters.Add(MasterRepresentation != null ? MasterRepresentation.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
@@ -7195,14 +7336,14 @@ namespace IFC4
 	{
 		public IfcSurface BasisSurface{get;set;} 
 		public List<IfcBoundaryCurve> Boundaries{get;set;} 
-		public bool ImplicitOuter{get;set;} 
+		public IfcBoolean ImplicitOuter{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcCurveBoundedSurface with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCurveBoundedSurface(IfcSurface basisSurface,List<IfcBoundaryCurve> boundaries,bool implicitOuter):base()
+		public IfcCurveBoundedSurface(IfcSurface basisSurface,List<IfcBoundaryCurve> boundaries,IfcBoolean implicitOuter):base()
 		{
 
 			BasisSurface = basisSurface;
@@ -7217,7 +7358,7 @@ namespace IFC4
             var parameters = new List<string>();
 			parameters.Add(BasisSurface != null ? BasisSurface.ToStepValue() : "$");
 			parameters.Add(Boundaries != null ? Boundaries.ToStepValue() : "$");
-			parameters.Add(ImplicitOuter.ToStepValue());
+			parameters.Add(ImplicitOuter != null ? ImplicitOuter.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -7232,15 +7373,15 @@ namespace IFC4
 		public IfcParameterValue V1{get;set;} 
 		public IfcParameterValue U2{get;set;} 
 		public IfcParameterValue V2{get;set;} 
-		public bool Usense{get;set;} 
-		public bool Vsense{get;set;} 
+		public IfcBoolean Usense{get;set;} 
+		public IfcBoolean Vsense{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcRectangularTrimmedSurface with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcRectangularTrimmedSurface(IfcSurface basisSurface,IfcParameterValue u1,IfcParameterValue v1,IfcParameterValue u2,IfcParameterValue v2,bool usense,bool vsense):base()
+		public IfcRectangularTrimmedSurface(IfcSurface basisSurface,IfcParameterValue u1,IfcParameterValue v1,IfcParameterValue u2,IfcParameterValue v2,IfcBoolean usense,IfcBoolean vsense):base()
 		{
 
 			BasisSurface = basisSurface;
@@ -7262,8 +7403,8 @@ namespace IFC4
 			parameters.Add(V1 != null ? V1.ToStepValue() : "$");
 			parameters.Add(U2 != null ? U2.ToStepValue() : "$");
 			parameters.Add(V2 != null ? V2.ToStepValue() : "$");
-			parameters.Add(Usense.ToStepValue());
-			parameters.Add(Vsense.ToStepValue());
+			parameters.Add(Usense != null ? Usense.ToStepValue() : "$");
+			parameters.Add(Vsense != null ? Vsense.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -7342,7 +7483,7 @@ namespace IFC4
 		/// Construct a IfcBoxedHalfSpace with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBoxedHalfSpace(IfcSurface baseSurface,bool agreementFlag,IfcBoundingBox enclosure):base(baseSurface,agreementFlag)
+		public IfcBoxedHalfSpace(IfcSurface baseSurface,IfcBoolean agreementFlag,IfcBoundingBox enclosure):base(baseSurface,agreementFlag)
 		{
 
 			Enclosure = enclosure;
@@ -7354,7 +7495,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(BaseSurface != null ? BaseSurface.ToStepValue() : "$");
-			parameters.Add(AgreementFlag.ToStepValue());
+			parameters.Add(AgreementFlag != null ? AgreementFlag.ToStepValue() : "$");
 			parameters.Add(Enclosure != null ? Enclosure.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
@@ -7366,7 +7507,7 @@ namespace IFC4
 	public  partial class IfcHalfSpaceSolid : IfcGeometricRepresentationItem
 	{
 		public IfcSurface BaseSurface{get;set;} 
-		public bool AgreementFlag{get;set;} 
+		public IfcBoolean AgreementFlag{get;set;} 
 
         [JsonIgnore]
         public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
@@ -7376,7 +7517,7 @@ namespace IFC4
 		/// Construct a IfcHalfSpaceSolid with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcHalfSpaceSolid(IfcSurface baseSurface,bool agreementFlag):base()
+		public IfcHalfSpaceSolid(IfcSurface baseSurface,IfcBoolean agreementFlag):base()
 		{
 
 			BaseSurface = baseSurface;
@@ -7389,7 +7530,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(BaseSurface != null ? BaseSurface.ToStepValue() : "$");
-			parameters.Add(AgreementFlag.ToStepValue());
+			parameters.Add(AgreementFlag != null ? AgreementFlag.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -8248,8 +8389,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcStairFlight : IfcBuildingElement
 	{
-		public int NumberOfRiser{get;set;} // optional
-		public int NumberOfTreads{get;set;} // optional
+		public IfcInteger NumberOfRisers{get;set;} // optional
+		public IfcInteger NumberOfTreads{get;set;} // optional
 		public IfcPositiveLengthMeasure RiserHeight{get;set;} // optional
 		public IfcPositiveLengthMeasure TreadLength{get;set;} // optional
 		public IfcStairFlightTypeEnum PredefinedType{get;set;} // optional
@@ -8267,10 +8408,10 @@ namespace IFC4
 		/// Construct a IfcStairFlight with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStairFlight(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcIdentifier tag,int numberOfRiser,int numberOfTreads,IfcPositiveLengthMeasure riserHeight,IfcPositiveLengthMeasure treadLength,IfcStairFlightTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,tag)
+		public IfcStairFlight(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcIdentifier tag,IfcInteger numberOfRisers,IfcInteger numberOfTreads,IfcPositiveLengthMeasure riserHeight,IfcPositiveLengthMeasure treadLength,IfcStairFlightTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,tag)
 		{
 
-			NumberOfRiser = numberOfRiser;
+			NumberOfRisers = numberOfRisers;
 			NumberOfTreads = numberOfTreads;
 			RiserHeight = riserHeight;
 			TreadLength = treadLength;
@@ -8290,8 +8431,8 @@ namespace IFC4
 			parameters.Add(ObjectPlacement != null ? ObjectPlacement.ToStepValue() : "$");
 			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
-			parameters.Add(NumberOfRiser.ToStepValue());
-			parameters.Add(NumberOfTreads.ToStepValue());
+			parameters.Add(NumberOfRisers != null ? NumberOfRisers.ToStepValue() : "$");
+			parameters.Add(NumberOfTreads != null ? NumberOfTreads.ToStepValue() : "$");
 			parameters.Add(RiserHeight != null ? RiserHeight.ToStepValue() : "$");
 			parameters.Add(TreadLength != null ? TreadLength.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
@@ -8416,6 +8557,7 @@ namespace IFC4
 		public List<IfcRelSpaceBoundary> ProvidesBoundaries{get;set;} // inverse
 		public List<IfcRelConnectsElements> ConnectedFrom{get;set;} // inverse
 		public List<IfcRelContainedInSpatialStructure> ContainedInStructure{get;set;} // inverse
+		public List<IfcRelCoversBldgElements> HasCoverings{get;set;} // inverse
 
 
 		/// <summary>
@@ -8434,6 +8576,7 @@ namespace IFC4
 			ProvidesBoundaries = new List<IfcRelSpaceBoundary>();
 			ConnectedFrom = new List<IfcRelConnectsElements>();
 			ContainedInStructure = new List<IfcRelContainedInSpatialStructure>();
+			HasCoverings = new List<IfcRelCoversBldgElements>();
 
 
 		}
@@ -8454,6 +8597,7 @@ namespace IFC4
 			ProvidesBoundaries = new List<IfcRelSpaceBoundary>();
 			ConnectedFrom = new List<IfcRelConnectsElements>();
 			ContainedInStructure = new List<IfcRelContainedInSpatialStructure>();
+			HasCoverings = new List<IfcRelCoversBldgElements>();
 
 			Tag = tag;
 
@@ -8842,7 +8986,7 @@ namespace IFC4
 	{
 		public IfcDoorTypeEnum PredefinedType{get;set;} 
 		public IfcDoorTypeOperationEnum OperationType{get;set;} 
-		public bool ParameterTakesPrecedence{get;set;} // optional
+		public IfcBoolean ParameterTakesPrecedence{get;set;} // optional
 		public IfcLabel UserDefinedOperationType{get;set;} // optional
 
 
@@ -8860,7 +9004,7 @@ namespace IFC4
 		/// Construct a IfcDoorType with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcDoorType(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcLabel elementType,IfcDoorTypeEnum predefinedType,IfcDoorTypeOperationEnum operationType,bool parameterTakesPrecedence,IfcLabel userDefinedOperationType):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag,elementType)
+		public IfcDoorType(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcLabel elementType,IfcDoorTypeEnum predefinedType,IfcDoorTypeOperationEnum operationType,IfcBoolean parameterTakesPrecedence,IfcLabel userDefinedOperationType):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag,elementType)
 		{
 
 			PredefinedType = predefinedType;
@@ -8885,7 +9029,7 @@ namespace IFC4
 			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(OperationType.ToStepValue());
-			parameters.Add(ParameterTakesPrecedence.ToStepValue());
+			parameters.Add(ParameterTakesPrecedence != null ? ParameterTakesPrecedence.ToStepValue() : "$");
 			parameters.Add(UserDefinedOperationType != null ? UserDefinedOperationType.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
@@ -9496,7 +9640,7 @@ namespace IFC4
 	{
 		public IfcWindowTypeEnum PredefinedType{get;set;} 
 		public IfcWindowTypePartitioningEnum PartitioningType{get;set;} 
-		public bool ParameterTakesPrecedence{get;set;} // optional
+		public IfcBoolean ParameterTakesPrecedence{get;set;} // optional
 		public IfcLabel UserDefinedPartitioningType{get;set;} // optional
 
 
@@ -9514,7 +9658,7 @@ namespace IFC4
 		/// Construct a IfcWindowType with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcWindowType(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcLabel elementType,IfcWindowTypeEnum predefinedType,IfcWindowTypePartitioningEnum partitioningType,bool parameterTakesPrecedence,IfcLabel userDefinedPartitioningType):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag,elementType)
+		public IfcWindowType(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcLabel elementType,IfcWindowTypeEnum predefinedType,IfcWindowTypePartitioningEnum partitioningType,IfcBoolean parameterTakesPrecedence,IfcLabel userDefinedPartitioningType):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag,elementType)
 		{
 
 			PredefinedType = predefinedType;
@@ -9539,7 +9683,7 @@ namespace IFC4
 			parameters.Add(ElementType != null ? ElementType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(PartitioningType.ToStepValue());
-			parameters.Add(ParameterTakesPrecedence.ToStepValue());
+			parameters.Add(ParameterTakesPrecedence != null ? ParameterTakesPrecedence.ToStepValue() : "$");
 			parameters.Add(UserDefinedPartitioningType != null ? UserDefinedPartitioningType.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
@@ -9625,6 +9769,7 @@ namespace IFC4
 	public  partial class IfcBuildingSystem : IfcSystem
 	{
 		public IfcBuildingSystemTypeEnum PredefinedType{get;set;} // optional
+		public IfcLabel LongName{get;set;} // optional
 
 
 		/// <summary>
@@ -9639,10 +9784,11 @@ namespace IFC4
 		/// Construct a IfcBuildingSystem with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcBuildingSystem(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcBuildingSystemTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType)
+		public IfcBuildingSystem(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcBuildingSystemTypeEnum predefinedType,IfcLabel longName):base(globalId,ownerHistory,name,description,objectType)
 		{
 
 			PredefinedType = predefinedType;
+			LongName = longName;
 
 		}
 		public static new IfcBuildingSystem FromJSON(string json){ return JsonConvert.DeserializeObject<IfcBuildingSystem>(json); }
@@ -9656,6 +9802,7 @@ namespace IFC4
 			parameters.Add(Description != null ? Description.ToStepValue() : "$");
 			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
+			parameters.Add(LongName != null ? LongName.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -10398,6 +10545,9 @@ namespace IFC4
 	public abstract partial class IfcCartesianPointList : IfcGeometricRepresentationItem
 	{
 
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
+
 
 		/// <summary>
 		/// Construct a IfcCartesianPointList with all required attributes.
@@ -10410,6 +10560,34 @@ namespace IFC4
 		}
 		public static new IfcCartesianPointList FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCartesianPointList>(json); }
 
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist2d.htm"/>
+	/// </summary>
+	public  partial class IfcCartesianPointList2D : IfcCartesianPointList
+	{
+		public List<List<IfcLengthMeasure>> CoordList{get;set;} 
+
+
+		/// <summary>
+		/// Construct a IfcCartesianPointList2D with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcCartesianPointList2D(List<List<IfcLengthMeasure>> coordList):base()
+		{
+
+			CoordList = coordList;
+
+		}
+		public static new IfcCartesianPointList2D FromJSON(string json){ return JsonConvert.DeserializeObject<IfcCartesianPointList2D>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(CoordList != null ? CoordList.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
 	}
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist3d.htm"/>
@@ -10447,10 +10625,10 @@ namespace IFC4
 		public IfcDirection Axis1{get;set;} // optional
 		public IfcDirection Axis2{get;set;} // optional
 		public IfcCartesianPoint LocalOrigin{get;set;} 
-		public double Scale{get;set;} // optional
+		public IfcReal Scale{get;set;} // optional
 
         [JsonIgnore]
-        public double Scl{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl.");}} // derived
+        public IfcReal Scl{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl.");}} // derived
 
         [JsonIgnore]
         public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
@@ -10469,7 +10647,7 @@ namespace IFC4
 		/// Construct a IfcCartesianTransformationOperator with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCartesianTransformationOperator(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,double scale):base()
+		public IfcCartesianTransformationOperator(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,IfcReal scale):base()
 		{
 
 			Axis1 = axis1;
@@ -10503,7 +10681,7 @@ namespace IFC4
 		/// Construct a IfcCartesianTransformationOperator2D with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCartesianTransformationOperator2D(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,double scale):base(axis1,axis2,localOrigin,scale)
+		public IfcCartesianTransformationOperator2D(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,IfcReal scale):base(axis1,axis2,localOrigin,scale)
 		{
 
 
@@ -10516,7 +10694,7 @@ namespace IFC4
 			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
 			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
 			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
-			parameters.Add(Scale.ToStepValue());
+			parameters.Add(Scale != null ? Scale.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -10544,7 +10722,7 @@ namespace IFC4
 		/// Construct a IfcCartesianTransformationOperator3D with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCartesianTransformationOperator3D(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,double scale,IfcDirection axis3):base(axis1,axis2,localOrigin,scale)
+		public IfcCartesianTransformationOperator3D(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,IfcReal scale,IfcDirection axis3):base(axis1,axis2,localOrigin,scale)
 		{
 
 			Axis3 = axis3;
@@ -10558,7 +10736,7 @@ namespace IFC4
 			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
 			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
 			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
-			parameters.Add(Scale.ToStepValue());
+			parameters.Add(Scale != null ? Scale.ToStepValue() : "$");
 			parameters.Add(Axis3 != null ? Axis3.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
@@ -10569,10 +10747,10 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator2DnonUniform : IfcCartesianTransformationOperator2D
 	{
-		public double Scale2{get;set;} // optional
+		public IfcReal Scale2{get;set;} // optional
 
         [JsonIgnore]
-        public double Scl2{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl2.");}} // derived
+        public IfcReal Scl2{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl2.");}} // derived
 
 
 		/// <summary>
@@ -10587,7 +10765,7 @@ namespace IFC4
 		/// Construct a IfcCartesianTransformationOperator2DnonUniform with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCartesianTransformationOperator2DnonUniform(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,double scale,double scale2):base(axis1,axis2,localOrigin,scale)
+		public IfcCartesianTransformationOperator2DnonUniform(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,IfcReal scale,IfcReal scale2):base(axis1,axis2,localOrigin,scale)
 		{
 
 			Scale2 = scale2;
@@ -10601,8 +10779,8 @@ namespace IFC4
 			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
 			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
 			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
-			parameters.Add(Scale.ToStepValue());
-			parameters.Add(Scale2.ToStepValue());
+			parameters.Add(Scale != null ? Scale.ToStepValue() : "$");
+			parameters.Add(Scale2 != null ? Scale2.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -10612,14 +10790,14 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcCartesianTransformationOperator3DnonUniform : IfcCartesianTransformationOperator3D
 	{
-		public double Scale2{get;set;} // optional
-		public double Scale3{get;set;} // optional
+		public IfcReal Scale2{get;set;} // optional
+		public IfcReal Scale3{get;set;} // optional
 
         [JsonIgnore]
-        public double Scl2{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl2.");}} // derived
+        public IfcReal Scl2{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl2.");}} // derived
 
         [JsonIgnore]
-        public double Scl3{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl3.");}} // derived
+        public IfcReal Scl3{get{throw new NotImplementedException($"Derived property logic has been implemented for Scl3.");}} // derived
 
 
 		/// <summary>
@@ -10634,7 +10812,7 @@ namespace IFC4
 		/// Construct a IfcCartesianTransformationOperator3DnonUniform with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCartesianTransformationOperator3DnonUniform(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,double scale,IfcDirection axis3,double scale2,double scale3):base(axis1,axis2,localOrigin,scale,axis3)
+		public IfcCartesianTransformationOperator3DnonUniform(IfcDirection axis1,IfcDirection axis2,IfcCartesianPoint localOrigin,IfcReal scale,IfcDirection axis3,IfcReal scale2,IfcReal scale3):base(axis1,axis2,localOrigin,scale,axis3)
 		{
 
 			Scale2 = scale2;
@@ -10649,10 +10827,10 @@ namespace IFC4
 			parameters.Add(Axis1 != null ? Axis1.ToStepValue() : "$");
 			parameters.Add(Axis2 != null ? Axis2.ToStepValue() : "$");
 			parameters.Add(LocalOrigin != null ? LocalOrigin.ToStepValue() : "$");
-			parameters.Add(Scale.ToStepValue());
+			parameters.Add(Scale != null ? Scale.ToStepValue() : "$");
 			parameters.Add(Axis3 != null ? Axis3.ToStepValue() : "$");
-			parameters.Add(Scale2.ToStepValue());
-			parameters.Add(Scale3.ToStepValue());
+			parameters.Add(Scale2 != null ? Scale2.ToStepValue() : "$");
+			parameters.Add(Scale3 != null ? Scale3.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -11581,6 +11759,8 @@ namespace IFC4
 		public List<IfcPropertyDependencyRelationship> PropertyForDependance{get;set;} // inverse
 		public List<IfcPropertyDependencyRelationship> PropertyDependsOn{get;set;} // inverse
 		public List<IfcComplexProperty> PartOfComplex{get;set;} // inverse
+		public List<IfcResourceConstraintRelationship> HasConstraints{get;set;} // inverse
+		public List<IfcResourceApprovalRelationship> HasApprovals{get;set;} // inverse
 
 
 		/// <summary>
@@ -11592,6 +11772,8 @@ namespace IFC4
 			PropertyForDependance = new List<IfcPropertyDependencyRelationship>();
 			PropertyDependsOn = new List<IfcPropertyDependencyRelationship>();
 			PartOfComplex = new List<IfcComplexProperty>();
+			HasConstraints = new List<IfcResourceConstraintRelationship>();
+			HasApprovals = new List<IfcResourceApprovalRelationship>();
 
 			Name = name;
 
@@ -11606,6 +11788,8 @@ namespace IFC4
 			PropertyForDependance = new List<IfcPropertyDependencyRelationship>();
 			PropertyDependsOn = new List<IfcPropertyDependencyRelationship>();
 			PartOfComplex = new List<IfcComplexProperty>();
+			HasConstraints = new List<IfcResourceConstraintRelationship>();
+			HasApprovals = new List<IfcResourceApprovalRelationship>();
 
 			Name = name;
 			Description = description;
@@ -11700,7 +11884,7 @@ namespace IFC4
 	public  partial class IfcCompositeCurveSegment : IfcGeometricRepresentationItem
 	{
 		public IfcTransitionCode Transition{get;set;} 
-		public bool SameSense{get;set;} 
+		public IfcBoolean SameSense{get;set;} 
 		public IfcCurve ParentCurve{get;set;} 
 
         [JsonIgnore]
@@ -11712,7 +11896,7 @@ namespace IFC4
 		/// Construct a IfcCompositeCurveSegment with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCompositeCurveSegment(IfcTransitionCode transition,bool sameSense,IfcCurve parentCurve):base()
+		public IfcCompositeCurveSegment(IfcTransitionCode transition,IfcBoolean sameSense,IfcCurve parentCurve):base()
 		{
 			UsingCurves = new List<IfcCompositeCurve>();
 
@@ -11727,7 +11911,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(Transition != null ? Transition.ToStepValue() : "$");
-			parameters.Add(SameSense.ToStepValue());
+			parameters.Add(SameSense != null ? SameSense.ToStepValue() : "$");
 			parameters.Add(ParentCurve != null ? ParentCurve.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
@@ -11745,7 +11929,7 @@ namespace IFC4
 		/// Construct a IfcReparametrisedCompositeCurveSegment with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcReparametrisedCompositeCurveSegment(IfcTransitionCode transition,bool sameSense,IfcCurve parentCurve,IfcParameterValue paramLength):base(transition,sameSense,parentCurve)
+		public IfcReparametrisedCompositeCurveSegment(IfcTransitionCode transition,IfcBoolean sameSense,IfcCurve parentCurve,IfcParameterValue paramLength):base(transition,sameSense,parentCurve)
 		{
 
 			ParamLength = paramLength;
@@ -11757,7 +11941,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(Transition != null ? Transition.ToStepValue() : "$");
-			parameters.Add(SameSense.ToStepValue());
+			parameters.Add(SameSense != null ? SameSense.ToStepValue() : "$");
 			parameters.Add(ParentCurve != null ? ParentCurve.ToStepValue() : "$");
 			parameters.Add(ParamLength != null ? ParamLength.ToStepValue() : "$");
 
@@ -12410,18 +12594,17 @@ namespace IFC4
 	{
 		public IfcBenchmarkEnum Benchmark{get;set;} 
 		public IfcLabel ValueSource{get;set;} // optional
-		public IfcMetricValueSelect DataValue{get;set;} 
+		public IfcMetricValueSelect DataValue{get;set;} // optional
 		public IfcReference ReferencePath{get;set;} // optional
 
 
 		/// <summary>
 		/// Construct a IfcMetric with all required attributes.
 		/// </summary>
-		public IfcMetric(IfcLabel name,IfcConstraintEnum constraintGrade,IfcBenchmarkEnum benchmark,IfcMetricValueSelect dataValue):base(name,constraintGrade)
+		public IfcMetric(IfcLabel name,IfcConstraintEnum constraintGrade,IfcBenchmarkEnum benchmark):base(name,constraintGrade)
 		{
 
 			Benchmark = benchmark;
-			DataValue = dataValue;
 
 		}
 		/// <summary>
@@ -14200,19 +14383,21 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcCoordinateReferenceSystem : BaseIfc
 	{
-		public IfcLabel Name{get;set;} // optional
+		public IfcLabel Name{get;set;} 
 		public IfcText Description{get;set;} // optional
-		public IfcIdentifier GeodeticDatum{get;set;} 
+		public IfcIdentifier GeodeticDatum{get;set;} // optional
 		public IfcIdentifier VerticalDatum{get;set;} // optional
+		public List<IfcCoordinateOperation> HasCoordinateOperation{get;set;} // inverse
 
 
 		/// <summary>
 		/// Construct a IfcCoordinateReferenceSystem with all required attributes.
 		/// </summary>
-		public IfcCoordinateReferenceSystem(IfcIdentifier geodeticDatum):base()
+		public IfcCoordinateReferenceSystem(IfcLabel name):base()
 		{
+			HasCoordinateOperation = new List<IfcCoordinateOperation>();
 
-			GeodeticDatum = geodeticDatum;
+			Name = name;
 
 		}
 		/// <summary>
@@ -14221,6 +14406,7 @@ namespace IFC4
 		[JsonConstructor]
 		public IfcCoordinateReferenceSystem(IfcLabel name,IfcText description,IfcIdentifier geodeticDatum,IfcIdentifier verticalDatum):base()
 		{
+			HasCoordinateOperation = new List<IfcCoordinateOperation>();
 
 			Name = name;
 			Description = description;
@@ -14244,7 +14430,7 @@ namespace IFC4
 		/// <summary>
 		/// Construct a IfcProjectedCRS with all required attributes.
 		/// </summary>
-		public IfcProjectedCRS(IfcIdentifier geodeticDatum):base(geodeticDatum)
+		public IfcProjectedCRS(IfcLabel name):base(name)
 		{
 
 
@@ -14546,14 +14732,14 @@ namespace IFC4
 	{
 		public IfcCurve BasisCurve{get;set;} 
 		public IfcLengthMeasure Distance{get;set;} 
-		public bool? SelfIntersect{get;set;} 
+		public IfcLogical SelfIntersect{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcOffsetCurve2D with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcOffsetCurve2D(IfcCurve basisCurve,IfcLengthMeasure distance,bool? selfIntersect):base()
+		public IfcOffsetCurve2D(IfcCurve basisCurve,IfcLengthMeasure distance,IfcLogical selfIntersect):base()
 		{
 
 			BasisCurve = basisCurve;
@@ -14580,7 +14766,7 @@ namespace IFC4
 	{
 		public IfcCurve BasisCurve{get;set;} 
 		public IfcLengthMeasure Distance{get;set;} 
-		public bool? SelfIntersect{get;set;} 
+		public IfcLogical SelfIntersect{get;set;} 
 		public IfcDirection RefDirection{get;set;} 
 
 
@@ -14588,7 +14774,7 @@ namespace IFC4
 		/// Construct a IfcOffsetCurve3D with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcOffsetCurve3D(IfcCurve basisCurve,IfcLengthMeasure distance,bool? selfIntersect,IfcDirection refDirection):base()
+		public IfcOffsetCurve3D(IfcCurve basisCurve,IfcLengthMeasure distance,IfcLogical selfIntersect,IfcDirection refDirection):base()
 		{
 
 			BasisCurve = basisCurve;
@@ -14642,6 +14828,43 @@ namespace IFC4
         }
 	}
 	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacecurve.htm"/>
+	/// </summary>
+	public  partial class IfcSurfaceCurve : IfcCurve
+	{
+		public IfcCurve Curve3D{get;set;} 
+		public List<IfcPcurve> AssociatedGeometry{get;set;} 
+		public IfcPreferredSurfaceCurveRepresentation MasterRepresentation{get;set;} 
+
+        [JsonIgnore]
+        public List<IfcSurface> BasisSurface{get{throw new NotImplementedException($"Derived property logic has been implemented for BasisSurface.");}} // derived
+
+
+		/// <summary>
+		/// Construct a IfcSurfaceCurve with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcSurfaceCurve(IfcCurve curve3D,List<IfcPcurve> associatedGeometry,IfcPreferredSurfaceCurveRepresentation masterRepresentation):base()
+		{
+
+			Curve3D = curve3D;
+			AssociatedGeometry = associatedGeometry;
+			MasterRepresentation = masterRepresentation;
+
+		}
+		public static new IfcSurfaceCurve FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSurfaceCurve>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Curve3D != null ? Curve3D.ToStepValue() : "$");
+			parameters.Add(AssociatedGeometry != null ? AssociatedGeometry.ToStepValue() : "$");
+			parameters.Add(MasterRepresentation != null ? MasterRepresentation.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestyle.htm"/>
 	/// </summary>
 	public  partial class IfcCurveStyle : IfcPresentationStyle
@@ -14649,7 +14872,7 @@ namespace IFC4
 		public IfcCurveFontOrScaledCurveFontSelect CurveFont{get;set;} // optional
 		public IfcSizeSelect CurveWidth{get;set;} // optional
 		public IfcColour CurveColour{get;set;} // optional
-		public bool ModelOrDraughting{get;set;} // optional
+		public IfcBoolean ModelOrDraughting{get;set;} // optional
 
 
 		/// <summary>
@@ -14664,7 +14887,7 @@ namespace IFC4
 		/// Construct a IfcCurveStyle with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcCurveStyle(IfcLabel name,IfcCurveFontOrScaledCurveFontSelect curveFont,IfcSizeSelect curveWidth,IfcColour curveColour,bool modelOrDraughting):base(name)
+		public IfcCurveStyle(IfcLabel name,IfcCurveFontOrScaledCurveFontSelect curveFont,IfcSizeSelect curveWidth,IfcColour curveColour,IfcBoolean modelOrDraughting):base(name)
 		{
 
 			CurveFont = curveFont;
@@ -14682,7 +14905,7 @@ namespace IFC4
 			parameters.Add(CurveFont != null ? CurveFont.ToStepValue() : "$");
 			parameters.Add(CurveWidth != null ? CurveWidth.ToStepValue() : "$");
 			parameters.Add(CurveColour != null ? CurveColour.ToStepValue() : "$");
-			parameters.Add(ModelOrDraughting.ToStepValue());
+			parameters.Add(ModelOrDraughting != null ? ModelOrDraughting.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -15187,7 +15410,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcDirection : IfcGeometricRepresentationItem
 	{
-		public List<double> DirectionRatios{get;set;} 
+		public List<IfcReal> DirectionRatios{get;set;} 
 
         [JsonIgnore]
         public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
@@ -15197,7 +15420,7 @@ namespace IFC4
 		/// Construct a IfcDirection with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcDirection(List<double> directionRatios):base()
+		public IfcDirection(List<IfcReal> directionRatios):base()
 		{
 
 			DirectionRatios = directionRatios;
@@ -16615,14 +16838,14 @@ namespace IFC4
 	{
 		public IfcDoorStyleOperationEnum OperationType{get;set;} 
 		public IfcDoorStyleConstructionEnum ConstructionType{get;set;} 
-		public bool ParameterTakesPrecedence{get;set;} 
-		public bool Sizeable{get;set;} 
+		public IfcBoolean ParameterTakesPrecedence{get;set;} 
+		public IfcBoolean Sizeable{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcDoorStyle with all required attributes.
 		/// </summary>
-		public IfcDoorStyle(IfcGloballyUniqueId globalId,IfcDoorStyleOperationEnum operationType,IfcDoorStyleConstructionEnum constructionType,bool parameterTakesPrecedence,bool sizeable):base(globalId)
+		public IfcDoorStyle(IfcGloballyUniqueId globalId,IfcDoorStyleOperationEnum operationType,IfcDoorStyleConstructionEnum constructionType,IfcBoolean parameterTakesPrecedence,IfcBoolean sizeable):base(globalId)
 		{
 
 			OperationType = operationType;
@@ -16635,7 +16858,7 @@ namespace IFC4
 		/// Construct a IfcDoorStyle with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcDoorStyle(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcDoorStyleOperationEnum operationType,IfcDoorStyleConstructionEnum constructionType,bool parameterTakesPrecedence,bool sizeable):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag)
+		public IfcDoorStyle(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcDoorStyleOperationEnum operationType,IfcDoorStyleConstructionEnum constructionType,IfcBoolean parameterTakesPrecedence,IfcBoolean sizeable):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag)
 		{
 
 			OperationType = operationType;
@@ -16659,8 +16882,8 @@ namespace IFC4
 			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(OperationType.ToStepValue());
 			parameters.Add(ConstructionType.ToStepValue());
-			parameters.Add(ParameterTakesPrecedence.ToStepValue());
-			parameters.Add(Sizeable.ToStepValue());
+			parameters.Add(ParameterTakesPrecedence != null ? ParameterTakesPrecedence.ToStepValue() : "$");
+			parameters.Add(Sizeable != null ? Sizeable.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -17111,14 +17334,14 @@ namespace IFC4
 	public  partial class IfcEdgeCurve : IfcEdge
 	{
 		public IfcCurve EdgeGeometry{get;set;} 
-		public bool SameSense{get;set;} 
+		public IfcBoolean SameSense{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcEdgeCurve with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcEdgeCurve(IfcVertex edgeStart,IfcVertex edgeEnd,IfcCurve edgeGeometry,bool sameSense):base(edgeStart,edgeEnd)
+		public IfcEdgeCurve(IfcVertex edgeStart,IfcVertex edgeEnd,IfcCurve edgeGeometry,IfcBoolean sameSense):base(edgeStart,edgeEnd)
 		{
 
 			EdgeGeometry = edgeGeometry;
@@ -17133,7 +17356,7 @@ namespace IFC4
 			parameters.Add(EdgeStart != null ? EdgeStart.ToStepValue() : "$");
 			parameters.Add(EdgeEnd != null ? EdgeEnd.ToStepValue() : "$");
 			parameters.Add(EdgeGeometry != null ? EdgeGeometry.ToStepValue() : "$");
-			parameters.Add(SameSense.ToStepValue());
+			parameters.Add(SameSense != null ? SameSense.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -17144,7 +17367,7 @@ namespace IFC4
 	public  partial class IfcOrientedEdge : IfcEdge
 	{
 		public IfcEdge EdgeElement{get;set;} 
-		public bool Orientation{get;set;} 
+		public IfcBoolean Orientation{get;set;} 
 
         [JsonIgnore]
         new public IfcVertex EdgeStart{get{throw new NotImplementedException($"Derived property logic has been implemented for EdgeStart.");}} // derived
@@ -17157,7 +17380,7 @@ namespace IFC4
 		/// Construct a IfcOrientedEdge with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcOrientedEdge(IfcVertex edgeStart,IfcVertex edgeEnd,IfcEdge edgeElement,bool orientation):base(edgeStart,edgeEnd)
+		public IfcOrientedEdge(IfcVertex edgeStart,IfcVertex edgeEnd,IfcEdge edgeElement,IfcBoolean orientation):base(edgeStart,edgeEnd)
 		{
 
 			EdgeElement = edgeElement;
@@ -17172,7 +17395,7 @@ namespace IFC4
 			parameters.Add("*");
 			parameters.Add("*");
 			parameters.Add(EdgeElement != null ? EdgeElement.ToStepValue() : "$");
-			parameters.Add(Orientation.ToStepValue());
+			parameters.Add(Orientation != null ? Orientation.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -17215,7 +17438,7 @@ namespace IFC4
 		public List<IfcOrientedEdge> EdgeList{get;set;} 
 
         [JsonIgnore]
-        public int Ne{get{throw new NotImplementedException($"Derived property logic has been implemented for Ne.");}} // derived
+        public IfcInteger Ne{get{throw new NotImplementedException($"Derived property logic has been implemented for Ne.");}} // derived
 
 
 		/// <summary>
@@ -18658,6 +18881,67 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsphericalsurface.htm"/>
+	/// </summary>
+	public  partial class IfcSphericalSurface : IfcElementarySurface
+	{
+		public IfcPositiveLengthMeasure Radius{get;set;} 
+
+
+		/// <summary>
+		/// Construct a IfcSphericalSurface with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcSphericalSurface(IfcAxis2Placement3D position,IfcPositiveLengthMeasure radius):base(position)
+		{
+
+			Radius = radius;
+
+		}
+		public static new IfcSphericalSurface FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSphericalSurface>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(Radius != null ? Radius.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctoroidalsurface.htm"/>
+	/// </summary>
+	public  partial class IfcToroidalSurface : IfcElementarySurface
+	{
+		public IfcPositiveLengthMeasure MajorRadius{get;set;} 
+		public IfcPositiveLengthMeasure MinorRadius{get;set;} 
+
+
+		/// <summary>
+		/// Construct a IfcToroidalSurface with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcToroidalSurface(IfcAxis2Placement3D position,IfcPositiveLengthMeasure majorRadius,IfcPositiveLengthMeasure minorRadius):base(position)
+		{
+
+			MajorRadius = majorRadius;
+			MinorRadius = minorRadius;
+
+		}
+		public static new IfcToroidalSurface FromJSON(string json){ return JsonConvert.DeserializeObject<IfcToroidalSurface>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Position != null ? Position.ToStepValue() : "$");
+			parameters.Add(MajorRadius != null ? MajorRadius.ToStepValue() : "$");
+			parameters.Add(MinorRadius != null ? MinorRadius.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -20555,14 +20839,14 @@ namespace IFC4
 	public  partial class IfcFaceBound : IfcTopologicalRepresentationItem
 	{
 		public IfcLoop Bound{get;set;} 
-		public bool Orientation{get;set;} 
+		public IfcBoolean Orientation{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcFaceBound with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcFaceBound(IfcLoop bound,bool orientation):base()
+		public IfcFaceBound(IfcLoop bound,IfcBoolean orientation):base()
 		{
 
 			Bound = bound;
@@ -20575,7 +20859,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(Bound != null ? Bound.ToStepValue() : "$");
-			parameters.Add(Orientation.ToStepValue());
+			parameters.Add(Orientation != null ? Orientation.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -20591,7 +20875,7 @@ namespace IFC4
 		/// Construct a IfcFaceOuterBound with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcFaceOuterBound(IfcLoop bound,bool orientation):base(bound,orientation)
+		public IfcFaceOuterBound(IfcLoop bound,IfcBoolean orientation):base(bound,orientation)
 		{
 
 
@@ -20602,7 +20886,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(Bound != null ? Bound.ToStepValue() : "$");
-			parameters.Add(Orientation.ToStepValue());
+			parameters.Add(Orientation != null ? Orientation.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -21074,7 +21358,7 @@ namespace IFC4
 	public  partial class IfcFillAreaStyle : IfcPresentationStyle
 	{
 		public List<IfcFillStyleSelect> FillStyles{get;set;} 
-		public bool ModelorDraughting{get;set;} // optional
+		public IfcBoolean ModelorDraughting{get;set;} // optional
 
 
 		/// <summary>
@@ -21090,7 +21374,7 @@ namespace IFC4
 		/// Construct a IfcFillAreaStyle with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcFillAreaStyle(IfcLabel name,List<IfcFillStyleSelect> fillStyles,bool modelorDraughting):base(name)
+		public IfcFillAreaStyle(IfcLabel name,List<IfcFillStyleSelect> fillStyles,IfcBoolean modelorDraughting):base(name)
 		{
 
 			FillStyles = fillStyles;
@@ -21104,7 +21388,7 @@ namespace IFC4
             var parameters = new List<string>();
 			parameters.Add(Name != null ? Name.ToStepValue() : "$");
 			parameters.Add(FillStyles != null ? FillStyles.ToStepValue() : "$");
-			parameters.Add(ModelorDraughting.ToStepValue());
+			parameters.Add(ModelorDraughting != null ? ModelorDraughting.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -23288,10 +23572,11 @@ namespace IFC4
 	public  partial class IfcGeometricRepresentationContext : IfcRepresentationContext
 	{
 		public IfcDimensionCount CoordinateSpaceDimension{get;set;} 
-		public double Precision{get;set;} // optional
+		public IfcReal Precision{get;set;} // optional
 		public IfcAxis2Placement WorldCoordinateSystem{get;set;} 
 		public IfcDirection TrueNorth{get;set;} // optional
 		public List<IfcGeometricRepresentationSubContext> HasSubContexts{get;set;} // inverse
+		public List<IfcCoordinateOperation> HasCoordinateOperation{get;set;} // inverse
 
 
 		/// <summary>
@@ -23300,6 +23585,7 @@ namespace IFC4
 		public IfcGeometricRepresentationContext(IfcDimensionCount coordinateSpaceDimension,IfcAxis2Placement worldCoordinateSystem):base()
 		{
 			HasSubContexts = new List<IfcGeometricRepresentationSubContext>();
+			HasCoordinateOperation = new List<IfcCoordinateOperation>();
 
 			CoordinateSpaceDimension = coordinateSpaceDimension;
 			WorldCoordinateSystem = worldCoordinateSystem;
@@ -23309,9 +23595,10 @@ namespace IFC4
 		/// Construct a IfcGeometricRepresentationContext with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcGeometricRepresentationContext(IfcLabel contextIdentifier,IfcLabel contextType,IfcDimensionCount coordinateSpaceDimension,double precision,IfcAxis2Placement worldCoordinateSystem,IfcDirection trueNorth):base(contextIdentifier,contextType)
+		public IfcGeometricRepresentationContext(IfcLabel contextIdentifier,IfcLabel contextType,IfcDimensionCount coordinateSpaceDimension,IfcReal precision,IfcAxis2Placement worldCoordinateSystem,IfcDirection trueNorth):base(contextIdentifier,contextType)
 		{
 			HasSubContexts = new List<IfcGeometricRepresentationSubContext>();
+			HasCoordinateOperation = new List<IfcCoordinateOperation>();
 
 			CoordinateSpaceDimension = coordinateSpaceDimension;
 			Precision = precision;
@@ -23327,7 +23614,7 @@ namespace IFC4
 			parameters.Add(ContextIdentifier != null ? ContextIdentifier.ToStepValue() : "$");
 			parameters.Add(ContextType != null ? ContextType.ToStepValue() : "$");
 			parameters.Add(CoordinateSpaceDimension != null ? CoordinateSpaceDimension.ToStepValue() : "$");
-			parameters.Add(Precision.ToStepValue());
+			parameters.Add(Precision != null ? Precision.ToStepValue() : "$");
 			parameters.Add(WorldCoordinateSystem != null ? WorldCoordinateSystem.ToStepValue() : "$");
 			parameters.Add(TrueNorth != null ? TrueNorth.ToStepValue() : "$");
 
@@ -23354,7 +23641,7 @@ namespace IFC4
         new public IfcDirection TrueNorth{get{throw new NotImplementedException($"Derived property logic has been implemented for TrueNorth.");}} // derived
 
         [JsonIgnore]
-        new public double Precision{get{throw new NotImplementedException($"Derived property logic has been implemented for Precision.");}} // derived
+        new public IfcReal Precision{get{throw new NotImplementedException($"Derived property logic has been implemented for Precision.");}} // derived
 
 
 		/// <summary>
@@ -23371,7 +23658,7 @@ namespace IFC4
 		/// Construct a IfcGeometricRepresentationSubContext with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcGeometricRepresentationSubContext(IfcLabel contextIdentifier,IfcLabel contextType,IfcDimensionCount coordinateSpaceDimension,double precision,IfcAxis2Placement worldCoordinateSystem,IfcDirection trueNorth,IfcGeometricRepresentationContext parentContext,IfcPositiveRatioMeasure targetScale,IfcGeometricProjectionEnum targetView,IfcLabel userDefinedTargetView):base(contextIdentifier,contextType,coordinateSpaceDimension,precision,worldCoordinateSystem,trueNorth)
+		public IfcGeometricRepresentationSubContext(IfcLabel contextIdentifier,IfcLabel contextType,IfcDimensionCount coordinateSpaceDimension,IfcReal precision,IfcAxis2Placement worldCoordinateSystem,IfcDirection trueNorth,IfcGeometricRepresentationContext parentContext,IfcPositiveRatioMeasure targetScale,IfcGeometricProjectionEnum targetView,IfcLabel userDefinedTargetView):base(contextIdentifier,contextType,coordinateSpaceDimension,precision,worldCoordinateSystem,trueNorth)
 		{
 
 			ParentContext = parentContext;
@@ -23981,14 +24268,14 @@ namespace IFC4
 	{
 		public IfcAnalysisTheoryTypeEnum TheoryType{get;set;} 
 		public IfcStructuralLoadGroup ResultForLoadGroup{get;set;} // optional
-		public bool IsLinear{get;set;} 
+		public IfcBoolean IsLinear{get;set;} 
 		public List<IfcStructuralAnalysisModel> ResultGroupFor{get;set;} // inverse
 
 
 		/// <summary>
 		/// Construct a IfcStructuralResultGroup with all required attributes.
 		/// </summary>
-		public IfcStructuralResultGroup(IfcGloballyUniqueId globalId,IfcAnalysisTheoryTypeEnum theoryType,bool isLinear):base(globalId)
+		public IfcStructuralResultGroup(IfcGloballyUniqueId globalId,IfcAnalysisTheoryTypeEnum theoryType,IfcBoolean isLinear):base(globalId)
 		{
 			ResultGroupFor = new List<IfcStructuralAnalysisModel>();
 
@@ -24000,7 +24287,7 @@ namespace IFC4
 		/// Construct a IfcStructuralResultGroup with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralResultGroup(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcAnalysisTheoryTypeEnum theoryType,IfcStructuralLoadGroup resultForLoadGroup,bool isLinear):base(globalId,ownerHistory,name,description,objectType)
+		public IfcStructuralResultGroup(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcAnalysisTheoryTypeEnum theoryType,IfcStructuralLoadGroup resultForLoadGroup,IfcBoolean isLinear):base(globalId,ownerHistory,name,description,objectType)
 		{
 			ResultGroupFor = new List<IfcStructuralAnalysisModel>();
 
@@ -24021,7 +24308,7 @@ namespace IFC4
 			parameters.Add(ObjectType != null ? ObjectType.ToStepValue() : "$");
 			parameters.Add(TheoryType.ToStepValue());
 			parameters.Add(ResultForLoadGroup != null ? ResultForLoadGroup.ToStepValue() : "$");
-			parameters.Add(IsLinear.ToStepValue());
+			parameters.Add(IsLinear != null ? IsLinear.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -24039,7 +24326,7 @@ namespace IFC4
 		/// Construct a IfcPolygonalBoundedHalfSpace with all required attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcPolygonalBoundedHalfSpace(IfcSurface baseSurface,bool agreementFlag,IfcAxis2Placement3D position,IfcBoundedCurve polygonalBoundary):base(baseSurface,agreementFlag)
+		public IfcPolygonalBoundedHalfSpace(IfcSurface baseSurface,IfcBoolean agreementFlag,IfcAxis2Placement3D position,IfcBoundedCurve polygonalBoundary):base(baseSurface,agreementFlag)
 		{
 
 			Position = position;
@@ -24052,7 +24339,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(BaseSurface != null ? BaseSurface.ToStepValue() : "$");
-			parameters.Add(AgreementFlag.ToStepValue());
+			parameters.Add(AgreementFlag != null ? AgreementFlag.ToStepValue() : "$");
 			parameters.Add(Position != null ? Position.ToStepValue() : "$");
 			parameters.Add(PolygonalBoundary != null ? PolygonalBoundary.ToStepValue() : "$");
 
@@ -24131,7 +24418,7 @@ namespace IFC4
 		/// <summary>
 		/// Construct a IfcImageTexture with all required attributes.
 		/// </summary>
-		public IfcImageTexture(bool repeatS,bool repeatT,IfcURIReference uRLReference):base(repeatS,repeatT)
+		public IfcImageTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcURIReference uRLReference):base(repeatS,repeatT)
 		{
 
 			URLReference = uRLReference;
@@ -24141,7 +24428,7 @@ namespace IFC4
 		/// Construct a IfcImageTexture with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcImageTexture(bool repeatS,bool repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter,IfcURIReference uRLReference):base(repeatS,repeatT,mode,textureTransform,parameter)
+		public IfcImageTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter,IfcURIReference uRLReference):base(repeatS,repeatT,mode,textureTransform,parameter)
 		{
 
 			URLReference = uRLReference;
@@ -24152,8 +24439,8 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(RepeatS.ToStepValue());
-			parameters.Add(RepeatT.ToStepValue());
+			parameters.Add(RepeatS != null ? RepeatS.ToStepValue() : "$");
+			parameters.Add(RepeatT != null ? RepeatT.ToStepValue() : "$");
 			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
 			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
 			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
@@ -24168,15 +24455,15 @@ namespace IFC4
 	public  partial class IfcIndexedColourMap : IfcPresentationItem
 	{
 		public IfcTessellatedFaceSet MappedTo{get;set;} 
-		public IfcSurfaceStyleShading Overrides{get;set;} // optional
+		public IfcNormalisedRatioMeasure Opacity{get;set;} // optional
 		public IfcColourRgbList Colours{get;set;} 
-		public List<int> ColourIndex{get;set;} 
+		public List<IfcPositiveInteger> ColourIndex{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcIndexedColourMap with all required attributes.
 		/// </summary>
-		public IfcIndexedColourMap(IfcTessellatedFaceSet mappedTo,IfcColourRgbList colours,List<int> colourIndex):base()
+		public IfcIndexedColourMap(IfcTessellatedFaceSet mappedTo,IfcColourRgbList colours,List<IfcPositiveInteger> colourIndex):base()
 		{
 
 			MappedTo = mappedTo;
@@ -24188,11 +24475,11 @@ namespace IFC4
 		/// Construct a IfcIndexedColourMap with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcIndexedColourMap(IfcTessellatedFaceSet mappedTo,IfcSurfaceStyleShading overrides,IfcColourRgbList colours,List<int> colourIndex):base()
+		public IfcIndexedColourMap(IfcTessellatedFaceSet mappedTo,IfcNormalisedRatioMeasure opacity,IfcColourRgbList colours,List<IfcPositiveInteger> colourIndex):base()
 		{
 
 			MappedTo = mappedTo;
-			Overrides = overrides;
+			Opacity = opacity;
 			Colours = colours;
 			ColourIndex = colourIndex;
 
@@ -24203,9 +24490,68 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(MappedTo != null ? MappedTo.ToStepValue() : "$");
-			parameters.Add(Overrides != null ? Overrides.ToStepValue() : "$");
+			parameters.Add(Opacity != null ? Opacity.ToStepValue() : "$");
 			parameters.Add(Colours != null ? Colours.ToStepValue() : "$");
 			parameters.Add(ColourIndex != null ? ColourIndex.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedpolygonalface.htm"/>
+	/// </summary>
+	public  partial class IfcIndexedPolygonalFace : IfcTessellatedItem
+	{
+		public List<IfcPositiveInteger> CoordIndex{get;set;} 
+		public List<IfcPolygonalFaceSet> ToFaceSet{get;set;} // inverse
+
+
+		/// <summary>
+		/// Construct a IfcIndexedPolygonalFace with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcIndexedPolygonalFace(List<IfcPositiveInteger> coordIndex):base()
+		{
+			ToFaceSet = new List<IfcPolygonalFaceSet>();
+
+			CoordIndex = coordIndex;
+
+		}
+		public static new IfcIndexedPolygonalFace FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIndexedPolygonalFace>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(CoordIndex != null ? CoordIndex.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedpolygonalfacewithvoids.htm"/>
+	/// </summary>
+	public  partial class IfcIndexedPolygonalFaceWithVoids : IfcIndexedPolygonalFace
+	{
+		public List<List<IfcPositiveInteger>> InnerCoordIndices{get;set;} 
+
+
+		/// <summary>
+		/// Construct a IfcIndexedPolygonalFaceWithVoids with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcIndexedPolygonalFaceWithVoids(List<IfcPositiveInteger> coordIndex,List<List<IfcPositiveInteger>> innerCoordIndices):base(coordIndex)
+		{
+
+			InnerCoordIndices = innerCoordIndices;
+
+		}
+		public static new IfcIndexedPolygonalFaceWithVoids FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIndexedPolygonalFaceWithVoids>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(CoordIndex != null ? CoordIndex.ToStepValue() : "$");
+			parameters.Add(InnerCoordIndices != null ? InnerCoordIndices.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -24238,7 +24584,7 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcIndexedTriangleTextureMap : IfcIndexedTextureMap
 	{
-		public List<List<int>> TexCoordIndex{get;set;} // optional
+		public List<List<IfcPositiveInteger>> TexCoordIndex{get;set;} // optional
 
 
 		/// <summary>
@@ -24246,7 +24592,7 @@ namespace IFC4
 		/// </summary>
 		public IfcIndexedTriangleTextureMap(List<IfcSurfaceTexture> maps,IfcTessellatedFaceSet mappedTo,IfcTextureVertexList texCoords):base(maps,mappedTo,texCoords)
 		{
-			TexCoordIndex = new List<List<int>>();
+			TexCoordIndex = new List<List<IfcPositiveInteger>>();
 
 
 		}
@@ -24254,7 +24600,7 @@ namespace IFC4
 		/// Construct a IfcIndexedTriangleTextureMap with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcIndexedTriangleTextureMap(List<IfcSurfaceTexture> maps,IfcTessellatedFaceSet mappedTo,IfcTextureVertexList texCoords,List<List<int>> texCoordIndex):base(maps,mappedTo,texCoords)
+		public IfcIndexedTriangleTextureMap(List<IfcSurfaceTexture> maps,IfcTessellatedFaceSet mappedTo,IfcTextureVertexList texCoords,List<List<IfcPositiveInteger>> texCoordIndex):base(maps,mappedTo,texCoords)
 		{
 
 			TexCoordIndex = texCoordIndex;
@@ -24293,6 +24639,34 @@ namespace IFC4
 		}
 		public static new IfcTextureCoordinate FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTextureCoordinate>(json); }
 
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcintersectioncurve.htm"/>
+	/// </summary>
+	public  partial class IfcIntersectionCurve : IfcSurfaceCurve
+	{
+
+
+		/// <summary>
+		/// Construct a IfcIntersectionCurve with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcIntersectionCurve(IfcCurve curve3D,List<IfcPcurve> associatedGeometry,IfcPreferredSurfaceCurveRepresentation masterRepresentation):base(curve3D,associatedGeometry,masterRepresentation)
+		{
+
+
+		}
+		public static new IfcIntersectionCurve FromJSON(string json){ return JsonConvert.DeserializeObject<IfcIntersectionCurve>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Curve3D != null ? Curve3D.ToStepValue() : "$");
+			parameters.Add(AssociatedGeometry != null ? AssociatedGeometry.ToStepValue() : "$");
+			parameters.Add(MasterRepresentation != null ? MasterRepresentation.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
 	}
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcirregulartimeseries.htm"/>
@@ -25177,7 +25551,7 @@ namespace IFC4
 		public IfcLabel Name{get;set;} // optional
 		public IfcText Description{get;set;} // optional
 		public IfcLabel Category{get;set;} // optional
-		public IfcNormalisedRatioMeasure Priority{get;set;} // optional
+		public IfcInteger Priority{get;set;} // optional
 		public IfcMaterialLayerSet ToMaterialLayerSet{get;set;} // inverse
 
 
@@ -25194,7 +25568,7 @@ namespace IFC4
 		/// Construct a IfcMaterialLayer with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcMaterialLayer(IfcMaterial material,IfcNonNegativeLengthMeasure layerThickness,IfcLogical isVentilated,IfcLabel name,IfcText description,IfcLabel category,IfcNormalisedRatioMeasure priority):base()
+		public IfcMaterialLayer(IfcMaterial material,IfcNonNegativeLengthMeasure layerThickness,IfcLogical isVentilated,IfcLabel name,IfcText description,IfcLabel category,IfcInteger priority):base()
 		{
 
 			Material = material;
@@ -25277,7 +25651,7 @@ namespace IFC4
 		public IfcText Description{get;set;} // optional
 		public IfcMaterial Material{get;set;} // optional
 		public IfcProfileDef Profile{get;set;} 
-		public IfcNormalisedRatioMeasure Priority{get;set;} // optional
+		public IfcInteger Priority{get;set;} // optional
 		public IfcLabel Category{get;set;} // optional
 		public IfcMaterialProfileSet ToMaterialProfileSet{get;set;} // inverse
 
@@ -25295,7 +25669,7 @@ namespace IFC4
 		/// Construct a IfcMaterialProfile with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcMaterialProfile(IfcLabel name,IfcText description,IfcMaterial material,IfcProfileDef profile,IfcNormalisedRatioMeasure priority,IfcLabel category):base()
+		public IfcMaterialProfile(IfcLabel name,IfcText description,IfcMaterial material,IfcProfileDef profile,IfcInteger priority,IfcLabel category):base()
 		{
 
 			Name = name;
@@ -25464,7 +25838,7 @@ namespace IFC4
 		/// Construct a IfcMaterialLayerWithOffsets with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcMaterialLayerWithOffsets(IfcMaterial material,IfcNonNegativeLengthMeasure layerThickness,IfcLogical isVentilated,IfcLabel name,IfcText description,IfcLabel category,IfcNormalisedRatioMeasure priority,IfcLayerSetDirectionEnum offsetDirection,List<IfcLengthMeasure> offsetValues):base(material,layerThickness,isVentilated,name,description,category,priority)
+		public IfcMaterialLayerWithOffsets(IfcMaterial material,IfcNonNegativeLengthMeasure layerThickness,IfcLogical isVentilated,IfcLabel name,IfcText description,IfcLabel category,IfcInteger priority,IfcLayerSetDirectionEnum offsetDirection,List<IfcLengthMeasure> offsetValues):base(material,layerThickness,isVentilated,name,description,category,priority)
 		{
 
 			OffsetDirection = offsetDirection;
@@ -25611,7 +25985,7 @@ namespace IFC4
 		/// Construct a IfcMaterialProfileWithOffsets with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcMaterialProfileWithOffsets(IfcLabel name,IfcText description,IfcMaterial material,IfcProfileDef profile,IfcNormalisedRatioMeasure priority,IfcLabel category,List<IfcLengthMeasure> offsetValues):base(name,description,material,profile,priority,category)
+		public IfcMaterialProfileWithOffsets(IfcLabel name,IfcText description,IfcMaterial material,IfcProfileDef profile,IfcInteger priority,IfcLabel category,List<IfcLengthMeasure> offsetValues):base(name,description,material,profile,priority,category)
 		{
 
 			OffsetValues = offsetValues;
@@ -27055,13 +27429,13 @@ namespace IFC4
 		public IfcInteger Width{get;set;} 
 		public IfcInteger Height{get;set;} 
 		public IfcInteger ColourComponents{get;set;} 
-		public List<byte[]> Pixel{get;set;} 
+		public List<IfcBinary> Pixel{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcPixelTexture with all required attributes.
 		/// </summary>
-		public IfcPixelTexture(bool repeatS,bool repeatT,IfcInteger width,IfcInteger height,IfcInteger colourComponents,List<byte[]> pixel):base(repeatS,repeatT)
+		public IfcPixelTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcInteger width,IfcInteger height,IfcInteger colourComponents,List<IfcBinary> pixel):base(repeatS,repeatT)
 		{
 
 			Width = width;
@@ -27074,7 +27448,7 @@ namespace IFC4
 		/// Construct a IfcPixelTexture with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcPixelTexture(bool repeatS,bool repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter,IfcInteger width,IfcInteger height,IfcInteger colourComponents,List<byte[]> pixel):base(repeatS,repeatT,mode,textureTransform,parameter)
+		public IfcPixelTexture(IfcBoolean repeatS,IfcBoolean repeatT,IfcIdentifier mode,IfcCartesianTransformationOperator2D textureTransform,List<IfcIdentifier> parameter,IfcInteger width,IfcInteger height,IfcInteger colourComponents,List<IfcBinary> pixel):base(repeatS,repeatT,mode,textureTransform,parameter)
 		{
 
 			Width = width;
@@ -27088,8 +27462,8 @@ namespace IFC4
         public override string GetStepParameters()
         {
             var parameters = new List<string>();
-			parameters.Add(RepeatS.ToStepValue());
-			parameters.Add(RepeatT.ToStepValue());
+			parameters.Add(RepeatS != null ? RepeatS.ToStepValue() : "$");
+			parameters.Add(RepeatT != null ? RepeatT.ToStepValue() : "$");
 			parameters.Add(Mode != null ? Mode.ToStepValue() : "$");
 			parameters.Add(TextureTransform != null ? TextureTransform.ToStepValue() : "$");
 			parameters.Add(Parameter != null ? Parameter.ToStepValue() : "$");
@@ -27243,6 +27617,79 @@ namespace IFC4
 
             return string.Join(", ", parameters.ToArray());
         }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalfaceset.htm"/>
+	/// </summary>
+	public  partial class IfcPolygonalFaceSet : IfcTessellatedFaceSet
+	{
+		public IfcBoolean Closed{get;set;} // optional
+		public List<IfcIndexedPolygonalFace> Faces{get;set;} 
+		public List<IfcPositiveInteger> PnIndex{get;set;} // optional
+
+
+		/// <summary>
+		/// Construct a IfcPolygonalFaceSet with all required attributes.
+		/// </summary>
+		public IfcPolygonalFaceSet(IfcCartesianPointList3D coordinates,List<IfcIndexedPolygonalFace> faces):base(coordinates)
+		{
+			PnIndex = new List<IfcPositiveInteger>();
+
+			Faces = faces;
+
+		}
+		/// <summary>
+		/// Construct a IfcPolygonalFaceSet with required and optional attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcPolygonalFaceSet(IfcCartesianPointList3D coordinates,IfcBoolean closed,List<IfcIndexedPolygonalFace> faces,List<IfcPositiveInteger> pnIndex):base(coordinates)
+		{
+
+			Closed = closed;
+			Faces = faces;
+			PnIndex = pnIndex;
+
+		}
+		public static new IfcPolygonalFaceSet FromJSON(string json){ return JsonConvert.DeserializeObject<IfcPolygonalFaceSet>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Coordinates != null ? Coordinates.ToStepValue() : "$");
+			parameters.Add(Closed != null ? Closed.ToStepValue() : "$");
+			parameters.Add(Faces != null ? Faces.ToStepValue() : "$");
+			parameters.Add(PnIndex != null ? PnIndex.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellatedfaceset.htm"/>
+	/// </summary>
+	public abstract partial class IfcTessellatedFaceSet : IfcTessellatedItem
+	{
+		public IfcCartesianPointList3D Coordinates{get;set;} 
+
+        [JsonIgnore]
+        public IfcDimensionCount Dim{get{throw new NotImplementedException($"Derived property logic has been implemented for Dim.");}} // derived
+		public List<IfcIndexedColourMap> HasColours{get;set;} // inverse
+		public List<IfcIndexedTextureMap> HasTextures{get;set;} // inverse
+
+
+		/// <summary>
+		/// Construct a IfcTessellatedFaceSet with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcTessellatedFaceSet(IfcCartesianPointList3D coordinates):base()
+		{
+			HasColours = new List<IfcIndexedColourMap>();
+			HasTextures = new List<IfcIndexedTextureMap>();
+
+			Coordinates = coordinates;
+
+		}
+		public static new IfcTessellatedFaceSet FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTessellatedFaceSet>(json); }
+
 	}
 	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpredefineditem.htm"/>
@@ -27796,16 +28243,27 @@ namespace IFC4
 	public  partial class IfcSurfaceStyleShading : IfcPresentationItem
 	{
 		public IfcColourRgb SurfaceColour{get;set;} 
+		public IfcNormalisedRatioMeasure Transparency{get;set;} // optional
 
 
 		/// <summary>
 		/// Construct a IfcSurfaceStyleShading with all required attributes.
 		/// </summary>
-		[JsonConstructor]
 		public IfcSurfaceStyleShading(IfcColourRgb surfaceColour):base()
 		{
 
 			SurfaceColour = surfaceColour;
+
+		}
+		/// <summary>
+		/// Construct a IfcSurfaceStyleShading with required and optional attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcSurfaceStyleShading(IfcColourRgb surfaceColour,IfcNormalisedRatioMeasure transparency):base()
+		{
+
+			SurfaceColour = surfaceColour;
+			Transparency = transparency;
 
 		}
 		public static new IfcSurfaceStyleShading FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSurfaceStyleShading>(json); }
@@ -27814,6 +28272,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(SurfaceColour != null ? SurfaceColour.ToStepValue() : "$");
+			parameters.Add(Transparency != null ? Transparency.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -28048,16 +28507,16 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcPresentationLayerWithStyle : IfcPresentationLayerAssignment
 	{
-		public bool? LayerOn{get;set;} 
-		public bool? LayerFrozen{get;set;} 
-		public bool? LayerBlocked{get;set;} 
+		public IfcLogical LayerOn{get;set;} 
+		public IfcLogical LayerFrozen{get;set;} 
+		public IfcLogical LayerBlocked{get;set;} 
 		public List<IfcPresentationStyle> LayerStyles{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcPresentationLayerWithStyle with all required attributes.
 		/// </summary>
-		public IfcPresentationLayerWithStyle(IfcLabel name,List<IfcLayeredItem> assignedItems,bool? layerOn,bool? layerFrozen,bool? layerBlocked,List<IfcPresentationStyle> layerStyles):base(name,assignedItems)
+		public IfcPresentationLayerWithStyle(IfcLabel name,List<IfcLayeredItem> assignedItems,IfcLogical layerOn,IfcLogical layerFrozen,IfcLogical layerBlocked,List<IfcPresentationStyle> layerStyles):base(name,assignedItems)
 		{
 
 			LayerOn = layerOn;
@@ -28070,7 +28529,7 @@ namespace IFC4
 		/// Construct a IfcPresentationLayerWithStyle with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcPresentationLayerWithStyle(IfcLabel name,IfcText description,List<IfcLayeredItem> assignedItems,IfcIdentifier identifier,bool? layerOn,bool? layerFrozen,bool? layerBlocked,List<IfcPresentationStyle> layerStyles):base(name,description,assignedItems,identifier)
+		public IfcPresentationLayerWithStyle(IfcLabel name,IfcText description,List<IfcLayeredItem> assignedItems,IfcIdentifier identifier,IfcLogical layerOn,IfcLogical layerFrozen,IfcLogical layerBlocked,List<IfcPresentationStyle> layerStyles):base(name,description,assignedItems,identifier)
 		{
 
 			LayerOn = layerOn;
@@ -28146,7 +28605,7 @@ namespace IFC4
 		public IfcTextStyleForDefinedFont TextCharacterAppearance{get;set;} // optional
 		public IfcTextStyleTextModel TextStyle{get;set;} // optional
 		public IfcTextFontSelect TextFontStyle{get;set;} 
-		public bool ModelOrDraughting{get;set;} // optional
+		public IfcBoolean ModelOrDraughting{get;set;} // optional
 
 
 		/// <summary>
@@ -28162,7 +28621,7 @@ namespace IFC4
 		/// Construct a IfcTextStyle with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTextStyle(IfcLabel name,IfcTextStyleForDefinedFont textCharacterAppearance,IfcTextStyleTextModel textStyle,IfcTextFontSelect textFontStyle,bool modelOrDraughting):base(name)
+		public IfcTextStyle(IfcLabel name,IfcTextStyleForDefinedFont textCharacterAppearance,IfcTextStyleTextModel textStyle,IfcTextFontSelect textFontStyle,IfcBoolean modelOrDraughting):base(name)
 		{
 
 			TextCharacterAppearance = textCharacterAppearance;
@@ -28180,7 +28639,7 @@ namespace IFC4
 			parameters.Add(TextCharacterAppearance != null ? TextCharacterAppearance.ToStepValue() : "$");
 			parameters.Add(TextStyle != null ? TextStyle.ToStepValue() : "$");
 			parameters.Add(TextFontStyle != null ? TextFontStyle.ToStepValue() : "$");
-			parameters.Add(ModelOrDraughting.ToStepValue());
+			parameters.Add(ModelOrDraughting != null ? ModelOrDraughting.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -28309,8 +28768,8 @@ namespace IFC4
 	{
 		public IfcLabel Status{get;set;} // optional
 		public IfcLabel WorkMethod{get;set;} // optional
-		public bool IsMilestone{get;set;} 
-		public int Priority{get;set;} // optional
+		public IfcBoolean IsMilestone{get;set;} 
+		public IfcInteger Priority{get;set;} // optional
 		public IfcTaskTime TaskTime{get;set;} // optional
 		public IfcTaskTypeEnum PredefinedType{get;set;} // optional
 
@@ -28318,7 +28777,7 @@ namespace IFC4
 		/// <summary>
 		/// Construct a IfcTask with all required attributes.
 		/// </summary>
-		public IfcTask(IfcGloballyUniqueId globalId,bool isMilestone):base(globalId)
+		public IfcTask(IfcGloballyUniqueId globalId,IfcBoolean isMilestone):base(globalId)
 		{
 
 			IsMilestone = isMilestone;
@@ -28328,7 +28787,7 @@ namespace IFC4
 		/// Construct a IfcTask with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTask(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcIdentifier identification,IfcText longDescription,IfcLabel status,IfcLabel workMethod,bool isMilestone,int priority,IfcTaskTime taskTime,IfcTaskTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,identification,longDescription)
+		public IfcTask(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcIdentifier identification,IfcText longDescription,IfcLabel status,IfcLabel workMethod,IfcBoolean isMilestone,IfcInteger priority,IfcTaskTime taskTime,IfcTaskTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,identification,longDescription)
 		{
 
 			Status = status;
@@ -28353,8 +28812,8 @@ namespace IFC4
 			parameters.Add(LongDescription != null ? LongDescription.ToStepValue() : "$");
 			parameters.Add(Status != null ? Status.ToStepValue() : "$");
 			parameters.Add(WorkMethod != null ? WorkMethod.ToStepValue() : "$");
-			parameters.Add(IsMilestone.ToStepValue());
-			parameters.Add(Priority.ToStepValue());
+			parameters.Add(IsMilestone != null ? IsMilestone.ToStepValue() : "$");
+			parameters.Add(Priority != null ? Priority.ToStepValue() : "$");
 			parameters.Add(TaskTime != null ? TaskTime.ToStepValue() : "$");
 			parameters.Add(PredefinedType.ToStepValue());
 
@@ -29273,7 +29732,7 @@ namespace IFC4
 		public IfcIdentifier TypeIdentifier{get;set;} // optional
 		public IfcIdentifier AttributeIdentifier{get;set;} // optional
 		public IfcLabel InstanceName{get;set;} // optional
-		public List<int> ListPositions{get;set;} // optional
+		public List<IfcInteger> ListPositions{get;set;} // optional
 		public IfcReference InnerReference{get;set;} // optional
 
 
@@ -29282,7 +29741,7 @@ namespace IFC4
 		/// </summary>
 		public IfcReference():base()
 		{
-			ListPositions = new List<int>();
+			ListPositions = new List<IfcInteger>();
 
 
 		}
@@ -29290,7 +29749,7 @@ namespace IFC4
 		/// Construct a IfcReference with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcReference(IfcIdentifier typeIdentifier,IfcIdentifier attributeIdentifier,IfcLabel instanceName,List<int> listPositions,IfcReference innerReference):base()
+		public IfcReference(IfcIdentifier typeIdentifier,IfcIdentifier attributeIdentifier,IfcLabel instanceName,List<IfcInteger> listPositions,IfcReference innerReference):base()
 		{
 
 			TypeIdentifier = typeIdentifier;
@@ -29796,7 +30255,7 @@ namespace IFC4
 		public IfcTendonTypeEnum PredefinedType{get;set;} 
 		public IfcPositiveLengthMeasure NominalDiameter{get;set;} // optional
 		public IfcAreaMeasure CrossSectionArea{get;set;} // optional
-		public IfcPositiveLengthMeasure SheethDiameter{get;set;} // optional
+		public IfcPositiveLengthMeasure SheathDiameter{get;set;} // optional
 
 
 		/// <summary>
@@ -29812,13 +30271,13 @@ namespace IFC4
 		/// Construct a IfcTendonType with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTendonType(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcLabel elementType,IfcTendonTypeEnum predefinedType,IfcPositiveLengthMeasure nominalDiameter,IfcAreaMeasure crossSectionArea,IfcPositiveLengthMeasure sheethDiameter):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag,elementType)
+		public IfcTendonType(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcLabel elementType,IfcTendonTypeEnum predefinedType,IfcPositiveLengthMeasure nominalDiameter,IfcAreaMeasure crossSectionArea,IfcPositiveLengthMeasure sheathDiameter):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag,elementType)
 		{
 
 			PredefinedType = predefinedType;
 			NominalDiameter = nominalDiameter;
 			CrossSectionArea = crossSectionArea;
-			SheethDiameter = sheethDiameter;
+			SheathDiameter = sheathDiameter;
 
 		}
 		public static new IfcTendonType FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTendonType>(json); }
@@ -29838,7 +30297,7 @@ namespace IFC4
 			parameters.Add(PredefinedType.ToStepValue());
 			parameters.Add(NominalDiameter != null ? NominalDiameter.ToStepValue() : "$");
 			parameters.Add(CrossSectionArea != null ? CrossSectionArea.ToStepValue() : "$");
-			parameters.Add(SheethDiameter != null ? SheethDiameter.ToStepValue() : "$");
+			parameters.Add(SheathDiameter != null ? SheathDiameter.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -31322,8 +31781,8 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcRelConnectsPathElements : IfcRelConnectsElements
 	{
-		public List<double> RelatingPriorities{get;set;} 
-		public List<double> RelatedPriorities{get;set;} 
+		public List<IfcInteger> RelatingPriorities{get;set;} 
+		public List<IfcInteger> RelatedPriorities{get;set;} 
 		public IfcConnectionTypeEnum RelatedConnectionType{get;set;} 
 		public IfcConnectionTypeEnum RelatingConnectionType{get;set;} 
 
@@ -31331,7 +31790,7 @@ namespace IFC4
 		/// <summary>
 		/// Construct a IfcRelConnectsPathElements with all required attributes.
 		/// </summary>
-		public IfcRelConnectsPathElements(IfcGloballyUniqueId globalId,IfcElement relatingElement,IfcElement relatedElement,List<double> relatingPriorities,List<double> relatedPriorities,IfcConnectionTypeEnum relatedConnectionType,IfcConnectionTypeEnum relatingConnectionType):base(globalId,relatingElement,relatedElement)
+		public IfcRelConnectsPathElements(IfcGloballyUniqueId globalId,IfcElement relatingElement,IfcElement relatedElement,List<IfcInteger> relatingPriorities,List<IfcInteger> relatedPriorities,IfcConnectionTypeEnum relatedConnectionType,IfcConnectionTypeEnum relatingConnectionType):base(globalId,relatingElement,relatedElement)
 		{
 
 			RelatingPriorities = relatingPriorities;
@@ -31344,7 +31803,7 @@ namespace IFC4
 		/// Construct a IfcRelConnectsPathElements with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcRelConnectsPathElements(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcConnectionGeometry connectionGeometry,IfcElement relatingElement,IfcElement relatedElement,List<double> relatingPriorities,List<double> relatedPriorities,IfcConnectionTypeEnum relatedConnectionType,IfcConnectionTypeEnum relatingConnectionType):base(globalId,ownerHistory,name,description,connectionGeometry,relatingElement,relatedElement)
+		public IfcRelConnectsPathElements(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcConnectionGeometry connectionGeometry,IfcElement relatingElement,IfcElement relatedElement,List<IfcInteger> relatingPriorities,List<IfcInteger> relatedPriorities,IfcConnectionTypeEnum relatedConnectionType,IfcConnectionTypeEnum relatingConnectionType):base(globalId,ownerHistory,name,description,connectionGeometry,relatingElement,relatedElement)
 		{
 
 			RelatingPriorities = relatingPriorities;
@@ -32229,7 +32688,7 @@ namespace IFC4
 		public IfcDateTime ScheduleFinish{get;set;} // optional
 		public IfcLabel ScheduleContour{get;set;} // optional
 		public IfcDuration LevelingDelay{get;set;} // optional
-		public bool IsOverAllocated{get;set;} // optional
+		public IfcBoolean IsOverAllocated{get;set;} // optional
 		public IfcDateTime StatusTime{get;set;} // optional
 		public IfcDuration ActualWork{get;set;} // optional
 		public IfcPositiveRatioMeasure ActualUsage{get;set;} // optional
@@ -32252,7 +32711,7 @@ namespace IFC4
 		/// Construct a IfcResourceTime with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcResourceTime(IfcLabel name,IfcDataOriginEnum dataOrigin,IfcLabel userDefinedDataOrigin,IfcDuration scheduleWork,IfcPositiveRatioMeasure scheduleUsage,IfcDateTime scheduleStart,IfcDateTime scheduleFinish,IfcLabel scheduleContour,IfcDuration levelingDelay,bool isOverAllocated,IfcDateTime statusTime,IfcDuration actualWork,IfcPositiveRatioMeasure actualUsage,IfcDateTime actualStart,IfcDateTime actualFinish,IfcDuration remainingWork,IfcPositiveRatioMeasure remainingUsage,IfcPositiveRatioMeasure completion):base(name,dataOrigin,userDefinedDataOrigin)
+		public IfcResourceTime(IfcLabel name,IfcDataOriginEnum dataOrigin,IfcLabel userDefinedDataOrigin,IfcDuration scheduleWork,IfcPositiveRatioMeasure scheduleUsage,IfcDateTime scheduleStart,IfcDateTime scheduleFinish,IfcLabel scheduleContour,IfcDuration levelingDelay,IfcBoolean isOverAllocated,IfcDateTime statusTime,IfcDuration actualWork,IfcPositiveRatioMeasure actualUsage,IfcDateTime actualStart,IfcDateTime actualFinish,IfcDuration remainingWork,IfcPositiveRatioMeasure remainingUsage,IfcPositiveRatioMeasure completion):base(name,dataOrigin,userDefinedDataOrigin)
 		{
 
 			ScheduleWork = scheduleWork;
@@ -32286,7 +32745,7 @@ namespace IFC4
 			parameters.Add(ScheduleFinish != null ? ScheduleFinish.ToStepValue() : "$");
 			parameters.Add(ScheduleContour != null ? ScheduleContour.ToStepValue() : "$");
 			parameters.Add(LevelingDelay != null ? LevelingDelay.ToStepValue() : "$");
-			parameters.Add(IsOverAllocated.ToStepValue());
+			parameters.Add(IsOverAllocated != null ? IsOverAllocated.ToStepValue() : "$");
 			parameters.Add(StatusTime != null ? StatusTime.ToStepValue() : "$");
 			parameters.Add(ActualWork != null ? ActualWork.ToStepValue() : "$");
 			parameters.Add(ActualUsage != null ? ActualUsage.ToStepValue() : "$");
@@ -32401,7 +32860,7 @@ namespace IFC4
 		public IfcDateTime LateFinish{get;set;} // optional
 		public IfcDuration FreeFloat{get;set;} // optional
 		public IfcDuration TotalFloat{get;set;} // optional
-		public bool IsCritical{get;set;} // optional
+		public IfcBoolean IsCritical{get;set;} // optional
 		public IfcDateTime StatusTime{get;set;} // optional
 		public IfcDuration ActualDuration{get;set;} // optional
 		public IfcDateTime ActualStart{get;set;} // optional
@@ -32422,7 +32881,7 @@ namespace IFC4
 		/// Construct a IfcTaskTime with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTaskTime(IfcLabel name,IfcDataOriginEnum dataOrigin,IfcLabel userDefinedDataOrigin,IfcTaskDurationEnum durationType,IfcDuration scheduleDuration,IfcDateTime scheduleStart,IfcDateTime scheduleFinish,IfcDateTime earlyStart,IfcDateTime earlyFinish,IfcDateTime lateStart,IfcDateTime lateFinish,IfcDuration freeFloat,IfcDuration totalFloat,bool isCritical,IfcDateTime statusTime,IfcDuration actualDuration,IfcDateTime actualStart,IfcDateTime actualFinish,IfcDuration remainingTime,IfcPositiveRatioMeasure completion):base(name,dataOrigin,userDefinedDataOrigin)
+		public IfcTaskTime(IfcLabel name,IfcDataOriginEnum dataOrigin,IfcLabel userDefinedDataOrigin,IfcTaskDurationEnum durationType,IfcDuration scheduleDuration,IfcDateTime scheduleStart,IfcDateTime scheduleFinish,IfcDateTime earlyStart,IfcDateTime earlyFinish,IfcDateTime lateStart,IfcDateTime lateFinish,IfcDuration freeFloat,IfcDuration totalFloat,IfcBoolean isCritical,IfcDateTime statusTime,IfcDuration actualDuration,IfcDateTime actualStart,IfcDateTime actualFinish,IfcDuration remainingTime,IfcPositiveRatioMeasure completion):base(name,dataOrigin,userDefinedDataOrigin)
 		{
 
 			DurationType = durationType;
@@ -32462,7 +32921,7 @@ namespace IFC4
 			parameters.Add(LateFinish != null ? LateFinish.ToStepValue() : "$");
 			parameters.Add(FreeFloat != null ? FreeFloat.ToStepValue() : "$");
 			parameters.Add(TotalFloat != null ? TotalFloat.ToStepValue() : "$");
-			parameters.Add(IsCritical.ToStepValue());
+			parameters.Add(IsCritical != null ? IsCritical.ToStepValue() : "$");
 			parameters.Add(StatusTime != null ? StatusTime.ToStepValue() : "$");
 			parameters.Add(ActualDuration != null ? ActualDuration.ToStepValue() : "$");
 			parameters.Add(ActualStart != null ? ActualStart.ToStepValue() : "$");
@@ -32519,6 +32978,34 @@ namespace IFC4
         }
 	}
 	/// <summary>
+	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcseamcurve.htm"/>
+	/// </summary>
+	public  partial class IfcSeamCurve : IfcSurfaceCurve
+	{
+
+
+		/// <summary>
+		/// Construct a IfcSeamCurve with all required attributes.
+		/// </summary>
+		[JsonConstructor]
+		public IfcSeamCurve(IfcCurve curve3D,List<IfcPcurve> associatedGeometry,IfcPreferredSurfaceCurveRepresentation masterRepresentation):base(curve3D,associatedGeometry,masterRepresentation)
+		{
+
+
+		}
+		public static new IfcSeamCurve FromJSON(string json){ return JsonConvert.DeserializeObject<IfcSeamCurve>(json); }
+
+        public override string GetStepParameters()
+        {
+            var parameters = new List<string>();
+			parameters.Add(Curve3D != null ? Curve3D.ToStepValue() : "$");
+			parameters.Add(AssociatedGeometry != null ? AssociatedGeometry.ToStepValue() : "$");
+			parameters.Add(MasterRepresentation != null ? MasterRepresentation.ToStepValue() : "$");
+
+            return string.Join(", ", parameters.ToArray());
+        }
+	}
+	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshapeaspect.htm"/>
 	/// </summary>
 	public  partial class IfcShapeAspect : BaseIfc
@@ -32526,14 +33013,14 @@ namespace IFC4
 		public List<IfcShapeModel> ShapeRepresentations{get;set;} 
 		public IfcLabel Name{get;set;} // optional
 		public IfcText Description{get;set;} // optional
-		public bool? ProductDefinitional{get;set;} 
+		public IfcLogical ProductDefinitional{get;set;} 
 		public IfcProductRepresentationSelect PartOfProductDefinitionShape{get;set;} // optional
 
 
 		/// <summary>
 		/// Construct a IfcShapeAspect with all required attributes.
 		/// </summary>
-		public IfcShapeAspect(List<IfcShapeModel> shapeRepresentations,bool? productDefinitional):base()
+		public IfcShapeAspect(List<IfcShapeModel> shapeRepresentations,IfcLogical productDefinitional):base()
 		{
 
 			ShapeRepresentations = shapeRepresentations;
@@ -32544,7 +33031,7 @@ namespace IFC4
 		/// Construct a IfcShapeAspect with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcShapeAspect(List<IfcShapeModel> shapeRepresentations,IfcLabel name,IfcText description,bool? productDefinitional,IfcProductRepresentationSelect partOfProductDefinitionShape):base()
+		public IfcShapeAspect(List<IfcShapeModel> shapeRepresentations,IfcLabel name,IfcText description,IfcLogical productDefinitional,IfcProductRepresentationSelect partOfProductDefinitionShape):base()
 		{
 
 			ShapeRepresentations = shapeRepresentations;
@@ -33133,7 +33620,7 @@ namespace IFC4
 	/// </summary>
 	public abstract partial class IfcStructuralAction : IfcStructuralActivity
 	{
-		public bool DestabilizingLoad{get;set;} // optional
+		public IfcBoolean DestabilizingLoad{get;set;} // optional
 
 
 		/// <summary>
@@ -33148,7 +33635,7 @@ namespace IFC4
 		/// Construct a IfcStructuralAction with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,bool destabilizingLoad):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal)
+		public IfcStructuralAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,IfcBoolean destabilizingLoad):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal)
 		{
 
 			DestabilizingLoad = destabilizingLoad;
@@ -33179,7 +33666,7 @@ namespace IFC4
 		/// Construct a IfcStructuralCurveAction with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralCurveAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,bool destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralCurveActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad)
+		public IfcStructuralCurveAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,IfcBoolean destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralCurveActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad)
 		{
 
 			ProjectedOrTrue = projectedOrTrue;
@@ -33200,7 +33687,7 @@ namespace IFC4
 			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
 			parameters.Add(GlobalOrLocal.ToStepValue());
-			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(DestabilizingLoad != null ? DestabilizingLoad.ToStepValue() : "$");
 			parameters.Add(ProjectedOrTrue.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
@@ -33226,7 +33713,7 @@ namespace IFC4
 		/// Construct a IfcStructuralPointAction with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralPointAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,bool destabilizingLoad):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad)
+		public IfcStructuralPointAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,IfcBoolean destabilizingLoad):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad)
 		{
 
 
@@ -33245,7 +33732,7 @@ namespace IFC4
 			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
 			parameters.Add(GlobalOrLocal.ToStepValue());
-			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(DestabilizingLoad != null ? DestabilizingLoad.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -33272,7 +33759,7 @@ namespace IFC4
 		/// Construct a IfcStructuralSurfaceAction with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralSurfaceAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,bool destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralSurfaceActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad)
+		public IfcStructuralSurfaceAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,IfcBoolean destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralSurfaceActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad)
 		{
 
 			ProjectedOrTrue = projectedOrTrue;
@@ -33293,7 +33780,7 @@ namespace IFC4
 			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
 			parameters.Add(GlobalOrLocal.ToStepValue());
-			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(DestabilizingLoad != null ? DestabilizingLoad.ToStepValue() : "$");
 			parameters.Add(ProjectedOrTrue.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
@@ -33564,7 +34051,7 @@ namespace IFC4
 		/// Construct a IfcStructuralLinearAction with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralLinearAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,bool destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralCurveActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad,projectedOrTrue,predefinedType)
+		public IfcStructuralLinearAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,IfcBoolean destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralCurveActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad,projectedOrTrue,predefinedType)
 		{
 
 
@@ -33583,7 +34070,7 @@ namespace IFC4
 			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
 			parameters.Add(GlobalOrLocal.ToStepValue());
-			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(DestabilizingLoad != null ? DestabilizingLoad.ToStepValue() : "$");
 			parameters.Add(ProjectedOrTrue.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
@@ -34367,7 +34854,7 @@ namespace IFC4
 		/// Construct a IfcStructuralPlanarAction with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcStructuralPlanarAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,bool destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralSurfaceActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad,projectedOrTrue,predefinedType)
+		public IfcStructuralPlanarAction(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcLabel objectType,IfcObjectPlacement objectPlacement,IfcProductRepresentation representation,IfcStructuralLoad appliedLoad,IfcGlobalOrLocalEnum globalOrLocal,IfcBoolean destabilizingLoad,IfcProjectedOrTrueLengthEnum projectedOrTrue,IfcStructuralSurfaceActivityTypeEnum predefinedType):base(globalId,ownerHistory,name,description,objectType,objectPlacement,representation,appliedLoad,globalOrLocal,destabilizingLoad,projectedOrTrue,predefinedType)
 		{
 
 
@@ -34386,7 +34873,7 @@ namespace IFC4
 			parameters.Add(Representation != null ? Representation.ToStepValue() : "$");
 			parameters.Add(AppliedLoad != null ? AppliedLoad.ToStepValue() : "$");
 			parameters.Add(GlobalOrLocal.ToStepValue());
-			parameters.Add(DestabilizingLoad.ToStepValue());
+			parameters.Add(DestabilizingLoad != null ? DestabilizingLoad.ToStepValue() : "$");
 			parameters.Add(ProjectedOrTrue.ToStepValue());
 			parameters.Add(PredefinedType.ToStepValue());
 
@@ -34734,7 +35221,6 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcSurfaceStyleRendering : IfcSurfaceStyleShading
 	{
-		public IfcNormalisedRatioMeasure Transparency{get;set;} // optional
 		public IfcColourOrFactor DiffuseColour{get;set;} // optional
 		public IfcColourOrFactor TransmissionColour{get;set;} // optional
 		public IfcColourOrFactor DiffuseTransmissionColour{get;set;} // optional
@@ -34757,10 +35243,9 @@ namespace IFC4
 		/// Construct a IfcSurfaceStyleRendering with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcSurfaceStyleRendering(IfcColourRgb surfaceColour,IfcNormalisedRatioMeasure transparency,IfcColourOrFactor diffuseColour,IfcColourOrFactor transmissionColour,IfcColourOrFactor diffuseTransmissionColour,IfcColourOrFactor reflectionColour,IfcColourOrFactor specularColour,IfcSpecularHighlightSelect specularHighlight,IfcReflectanceMethodEnum reflectanceMethod):base(surfaceColour)
+		public IfcSurfaceStyleRendering(IfcColourRgb surfaceColour,IfcNormalisedRatioMeasure transparency,IfcColourOrFactor diffuseColour,IfcColourOrFactor transmissionColour,IfcColourOrFactor diffuseTransmissionColour,IfcColourOrFactor reflectionColour,IfcColourOrFactor specularColour,IfcSpecularHighlightSelect specularHighlight,IfcReflectanceMethodEnum reflectanceMethod):base(surfaceColour,transparency)
 		{
 
-			Transparency = transparency;
 			DiffuseColour = diffuseColour;
 			TransmissionColour = transmissionColour;
 			DiffuseTransmissionColour = diffuseTransmissionColour;
@@ -34880,13 +35365,13 @@ namespace IFC4
 		public List<IfcTableColumn> Columns{get;set;} // optional
 
         [JsonIgnore]
-        public int NumberOfCellsInRow{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfCellsInRow.");}} // derived
+        public IfcInteger NumberOfCellsInRow{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfCellsInRow.");}} // derived
 
         [JsonIgnore]
-        public int NumberOfHeadings{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfHeadings.");}} // derived
+        public IfcInteger NumberOfHeadings{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfHeadings.");}} // derived
 
         [JsonIgnore]
-        public int NumberOfDataRows{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfDataRows.");}} // derived
+        public IfcInteger NumberOfDataRows{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfDataRows.");}} // derived
 
 
 		/// <summary>
@@ -34977,8 +35462,7 @@ namespace IFC4
 	public  partial class IfcTableRow : BaseIfc
 	{
 		public List<IfcValue> RowCells{get;set;} // optional
-		public bool IsHeading{get;set;} // optional
-		public IfcTable OfTable{get;set;} // inverse
+		public IfcBoolean IsHeading{get;set;} // optional
 
 
 		/// <summary>
@@ -34994,7 +35478,7 @@ namespace IFC4
 		/// Construct a IfcTableRow with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTableRow(List<IfcValue> rowCells,bool isHeading):base()
+		public IfcTableRow(List<IfcValue> rowCells,IfcBoolean isHeading):base()
 		{
 
 			RowCells = rowCells;
@@ -35007,7 +35491,7 @@ namespace IFC4
         {
             var parameters = new List<string>();
 			parameters.Add(RowCells != null ? RowCells.ToStepValue() : "$");
-			parameters.Add(IsHeading.ToStepValue());
+			parameters.Add(IsHeading != null ? IsHeading.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -35017,26 +35501,26 @@ namespace IFC4
 	/// </summary>
 	public  partial class IfcTaskTimeRecurring : IfcTaskTime
 	{
-		public IfcRecurrencePattern Recurrance{get;set;} 
+		public IfcRecurrencePattern Recurrence{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcTaskTimeRecurring with all required attributes.
 		/// </summary>
-		public IfcTaskTimeRecurring(IfcRecurrencePattern recurrance):base()
+		public IfcTaskTimeRecurring(IfcRecurrencePattern recurrence):base()
 		{
 
-			Recurrance = recurrance;
+			Recurrence = recurrence;
 
 		}
 		/// <summary>
 		/// Construct a IfcTaskTimeRecurring with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTaskTimeRecurring(IfcLabel name,IfcDataOriginEnum dataOrigin,IfcLabel userDefinedDataOrigin,IfcTaskDurationEnum durationType,IfcDuration scheduleDuration,IfcDateTime scheduleStart,IfcDateTime scheduleFinish,IfcDateTime earlyStart,IfcDateTime earlyFinish,IfcDateTime lateStart,IfcDateTime lateFinish,IfcDuration freeFloat,IfcDuration totalFloat,bool isCritical,IfcDateTime statusTime,IfcDuration actualDuration,IfcDateTime actualStart,IfcDateTime actualFinish,IfcDuration remainingTime,IfcPositiveRatioMeasure completion,IfcRecurrencePattern recurrance):base(name,dataOrigin,userDefinedDataOrigin,durationType,scheduleDuration,scheduleStart,scheduleFinish,earlyStart,earlyFinish,lateStart,lateFinish,freeFloat,totalFloat,isCritical,statusTime,actualDuration,actualStart,actualFinish,remainingTime,completion)
+		public IfcTaskTimeRecurring(IfcLabel name,IfcDataOriginEnum dataOrigin,IfcLabel userDefinedDataOrigin,IfcTaskDurationEnum durationType,IfcDuration scheduleDuration,IfcDateTime scheduleStart,IfcDateTime scheduleFinish,IfcDateTime earlyStart,IfcDateTime earlyFinish,IfcDateTime lateStart,IfcDateTime lateFinish,IfcDuration freeFloat,IfcDuration totalFloat,IfcBoolean isCritical,IfcDateTime statusTime,IfcDuration actualDuration,IfcDateTime actualStart,IfcDateTime actualFinish,IfcDuration remainingTime,IfcPositiveRatioMeasure completion,IfcRecurrencePattern recurrence):base(name,dataOrigin,userDefinedDataOrigin,durationType,scheduleDuration,scheduleStart,scheduleFinish,earlyStart,earlyFinish,lateStart,lateFinish,freeFloat,totalFloat,isCritical,statusTime,actualDuration,actualStart,actualFinish,remainingTime,completion)
 		{
 
-			Recurrance = recurrance;
+			Recurrence = recurrence;
 
 		}
 		public static new IfcTaskTimeRecurring FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTaskTimeRecurring>(json); }
@@ -35057,14 +35541,14 @@ namespace IFC4
 			parameters.Add(LateFinish != null ? LateFinish.ToStepValue() : "$");
 			parameters.Add(FreeFloat != null ? FreeFloat.ToStepValue() : "$");
 			parameters.Add(TotalFloat != null ? TotalFloat.ToStepValue() : "$");
-			parameters.Add(IsCritical.ToStepValue());
+			parameters.Add(IsCritical != null ? IsCritical.ToStepValue() : "$");
 			parameters.Add(StatusTime != null ? StatusTime.ToStepValue() : "$");
 			parameters.Add(ActualDuration != null ? ActualDuration.ToStepValue() : "$");
 			parameters.Add(ActualStart != null ? ActualStart.ToStepValue() : "$");
 			parameters.Add(ActualFinish != null ? ActualFinish.ToStepValue() : "$");
 			parameters.Add(RemainingTime != null ? RemainingTime.ToStepValue() : "$");
 			parameters.Add(Completion != null ? Completion.ToStepValue() : "$");
-			parameters.Add(Recurrance != null ? Recurrance.ToStepValue() : "$");
+			parameters.Add(Recurrence != null ? Recurrence.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -35119,64 +35603,26 @@ namespace IFC4
         }
 	}
 	/// <summary>
-	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellatedfaceset.htm"/>
-	/// </summary>
-	public abstract partial class IfcTessellatedFaceSet : IfcTessellatedItem
-	{
-		public IfcCartesianPointList3D Coordinates{get;set;} 
-		public List<List<IfcParameterValue>> Normals{get;set;} // optional
-		public bool Closed{get;set;} // optional
-		public List<IfcIndexedColourMap> HasColours{get;set;} // inverse
-		public List<IfcIndexedTextureMap> HasTextures{get;set;} // inverse
-
-
-		/// <summary>
-		/// Construct a IfcTessellatedFaceSet with all required attributes.
-		/// </summary>
-		public IfcTessellatedFaceSet(IfcCartesianPointList3D coordinates):base()
-		{
-			Normals = new List<List<IfcParameterValue>>();
-			HasColours = new List<IfcIndexedColourMap>();
-			HasTextures = new List<IfcIndexedTextureMap>();
-
-			Coordinates = coordinates;
-
-		}
-		/// <summary>
-		/// Construct a IfcTessellatedFaceSet with required and optional attributes.
-		/// </summary>
-		[JsonConstructor]
-		public IfcTessellatedFaceSet(IfcCartesianPointList3D coordinates,List<List<IfcParameterValue>> normals,bool closed):base()
-		{
-			HasColours = new List<IfcIndexedColourMap>();
-			HasTextures = new List<IfcIndexedTextureMap>();
-
-			Coordinates = coordinates;
-			Normals = normals;
-			Closed = closed;
-
-		}
-		public static new IfcTessellatedFaceSet FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTessellatedFaceSet>(json); }
-
-	}
-	/// <summary>
 	/// <see href="http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctriangulatedfaceset.htm"/>
 	/// </summary>
 	public  partial class IfcTriangulatedFaceSet : IfcTessellatedFaceSet
 	{
-		public List<List<int>> CoordIndex{get;set;} 
-		public List<List<int>> NormalIndex{get;set;} // optional
+		public List<List<IfcParameterValue>> Normals{get;set;} // optional
+		public IfcBoolean Closed{get;set;} // optional
+		public List<List<IfcPositiveInteger>> CoordIndex{get;set;} 
+		public List<IfcPositiveInteger> PnIndex{get;set;} // optional
 
         [JsonIgnore]
-        public int NumberOfTriangles{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfTriangles.");}} // derived
+        public IfcInteger NumberOfTriangles{get{throw new NotImplementedException($"Derived property logic has been implemented for NumberOfTriangles.");}} // derived
 
 
 		/// <summary>
 		/// Construct a IfcTriangulatedFaceSet with all required attributes.
 		/// </summary>
-		public IfcTriangulatedFaceSet(IfcCartesianPointList3D coordinates,List<List<int>> coordIndex):base(coordinates)
+		public IfcTriangulatedFaceSet(IfcCartesianPointList3D coordinates,List<List<IfcPositiveInteger>> coordIndex):base(coordinates)
 		{
-			NormalIndex = new List<List<int>>();
+			Normals = new List<List<IfcParameterValue>>();
+			PnIndex = new List<IfcPositiveInteger>();
 
 			CoordIndex = coordIndex;
 
@@ -35185,11 +35631,13 @@ namespace IFC4
 		/// Construct a IfcTriangulatedFaceSet with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcTriangulatedFaceSet(IfcCartesianPointList3D coordinates,List<List<IfcParameterValue>> normals,bool closed,List<List<int>> coordIndex,List<List<int>> normalIndex):base(coordinates,normals,closed)
+		public IfcTriangulatedFaceSet(IfcCartesianPointList3D coordinates,List<List<IfcParameterValue>> normals,IfcBoolean closed,List<List<IfcPositiveInteger>> coordIndex,List<IfcPositiveInteger> pnIndex):base(coordinates)
 		{
 
+			Normals = normals;
+			Closed = closed;
 			CoordIndex = coordIndex;
-			NormalIndex = normalIndex;
+			PnIndex = pnIndex;
 
 		}
 		public static new IfcTriangulatedFaceSet FromJSON(string json){ return JsonConvert.DeserializeObject<IfcTriangulatedFaceSet>(json); }
@@ -35199,9 +35647,9 @@ namespace IFC4
             var parameters = new List<string>();
 			parameters.Add(Coordinates != null ? Coordinates.ToStepValue() : "$");
 			parameters.Add(Normals != null ? Normals.ToStepValue() : "$");
-			parameters.Add(Closed.ToStepValue());
+			parameters.Add(Closed != null ? Closed.ToStepValue() : "$");
 			parameters.Add(CoordIndex != null ? CoordIndex.ToStepValue() : "$");
-			parameters.Add(NormalIndex != null ? NormalIndex.ToStepValue() : "$");
+			parameters.Add(PnIndex != null ? PnIndex.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
@@ -35405,14 +35853,14 @@ namespace IFC4
 	{
 		public IfcWindowStyleConstructionEnum ConstructionType{get;set;} 
 		public IfcWindowStyleOperationEnum OperationType{get;set;} 
-		public bool ParameterTakesPrecedence{get;set;} 
-		public bool Sizeable{get;set;} 
+		public IfcBoolean ParameterTakesPrecedence{get;set;} 
+		public IfcBoolean Sizeable{get;set;} 
 
 
 		/// <summary>
 		/// Construct a IfcWindowStyle with all required attributes.
 		/// </summary>
-		public IfcWindowStyle(IfcGloballyUniqueId globalId,IfcWindowStyleConstructionEnum constructionType,IfcWindowStyleOperationEnum operationType,bool parameterTakesPrecedence,bool sizeable):base(globalId)
+		public IfcWindowStyle(IfcGloballyUniqueId globalId,IfcWindowStyleConstructionEnum constructionType,IfcWindowStyleOperationEnum operationType,IfcBoolean parameterTakesPrecedence,IfcBoolean sizeable):base(globalId)
 		{
 
 			ConstructionType = constructionType;
@@ -35425,7 +35873,7 @@ namespace IFC4
 		/// Construct a IfcWindowStyle with required and optional attributes.
 		/// </summary>
 		[JsonConstructor]
-		public IfcWindowStyle(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcWindowStyleConstructionEnum constructionType,IfcWindowStyleOperationEnum operationType,bool parameterTakesPrecedence,bool sizeable):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag)
+		public IfcWindowStyle(IfcGloballyUniqueId globalId,IfcOwnerHistory ownerHistory,IfcLabel name,IfcText description,IfcIdentifier applicableOccurrence,List<IfcPropertySetDefinition> hasPropertySets,List<IfcRepresentationMap> representationMaps,IfcLabel tag,IfcWindowStyleConstructionEnum constructionType,IfcWindowStyleOperationEnum operationType,IfcBoolean parameterTakesPrecedence,IfcBoolean sizeable):base(globalId,ownerHistory,name,description,applicableOccurrence,hasPropertySets,representationMaps,tag)
 		{
 
 			ConstructionType = constructionType;
@@ -35449,8 +35897,8 @@ namespace IFC4
 			parameters.Add(Tag != null ? Tag.ToStepValue() : "$");
 			parameters.Add(ConstructionType.ToStepValue());
 			parameters.Add(OperationType.ToStepValue());
-			parameters.Add(ParameterTakesPrecedence.ToStepValue());
-			parameters.Add(Sizeable.ToStepValue());
+			parameters.Add(ParameterTakesPrecedence != null ? ParameterTakesPrecedence.ToStepValue() : "$");
+			parameters.Add(Sizeable != null ? Sizeable.ToStepValue() : "$");
 
             return string.Join(", ", parameters.ToArray());
         }
