@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace IFC4.Tests
+namespace IFC.Tests
 {
     public class DOT
     {

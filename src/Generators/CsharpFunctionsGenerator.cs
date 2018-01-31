@@ -19,7 +19,7 @@ namespace IFC4.Generators
 using System;
 using System.Collections.Generic;
 
-namespace IFC4
+namespace IFC
 {{
     public static class Functions
     {{

@@ -8,16 +8,6 @@ namespace IFC4.Generators
 {
     public class TypescriptGenerator : ILanguageGenerator
     {
-        public string Begin()
-        {
-            return string.Empty;
-        }
-
-        public string End()
-        {
-            return string.Empty;
-        }
-
         public string Assignment(AttributeData data)
         {
             return $"\t\tthis.{data.Name} = {data.ParameterName}";
@@ -255,14 +245,9 @@ export {modifier}class {data.Name} extends {super} {{
             return string.Empty;
         }
 
-        public string FileName
+        public string FileExtension
         {
-            get { return "IFC.g.ts"; }
-        }
-
-        public string TestFileName
-        {
-            get { return "IFC.tests.g.ts"; }
+            get { return "g.ts"; }
         }
 
         public string ParseSimpleType(ExpressParser.SimpleTypeContext context)

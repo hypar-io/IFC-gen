@@ -2,7 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using IFC4;
+using IFC;
 using System.Globalization;
 
 namespace STEP

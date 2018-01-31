@@ -11,8 +11,6 @@ namespace Express
 	{
 		private ILanguageGenerator generator;
 
-		private ITestGenerator testGenerator;
-
 		private Dictionary<string,TypeData> typeData = new Dictionary<string,TypeData>();
 
 		private Dictionary<string,FunctionData> funcData = new Dictionary<string, FunctionData>();
@@ -25,10 +23,9 @@ namespace Express
 			get{return funcData;}
 		}
 
-		public ExpressListener(ILanguageGenerator generator, ITestGenerator testGenerator)
+		public ExpressListener(ILanguageGenerator generator)
 		{
 			this.generator = generator;
-			this.testGenerator = testGenerator;
 		}
 
 		public override void EnterSchemaDecl(ExpressParser.SchemaDeclContext context)
@@ -49,27 +46,27 @@ namespace Express
 			if(context.typeSel().collectionType() != null)
 			{
 				var wrappedType = ParseCollectionType(context.typeSel().collectionType(), ref rank, ref returnsCollection, ref isGeneric);
-				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
+				td = new WrapperType(name, wrappedType, generator, returnsCollection, rank);
 			}
 			else if(context.typeSel().simpleType() != null)
 			{	
 				var wrappedType = ParseSimpleType(context.typeSel().simpleType());
-				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
+				td = new WrapperType(name, wrappedType, generator, returnsCollection, rank);
 			}
 			else if(context.typeSel().namedType() != null)
 			{
 				var wrappedType = ParseNamedType(context.typeSel().namedType());
-				td = new WrapperType(name, wrappedType, generator, testGenerator, returnsCollection, rank);
+				td = new WrapperType(name, wrappedType, generator, returnsCollection, rank);
 			}
 			else if(context.typeSel().enumType() != null)
 			{
 				var values = context.typeSel().enumType().enumValues().GetText().Split(',');
-				td = new EnumType(name, generator, testGenerator, values);
+				td = new EnumType(name, generator, values);
 			}
 			else if(context.typeSel().selectType() != null)
 			{
 				var values = context.typeSel().selectType().selectValues().GetText().Split(',');
-				td = new SelectType(name, generator, testGenerator, values);
+				td = new SelectType(name, generator, values);
 			}
 
 			typeData.Add(name, td);
@@ -88,7 +85,7 @@ namespace Express
 				entity = (Entity)typeData[entityName];
 			}
 			else{
-				entity = new Entity(entityName, generator, testGenerator);
+				entity = new Entity(entityName, generator);
 				typeData.Add(entityName, entity);
 			}
 
@@ -114,7 +111,7 @@ namespace Express
 						}
 						else
 						{
-							sup = new Entity(superName, generator, testGenerator);
+							sup = new Entity(superName, generator);
 							typeData.Add(superName, sup);
 						}
 						entity.Supers.Add(sup);
@@ -135,7 +132,7 @@ namespace Express
 					}
 					else
 					{
-						sub = new Entity(subName, generator, testGenerator);
+						sub = new Entity(subName, generator);
 						typeData.Add(subName, sub);
 					}
 					entity.Subs.Add(sub);

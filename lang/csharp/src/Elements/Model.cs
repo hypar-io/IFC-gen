@@ -11,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Collections.Generic;
 using Elements.Storage;
-using IFC4;
+using IFC;
 
 namespace Elements
 {

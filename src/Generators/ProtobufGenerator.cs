@@ -159,9 +159,9 @@ message {data.Name}{{
 }}";
         }
 
-        public string FileName
+        public string FileExtension
         {
-            get { return "IFC.g.proto"; }
+            get { return "proto"; }
         }
 
         public string ParseSimpleType(ExpressParser.SimpleTypeContext context)

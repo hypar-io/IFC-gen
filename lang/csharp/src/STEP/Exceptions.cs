@@ -1,6 +1,6 @@
 using System;
 
-namespace IFC4
+namespace IFC
 {
 
 	/// <summary>

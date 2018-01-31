@@ -3,26 +3,11 @@ using System.Collections.Generic;
 
 namespace IFC4.Generators
 {
-    public interface IGenerator
-    {
-        /// <summary>
-        /// Begin is called at the beginning of code generation.
-        /// </summary>
-        /// <returns></returns>
-        string Begin();
-
-        /// <summary>
-        /// End is called at the end of code generation.
-        /// </summary>
-        /// <returns></returns>
-        string End();
-    }
-
     /// <summary>
     /// ILanguageGenerator provides the interface for classes which
     /// are used to generate source code from AttributeData or TypeData.
     /// </summary>
-    public interface ILanguageGenerator : IGenerator
+    public interface ILanguageGenerator
     {
         /// <summary>
         /// AttributeDataType is called when generating a string representing
@@ -81,7 +66,7 @@ namespace IFC4.Generators
         /// generated code.
         /// </summary>
         /// <returns></returns>
-        string FileName { get; }
+        string FileExtension { get; }
 
         /// <summary>
         /// ParseType is called when the the type wrapped by a SimpleType 
@@ -101,11 +86,5 @@ namespace IFC4.Generators
         string FileName { get; }
 
         string Generate(IEnumerable<FunctionData> functionDatas);
-    }
-
-    public interface ITestGenerator : IGenerator
-    {
-        string EntityTest(Entity data);
-        string FileName { get; }
     }
 }

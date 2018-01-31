@@ -169,11 +169,9 @@ namespace Express
     {
         public string Name { get; set; }
         protected ILanguageGenerator generator;
-        protected ITestGenerator testGenerator;
-        public TypeData(string name, ILanguageGenerator generator, ITestGenerator testGenerator)
+        public TypeData(string name, ILanguageGenerator generator)
         {
             this.generator = generator;
-            this.testGenerator = testGenerator;
             Name = name;
         }
 
@@ -192,7 +190,7 @@ namespace Express
         /// <returns></returns>
         public IEnumerable<string> Values { get; }
 
-        public CollectionTypeData(string name, ILanguageGenerator generator, ITestGenerator testGenerator, IEnumerable<string> values) : base(name, generator, testGenerator)
+        public CollectionTypeData(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator)
         {
             this.Values = values;
         }
@@ -219,7 +217,7 @@ namespace Express
         /// <returns></returns>
         public string WrappedType{get;}
 
-        public WrapperType(string name, string wrappedType, ILanguageGenerator generator, ITestGenerator testGenerator, bool isCollectionType, int rank) : base(name, generator, testGenerator)
+        public WrapperType(string name, string wrappedType, ILanguageGenerator generator, bool isCollectionType, int rank) : base(name, generator)
         {
             this.IsCollectionType = isCollectionType;
             this.Rank = rank;
@@ -241,7 +239,7 @@ namespace Express
     /// </summary>
     public class EnumType : CollectionTypeData
     {
-        public EnumType(string name, ILanguageGenerator generator, ITestGenerator testGenerator, IEnumerable<string> values) : base(name, generator, testGenerator, values) { }
+        public EnumType(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator, values) { }
 
         /// <summary>
         /// Returns a string representing the TypeData as an Enum.
@@ -258,7 +256,7 @@ namespace Express
     /// </summary>
     public class SelectType : CollectionTypeData
     {
-        public SelectType(string name, ILanguageGenerator generator, ITestGenerator testGenerator, IEnumerable<string> values) : base(name, generator, testGenerator, values) { }
+        public SelectType(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator, values) { }
 
         /// <summary>
         /// Return a string representing the TypeData as a Select.
@@ -287,7 +285,7 @@ namespace Express
 
         public bool IsAbstract { get; set; }
 
-        public Entity(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator)
+        public Entity(string name, ILanguageGenerator generator) : base(name, generator)
         {
             Name = name;
             Supers = new List<Entity>();
@@ -417,11 +415,6 @@ namespace Express
         public override string ToString()
         {
             return generator.EntityString(this);
-        }
-
-        public string ToTestString()
-        {
-            return testGenerator.EntityTest(this);
         }
 
         public override IEnumerable<string> Dependencies() 
