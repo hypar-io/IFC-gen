@@ -1,16 +1,15 @@
 {
     "compileOnSave": true,
     "compilerOptions": {
-        "target": "es2015", //es6
+        "target": "es2015",
         "module": "commonjs",
         "noImplicitAny": true,
         "preserveConstEnums": true,
         "declaration": true,
-        "outDir": "./dist"
+        "outDir": "./"
     },
     "include": [
-        "IFC/**/*",
-        "**/*"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",
