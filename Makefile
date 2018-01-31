@@ -25,6 +25,9 @@ csharp-tests: csharp
 proto: default
 	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l proto -o ./lang/proto -t ./lang/proto
 
+ts: default
+	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l ts -o ./lang/typescript/lib -t ./lang/typescript
+	
 debug_parser: generate_debug
 	dotnet build ./src/IFC-gen.csproj
 	dotnet $(DEBUG_OUT)/IFC-gen.dll -e ./debug.exp -l csharp -o ./lang/csharp/src/IFC4 -t ./lang/csharp/tests/ -p

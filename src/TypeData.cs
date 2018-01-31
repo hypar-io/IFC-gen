@@ -28,7 +28,7 @@ namespace Express
             this.type = type;
         }
 
-        protected string type;
+        internal string type;
 
         /// <summary>
         /// The name of the Type that is referenced.
@@ -176,6 +176,11 @@ namespace Express
             this.testGenerator = testGenerator;
             Name = name;
         }
+
+        public virtual IEnumerable<string> Dependencies()
+        {
+            throw new NotImplementedException("Override in derived classes.");
+        }
     }
 
     public abstract class CollectionTypeData : TypeData
@@ -262,6 +267,11 @@ namespace Express
         public override string ToString()
         {
             return generator.SelectTypeString(this);
+        }
+
+        public override IEnumerable<string> Dependencies() 
+        {
+            return this.Values;
         }
     }
 
@@ -412,6 +422,22 @@ namespace Express
         public string ToTestString()
         {
             return testGenerator.EntityTest(this);
+        }
+
+        public override IEnumerable<string> Dependencies() 
+        {
+            var parents = ParentsAndSelf().Reverse();
+            var attrs = parents.SelectMany(p => p.Attributes);
+
+            var constructorTypes = attrs.Select(a=>a.type).Distinct();
+            var attrTypes = this.Attributes.Select(a=>a.type).Distinct();
+            var superTypes = this.Supers.Select(s=>s.Name);
+            var subTypes = this.Subs.Select(s=>s.Name);
+
+            var badTypes = new List<string>{"boolean","number","string","boolean","Uint8Array"};
+            var types = constructorTypes.Concat(attrTypes).Concat(superTypes).Concat(subTypes).Distinct().Where(t=>!badTypes.Contains(t) && t!=this.Name);
+
+            return types;
         }
     }
 }

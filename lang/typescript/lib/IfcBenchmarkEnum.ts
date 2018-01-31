@@ -1,0 +1,3 @@
+
+//http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbenchmarkenum.htm
+export enum IfcBenchmarkEnum {GREATERTHAN,GREATERTHANOREQUALTO,LESSTHAN,LESSTHANOREQUALTO,EQUALTO,NOTEQUALTO,INCLUDES,NOTINCLUDES,INCLUDEDIN,NOTINCLUDEDIN}

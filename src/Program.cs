@@ -38,6 +38,9 @@ namespace IFC.Generate
             else if (language == "proto")
             {
                 generators.Add(new Tuple<ILanguageGenerator, ITestGenerator, IFunctionsGenerator>(new ProtobufGenerator(), new ProtobufTestGenerator(), null));
+            } else if (language == "ts")
+            {
+                generators.Add(new Tuple<ILanguageGenerator, ITestGenerator, IFunctionsGenerator>(new TypescriptGenerator(), new TypescriptTestGenerator(), null));
             }
 
             using (FileStream fs = new FileStream(expressPath, FileMode.Open))
@@ -89,18 +92,19 @@ namespace IFC.Generate
             foreach (var kvp in listener.TypeData)
             {
                 var td = kvp.Value;
-                codeSb.Append(td.ToString());
+                //codeSb.Append(td.ToString());
 
                 // Only write tests for entities.
                 /*var entity = td as Express.Entity;
 				if(entity != null){
 					testSb.AppendLine(entity.ToTestString());
 				}*/
+                File.WriteAllText(Path.Combine(outDir, td.Name + ".ts"), td.ToString());
             }
-            codeSb.AppendLine(generator.End());
+            //codeSb.AppendLine(generator.End());
             //testSb.AppendLine(testGenerator.End());
 
-            File.WriteAllText(codePath, codeSb.ToString());
+            //File.WriteAllText(codePath, codeSb.ToString());
             //File.WriteAllText(testPath,testSb.ToString());
 
             if (functionsGenerator != null)

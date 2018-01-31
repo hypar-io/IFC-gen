@@ -1,0 +1,25 @@
+
+import {BaseIfc} from "./BaseIfc"
+import {IfcLightDistributionCurveEnum} from "./IfcLightDistributionCurveEnum"
+import {IfcLightDistributionData} from "./IfcLightDistributionData"
+
+// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightintensitydistribution.htm
+export class IfcLightIntensityDistribution extends BaseIfc {
+	LightDistributionCurve : IfcLightDistributionCurveEnum
+	DistributionData : Array<IfcLightDistributionData>
+
+    constructor(lightDistributionCurve : IfcLightDistributionCurveEnum, distributionData : Array<IfcLightDistributionData>) {
+        super()
+
+		this.LightDistributionCurve = lightDistributionCurve
+		this.DistributionData = distributionData
+
+    }
+    getStepParameters() : string {
+        var parameters = new Array<string>();
+		parameters.push(this.toStepValue(this.LightDistributionCurve));
+		parameters.push(this.DistributionData != null ? this.toStepValue(this.DistributionData) : "$");
+
+        return parameters.join();
+    }
+}

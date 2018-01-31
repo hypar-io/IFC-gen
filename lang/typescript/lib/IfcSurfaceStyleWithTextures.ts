@@ -1,0 +1,22 @@
+
+import {BaseIfc} from "./BaseIfc"
+import {IfcSurfaceTexture} from "./IfcSurfaceTexture"
+import {IfcPresentationItem} from "./IfcPresentationItem"
+
+// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylewithtextures.htm
+export class IfcSurfaceStyleWithTextures extends IfcPresentationItem {
+	Textures : Array<IfcSurfaceTexture>
+
+    constructor(textures : Array<IfcSurfaceTexture>) {
+        super()
+
+		this.Textures = textures
+
+    }
+    getStepParameters() : string {
+        var parameters = new Array<string>();
+		parameters.push(this.Textures != null ? this.toStepValue(this.Textures) : "$");
+
+        return parameters.join();
+    }
+}
