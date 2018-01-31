@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCsgSelect} from "./IfcCsgSelect"
-import {IfcSolidModel} from "./IfcSolidModel"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCsgSelect} from "./IfcCsgSelect.g"
+import {IfcSolidModel} from "./IfcSolidModel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgsolid.htm
 export class IfcCsgSolid extends IfcSolidModel {

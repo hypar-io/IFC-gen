@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcProperty} from "./IfcProperty"
-import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcProperty} from "./IfcProperty.g"
+import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertydependencyrelationship.htm
 export class IfcPropertyDependencyRelationship extends IfcResourceLevelRelationship {

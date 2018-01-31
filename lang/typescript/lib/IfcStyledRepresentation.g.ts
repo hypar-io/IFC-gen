@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRepresentationContext} from "./IfcRepresentationContext"
-import {IfcLabel} from "./IfcLabel"
-import {IfcRepresentationItem} from "./IfcRepresentationItem"
-import {IfcRepresentationMap} from "./IfcRepresentationMap"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcProductRepresentation} from "./IfcProductRepresentation"
-import {IfcStyleModel} from "./IfcStyleModel"
+import {IfcRepresentationContext} from "./IfcRepresentationContext.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcRepresentationItem} from "./IfcRepresentationItem.g"
+import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
+import {IfcStyleModel} from "./IfcStyleModel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyledrepresentation.htm
 export class IfcStyledRepresentation extends IfcStyleModel {

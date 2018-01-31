@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcStructuralConnectionCondition} from "./IfcStructuralConnectionCondition"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcStructuralConnectionCondition} from "./IfcStructuralConnectionCondition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcslippageconnectioncondition.htm
 export class IfcSlippageConnectionCondition extends IfcStructuralConnectionCondition {

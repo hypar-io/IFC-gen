@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcSurfaceSide} from "./IfcSurfaceSide"
-import {IfcSurfaceStyleElementSelect} from "./IfcSurfaceStyleElementSelect"
-import {IfcPresentationStyle} from "./IfcPresentationStyle"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcSurfaceSide} from "./IfcSurfaceSide.g"
+import {IfcSurfaceStyleElementSelect} from "./IfcSurfaceStyleElementSelect.g"
+import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyle.htm
 export class IfcSurfaceStyle extends IfcPresentationStyle {

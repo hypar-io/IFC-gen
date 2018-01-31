@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcDimensionalExponents} from "./IfcDimensionalExponents"
-import {IfcUnitEnum} from "./IfcUnitEnum"
-import {IfcSIPrefix} from "./IfcSIPrefix"
-import {IfcSIUnitName} from "./IfcSIUnitName"
-import {IfcNamedUnit} from "./IfcNamedUnit"
+import {IfcDimensionalExponents} from "./IfcDimensionalExponents.g"
+import {IfcUnitEnum} from "./IfcUnitEnum.g"
+import {IfcSIPrefix} from "./IfcSIPrefix.g"
+import {IfcSIUnitName} from "./IfcSIUnitName.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsiunit.htm
 export class IfcSIUnit extends IfcNamedUnit {

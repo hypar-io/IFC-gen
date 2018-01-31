@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcObjectDefinition} from "./IfcObjectDefinition"
-import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum"
-import {IfcResourceSelect} from "./IfcResourceSelect"
-import {IfcRelAssigns} from "./IfcRelAssigns"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum.g"
+import {IfcResourceSelect} from "./IfcResourceSelect.g"
+import {IfcRelAssigns} from "./IfcRelAssigns.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoresource.htm
 export class IfcRelAssignsToResource extends IfcRelAssigns {

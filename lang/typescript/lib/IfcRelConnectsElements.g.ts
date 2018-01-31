@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcConnectionGeometry} from "./IfcConnectionGeometry"
-import {IfcElement} from "./IfcElement"
-import {IfcRelConnectsPathElements} from "./IfcRelConnectsPathElements"
-import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizingElements"
-import {IfcRelConnects} from "./IfcRelConnects"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
+import {IfcElement} from "./IfcElement.g"
+import {IfcRelConnectsPathElements} from "./IfcRelConnectsPathElements.g"
+import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizingElements.g"
+import {IfcRelConnects} from "./IfcRelConnects.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectselements.htm
 export class IfcRelConnectsElements extends IfcRelConnects {

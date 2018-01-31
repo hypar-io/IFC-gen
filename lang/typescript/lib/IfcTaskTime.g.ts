@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDataOriginEnum} from "./IfcDataOriginEnum"
-import {IfcTaskDurationEnum} from "./IfcTaskDurationEnum"
-import {IfcDuration} from "./IfcDuration"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure"
-import {IfcTaskTimeRecurring} from "./IfcTaskTimeRecurring"
-import {IfcSchedulingTime} from "./IfcSchedulingTime"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
+import {IfcTaskDurationEnum} from "./IfcTaskDurationEnum.g"
+import {IfcDuration} from "./IfcDuration.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure.g"
+import {IfcTaskTimeRecurring} from "./IfcTaskTimeRecurring.g"
+import {IfcSchedulingTime} from "./IfcSchedulingTime.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctasktime.htm
 export class IfcTaskTime extends IfcSchedulingTime {

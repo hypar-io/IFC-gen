@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCurve} from "./IfcCurve"
-import {IfcTrimmingSelect} from "./IfcTrimmingSelect"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcTrimmingPreference} from "./IfcTrimmingPreference"
-import {IfcBoundedCurve} from "./IfcBoundedCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcTrimmingSelect} from "./IfcTrimmingSelect.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcTrimmingPreference} from "./IfcTrimmingPreference.g"
+import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrimmedcurve.htm
 export class IfcTrimmedCurve extends IfcBoundedCurve {

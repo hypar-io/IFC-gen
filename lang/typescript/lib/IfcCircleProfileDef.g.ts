@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcProfileProperties} from "./IfcProfileProperties"
-import {IfcAxis2Placement2D} from "./IfcAxis2Placement2D"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcCircleHollowProfileDef} from "./IfcCircleHollowProfileDef"
-import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef"
+import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcProfileProperties} from "./IfcProfileProperties.g"
+import {IfcAxis2Placement2D} from "./IfcAxis2Placement2D.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcCircleHollowProfileDef} from "./IfcCircleHollowProfileDef.g"
+import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccircleprofiledef.htm
 export class IfcCircleProfileDef extends IfcParameterizedProfileDef {

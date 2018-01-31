@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcObjectDefinition} from "./IfcObjectDefinition"
-import {IfcPropertySetDefinitionSelect} from "./IfcPropertySetDefinitionSelect"
-import {IfcRelDefines} from "./IfcRelDefines"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcPropertySetDefinitionSelect} from "./IfcPropertySetDefinitionSelect.g"
+import {IfcRelDefines} from "./IfcRelDefines.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbyproperties.htm
 export class IfcRelDefinesByProperties extends IfcRelDefines {

@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcObjectDefinition} from "./IfcObjectDefinition"
-import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum"
-import {IfcGroup} from "./IfcGroup"
-import {IfcRatioMeasure} from "./IfcRatioMeasure"
-import {IfcRelAssignsToGroup} from "./IfcRelAssignsToGroup"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum.g"
+import {IfcGroup} from "./IfcGroup.g"
+import {IfcRatioMeasure} from "./IfcRatioMeasure.g"
+import {IfcRelAssignsToGroup} from "./IfcRelAssignsToGroup.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstogroupbyfactor.htm
 export class IfcRelAssignsToGroupByFactor extends IfcRelAssignsToGroup {

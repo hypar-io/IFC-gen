@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcShapeModel} from "./IfcShapeModel"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcLogical} from "./IfcLogical"
-import {IfcProductRepresentationSelect} from "./IfcProductRepresentationSelect"
+import {IfcShapeModel} from "./IfcShapeModel.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcProductRepresentationSelect} from "./IfcProductRepresentationSelect.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshapeaspect.htm
 export class IfcShapeAspect extends BaseIfc {

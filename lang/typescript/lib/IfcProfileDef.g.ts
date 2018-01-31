@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcProfileProperties} from "./IfcProfileProperties"
-import {IfcArbitraryClosedProfileDef} from "./IfcArbitraryClosedProfileDef"
-import {IfcArbitraryOpenProfileDef} from "./IfcArbitraryOpenProfileDef"
-import {IfcCompositeProfileDef} from "./IfcCompositeProfileDef"
-import {IfcDerivedProfileDef} from "./IfcDerivedProfileDef"
-import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef"
+import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcProfileProperties} from "./IfcProfileProperties.g"
+import {IfcArbitraryClosedProfileDef} from "./IfcArbitraryClosedProfileDef.g"
+import {IfcArbitraryOpenProfileDef} from "./IfcArbitraryOpenProfileDef.g"
+import {IfcCompositeProfileDef} from "./IfcCompositeProfileDef.g"
+import {IfcDerivedProfileDef} from "./IfcDerivedProfileDef.g"
+import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprofiledef.htm
 export class IfcProfileDef extends BaseIfc {

@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcValue} from "./IfcValue"
-import {IfcUnit} from "./IfcUnit"
+import {IfcValue} from "./IfcValue.g"
+import {IfcUnit} from "./IfcUnit.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmeasurewithunit.htm
 export class IfcMeasureWithUnit extends BaseIfc {

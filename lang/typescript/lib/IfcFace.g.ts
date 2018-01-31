@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcFaceBound} from "./IfcFaceBound"
-import {IfcTextureMap} from "./IfcTextureMap"
-import {IfcFaceSurface} from "./IfcFaceSurface"
-import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcFaceBound} from "./IfcFaceBound.g"
+import {IfcTextureMap} from "./IfcTextureMap.g"
+import {IfcFaceSurface} from "./IfcFaceSurface.g"
+import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcface.htm
 export class IfcFace extends IfcTopologicalRepresentationItem {

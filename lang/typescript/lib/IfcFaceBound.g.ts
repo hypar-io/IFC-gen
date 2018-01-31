@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcLoop} from "./IfcLoop"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcFaceOuterBound} from "./IfcFaceOuterBound"
-import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcLoop} from "./IfcLoop.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcFaceOuterBound} from "./IfcFaceOuterBound.g"
+import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebound.htm
 export class IfcFaceBound extends IfcTopologicalRepresentationItem {

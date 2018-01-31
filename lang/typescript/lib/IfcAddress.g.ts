@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcAddressTypeEnum} from "./IfcAddressTypeEnum"
-import {IfcText} from "./IfcText"
-import {IfcLabel} from "./IfcLabel"
-import {IfcPerson} from "./IfcPerson"
-import {IfcOrganization} from "./IfcOrganization"
-import {IfcPostalAddress} from "./IfcPostalAddress"
-import {IfcTelecomAddress} from "./IfcTelecomAddress"
+import {IfcAddressTypeEnum} from "./IfcAddressTypeEnum.g"
+import {IfcText} from "./IfcText.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcPerson} from "./IfcPerson.g"
+import {IfcOrganization} from "./IfcOrganization.g"
+import {IfcPostalAddress} from "./IfcPostalAddress.g"
+import {IfcTelecomAddress} from "./IfcTelecomAddress.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaddress.htm
 export abstract class IfcAddress extends BaseIfc {

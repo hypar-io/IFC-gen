@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcColour} from "./IfcColour"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcColour} from "./IfcColour.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefordefinedfont.htm
 export class IfcTextStyleForDefinedFont extends IfcPresentationItem {

@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcElement} from "./IfcElement"
-import {IfcCovering} from "./IfcCovering"
-import {IfcRelConnects} from "./IfcRelConnects"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcElement} from "./IfcElement.g"
+import {IfcCovering} from "./IfcCovering.g"
+import {IfcRelConnects} from "./IfcRelConnects.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelcoversbldgelements.htm
 export class IfcRelCoversBldgElements extends IfcRelConnects {

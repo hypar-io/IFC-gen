@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcClosedShell} from "./IfcClosedShell"
-import {IfcAdvancedBrep} from "./IfcAdvancedBrep"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcClosedShell} from "./IfcClosedShell.g"
+import {IfcAdvancedBrep} from "./IfcAdvancedBrep.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcadvancedbrepwithvoids.htm
 export class IfcAdvancedBrepWithVoids extends IfcAdvancedBrep {

@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcElement} from "./IfcElement"
-import {IfcConnectionGeometry} from "./IfcConnectionGeometry"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcRelConnects} from "./IfcRelConnects"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcElement} from "./IfcElement.g"
+import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcRelConnects} from "./IfcRelConnects.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelinterfereselements.htm
 export class IfcRelInterferesElements extends IfcRelConnects {

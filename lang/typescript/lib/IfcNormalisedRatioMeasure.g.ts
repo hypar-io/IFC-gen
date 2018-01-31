@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRatioMeasure} from "./IfcRatioMeasure"
+import {IfcRatioMeasure} from "./IfcRatioMeasure.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcnormalisedratiomeasure.htm
 export class IfcNormalisedRatioMeasure extends BaseIfc

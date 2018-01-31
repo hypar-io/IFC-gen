@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcStructuralActivityAssignmentSelect} from "./IfcStructuralActivityAssignmentSelect"
-import {IfcStructuralActivity} from "./IfcStructuralActivity"
-import {IfcRelConnects} from "./IfcRelConnects"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcStructuralActivityAssignmentSelect} from "./IfcStructuralActivityAssignmentSelect.g"
+import {IfcStructuralActivity} from "./IfcStructuralActivity.g"
+import {IfcRelConnects} from "./IfcRelConnects.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsstructuralactivity.htm
 export class IfcRelConnectsStructuralActivity extends IfcRelConnects {

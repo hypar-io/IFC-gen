@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcBooleanOperator} from "./IfcBooleanOperator"
-import {IfcBooleanOperand} from "./IfcBooleanOperand"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcBooleanResult} from "./IfcBooleanResult"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcBooleanOperator} from "./IfcBooleanOperator.g"
+import {IfcBooleanOperand} from "./IfcBooleanOperand.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcBooleanResult} from "./IfcBooleanResult.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanclippingresult.htm
 export class IfcBooleanClippingResult extends IfcBooleanResult {

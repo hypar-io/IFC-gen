@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcParameterValue} from "./IfcParameterValue"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcParameterValue} from "./IfcParameterValue.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturevertexlist.htm
 export class IfcTextureVertexList extends IfcPresentationItem {

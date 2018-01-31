@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSurfaceTexture} from "./IfcSurfaceTexture"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcSurfaceTexture} from "./IfcSurfaceTexture.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylewithtextures.htm
 export class IfcSurfaceStyleWithTextures extends IfcPresentationItem {

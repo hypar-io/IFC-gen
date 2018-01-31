@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcColourSpecification} from "./IfcColourSpecification"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcColourSpecification} from "./IfcColourSpecification.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgb.htm
 export class IfcColourRgb extends IfcColourSpecification {

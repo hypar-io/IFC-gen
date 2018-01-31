@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcProduct} from "./IfcProduct"
-import {IfcObjectPlacement} from "./IfcObjectPlacement"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
+import {IfcProduct} from "./IfcProduct.g"
+import {IfcObjectPlacement} from "./IfcObjectPlacement.g"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclocalplacement.htm
 export class IfcLocalPlacement extends IfcObjectPlacement {

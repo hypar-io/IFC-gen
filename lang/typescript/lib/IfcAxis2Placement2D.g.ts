@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcDirection} from "./IfcDirection"
-import {IfcPlacement} from "./IfcPlacement"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcPlacement} from "./IfcPlacement.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcaxis2placement2d.htm
 export class IfcAxis2Placement2D extends IfcPlacement {

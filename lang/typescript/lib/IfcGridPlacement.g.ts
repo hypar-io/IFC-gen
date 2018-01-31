@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcProduct} from "./IfcProduct"
-import {IfcLocalPlacement} from "./IfcLocalPlacement"
-import {IfcVirtualGridIntersection} from "./IfcVirtualGridIntersection"
-import {IfcGridPlacementDirectionSelect} from "./IfcGridPlacementDirectionSelect"
-import {IfcObjectPlacement} from "./IfcObjectPlacement"
+import {IfcProduct} from "./IfcProduct.g"
+import {IfcLocalPlacement} from "./IfcLocalPlacement.g"
+import {IfcVirtualGridIntersection} from "./IfcVirtualGridIntersection.g"
+import {IfcGridPlacementDirectionSelect} from "./IfcGridPlacementDirectionSelect.g"
+import {IfcObjectPlacement} from "./IfcObjectPlacement.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacement.htm
 export class IfcGridPlacement extends IfcObjectPlacement {

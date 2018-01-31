@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcDimensionalExponents} from "./IfcDimensionalExponents"
-import {IfcUnitEnum} from "./IfcUnitEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcNamedUnit} from "./IfcNamedUnit"
+import {IfcDimensionalExponents} from "./IfcDimensionalExponents.g"
+import {IfcUnitEnum} from "./IfcUnitEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontextdependentunit.htm
 export class IfcContextDependentUnit extends IfcNamedUnit {

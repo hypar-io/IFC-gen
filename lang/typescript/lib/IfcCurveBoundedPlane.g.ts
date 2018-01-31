@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcPlane} from "./IfcPlane"
-import {IfcCurve} from "./IfcCurve"
-import {IfcBoundedSurface} from "./IfcBoundedSurface"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcPlane} from "./IfcPlane.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcBoundedSurface} from "./IfcBoundedSurface.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveboundedplane.htm
 export class IfcCurveBoundedPlane extends IfcBoundedSurface {

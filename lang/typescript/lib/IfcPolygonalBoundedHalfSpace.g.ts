@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcSurface} from "./IfcSurface"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcBoundedCurve} from "./IfcBoundedCurve"
-import {IfcHalfSpaceSolid} from "./IfcHalfSpaceSolid"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
+import {IfcHalfSpaceSolid} from "./IfcHalfSpaceSolid.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalboundedhalfspace.htm
 export class IfcPolygonalBoundedHalfSpace extends IfcHalfSpaceSolid {

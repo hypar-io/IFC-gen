@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcVertex} from "./IfcVertex"
-import {IfcEdgeCurve} from "./IfcEdgeCurve"
-import {IfcOrientedEdge} from "./IfcOrientedEdge"
-import {IfcSubedge} from "./IfcSubedge"
-import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcVertex} from "./IfcVertex.g"
+import {IfcEdgeCurve} from "./IfcEdgeCurve.g"
+import {IfcOrientedEdge} from "./IfcOrientedEdge.g"
+import {IfcSubedge} from "./IfcSubedge.g"
+import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedge.htm
 export class IfcEdge extends IfcTopologicalRepresentationItem {

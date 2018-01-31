@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcCoordinateReferenceSystemSelect} from "./IfcCoordinateReferenceSystemSelect"
-import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcReal} from "./IfcReal"
-import {IfcCoordinateOperation} from "./IfcCoordinateOperation"
+import {IfcCoordinateReferenceSystemSelect} from "./IfcCoordinateReferenceSystemSelect.g"
+import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcCoordinateOperation} from "./IfcCoordinateOperation.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmapconversion.htm
 export class IfcMapConversion extends IfcCoordinateOperation {

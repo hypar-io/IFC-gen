@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcConstraintEnum} from "./IfcConstraintEnum"
-import {IfcActorSelect} from "./IfcActorSelect"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship"
-import {IfcMetric} from "./IfcMetric"
-import {IfcObjective} from "./IfcObjective"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcConstraintEnum} from "./IfcConstraintEnum.g"
+import {IfcActorSelect} from "./IfcActorSelect.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
+import {IfcMetric} from "./IfcMetric.g"
+import {IfcObjective} from "./IfcObjective.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstraint.htm
 export abstract class IfcConstraint extends BaseIfc {

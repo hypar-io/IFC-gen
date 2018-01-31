@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcText} from "./IfcText"
-import {IfcProperty} from "./IfcProperty"
-import {IfcMaterialDefinition} from "./IfcMaterialDefinition"
-import {IfcExtendedProperties} from "./IfcExtendedProperties"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcText} from "./IfcText.g"
+import {IfcProperty} from "./IfcProperty.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
+import {IfcExtendedProperties} from "./IfcExtendedProperties.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialproperties.htm
 export class IfcMaterialProperties extends IfcExtendedProperties {

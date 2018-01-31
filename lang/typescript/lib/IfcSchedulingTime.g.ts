@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDataOriginEnum} from "./IfcDataOriginEnum"
-import {IfcEventTime} from "./IfcEventTime"
-import {IfcLagTime} from "./IfcLagTime"
-import {IfcResourceTime} from "./IfcResourceTime"
-import {IfcTaskTime} from "./IfcTaskTime"
-import {IfcWorkTime} from "./IfcWorkTime"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
+import {IfcEventTime} from "./IfcEventTime.g"
+import {IfcLagTime} from "./IfcLagTime.g"
+import {IfcResourceTime} from "./IfcResourceTime.g"
+import {IfcTaskTime} from "./IfcTaskTime.g"
+import {IfcWorkTime} from "./IfcWorkTime.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcschedulingtime.htm
 export abstract class IfcSchedulingTime extends BaseIfc {

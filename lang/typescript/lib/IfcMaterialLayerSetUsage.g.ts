@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial"
-import {IfcMaterialLayerSet} from "./IfcMaterialLayerSet"
-import {IfcLayerSetDirectionEnum} from "./IfcLayerSetDirectionEnum"
-import {IfcDirectionSenseEnum} from "./IfcDirectionSenseEnum"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcMaterialUsageDefinition} from "./IfcMaterialUsageDefinition"
+import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial.g"
+import {IfcMaterialLayerSet} from "./IfcMaterialLayerSet.g"
+import {IfcLayerSetDirectionEnum} from "./IfcLayerSetDirectionEnum.g"
+import {IfcDirectionSenseEnum} from "./IfcDirectionSenseEnum.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcMaterialUsageDefinition} from "./IfcMaterialUsageDefinition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayersetusage.htm
 export class IfcMaterialLayerSetUsage extends IfcMaterialUsageDefinition {

@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcCurve} from "./IfcCurve"
-import {IfcParameterValue} from "./IfcParameterValue"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcPoint} from "./IfcPoint"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcParameterValue} from "./IfcParameterValue.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcPoint} from "./IfcPoint.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointoncurve.htm
 export class IfcPointOnCurve extends IfcPoint {

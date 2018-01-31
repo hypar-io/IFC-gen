@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcFillStyleSelect} from "./IfcFillStyleSelect"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcPresentationStyle} from "./IfcPresentationStyle"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcFillStyleSelect} from "./IfcFillStyleSelect.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyle.htm
 export class IfcFillAreaStyle extends IfcPresentationStyle {

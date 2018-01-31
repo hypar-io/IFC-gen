@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcPhysicalComplexQuantity} from "./IfcPhysicalComplexQuantity"
-import {IfcNamedUnit} from "./IfcNamedUnit"
-import {IfcMassMeasure} from "./IfcMassMeasure"
-import {IfcPhysicalSimpleQuantity} from "./IfcPhysicalSimpleQuantity"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcPhysicalComplexQuantity} from "./IfcPhysicalComplexQuantity.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
+import {IfcMassMeasure} from "./IfcMassMeasure.g"
+import {IfcPhysicalSimpleQuantity} from "./IfcPhysicalSimpleQuantity.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityweight.htm
 export class IfcQuantityWeight extends IfcPhysicalSimpleQuantity {

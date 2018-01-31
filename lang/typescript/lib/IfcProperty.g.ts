@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcText} from "./IfcText"
-import {IfcPropertySet} from "./IfcPropertySet"
-import {IfcPropertyDependencyRelationship} from "./IfcPropertyDependencyRelationship"
-import {IfcComplexProperty} from "./IfcComplexProperty"
-import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship"
-import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship"
-import {IfcSimpleProperty} from "./IfcSimpleProperty"
-import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcText} from "./IfcText.g"
+import {IfcPropertySet} from "./IfcPropertySet.g"
+import {IfcPropertyDependencyRelationship} from "./IfcPropertyDependencyRelationship.g"
+import {IfcComplexProperty} from "./IfcComplexProperty.g"
+import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
+import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship.g"
+import {IfcSimpleProperty} from "./IfcSimpleProperty.g"
+import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproperty.htm
 export abstract class IfcProperty extends IfcPropertyAbstraction {

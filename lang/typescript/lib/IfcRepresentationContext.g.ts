@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcRepresentation} from "./IfcRepresentation"
-import {IfcGeometricRepresentationContext} from "./IfcGeometricRepresentationContext"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcRepresentation} from "./IfcRepresentation.g"
+import {IfcGeometricRepresentationContext} from "./IfcGeometricRepresentationContext.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrepresentationcontext.htm
 export abstract class IfcRepresentationContext extends BaseIfc {

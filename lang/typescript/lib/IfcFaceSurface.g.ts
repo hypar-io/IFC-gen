@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcFaceBound} from "./IfcFaceBound"
-import {IfcTextureMap} from "./IfcTextureMap"
-import {IfcSurface} from "./IfcSurface"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcAdvancedFace} from "./IfcAdvancedFace"
-import {IfcFace} from "./IfcFace"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcFaceBound} from "./IfcFaceBound.g"
+import {IfcTextureMap} from "./IfcTextureMap.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcAdvancedFace} from "./IfcAdvancedFace.g"
+import {IfcFace} from "./IfcFace.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacesurface.htm
 export class IfcFaceSurface extends IfcFace {

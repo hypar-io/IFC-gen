@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcLabel} from "./IfcLabel"
-import {IfcColourRgb} from "./IfcColourRgb"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcReal} from "./IfcReal"
-import {IfcLightSourceSpot} from "./IfcLightSourceSpot"
-import {IfcLightSource} from "./IfcLightSource"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcColourRgb} from "./IfcColourRgb.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcLightSourceSpot} from "./IfcLightSourceSpot.g"
+import {IfcLightSource} from "./IfcLightSource.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcepositional.htm
 export class IfcLightSourcePositional extends IfcLightSource {

@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCurve} from "./IfcCurve"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcParameterValue} from "./IfcParameterValue"
-import {IfcSweptDiskSolidPolygonal} from "./IfcSweptDiskSolidPolygonal"
-import {IfcSolidModel} from "./IfcSolidModel"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcParameterValue} from "./IfcParameterValue.g"
+import {IfcSweptDiskSolidPolygonal} from "./IfcSweptDiskSolidPolygonal.g"
+import {IfcSolidModel} from "./IfcSolidModel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptdisksolid.htm
 export class IfcSweptDiskSolid extends IfcSolidModel {

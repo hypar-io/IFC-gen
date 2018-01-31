@@ -1,10 +1,12 @@
+import * as uuid from "uuid"
+
 export abstract class BaseIfc
 {
     private _id : string
     private _stepId : string
 
     constructor() {
-        this._id = "XXXXX"
+        this._id = uuid.v4()
     }
 
     get id() : string {

@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCurve} from "./IfcCurve"
-import {IfcPcurve} from "./IfcPcurve"
-import {IfcPreferredSurfaceCurveRepresentation} from "./IfcPreferredSurfaceCurveRepresentation"
-import {IfcSurface} from "./IfcSurface"
-import {IfcIntersectionCurve} from "./IfcIntersectionCurve"
-import {IfcSeamCurve} from "./IfcSeamCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcPcurve} from "./IfcPcurve.g"
+import {IfcPreferredSurfaceCurveRepresentation} from "./IfcPreferredSurfaceCurveRepresentation.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcIntersectionCurve} from "./IfcIntersectionCurve.g"
+import {IfcSeamCurve} from "./IfcSeamCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacecurve.htm
 export class IfcSurfaceCurve extends IfcCurve {

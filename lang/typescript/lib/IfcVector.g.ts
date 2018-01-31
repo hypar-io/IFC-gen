@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDirection} from "./IfcDirection"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvector.htm
 export class IfcVector extends IfcGeometricRepresentationItem {

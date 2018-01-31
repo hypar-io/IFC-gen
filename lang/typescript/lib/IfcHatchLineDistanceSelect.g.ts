@@ -1,7 +1,7 @@
 
 import {Select} from "./Select"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcVector} from "./IfcVector"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcVector} from "./IfcVector.g"
 
 export class IfcHatchLineDistanceSelect extends Select {
     value : IfcPositiveLengthMeasure|IfcVector

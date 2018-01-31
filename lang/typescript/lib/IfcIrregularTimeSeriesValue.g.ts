@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcValue} from "./IfcValue"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcValue} from "./IfcValue.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcirregulartimeseriesvalue.htm
 export class IfcIrregularTimeSeriesValue extends BaseIfc {

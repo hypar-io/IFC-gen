@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcText} from "./IfcText"
-import {IfcPropertySet} from "./IfcPropertySet"
-import {IfcPropertyDependencyRelationship} from "./IfcPropertyDependencyRelationship"
-import {IfcComplexProperty} from "./IfcComplexProperty"
-import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship"
-import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship"
-import {IfcObjectReferenceSelect} from "./IfcObjectReferenceSelect"
-import {IfcSimpleProperty} from "./IfcSimpleProperty"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcText} from "./IfcText.g"
+import {IfcPropertySet} from "./IfcPropertySet.g"
+import {IfcPropertyDependencyRelationship} from "./IfcPropertyDependencyRelationship.g"
+import {IfcComplexProperty} from "./IfcComplexProperty.g"
+import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
+import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship.g"
+import {IfcObjectReferenceSelect} from "./IfcObjectReferenceSelect.g"
+import {IfcSimpleProperty} from "./IfcSimpleProperty.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyreferencevalue.htm
 export class IfcPropertyReferenceValue extends IfcSimpleProperty {

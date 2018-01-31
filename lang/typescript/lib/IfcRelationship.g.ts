@@ -1,16 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcRelAssigns} from "./IfcRelAssigns"
-import {IfcRelAssociates} from "./IfcRelAssociates"
-import {IfcRelConnects} from "./IfcRelConnects"
-import {IfcRelDeclares} from "./IfcRelDeclares"
-import {IfcRelDecomposes} from "./IfcRelDecomposes"
-import {IfcRelDefines} from "./IfcRelDefines"
-import {IfcRoot} from "./IfcRoot"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcRelAssigns} from "./IfcRelAssigns.g"
+import {IfcRelAssociates} from "./IfcRelAssociates.g"
+import {IfcRelConnects} from "./IfcRelConnects.g"
+import {IfcRelDeclares} from "./IfcRelDeclares.g"
+import {IfcRelDecomposes} from "./IfcRelDecomposes.g"
+import {IfcRelDefines} from "./IfcRelDefines.g"
+import {IfcRoot} from "./IfcRoot.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelationship.htm
 export abstract class IfcRelationship extends IfcRoot {

@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcColourRgb} from "./IfcColourRgb"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcSurfaceStyleRendering} from "./IfcSurfaceStyleRendering"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcColourRgb} from "./IfcColourRgb.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcSurfaceStyleRendering} from "./IfcSurfaceStyleRendering.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyleshading.htm
 export class IfcSurfaceStyleShading extends IfcPresentationItem {

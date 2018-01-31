@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDate} from "./IfcDate"
-import {IfcText} from "./IfcText"
-import {IfcURIReference} from "./IfcURIReference"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcRelAssociatesClassification} from "./IfcRelAssociatesClassification"
-import {IfcClassificationReference} from "./IfcClassificationReference"
-import {IfcExternalInformation} from "./IfcExternalInformation"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDate} from "./IfcDate.g"
+import {IfcText} from "./IfcText.g"
+import {IfcURIReference} from "./IfcURIReference.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcRelAssociatesClassification} from "./IfcRelAssociatesClassification.g"
+import {IfcClassificationReference} from "./IfcClassificationReference.g"
+import {IfcExternalInformation} from "./IfcExternalInformation.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclassification.htm
 export class IfcClassification extends IfcExternalInformation {

@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcAxis1Placement} from "./IfcAxis1Placement"
-import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure"
-import {IfcLine} from "./IfcLine"
-import {IfcRevolvedAreaSolid} from "./IfcRevolvedAreaSolid"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcAxis1Placement} from "./IfcAxis1Placement.g"
+import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
+import {IfcLine} from "./IfcLine.g"
+import {IfcRevolvedAreaSolid} from "./IfcRevolvedAreaSolid.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrevolvedareasolidtapered.htm
 export class IfcRevolvedAreaSolidTapered extends IfcRevolvedAreaSolid {

@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcConstraintEnum} from "./IfcConstraintEnum"
-import {IfcActorSelect} from "./IfcActorSelect"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship"
-import {IfcConstraint} from "./IfcConstraint"
-import {IfcLogicalOperatorEnum} from "./IfcLogicalOperatorEnum"
-import {IfcObjectiveEnum} from "./IfcObjectiveEnum"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcConstraintEnum} from "./IfcConstraintEnum.g"
+import {IfcActorSelect} from "./IfcActorSelect.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
+import {IfcConstraint} from "./IfcConstraint.g"
+import {IfcLogicalOperatorEnum} from "./IfcLogicalOperatorEnum.g"
+import {IfcObjectiveEnum} from "./IfcObjectiveEnum.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjective.htm
 export class IfcObjective extends IfcConstraint {

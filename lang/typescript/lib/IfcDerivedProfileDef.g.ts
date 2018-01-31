@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcProfileProperties} from "./IfcProfileProperties"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcCartesianTransformationOperator2D} from "./IfcCartesianTransformationOperator2D"
-import {IfcMirroredProfileDef} from "./IfcMirroredProfileDef"
+import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcProfileProperties} from "./IfcProfileProperties.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcCartesianTransformationOperator2D} from "./IfcCartesianTransformationOperator2D.g"
+import {IfcMirroredProfileDef} from "./IfcMirroredProfileDef.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedprofiledef.htm
 export class IfcDerivedProfileDef extends IfcProfileDef {

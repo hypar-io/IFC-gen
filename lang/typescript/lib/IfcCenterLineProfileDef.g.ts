@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcProfileProperties} from "./IfcProfileProperties"
-import {IfcBoundedCurve} from "./IfcBoundedCurve"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcArbitraryOpenProfileDef} from "./IfcArbitraryOpenProfileDef"
+import {IfcProfileTypeEnum} from "./IfcProfileTypeEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcProfileProperties} from "./IfcProfileProperties.g"
+import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcArbitraryOpenProfileDef} from "./IfcArbitraryOpenProfileDef.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccenterlineprofiledef.htm
 export class IfcCenterLineProfileDef extends IfcArbitraryOpenProfileDef {

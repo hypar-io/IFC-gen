@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcCartesianPointList} from "./IfcCartesianPointList"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcCartesianPointList} from "./IfcCartesianPointList.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist3d.htm
 export class IfcCartesianPointList3D extends IfcCartesianPointList {

@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcLayeredItem} from "./IfcLayeredItem"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcLogical} from "./IfcLogical"
-import {IfcPresentationStyle} from "./IfcPresentationStyle"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcLayeredItem} from "./IfcLayeredItem.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationlayerwithstyle.htm
 export class IfcPresentationLayerWithStyle extends IfcPresentationLayerAssignment {

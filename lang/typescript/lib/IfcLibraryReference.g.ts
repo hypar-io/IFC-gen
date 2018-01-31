@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcURIReference} from "./IfcURIReference"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcText} from "./IfcText"
-import {IfcLanguageId} from "./IfcLanguageId"
-import {IfcLibraryInformation} from "./IfcLibraryInformation"
-import {IfcRelAssociatesLibrary} from "./IfcRelAssociatesLibrary"
-import {IfcExternalReference} from "./IfcExternalReference"
+import {IfcURIReference} from "./IfcURIReference.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcText} from "./IfcText.g"
+import {IfcLanguageId} from "./IfcLanguageId.g"
+import {IfcLibraryInformation} from "./IfcLibraryInformation.g"
+import {IfcRelAssociatesLibrary} from "./IfcRelAssociatesLibrary.g"
+import {IfcExternalReference} from "./IfcExternalReference.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryreference.htm
 export class IfcLibraryReference extends IfcExternalReference {

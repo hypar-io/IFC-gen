@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcMaterialProperties} from "./IfcMaterialProperties"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcMaterial} from "./IfcMaterial"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcMaterialConstituentSet} from "./IfcMaterialConstituentSet"
-import {IfcMaterialDefinition} from "./IfcMaterialDefinition"
+import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcMaterialProperties} from "./IfcMaterialProperties.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcMaterial} from "./IfcMaterial.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcMaterialConstituentSet} from "./IfcMaterialConstituentSet.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialconstituent.htm
 export class IfcMaterialConstituent extends IfcMaterialDefinition {

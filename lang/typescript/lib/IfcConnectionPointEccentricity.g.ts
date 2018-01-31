@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPointOrVertexPoint} from "./IfcPointOrVertexPoint"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcConnectionPointGeometry} from "./IfcConnectionPointGeometry"
+import {IfcPointOrVertexPoint} from "./IfcPointOrVertexPoint.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcConnectionPointGeometry} from "./IfcConnectionPointGeometry.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionpointeccentricity.htm
 export class IfcConnectionPointEccentricity extends IfcConnectionPointGeometry {

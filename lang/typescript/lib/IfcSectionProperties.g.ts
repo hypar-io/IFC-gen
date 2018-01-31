@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcSectionTypeEnum} from "./IfcSectionTypeEnum"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcPreDefinedProperties} from "./IfcPreDefinedProperties"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcSectionTypeEnum} from "./IfcSectionTypeEnum.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcPreDefinedProperties} from "./IfcPreDefinedProperties.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionproperties.htm
 export class IfcSectionProperties extends IfcPreDefinedProperties {

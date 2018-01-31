@@ -99,7 +99,7 @@ namespace IFC4.Generators
         public string SimpleTypeString(WrapperType data)
         {
             var badTypes = new List<string>{"boolean","number","string","boolean","Uint8Array"};
-            var wrappedTypeImport = badTypes.Contains(data.WrappedType)?string.Empty:$"import {{{data.WrappedType}}} from \"./{data.WrappedType}\"";
+            var wrappedTypeImport = badTypes.Contains(data.WrappedType)?string.Empty:$"import {{{data.WrappedType}}} from \"./{data.WrappedType}.g\"";
             var result =
 $@"
 import {{BaseIfc}} from ""./BaseIfc""
@@ -139,7 +139,7 @@ export enum {data.Name} {{{string.Join(",", data.Values)}}}
             var importBuilder = new StringBuilder();
             foreach(var d in data.Dependencies())
             {
-                importBuilder.AppendLine($"import {{{d}}} from \"./{d}\"");
+                importBuilder.AppendLine($"import {{{d}}} from \"./{d}.g\"");
             }
             var result =
 $@"
@@ -193,7 +193,7 @@ export class {data.Name} extends Select {{
             var importBuilder = new StringBuilder();
             foreach(var d in data.Dependencies())
             {
-                importBuilder.AppendLine($"import {{{d}}} from \"./{d}\"");
+                importBuilder.AppendLine($"import {{{d}}} from \"./{d}.g\"");
             }
 
             var super = "BaseIfc";

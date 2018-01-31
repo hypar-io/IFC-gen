@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcDerivedUnitElement} from "./IfcDerivedUnitElement"
-import {IfcDerivedUnitEnum} from "./IfcDerivedUnitEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDimensionalExponents} from "./IfcDimensionalExponents"
+import {IfcDerivedUnitElement} from "./IfcDerivedUnitElement.g"
+import {IfcDerivedUnitEnum} from "./IfcDerivedUnitEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDimensionalExponents} from "./IfcDimensionalExponents.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunit.htm
 export class IfcDerivedUnit extends BaseIfc {

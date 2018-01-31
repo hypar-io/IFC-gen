@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcExtrudedAreaSolid} from "./IfcExtrudedAreaSolid"
-import {IfcFixedReferenceSweptAreaSolid} from "./IfcFixedReferenceSweptAreaSolid"
-import {IfcRevolvedAreaSolid} from "./IfcRevolvedAreaSolid"
-import {IfcSurfaceCurveSweptAreaSolid} from "./IfcSurfaceCurveSweptAreaSolid"
-import {IfcSolidModel} from "./IfcSolidModel"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcExtrudedAreaSolid} from "./IfcExtrudedAreaSolid.g"
+import {IfcFixedReferenceSweptAreaSolid} from "./IfcFixedReferenceSweptAreaSolid.g"
+import {IfcRevolvedAreaSolid} from "./IfcRevolvedAreaSolid.g"
+import {IfcSurfaceCurveSweptAreaSolid} from "./IfcSurfaceCurveSweptAreaSolid.g"
+import {IfcSolidModel} from "./IfcSolidModel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptareasolid.htm
 export abstract class IfcSweptAreaSolid extends IfcSolidModel {

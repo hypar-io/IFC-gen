@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcTableRow} from "./IfcTableRow"
-import {IfcTableColumn} from "./IfcTableColumn"
-import {IfcInteger} from "./IfcInteger"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcTableRow} from "./IfcTableRow.g"
+import {IfcTableColumn} from "./IfcTableColumn.g"
+import {IfcInteger} from "./IfcInteger.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctable.htm
 export class IfcTable extends BaseIfc {

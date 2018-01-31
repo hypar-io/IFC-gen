@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcOrganization} from "./IfcOrganization"
-import {IfcLabel} from "./IfcLabel"
-import {IfcIdentifier} from "./IfcIdentifier"
+import {IfcOrganization} from "./IfcOrganization.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcapplication.htm
 export class IfcApplication extends BaseIfc {

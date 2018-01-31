@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCompositeCurveSegment} from "./IfcCompositeCurveSegment"
-import {IfcLogical} from "./IfcLogical"
-import {IfcInteger} from "./IfcInteger"
-import {IfcSurface} from "./IfcSurface"
-import {IfcBoundaryCurve} from "./IfcBoundaryCurve"
-import {IfcCompositeCurve} from "./IfcCompositeCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCompositeCurveSegment} from "./IfcCompositeCurveSegment.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcBoundaryCurve} from "./IfcBoundaryCurve.g"
+import {IfcCompositeCurve} from "./IfcCompositeCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurveonsurface.htm
 export class IfcCompositeCurveOnSurface extends IfcCompositeCurve {

@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcProcess} from "./IfcProcess"
-import {IfcLagTime} from "./IfcLagTime"
-import {IfcSequenceEnum} from "./IfcSequenceEnum"
-import {IfcRelConnects} from "./IfcRelConnects"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcProcess} from "./IfcProcess.g"
+import {IfcLagTime} from "./IfcLagTime.g"
+import {IfcSequenceEnum} from "./IfcSequenceEnum.g"
+import {IfcRelConnects} from "./IfcRelConnects.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelsequence.htm
 export class IfcRelSequence extends IfcRelConnects {

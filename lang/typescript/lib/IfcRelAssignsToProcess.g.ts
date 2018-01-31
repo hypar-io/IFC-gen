@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcObjectDefinition} from "./IfcObjectDefinition"
-import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum"
-import {IfcProcessSelect} from "./IfcProcessSelect"
-import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit"
-import {IfcRelAssigns} from "./IfcRelAssigns"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum.g"
+import {IfcProcessSelect} from "./IfcProcessSelect.g"
+import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit.g"
+import {IfcRelAssigns} from "./IfcRelAssigns.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoprocess.htm
 export class IfcRelAssignsToProcess extends IfcRelAssigns {

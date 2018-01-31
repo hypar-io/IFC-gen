@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcSurface} from "./IfcSurface"
-import {IfcCurve} from "./IfcCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcCurve} from "./IfcCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpcurve.htm
 export class IfcPcurve extends IfcCurve {

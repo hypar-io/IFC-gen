@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcCurveStyleFontSelect} from "./IfcCurveStyleFontSelect"
-import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcCurveStyleFontSelect} from "./IfcCurveStyleFontSelect.g"
+import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontandscaling.htm
 export class IfcCurveStyleFontAndScaling extends IfcPresentationItem {

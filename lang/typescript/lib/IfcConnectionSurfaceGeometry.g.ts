@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSurfaceOrFaceSurface} from "./IfcSurfaceOrFaceSurface"
-import {IfcConnectionGeometry} from "./IfcConnectionGeometry"
+import {IfcSurfaceOrFaceSurface} from "./IfcSurfaceOrFaceSurface.g"
+import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionsurfacegeometry.htm
 export class IfcConnectionSurfaceGeometry extends IfcConnectionGeometry {

@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcRelAggregates} from "./IfcRelAggregates"
-import {IfcRelNests} from "./IfcRelNests"
-import {IfcRelProjectsElement} from "./IfcRelProjectsElement"
-import {IfcRelVoidsElement} from "./IfcRelVoidsElement"
-import {IfcRelationship} from "./IfcRelationship"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcRelAggregates} from "./IfcRelAggregates.g"
+import {IfcRelNests} from "./IfcRelNests.g"
+import {IfcRelProjectsElement} from "./IfcRelProjectsElement.g"
+import {IfcRelVoidsElement} from "./IfcRelVoidsElement.g"
+import {IfcRelationship} from "./IfcRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldecomposes.htm
 export abstract class IfcRelDecomposes extends IfcRelationship {

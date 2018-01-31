@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcReal} from "./IfcReal"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdirection.htm
 export class IfcDirection extends IfcGeometricRepresentationItem {

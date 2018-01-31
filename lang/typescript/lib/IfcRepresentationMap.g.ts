@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
-import {IfcRepresentation} from "./IfcRepresentation"
-import {IfcShapeAspect} from "./IfcShapeAspect"
-import {IfcMappedItem} from "./IfcMappedItem"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcRepresentation} from "./IfcRepresentation.g"
+import {IfcShapeAspect} from "./IfcShapeAspect.g"
+import {IfcMappedItem} from "./IfcMappedItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrepresentationmap.htm
 export class IfcRepresentationMap extends BaseIfc {

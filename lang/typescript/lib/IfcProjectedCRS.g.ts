@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcCoordinateOperation} from "./IfcCoordinateOperation"
-import {IfcNamedUnit} from "./IfcNamedUnit"
-import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcCoordinateOperation} from "./IfcCoordinateOperation.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
+import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprojectedcrs.htm
 export class IfcProjectedCRS extends IfcCoordinateReferenceSystem {

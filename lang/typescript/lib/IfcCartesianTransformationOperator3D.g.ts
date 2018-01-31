@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDirection} from "./IfcDirection"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcReal} from "./IfcReal"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCartesianTransformationOperator3DnonUniform} from "./IfcCartesianTransformationOperator3DnonUniform"
-import {IfcCartesianTransformationOperator} from "./IfcCartesianTransformationOperator"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCartesianTransformationOperator3DnonUniform} from "./IfcCartesianTransformationOperator3DnonUniform.g"
+import {IfcCartesianTransformationOperator} from "./IfcCartesianTransformationOperator.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesiantransformationoperator3d.htm
 export class IfcCartesianTransformationOperator3D extends IfcCartesianTransformationOperator {

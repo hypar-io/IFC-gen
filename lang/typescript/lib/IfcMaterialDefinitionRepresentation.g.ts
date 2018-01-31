@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcRepresentation} from "./IfcRepresentation"
-import {IfcMaterial} from "./IfcMaterial"
-import {IfcProductRepresentation} from "./IfcProductRepresentation"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcRepresentation} from "./IfcRepresentation.g"
+import {IfcMaterial} from "./IfcMaterial.g"
+import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialdefinitionrepresentation.htm
 export class IfcMaterialDefinitionRepresentation extends IfcProductRepresentation {

@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcVector} from "./IfcVector"
-import {IfcCurve} from "./IfcCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcVector} from "./IfcVector.g"
+import {IfcCurve} from "./IfcCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcline.htm
 export class IfcLine extends IfcCurve {

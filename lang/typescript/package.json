@@ -25,6 +25,8 @@
   },
   "homepage": "https://github.com/ikeough/IFC-gen#readme",
   "dependencies": {
-    "typescript": "^2.6.2"
+    "@types/uuid": "^3.4.3",
+    "typescript": "^2.6.2",
+    "uuid": "^3.2.1"
   }
 }

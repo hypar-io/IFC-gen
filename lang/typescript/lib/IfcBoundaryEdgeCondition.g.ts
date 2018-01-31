@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcModulusOfTranslationalSubgradeReactionSelect} from "./IfcModulusOfTranslationalSubgradeReactionSelect"
-import {IfcModulusOfRotationalSubgradeReactionSelect} from "./IfcModulusOfRotationalSubgradeReactionSelect"
-import {IfcBoundaryCondition} from "./IfcBoundaryCondition"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcModulusOfTranslationalSubgradeReactionSelect} from "./IfcModulusOfTranslationalSubgradeReactionSelect.g"
+import {IfcModulusOfRotationalSubgradeReactionSelect} from "./IfcModulusOfRotationalSubgradeReactionSelect.g"
+import {IfcBoundaryCondition} from "./IfcBoundaryCondition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryedgecondition.htm
 export class IfcBoundaryEdgeCondition extends IfcBoundaryCondition {

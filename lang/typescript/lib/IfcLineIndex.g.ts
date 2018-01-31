@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPositiveInteger} from "./IfcPositiveInteger"
+import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclineindex.htm
 export class IfcLineIndex extends BaseIfc

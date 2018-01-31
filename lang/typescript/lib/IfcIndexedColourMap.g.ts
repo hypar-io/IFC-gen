@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcColourRgbList} from "./IfcColourRgbList"
-import {IfcPositiveInteger} from "./IfcPositiveInteger"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcColourRgbList} from "./IfcColourRgbList.g"
+import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedcolourmap.htm
 export class IfcIndexedColourMap extends IfcPresentationItem {

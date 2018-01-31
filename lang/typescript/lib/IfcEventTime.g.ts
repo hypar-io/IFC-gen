@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDataOriginEnum} from "./IfcDataOriginEnum"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcSchedulingTime} from "./IfcSchedulingTime"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcSchedulingTime} from "./IfcSchedulingTime.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifceventtime.htm
 export class IfcEventTime extends IfcSchedulingTime {

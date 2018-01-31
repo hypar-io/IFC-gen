@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcCurve} from "./IfcCurve"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcannotationfillarea.htm
 export class IfcAnnotationFillArea extends IfcGeometricRepresentationItem {

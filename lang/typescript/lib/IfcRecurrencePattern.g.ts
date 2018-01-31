@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRecurrenceTypeEnum} from "./IfcRecurrenceTypeEnum"
-import {IfcDayInMonthNumber} from "./IfcDayInMonthNumber"
-import {IfcDayInWeekNumber} from "./IfcDayInWeekNumber"
-import {IfcMonthInYearNumber} from "./IfcMonthInYearNumber"
-import {IfcInteger} from "./IfcInteger"
-import {IfcTimePeriod} from "./IfcTimePeriod"
+import {IfcRecurrenceTypeEnum} from "./IfcRecurrenceTypeEnum.g"
+import {IfcDayInMonthNumber} from "./IfcDayInMonthNumber.g"
+import {IfcDayInWeekNumber} from "./IfcDayInWeekNumber.g"
+import {IfcMonthInYearNumber} from "./IfcMonthInYearNumber.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcTimePeriod} from "./IfcTimePeriod.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencepattern.htm
 export class IfcRecurrencePattern extends BaseIfc {

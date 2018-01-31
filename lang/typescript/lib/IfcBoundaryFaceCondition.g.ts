@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcModulusOfSubgradeReactionSelect} from "./IfcModulusOfSubgradeReactionSelect"
-import {IfcBoundaryCondition} from "./IfcBoundaryCondition"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcModulusOfSubgradeReactionSelect} from "./IfcModulusOfSubgradeReactionSelect.g"
+import {IfcBoundaryCondition} from "./IfcBoundaryCondition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryfacecondition.htm
 export class IfcBoundaryFaceCondition extends IfcBoundaryCondition {

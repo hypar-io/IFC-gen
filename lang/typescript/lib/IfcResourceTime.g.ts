@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDataOriginEnum} from "./IfcDataOriginEnum"
-import {IfcDuration} from "./IfcDuration"
-import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcSchedulingTime} from "./IfcSchedulingTime"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
+import {IfcDuration} from "./IfcDuration.g"
+import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcSchedulingTime} from "./IfcSchedulingTime.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourcetime.htm
 export class IfcResourceTime extends IfcSchedulingTime {

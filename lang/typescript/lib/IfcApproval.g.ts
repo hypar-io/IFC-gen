@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcActorSelect} from "./IfcActorSelect"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcRelAssociatesApproval} from "./IfcRelAssociatesApproval"
-import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship"
-import {IfcApprovalRelationship} from "./IfcApprovalRelationship"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcActorSelect} from "./IfcActorSelect.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcRelAssociatesApproval} from "./IfcRelAssociatesApproval.g"
+import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship.g"
+import {IfcApprovalRelationship} from "./IfcApprovalRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcapproval.htm
 export class IfcApproval extends BaseIfc {

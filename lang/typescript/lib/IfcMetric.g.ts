@@ -1,16 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcConstraintEnum} from "./IfcConstraintEnum"
-import {IfcActorSelect} from "./IfcActorSelect"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship"
-import {IfcBenchmarkEnum} from "./IfcBenchmarkEnum"
-import {IfcMetricValueSelect} from "./IfcMetricValueSelect"
-import {IfcReference} from "./IfcReference"
-import {IfcConstraint} from "./IfcConstraint"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcConstraintEnum} from "./IfcConstraintEnum.g"
+import {IfcActorSelect} from "./IfcActorSelect.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
+import {IfcBenchmarkEnum} from "./IfcBenchmarkEnum.g"
+import {IfcMetricValueSelect} from "./IfcMetricValueSelect.g"
+import {IfcReference} from "./IfcReference.g"
+import {IfcConstraint} from "./IfcConstraint.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmetric.htm
 export class IfcMetric extends IfcConstraint {

@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcCoordinateReferenceSystemSelect} from "./IfcCoordinateReferenceSystemSelect"
-import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem"
-import {IfcMapConversion} from "./IfcMapConversion"
+import {IfcCoordinateReferenceSystemSelect} from "./IfcCoordinateReferenceSystemSelect.g"
+import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem.g"
+import {IfcMapConversion} from "./IfcMapConversion.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinateoperation.htm
 export abstract class IfcCoordinateOperation extends BaseIfc {

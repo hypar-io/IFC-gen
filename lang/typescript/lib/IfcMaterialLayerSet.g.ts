@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcMaterialProperties} from "./IfcMaterialProperties"
-import {IfcMaterialLayer} from "./IfcMaterialLayer"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcMaterialDefinition} from "./IfcMaterialDefinition"
+import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcMaterialProperties} from "./IfcMaterialProperties.g"
+import {IfcMaterialLayer} from "./IfcMaterialLayer.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayerset.htm
 export class IfcMaterialLayerSet extends IfcMaterialDefinition {

@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcVertex} from "./IfcVertex"
-import {IfcEdge} from "./IfcEdge"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcVertex} from "./IfcVertex.g"
+import {IfcEdge} from "./IfcEdge.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubedge.htm
 export class IfcSubedge extends IfcEdge {

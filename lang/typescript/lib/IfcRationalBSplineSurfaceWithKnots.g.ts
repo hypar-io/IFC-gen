@@ -1,16 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcInteger} from "./IfcInteger"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcBSplineSurfaceForm} from "./IfcBSplineSurfaceForm"
-import {IfcLogical} from "./IfcLogical"
-import {IfcParameterValue} from "./IfcParameterValue"
-import {IfcKnotType} from "./IfcKnotType"
-import {IfcReal} from "./IfcReal"
-import {IfcBSplineSurfaceWithKnots} from "./IfcBSplineSurfaceWithKnots"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcBSplineSurfaceForm} from "./IfcBSplineSurfaceForm.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcParameterValue} from "./IfcParameterValue.g"
+import {IfcKnotType} from "./IfcKnotType.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcBSplineSurfaceWithKnots} from "./IfcBSplineSurfaceWithKnots.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrationalbsplinesurfacewithknots.htm
 export class IfcRationalBSplineSurfaceWithKnots extends IfcBSplineSurfaceWithKnots {

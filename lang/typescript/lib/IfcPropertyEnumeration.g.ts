@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcLabel} from "./IfcLabel"
-import {IfcValue} from "./IfcValue"
-import {IfcUnit} from "./IfcUnit"
-import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcValue} from "./IfcValue.g"
+import {IfcUnit} from "./IfcUnit.g"
+import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyenumeration.htm
 export class IfcPropertyEnumeration extends IfcPropertyAbstraction {

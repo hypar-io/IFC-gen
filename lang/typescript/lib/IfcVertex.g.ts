@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcVertexPoint} from "./IfcVertexPoint"
-import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcVertexPoint} from "./IfcVertexPoint.g"
+import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertex.htm
 export class IfcVertex extends IfcTopologicalRepresentationItem {

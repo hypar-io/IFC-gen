@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcClassificationSelect} from "./IfcClassificationSelect"
-import {IfcMaterial} from "./IfcMaterial"
+import {IfcClassificationSelect} from "./IfcClassificationSelect.g"
+import {IfcMaterial} from "./IfcMaterial.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialclassificationrelationship.htm
 export class IfcMaterialClassificationRelationship extends BaseIfc {

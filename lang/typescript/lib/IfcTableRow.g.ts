@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcValue} from "./IfcValue"
-import {IfcBoolean} from "./IfcBoolean"
+import {IfcValue} from "./IfcValue.g"
+import {IfcBoolean} from "./IfcBoolean.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctablerow.htm
 export class IfcTableRow extends BaseIfc {

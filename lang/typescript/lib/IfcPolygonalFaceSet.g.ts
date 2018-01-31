@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcCartesianPointList3D} from "./IfcCartesianPointList3D"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcIndexedColourMap} from "./IfcIndexedColourMap"
-import {IfcIndexedTextureMap} from "./IfcIndexedTextureMap"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcIndexedPolygonalFace} from "./IfcIndexedPolygonalFace"
-import {IfcPositiveInteger} from "./IfcPositiveInteger"
-import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcCartesianPointList3D} from "./IfcCartesianPointList3D.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcIndexedColourMap} from "./IfcIndexedColourMap.g"
+import {IfcIndexedTextureMap} from "./IfcIndexedTextureMap.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcIndexedPolygonalFace} from "./IfcIndexedPolygonalFace.g"
+import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
+import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalfaceset.htm
 export class IfcPolygonalFaceSet extends IfcTessellatedFaceSet {

@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
+import {IfcLabel} from "./IfcLabel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboxalignment.htm
 export class IfcBoxAlignment extends BaseIfc

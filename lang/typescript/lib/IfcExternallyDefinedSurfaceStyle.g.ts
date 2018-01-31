@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcURIReference} from "./IfcURIReference"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcLabel} from "./IfcLabel"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcExternalReference} from "./IfcExternalReference"
+import {IfcURIReference} from "./IfcURIReference.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcExternalReference} from "./IfcExternalReference.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternallydefinedsurfacestyle.htm
 export class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference {

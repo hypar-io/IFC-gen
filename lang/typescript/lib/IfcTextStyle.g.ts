@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcTextStyleForDefinedFont} from "./IfcTextStyleForDefinedFont"
-import {IfcTextStyleTextModel} from "./IfcTextStyleTextModel"
-import {IfcTextFontSelect} from "./IfcTextFontSelect"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcPresentationStyle} from "./IfcPresentationStyle"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcTextStyleForDefinedFont} from "./IfcTextStyleForDefinedFont.g"
+import {IfcTextStyleTextModel} from "./IfcTextStyleTextModel.g"
+import {IfcTextFontSelect} from "./IfcTextFontSelect.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyle.htm
 export class IfcTextStyle extends IfcPresentationStyle {

@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcRepresentationMap} from "./IfcRepresentationMap"
-import {IfcCartesianTransformationOperator} from "./IfcCartesianTransformationOperator"
-import {IfcRepresentationItem} from "./IfcRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
+import {IfcCartesianTransformationOperator} from "./IfcCartesianTransformationOperator.g"
+import {IfcRepresentationItem} from "./IfcRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmappeditem.htm
 export class IfcMappedItem extends IfcRepresentationItem {

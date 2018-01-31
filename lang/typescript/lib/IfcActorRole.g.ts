@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRoleEnum} from "./IfcRoleEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
+import {IfcRoleEnum} from "./IfcRoleEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorrole.htm
 export class IfcActorRole extends BaseIfc {

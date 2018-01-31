@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcClosedShell} from "./IfcClosedShell"
-import {IfcAdvancedBrep} from "./IfcAdvancedBrep"
-import {IfcFacetedBrep} from "./IfcFacetedBrep"
-import {IfcSolidModel} from "./IfcSolidModel"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcClosedShell} from "./IfcClosedShell.g"
+import {IfcAdvancedBrep} from "./IfcAdvancedBrep.g"
+import {IfcFacetedBrep} from "./IfcFacetedBrep.g"
+import {IfcSolidModel} from "./IfcSolidModel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmanifoldsolidbrep.htm
 export abstract class IfcManifoldSolidBrep extends IfcSolidModel {

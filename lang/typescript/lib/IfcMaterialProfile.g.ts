@@ -1,16 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcMaterialProperties} from "./IfcMaterialProperties"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcMaterial} from "./IfcMaterial"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcInteger} from "./IfcInteger"
-import {IfcMaterialProfileSet} from "./IfcMaterialProfileSet"
-import {IfcMaterialProfileWithOffsets} from "./IfcMaterialProfileWithOffsets"
-import {IfcMaterialDefinition} from "./IfcMaterialDefinition"
+import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcMaterialProperties} from "./IfcMaterialProperties.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcMaterial} from "./IfcMaterial.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcMaterialProfileSet} from "./IfcMaterialProfileSet.g"
+import {IfcMaterialProfileWithOffsets} from "./IfcMaterialProfileWithOffsets.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofile.htm
 export class IfcMaterialProfile extends IfcMaterialDefinition {

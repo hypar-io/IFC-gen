@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcReal} from "./IfcReal"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcReal} from "./IfcReal.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerefraction.htm
 export class IfcSurfaceStyleRefraction extends IfcPresentationItem {

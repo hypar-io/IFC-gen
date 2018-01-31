@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcCylindricalSurface} from "./IfcCylindricalSurface"
-import {IfcPlane} from "./IfcPlane"
-import {IfcSphericalSurface} from "./IfcSphericalSurface"
-import {IfcToroidalSurface} from "./IfcToroidalSurface"
-import {IfcSurface} from "./IfcSurface"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcCylindricalSurface} from "./IfcCylindricalSurface.g"
+import {IfcPlane} from "./IfcPlane.g"
+import {IfcSphericalSurface} from "./IfcSphericalSurface.g"
+import {IfcToroidalSurface} from "./IfcToroidalSurface.g"
+import {IfcSurface} from "./IfcSurface.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementarysurface.htm
 export abstract class IfcElementarySurface extends IfcSurface {

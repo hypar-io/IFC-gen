@@ -1,11 +1,11 @@
 
 import {Select} from "./Select"
-import {IfcDescriptiveMeasure} from "./IfcDescriptiveMeasure"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure"
-import {IfcRatioMeasure} from "./IfcRatioMeasure"
+import {IfcDescriptiveMeasure} from "./IfcDescriptiveMeasure.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure.g"
+import {IfcRatioMeasure} from "./IfcRatioMeasure.g"
 
 export class IfcSizeSelect extends Select {
     value : IfcDescriptiveMeasure|IfcLengthMeasure|IfcNormalisedRatioMeasure|IfcPositiveLengthMeasure|IfcPositiveRatioMeasure|IfcRatioMeasure

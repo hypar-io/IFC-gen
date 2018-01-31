@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcDirection} from "./IfcDirection"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcExtrudedAreaSolidTapered} from "./IfcExtrudedAreaSolidTapered"
-import {IfcSweptAreaSolid} from "./IfcSweptAreaSolid"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcExtrudedAreaSolidTapered} from "./IfcExtrudedAreaSolidTapered.g"
+import {IfcSweptAreaSolid} from "./IfcSweptAreaSolid.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextrudedareasolid.htm
 export class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {

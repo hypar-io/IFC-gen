@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCurve} from "./IfcCurve"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcLogical} from "./IfcLogical"
-import {IfcDirection} from "./IfcDirection"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcDirection} from "./IfcDirection.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcoffsetcurve3d.htm
 export class IfcOffsetCurve3D extends IfcCurve {

@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcForceMeasure} from "./IfcForceMeasure"
-import {IfcStructuralConnectionCondition} from "./IfcStructuralConnectionCondition"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcForceMeasure} from "./IfcForceMeasure.g"
+import {IfcStructuralConnectionCondition} from "./IfcStructuralConnectionCondition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfailureconnectioncondition.htm
 export class IfcFailureConnectionCondition extends IfcStructuralConnectionCondition {

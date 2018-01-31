@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcPresentableText} from "./IfcPresentableText"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
-import {IfcTextPath} from "./IfcTextPath"
-import {IfcTextLiteralWithExtent} from "./IfcTextLiteralWithExtent"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcPresentableText} from "./IfcPresentableText.g"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcTextPath} from "./IfcTextPath.g"
+import {IfcTextLiteralWithExtent} from "./IfcTextLiteralWithExtent.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextliteral.htm
 export class IfcTextLiteral extends IfcGeometricRepresentationItem {

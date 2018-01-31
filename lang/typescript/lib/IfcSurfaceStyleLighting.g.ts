@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcColourRgb} from "./IfcColourRgb"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcColourRgb} from "./IfcColourRgb.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylelighting.htm
 export class IfcSurfaceStyleLighting extends IfcPresentationItem {

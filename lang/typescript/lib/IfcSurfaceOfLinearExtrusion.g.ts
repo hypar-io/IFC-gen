@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcDirection} from "./IfcDirection"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcVector} from "./IfcVector"
-import {IfcSweptSurface} from "./IfcSweptSurface"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcVector} from "./IfcVector.g"
+import {IfcSweptSurface} from "./IfcSweptSurface.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceoflinearextrusion.htm
 export class IfcSurfaceOfLinearExtrusion extends IfcSweptSurface {

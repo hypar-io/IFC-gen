@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcConnectedFaceSet} from "./IfcConnectedFaceSet"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcConnectedFaceSet} from "./IfcConnectedFaceSet.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebasedsurfacemodel.htm
 export class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem {

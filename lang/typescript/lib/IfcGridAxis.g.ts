@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcCurve} from "./IfcCurve"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcGrid} from "./IfcGrid"
-import {IfcVirtualGridIntersection} from "./IfcVirtualGridIntersection"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcGrid} from "./IfcGrid.g"
+import {IfcVirtualGridIntersection} from "./IfcVirtualGridIntersection.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridaxis.htm
 export class IfcGridAxis extends BaseIfc {

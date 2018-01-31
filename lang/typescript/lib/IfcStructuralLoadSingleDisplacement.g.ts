@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure"
-import {IfcStructuralLoadSingleDisplacementDistortion} from "./IfcStructuralLoadSingleDisplacementDistortion"
-import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
+import {IfcStructuralLoadSingleDisplacementDistortion} from "./IfcStructuralLoadSingleDisplacementDistortion.g"
+import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadsingledisplacement.htm
 export class IfcStructuralLoadSingleDisplacement extends IfcStructuralLoadStatic {

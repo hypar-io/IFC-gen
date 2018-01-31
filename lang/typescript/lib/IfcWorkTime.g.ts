@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcDataOriginEnum} from "./IfcDataOriginEnum"
-import {IfcRecurrencePattern} from "./IfcRecurrencePattern"
-import {IfcDate} from "./IfcDate"
-import {IfcSchedulingTime} from "./IfcSchedulingTime"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
+import {IfcRecurrencePattern} from "./IfcRecurrencePattern.g"
+import {IfcDate} from "./IfcDate.g"
+import {IfcSchedulingTime} from "./IfcSchedulingTime.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworktime.htm
 export class IfcWorkTime extends IfcSchedulingTime {

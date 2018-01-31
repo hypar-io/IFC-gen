@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure"
-import {IfcLuminousIntensityDistributionMeasure} from "./IfcLuminousIntensityDistributionMeasure"
+import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
+import {IfcLuminousIntensityDistributionMeasure} from "./IfcLuminousIntensityDistributionMeasure.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondata.htm
 export class IfcLightDistributionData extends BaseIfc {

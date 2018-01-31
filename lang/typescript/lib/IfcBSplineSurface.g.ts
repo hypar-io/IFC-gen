@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcInteger} from "./IfcInteger"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcBSplineSurfaceForm} from "./IfcBSplineSurfaceForm"
-import {IfcLogical} from "./IfcLogical"
-import {IfcBSplineSurfaceWithKnots} from "./IfcBSplineSurfaceWithKnots"
-import {IfcBoundedSurface} from "./IfcBoundedSurface"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcBSplineSurfaceForm} from "./IfcBSplineSurfaceForm.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcBSplineSurfaceWithKnots} from "./IfcBSplineSurfaceWithKnots.g"
+import {IfcBoundedSurface} from "./IfcBoundedSurface.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurface.htm
 export abstract class IfcBSplineSurface extends IfcBoundedSurface {

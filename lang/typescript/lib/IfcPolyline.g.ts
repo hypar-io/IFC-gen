@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcBoundedCurve} from "./IfcBoundedCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolyline.htm
 export class IfcPolyline extends IfcBoundedCurve {

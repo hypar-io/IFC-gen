@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcDimensionalExponents} from "./IfcDimensionalExponents"
-import {IfcUnitEnum} from "./IfcUnitEnum"
-import {IfcLabel} from "./IfcLabel"
-import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcConversionBasedUnitWithOffset} from "./IfcConversionBasedUnitWithOffset"
-import {IfcNamedUnit} from "./IfcNamedUnit"
+import {IfcDimensionalExponents} from "./IfcDimensionalExponents.g"
+import {IfcUnitEnum} from "./IfcUnitEnum.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcConversionBasedUnitWithOffset} from "./IfcConversionBasedUnitWithOffset.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconversionbasedunit.htm
 export class IfcConversionBasedUnit extends IfcNamedUnit {

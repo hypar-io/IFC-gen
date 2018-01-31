@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcCartesianPointList3D} from "./IfcCartesianPointList3D"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcIndexedColourMap} from "./IfcIndexedColourMap"
-import {IfcIndexedTextureMap} from "./IfcIndexedTextureMap"
-import {IfcPolygonalFaceSet} from "./IfcPolygonalFaceSet"
-import {IfcTriangulatedFaceSet} from "./IfcTriangulatedFaceSet"
-import {IfcTessellatedItem} from "./IfcTessellatedItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcCartesianPointList3D} from "./IfcCartesianPointList3D.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcIndexedColourMap} from "./IfcIndexedColourMap.g"
+import {IfcIndexedTextureMap} from "./IfcIndexedTextureMap.g"
+import {IfcPolygonalFaceSet} from "./IfcPolygonalFaceSet.g"
+import {IfcTriangulatedFaceSet} from "./IfcTriangulatedFaceSet.g"
+import {IfcTessellatedItem} from "./IfcTessellatedItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellatedfaceset.htm
 export abstract class IfcTessellatedFaceSet extends IfcTessellatedItem {

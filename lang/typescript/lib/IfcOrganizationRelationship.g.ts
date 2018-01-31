@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcOrganization} from "./IfcOrganization"
-import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcOrganization} from "./IfcOrganization.g"
+import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorganizationrelationship.htm
 export class IfcOrganizationRelationship extends IfcResourceLevelRelationship {

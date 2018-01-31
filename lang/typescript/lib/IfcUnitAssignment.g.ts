@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcUnit} from "./IfcUnit"
+import {IfcUnit} from "./IfcUnit.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitassignment.htm
 export class IfcUnitAssignment extends BaseIfc {

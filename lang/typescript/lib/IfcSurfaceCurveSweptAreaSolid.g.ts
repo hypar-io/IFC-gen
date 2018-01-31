@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcProfileDef} from "./IfcProfileDef"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcCurve} from "./IfcCurve"
-import {IfcParameterValue} from "./IfcParameterValue"
-import {IfcSurface} from "./IfcSurface"
-import {IfcSweptAreaSolid} from "./IfcSweptAreaSolid"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcParameterValue} from "./IfcParameterValue.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcSweptAreaSolid} from "./IfcSweptAreaSolid.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacecurvesweptareasolid.htm
 export class IfcSurfaceCurveSweptAreaSolid extends IfcSweptAreaSolid {

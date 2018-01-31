@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
-import {IfcCircle} from "./IfcCircle"
-import {IfcEllipse} from "./IfcEllipse"
-import {IfcCurve} from "./IfcCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcCircle} from "./IfcCircle.g"
+import {IfcEllipse} from "./IfcEllipse.g"
+import {IfcCurve} from "./IfcCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconic.htm
 export abstract class IfcConic extends IfcCurve {

@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcRatioMeasure} from "./IfcRatioMeasure"
-import {IfcStructuralLoadOrResult} from "./IfcStructuralLoadOrResult"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcRatioMeasure} from "./IfcRatioMeasure.g"
+import {IfcStructuralLoadOrResult} from "./IfcStructuralLoadOrResult.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacereinforcementarea.htm
 export class IfcSurfaceReinforcementArea extends IfcStructuralLoadOrResult {

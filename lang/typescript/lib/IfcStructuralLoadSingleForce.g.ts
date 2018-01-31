@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcForceMeasure} from "./IfcForceMeasure"
-import {IfcTorqueMeasure} from "./IfcTorqueMeasure"
-import {IfcStructuralLoadSingleForceWarping} from "./IfcStructuralLoadSingleForceWarping"
-import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcForceMeasure} from "./IfcForceMeasure.g"
+import {IfcTorqueMeasure} from "./IfcTorqueMeasure.g"
+import {IfcStructuralLoadSingleForceWarping} from "./IfcStructuralLoadSingleForceWarping.g"
+import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadsingleforce.htm
 export class IfcStructuralLoadSingleForce extends IfcStructuralLoadStatic {

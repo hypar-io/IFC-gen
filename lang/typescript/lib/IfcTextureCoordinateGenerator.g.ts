@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSurfaceTexture} from "./IfcSurfaceTexture"
-import {IfcLabel} from "./IfcLabel"
-import {IfcReal} from "./IfcReal"
-import {IfcTextureCoordinate} from "./IfcTextureCoordinate"
+import {IfcSurfaceTexture} from "./IfcSurfaceTexture.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcTextureCoordinate} from "./IfcTextureCoordinate.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturecoordinategenerator.htm
 export class IfcTextureCoordinateGenerator extends IfcTextureCoordinate {

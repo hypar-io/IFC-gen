@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcSurface} from "./IfcSurface"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcBoundingBox} from "./IfcBoundingBox"
-import {IfcHalfSpaceSolid} from "./IfcHalfSpaceSolid"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcBoundingBox} from "./IfcBoundingBox.g"
+import {IfcHalfSpaceSolid} from "./IfcHalfSpaceSolid.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboxedhalfspace.htm
 export class IfcBoxedHalfSpace extends IfcHalfSpaceSolid {

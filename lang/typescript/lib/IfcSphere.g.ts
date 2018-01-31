@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcCsgPrimitive3D} from "./IfcCsgPrimitive3D"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcCsgPrimitive3D} from "./IfcCsgPrimitive3D.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsphere.htm
 export class IfcSphere extends IfcCsgPrimitive3D {

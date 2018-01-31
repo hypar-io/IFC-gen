@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcObjectDefinition} from "./IfcObjectDefinition"
-import {IfcRelDecomposes} from "./IfcRelDecomposes"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcRelDecomposes} from "./IfcRelDecomposes.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelaggregates.htm
 export class IfcRelAggregates extends IfcRelDecomposes {

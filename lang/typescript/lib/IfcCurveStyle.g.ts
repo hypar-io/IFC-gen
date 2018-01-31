@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcCurveFontOrScaledCurveFontSelect} from "./IfcCurveFontOrScaledCurveFontSelect"
-import {IfcSizeSelect} from "./IfcSizeSelect"
-import {IfcColour} from "./IfcColour"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcPresentationStyle} from "./IfcPresentationStyle"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcCurveFontOrScaledCurveFontSelect} from "./IfcCurveFontOrScaledCurveFontSelect.g"
+import {IfcSizeSelect} from "./IfcSizeSelect.g"
+import {IfcColour} from "./IfcColour.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestyle.htm
 export class IfcCurveStyle extends IfcPresentationStyle {

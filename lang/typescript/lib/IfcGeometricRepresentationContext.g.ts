@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcRepresentation} from "./IfcRepresentation"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcReal} from "./IfcReal"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
-import {IfcDirection} from "./IfcDirection"
-import {IfcGeometricRepresentationSubContext} from "./IfcGeometricRepresentationSubContext"
-import {IfcCoordinateOperation} from "./IfcCoordinateOperation"
-import {IfcRepresentationContext} from "./IfcRepresentationContext"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcRepresentation} from "./IfcRepresentation.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcGeometricRepresentationSubContext} from "./IfcGeometricRepresentationSubContext.g"
+import {IfcCoordinateOperation} from "./IfcCoordinateOperation.g"
+import {IfcRepresentationContext} from "./IfcRepresentationContext.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationcontext.htm
 export class IfcGeometricRepresentationContext extends IfcRepresentationContext {

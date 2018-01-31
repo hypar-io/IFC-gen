@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcStructuralLoadOrResult} from "./IfcStructuralLoadOrResult"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcStructuralLoad} from "./IfcStructuralLoad"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcStructuralLoadOrResult} from "./IfcStructuralLoadOrResult.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcStructuralLoad} from "./IfcStructuralLoad.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadconfiguration.htm
 export class IfcStructuralLoadConfiguration extends IfcStructuralLoad {

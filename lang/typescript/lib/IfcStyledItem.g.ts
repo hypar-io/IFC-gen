@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcRepresentationItem} from "./IfcRepresentationItem"
-import {IfcStyleAssignmentSelect} from "./IfcStyleAssignmentSelect"
-import {IfcLabel} from "./IfcLabel"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcRepresentationItem} from "./IfcRepresentationItem.g"
+import {IfcStyleAssignmentSelect} from "./IfcStyleAssignmentSelect.g"
+import {IfcLabel} from "./IfcLabel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyleditem.htm
 export class IfcStyledItem extends IfcRepresentationItem {

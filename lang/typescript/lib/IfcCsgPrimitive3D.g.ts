@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcBlock} from "./IfcBlock"
-import {IfcRectangularPyramid} from "./IfcRectangularPyramid"
-import {IfcRightCircularCone} from "./IfcRightCircularCone"
-import {IfcRightCircularCylinder} from "./IfcRightCircularCylinder"
-import {IfcSphere} from "./IfcSphere"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcBlock} from "./IfcBlock.g"
+import {IfcRectangularPyramid} from "./IfcRectangularPyramid.g"
+import {IfcRightCircularCone} from "./IfcRightCircularCone.g"
+import {IfcRightCircularCylinder} from "./IfcRightCircularCylinder.g"
+import {IfcSphere} from "./IfcSphere.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccsgprimitive3d.htm
 export abstract class IfcCsgPrimitive3D extends IfcGeometricRepresentationItem {

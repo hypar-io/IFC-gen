@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcThermodynamicTemperatureMeasure} from "./IfcThermodynamicTemperatureMeasure"
-import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcThermodynamicTemperatureMeasure} from "./IfcThermodynamicTemperatureMeasure.g"
+import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadtemperature.htm
 export class IfcStructuralLoadTemperature extends IfcStructuralLoadStatic {

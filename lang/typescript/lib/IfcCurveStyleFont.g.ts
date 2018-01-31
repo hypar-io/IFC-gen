@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcCurveStyleFontPattern} from "./IfcCurveStyleFontPattern"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcCurveStyleFontPattern} from "./IfcCurveStyleFontPattern.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefont.htm
 export class IfcCurveStyleFont extends IfcPresentationItem {

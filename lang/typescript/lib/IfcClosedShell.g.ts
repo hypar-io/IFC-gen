@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcFace} from "./IfcFace"
-import {IfcConnectedFaceSet} from "./IfcConnectedFaceSet"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcFace} from "./IfcFace.g"
+import {IfcConnectedFaceSet} from "./IfcConnectedFaceSet.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclosedshell.htm
 export class IfcClosedShell extends IfcConnectedFaceSet {

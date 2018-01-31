@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcValue} from "./IfcValue"
+import {IfcValue} from "./IfcValue.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseriesvalue.htm
 export class IfcTimeSeriesValue extends BaseIfc {

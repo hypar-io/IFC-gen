@@ -1,16 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcLabel} from "./IfcLabel"
-import {IfcColourRgb} from "./IfcColourRgb"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcThermodynamicTemperatureMeasure} from "./IfcThermodynamicTemperatureMeasure"
-import {IfcLuminousFluxMeasure} from "./IfcLuminousFluxMeasure"
-import {IfcLightEmissionSourceEnum} from "./IfcLightEmissionSourceEnum"
-import {IfcLightDistributionDataSourceSelect} from "./IfcLightDistributionDataSourceSelect"
-import {IfcLightSource} from "./IfcLightSource"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcColourRgb} from "./IfcColourRgb.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcThermodynamicTemperatureMeasure} from "./IfcThermodynamicTemperatureMeasure.g"
+import {IfcLuminousFluxMeasure} from "./IfcLuminousFluxMeasure.g"
+import {IfcLightEmissionSourceEnum} from "./IfcLightEmissionSourceEnum.g"
+import {IfcLightDistributionDataSourceSelect} from "./IfcLightDistributionDataSourceSelect.g"
+import {IfcLightSource} from "./IfcLightSource.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcegoniometric.htm
 export class IfcLightSourceGoniometric extends IfcLightSource {

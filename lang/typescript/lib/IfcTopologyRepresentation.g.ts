@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRepresentationContext} from "./IfcRepresentationContext"
-import {IfcLabel} from "./IfcLabel"
-import {IfcRepresentationItem} from "./IfcRepresentationItem"
-import {IfcRepresentationMap} from "./IfcRepresentationMap"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcProductRepresentation} from "./IfcProductRepresentation"
-import {IfcShapeAspect} from "./IfcShapeAspect"
-import {IfcShapeModel} from "./IfcShapeModel"
+import {IfcRepresentationContext} from "./IfcRepresentationContext.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcRepresentationItem} from "./IfcRepresentationItem.g"
+import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
+import {IfcShapeAspect} from "./IfcShapeAspect.g"
+import {IfcShapeModel} from "./IfcShapeModel.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctopologyrepresentation.htm
 export class IfcTopologyRepresentation extends IfcShapeModel {

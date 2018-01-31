@@ -1,9 +1,9 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcLinearForceMeasure} from "./IfcLinearForceMeasure"
-import {IfcLinearMomentMeasure} from "./IfcLinearMomentMeasure"
-import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcLinearForceMeasure} from "./IfcLinearForceMeasure.g"
+import {IfcLinearMomentMeasure} from "./IfcLinearMomentMeasure.g"
+import {IfcStructuralLoadStatic} from "./IfcStructuralLoadStatic.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadlinearforce.htm
 export class IfcStructuralLoadLinearForce extends IfcStructuralLoadStatic {

@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcGeometricSetSelect} from "./IfcGeometricSetSelect"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcGeometricSet} from "./IfcGeometricSet"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcGeometricSetSelect} from "./IfcGeometricSetSelect.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcGeometricSet} from "./IfcGeometricSet.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometriccurveset.htm
 export class IfcGeometricCurveSet extends IfcGeometricSet {

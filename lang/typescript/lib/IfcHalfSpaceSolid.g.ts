@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcSurface} from "./IfcSurface"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcBoxedHalfSpace} from "./IfcBoxedHalfSpace"
-import {IfcPolygonalBoundedHalfSpace} from "./IfcPolygonalBoundedHalfSpace"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcSurface} from "./IfcSurface.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcBoxedHalfSpace} from "./IfcBoxedHalfSpace.g"
+import {IfcPolygonalBoundedHalfSpace} from "./IfcPolygonalBoundedHalfSpace.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifchalfspacesolid.htm
 export class IfcHalfSpaceSolid extends IfcGeometricRepresentationItem {

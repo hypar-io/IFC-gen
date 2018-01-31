@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLightDistributionCurveEnum} from "./IfcLightDistributionCurveEnum"
-import {IfcLightDistributionData} from "./IfcLightDistributionData"
+import {IfcLightDistributionCurveEnum} from "./IfcLightDistributionCurveEnum.g"
+import {IfcLightDistributionData} from "./IfcLightDistributionData.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightintensitydistribution.htm
 export class IfcLightIntensityDistribution extends BaseIfc {

@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcCartesianTransformationOperator2D} from "./IfcCartesianTransformationOperator2D"
-import {IfcTextureCoordinate} from "./IfcTextureCoordinate"
-import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures"
-import {IfcBlobTexture} from "./IfcBlobTexture"
-import {IfcImageTexture} from "./IfcImageTexture"
-import {IfcPixelTexture} from "./IfcPixelTexture"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcCartesianTransformationOperator2D} from "./IfcCartesianTransformationOperator2D.g"
+import {IfcTextureCoordinate} from "./IfcTextureCoordinate.g"
+import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures.g"
+import {IfcBlobTexture} from "./IfcBlobTexture.g"
+import {IfcImageTexture} from "./IfcImageTexture.g"
+import {IfcPixelTexture} from "./IfcPixelTexture.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacetexture.htm
 export abstract class IfcSurfaceTexture extends IfcPresentationItem {

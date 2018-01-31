@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcAreaMeasure} from "./IfcAreaMeasure"
-import {IfcLabel} from "./IfcLabel"
-import {IfcReinforcingBarSurfaceEnum} from "./IfcReinforcingBarSurfaceEnum"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcCountMeasure} from "./IfcCountMeasure"
-import {IfcPreDefinedProperties} from "./IfcPreDefinedProperties"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcAreaMeasure} from "./IfcAreaMeasure.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcReinforcingBarSurfaceEnum} from "./IfcReinforcingBarSurfaceEnum.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcCountMeasure} from "./IfcCountMeasure.g"
+import {IfcPreDefinedProperties} from "./IfcPreDefinedProperties.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcementbarproperties.htm
 export class IfcReinforcementBarProperties extends IfcPreDefinedProperties {

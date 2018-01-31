@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcUnit} from "./IfcUnit"
-import {IfcReference} from "./IfcReference"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcUnit} from "./IfcUnit.g"
+import {IfcReference} from "./IfcReference.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctablecolumn.htm
 export class IfcTableColumn extends BaseIfc {

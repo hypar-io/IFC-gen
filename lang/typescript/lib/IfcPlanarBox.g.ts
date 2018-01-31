@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
-import {IfcPlanarExtent} from "./IfcPlanarExtent"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcPlanarExtent} from "./IfcPlanarExtent.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarbox.htm
 export class IfcPlanarBox extends IfcPlanarExtent {

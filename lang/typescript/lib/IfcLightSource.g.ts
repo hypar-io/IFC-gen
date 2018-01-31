@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcLabel} from "./IfcLabel"
-import {IfcColourRgb} from "./IfcColourRgb"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcLightSourceAmbient} from "./IfcLightSourceAmbient"
-import {IfcLightSourceDirectional} from "./IfcLightSourceDirectional"
-import {IfcLightSourceGoniometric} from "./IfcLightSourceGoniometric"
-import {IfcLightSourcePositional} from "./IfcLightSourcePositional"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcColourRgb} from "./IfcColourRgb.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcLightSourceAmbient} from "./IfcLightSourceAmbient.g"
+import {IfcLightSourceDirectional} from "./IfcLightSourceDirectional.g"
+import {IfcLightSourceGoniometric} from "./IfcLightSourceGoniometric.g"
+import {IfcLightSourcePositional} from "./IfcLightSourcePositional.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsource.htm
 export abstract class IfcLightSource extends IfcGeometricRepresentationItem {

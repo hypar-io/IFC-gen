@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcOrientedEdge} from "./IfcOrientedEdge"
-import {IfcInteger} from "./IfcInteger"
-import {IfcLoop} from "./IfcLoop"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcOrientedEdge} from "./IfcOrientedEdge.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcLoop} from "./IfcLoop.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgeloop.htm
 export class IfcEdgeLoop extends IfcLoop {

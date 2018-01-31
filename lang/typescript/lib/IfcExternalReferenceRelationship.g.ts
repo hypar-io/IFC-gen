@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcExternalReference} from "./IfcExternalReference"
-import {IfcResourceObjectSelect} from "./IfcResourceObjectSelect"
-import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcExternalReference} from "./IfcExternalReference.g"
+import {IfcResourceObjectSelect} from "./IfcResourceObjectSelect.g"
+import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalreferencerelationship.htm
 export class IfcExternalReferenceRelationship extends IfcResourceLevelRelationship {

@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSizeSelect} from "./IfcSizeSelect"
-import {IfcTextAlignment} from "./IfcTextAlignment"
-import {IfcTextDecoration} from "./IfcTextDecoration"
-import {IfcTextTransformation} from "./IfcTextTransformation"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcSizeSelect} from "./IfcSizeSelect.g"
+import {IfcTextAlignment} from "./IfcTextAlignment.g"
+import {IfcTextDecoration} from "./IfcTextDecoration.g"
+import {IfcTextTransformation} from "./IfcTextTransformation.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstyletextmodel.htm
 export class IfcTextStyleTextModel extends IfcPresentationItem {

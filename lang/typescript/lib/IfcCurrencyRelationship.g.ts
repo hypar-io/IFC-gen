@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcMonetaryUnit} from "./IfcMonetaryUnit"
-import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcLibraryInformation} from "./IfcLibraryInformation"
-import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcMonetaryUnit} from "./IfcMonetaryUnit.g"
+import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcLibraryInformation} from "./IfcLibraryInformation.g"
+import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurrencyrelationship.htm
 export class IfcCurrencyRelationship extends IfcResourceLevelRelationship {

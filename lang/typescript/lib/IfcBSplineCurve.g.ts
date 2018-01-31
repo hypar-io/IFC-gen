@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcInteger} from "./IfcInteger"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcBSplineCurveForm} from "./IfcBSplineCurveForm"
-import {IfcLogical} from "./IfcLogical"
-import {IfcBSplineCurveWithKnots} from "./IfcBSplineCurveWithKnots"
-import {IfcBoundedCurve} from "./IfcBoundedCurve"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcInteger} from "./IfcInteger.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcBSplineCurveForm} from "./IfcBSplineCurveForm.g"
+import {IfcLogical} from "./IfcLogical.g"
+import {IfcBSplineCurveWithKnots} from "./IfcBSplineCurveWithKnots.g"
+import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurve.htm
 export abstract class IfcBSplineCurve extends IfcBoundedCurve {

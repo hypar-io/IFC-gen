@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationStyleSelect} from "./IfcPresentationStyleSelect"
+import {IfcPresentationStyleSelect} from "./IfcPresentationStyleSelect.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpresentationstyleassignment.htm
 export class IfcPresentationStyleAssignment extends BaseIfc {

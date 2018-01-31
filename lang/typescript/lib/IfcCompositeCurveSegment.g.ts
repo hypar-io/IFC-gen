@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcTransitionCode} from "./IfcTransitionCode"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcCurve} from "./IfcCurve"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcCompositeCurve} from "./IfcCompositeCurve"
-import {IfcReparametrisedCompositeCurveSegment} from "./IfcReparametrisedCompositeCurveSegment"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcTransitionCode} from "./IfcTransitionCode.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcCompositeCurve} from "./IfcCompositeCurve.g"
+import {IfcReparametrisedCompositeCurveSegment} from "./IfcReparametrisedCompositeCurveSegment.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurvesegment.htm
 export class IfcCompositeCurveSegment extends IfcGeometricRepresentationItem {

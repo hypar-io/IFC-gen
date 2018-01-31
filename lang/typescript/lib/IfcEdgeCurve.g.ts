@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcVertex} from "./IfcVertex"
-import {IfcCurve} from "./IfcCurve"
-import {IfcBoolean} from "./IfcBoolean"
-import {IfcEdge} from "./IfcEdge"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcVertex} from "./IfcVertex.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcEdge} from "./IfcEdge.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgecurve.htm
 export class IfcEdgeCurve extends IfcEdge {

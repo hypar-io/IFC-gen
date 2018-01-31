@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization"
-import {IfcApplication} from "./IfcApplication"
-import {IfcStateEnum} from "./IfcStateEnum"
-import {IfcChangeActionEnum} from "./IfcChangeActionEnum"
-import {IfcTimeStamp} from "./IfcTimeStamp"
+import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization.g"
+import {IfcApplication} from "./IfcApplication.g"
+import {IfcStateEnum} from "./IfcStateEnum.g"
+import {IfcChangeActionEnum} from "./IfcChangeActionEnum.g"
+import {IfcTimeStamp} from "./IfcTimeStamp.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcownerhistory.htm
 export class IfcOwnerHistory extends BaseIfc {

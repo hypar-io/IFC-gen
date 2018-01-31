@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D"
-import {IfcElementarySurface} from "./IfcElementarySurface"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
+import {IfcElementarySurface} from "./IfcElementarySurface.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplane.htm
 export class IfcPlane extends IfcElementarySurface {

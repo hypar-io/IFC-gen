@@ -1,13 +1,13 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcAppliedValueSelect} from "./IfcAppliedValueSelect"
-import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit"
-import {IfcDate} from "./IfcDate"
-import {IfcArithmeticOperatorEnum} from "./IfcArithmeticOperatorEnum"
-import {IfcAppliedValue} from "./IfcAppliedValue"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcAppliedValueSelect} from "./IfcAppliedValueSelect.g"
+import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit.g"
+import {IfcDate} from "./IfcDate.g"
+import {IfcArithmeticOperatorEnum} from "./IfcArithmeticOperatorEnum.g"
+import {IfcAppliedValue} from "./IfcAppliedValue.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccostvalue.htm
 export class IfcCostValue extends IfcAppliedValue {

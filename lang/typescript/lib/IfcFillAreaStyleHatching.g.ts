@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcCurveStyle} from "./IfcCurveStyle"
-import {IfcHatchLineDistanceSelect} from "./IfcHatchLineDistanceSelect"
-import {IfcCartesianPoint} from "./IfcCartesianPoint"
-import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcCurveStyle} from "./IfcCurveStyle.g"
+import {IfcHatchLineDistanceSelect} from "./IfcHatchLineDistanceSelect.g"
+import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
+import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastylehatching.htm
 export class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem {

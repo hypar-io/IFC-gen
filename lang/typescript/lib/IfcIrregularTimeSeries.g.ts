@@ -1,14 +1,14 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcDateTime} from "./IfcDateTime"
-import {IfcTimeSeriesDataTypeEnum} from "./IfcTimeSeriesDataTypeEnum"
-import {IfcDataOriginEnum} from "./IfcDataOriginEnum"
-import {IfcUnit} from "./IfcUnit"
-import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship"
-import {IfcIrregularTimeSeriesValue} from "./IfcIrregularTimeSeriesValue"
-import {IfcTimeSeries} from "./IfcTimeSeries"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcDateTime} from "./IfcDateTime.g"
+import {IfcTimeSeriesDataTypeEnum} from "./IfcTimeSeriesDataTypeEnum.g"
+import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
+import {IfcUnit} from "./IfcUnit.g"
+import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
+import {IfcIrregularTimeSeriesValue} from "./IfcIrregularTimeSeriesValue.g"
+import {IfcTimeSeries} from "./IfcTimeSeries.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcirregulartimeseries.htm
 export class IfcIrregularTimeSeries extends IfcTimeSeries {

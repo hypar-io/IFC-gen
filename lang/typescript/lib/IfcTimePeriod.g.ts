@@ -1,6 +1,6 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcTime} from "./IfcTime"
+import {IfcTime} from "./IfcTime.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeperiod.htm
 export class IfcTimePeriod extends BaseIfc {

@@ -1,10 +1,10 @@
 
 import {Select} from "./Select"
-import {IfcExternallyDefinedSurfaceStyle} from "./IfcExternallyDefinedSurfaceStyle"
-import {IfcSurfaceStyleLighting} from "./IfcSurfaceStyleLighting"
-import {IfcSurfaceStyleRefraction} from "./IfcSurfaceStyleRefraction"
-import {IfcSurfaceStyleShading} from "./IfcSurfaceStyleShading"
-import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures"
+import {IfcExternallyDefinedSurfaceStyle} from "./IfcExternallyDefinedSurfaceStyle.g"
+import {IfcSurfaceStyleLighting} from "./IfcSurfaceStyleLighting.g"
+import {IfcSurfaceStyleRefraction} from "./IfcSurfaceStyleRefraction.g"
+import {IfcSurfaceStyleShading} from "./IfcSurfaceStyleShading.g"
+import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures.g"
 
 export class IfcSurfaceStyleElementSelect extends Select {
     value : IfcExternallyDefinedSurfaceStyle|IfcSurfaceStyleLighting|IfcSurfaceStyleRefraction|IfcSurfaceStyleShading|IfcSurfaceStyleWithTextures

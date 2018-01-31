@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcTextFontName} from "./IfcTextFontName"
-import {IfcFontStyle} from "./IfcFontStyle"
-import {IfcFontVariant} from "./IfcFontVariant"
-import {IfcFontWeight} from "./IfcFontWeight"
-import {IfcSizeSelect} from "./IfcSizeSelect"
-import {IfcPreDefinedTextFont} from "./IfcPreDefinedTextFont"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcTextFontName} from "./IfcTextFontName.g"
+import {IfcFontStyle} from "./IfcFontStyle.g"
+import {IfcFontVariant} from "./IfcFontVariant.g"
+import {IfcFontWeight} from "./IfcFontWeight.g"
+import {IfcSizeSelect} from "./IfcSizeSelect.g"
+import {IfcPreDefinedTextFont} from "./IfcPreDefinedTextFont.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefontmodel.htm
 export class IfcTextStyleFontModel extends IfcPreDefinedTextFont {

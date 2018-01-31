@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcColourRgb} from "./IfcColourRgb"
-import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure"
-import {IfcColourOrFactor} from "./IfcColourOrFactor"
-import {IfcSpecularHighlightSelect} from "./IfcSpecularHighlightSelect"
-import {IfcReflectanceMethodEnum} from "./IfcReflectanceMethodEnum"
-import {IfcSurfaceStyleShading} from "./IfcSurfaceStyleShading"
+import {IfcColourRgb} from "./IfcColourRgb.g"
+import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
+import {IfcColourOrFactor} from "./IfcColourOrFactor.g"
+import {IfcSpecularHighlightSelect} from "./IfcSpecularHighlightSelect.g"
+import {IfcReflectanceMethodEnum} from "./IfcReflectanceMethodEnum.g"
+import {IfcSurfaceStyleShading} from "./IfcSurfaceStyleShading.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestylerendering.htm
 export class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {

@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSurfaceTexture} from "./IfcSurfaceTexture"
-import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet"
-import {IfcTextureVertexList} from "./IfcTextureVertexList"
-import {IfcIndexedTriangleTextureMap} from "./IfcIndexedTriangleTextureMap"
-import {IfcTextureCoordinate} from "./IfcTextureCoordinate"
+import {IfcSurfaceTexture} from "./IfcSurfaceTexture.g"
+import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet.g"
+import {IfcTextureVertexList} from "./IfcTextureVertexList.g"
+import {IfcIndexedTriangleTextureMap} from "./IfcIndexedTriangleTextureMap.g"
+import {IfcTextureCoordinate} from "./IfcTextureCoordinate.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedtexturemap.htm
 export abstract class IfcIndexedTextureMap extends IfcTextureCoordinate {

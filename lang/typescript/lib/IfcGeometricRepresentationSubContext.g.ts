@@ -1,15 +1,15 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcRepresentation} from "./IfcRepresentation"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcReal} from "./IfcReal"
-import {IfcAxis2Placement} from "./IfcAxis2Placement"
-import {IfcDirection} from "./IfcDirection"
-import {IfcCoordinateOperation} from "./IfcCoordinateOperation"
-import {IfcGeometricRepresentationContext} from "./IfcGeometricRepresentationContext"
-import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure"
-import {IfcGeometricProjectionEnum} from "./IfcGeometricProjectionEnum"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcRepresentation} from "./IfcRepresentation.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcReal} from "./IfcReal.g"
+import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcDirection} from "./IfcDirection.g"
+import {IfcCoordinateOperation} from "./IfcCoordinateOperation.g"
+import {IfcGeometricRepresentationContext} from "./IfcGeometricRepresentationContext.g"
+import {IfcPositiveRatioMeasure} from "./IfcPositiveRatioMeasure.g"
+import {IfcGeometricProjectionEnum} from "./IfcGeometricProjectionEnum.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricrepresentationsubcontext.htm
 export class IfcGeometricRepresentationSubContext extends IfcGeometricRepresentationContext {

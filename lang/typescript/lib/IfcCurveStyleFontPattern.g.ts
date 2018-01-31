@@ -1,8 +1,8 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLengthMeasure} from "./IfcLengthMeasure"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcPresentationItem} from "./IfcPresentationItem"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontpattern.htm
 export class IfcCurveStyleFontPattern extends IfcPresentationItem {

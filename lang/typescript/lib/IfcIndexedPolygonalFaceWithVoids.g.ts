@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcPositiveInteger} from "./IfcPositiveInteger"
-import {IfcPolygonalFaceSet} from "./IfcPolygonalFaceSet"
-import {IfcIndexedPolygonalFace} from "./IfcIndexedPolygonalFace"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
+import {IfcPolygonalFaceSet} from "./IfcPolygonalFaceSet.g"
+import {IfcIndexedPolygonalFace} from "./IfcIndexedPolygonalFace.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedpolygonalfacewithvoids.htm
 export class IfcIndexedPolygonalFaceWithVoids extends IfcIndexedPolygonalFace {

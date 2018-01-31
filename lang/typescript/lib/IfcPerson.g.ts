@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcIdentifier} from "./IfcIdentifier"
-import {IfcLabel} from "./IfcLabel"
-import {IfcActorRole} from "./IfcActorRole"
-import {IfcAddress} from "./IfcAddress"
-import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization"
+import {IfcIdentifier} from "./IfcIdentifier.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcActorRole} from "./IfcActorRole.g"
+import {IfcAddress} from "./IfcAddress.g"
+import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperson.htm
 export class IfcPerson extends BaseIfc {

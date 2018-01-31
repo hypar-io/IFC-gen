@@ -1,10 +1,10 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcLabel} from "./IfcLabel"
-import {IfcTranslationalStiffnessSelect} from "./IfcTranslationalStiffnessSelect"
-import {IfcRotationalStiffnessSelect} from "./IfcRotationalStiffnessSelect"
-import {IfcBoundaryNodeConditionWarping} from "./IfcBoundaryNodeConditionWarping"
-import {IfcBoundaryCondition} from "./IfcBoundaryCondition"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcTranslationalStiffnessSelect} from "./IfcTranslationalStiffnessSelect.g"
+import {IfcRotationalStiffnessSelect} from "./IfcRotationalStiffnessSelect.g"
+import {IfcBoundaryNodeConditionWarping} from "./IfcBoundaryNodeConditionWarping.g"
+import {IfcBoundaryCondition} from "./IfcBoundaryCondition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundarynodecondition.htm
 export class IfcBoundaryNodeCondition extends IfcBoundaryCondition {

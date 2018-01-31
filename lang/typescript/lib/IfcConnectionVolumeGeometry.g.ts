@@ -1,7 +1,7 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSolidOrShell} from "./IfcSolidOrShell"
-import {IfcConnectionGeometry} from "./IfcConnectionGeometry"
+import {IfcSolidOrShell} from "./IfcSolidOrShell.g"
+import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionvolumegeometry.htm
 export class IfcConnectionVolumeGeometry extends IfcConnectionGeometry {

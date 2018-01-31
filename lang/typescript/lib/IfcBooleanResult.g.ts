@@ -1,12 +1,12 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment"
-import {IfcStyledItem} from "./IfcStyledItem"
-import {IfcBooleanOperator} from "./IfcBooleanOperator"
-import {IfcBooleanOperand} from "./IfcBooleanOperand"
-import {IfcDimensionCount} from "./IfcDimensionCount"
-import {IfcBooleanClippingResult} from "./IfcBooleanClippingResult"
-import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem"
+import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
+import {IfcStyledItem} from "./IfcStyledItem.g"
+import {IfcBooleanOperator} from "./IfcBooleanOperator.g"
+import {IfcBooleanOperand} from "./IfcBooleanOperand.g"
+import {IfcDimensionCount} from "./IfcDimensionCount.g"
+import {IfcBooleanClippingResult} from "./IfcBooleanClippingResult.g"
+import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbooleanresult.htm
 export class IfcBooleanResult extends IfcGeometricRepresentationItem {

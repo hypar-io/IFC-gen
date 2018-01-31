@@ -1,11 +1,11 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial"
-import {IfcMaterialProfileSet} from "./IfcMaterialProfileSet"
-import {IfcCardinalPointReference} from "./IfcCardinalPointReference"
-import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure"
-import {IfcMaterialProfileSetUsageTapering} from "./IfcMaterialProfileSetUsageTapering"
-import {IfcMaterialUsageDefinition} from "./IfcMaterialUsageDefinition"
+import {IfcRelAssociatesMaterial} from "./IfcRelAssociatesMaterial.g"
+import {IfcMaterialProfileSet} from "./IfcMaterialProfileSet.g"
+import {IfcCardinalPointReference} from "./IfcCardinalPointReference.g"
+import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
+import {IfcMaterialProfileSetUsageTapering} from "./IfcMaterialProfileSetUsageTapering.g"
+import {IfcMaterialUsageDefinition} from "./IfcMaterialUsageDefinition.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofilesetusage.htm
 export class IfcMaterialProfileSetUsage extends IfcMaterialUsageDefinition {

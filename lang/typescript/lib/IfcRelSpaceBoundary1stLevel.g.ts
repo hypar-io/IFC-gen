@@ -1,16 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId"
-import {IfcOwnerHistory} from "./IfcOwnerHistory"
-import {IfcLabel} from "./IfcLabel"
-import {IfcText} from "./IfcText"
-import {IfcSpaceBoundarySelect} from "./IfcSpaceBoundarySelect"
-import {IfcElement} from "./IfcElement"
-import {IfcConnectionGeometry} from "./IfcConnectionGeometry"
-import {IfcPhysicalOrVirtualEnum} from "./IfcPhysicalOrVirtualEnum"
-import {IfcInternalOrExternalEnum} from "./IfcInternalOrExternalEnum"
-import {IfcRelSpaceBoundary2ndLevel} from "./IfcRelSpaceBoundary2ndLevel"
-import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary"
+import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
+import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
+import {IfcLabel} from "./IfcLabel.g"
+import {IfcText} from "./IfcText.g"
+import {IfcSpaceBoundarySelect} from "./IfcSpaceBoundarySelect.g"
+import {IfcElement} from "./IfcElement.g"
+import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
+import {IfcPhysicalOrVirtualEnum} from "./IfcPhysicalOrVirtualEnum.g"
+import {IfcInternalOrExternalEnum} from "./IfcInternalOrExternalEnum.g"
+import {IfcRelSpaceBoundary2ndLevel} from "./IfcRelSpaceBoundary2ndLevel.g"
+import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelspaceboundary1stlevel.htm
 export class IfcRelSpaceBoundary1stLevel extends IfcRelSpaceBoundary {
