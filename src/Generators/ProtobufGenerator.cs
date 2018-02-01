@@ -197,6 +197,7 @@ message {data.Name}{{
             }
             return type;
         }
-
+        
+        public void GenerateManifest(string directory, IEnumerable<string> names){}
     }
 }

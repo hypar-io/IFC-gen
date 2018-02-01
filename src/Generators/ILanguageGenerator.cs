@@ -62,7 +62,7 @@ namespace IFC4.Generators
         string EntityString(Entity data);
 
         /// <summary>
-        /// The name to be used for the file containing the 
+        /// The file extension to be used for the file containing the 
         /// generated code.
         /// </summary>
         /// <returns></returns>
@@ -75,6 +75,8 @@ namespace IFC4.Generators
         /// <param name="context"></param>
         /// <returns></returns>
         string ParseSimpleType(ExpressParser.SimpleTypeContext context);
+
+        void GenerateManifest(string directory, IEnumerable<string> types);
     }
 
     public interface IFunctionsGenerator

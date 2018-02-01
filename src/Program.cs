@@ -80,11 +80,16 @@ namespace IFC.Generate
         private static void Generate(Express.ExpressListener listener, string outDir,
         ILanguageGenerator generator, IFunctionsGenerator functionsGenerator)
         {
+            var names = new List<string>();
             foreach (var kvp in listener.TypeData)
             {
                 var td = kvp.Value;
                 File.WriteAllText(Path.Combine(outDir, $"{td.Name}.{generator.FileExtension}"), td.ToString());
+                names.Add(td.Name);
             }
+
+            generator.GenerateManifest(outDir, names);
+
             if (functionsGenerator != null)
             {
                 var functionsPath = Path.Combine(outDir, functionsGenerator.FileName);

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.IO;
 
 namespace IFC4.Generators
 {
@@ -355,6 +356,21 @@ export {modifier}class {data.Name} extends {super} {{
         private string BaseConstructorParams(Entity data, bool includeOptional)
         {
             return EntityBaseConstructorParams(data, includeOptional);
+        }
+
+        public void GenerateManifest(string directory, IEnumerable<string> names)
+        {
+            var importBuilder = new StringBuilder();
+            foreach(var name in names)
+            {
+                importBuilder.AppendLine($"export * from \"./{name}.g\"");
+            }
+            importBuilder.AppendLine("export * from \"./BaseIfc\"");
+            importBuilder.AppendLine("export * from \"./Select\"");
+
+            var path = Path.Combine(directory, "index.ts");
+
+            File.WriteAllText(path, importBuilder.ToString());
         }
     }
 }

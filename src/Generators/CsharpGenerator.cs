@@ -435,5 +435,7 @@ namespace IFC
         {
             return EntityBaseConstructorParams(data, includeOptional);
         }
+
+        public void GenerateManifest(string directory, IEnumerable<string> names){}
     }
 }
