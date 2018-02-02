@@ -5,15 +5,11 @@ import {BaseIfc} from "./BaseIfc"
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmonetarymeasure.htm
 export class IfcMonetaryMeasure extends BaseIfc
 {
-    protected value : number
+    protected wrappedValue : number
 
     constructor(value : number){
         super()
-        this.value = value
+        this.wrappedValue = value
     }	
-    toString() : string { return this.value.toString() }
-    toStepValue(value: any, isSelectOption? : boolean) : string {
-        if(isSelectOption){ return `${this.constructor.name.toUpperCase()}(${this.toStepValue(this.value,isSelectOption)})`; }
-        else{ return this.toStepValue(this.value, isSelectOption); }
-    }
+    toString() : string { return this.wrappedValue.toString() }
 }

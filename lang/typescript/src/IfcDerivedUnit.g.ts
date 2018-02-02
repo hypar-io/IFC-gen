@@ -5,13 +5,16 @@ import {IfcDerivedUnitEnum} from "./IfcDerivedUnitEnum.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcDimensionalExponents} from "./IfcDimensionalExponents.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunit.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcderivedunit.htm
+ */
 export class IfcDerivedUnit extends BaseIfc {
 	Elements : Array<IfcDerivedUnitElement>
 	UnitType : IfcDerivedUnitEnum
-	UserDefinedType : IfcLabel// optional
+	UserDefinedType : IfcLabel // optional
 
-    get Dimensions() : IfcDimensionalExponents{throw "Derived property logic has been implemented for Dimensions."} // derived
+    get Dimensions() : IfcDimensionalExponents{throw "Derived property logic has not been implemented for Dimensions."} // derived
+    set Dimensions(value : IfcDimensionalExponents){super.Dimensions = value}
 
     constructor(elements : Array<IfcDerivedUnitElement>, unitType : IfcDerivedUnitEnum) {
         super()
@@ -22,9 +25,9 @@ export class IfcDerivedUnit extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Elements != null ? this.toStepValue(this.Elements) : "$");
-		parameters.push(this.toStepValue(this.UnitType));
-		parameters.push(this.UserDefinedType != null ? this.toStepValue(this.UserDefinedType) : "$");
+		parameters.push(this.Elements != null ? BaseIfc.toStepValue(this.Elements) : "$");
+		parameters.push(BaseIfc.toStepValue(this.UnitType));
+		parameters.push(this.UserDefinedType != null ? BaseIfc.toStepValue(this.UserDefinedType) : "$");
 
         return parameters.join();
     }

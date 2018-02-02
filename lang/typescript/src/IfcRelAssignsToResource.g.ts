@@ -6,14 +6,17 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
 import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum.g"
-import {IfcResourceSelect} from "./IfcResourceSelect.g"
+import {IfcResource} from "./IfcResource.g"
+import {IfcTypeResource} from "./IfcTypeResource.g"
 import {IfcRelAssigns} from "./IfcRelAssigns.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoresource.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoresource.htm
+ */
 export class IfcRelAssignsToResource extends IfcRelAssigns {
-	RelatingResource : IfcResourceSelect
+	RelatingResource : IfcResource|IfcTypeResource
 
-    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingResource : IfcResourceSelect) {
+    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingResource : IfcResource|IfcTypeResource) {
         super(globalId,relatedObjects)
 
 		this.RelatingResource = relatingResource
@@ -21,13 +24,13 @@ export class IfcRelAssignsToResource extends IfcRelAssigns {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? this.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.toStepValue(this.RelatedObjectsType));
-		parameters.push(this.RelatingResource != null ? this.toStepValue(this.RelatingResource) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
+		parameters.push(BaseIfc.toStepValue(this.RelatedObjectsType));
+		parameters.push(this.RelatingResource != null ? BaseIfc.toStepValue(this.RelatingResource) : "$");
 
         return parameters.join();
     }

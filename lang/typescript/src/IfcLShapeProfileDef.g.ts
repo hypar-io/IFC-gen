@@ -10,14 +10,16 @@ import {IfcNonNegativeLengthMeasure} from "./IfcNonNegativeLengthMeasure.g"
 import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
 import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclshapeprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclshapeprofiledef.htm
+ */
 export class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
 	Depth : IfcPositiveLengthMeasure
-	Width : IfcPositiveLengthMeasure// optional
+	Width : IfcPositiveLengthMeasure // optional
 	Thickness : IfcPositiveLengthMeasure
-	FilletRadius : IfcNonNegativeLengthMeasure// optional
-	EdgeRadius : IfcNonNegativeLengthMeasure// optional
-	LegSlope : IfcPlaneAngleMeasure// optional
+	FilletRadius : IfcNonNegativeLengthMeasure // optional
+	EdgeRadius : IfcNonNegativeLengthMeasure // optional
+	LegSlope : IfcPlaneAngleMeasure // optional
 
     constructor(profileType : IfcProfileTypeEnum, depth : IfcPositiveLengthMeasure, thickness : IfcPositiveLengthMeasure) {
         super(profileType)
@@ -28,15 +30,15 @@ export class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Depth != null ? this.toStepValue(this.Depth) : "$");
-		parameters.push(this.Width != null ? this.toStepValue(this.Width) : "$");
-		parameters.push(this.Thickness != null ? this.toStepValue(this.Thickness) : "$");
-		parameters.push(this.FilletRadius != null ? this.toStepValue(this.FilletRadius) : "$");
-		parameters.push(this.EdgeRadius != null ? this.toStepValue(this.EdgeRadius) : "$");
-		parameters.push(this.LegSlope != null ? this.toStepValue(this.LegSlope) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
+		parameters.push(this.Width != null ? BaseIfc.toStepValue(this.Width) : "$");
+		parameters.push(this.Thickness != null ? BaseIfc.toStepValue(this.Thickness) : "$");
+		parameters.push(this.FilletRadius != null ? BaseIfc.toStepValue(this.FilletRadius) : "$");
+		parameters.push(this.EdgeRadius != null ? BaseIfc.toStepValue(this.EdgeRadius) : "$");
+		parameters.push(this.LegSlope != null ? BaseIfc.toStepValue(this.LegSlope) : "$");
 
         return parameters.join();
     }

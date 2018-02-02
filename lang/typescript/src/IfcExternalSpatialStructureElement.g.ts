@@ -18,10 +18,11 @@ import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelServicesBuildings} from "./IfcRelServicesBuildings.g"
 import {IfcRelReferencedInSpatialStructure} from "./IfcRelReferencedInSpatialStructure.g"
-import {IfcExternalSpatialElement} from "./IfcExternalSpatialElement.g"
 import {IfcSpatialElement} from "./IfcSpatialElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialstructureelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcexternalspatialstructureelement.htm
+ */
 export abstract class IfcExternalSpatialStructureElement extends IfcSpatialElement {
 
     constructor(globalId : IfcGloballyUniqueId) {

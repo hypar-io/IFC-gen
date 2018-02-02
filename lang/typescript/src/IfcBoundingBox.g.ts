@@ -7,14 +7,17 @@ import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundingbox.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundingbox.htm
+ */
 export class IfcBoundingBox extends IfcGeometricRepresentationItem {
 	Corner : IfcCartesianPoint
 	XDim : IfcPositiveLengthMeasure
 	YDim : IfcPositiveLengthMeasure
 	ZDim : IfcPositiveLengthMeasure
 
-    get Dim() : IfcDimensionCount{throw "Derived property logic has been implemented for Dim."} // derived
+    get Dim() : IfcDimensionCount{throw "Derived property logic has not been implemented for Dim."} // derived
+    set Dim(value : IfcDimensionCount){super.Dim = value}
 
     constructor(corner : IfcCartesianPoint, xDim : IfcPositiveLengthMeasure, yDim : IfcPositiveLengthMeasure, zDim : IfcPositiveLengthMeasure) {
         super()
@@ -27,10 +30,10 @@ export class IfcBoundingBox extends IfcGeometricRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Corner != null ? this.toStepValue(this.Corner) : "$");
-		parameters.push(this.XDim != null ? this.toStepValue(this.XDim) : "$");
-		parameters.push(this.YDim != null ? this.toStepValue(this.YDim) : "$");
-		parameters.push(this.ZDim != null ? this.toStepValue(this.ZDim) : "$");
+		parameters.push(this.Corner != null ? BaseIfc.toStepValue(this.Corner) : "$");
+		parameters.push(this.XDim != null ? BaseIfc.toStepValue(this.XDim) : "$");
+		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
+		parameters.push(this.ZDim != null ? BaseIfc.toStepValue(this.ZDim) : "$");
 
         return parameters.join();
     }

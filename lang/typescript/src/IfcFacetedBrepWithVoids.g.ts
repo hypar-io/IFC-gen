@@ -6,7 +6,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcClosedShell} from "./IfcClosedShell.g"
 import {IfcFacetedBrep} from "./IfcFacetedBrep.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacetedbrepwithvoids.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacetedbrepwithvoids.htm
+ */
 export class IfcFacetedBrepWithVoids extends IfcFacetedBrep {
 	Voids : Array<IfcClosedShell>
 
@@ -18,8 +20,8 @@ export class IfcFacetedBrepWithVoids extends IfcFacetedBrep {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Outer != null ? this.toStepValue(this.Outer) : "$");
-		parameters.push(this.Voids != null ? this.toStepValue(this.Voids) : "$");
+		parameters.push(this.Outer != null ? BaseIfc.toStepValue(this.Outer) : "$");
+		parameters.push(this.Voids != null ? BaseIfc.toStepValue(this.Voids) : "$");
 
         return parameters.join();
     }

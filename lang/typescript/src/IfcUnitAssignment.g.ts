@@ -1,12 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcUnit} from "./IfcUnit.g"
+import {IfcDerivedUnit} from "./IfcDerivedUnit.g"
+import {IfcMonetaryUnit} from "./IfcMonetaryUnit.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitassignment.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcunitassignment.htm
+ */
 export class IfcUnitAssignment extends BaseIfc {
-	Units : Array<IfcUnit>
+	Units : Array<IfcDerivedUnit|IfcMonetaryUnit|IfcNamedUnit>
 
-    constructor(units : Array<IfcUnit>) {
+    constructor(units : Array<IfcDerivedUnit|IfcMonetaryUnit|IfcNamedUnit>) {
         super()
 
 		this.Units = units
@@ -14,7 +18,7 @@ export class IfcUnitAssignment extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Units != null ? this.toStepValue(this.Units) : "$");
+		parameters.push(this.Units != null ? BaseIfc.toStepValue(this.Units) : "$");
 
         return parameters.join();
     }

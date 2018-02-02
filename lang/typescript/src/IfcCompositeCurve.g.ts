@@ -6,17 +6,20 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcCompositeCurveSegment} from "./IfcCompositeCurveSegment.g"
 import {IfcLogical} from "./IfcLogical.g"
 import {IfcInteger} from "./IfcInteger.g"
-import {IfcCompositeCurveOnSurface} from "./IfcCompositeCurveOnSurface.g"
 import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurve.htm
+ */
 export class IfcCompositeCurve extends IfcBoundedCurve {
 	Segments : Array<IfcCompositeCurveSegment>
 	SelfIntersect : IfcLogical
 
-    get NSegments() : IfcInteger{throw "Derived property logic has been implemented for NSegments."} // derived
+    get NSegments() : IfcInteger{throw "Derived property logic has not been implemented for NSegments."} // derived
+    set NSegments(value : IfcInteger){super.NSegments = value}
 
-    get ClosedCurve() : IfcLogical{throw "Derived property logic has been implemented for ClosedCurve."} // derived
+    get ClosedCurve() : IfcLogical{throw "Derived property logic has not been implemented for ClosedCurve."} // derived
+    set ClosedCurve(value : IfcLogical){super.ClosedCurve = value}
 
     constructor(segments : Array<IfcCompositeCurveSegment>, selfIntersect : IfcLogical) {
         super()
@@ -27,8 +30,8 @@ export class IfcCompositeCurve extends IfcBoundedCurve {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Segments != null ? this.toStepValue(this.Segments) : "$");
-		parameters.push(this.SelfIntersect != null ? this.toStepValue(this.SelfIntersect) : "$");
+		parameters.push(this.Segments != null ? BaseIfc.toStepValue(this.Segments) : "$");
+		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
 
         return parameters.join();
     }

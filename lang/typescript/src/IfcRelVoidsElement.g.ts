@@ -8,7 +8,9 @@ import {IfcElement} from "./IfcElement.g"
 import {IfcFeatureElementSubtraction} from "./IfcFeatureElementSubtraction.g"
 import {IfcRelDecomposes} from "./IfcRelDecomposes.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelvoidselement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelvoidselement.htm
+ */
 export class IfcRelVoidsElement extends IfcRelDecomposes {
 	RelatingBuildingElement : IfcElement
 	RelatedOpeningElement : IfcFeatureElementSubtraction
@@ -22,12 +24,12 @@ export class IfcRelVoidsElement extends IfcRelDecomposes {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingBuildingElement != null ? this.toStepValue(this.RelatingBuildingElement) : "$");
-		parameters.push(this.RelatedOpeningElement != null ? this.toStepValue(this.RelatedOpeningElement) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatingBuildingElement != null ? BaseIfc.toStepValue(this.RelatingBuildingElement) : "$");
+		parameters.push(this.RelatedOpeningElement != null ? BaseIfc.toStepValue(this.RelatedOpeningElement) : "$");
 
         return parameters.join();
     }

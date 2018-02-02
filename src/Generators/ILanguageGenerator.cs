@@ -5,7 +5,8 @@ namespace IFC4.Generators
 {
     /// <summary>
     /// ILanguageGenerator provides the interface for classes which
-    /// are used to generate source code from AttributeData or TypeData.
+    /// are used to generate source code from various data classes corresponding
+    /// to types used in the IFC schema.
     /// </summary>
     public interface ILanguageGenerator
     {
@@ -76,7 +77,21 @@ namespace IFC4.Generators
         /// <returns></returns>
         string ParseSimpleType(ExpressParser.SimpleTypeContext context);
 
+        /// <summary>
+        /// GenerateManifest is called after the generation of code files.
+        /// If the language which is being generated requires a manifest file of some sort,
+        /// it can be generated here. For example, an index.g.ts file is generated for Typescript
+        /// to facilitate a single import.
+        /// </summary>
+        /// <param name="directory"></param>
+        /// <param name="types"></param>
         void GenerateManifest(string directory, IEnumerable<string> types);
+
+        /// <summary>
+        /// A map of SelectType by name.
+        /// This must be set before operations which require checking dependencies and attribute types.
+        /// </summary>
+        Dictionary<string,SelectType> SelectData{get;set;}
     }
 
     public interface IFunctionsGenerator
@@ -88,5 +103,7 @@ namespace IFC4.Generators
         string FileName { get; }
 
         string Generate(IEnumerable<FunctionData> functionDatas);
+
+        Dictionary<string,SelectType> SelectData {get;set;}
     }
 }

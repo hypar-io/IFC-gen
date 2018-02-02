@@ -15,21 +15,15 @@ import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
 import {IfcObjectPlacement} from "./IfcObjectPlacement.g"
 import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcAnnotation} from "./IfcAnnotation.g"
-import {IfcElement} from "./IfcElement.g"
-import {IfcGrid} from "./IfcGrid.g"
-import {IfcPort} from "./IfcPort.g"
-import {IfcProxy} from "./IfcProxy.g"
-import {IfcSpatialElement} from "./IfcSpatialElement.g"
-import {IfcStructuralActivity} from "./IfcStructuralActivity.g"
-import {IfcStructuralItem} from "./IfcStructuralItem.g"
 import {IfcObject} from "./IfcObject.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproduct.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproduct.htm
+ */
 export abstract class IfcProduct extends IfcObject {
-	ObjectPlacement : IfcObjectPlacement// optional
-	Representation : IfcProductRepresentation// optional
-	ReferencedBy : Array<IfcRelAssignsToProduct>// inverse
+	ObjectPlacement : IfcObjectPlacement // optional
+	Representation : IfcProductRepresentation // optional
+	ReferencedBy : Array<IfcRelAssignsToProduct> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

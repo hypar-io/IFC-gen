@@ -7,11 +7,13 @@ import {IfcSectionProperties} from "./IfcSectionProperties.g"
 import {IfcReinforcementBarProperties} from "./IfcReinforcementBarProperties.g"
 import {IfcPreDefinedProperties} from "./IfcPreDefinedProperties.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionreinforcementproperties.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsectionreinforcementproperties.htm
+ */
 export class IfcSectionReinforcementProperties extends IfcPreDefinedProperties {
 	LongitudinalStartPosition : IfcLengthMeasure
 	LongitudinalEndPosition : IfcLengthMeasure
-	TransversePosition : IfcLengthMeasure// optional
+	TransversePosition : IfcLengthMeasure // optional
 	ReinforcementRole : IfcReinforcingBarRoleEnum
 	SectionDefinition : IfcSectionProperties
 	CrossSectionReinforcementDefinitions : Array<IfcReinforcementBarProperties>
@@ -28,12 +30,12 @@ export class IfcSectionReinforcementProperties extends IfcPreDefinedProperties {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.LongitudinalStartPosition != null ? this.toStepValue(this.LongitudinalStartPosition) : "$");
-		parameters.push(this.LongitudinalEndPosition != null ? this.toStepValue(this.LongitudinalEndPosition) : "$");
-		parameters.push(this.TransversePosition != null ? this.toStepValue(this.TransversePosition) : "$");
-		parameters.push(this.toStepValue(this.ReinforcementRole));
-		parameters.push(this.SectionDefinition != null ? this.toStepValue(this.SectionDefinition) : "$");
-		parameters.push(this.CrossSectionReinforcementDefinitions != null ? this.toStepValue(this.CrossSectionReinforcementDefinitions) : "$");
+		parameters.push(this.LongitudinalStartPosition != null ? BaseIfc.toStepValue(this.LongitudinalStartPosition) : "$");
+		parameters.push(this.LongitudinalEndPosition != null ? BaseIfc.toStepValue(this.LongitudinalEndPosition) : "$");
+		parameters.push(this.TransversePosition != null ? BaseIfc.toStepValue(this.TransversePosition) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ReinforcementRole));
+		parameters.push(this.SectionDefinition != null ? BaseIfc.toStepValue(this.SectionDefinition) : "$");
+		parameters.push(this.CrossSectionReinforcementDefinitions != null ? BaseIfc.toStepValue(this.CrossSectionReinforcementDefinitions) : "$");
 
         return parameters.join();
     }

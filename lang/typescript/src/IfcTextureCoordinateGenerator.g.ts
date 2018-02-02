@@ -5,10 +5,12 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcReal} from "./IfcReal.g"
 import {IfcTextureCoordinate} from "./IfcTextureCoordinate.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturecoordinategenerator.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturecoordinategenerator.htm
+ */
 export class IfcTextureCoordinateGenerator extends IfcTextureCoordinate {
 	Mode : IfcLabel
-	Parameter : Array<IfcReal>// optional
+	Parameter : Array<IfcReal> // optional
 
     constructor(maps : Array<IfcSurfaceTexture>, mode : IfcLabel) {
         super(maps)
@@ -19,9 +21,9 @@ export class IfcTextureCoordinateGenerator extends IfcTextureCoordinate {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Maps != null ? this.toStepValue(this.Maps) : "$");
-		parameters.push(this.Mode != null ? this.toStepValue(this.Mode) : "$");
-		parameters.push(this.Parameter != null ? this.toStepValue(this.Parameter) : "$");
+		parameters.push(this.Maps != null ? BaseIfc.toStepValue(this.Maps) : "$");
+		parameters.push(this.Mode != null ? BaseIfc.toStepValue(this.Mode) : "$");
+		parameters.push(this.Parameter != null ? BaseIfc.toStepValue(this.Parameter) : "$");
 
         return parameters.join();
     }

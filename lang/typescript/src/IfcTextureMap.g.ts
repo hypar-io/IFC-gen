@@ -5,7 +5,9 @@ import {IfcTextureVertex} from "./IfcTextureVertex.g"
 import {IfcFace} from "./IfcFace.g"
 import {IfcTextureCoordinate} from "./IfcTextureCoordinate.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturemap.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturemap.htm
+ */
 export class IfcTextureMap extends IfcTextureCoordinate {
 	Vertices : Array<IfcTextureVertex>
 	MappedTo : IfcFace
@@ -19,9 +21,9 @@ export class IfcTextureMap extends IfcTextureCoordinate {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Maps != null ? this.toStepValue(this.Maps) : "$");
-		parameters.push(this.Vertices != null ? this.toStepValue(this.Vertices) : "$");
-		parameters.push(this.MappedTo != null ? this.toStepValue(this.MappedTo) : "$");
+		parameters.push(this.Maps != null ? BaseIfc.toStepValue(this.Maps) : "$");
+		parameters.push(this.Vertices != null ? BaseIfc.toStepValue(this.Vertices) : "$");
+		parameters.push(this.MappedTo != null ? BaseIfc.toStepValue(this.MappedTo) : "$");
 
         return parameters.join();
     }

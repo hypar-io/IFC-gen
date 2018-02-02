@@ -17,14 +17,15 @@ import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcRelConnectsPortToElement} from "./IfcRelConnectsPortToElement.g"
 import {IfcRelConnectsPorts} from "./IfcRelConnectsPorts.g"
-import {IfcDistributionPort} from "./IfcDistributionPort.g"
 import {IfcProduct} from "./IfcProduct.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcport.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcport.htm
+ */
 export abstract class IfcPort extends IfcProduct {
-	ContainedIn : Array<IfcRelConnectsPortToElement>// inverse
-	ConnectedFrom : Array<IfcRelConnectsPorts>// inverse
-	ConnectedTo : Array<IfcRelConnectsPorts>// inverse
+	ContainedIn : Array<IfcRelConnectsPortToElement> // inverse
+	ConnectedFrom : Array<IfcRelConnectsPorts> // inverse
+	ConnectedTo : Array<IfcRelConnectsPorts> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

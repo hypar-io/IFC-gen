@@ -4,15 +4,18 @@ import {IfcShapeModel} from "./IfcShapeModel.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcLogical} from "./IfcLogical.g"
-import {IfcProductRepresentationSelect} from "./IfcProductRepresentationSelect.g"
+import {IfcProductDefinitionShape} from "./IfcProductDefinitionShape.g"
+import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshapeaspect.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcshapeaspect.htm
+ */
 export class IfcShapeAspect extends BaseIfc {
 	ShapeRepresentations : Array<IfcShapeModel>
-	Name : IfcLabel// optional
-	Description : IfcText// optional
+	Name : IfcLabel // optional
+	Description : IfcText // optional
 	ProductDefinitional : IfcLogical
-	PartOfProductDefinitionShape : IfcProductRepresentationSelect// optional
+	PartOfProductDefinitionShape : IfcProductDefinitionShape|IfcRepresentationMap // optional
 
     constructor(shapeRepresentations : Array<IfcShapeModel>, productDefinitional : IfcLogical) {
         super()
@@ -23,11 +26,11 @@ export class IfcShapeAspect extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.ShapeRepresentations != null ? this.toStepValue(this.ShapeRepresentations) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ProductDefinitional != null ? this.toStepValue(this.ProductDefinitional) : "$");
-		parameters.push(this.PartOfProductDefinitionShape != null ? this.toStepValue(this.PartOfProductDefinitionShape) : "$");
+		parameters.push(this.ShapeRepresentations != null ? BaseIfc.toStepValue(this.ShapeRepresentations) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ProductDefinitional != null ? BaseIfc.toStepValue(this.ProductDefinitional) : "$");
+		parameters.push(this.PartOfProductDefinitionShape != null ? BaseIfc.toStepValue(this.PartOfProductDefinitionShape) : "$");
 
         return parameters.join();
     }

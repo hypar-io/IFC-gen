@@ -8,7 +8,9 @@ import {IfcAxis2Placement2D} from "./IfcAxis2Placement2D.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcCircleProfileDef} from "./IfcCircleProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccirclehollowprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccirclehollowprofiledef.htm
+ */
 export class IfcCircleHollowProfileDef extends IfcCircleProfileDef {
 	WallThickness : IfcPositiveLengthMeasure
 
@@ -20,11 +22,11 @@ export class IfcCircleHollowProfileDef extends IfcCircleProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Radius != null ? this.toStepValue(this.Radius) : "$");
-		parameters.push(this.WallThickness != null ? this.toStepValue(this.WallThickness) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
+		parameters.push(this.WallThickness != null ? BaseIfc.toStepValue(this.WallThickness) : "$");
 
         return parameters.join();
     }

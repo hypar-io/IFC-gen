@@ -12,10 +12,12 @@ import {IfcDirection} from "./IfcDirection.g"
 import {IfcPositivePlaneAngleMeasure} from "./IfcPositivePlaneAngleMeasure.g"
 import {IfcLightSourcePositional} from "./IfcLightSourcePositional.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcespot.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcespot.htm
+ */
 export class IfcLightSourceSpot extends IfcLightSourcePositional {
 	Orientation : IfcDirection
-	ConcentrationExponent : IfcReal// optional
+	ConcentrationExponent : IfcReal // optional
 	SpreadAngle : IfcPositivePlaneAngleMeasure
 	BeamWidthAngle : IfcPositivePlaneAngleMeasure
 
@@ -29,19 +31,19 @@ export class IfcLightSourceSpot extends IfcLightSourcePositional {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.LightColour != null ? this.toStepValue(this.LightColour) : "$");
-		parameters.push(this.AmbientIntensity != null ? this.toStepValue(this.AmbientIntensity) : "$");
-		parameters.push(this.Intensity != null ? this.toStepValue(this.Intensity) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Radius != null ? this.toStepValue(this.Radius) : "$");
-		parameters.push(this.ConstantAttenuation != null ? this.toStepValue(this.ConstantAttenuation) : "$");
-		parameters.push(this.DistanceAttenuation != null ? this.toStepValue(this.DistanceAttenuation) : "$");
-		parameters.push(this.QuadricAttenuation != null ? this.toStepValue(this.QuadricAttenuation) : "$");
-		parameters.push(this.Orientation != null ? this.toStepValue(this.Orientation) : "$");
-		parameters.push(this.ConcentrationExponent != null ? this.toStepValue(this.ConcentrationExponent) : "$");
-		parameters.push(this.SpreadAngle != null ? this.toStepValue(this.SpreadAngle) : "$");
-		parameters.push(this.BeamWidthAngle != null ? this.toStepValue(this.BeamWidthAngle) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.LightColour != null ? BaseIfc.toStepValue(this.LightColour) : "$");
+		parameters.push(this.AmbientIntensity != null ? BaseIfc.toStepValue(this.AmbientIntensity) : "$");
+		parameters.push(this.Intensity != null ? BaseIfc.toStepValue(this.Intensity) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
+		parameters.push(this.ConstantAttenuation != null ? BaseIfc.toStepValue(this.ConstantAttenuation) : "$");
+		parameters.push(this.DistanceAttenuation != null ? BaseIfc.toStepValue(this.DistanceAttenuation) : "$");
+		parameters.push(this.QuadricAttenuation != null ? BaseIfc.toStepValue(this.QuadricAttenuation) : "$");
+		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
+		parameters.push(this.ConcentrationExponent != null ? BaseIfc.toStepValue(this.ConcentrationExponent) : "$");
+		parameters.push(this.SpreadAngle != null ? BaseIfc.toStepValue(this.SpreadAngle) : "$");
+		parameters.push(this.BeamWidthAngle != null ? BaseIfc.toStepValue(this.BeamWidthAngle) : "$");
 
         return parameters.join();
     }

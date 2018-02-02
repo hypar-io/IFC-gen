@@ -3,13 +3,15 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcProduct} from "./IfcProduct.g"
 import {IfcLocalPlacement} from "./IfcLocalPlacement.g"
 import {IfcVirtualGridIntersection} from "./IfcVirtualGridIntersection.g"
-import {IfcGridPlacementDirectionSelect} from "./IfcGridPlacementDirectionSelect.g"
+import {IfcDirection} from "./IfcDirection.g"
 import {IfcObjectPlacement} from "./IfcObjectPlacement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridplacement.htm
+ */
 export class IfcGridPlacement extends IfcObjectPlacement {
 	PlacementLocation : IfcVirtualGridIntersection
-	PlacementRefDirection : IfcGridPlacementDirectionSelect// optional
+	PlacementRefDirection : IfcDirection|IfcVirtualGridIntersection // optional
 
     constructor(placementLocation : IfcVirtualGridIntersection) {
         super()
@@ -19,8 +21,8 @@ export class IfcGridPlacement extends IfcObjectPlacement {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.PlacementLocation != null ? this.toStepValue(this.PlacementLocation) : "$");
-		parameters.push(this.PlacementRefDirection != null ? this.toStepValue(this.PlacementRefDirection) : "$");
+		parameters.push(this.PlacementLocation != null ? BaseIfc.toStepValue(this.PlacementLocation) : "$");
+		parameters.push(this.PlacementRefDirection != null ? BaseIfc.toStepValue(this.PlacementRefDirection) : "$");
 
         return parameters.join();
     }

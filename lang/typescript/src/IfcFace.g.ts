@@ -4,13 +4,14 @@ import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g
 import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcFaceBound} from "./IfcFaceBound.g"
 import {IfcTextureMap} from "./IfcTextureMap.g"
-import {IfcFaceSurface} from "./IfcFaceSurface.g"
 import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcface.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcface.htm
+ */
 export class IfcFace extends IfcTopologicalRepresentationItem {
 	Bounds : Array<IfcFaceBound>
-	HasTextureMaps : Array<IfcTextureMap>// inverse
+	HasTextureMaps : Array<IfcTextureMap> // inverse
 
     constructor(bounds : Array<IfcFaceBound>) {
         super()
@@ -21,7 +22,7 @@ export class IfcFace extends IfcTopologicalRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Bounds != null ? this.toStepValue(this.Bounds) : "$");
+		parameters.push(this.Bounds != null ? BaseIfc.toStepValue(this.Bounds) : "$");
 
         return parameters.join();
     }

@@ -18,15 +18,14 @@ import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcRelConnectsStructuralActivity} from "./IfcRelConnectsStructuralActivity.g"
 import {IfcBoundaryCondition} from "./IfcBoundaryCondition.g"
 import {IfcRelConnectsStructuralMember} from "./IfcRelConnectsStructuralMember.g"
-import {IfcStructuralCurveConnection} from "./IfcStructuralCurveConnection.g"
-import {IfcStructuralPointConnection} from "./IfcStructuralPointConnection.g"
-import {IfcStructuralSurfaceConnection} from "./IfcStructuralSurfaceConnection.g"
 import {IfcStructuralItem} from "./IfcStructuralItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralconnection.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralconnection.htm
+ */
 export abstract class IfcStructuralConnection extends IfcStructuralItem {
-	AppliedCondition : IfcBoundaryCondition// optional
-	ConnectsStructuralMembers : Array<IfcRelConnectsStructuralMember>// inverse
+	AppliedCondition : IfcBoundaryCondition // optional
+	ConnectsStructuralMembers : Array<IfcRelConnectsStructuralMember> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

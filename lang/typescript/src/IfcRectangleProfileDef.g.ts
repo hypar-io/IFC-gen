@@ -6,11 +6,11 @@ import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationsh
 import {IfcProfileProperties} from "./IfcProfileProperties.g"
 import {IfcAxis2Placement2D} from "./IfcAxis2Placement2D.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
-import {IfcRectangleHollowProfileDef} from "./IfcRectangleHollowProfileDef.g"
-import {IfcRoundedRectangleProfileDef} from "./IfcRoundedRectangleProfileDef.g"
 import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangleprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangleprofiledef.htm
+ */
 export class IfcRectangleProfileDef extends IfcParameterizedProfileDef {
 	XDim : IfcPositiveLengthMeasure
 	YDim : IfcPositiveLengthMeasure
@@ -24,11 +24,11 @@ export class IfcRectangleProfileDef extends IfcParameterizedProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.XDim != null ? this.toStepValue(this.XDim) : "$");
-		parameters.push(this.YDim != null ? this.toStepValue(this.YDim) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.XDim != null ? BaseIfc.toStepValue(this.XDim) : "$");
+		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
 
         return parameters.join();
     }

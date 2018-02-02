@@ -6,10 +6,11 @@ import {IfcFaceBound} from "./IfcFaceBound.g"
 import {IfcTextureMap} from "./IfcTextureMap.g"
 import {IfcSurface} from "./IfcSurface.g"
 import {IfcBoolean} from "./IfcBoolean.g"
-import {IfcAdvancedFace} from "./IfcAdvancedFace.g"
 import {IfcFace} from "./IfcFace.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacesurface.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacesurface.htm
+ */
 export class IfcFaceSurface extends IfcFace {
 	FaceSurface : IfcSurface
 	SameSense : IfcBoolean
@@ -23,9 +24,9 @@ export class IfcFaceSurface extends IfcFace {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Bounds != null ? this.toStepValue(this.Bounds) : "$");
-		parameters.push(this.FaceSurface != null ? this.toStepValue(this.FaceSurface) : "$");
-		parameters.push(this.SameSense != null ? this.toStepValue(this.SameSense) : "$");
+		parameters.push(this.Bounds != null ? BaseIfc.toStepValue(this.Bounds) : "$");
+		parameters.push(this.FaceSurface != null ? BaseIfc.toStepValue(this.FaceSurface) : "$");
+		parameters.push(this.SameSense != null ? BaseIfc.toStepValue(this.SameSense) : "$");
 
         return parameters.join();
     }

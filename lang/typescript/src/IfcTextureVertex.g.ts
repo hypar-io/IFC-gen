@@ -3,7 +3,9 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcParameterValue} from "./IfcParameterValue.g"
 import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturevertex.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctexturevertex.htm
+ */
 export class IfcTextureVertex extends IfcPresentationItem {
 	Coordinates : Array<IfcParameterValue>
 
@@ -15,7 +17,7 @@ export class IfcTextureVertex extends IfcPresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Coordinates != null ? this.toStepValue(this.Coordinates) : "$");
+		parameters.push(this.Coordinates != null ? BaseIfc.toStepValue(this.Coordinates) : "$");
 
         return parameters.join();
     }

@@ -14,14 +14,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcCableCarrierFittingType} from "./IfcCableCarrierFittingType.g"
-import {IfcCableFittingType} from "./IfcCableFittingType.g"
-import {IfcDuctFittingType} from "./IfcDuctFittingType.g"
-import {IfcJunctionBoxType} from "./IfcJunctionBoxType.g"
-import {IfcPipeFittingType} from "./IfcPipeFittingType.g"
 import {IfcDistributionFlowElementType} from "./IfcDistributionFlowElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowfittingtype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowfittingtype.htm
+ */
 export abstract class IfcFlowFittingType extends IfcDistributionFlowElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {

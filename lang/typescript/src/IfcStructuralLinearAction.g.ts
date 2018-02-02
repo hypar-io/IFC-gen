@@ -23,7 +23,9 @@ import {IfcProjectedOrTrueLengthEnum} from "./IfcProjectedOrTrueLengthEnum.g"
 import {IfcStructuralCurveActivityTypeEnum} from "./IfcStructuralCurveActivityTypeEnum.g"
 import {IfcStructuralCurveAction} from "./IfcStructuralCurveAction.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructurallinearaction.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructurallinearaction.htm
+ */
 export class IfcStructuralLinearAction extends IfcStructuralCurveAction {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum, predefinedType : IfcStructuralCurveActivityTypeEnum) {
@@ -32,18 +34,18 @@ export class IfcStructuralLinearAction extends IfcStructuralCurveAction {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.AppliedLoad != null ? this.toStepValue(this.AppliedLoad) : "$");
-		parameters.push(this.toStepValue(this.GlobalOrLocal));
-		parameters.push(this.DestabilizingLoad != null ? this.toStepValue(this.DestabilizingLoad) : "$");
-		parameters.push(this.toStepValue(this.ProjectedOrTrue));
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.AppliedLoad != null ? BaseIfc.toStepValue(this.AppliedLoad) : "$");
+		parameters.push(BaseIfc.toStepValue(this.GlobalOrLocal));
+		parameters.push(this.DestabilizingLoad != null ? BaseIfc.toStepValue(this.DestabilizingLoad) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProjectedOrTrue));
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

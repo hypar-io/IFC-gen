@@ -9,13 +9,15 @@ import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcNonNegativeLengthMeasure} from "./IfcNonNegativeLengthMeasure.g"
 import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccshapeprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccshapeprofiledef.htm
+ */
 export class IfcCShapeProfileDef extends IfcParameterizedProfileDef {
 	Depth : IfcPositiveLengthMeasure
 	Width : IfcPositiveLengthMeasure
 	WallThickness : IfcPositiveLengthMeasure
 	Girth : IfcPositiveLengthMeasure
-	InternalFilletRadius : IfcNonNegativeLengthMeasure// optional
+	InternalFilletRadius : IfcNonNegativeLengthMeasure // optional
 
     constructor(profileType : IfcProfileTypeEnum, depth : IfcPositiveLengthMeasure, width : IfcPositiveLengthMeasure, wallThickness : IfcPositiveLengthMeasure, girth : IfcPositiveLengthMeasure) {
         super(profileType)
@@ -28,14 +30,14 @@ export class IfcCShapeProfileDef extends IfcParameterizedProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Depth != null ? this.toStepValue(this.Depth) : "$");
-		parameters.push(this.Width != null ? this.toStepValue(this.Width) : "$");
-		parameters.push(this.WallThickness != null ? this.toStepValue(this.WallThickness) : "$");
-		parameters.push(this.Girth != null ? this.toStepValue(this.Girth) : "$");
-		parameters.push(this.InternalFilletRadius != null ? this.toStepValue(this.InternalFilletRadius) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
+		parameters.push(this.Width != null ? BaseIfc.toStepValue(this.Width) : "$");
+		parameters.push(this.WallThickness != null ? BaseIfc.toStepValue(this.WallThickness) : "$");
+		parameters.push(this.Girth != null ? BaseIfc.toStepValue(this.Girth) : "$");
+		parameters.push(this.InternalFilletRadius != null ? BaseIfc.toStepValue(this.InternalFilletRadius) : "$");
 
         return parameters.join();
     }

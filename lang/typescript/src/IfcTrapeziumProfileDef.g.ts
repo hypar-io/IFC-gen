@@ -9,7 +9,9 @@ import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcParameterizedProfileDef} from "./IfcParameterizedProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrapeziumprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctrapeziumprofiledef.htm
+ */
 export class IfcTrapeziumProfileDef extends IfcParameterizedProfileDef {
 	BottomXDim : IfcPositiveLengthMeasure
 	TopXDim : IfcPositiveLengthMeasure
@@ -27,13 +29,13 @@ export class IfcTrapeziumProfileDef extends IfcParameterizedProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.BottomXDim != null ? this.toStepValue(this.BottomXDim) : "$");
-		parameters.push(this.TopXDim != null ? this.toStepValue(this.TopXDim) : "$");
-		parameters.push(this.YDim != null ? this.toStepValue(this.YDim) : "$");
-		parameters.push(this.TopXOffset != null ? this.toStepValue(this.TopXOffset) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.BottomXDim != null ? BaseIfc.toStepValue(this.BottomXDim) : "$");
+		parameters.push(this.TopXDim != null ? BaseIfc.toStepValue(this.TopXDim) : "$");
+		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
+		parameters.push(this.TopXOffset != null ? BaseIfc.toStepValue(this.TopXOffset) : "$");
 
         return parameters.join();
     }

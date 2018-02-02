@@ -7,10 +7,11 @@ import {IfcInteger} from "./IfcInteger.g"
 import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
 import {IfcBSplineSurfaceForm} from "./IfcBSplineSurfaceForm.g"
 import {IfcLogical} from "./IfcLogical.g"
-import {IfcBSplineSurfaceWithKnots} from "./IfcBSplineSurfaceWithKnots.g"
 import {IfcBoundedSurface} from "./IfcBoundedSurface.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurface.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinesurface.htm
+ */
 export abstract class IfcBSplineSurface extends IfcBoundedSurface {
 	UDegree : IfcInteger
 	VDegree : IfcInteger
@@ -20,11 +21,14 @@ export abstract class IfcBSplineSurface extends IfcBoundedSurface {
 	VClosed : IfcLogical
 	SelfIntersect : IfcLogical
 
-    get UUpper() : IfcInteger{throw "Derived property logic has been implemented for UUpper."} // derived
+    get UUpper() : IfcInteger{throw "Derived property logic has not been implemented for UUpper."} // derived
+    set UUpper(value : IfcInteger){super.UUpper = value}
 
-    get VUpper() : IfcInteger{throw "Derived property logic has been implemented for VUpper."} // derived
+    get VUpper() : IfcInteger{throw "Derived property logic has not been implemented for VUpper."} // derived
+    set VUpper(value : IfcInteger){super.VUpper = value}
 
-    get ControlPoints() : Array<Array<IfcCartesianPoint>>{throw "Derived property logic has been implemented for ControlPoints."} // derived
+    get ControlPoints() : Array<Array<IfcCartesianPoint>>{throw "Derived property logic has not been implemented for ControlPoints."} // derived
+    set ControlPoints(value : Array<Array<IfcCartesianPoint>>){super.ControlPoints = value}
 
     constructor(uDegree : IfcInteger, vDegree : IfcInteger, controlPointsList : Array<Array<IfcCartesianPoint>>, surfaceForm : IfcBSplineSurfaceForm, uClosed : IfcLogical, vClosed : IfcLogical, selfIntersect : IfcLogical) {
         super()

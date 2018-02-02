@@ -21,9 +21,11 @@ import {IfcStructuralResultGroup} from "./IfcStructuralResultGroup.g"
 import {IfcStructuralAnalysisModel} from "./IfcStructuralAnalysisModel.g"
 import {IfcStructuralLoadGroup} from "./IfcStructuralLoadGroup.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadcase.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralloadcase.htm
+ */
 export class IfcStructuralLoadCase extends IfcStructuralLoadGroup {
-	SelfWeightCoefficients : Array<IfcRatioMeasure>// optional
+	SelfWeightCoefficients : Array<IfcRatioMeasure> // optional
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcLoadGroupTypeEnum, actionType : IfcActionTypeEnum, actionSource : IfcActionSourceTypeEnum) {
         super(globalId,predefinedType,actionType,actionSource)
@@ -32,17 +34,17 @@ export class IfcStructuralLoadCase extends IfcStructuralLoadGroup {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
-		parameters.push(this.toStepValue(this.ActionType));
-		parameters.push(this.toStepValue(this.ActionSource));
-		parameters.push(this.Coefficient != null ? this.toStepValue(this.Coefficient) : "$");
-		parameters.push(this.Purpose != null ? this.toStepValue(this.Purpose) : "$");
-		parameters.push(this.SelfWeightCoefficients != null ? this.toStepValue(this.SelfWeightCoefficients) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+		parameters.push(BaseIfc.toStepValue(this.ActionType));
+		parameters.push(BaseIfc.toStepValue(this.ActionSource));
+		parameters.push(this.Coefficient != null ? BaseIfc.toStepValue(this.Coefficient) : "$");
+		parameters.push(this.Purpose != null ? BaseIfc.toStepValue(this.Purpose) : "$");
+		parameters.push(this.SelfWeightCoefficients != null ? BaseIfc.toStepValue(this.SelfWeightCoefficients) : "$");
 
         return parameters.join();
     }

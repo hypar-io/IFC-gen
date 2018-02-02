@@ -8,19 +8,20 @@ import {IfcPropertyDependencyRelationship} from "./IfcPropertyDependencyRelation
 import {IfcComplexProperty} from "./IfcComplexProperty.g"
 import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
 import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship.g"
-import {IfcSimpleProperty} from "./IfcSimpleProperty.g"
 import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproperty.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcproperty.htm
+ */
 export abstract class IfcProperty extends IfcPropertyAbstraction {
 	Name : IfcIdentifier
-	Description : IfcText// optional
-	PartOfPset : Array<IfcPropertySet>// inverse
-	PropertyForDependance : Array<IfcPropertyDependencyRelationship>// inverse
-	PropertyDependsOn : Array<IfcPropertyDependencyRelationship>// inverse
-	PartOfComplex : Array<IfcComplexProperty>// inverse
-	HasConstraints : Array<IfcResourceConstraintRelationship>// inverse
-	HasApprovals : Array<IfcResourceApprovalRelationship>// inverse
+	Description : IfcText // optional
+	PartOfPset : Array<IfcPropertySet> // inverse
+	PropertyForDependance : Array<IfcPropertyDependencyRelationship> // inverse
+	PropertyDependsOn : Array<IfcPropertyDependencyRelationship> // inverse
+	PartOfComplex : Array<IfcComplexProperty> // inverse
+	HasConstraints : Array<IfcResourceConstraintRelationship> // inverse
+	HasApprovals : Array<IfcResourceApprovalRelationship> // inverse
 
     constructor(name : IfcIdentifier) {
         super()

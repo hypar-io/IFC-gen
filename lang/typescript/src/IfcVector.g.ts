@@ -7,12 +7,15 @@ import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvector.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvector.htm
+ */
 export class IfcVector extends IfcGeometricRepresentationItem {
 	Orientation : IfcDirection
 	Magnitude : IfcLengthMeasure
 
-    get Dim() : IfcDimensionCount{throw "Derived property logic has been implemented for Dim."} // derived
+    get Dim() : IfcDimensionCount{throw "Derived property logic has not been implemented for Dim."} // derived
+    set Dim(value : IfcDimensionCount){super.Dim = value}
 
     constructor(orientation : IfcDirection, magnitude : IfcLengthMeasure) {
         super()
@@ -23,8 +26,8 @@ export class IfcVector extends IfcGeometricRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Orientation != null ? this.toStepValue(this.Orientation) : "$");
-		parameters.push(this.Magnitude != null ? this.toStepValue(this.Magnitude) : "$");
+		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
+		parameters.push(this.Magnitude != null ? BaseIfc.toStepValue(this.Magnitude) : "$");
 
         return parameters.join();
     }

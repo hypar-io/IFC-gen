@@ -2,7 +2,9 @@
 import {BaseIfc} from "./BaseIfc"
 import {IfcMaterial} from "./IfcMaterial.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallist.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallist.htm
+ */
 export class IfcMaterialList extends BaseIfc {
 	Materials : Array<IfcMaterial>
 
@@ -14,7 +16,7 @@ export class IfcMaterialList extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Materials != null ? this.toStepValue(this.Materials) : "$");
+		parameters.push(this.Materials != null ? BaseIfc.toStepValue(this.Materials) : "$");
 
         return parameters.join();
     }

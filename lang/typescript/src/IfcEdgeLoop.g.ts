@@ -6,11 +6,14 @@ import {IfcOrientedEdge} from "./IfcOrientedEdge.g"
 import {IfcInteger} from "./IfcInteger.g"
 import {IfcLoop} from "./IfcLoop.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgeloop.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgeloop.htm
+ */
 export class IfcEdgeLoop extends IfcLoop {
 	EdgeList : Array<IfcOrientedEdge>
 
-    get Ne() : IfcInteger{throw "Derived property logic has been implemented for Ne."} // derived
+    get Ne() : IfcInteger{throw "Derived property logic has not been implemented for Ne."} // derived
+    set Ne(value : IfcInteger){super.Ne = value}
 
     constructor(edgeList : Array<IfcOrientedEdge>) {
         super()
@@ -20,7 +23,7 @@ export class IfcEdgeLoop extends IfcLoop {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.EdgeList != null ? this.toStepValue(this.EdgeList) : "$");
+		parameters.push(this.EdgeList != null ? BaseIfc.toStepValue(this.EdgeList) : "$");
 
         return parameters.join();
     }

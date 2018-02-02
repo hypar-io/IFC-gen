@@ -4,10 +4,11 @@ import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g
 import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcLoop} from "./IfcLoop.g"
 import {IfcBoolean} from "./IfcBoolean.g"
-import {IfcFaceOuterBound} from "./IfcFaceOuterBound.g"
 import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebound.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebound.htm
+ */
 export class IfcFaceBound extends IfcTopologicalRepresentationItem {
 	Bound : IfcLoop
 	Orientation : IfcBoolean
@@ -21,8 +22,8 @@ export class IfcFaceBound extends IfcTopologicalRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Bound != null ? this.toStepValue(this.Bound) : "$");
-		parameters.push(this.Orientation != null ? this.toStepValue(this.Orientation) : "$");
+		parameters.push(this.Bound != null ? BaseIfc.toStepValue(this.Bound) : "$");
+		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
 
         return parameters.join();
     }

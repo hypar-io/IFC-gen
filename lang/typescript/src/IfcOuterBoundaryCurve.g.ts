@@ -9,7 +9,9 @@ import {IfcInteger} from "./IfcInteger.g"
 import {IfcSurface} from "./IfcSurface.g"
 import {IfcBoundaryCurve} from "./IfcBoundaryCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcouterboundarycurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcouterboundarycurve.htm
+ */
 export class IfcOuterBoundaryCurve extends IfcBoundaryCurve {
 
     constructor(segments : Array<IfcCompositeCurveSegment>, selfIntersect : IfcLogical) {
@@ -18,8 +20,8 @@ export class IfcOuterBoundaryCurve extends IfcBoundaryCurve {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Segments != null ? this.toStepValue(this.Segments) : "$");
-		parameters.push(this.SelfIntersect != null ? this.toStepValue(this.SelfIntersect) : "$");
+		parameters.push(this.Segments != null ? BaseIfc.toStepValue(this.Segments) : "$");
+		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
 
         return parameters.join();
     }

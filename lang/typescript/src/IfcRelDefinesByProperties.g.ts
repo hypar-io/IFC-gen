@@ -5,15 +5,18 @@ import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
-import {IfcPropertySetDefinitionSelect} from "./IfcPropertySetDefinitionSelect.g"
+import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
+import {IfcPropertySetDefinitionSet} from "./IfcPropertySetDefinitionSet.g"
 import {IfcRelDefines} from "./IfcRelDefines.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbyproperties.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldefinesbyproperties.htm
+ */
 export class IfcRelDefinesByProperties extends IfcRelDefines {
 	RelatedObjects : Array<IfcObjectDefinition>
-	RelatingPropertyDefinition : IfcPropertySetDefinitionSelect
+	RelatingPropertyDefinition : IfcPropertySetDefinition|IfcPropertySetDefinitionSet
 
-    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingPropertyDefinition : IfcPropertySetDefinitionSelect) {
+    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingPropertyDefinition : IfcPropertySetDefinition|IfcPropertySetDefinitionSet) {
         super(globalId)
 
 		this.RelatedObjects = relatedObjects
@@ -22,12 +25,12 @@ export class IfcRelDefinesByProperties extends IfcRelDefines {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? this.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.RelatingPropertyDefinition != null ? this.toStepValue(this.RelatingPropertyDefinition) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
+		parameters.push(this.RelatingPropertyDefinition != null ? BaseIfc.toStepValue(this.RelatingPropertyDefinition) : "$");
 
         return parameters.join();
     }

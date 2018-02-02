@@ -10,7 +10,9 @@ import {IfcInteger} from "./IfcInteger.g"
 import {IfcConnectionTypeEnum} from "./IfcConnectionTypeEnum.g"
 import {IfcRelConnectsElements} from "./IfcRelConnectsElements.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectspathelements.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectspathelements.htm
+ */
 export class IfcRelConnectsPathElements extends IfcRelConnectsElements {
 	RelatingPriorities : Array<IfcInteger>
 	RelatedPriorities : Array<IfcInteger>
@@ -28,17 +30,17 @@ export class IfcRelConnectsPathElements extends IfcRelConnectsElements {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ConnectionGeometry != null ? this.toStepValue(this.ConnectionGeometry) : "$");
-		parameters.push(this.RelatingElement != null ? this.toStepValue(this.RelatingElement) : "$");
-		parameters.push(this.RelatedElement != null ? this.toStepValue(this.RelatedElement) : "$");
-		parameters.push(this.RelatingPriorities != null ? this.toStepValue(this.RelatingPriorities) : "$");
-		parameters.push(this.RelatedPriorities != null ? this.toStepValue(this.RelatedPriorities) : "$");
-		parameters.push(this.toStepValue(this.RelatedConnectionType));
-		parameters.push(this.toStepValue(this.RelatingConnectionType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ConnectionGeometry != null ? BaseIfc.toStepValue(this.ConnectionGeometry) : "$");
+		parameters.push(this.RelatingElement != null ? BaseIfc.toStepValue(this.RelatingElement) : "$");
+		parameters.push(this.RelatedElement != null ? BaseIfc.toStepValue(this.RelatedElement) : "$");
+		parameters.push(this.RelatingPriorities != null ? BaseIfc.toStepValue(this.RelatingPriorities) : "$");
+		parameters.push(this.RelatedPriorities != null ? BaseIfc.toStepValue(this.RelatedPriorities) : "$");
+		parameters.push(BaseIfc.toStepValue(this.RelatedConnectionType));
+		parameters.push(BaseIfc.toStepValue(this.RelatingConnectionType));
 
         return parameters.join();
     }

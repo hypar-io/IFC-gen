@@ -2,16 +2,32 @@
 import {BaseIfc} from "./BaseIfc"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
-import {IfcResourceObjectSelect} from "./IfcResourceObjectSelect.g"
+import {IfcActorRole} from "./IfcActorRole.g"
+import {IfcAppliedValue} from "./IfcAppliedValue.g"
 import {IfcApproval} from "./IfcApproval.g"
+import {IfcConstraint} from "./IfcConstraint.g"
+import {IfcContextDependentUnit} from "./IfcContextDependentUnit.g"
+import {IfcConversionBasedUnit} from "./IfcConversionBasedUnit.g"
+import {IfcExternalInformation} from "./IfcExternalInformation.g"
+import {IfcExternalReference} from "./IfcExternalReference.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
+import {IfcOrganization} from "./IfcOrganization.g"
+import {IfcPerson} from "./IfcPerson.g"
+import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization.g"
+import {IfcPhysicalQuantity} from "./IfcPhysicalQuantity.g"
+import {IfcProfileDef} from "./IfcProfileDef.g"
+import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction.g"
+import {IfcTimeSeries} from "./IfcTimeSeries.g"
 import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceapprovalrelationship.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcresourceapprovalrelationship.htm
+ */
 export class IfcResourceApprovalRelationship extends IfcResourceLevelRelationship {
-	RelatedResourceObjects : Array<IfcResourceObjectSelect>
+	RelatedResourceObjects : Array<IfcActorRole|IfcAppliedValue|IfcApproval|IfcConstraint|IfcContextDependentUnit|IfcConversionBasedUnit|IfcExternalInformation|IfcExternalReference|IfcMaterialDefinition|IfcOrganization|IfcPerson|IfcPersonAndOrganization|IfcPhysicalQuantity|IfcProfileDef|IfcPropertyAbstraction|IfcTimeSeries>
 	RelatingApproval : IfcApproval
 
-    constructor(relatedResourceObjects : Array<IfcResourceObjectSelect>, relatingApproval : IfcApproval) {
+    constructor(relatedResourceObjects : Array<IfcActorRole|IfcAppliedValue|IfcApproval|IfcConstraint|IfcContextDependentUnit|IfcConversionBasedUnit|IfcExternalInformation|IfcExternalReference|IfcMaterialDefinition|IfcOrganization|IfcPerson|IfcPersonAndOrganization|IfcPhysicalQuantity|IfcProfileDef|IfcPropertyAbstraction|IfcTimeSeries>, relatingApproval : IfcApproval) {
         super()
 
 		this.RelatedResourceObjects = relatedResourceObjects
@@ -20,10 +36,10 @@ export class IfcResourceApprovalRelationship extends IfcResourceLevelRelationshi
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedResourceObjects != null ? this.toStepValue(this.RelatedResourceObjects) : "$");
-		parameters.push(this.RelatingApproval != null ? this.toStepValue(this.RelatingApproval) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatedResourceObjects != null ? BaseIfc.toStepValue(this.RelatedResourceObjects) : "$");
+		parameters.push(this.RelatingApproval != null ? BaseIfc.toStepValue(this.RelatingApproval) : "$");
 
         return parameters.join();
     }

@@ -9,12 +9,14 @@ import {IfcMaterialProfile} from "./IfcMaterialProfile.g"
 import {IfcCompositeProfileDef} from "./IfcCompositeProfileDef.g"
 import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofileset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofileset.htm
+ */
 export class IfcMaterialProfileSet extends IfcMaterialDefinition {
-	Name : IfcLabel// optional
-	Description : IfcText// optional
+	Name : IfcLabel // optional
+	Description : IfcText // optional
 	MaterialProfiles : Array<IfcMaterialProfile>
-	CompositeProfile : IfcCompositeProfileDef// optional
+	CompositeProfile : IfcCompositeProfileDef // optional
 
     constructor(materialProfiles : Array<IfcMaterialProfile>) {
         super()
@@ -24,10 +26,10 @@ export class IfcMaterialProfileSet extends IfcMaterialDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.MaterialProfiles != null ? this.toStepValue(this.MaterialProfiles) : "$");
-		parameters.push(this.CompositeProfile != null ? this.toStepValue(this.CompositeProfile) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.MaterialProfiles != null ? BaseIfc.toStepValue(this.MaterialProfiles) : "$");
+		parameters.push(this.CompositeProfile != null ? BaseIfc.toStepValue(this.CompositeProfile) : "$");
 
         return parameters.join();
     }

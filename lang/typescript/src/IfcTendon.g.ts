@@ -34,16 +34,18 @@ import {IfcPressureMeasure} from "./IfcPressureMeasure.g"
 import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
 import {IfcReinforcingElement} from "./IfcReinforcingElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendon.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendon.htm
+ */
 export class IfcTendon extends IfcReinforcingElement {
-	PredefinedType : IfcTendonTypeEnum// optional
-	NominalDiameter : IfcPositiveLengthMeasure// optional
-	CrossSectionArea : IfcAreaMeasure// optional
-	TensionForce : IfcForceMeasure// optional
-	PreStress : IfcPressureMeasure// optional
-	FrictionCoefficient : IfcNormalisedRatioMeasure// optional
-	AnchorageSlip : IfcPositiveLengthMeasure// optional
-	MinCurvatureRadius : IfcPositiveLengthMeasure// optional
+	PredefinedType : IfcTendonTypeEnum // optional
+	NominalDiameter : IfcPositiveLengthMeasure // optional
+	CrossSectionArea : IfcAreaMeasure // optional
+	TensionForce : IfcForceMeasure // optional
+	PreStress : IfcPressureMeasure // optional
+	FrictionCoefficient : IfcNormalisedRatioMeasure // optional
+	AnchorageSlip : IfcPositiveLengthMeasure // optional
+	MinCurvatureRadius : IfcPositiveLengthMeasure // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -51,23 +53,23 @@ export class IfcTendon extends IfcReinforcingElement {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.SteelGrade != null ? this.toStepValue(this.SteelGrade) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
-		parameters.push(this.NominalDiameter != null ? this.toStepValue(this.NominalDiameter) : "$");
-		parameters.push(this.CrossSectionArea != null ? this.toStepValue(this.CrossSectionArea) : "$");
-		parameters.push(this.TensionForce != null ? this.toStepValue(this.TensionForce) : "$");
-		parameters.push(this.PreStress != null ? this.toStepValue(this.PreStress) : "$");
-		parameters.push(this.FrictionCoefficient != null ? this.toStepValue(this.FrictionCoefficient) : "$");
-		parameters.push(this.AnchorageSlip != null ? this.toStepValue(this.AnchorageSlip) : "$");
-		parameters.push(this.MinCurvatureRadius != null ? this.toStepValue(this.MinCurvatureRadius) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.SteelGrade != null ? BaseIfc.toStepValue(this.SteelGrade) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+		parameters.push(this.NominalDiameter != null ? BaseIfc.toStepValue(this.NominalDiameter) : "$");
+		parameters.push(this.CrossSectionArea != null ? BaseIfc.toStepValue(this.CrossSectionArea) : "$");
+		parameters.push(this.TensionForce != null ? BaseIfc.toStepValue(this.TensionForce) : "$");
+		parameters.push(this.PreStress != null ? BaseIfc.toStepValue(this.PreStress) : "$");
+		parameters.push(this.FrictionCoefficient != null ? BaseIfc.toStepValue(this.FrictionCoefficient) : "$");
+		parameters.push(this.AnchorageSlip != null ? BaseIfc.toStepValue(this.AnchorageSlip) : "$");
+		parameters.push(this.MinCurvatureRadius != null ? BaseIfc.toStepValue(this.MinCurvatureRadius) : "$");
 
         return parameters.join();
     }

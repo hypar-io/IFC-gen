@@ -12,7 +12,9 @@ import {IfcMaterialProfileSet} from "./IfcMaterialProfileSet.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcMaterialProfile} from "./IfcMaterialProfile.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofilewithoffsets.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialprofilewithoffsets.htm
+ */
 export class IfcMaterialProfileWithOffsets extends IfcMaterialProfile {
 	OffsetValues : Array<IfcLengthMeasure>
 
@@ -24,13 +26,13 @@ export class IfcMaterialProfileWithOffsets extends IfcMaterialProfile {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.Material != null ? this.toStepValue(this.Material) : "$");
-		parameters.push(this.Profile != null ? this.toStepValue(this.Profile) : "$");
-		parameters.push(this.Priority != null ? this.toStepValue(this.Priority) : "$");
-		parameters.push(this.Category != null ? this.toStepValue(this.Category) : "$");
-		parameters.push(this.OffsetValues != null ? this.toStepValue(this.OffsetValues) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.Material != null ? BaseIfc.toStepValue(this.Material) : "$");
+		parameters.push(this.Profile != null ? BaseIfc.toStepValue(this.Profile) : "$");
+		parameters.push(this.Priority != null ? BaseIfc.toStepValue(this.Priority) : "$");
+		parameters.push(this.Category != null ? BaseIfc.toStepValue(this.Category) : "$");
+		parameters.push(this.OffsetValues != null ? BaseIfc.toStepValue(this.OffsetValues) : "$");
 
         return parameters.join();
     }

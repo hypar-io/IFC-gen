@@ -5,7 +5,9 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcPoint} from "./IfcPoint.g"
 import {IfcVertex} from "./IfcVertex.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertexpoint.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertexpoint.htm
+ */
 export class IfcVertexPoint extends IfcVertex {
 	VertexGeometry : IfcPoint
 
@@ -17,7 +19,7 @@ export class IfcVertexPoint extends IfcVertex {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.VertexGeometry != null ? this.toStepValue(this.VertexGeometry) : "$");
+		parameters.push(this.VertexGeometry != null ? BaseIfc.toStepValue(this.VertexGeometry) : "$");
 
         return parameters.join();
     }

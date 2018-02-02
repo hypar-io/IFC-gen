@@ -5,7 +5,9 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcVertex} from "./IfcVertex.g"
 import {IfcLoop} from "./IfcLoop.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertexloop.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertexloop.htm
+ */
 export class IfcVertexLoop extends IfcLoop {
 	LoopVertex : IfcVertex
 
@@ -17,7 +19,7 @@ export class IfcVertexLoop extends IfcLoop {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.LoopVertex != null ? this.toStepValue(this.LoopVertex) : "$");
+		parameters.push(this.LoopVertex != null ? BaseIfc.toStepValue(this.LoopVertex) : "$");
 
         return parameters.join();
     }

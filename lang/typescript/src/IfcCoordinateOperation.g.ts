@@ -1,15 +1,16 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcCoordinateReferenceSystemSelect} from "./IfcCoordinateReferenceSystemSelect.g"
 import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem.g"
-import {IfcMapConversion} from "./IfcMapConversion.g"
+import {IfcGeometricRepresentationContext} from "./IfcGeometricRepresentationContext.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinateoperation.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccoordinateoperation.htm
+ */
 export abstract class IfcCoordinateOperation extends BaseIfc {
-	SourceCRS : IfcCoordinateReferenceSystemSelect
+	SourceCRS : IfcCoordinateReferenceSystem|IfcGeometricRepresentationContext
 	TargetCRS : IfcCoordinateReferenceSystem
 
-    constructor(sourceCRS : IfcCoordinateReferenceSystemSelect, targetCRS : IfcCoordinateReferenceSystem) {
+    constructor(sourceCRS : IfcCoordinateReferenceSystem|IfcGeometricRepresentationContext, targetCRS : IfcCoordinateReferenceSystem) {
         super()
 
 		this.SourceCRS = sourceCRS

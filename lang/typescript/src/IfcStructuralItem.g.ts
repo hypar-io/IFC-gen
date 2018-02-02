@@ -16,13 +16,13 @@ import {IfcObjectPlacement} from "./IfcObjectPlacement.g"
 import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcRelConnectsStructuralActivity} from "./IfcRelConnectsStructuralActivity.g"
-import {IfcStructuralConnection} from "./IfcStructuralConnection.g"
-import {IfcStructuralMember} from "./IfcStructuralMember.g"
 import {IfcProduct} from "./IfcProduct.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralitem.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralitem.htm
+ */
 export abstract class IfcStructuralItem extends IfcProduct {
-	AssignedStructuralActivity : Array<IfcRelConnectsStructuralActivity>// inverse
+	AssignedStructuralActivity : Array<IfcRelConnectsStructuralActivity> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

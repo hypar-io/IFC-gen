@@ -8,7 +8,9 @@ import {IfcBoundaryCurve} from "./IfcBoundaryCurve.g"
 import {IfcBoolean} from "./IfcBoolean.g"
 import {IfcBoundedSurface} from "./IfcBoundedSurface.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveboundedsurface.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurveboundedsurface.htm
+ */
 export class IfcCurveBoundedSurface extends IfcBoundedSurface {
 	BasisSurface : IfcSurface
 	Boundaries : Array<IfcBoundaryCurve>
@@ -24,9 +26,9 @@ export class IfcCurveBoundedSurface extends IfcBoundedSurface {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.BasisSurface != null ? this.toStepValue(this.BasisSurface) : "$");
-		parameters.push(this.Boundaries != null ? this.toStepValue(this.Boundaries) : "$");
-		parameters.push(this.ImplicitOuter != null ? this.toStepValue(this.ImplicitOuter) : "$");
+		parameters.push(this.BasisSurface != null ? BaseIfc.toStepValue(this.BasisSurface) : "$");
+		parameters.push(this.Boundaries != null ? BaseIfc.toStepValue(this.Boundaries) : "$");
+		parameters.push(this.ImplicitOuter != null ? BaseIfc.toStepValue(this.ImplicitOuter) : "$");
 
         return parameters.join();
     }

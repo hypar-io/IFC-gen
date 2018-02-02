@@ -3,7 +3,9 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
 import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgblist.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgblist.htm
+ */
 export class IfcColourRgbList extends IfcPresentationItem {
 	ColourList : Array<Array<IfcNormalisedRatioMeasure>>
 
@@ -15,7 +17,7 @@ export class IfcColourRgbList extends IfcPresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.ColourList != null ? this.toStepValue(this.ColourList) : "$");
+		parameters.push(this.ColourList != null ? BaseIfc.toStepValue(this.ColourList) : "$");
 
         return parameters.join();
     }

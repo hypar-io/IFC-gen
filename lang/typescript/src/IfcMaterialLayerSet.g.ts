@@ -9,13 +9,16 @@ import {IfcText} from "./IfcText.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayerset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayerset.htm
+ */
 export class IfcMaterialLayerSet extends IfcMaterialDefinition {
 	MaterialLayers : Array<IfcMaterialLayer>
-	LayerSetName : IfcLabel// optional
-	Description : IfcText// optional
+	LayerSetName : IfcLabel // optional
+	Description : IfcText // optional
 
-    get TotalThickness() : IfcLengthMeasure{throw "Derived property logic has been implemented for TotalThickness."} // derived
+    get TotalThickness() : IfcLengthMeasure{throw "Derived property logic has not been implemented for TotalThickness."} // derived
+    set TotalThickness(value : IfcLengthMeasure){super.TotalThickness = value}
 
     constructor(materialLayers : Array<IfcMaterialLayer>) {
         super()
@@ -25,9 +28,9 @@ export class IfcMaterialLayerSet extends IfcMaterialDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.MaterialLayers != null ? this.toStepValue(this.MaterialLayers) : "$");
-		parameters.push(this.LayerSetName != null ? this.toStepValue(this.LayerSetName) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
+		parameters.push(this.MaterialLayers != null ? BaseIfc.toStepValue(this.MaterialLayers) : "$");
+		parameters.push(this.LayerSetName != null ? BaseIfc.toStepValue(this.LayerSetName) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
 
         return parameters.join();
     }

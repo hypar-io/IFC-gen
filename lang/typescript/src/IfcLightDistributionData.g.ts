@@ -3,7 +3,9 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
 import {IfcLuminousIntensityDistributionMeasure} from "./IfcLuminousIntensityDistributionMeasure.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondata.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightdistributiondata.htm
+ */
 export class IfcLightDistributionData extends BaseIfc {
 	MainPlaneAngle : IfcPlaneAngleMeasure
 	SecondaryPlaneAngle : Array<IfcPlaneAngleMeasure>
@@ -19,9 +21,9 @@ export class IfcLightDistributionData extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.MainPlaneAngle != null ? this.toStepValue(this.MainPlaneAngle) : "$");
-		parameters.push(this.SecondaryPlaneAngle != null ? this.toStepValue(this.SecondaryPlaneAngle) : "$");
-		parameters.push(this.LuminousIntensity != null ? this.toStepValue(this.LuminousIntensity) : "$");
+		parameters.push(this.MainPlaneAngle != null ? BaseIfc.toStepValue(this.MainPlaneAngle) : "$");
+		parameters.push(this.SecondaryPlaneAngle != null ? BaseIfc.toStepValue(this.SecondaryPlaneAngle) : "$");
+		parameters.push(this.LuminousIntensity != null ? BaseIfc.toStepValue(this.LuminousIntensity) : "$");
 
         return parameters.join();
     }

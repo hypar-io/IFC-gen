@@ -1,21 +1,23 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcCoordinateReferenceSystemSelect} from "./IfcCoordinateReferenceSystemSelect.g"
 import {IfcCoordinateReferenceSystem} from "./IfcCoordinateReferenceSystem.g"
+import {IfcGeometricRepresentationContext} from "./IfcGeometricRepresentationContext.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcReal} from "./IfcReal.g"
 import {IfcCoordinateOperation} from "./IfcCoordinateOperation.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmapconversion.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmapconversion.htm
+ */
 export class IfcMapConversion extends IfcCoordinateOperation {
 	Eastings : IfcLengthMeasure
 	Northings : IfcLengthMeasure
 	OrthogonalHeight : IfcLengthMeasure
-	XAxisAbscissa : IfcReal// optional
-	XAxisOrdinate : IfcReal// optional
-	Scale : IfcReal// optional
+	XAxisAbscissa : IfcReal // optional
+	XAxisOrdinate : IfcReal // optional
+	Scale : IfcReal // optional
 
-    constructor(sourceCRS : IfcCoordinateReferenceSystemSelect, targetCRS : IfcCoordinateReferenceSystem, eastings : IfcLengthMeasure, northings : IfcLengthMeasure, orthogonalHeight : IfcLengthMeasure) {
+    constructor(sourceCRS : IfcCoordinateReferenceSystem|IfcGeometricRepresentationContext, targetCRS : IfcCoordinateReferenceSystem, eastings : IfcLengthMeasure, northings : IfcLengthMeasure, orthogonalHeight : IfcLengthMeasure) {
         super(sourceCRS,targetCRS)
 
 		this.Eastings = eastings
@@ -25,14 +27,14 @@ export class IfcMapConversion extends IfcCoordinateOperation {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SourceCRS != null ? this.toStepValue(this.SourceCRS) : "$");
-		parameters.push(this.TargetCRS != null ? this.toStepValue(this.TargetCRS) : "$");
-		parameters.push(this.Eastings != null ? this.toStepValue(this.Eastings) : "$");
-		parameters.push(this.Northings != null ? this.toStepValue(this.Northings) : "$");
-		parameters.push(this.OrthogonalHeight != null ? this.toStepValue(this.OrthogonalHeight) : "$");
-		parameters.push(this.XAxisAbscissa != null ? this.toStepValue(this.XAxisAbscissa) : "$");
-		parameters.push(this.XAxisOrdinate != null ? this.toStepValue(this.XAxisOrdinate) : "$");
-		parameters.push(this.Scale != null ? this.toStepValue(this.Scale) : "$");
+		parameters.push(this.SourceCRS != null ? BaseIfc.toStepValue(this.SourceCRS) : "$");
+		parameters.push(this.TargetCRS != null ? BaseIfc.toStepValue(this.TargetCRS) : "$");
+		parameters.push(this.Eastings != null ? BaseIfc.toStepValue(this.Eastings) : "$");
+		parameters.push(this.Northings != null ? BaseIfc.toStepValue(this.Northings) : "$");
+		parameters.push(this.OrthogonalHeight != null ? BaseIfc.toStepValue(this.OrthogonalHeight) : "$");
+		parameters.push(this.XAxisAbscissa != null ? BaseIfc.toStepValue(this.XAxisAbscissa) : "$");
+		parameters.push(this.XAxisOrdinate != null ? BaseIfc.toStepValue(this.XAxisOrdinate) : "$");
+		parameters.push(this.Scale != null ? BaseIfc.toStepValue(this.Scale) : "$");
 
         return parameters.join();
     }

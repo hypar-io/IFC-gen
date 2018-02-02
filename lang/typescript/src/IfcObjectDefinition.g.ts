@@ -9,20 +9,19 @@ import {IfcRelNests} from "./IfcRelNests.g"
 import {IfcRelDeclares} from "./IfcRelDeclares.g"
 import {IfcRelAggregates} from "./IfcRelAggregates.g"
 import {IfcRelAssociates} from "./IfcRelAssociates.g"
-import {IfcContext} from "./IfcContext.g"
-import {IfcObject} from "./IfcObject.g"
-import {IfcTypeObject} from "./IfcTypeObject.g"
 import {IfcRoot} from "./IfcRoot.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectdefinition.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobjectdefinition.htm
+ */
 export abstract class IfcObjectDefinition extends IfcRoot {
-	HasAssignments : Array<IfcRelAssigns>// inverse
-	Nests : Array<IfcRelNests>// inverse
-	IsNestedBy : Array<IfcRelNests>// inverse
-	HasContext : Array<IfcRelDeclares>// inverse
-	IsDecomposedBy : Array<IfcRelAggregates>// inverse
-	Decomposes : Array<IfcRelAggregates>// inverse
-	HasAssociations : Array<IfcRelAssociates>// inverse
+	HasAssignments : Array<IfcRelAssigns> // inverse
+	Nests : Array<IfcRelNests> // inverse
+	IsNestedBy : Array<IfcRelNests> // inverse
+	HasContext : Array<IfcRelDeclares> // inverse
+	IsDecomposedBy : Array<IfcRelAggregates> // inverse
+	Decomposes : Array<IfcRelAggregates> // inverse
+	HasAssociations : Array<IfcRelAssociates> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

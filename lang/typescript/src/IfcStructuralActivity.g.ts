@@ -18,15 +18,15 @@ import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcStructuralLoad} from "./IfcStructuralLoad.g"
 import {IfcGlobalOrLocalEnum} from "./IfcGlobalOrLocalEnum.g"
 import {IfcRelConnectsStructuralActivity} from "./IfcRelConnectsStructuralActivity.g"
-import {IfcStructuralAction} from "./IfcStructuralAction.g"
-import {IfcStructuralReaction} from "./IfcStructuralReaction.g"
 import {IfcProduct} from "./IfcProduct.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivity.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralactivity.htm
+ */
 export abstract class IfcStructuralActivity extends IfcProduct {
 	AppliedLoad : IfcStructuralLoad
 	GlobalOrLocal : IfcGlobalOrLocalEnum
-	AssignedToStructuralItem : Array<IfcRelConnectsStructuralActivity>// inverse
+	AssignedToStructuralItem : Array<IfcRelConnectsStructuralActivity> // inverse
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum) {
         super(globalId)

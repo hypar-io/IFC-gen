@@ -6,11 +6,13 @@ import {IfcRecurrencePattern} from "./IfcRecurrencePattern.g"
 import {IfcDate} from "./IfcDate.g"
 import {IfcSchedulingTime} from "./IfcSchedulingTime.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworktime.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworktime.htm
+ */
 export class IfcWorkTime extends IfcSchedulingTime {
-	RecurrencePattern : IfcRecurrencePattern// optional
-	Start : IfcDate// optional
-	Finish : IfcDate// optional
+	RecurrencePattern : IfcRecurrencePattern // optional
+	Start : IfcDate // optional
+	Finish : IfcDate // optional
 
     constructor() {
         super()
@@ -18,12 +20,12 @@ export class IfcWorkTime extends IfcSchedulingTime {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.toStepValue(this.DataOrigin));
-		parameters.push(this.UserDefinedDataOrigin != null ? this.toStepValue(this.UserDefinedDataOrigin) : "$");
-		parameters.push(this.RecurrencePattern != null ? this.toStepValue(this.RecurrencePattern) : "$");
-		parameters.push(this.Start != null ? this.toStepValue(this.Start) : "$");
-		parameters.push(this.Finish != null ? this.toStepValue(this.Finish) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(BaseIfc.toStepValue(this.DataOrigin));
+		parameters.push(this.UserDefinedDataOrigin != null ? BaseIfc.toStepValue(this.UserDefinedDataOrigin) : "$");
+		parameters.push(this.RecurrencePattern != null ? BaseIfc.toStepValue(this.RecurrencePattern) : "$");
+		parameters.push(this.Start != null ? BaseIfc.toStepValue(this.Start) : "$");
+		parameters.push(this.Finish != null ? BaseIfc.toStepValue(this.Finish) : "$");
 
         return parameters.join();
     }

@@ -26,30 +26,11 @@ import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizing
 import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
-import {IfcBeam} from "./IfcBeam.g"
-import {IfcBuildingElementProxy} from "./IfcBuildingElementProxy.g"
-import {IfcChimney} from "./IfcChimney.g"
-import {IfcColumn} from "./IfcColumn.g"
-import {IfcCovering} from "./IfcCovering.g"
-import {IfcCurtainWall} from "./IfcCurtainWall.g"
-import {IfcDoor} from "./IfcDoor.g"
-import {IfcFooting} from "./IfcFooting.g"
-import {IfcMember} from "./IfcMember.g"
-import {IfcPile} from "./IfcPile.g"
-import {IfcPlate} from "./IfcPlate.g"
-import {IfcRailing} from "./IfcRailing.g"
-import {IfcRamp} from "./IfcRamp.g"
-import {IfcRampFlight} from "./IfcRampFlight.g"
-import {IfcRoof} from "./IfcRoof.g"
-import {IfcShadingDevice} from "./IfcShadingDevice.g"
-import {IfcSlab} from "./IfcSlab.g"
-import {IfcStair} from "./IfcStair.g"
-import {IfcStairFlight} from "./IfcStairFlight.g"
-import {IfcWall} from "./IfcWall.g"
-import {IfcWindow} from "./IfcWindow.g"
 import {IfcElement} from "./IfcElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbuildingelement.htm
+ */
 export abstract class IfcBuildingElement extends IfcElement {
 
     constructor(globalId : IfcGloballyUniqueId) {

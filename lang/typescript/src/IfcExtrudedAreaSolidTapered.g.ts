@@ -9,7 +9,9 @@ import {IfcDirection} from "./IfcDirection.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcExtrudedAreaSolid} from "./IfcExtrudedAreaSolid.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextrudedareasolidtapered.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextrudedareasolidtapered.htm
+ */
 export class IfcExtrudedAreaSolidTapered extends IfcExtrudedAreaSolid {
 	EndSweptArea : IfcProfileDef
 
@@ -21,11 +23,11 @@ export class IfcExtrudedAreaSolidTapered extends IfcExtrudedAreaSolid {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SweptArea != null ? this.toStepValue(this.SweptArea) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.ExtrudedDirection != null ? this.toStepValue(this.ExtrudedDirection) : "$");
-		parameters.push(this.Depth != null ? this.toStepValue(this.Depth) : "$");
-		parameters.push(this.EndSweptArea != null ? this.toStepValue(this.EndSweptArea) : "$");
+		parameters.push(this.SweptArea != null ? BaseIfc.toStepValue(this.SweptArea) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.ExtrudedDirection != null ? BaseIfc.toStepValue(this.ExtrudedDirection) : "$");
+		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
+		parameters.push(this.EndSweptArea != null ? BaseIfc.toStepValue(this.EndSweptArea) : "$");
 
         return parameters.join();
     }

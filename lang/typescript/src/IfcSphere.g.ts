@@ -7,7 +7,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcCsgPrimitive3D} from "./IfcCsgPrimitive3D.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsphere.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsphere.htm
+ */
 export class IfcSphere extends IfcCsgPrimitive3D {
 	Radius : IfcPositiveLengthMeasure
 
@@ -19,8 +21,8 @@ export class IfcSphere extends IfcCsgPrimitive3D {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Radius != null ? this.toStepValue(this.Radius) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
 
         return parameters.join();
     }

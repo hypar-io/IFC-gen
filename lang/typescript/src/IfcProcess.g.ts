@@ -15,18 +15,17 @@ import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
 import {IfcIdentifier} from "./IfcIdentifier.g"
 import {IfcRelSequence} from "./IfcRelSequence.g"
 import {IfcRelAssignsToProcess} from "./IfcRelAssignsToProcess.g"
-import {IfcEvent} from "./IfcEvent.g"
-import {IfcProcedure} from "./IfcProcedure.g"
-import {IfcTask} from "./IfcTask.g"
 import {IfcObject} from "./IfcObject.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocess.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocess.htm
+ */
 export abstract class IfcProcess extends IfcObject {
-	Identification : IfcIdentifier// optional
-	LongDescription : IfcText// optional
-	IsPredecessorTo : Array<IfcRelSequence>// inverse
-	IsSuccessorFrom : Array<IfcRelSequence>// inverse
-	OperatesOn : Array<IfcRelAssignsToProcess>// inverse
+	Identification : IfcIdentifier // optional
+	LongDescription : IfcText // optional
+	IsPredecessorTo : Array<IfcRelSequence> // inverse
+	IsSuccessorFrom : Array<IfcRelSequence> // inverse
+	OperatesOn : Array<IfcRelAssignsToProcess> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

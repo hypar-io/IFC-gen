@@ -6,7 +6,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
 import {IfcElementarySurface} from "./IfcElementarySurface.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplane.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplane.htm
+ */
 export class IfcPlane extends IfcElementarySurface {
 
     constructor(position : IfcAxis2Placement3D) {
@@ -15,7 +17,7 @@ export class IfcPlane extends IfcElementarySurface {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
 
         return parameters.join();
     }

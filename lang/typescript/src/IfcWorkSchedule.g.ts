@@ -20,9 +20,11 @@ import {IfcDuration} from "./IfcDuration.g"
 import {IfcWorkScheduleTypeEnum} from "./IfcWorkScheduleTypeEnum.g"
 import {IfcWorkControl} from "./IfcWorkControl.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkschedule.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkschedule.htm
+ */
 export class IfcWorkSchedule extends IfcWorkControl {
-	PredefinedType : IfcWorkScheduleTypeEnum// optional
+	PredefinedType : IfcWorkScheduleTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId, creationDate : IfcDateTime, startTime : IfcDateTime) {
         super(globalId,creationDate,startTime)
@@ -30,20 +32,20 @@ export class IfcWorkSchedule extends IfcWorkControl {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.CreationDate != null ? this.toStepValue(this.CreationDate) : "$");
-		parameters.push(this.Creators != null ? this.toStepValue(this.Creators) : "$");
-		parameters.push(this.Purpose != null ? this.toStepValue(this.Purpose) : "$");
-		parameters.push(this.Duration != null ? this.toStepValue(this.Duration) : "$");
-		parameters.push(this.TotalFloat != null ? this.toStepValue(this.TotalFloat) : "$");
-		parameters.push(this.StartTime != null ? this.toStepValue(this.StartTime) : "$");
-		parameters.push(this.FinishTime != null ? this.toStepValue(this.FinishTime) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.CreationDate != null ? BaseIfc.toStepValue(this.CreationDate) : "$");
+		parameters.push(this.Creators != null ? BaseIfc.toStepValue(this.Creators) : "$");
+		parameters.push(this.Purpose != null ? BaseIfc.toStepValue(this.Purpose) : "$");
+		parameters.push(this.Duration != null ? BaseIfc.toStepValue(this.Duration) : "$");
+		parameters.push(this.TotalFloat != null ? BaseIfc.toStepValue(this.TotalFloat) : "$");
+		parameters.push(this.StartTime != null ? BaseIfc.toStepValue(this.StartTime) : "$");
+		parameters.push(this.FinishTime != null ? BaseIfc.toStepValue(this.FinishTime) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

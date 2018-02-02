@@ -10,11 +10,13 @@ import {IfcParameterValue} from "./IfcParameterValue.g"
 import {IfcDirection} from "./IfcDirection.g"
 import {IfcSweptAreaSolid} from "./IfcSweptAreaSolid.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfixedreferencesweptareasolid.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfixedreferencesweptareasolid.htm
+ */
 export class IfcFixedReferenceSweptAreaSolid extends IfcSweptAreaSolid {
 	Directrix : IfcCurve
-	StartParam : IfcParameterValue// optional
-	EndParam : IfcParameterValue// optional
+	StartParam : IfcParameterValue // optional
+	EndParam : IfcParameterValue // optional
 	FixedReference : IfcDirection
 
     constructor(sweptArea : IfcProfileDef, directrix : IfcCurve, fixedReference : IfcDirection) {
@@ -26,12 +28,12 @@ export class IfcFixedReferenceSweptAreaSolid extends IfcSweptAreaSolid {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SweptArea != null ? this.toStepValue(this.SweptArea) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Directrix != null ? this.toStepValue(this.Directrix) : "$");
-		parameters.push(this.StartParam != null ? this.toStepValue(this.StartParam) : "$");
-		parameters.push(this.EndParam != null ? this.toStepValue(this.EndParam) : "$");
-		parameters.push(this.FixedReference != null ? this.toStepValue(this.FixedReference) : "$");
+		parameters.push(this.SweptArea != null ? BaseIfc.toStepValue(this.SweptArea) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Directrix != null ? BaseIfc.toStepValue(this.Directrix) : "$");
+		parameters.push(this.StartParam != null ? BaseIfc.toStepValue(this.StartParam) : "$");
+		parameters.push(this.EndParam != null ? BaseIfc.toStepValue(this.EndParam) : "$");
+		parameters.push(this.FixedReference != null ? BaseIfc.toStepValue(this.FixedReference) : "$");
 
         return parameters.join();
     }

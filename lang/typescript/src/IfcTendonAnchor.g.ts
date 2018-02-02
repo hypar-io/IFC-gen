@@ -29,9 +29,11 @@ import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
 import {IfcTendonAnchorTypeEnum} from "./IfcTendonAnchorTypeEnum.g"
 import {IfcReinforcingElement} from "./IfcReinforcingElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchor.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctendonanchor.htm
+ */
 export class IfcTendonAnchor extends IfcReinforcingElement {
-	PredefinedType : IfcTendonAnchorTypeEnum// optional
+	PredefinedType : IfcTendonAnchorTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -39,16 +41,16 @@ export class IfcTendonAnchor extends IfcReinforcingElement {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.SteelGrade != null ? this.toStepValue(this.SteelGrade) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.SteelGrade != null ? BaseIfc.toStepValue(this.SteelGrade) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

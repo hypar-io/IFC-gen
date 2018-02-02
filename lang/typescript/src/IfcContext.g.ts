@@ -12,19 +12,19 @@ import {IfcRelAssociates} from "./IfcRelAssociates.g"
 import {IfcRepresentationContext} from "./IfcRepresentationContext.g"
 import {IfcUnitAssignment} from "./IfcUnitAssignment.g"
 import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
-import {IfcProject} from "./IfcProject.g"
-import {IfcProjectLibrary} from "./IfcProjectLibrary.g"
 import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontext.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontext.htm
+ */
 export abstract class IfcContext extends IfcObjectDefinition {
-	ObjectType : IfcLabel// optional
-	LongName : IfcLabel// optional
-	Phase : IfcLabel// optional
-	RepresentationContexts : Array<IfcRepresentationContext>// optional
-	UnitsInContext : IfcUnitAssignment// optional
-	IsDefinedBy : Array<IfcRelDefinesByProperties>// inverse
-	Declares : Array<IfcRelDeclares>// inverse
+	ObjectType : IfcLabel // optional
+	LongName : IfcLabel // optional
+	Phase : IfcLabel // optional
+	RepresentationContexts : Array<IfcRepresentationContext> // optional
+	UnitsInContext : IfcUnitAssignment // optional
+	IsDefinedBy : Array<IfcRelDefinesByProperties> // inverse
+	Declares : Array<IfcRelDeclares> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

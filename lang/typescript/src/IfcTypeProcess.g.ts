@@ -13,17 +13,16 @@ import {IfcIdentifier} from "./IfcIdentifier.g"
 import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRelAssignsToProcess} from "./IfcRelAssignsToProcess.g"
-import {IfcEventType} from "./IfcEventType.g"
-import {IfcProcedureType} from "./IfcProcedureType.g"
-import {IfcTaskType} from "./IfcTaskType.g"
 import {IfcTypeObject} from "./IfcTypeObject.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeprocess.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctypeprocess.htm
+ */
 export abstract class IfcTypeProcess extends IfcTypeObject {
-	Identification : IfcIdentifier// optional
-	LongDescription : IfcText// optional
-	ProcessType : IfcLabel// optional
-	OperatesOn : Array<IfcRelAssignsToProcess>// inverse
+	Identification : IfcIdentifier // optional
+	LongDescription : IfcText // optional
+	ProcessType : IfcLabel // optional
+	OperatesOn : Array<IfcRelAssignsToProcess> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

@@ -3,14 +3,17 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
 import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
-import {IfcAxis2Placement} from "./IfcAxis2Placement.g"
+import {IfcAxis2Placement2D} from "./IfcAxis2Placement2D.g"
+import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
 import {IfcPlanarExtent} from "./IfcPlanarExtent.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarbox.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcplanarbox.htm
+ */
 export class IfcPlanarBox extends IfcPlanarExtent {
-	Placement : IfcAxis2Placement
+	Placement : IfcAxis2Placement2D|IfcAxis2Placement3D
 
-    constructor(sizeInX : IfcLengthMeasure, sizeInY : IfcLengthMeasure, placement : IfcAxis2Placement) {
+    constructor(sizeInX : IfcLengthMeasure, sizeInY : IfcLengthMeasure, placement : IfcAxis2Placement2D|IfcAxis2Placement3D) {
         super(sizeInX,sizeInY)
 
 		this.Placement = placement
@@ -18,9 +21,9 @@ export class IfcPlanarBox extends IfcPlanarExtent {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SizeInX != null ? this.toStepValue(this.SizeInX) : "$");
-		parameters.push(this.SizeInY != null ? this.toStepValue(this.SizeInY) : "$");
-		parameters.push(this.Placement != null ? this.toStepValue(this.Placement) : "$");
+		parameters.push(this.SizeInX != null ? BaseIfc.toStepValue(this.SizeInX) : "$");
+		parameters.push(this.SizeInY != null ? BaseIfc.toStepValue(this.SizeInY) : "$");
+		parameters.push(this.Placement != null ? BaseIfc.toStepValue(this.Placement) : "$");
 
         return parameters.join();
     }

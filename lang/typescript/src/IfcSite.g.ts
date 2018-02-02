@@ -24,13 +24,15 @@ import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcPostalAddress} from "./IfcPostalAddress.g"
 import {IfcSpatialStructureElement} from "./IfcSpatialStructureElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsite.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsite.htm
+ */
 export class IfcSite extends IfcSpatialStructureElement {
-	RefLatitude : IfcCompoundPlaneAngleMeasure// optional
-	RefLongitude : IfcCompoundPlaneAngleMeasure// optional
-	RefElevation : IfcLengthMeasure// optional
-	LandTitleNumber : IfcLabel// optional
-	SiteAddress : IfcPostalAddress// optional
+	RefLatitude : IfcCompoundPlaneAngleMeasure // optional
+	RefLongitude : IfcCompoundPlaneAngleMeasure // optional
+	RefElevation : IfcLengthMeasure // optional
+	LandTitleNumber : IfcLabel // optional
+	SiteAddress : IfcPostalAddress // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -38,20 +40,20 @@ export class IfcSite extends IfcSpatialStructureElement {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.LongName != null ? this.toStepValue(this.LongName) : "$");
-		parameters.push(this.toStepValue(this.CompositionType));
-		parameters.push(this.RefLatitude != null ? this.toStepValue(this.RefLatitude) : "$");
-		parameters.push(this.RefLongitude != null ? this.toStepValue(this.RefLongitude) : "$");
-		parameters.push(this.RefElevation != null ? this.toStepValue(this.RefElevation) : "$");
-		parameters.push(this.LandTitleNumber != null ? this.toStepValue(this.LandTitleNumber) : "$");
-		parameters.push(this.SiteAddress != null ? this.toStepValue(this.SiteAddress) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.LongName != null ? BaseIfc.toStepValue(this.LongName) : "$");
+		parameters.push(BaseIfc.toStepValue(this.CompositionType));
+		parameters.push(this.RefLatitude != null ? BaseIfc.toStepValue(this.RefLatitude) : "$");
+		parameters.push(this.RefLongitude != null ? BaseIfc.toStepValue(this.RefLongitude) : "$");
+		parameters.push(this.RefElevation != null ? BaseIfc.toStepValue(this.RefElevation) : "$");
+		parameters.push(this.LandTitleNumber != null ? BaseIfc.toStepValue(this.LandTitleNumber) : "$");
+		parameters.push(this.SiteAddress != null ? BaseIfc.toStepValue(this.SiteAddress) : "$");
 
         return parameters.join();
     }

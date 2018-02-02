@@ -9,11 +9,14 @@ import {IfcAxis1Placement} from "./IfcAxis1Placement.g"
 import {IfcLine} from "./IfcLine.g"
 import {IfcSweptSurface} from "./IfcSweptSurface.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceofrevolution.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceofrevolution.htm
+ */
 export class IfcSurfaceOfRevolution extends IfcSweptSurface {
 	AxisPosition : IfcAxis1Placement
 
-    get AxisLine() : IfcLine{throw "Derived property logic has been implemented for AxisLine."} // derived
+    get AxisLine() : IfcLine{throw "Derived property logic has not been implemented for AxisLine."} // derived
+    set AxisLine(value : IfcLine){super.AxisLine = value}
 
     constructor(sweptCurve : IfcProfileDef, axisPosition : IfcAxis1Placement) {
         super(sweptCurve)
@@ -23,9 +26,9 @@ export class IfcSurfaceOfRevolution extends IfcSweptSurface {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SweptCurve != null ? this.toStepValue(this.SweptCurve) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.AxisPosition != null ? this.toStepValue(this.AxisPosition) : "$");
+		parameters.push(this.SweptCurve != null ? BaseIfc.toStepValue(this.SweptCurve) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.AxisPosition != null ? BaseIfc.toStepValue(this.AxisPosition) : "$");
 
         return parameters.join();
     }

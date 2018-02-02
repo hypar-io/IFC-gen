@@ -3,7 +3,9 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcGridAxis} from "./IfcGridAxis.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvirtualgridintersection.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvirtualgridintersection.htm
+ */
 export class IfcVirtualGridIntersection extends BaseIfc {
 	IntersectingAxes : Array<IfcGridAxis>
 	OffsetDistances : Array<IfcLengthMeasure>
@@ -17,8 +19,8 @@ export class IfcVirtualGridIntersection extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.IntersectingAxes != null ? this.toStepValue(this.IntersectingAxes) : "$");
-		parameters.push(this.OffsetDistances != null ? this.toStepValue(this.OffsetDistances) : "$");
+		parameters.push(this.IntersectingAxes != null ? BaseIfc.toStepValue(this.IntersectingAxes) : "$");
+		parameters.push(this.OffsetDistances != null ? BaseIfc.toStepValue(this.OffsetDistances) : "$");
 
         return parameters.join();
     }

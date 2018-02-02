@@ -10,12 +10,15 @@ import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcVector} from "./IfcVector.g"
 import {IfcSweptSurface} from "./IfcSweptSurface.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceoflinearextrusion.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfaceoflinearextrusion.htm
+ */
 export class IfcSurfaceOfLinearExtrusion extends IfcSweptSurface {
 	ExtrudedDirection : IfcDirection
 	Depth : IfcLengthMeasure
 
-    get ExtrusionAxis() : IfcVector{throw "Derived property logic has been implemented for ExtrusionAxis."} // derived
+    get ExtrusionAxis() : IfcVector{throw "Derived property logic has not been implemented for ExtrusionAxis."} // derived
+    set ExtrusionAxis(value : IfcVector){super.ExtrusionAxis = value}
 
     constructor(sweptCurve : IfcProfileDef, extrudedDirection : IfcDirection, depth : IfcLengthMeasure) {
         super(sweptCurve)
@@ -26,10 +29,10 @@ export class IfcSurfaceOfLinearExtrusion extends IfcSweptSurface {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SweptCurve != null ? this.toStepValue(this.SweptCurve) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.ExtrudedDirection != null ? this.toStepValue(this.ExtrudedDirection) : "$");
-		parameters.push(this.Depth != null ? this.toStepValue(this.Depth) : "$");
+		parameters.push(this.SweptCurve != null ? BaseIfc.toStepValue(this.SweptCurve) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.ExtrudedDirection != null ? BaseIfc.toStepValue(this.ExtrudedDirection) : "$");
+		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
 
         return parameters.join();
     }

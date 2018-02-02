@@ -7,7 +7,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcCsgPrimitive3D} from "./IfcCsgPrimitive3D.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcblock.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcblock.htm
+ */
 export class IfcBlock extends IfcCsgPrimitive3D {
 	XLength : IfcPositiveLengthMeasure
 	YLength : IfcPositiveLengthMeasure
@@ -23,10 +25,10 @@ export class IfcBlock extends IfcCsgPrimitive3D {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.XLength != null ? this.toStepValue(this.XLength) : "$");
-		parameters.push(this.YLength != null ? this.toStepValue(this.YLength) : "$");
-		parameters.push(this.ZLength != null ? this.toStepValue(this.ZLength) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.XLength != null ? BaseIfc.toStepValue(this.XLength) : "$");
+		parameters.push(this.YLength != null ? BaseIfc.toStepValue(this.YLength) : "$");
+		parameters.push(this.ZLength != null ? BaseIfc.toStepValue(this.ZLength) : "$");
 
         return parameters.join();
     }

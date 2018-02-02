@@ -3,7 +3,9 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcPreDefinedColour} from "./IfcPreDefinedColour.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdraughtingpredefinedcolour.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdraughtingpredefinedcolour.htm
+ */
 export class IfcDraughtingPreDefinedColour extends IfcPreDefinedColour {
 
     constructor(name : IfcLabel) {
@@ -12,7 +14,7 @@ export class IfcDraughtingPreDefinedColour extends IfcPreDefinedColour {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
 
         return parameters.join();
     }

@@ -4,7 +4,9 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
 import {IfcColourSpecification} from "./IfcColourSpecification.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgb.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccolourrgb.htm
+ */
 export class IfcColourRgb extends IfcColourSpecification {
 	Red : IfcNormalisedRatioMeasure
 	Green : IfcNormalisedRatioMeasure
@@ -20,10 +22,10 @@ export class IfcColourRgb extends IfcColourSpecification {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Red != null ? this.toStepValue(this.Red) : "$");
-		parameters.push(this.Green != null ? this.toStepValue(this.Green) : "$");
-		parameters.push(this.Blue != null ? this.toStepValue(this.Blue) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Red != null ? BaseIfc.toStepValue(this.Red) : "$");
+		parameters.push(this.Green != null ? BaseIfc.toStepValue(this.Green) : "$");
+		parameters.push(this.Blue != null ? BaseIfc.toStepValue(this.Blue) : "$");
 
         return parameters.join();
     }

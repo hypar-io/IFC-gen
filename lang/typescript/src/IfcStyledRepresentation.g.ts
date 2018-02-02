@@ -8,7 +8,9 @@ import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g
 import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
 import {IfcStyleModel} from "./IfcStyleModel.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyledrepresentation.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstyledrepresentation.htm
+ */
 export class IfcStyledRepresentation extends IfcStyleModel {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {
@@ -17,10 +19,10 @@ export class IfcStyledRepresentation extends IfcStyleModel {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.ContextOfItems != null ? this.toStepValue(this.ContextOfItems) : "$");
-		parameters.push(this.RepresentationIdentifier != null ? this.toStepValue(this.RepresentationIdentifier) : "$");
-		parameters.push(this.RepresentationType != null ? this.toStepValue(this.RepresentationType) : "$");
-		parameters.push(this.Items != null ? this.toStepValue(this.Items) : "$");
+		parameters.push(this.ContextOfItems != null ? BaseIfc.toStepValue(this.ContextOfItems) : "$");
+		parameters.push(this.RepresentationIdentifier != null ? BaseIfc.toStepValue(this.RepresentationIdentifier) : "$");
+		parameters.push(this.RepresentationType != null ? BaseIfc.toStepValue(this.RepresentationType) : "$");
+		parameters.push(this.Items != null ? BaseIfc.toStepValue(this.Items) : "$");
 
         return parameters.join();
     }

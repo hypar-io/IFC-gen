@@ -26,12 +26,11 @@ import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizing
 import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
-import {IfcFeatureElementAddition} from "./IfcFeatureElementAddition.g"
-import {IfcFeatureElementSubtraction} from "./IfcFeatureElementSubtraction.g"
-import {IfcSurfaceFeature} from "./IfcSurfaceFeature.g"
 import {IfcElement} from "./IfcElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelement.htm
+ */
 export abstract class IfcFeatureElement extends IfcElement {
 
     constructor(globalId : IfcGloballyUniqueId) {

@@ -8,6 +8,13 @@ namespace IFC4.Generators
 {
     public class CsharpLanguageGenerator : ILanguageGenerator
     {
+        private Dictionary<string,SelectType> selectData = new Dictionary<string, SelectType>();
+        public Dictionary<string,SelectType> SelectData 
+        {
+            get{return selectData;}
+            set{selectData = value;}
+        }
+
         public string Assignment(AttributeData data)
         {
             return $"\t\t\t{data.Name} = {data.ParameterName};";
@@ -295,7 +302,7 @@ namespace IFC
 	/// </summary>
 	public {modifier} partial class {data.Name} : {super}
 	{{
-{data.Properties()}
+{data.Properties(selectData)}
 {constructors}
 		public static {newMod} {data.Name} FromJSON(string json){{ return JsonConvert.DeserializeObject<{data.Name}>(json); }}
 {StepParameters(data)}

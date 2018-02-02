@@ -9,7 +9,9 @@ import {IfcPreferredSurfaceCurveRepresentation} from "./IfcPreferredSurfaceCurve
 import {IfcSurface} from "./IfcSurface.g"
 import {IfcSurfaceCurve} from "./IfcSurfaceCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcseamcurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcseamcurve.htm
+ */
 export class IfcSeamCurve extends IfcSurfaceCurve {
 
     constructor(curve3D : IfcCurve, associatedGeometry : Array<IfcPcurve>, masterRepresentation : IfcPreferredSurfaceCurveRepresentation) {
@@ -18,9 +20,9 @@ export class IfcSeamCurve extends IfcSurfaceCurve {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Curve3D != null ? this.toStepValue(this.Curve3D) : "$");
-		parameters.push(this.AssociatedGeometry != null ? this.toStepValue(this.AssociatedGeometry) : "$");
-		parameters.push(this.MasterRepresentation != null ? this.toStepValue(this.MasterRepresentation) : "$");
+		parameters.push(this.Curve3D != null ? BaseIfc.toStepValue(this.Curve3D) : "$");
+		parameters.push(this.AssociatedGeometry != null ? BaseIfc.toStepValue(this.AssociatedGeometry) : "$");
+		parameters.push(this.MasterRepresentation != null ? BaseIfc.toStepValue(this.MasterRepresentation) : "$");
 
         return parameters.join();
     }

@@ -7,16 +7,18 @@ import {IfcMonthInYearNumber} from "./IfcMonthInYearNumber.g"
 import {IfcInteger} from "./IfcInteger.g"
 import {IfcTimePeriod} from "./IfcTimePeriod.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencepattern.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrecurrencepattern.htm
+ */
 export class IfcRecurrencePattern extends BaseIfc {
 	RecurrenceType : IfcRecurrenceTypeEnum
-	DayComponent : Array<IfcDayInMonthNumber>// optional
-	WeekdayComponent : Array<IfcDayInWeekNumber>// optional
-	MonthComponent : Array<IfcMonthInYearNumber>// optional
-	Position : IfcInteger// optional
-	Interval : IfcInteger// optional
-	Occurrences : IfcInteger// optional
-	TimePeriods : Array<IfcTimePeriod>// optional
+	DayComponent : Array<IfcDayInMonthNumber> // optional
+	WeekdayComponent : Array<IfcDayInWeekNumber> // optional
+	MonthComponent : Array<IfcMonthInYearNumber> // optional
+	Position : IfcInteger // optional
+	Interval : IfcInteger // optional
+	Occurrences : IfcInteger // optional
+	TimePeriods : Array<IfcTimePeriod> // optional
 
     constructor(recurrenceType : IfcRecurrenceTypeEnum) {
         super()
@@ -30,14 +32,14 @@ export class IfcRecurrencePattern extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.RecurrenceType));
-		parameters.push(this.DayComponent != null ? this.toStepValue(this.DayComponent) : "$");
-		parameters.push(this.WeekdayComponent != null ? this.toStepValue(this.WeekdayComponent) : "$");
-		parameters.push(this.MonthComponent != null ? this.toStepValue(this.MonthComponent) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Interval != null ? this.toStepValue(this.Interval) : "$");
-		parameters.push(this.Occurrences != null ? this.toStepValue(this.Occurrences) : "$");
-		parameters.push(this.TimePeriods != null ? this.toStepValue(this.TimePeriods) : "$");
+		parameters.push(BaseIfc.toStepValue(this.RecurrenceType));
+		parameters.push(this.DayComponent != null ? BaseIfc.toStepValue(this.DayComponent) : "$");
+		parameters.push(this.WeekdayComponent != null ? BaseIfc.toStepValue(this.WeekdayComponent) : "$");
+		parameters.push(this.MonthComponent != null ? BaseIfc.toStepValue(this.MonthComponent) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Interval != null ? BaseIfc.toStepValue(this.Interval) : "$");
+		parameters.push(this.Occurrences != null ? BaseIfc.toStepValue(this.Occurrences) : "$");
+		parameters.push(this.TimePeriods != null ? BaseIfc.toStepValue(this.TimePeriods) : "$");
 
         return parameters.join();
     }

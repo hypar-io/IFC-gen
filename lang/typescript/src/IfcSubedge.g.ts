@@ -5,7 +5,9 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcVertex} from "./IfcVertex.g"
 import {IfcEdge} from "./IfcEdge.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubedge.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsubedge.htm
+ */
 export class IfcSubedge extends IfcEdge {
 	ParentEdge : IfcEdge
 
@@ -17,9 +19,9 @@ export class IfcSubedge extends IfcEdge {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.EdgeStart != null ? this.toStepValue(this.EdgeStart) : "$");
-		parameters.push(this.EdgeEnd != null ? this.toStepValue(this.EdgeEnd) : "$");
-		parameters.push(this.ParentEdge != null ? this.toStepValue(this.ParentEdge) : "$");
+		parameters.push(this.EdgeStart != null ? BaseIfc.toStepValue(this.EdgeStart) : "$");
+		parameters.push(this.EdgeEnd != null ? BaseIfc.toStepValue(this.EdgeEnd) : "$");
+		parameters.push(this.ParentEdge != null ? BaseIfc.toStepValue(this.ParentEdge) : "$");
 
         return parameters.join();
     }

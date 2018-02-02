@@ -7,7 +7,9 @@ import {IfcCurve} from "./IfcCurve.g"
 import {IfcBoolean} from "./IfcBoolean.g"
 import {IfcEdge} from "./IfcEdge.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgecurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedgecurve.htm
+ */
 export class IfcEdgeCurve extends IfcEdge {
 	EdgeGeometry : IfcCurve
 	SameSense : IfcBoolean
@@ -21,10 +23,10 @@ export class IfcEdgeCurve extends IfcEdge {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.EdgeStart != null ? this.toStepValue(this.EdgeStart) : "$");
-		parameters.push(this.EdgeEnd != null ? this.toStepValue(this.EdgeEnd) : "$");
-		parameters.push(this.EdgeGeometry != null ? this.toStepValue(this.EdgeGeometry) : "$");
-		parameters.push(this.SameSense != null ? this.toStepValue(this.SameSense) : "$");
+		parameters.push(this.EdgeStart != null ? BaseIfc.toStepValue(this.EdgeStart) : "$");
+		parameters.push(this.EdgeEnd != null ? BaseIfc.toStepValue(this.EdgeEnd) : "$");
+		parameters.push(this.EdgeGeometry != null ? BaseIfc.toStepValue(this.EdgeGeometry) : "$");
+		parameters.push(this.SameSense != null ? BaseIfc.toStepValue(this.SameSense) : "$");
 
         return parameters.join();
     }

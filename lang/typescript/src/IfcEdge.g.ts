@@ -3,12 +3,11 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
 import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcVertex} from "./IfcVertex.g"
-import {IfcEdgeCurve} from "./IfcEdgeCurve.g"
-import {IfcOrientedEdge} from "./IfcOrientedEdge.g"
-import {IfcSubedge} from "./IfcSubedge.g"
 import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedge.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcedge.htm
+ */
 export class IfcEdge extends IfcTopologicalRepresentationItem {
 	EdgeStart : IfcVertex
 	EdgeEnd : IfcVertex
@@ -22,8 +21,8 @@ export class IfcEdge extends IfcTopologicalRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.EdgeStart != null ? this.toStepValue(this.EdgeStart) : "$");
-		parameters.push(this.EdgeEnd != null ? this.toStepValue(this.EdgeEnd) : "$");
+		parameters.push(this.EdgeStart != null ? BaseIfc.toStepValue(this.EdgeStart) : "$");
+		parameters.push(this.EdgeEnd != null ? BaseIfc.toStepValue(this.EdgeEnd) : "$");
 
         return parameters.join();
     }

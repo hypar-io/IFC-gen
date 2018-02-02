@@ -6,7 +6,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcSurface} from "./IfcSurface.g"
 import {IfcCurve} from "./IfcCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpcurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpcurve.htm
+ */
 export class IfcPcurve extends IfcCurve {
 	BasisSurface : IfcSurface
 	ReferenceCurve : IfcCurve
@@ -20,8 +22,8 @@ export class IfcPcurve extends IfcCurve {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.BasisSurface != null ? this.toStepValue(this.BasisSurface) : "$");
-		parameters.push(this.ReferenceCurve != null ? this.toStepValue(this.ReferenceCurve) : "$");
+		parameters.push(this.BasisSurface != null ? BaseIfc.toStepValue(this.BasisSurface) : "$");
+		parameters.push(this.ReferenceCurve != null ? BaseIfc.toStepValue(this.ReferenceCurve) : "$");
 
         return parameters.join();
     }

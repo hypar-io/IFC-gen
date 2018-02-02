@@ -5,22 +5,24 @@ import {IfcText} from "./IfcText.g"
 import {IfcDateTime} from "./IfcDateTime.g"
 import {IfcTimeSeriesDataTypeEnum} from "./IfcTimeSeriesDataTypeEnum.g"
 import {IfcDataOriginEnum} from "./IfcDataOriginEnum.g"
-import {IfcUnit} from "./IfcUnit.g"
+import {IfcDerivedUnit} from "./IfcDerivedUnit.g"
+import {IfcMonetaryUnit} from "./IfcMonetaryUnit.g"
+import {IfcNamedUnit} from "./IfcNamedUnit.g"
 import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
-import {IfcIrregularTimeSeries} from "./IfcIrregularTimeSeries.g"
-import {IfcRegularTimeSeries} from "./IfcRegularTimeSeries.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseries.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctimeseries.htm
+ */
 export abstract class IfcTimeSeries extends BaseIfc {
 	Name : IfcLabel
-	Description : IfcText// optional
+	Description : IfcText // optional
 	StartTime : IfcDateTime
 	EndTime : IfcDateTime
 	TimeSeriesDataType : IfcTimeSeriesDataTypeEnum
 	DataOrigin : IfcDataOriginEnum
-	UserDefinedDataOrigin : IfcLabel// optional
-	Unit : IfcUnit// optional
-	HasExternalReference : Array<IfcExternalReferenceRelationship>// inverse
+	UserDefinedDataOrigin : IfcLabel // optional
+	Unit : IfcDerivedUnit|IfcMonetaryUnit|IfcNamedUnit // optional
+	HasExternalReference : Array<IfcExternalReferenceRelationship> // inverse
 
     constructor(name : IfcLabel, startTime : IfcDateTime, endTime : IfcDateTime, timeSeriesDataType : IfcTimeSeriesDataTypeEnum, dataOrigin : IfcDataOriginEnum) {
         super()

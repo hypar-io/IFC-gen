@@ -5,16 +5,14 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcProfileDef} from "./IfcProfileDef.g"
 import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
-import {IfcExtrudedAreaSolid} from "./IfcExtrudedAreaSolid.g"
-import {IfcFixedReferenceSweptAreaSolid} from "./IfcFixedReferenceSweptAreaSolid.g"
-import {IfcRevolvedAreaSolid} from "./IfcRevolvedAreaSolid.g"
-import {IfcSurfaceCurveSweptAreaSolid} from "./IfcSurfaceCurveSweptAreaSolid.g"
 import {IfcSolidModel} from "./IfcSolidModel.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptareasolid.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptareasolid.htm
+ */
 export abstract class IfcSweptAreaSolid extends IfcSolidModel {
 	SweptArea : IfcProfileDef
-	Position : IfcAxis2Placement3D// optional
+	Position : IfcAxis2Placement3D // optional
 
     constructor(sweptArea : IfcProfileDef) {
         super()

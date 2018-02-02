@@ -8,7 +8,9 @@ import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures.g"
 import {IfcURIReference} from "./IfcURIReference.g"
 import {IfcSurfaceTexture} from "./IfcSurfaceTexture.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcimagetexture.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcimagetexture.htm
+ */
 export class IfcImageTexture extends IfcSurfaceTexture {
 	URLReference : IfcURIReference
 
@@ -20,12 +22,12 @@ export class IfcImageTexture extends IfcSurfaceTexture {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.RepeatS != null ? this.toStepValue(this.RepeatS) : "$");
-		parameters.push(this.RepeatT != null ? this.toStepValue(this.RepeatT) : "$");
-		parameters.push(this.Mode != null ? this.toStepValue(this.Mode) : "$");
-		parameters.push(this.TextureTransform != null ? this.toStepValue(this.TextureTransform) : "$");
-		parameters.push(this.Parameter != null ? this.toStepValue(this.Parameter) : "$");
-		parameters.push(this.URLReference != null ? this.toStepValue(this.URLReference) : "$");
+		parameters.push(this.RepeatS != null ? BaseIfc.toStepValue(this.RepeatS) : "$");
+		parameters.push(this.RepeatT != null ? BaseIfc.toStepValue(this.RepeatT) : "$");
+		parameters.push(this.Mode != null ? BaseIfc.toStepValue(this.Mode) : "$");
+		parameters.push(this.TextureTransform != null ? BaseIfc.toStepValue(this.TextureTransform) : "$");
+		parameters.push(this.Parameter != null ? BaseIfc.toStepValue(this.Parameter) : "$");
+		parameters.push(this.URLReference != null ? BaseIfc.toStepValue(this.URLReference) : "$");
 
         return parameters.join();
     }

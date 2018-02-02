@@ -7,7 +7,9 @@ import {IfcProfileProperties} from "./IfcProfileProperties.g"
 import {IfcCurve} from "./IfcCurve.g"
 import {IfcArbitraryClosedProfileDef} from "./IfcArbitraryClosedProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryprofiledefwithvoids.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryprofiledefwithvoids.htm
+ */
 export class IfcArbitraryProfileDefWithVoids extends IfcArbitraryClosedProfileDef {
 	InnerCurves : Array<IfcCurve>
 
@@ -19,10 +21,10 @@ export class IfcArbitraryProfileDefWithVoids extends IfcArbitraryClosedProfileDe
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.OuterCurve != null ? this.toStepValue(this.OuterCurve) : "$");
-		parameters.push(this.InnerCurves != null ? this.toStepValue(this.InnerCurves) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.OuterCurve != null ? BaseIfc.toStepValue(this.OuterCurve) : "$");
+		parameters.push(this.InnerCurves != null ? BaseIfc.toStepValue(this.InnerCurves) : "$");
 
         return parameters.join();
     }

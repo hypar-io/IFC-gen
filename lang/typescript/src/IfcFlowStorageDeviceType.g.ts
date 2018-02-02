@@ -14,11 +14,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcElectricFlowStorageDeviceType} from "./IfcElectricFlowStorageDeviceType.g"
-import {IfcTankType} from "./IfcTankType.g"
 import {IfcDistributionFlowElementType} from "./IfcDistributionFlowElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowstoragedevicetype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowstoragedevicetype.htm
+ */
 export abstract class IfcFlowStorageDeviceType extends IfcDistributionFlowElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {

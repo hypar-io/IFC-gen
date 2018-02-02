@@ -10,7 +10,9 @@ import {IfcCompositeCurve} from "./IfcCompositeCurve.g"
 import {IfcParameterValue} from "./IfcParameterValue.g"
 import {IfcCompositeCurveSegment} from "./IfcCompositeCurveSegment.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreparametrisedcompositecurvesegment.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreparametrisedcompositecurvesegment.htm
+ */
 export class IfcReparametrisedCompositeCurveSegment extends IfcCompositeCurveSegment {
 	ParamLength : IfcParameterValue
 
@@ -22,10 +24,10 @@ export class IfcReparametrisedCompositeCurveSegment extends IfcCompositeCurveSeg
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Transition != null ? this.toStepValue(this.Transition) : "$");
-		parameters.push(this.SameSense != null ? this.toStepValue(this.SameSense) : "$");
-		parameters.push(this.ParentCurve != null ? this.toStepValue(this.ParentCurve) : "$");
-		parameters.push(this.ParamLength != null ? this.toStepValue(this.ParamLength) : "$");
+		parameters.push(this.Transition != null ? BaseIfc.toStepValue(this.Transition) : "$");
+		parameters.push(this.SameSense != null ? BaseIfc.toStepValue(this.SameSense) : "$");
+		parameters.push(this.ParentCurve != null ? BaseIfc.toStepValue(this.ParentCurve) : "$");
+		parameters.push(this.ParamLength != null ? BaseIfc.toStepValue(this.ParamLength) : "$");
 
         return parameters.join();
     }

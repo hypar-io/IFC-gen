@@ -29,16 +29,17 @@ import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcWindowTypeEnum} from "./IfcWindowTypeEnum.g"
 import {IfcWindowTypePartitioningEnum} from "./IfcWindowTypePartitioningEnum.g"
-import {IfcWindowStandardCase} from "./IfcWindowStandardCase.g"
 import {IfcBuildingElement} from "./IfcBuildingElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindow.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcwindow.htm
+ */
 export class IfcWindow extends IfcBuildingElement {
-	OverallHeight : IfcPositiveLengthMeasure// optional
-	OverallWidth : IfcPositiveLengthMeasure// optional
-	PredefinedType : IfcWindowTypeEnum// optional
-	PartitioningType : IfcWindowTypePartitioningEnum// optional
-	UserDefinedPartitioningType : IfcLabel// optional
+	OverallHeight : IfcPositiveLengthMeasure // optional
+	OverallWidth : IfcPositiveLengthMeasure // optional
+	PredefinedType : IfcWindowTypeEnum // optional
+	PartitioningType : IfcWindowTypePartitioningEnum // optional
+	UserDefinedPartitioningType : IfcLabel // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -46,19 +47,19 @@ export class IfcWindow extends IfcBuildingElement {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.OverallHeight != null ? this.toStepValue(this.OverallHeight) : "$");
-		parameters.push(this.OverallWidth != null ? this.toStepValue(this.OverallWidth) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
-		parameters.push(this.toStepValue(this.PartitioningType));
-		parameters.push(this.UserDefinedPartitioningType != null ? this.toStepValue(this.UserDefinedPartitioningType) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.OverallHeight != null ? BaseIfc.toStepValue(this.OverallHeight) : "$");
+		parameters.push(this.OverallWidth != null ? BaseIfc.toStepValue(this.OverallWidth) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+		parameters.push(BaseIfc.toStepValue(this.PartitioningType));
+		parameters.push(this.UserDefinedPartitioningType != null ? BaseIfc.toStepValue(this.UserDefinedPartitioningType) : "$");
 
         return parameters.join();
     }

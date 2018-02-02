@@ -18,44 +18,47 @@ import {IfcReinforcingBarTypeEnum} from "./IfcReinforcingBarTypeEnum.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcAreaMeasure} from "./IfcAreaMeasure.g"
 import {IfcReinforcingBarSurfaceEnum} from "./IfcReinforcingBarSurfaceEnum.g"
-import {IfcBendingParameterSelect} from "./IfcBendingParameterSelect.g"
+import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
+import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
 import {IfcReinforcingElementType} from "./IfcReinforcingElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingbartype.htm
+ */
 export class IfcReinforcingBarType extends IfcReinforcingElementType {
 	PredefinedType : IfcReinforcingBarTypeEnum
-	NominalDiameter : IfcPositiveLengthMeasure// optional
-	CrossSectionArea : IfcAreaMeasure// optional
-	BarLength : IfcPositiveLengthMeasure// optional
-	BarSurface : IfcReinforcingBarSurfaceEnum// optional
-	BendingShapeCode : IfcLabel// optional
-	BendingParameters : Array<IfcBendingParameterSelect>// optional
+	NominalDiameter : IfcPositiveLengthMeasure // optional
+	CrossSectionArea : IfcAreaMeasure // optional
+	BarLength : IfcPositiveLengthMeasure // optional
+	BarSurface : IfcReinforcingBarSurfaceEnum // optional
+	BendingShapeCode : IfcLabel // optional
+	BendingParameters : Array<IfcLengthMeasure|IfcPlaneAngleMeasure> // optional
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcReinforcingBarTypeEnum) {
         super(globalId)
-		this.BendingParameters = new Array<IfcBendingParameterSelect>()
+		this.BendingParameters = new Array<IfcLengthMeasure|IfcPlaneAngleMeasure>()
 
 		this.PredefinedType = predefinedType
 
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ApplicableOccurrence != null ? this.toStepValue(this.ApplicableOccurrence) : "$");
-		parameters.push(this.HasPropertySets != null ? this.toStepValue(this.HasPropertySets) : "$");
-		parameters.push(this.RepresentationMaps != null ? this.toStepValue(this.RepresentationMaps) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.ElementType != null ? this.toStepValue(this.ElementType) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
-		parameters.push(this.NominalDiameter != null ? this.toStepValue(this.NominalDiameter) : "$");
-		parameters.push(this.CrossSectionArea != null ? this.toStepValue(this.CrossSectionArea) : "$");
-		parameters.push(this.BarLength != null ? this.toStepValue(this.BarLength) : "$");
-		parameters.push(this.toStepValue(this.BarSurface));
-		parameters.push(this.BendingShapeCode != null ? this.toStepValue(this.BendingShapeCode) : "$");
-		parameters.push(this.BendingParameters != null ? this.toStepValue(this.BendingParameters) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ApplicableOccurrence != null ? BaseIfc.toStepValue(this.ApplicableOccurrence) : "$");
+		parameters.push(this.HasPropertySets != null ? BaseIfc.toStepValue(this.HasPropertySets) : "$");
+		parameters.push(this.RepresentationMaps != null ? BaseIfc.toStepValue(this.RepresentationMaps) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.ElementType != null ? BaseIfc.toStepValue(this.ElementType) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+		parameters.push(this.NominalDiameter != null ? BaseIfc.toStepValue(this.NominalDiameter) : "$");
+		parameters.push(this.CrossSectionArea != null ? BaseIfc.toStepValue(this.CrossSectionArea) : "$");
+		parameters.push(this.BarLength != null ? BaseIfc.toStepValue(this.BarLength) : "$");
+		parameters.push(BaseIfc.toStepValue(this.BarSurface));
+		parameters.push(this.BendingShapeCode != null ? BaseIfc.toStepValue(this.BendingShapeCode) : "$");
+		parameters.push(this.BendingParameters != null ? BaseIfc.toStepValue(this.BendingParameters) : "$");
 
         return parameters.join();
     }

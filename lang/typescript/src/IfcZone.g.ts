@@ -16,9 +16,11 @@ import {IfcRelAssignsToGroup} from "./IfcRelAssignsToGroup.g"
 import {IfcRelServicesBuildings} from "./IfcRelServicesBuildings.g"
 import {IfcSystem} from "./IfcSystem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifczone.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifczone.htm
+ */
 export class IfcZone extends IfcSystem {
-	LongName : IfcLabel// optional
+	LongName : IfcLabel // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -26,12 +28,12 @@ export class IfcZone extends IfcSystem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.LongName != null ? this.toStepValue(this.LongName) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.LongName != null ? BaseIfc.toStepValue(this.LongName) : "$");
 
         return parameters.join();
     }

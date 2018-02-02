@@ -8,9 +8,11 @@ import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcParameterValue} from "./IfcParameterValue.g"
 import {IfcSweptDiskSolid} from "./IfcSweptDiskSolid.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptdisksolidpolygonal.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsweptdisksolidpolygonal.htm
+ */
 export class IfcSweptDiskSolidPolygonal extends IfcSweptDiskSolid {
-	FilletRadius : IfcPositiveLengthMeasure// optional
+	FilletRadius : IfcPositiveLengthMeasure // optional
 
     constructor(directrix : IfcCurve, radius : IfcPositiveLengthMeasure) {
         super(directrix,radius)
@@ -18,12 +20,12 @@ export class IfcSweptDiskSolidPolygonal extends IfcSweptDiskSolid {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Directrix != null ? this.toStepValue(this.Directrix) : "$");
-		parameters.push(this.Radius != null ? this.toStepValue(this.Radius) : "$");
-		parameters.push(this.InnerRadius != null ? this.toStepValue(this.InnerRadius) : "$");
-		parameters.push(this.StartParam != null ? this.toStepValue(this.StartParam) : "$");
-		parameters.push(this.EndParam != null ? this.toStepValue(this.EndParam) : "$");
-		parameters.push(this.FilletRadius != null ? this.toStepValue(this.FilletRadius) : "$");
+		parameters.push(this.Directrix != null ? BaseIfc.toStepValue(this.Directrix) : "$");
+		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
+		parameters.push(this.InnerRadius != null ? BaseIfc.toStepValue(this.InnerRadius) : "$");
+		parameters.push(this.StartParam != null ? BaseIfc.toStepValue(this.StartParam) : "$");
+		parameters.push(this.EndParam != null ? BaseIfc.toStepValue(this.EndParam) : "$");
+		parameters.push(this.FilletRadius != null ? BaseIfc.toStepValue(this.FilletRadius) : "$");
 
         return parameters.join();
     }

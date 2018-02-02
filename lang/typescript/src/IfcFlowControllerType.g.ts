@@ -14,17 +14,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcAirTerminalBoxType} from "./IfcAirTerminalBoxType.g"
-import {IfcDamperType} from "./IfcDamperType.g"
-import {IfcElectricDistributionBoardType} from "./IfcElectricDistributionBoardType.g"
-import {IfcElectricTimeControlType} from "./IfcElectricTimeControlType.g"
-import {IfcFlowMeterType} from "./IfcFlowMeterType.g"
-import {IfcProtectiveDeviceType} from "./IfcProtectiveDeviceType.g"
-import {IfcSwitchingDeviceType} from "./IfcSwitchingDeviceType.g"
-import {IfcValveType} from "./IfcValveType.g"
 import {IfcDistributionFlowElementType} from "./IfcDistributionFlowElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowcontrollertype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowcontrollertype.htm
+ */
 export abstract class IfcFlowControllerType extends IfcDistributionFlowElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {

@@ -8,10 +8,12 @@ import {IfcNamedUnit} from "./IfcNamedUnit.g"
 import {IfcMassMeasure} from "./IfcMassMeasure.g"
 import {IfcPhysicalSimpleQuantity} from "./IfcPhysicalSimpleQuantity.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityweight.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityweight.htm
+ */
 export class IfcQuantityWeight extends IfcPhysicalSimpleQuantity {
 	WeightValue : IfcMassMeasure
-	Formula : IfcLabel// optional
+	Formula : IfcLabel // optional
 
     constructor(name : IfcLabel, weightValue : IfcMassMeasure) {
         super(name)
@@ -21,11 +23,11 @@ export class IfcQuantityWeight extends IfcPhysicalSimpleQuantity {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.Unit != null ? this.toStepValue(this.Unit) : "$");
-		parameters.push(this.WeightValue != null ? this.toStepValue(this.WeightValue) : "$");
-		parameters.push(this.Formula != null ? this.toStepValue(this.Formula) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.Unit != null ? BaseIfc.toStepValue(this.Unit) : "$");
+		parameters.push(this.WeightValue != null ? BaseIfc.toStepValue(this.WeightValue) : "$");
+		parameters.push(this.Formula != null ? BaseIfc.toStepValue(this.Formula) : "$");
 
         return parameters.join();
     }

@@ -5,15 +5,18 @@ import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcContext} from "./IfcContext.g"
-import {IfcDefinitionSelect} from "./IfcDefinitionSelect.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcPropertyDefinition} from "./IfcPropertyDefinition.g"
 import {IfcRelationship} from "./IfcRelationship.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldeclares.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreldeclares.htm
+ */
 export class IfcRelDeclares extends IfcRelationship {
 	RelatingContext : IfcContext
-	RelatedDefinitions : Array<IfcDefinitionSelect>
+	RelatedDefinitions : Array<IfcObjectDefinition|IfcPropertyDefinition>
 
-    constructor(globalId : IfcGloballyUniqueId, relatingContext : IfcContext, relatedDefinitions : Array<IfcDefinitionSelect>) {
+    constructor(globalId : IfcGloballyUniqueId, relatingContext : IfcContext, relatedDefinitions : Array<IfcObjectDefinition|IfcPropertyDefinition>) {
         super(globalId)
 
 		this.RelatingContext = relatingContext
@@ -22,12 +25,12 @@ export class IfcRelDeclares extends IfcRelationship {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingContext != null ? this.toStepValue(this.RelatingContext) : "$");
-		parameters.push(this.RelatedDefinitions != null ? this.toStepValue(this.RelatedDefinitions) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatingContext != null ? BaseIfc.toStepValue(this.RelatingContext) : "$");
+		parameters.push(this.RelatedDefinitions != null ? BaseIfc.toStepValue(this.RelatedDefinitions) : "$");
 
         return parameters.join();
     }

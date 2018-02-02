@@ -17,19 +17,19 @@ import {IfcRelAssignsToControl} from "./IfcRelAssignsToControl.g"
 import {IfcDateTime} from "./IfcDateTime.g"
 import {IfcPerson} from "./IfcPerson.g"
 import {IfcDuration} from "./IfcDuration.g"
-import {IfcWorkPlan} from "./IfcWorkPlan.g"
-import {IfcWorkSchedule} from "./IfcWorkSchedule.g"
 import {IfcControl} from "./IfcControl.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcontrol.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcworkcontrol.htm
+ */
 export abstract class IfcWorkControl extends IfcControl {
 	CreationDate : IfcDateTime
-	Creators : Array<IfcPerson>// optional
-	Purpose : IfcLabel// optional
-	Duration : IfcDuration// optional
-	TotalFloat : IfcDuration// optional
+	Creators : Array<IfcPerson> // optional
+	Purpose : IfcLabel // optional
+	Duration : IfcDuration // optional
+	TotalFloat : IfcDuration // optional
 	StartTime : IfcDateTime
-	FinishTime : IfcDateTime// optional
+	FinishTime : IfcDateTime // optional
 
     constructor(globalId : IfcGloballyUniqueId, creationDate : IfcDateTime, startTime : IfcDateTime) {
         super(globalId)

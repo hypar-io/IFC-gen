@@ -6,10 +6,11 @@ import {IfcRepresentationItem} from "./IfcRepresentationItem.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
 import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
-import {IfcStyledRepresentation} from "./IfcStyledRepresentation.g"
 import {IfcRepresentation} from "./IfcRepresentation.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstylemodel.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstylemodel.htm
+ */
 export abstract class IfcStyleModel extends IfcRepresentation {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {

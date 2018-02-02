@@ -19,12 +19,14 @@ import {IfcDoorTypeOperationEnum} from "./IfcDoorTypeOperationEnum.g"
 import {IfcBoolean} from "./IfcBoolean.g"
 import {IfcBuildingElementType} from "./IfcBuildingElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoortype.htm
+ */
 export class IfcDoorType extends IfcBuildingElementType {
 	PredefinedType : IfcDoorTypeEnum
 	OperationType : IfcDoorTypeOperationEnum
-	ParameterTakesPrecedence : IfcBoolean// optional
-	UserDefinedOperationType : IfcLabel// optional
+	ParameterTakesPrecedence : IfcBoolean // optional
+	UserDefinedOperationType : IfcLabel // optional
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDoorTypeEnum, operationType : IfcDoorTypeOperationEnum) {
         super(globalId)
@@ -35,19 +37,19 @@ export class IfcDoorType extends IfcBuildingElementType {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ApplicableOccurrence != null ? this.toStepValue(this.ApplicableOccurrence) : "$");
-		parameters.push(this.HasPropertySets != null ? this.toStepValue(this.HasPropertySets) : "$");
-		parameters.push(this.RepresentationMaps != null ? this.toStepValue(this.RepresentationMaps) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.ElementType != null ? this.toStepValue(this.ElementType) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
-		parameters.push(this.toStepValue(this.OperationType));
-		parameters.push(this.ParameterTakesPrecedence != null ? this.toStepValue(this.ParameterTakesPrecedence) : "$");
-		parameters.push(this.UserDefinedOperationType != null ? this.toStepValue(this.UserDefinedOperationType) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ApplicableOccurrence != null ? BaseIfc.toStepValue(this.ApplicableOccurrence) : "$");
+		parameters.push(this.HasPropertySets != null ? BaseIfc.toStepValue(this.HasPropertySets) : "$");
+		parameters.push(this.RepresentationMaps != null ? BaseIfc.toStepValue(this.RepresentationMaps) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.ElementType != null ? BaseIfc.toStepValue(this.ElementType) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+		parameters.push(BaseIfc.toStepValue(this.OperationType));
+		parameters.push(this.ParameterTakesPrecedence != null ? BaseIfc.toStepValue(this.ParameterTakesPrecedence) : "$");
+		parameters.push(this.UserDefinedOperationType != null ? BaseIfc.toStepValue(this.UserDefinedOperationType) : "$");
 
         return parameters.join();
     }

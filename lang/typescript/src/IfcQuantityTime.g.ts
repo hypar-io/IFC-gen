@@ -8,10 +8,12 @@ import {IfcNamedUnit} from "./IfcNamedUnit.g"
 import {IfcTimeMeasure} from "./IfcTimeMeasure.g"
 import {IfcPhysicalSimpleQuantity} from "./IfcPhysicalSimpleQuantity.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantitytime.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantitytime.htm
+ */
 export class IfcQuantityTime extends IfcPhysicalSimpleQuantity {
 	TimeValue : IfcTimeMeasure
-	Formula : IfcLabel// optional
+	Formula : IfcLabel // optional
 
     constructor(name : IfcLabel, timeValue : IfcTimeMeasure) {
         super(name)
@@ -21,11 +23,11 @@ export class IfcQuantityTime extends IfcPhysicalSimpleQuantity {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.Unit != null ? this.toStepValue(this.Unit) : "$");
-		parameters.push(this.TimeValue != null ? this.toStepValue(this.TimeValue) : "$");
-		parameters.push(this.Formula != null ? this.toStepValue(this.Formula) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.Unit != null ? BaseIfc.toStepValue(this.Unit) : "$");
+		parameters.push(this.TimeValue != null ? BaseIfc.toStepValue(this.TimeValue) : "$");
+		parameters.push(this.Formula != null ? BaseIfc.toStepValue(this.Formula) : "$");
 
         return parameters.join();
     }

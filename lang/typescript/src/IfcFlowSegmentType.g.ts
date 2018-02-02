@@ -14,13 +14,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcCableCarrierSegmentType} from "./IfcCableCarrierSegmentType.g"
-import {IfcCableSegmentType} from "./IfcCableSegmentType.g"
-import {IfcDuctSegmentType} from "./IfcDuctSegmentType.g"
-import {IfcPipeSegmentType} from "./IfcPipeSegmentType.g"
 import {IfcDistributionFlowElementType} from "./IfcDistributionFlowElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowsegmenttype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowsegmenttype.htm
+ */
 export abstract class IfcFlowSegmentType extends IfcDistributionFlowElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {

@@ -8,7 +8,9 @@ import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcArbitraryOpenProfileDef} from "./IfcArbitraryOpenProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccenterlineprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccenterlineprofiledef.htm
+ */
 export class IfcCenterLineProfileDef extends IfcArbitraryOpenProfileDef {
 	Thickness : IfcPositiveLengthMeasure
 
@@ -20,10 +22,10 @@ export class IfcCenterLineProfileDef extends IfcArbitraryOpenProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Curve != null ? this.toStepValue(this.Curve) : "$");
-		parameters.push(this.Thickness != null ? this.toStepValue(this.Thickness) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Curve != null ? BaseIfc.toStepValue(this.Curve) : "$");
+		parameters.push(this.Thickness != null ? BaseIfc.toStepValue(this.Thickness) : "$");
 
         return parameters.join();
     }

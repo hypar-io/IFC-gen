@@ -19,15 +19,13 @@ import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStruc
 import {IfcRelServicesBuildings} from "./IfcRelServicesBuildings.g"
 import {IfcRelReferencedInSpatialStructure} from "./IfcRelReferencedInSpatialStructure.g"
 import {IfcElementCompositionEnum} from "./IfcElementCompositionEnum.g"
-import {IfcBuilding} from "./IfcBuilding.g"
-import {IfcBuildingStorey} from "./IfcBuildingStorey.g"
-import {IfcSite} from "./IfcSite.g"
-import {IfcSpace} from "./IfcSpace.g"
 import {IfcSpatialElement} from "./IfcSpatialElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialstructureelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialstructureelement.htm
+ */
 export abstract class IfcSpatialStructureElement extends IfcSpatialElement {
-	CompositionType : IfcElementCompositionEnum// optional
+	CompositionType : IfcElementCompositionEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

@@ -26,15 +26,13 @@ import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizing
 import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
-import {IfcReinforcingBar} from "./IfcReinforcingBar.g"
-import {IfcReinforcingMesh} from "./IfcReinforcingMesh.g"
-import {IfcTendon} from "./IfcTendon.g"
-import {IfcTendonAnchor} from "./IfcTendonAnchor.g"
 import {IfcElementComponent} from "./IfcElementComponent.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcreinforcingelement.htm
+ */
 export abstract class IfcReinforcingElement extends IfcElementComponent {
-	SteelGrade : IfcLabel// optional
+	SteelGrade : IfcLabel // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

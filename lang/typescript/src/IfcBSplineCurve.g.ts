@@ -7,10 +7,11 @@ import {IfcInteger} from "./IfcInteger.g"
 import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
 import {IfcBSplineCurveForm} from "./IfcBSplineCurveForm.g"
 import {IfcLogical} from "./IfcLogical.g"
-import {IfcBSplineCurveWithKnots} from "./IfcBSplineCurveWithKnots.g"
 import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcbsplinecurve.htm
+ */
 export abstract class IfcBSplineCurve extends IfcBoundedCurve {
 	Degree : IfcInteger
 	ControlPointsList : Array<IfcCartesianPoint>
@@ -18,9 +19,11 @@ export abstract class IfcBSplineCurve extends IfcBoundedCurve {
 	ClosedCurve : IfcLogical
 	SelfIntersect : IfcLogical
 
-    get UpperIndexOnControlPoints() : IfcInteger{throw "Derived property logic has been implemented for UpperIndexOnControlPoints."} // derived
+    get UpperIndexOnControlPoints() : IfcInteger{throw "Derived property logic has not been implemented for UpperIndexOnControlPoints."} // derived
+    set UpperIndexOnControlPoints(value : IfcInteger){super.UpperIndexOnControlPoints = value}
 
-    get ControlPoints() : Array<IfcCartesianPoint>{throw "Derived property logic has been implemented for ControlPoints."} // derived
+    get ControlPoints() : Array<IfcCartesianPoint>{throw "Derived property logic has not been implemented for ControlPoints."} // derived
+    set ControlPoints(value : Array<IfcCartesianPoint>){super.ControlPoints = value}
 
     constructor(degree : IfcInteger, controlPointsList : Array<IfcCartesianPoint>, curveForm : IfcBSplineCurveForm, closedCurve : IfcLogical, selfIntersect : IfcLogical) {
         super()

@@ -12,21 +12,17 @@ import {IfcRelAssociates} from "./IfcRelAssociates.g"
 import {IfcRelDefinesByObject} from "./IfcRelDefinesByObject.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
-import {IfcActor} from "./IfcActor.g"
-import {IfcControl} from "./IfcControl.g"
-import {IfcGroup} from "./IfcGroup.g"
-import {IfcProcess} from "./IfcProcess.g"
-import {IfcProduct} from "./IfcProduct.g"
-import {IfcResource} from "./IfcResource.g"
 import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobject.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcobject.htm
+ */
 export abstract class IfcObject extends IfcObjectDefinition {
-	ObjectType : IfcLabel// optional
-	IsDeclaredBy : Array<IfcRelDefinesByObject>// inverse
-	Declares : Array<IfcRelDefinesByObject>// inverse
-	IsTypedBy : Array<IfcRelDefinesByType>// inverse
-	IsDefinedBy : Array<IfcRelDefinesByProperties>// inverse
+	ObjectType : IfcLabel // optional
+	IsDeclaredBy : Array<IfcRelDefinesByObject> // inverse
+	Declares : Array<IfcRelDefinesByObject> // inverse
+	IsTypedBy : Array<IfcRelDefinesByType> // inverse
+	IsDefinedBy : Array<IfcRelDefinesByProperties> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

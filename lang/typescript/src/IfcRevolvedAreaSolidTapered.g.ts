@@ -10,7 +10,9 @@ import {IfcPlaneAngleMeasure} from "./IfcPlaneAngleMeasure.g"
 import {IfcLine} from "./IfcLine.g"
 import {IfcRevolvedAreaSolid} from "./IfcRevolvedAreaSolid.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrevolvedareasolidtapered.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrevolvedareasolidtapered.htm
+ */
 export class IfcRevolvedAreaSolidTapered extends IfcRevolvedAreaSolid {
 	EndSweptArea : IfcProfileDef
 
@@ -22,11 +24,11 @@ export class IfcRevolvedAreaSolidTapered extends IfcRevolvedAreaSolid {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SweptArea != null ? this.toStepValue(this.SweptArea) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Axis != null ? this.toStepValue(this.Axis) : "$");
-		parameters.push(this.Angle != null ? this.toStepValue(this.Angle) : "$");
-		parameters.push(this.EndSweptArea != null ? this.toStepValue(this.EndSweptArea) : "$");
+		parameters.push(this.SweptArea != null ? BaseIfc.toStepValue(this.SweptArea) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Axis != null ? BaseIfc.toStepValue(this.Axis) : "$");
+		parameters.push(this.Angle != null ? BaseIfc.toStepValue(this.Angle) : "$");
+		parameters.push(this.EndSweptArea != null ? BaseIfc.toStepValue(this.EndSweptArea) : "$");
 
         return parameters.join();
     }

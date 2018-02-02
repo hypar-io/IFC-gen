@@ -21,14 +21,16 @@ import {IfcTaskTime} from "./IfcTaskTime.g"
 import {IfcTaskTypeEnum} from "./IfcTaskTypeEnum.g"
 import {IfcProcess} from "./IfcProcess.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctask.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctask.htm
+ */
 export class IfcTask extends IfcProcess {
-	Status : IfcLabel// optional
-	WorkMethod : IfcLabel// optional
+	Status : IfcLabel // optional
+	WorkMethod : IfcLabel // optional
 	IsMilestone : IfcBoolean
-	Priority : IfcInteger// optional
-	TaskTime : IfcTaskTime// optional
-	PredefinedType : IfcTaskTypeEnum// optional
+	Priority : IfcInteger // optional
+	TaskTime : IfcTaskTime // optional
+	PredefinedType : IfcTaskTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId, isMilestone : IfcBoolean) {
         super(globalId)
@@ -38,19 +40,19 @@ export class IfcTask extends IfcProcess {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.LongDescription != null ? this.toStepValue(this.LongDescription) : "$");
-		parameters.push(this.Status != null ? this.toStepValue(this.Status) : "$");
-		parameters.push(this.WorkMethod != null ? this.toStepValue(this.WorkMethod) : "$");
-		parameters.push(this.IsMilestone != null ? this.toStepValue(this.IsMilestone) : "$");
-		parameters.push(this.Priority != null ? this.toStepValue(this.Priority) : "$");
-		parameters.push(this.TaskTime != null ? this.toStepValue(this.TaskTime) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.LongDescription != null ? BaseIfc.toStepValue(this.LongDescription) : "$");
+		parameters.push(this.Status != null ? BaseIfc.toStepValue(this.Status) : "$");
+		parameters.push(this.WorkMethod != null ? BaseIfc.toStepValue(this.WorkMethod) : "$");
+		parameters.push(this.IsMilestone != null ? BaseIfc.toStepValue(this.IsMilestone) : "$");
+		parameters.push(this.Priority != null ? BaseIfc.toStepValue(this.Priority) : "$");
+		parameters.push(this.TaskTime != null ? BaseIfc.toStepValue(this.TaskTime) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

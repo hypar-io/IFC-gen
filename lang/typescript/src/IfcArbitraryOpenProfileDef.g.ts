@@ -5,10 +5,11 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
 import {IfcProfileProperties} from "./IfcProfileProperties.g"
 import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
-import {IfcCenterLineProfileDef} from "./IfcCenterLineProfileDef.g"
 import {IfcProfileDef} from "./IfcProfileDef.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryopenprofiledef.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcarbitraryopenprofiledef.htm
+ */
 export class IfcArbitraryOpenProfileDef extends IfcProfileDef {
 	Curve : IfcBoundedCurve
 
@@ -20,9 +21,9 @@ export class IfcArbitraryOpenProfileDef extends IfcProfileDef {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? this.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Curve != null ? this.toStepValue(this.Curve) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ProfileType));
+		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+		parameters.push(this.Curve != null ? BaseIfc.toStepValue(this.Curve) : "$");
 
         return parameters.join();
     }

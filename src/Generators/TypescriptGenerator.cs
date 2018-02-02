@@ -9,6 +9,14 @@ namespace IFC4.Generators
 {
     public class TypescriptGenerator : ILanguageGenerator
     {
+        private Dictionary<string,SelectType> selectData = new Dictionary<string, SelectType>();
+
+        public Dictionary<string,SelectType> SelectData
+        {
+            get{return selectData;}
+            set{selectData = value;}
+        }
+
         public string Assignment(AttributeData data)
         {
             return $"\t\tthis.{data.Name} = {data.ParameterName}";
@@ -27,7 +35,15 @@ namespace IFC4.Generators
         {
             if (isCollection)
             {
-                return $"{string.Join("", Enumerable.Repeat("Array<", rank))}{type}{string.Join("", Enumerable.Repeat(">", rank))}";
+                if(selectData.ContainsKey(type))
+                {
+                    var unionType = string.Join('|', ExpandPossibleTypes(type));
+                    return $"{string.Join("", Enumerable.Repeat("Array<", rank))}{unionType}{string.Join("", Enumerable.Repeat(">", rank))}";
+                }   
+                else 
+                {
+                    return $"{string.Join("", Enumerable.Repeat("Array<", rank))}{type}{string.Join("", Enumerable.Repeat(">", rank))}";
+                }
             }
 
             // Item is used in functions.
@@ -42,18 +58,44 @@ namespace IFC4.Generators
                 return "IfcSIUnitName";
             }
 
+            if(selectData.ContainsKey(type))
+            {
+                return string.Join('|', ExpandPossibleTypes(type));
+            }
+
             return type;
+        }
+
+
+        private IEnumerable<string> ExpandPossibleTypes(string baseType)
+        {
+            if(!selectData.ContainsKey(baseType))
+            {
+                // return right away, it's not a select
+                return new List<string>{baseType};
+            }
+
+            var values = selectData[baseType].Values;
+            var result = new List<string>();
+            foreach(var v in values)
+            {
+                result.AddRange(ExpandPossibleTypes(v));
+            }
+
+            return result;
         }
 
         public string AttributeDataString(AttributeData data)
         {
             var prop = string.Empty;
+
             if(data.IsDerived)
             {
                 var isNew = data.IsDerived && data.HidesParentAttributeOfSameName ? "new " : string.Empty;
                 var name = data.Name;
                 prop = $@"
-    get {name}() : {data.Type}{{throw ""Derived property logic has been implemented for {name}.""}} // derived";
+    get {name}() : {data.Type}{{throw ""Derived property logic has not been implemented for {name}.""}} // derived
+    set {name}(value : {data.Type}){{super.{name} = value}}";
             }
             else
             {   
@@ -62,7 +104,7 @@ namespace IFC4.Generators
                 if(data.IsInverse) tags.Add("inverse");
                 var opt = data.IsOptional ? "optional" : string.Empty;
                 var inverse = data.IsInverse ? "inverse" : string.Empty;
-                prop = $"\t{data.Name} : {data.Type}{(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}";
+                prop = $"\t{data.Name} : {data.Type}{(tags.Any()? " // " + string.Join(",",tags) : string.Empty)}";
             }
 
             return prop;
@@ -70,7 +112,7 @@ namespace IFC4.Generators
 
         public string AttributeStepString(AttributeData data, bool isDerivedInChild)
         {
-            var step = $"\t\tparameters.push(this.{data.Name} != null ? this.toStepValue(this.{data.Name}) : \"$\");";
+            var step = $"\t\tparameters.push(this.{data.Name} != null ? BaseIfc.toStepValue(this.{data.Name}) : \"$\");";
 
             if(isDerivedInChild)
             {
@@ -83,7 +125,7 @@ namespace IFC4.Generators
             // end in 'enum'.
             if (data.Type.EndsWith("Enum") | data.Type == "bool" | data.Type == "int" | data.Type == "double")
             {
-                step = $"\t\tparameters.push(this.toStepValue(this.{data.Name}));";
+                step = $"\t\tparameters.push(BaseIfc.toStepValue(this.{data.Name}));";
             }
             return step;
         }
@@ -109,17 +151,13 @@ import {{BaseIfc}} from ""./BaseIfc""
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
 export class {data.Name} extends BaseIfc
 {{
-    protected value : {WrappedType(data)}
+    protected wrappedValue : {WrappedType(data)}
 
     constructor(value : {WrappedType(data)}){{
         super()
-        this.value = value
+        this.wrappedValue = value
     }}	
-    toString() : string {{ return this.value.toString() }}
-    toStepValue(value: any, isSelectOption? : boolean) : string {{
-        if(isSelectOption){{ return `${{this.constructor.name.toUpperCase()}}(${{this.toStepValue(this.value,isSelectOption)}})`; }}
-        else{{ return this.toStepValue(this.value, isSelectOption); }}
-    }}
+    toString() : string {{ return this.wrappedValue.toString() }}
 }}
 ";
             return result;
@@ -137,20 +175,7 @@ export enum {data.Name} {{{string.Join(",", data.Values)}}}
 
         public string SelectTypeString(SelectType data)
         {
-            var importBuilder = new StringBuilder();
-            foreach(var d in data.Dependencies())
-            {
-                importBuilder.AppendLine($"import {{{d}}} from \"./{d}.g\"");
-            }
-            var result =
-$@"
-import {{Select}} from ""./Select""
-{importBuilder.ToString()}
-export class {data.Name} extends Select {{
-    value : {string.Join('|',data.Values)}
-}}
-";
-            return result;
+            throw new NotImplementedException("Typescript doesn't use a class which wraps SELECT types.");
         }
 
         public string EntityConstructorParams(Entity data, bool includeOptional)
@@ -169,7 +194,7 @@ export class {data.Name} extends Select {{
 
             var validAttrs = includeOptional ? AttributesWithOptional(attrs) : AttributesWithoutOptional(attrs);
 
-            return string.Join(", ", validAttrs.Select(a => $"{a.ParameterName} : {a.Type}"));
+            return string.Join(", ", validAttrs.Select(a => $"{a.ParameterName} : {(selectData.ContainsKey(a.Type)?string.Join('|',selectData[a.Type].Values):a.Type)}"));
         }
 
         public string EntityBaseConstructorParams(Entity data, bool includeOptional)
@@ -192,7 +217,7 @@ export class {data.Name} extends Select {{
         public string EntityString(Entity data)
         {
             var importBuilder = new StringBuilder();
-            foreach(var d in data.Dependencies())
+            foreach(var d in Dependencies(data))
             {
                 importBuilder.AppendLine($"import {{{d}}} from \"./{d}.g\"");
             }
@@ -218,9 +243,11 @@ export class {data.Name} extends Select {{
 $@"
 import {{BaseIfc}} from ""./BaseIfc""
 {importBuilder.ToString()}
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
+ */
 export {modifier}class {data.Name} extends {super} {{
-{data.Properties()}{constructors}{StepParameters(data)}
+{data.Properties(selectData)}{constructors}{StepParameters(data)}
 }}";
             return classStr;
         }
@@ -371,6 +398,36 @@ export {modifier}class {data.Name} extends {super} {{
             var path = Path.Combine(directory, "index.ts");
 
             File.WriteAllText(path, importBuilder.ToString());
+        }
+
+        public IEnumerable<string> Dependencies(Entity entity) 
+        {
+            var parents = entity.ParentsAndSelf().Reverse();
+            var attrs = parents.SelectMany(p => p.Attributes);
+
+            var result = new List<string>();
+            
+            result.AddRange(AddRelevantTypes(attrs)); // attributes for constructor parameters for parents
+            result.AddRange(AddRelevantTypes(entity.Attributes)); // atributes of self
+            //result.AddRange(this.Supers.Select(s=>s.Name)); // attributes for all sub-types
+            result.AddRange(entity.Subs.Select(s=>s.Name)); // attributes for all super types
+
+            var badTypes = new List<string>{"boolean","number","string","boolean","Uint8Array"};
+            var types = result.Distinct().Where(t=>!badTypes.Contains(t) && t!=entity.Name);
+
+            return types;
+        }
+
+        private IEnumerable<string> AddRelevantTypes(IEnumerable<AttributeData> attrs)
+        {
+            var result = new List<string>();
+
+            foreach(var a in attrs)
+            {
+                result.AddRange(ExpandPossibleTypes(a.type));
+            }
+
+            return result.Distinct();
         }
     }
 }

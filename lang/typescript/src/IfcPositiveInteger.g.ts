@@ -5,15 +5,11 @@ import {IfcInteger} from "./IfcInteger.g"
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpositiveinteger.htm
 export class IfcPositiveInteger extends BaseIfc
 {
-    protected value : IfcInteger
+    protected wrappedValue : IfcInteger
 
     constructor(value : IfcInteger){
         super()
-        this.value = value
+        this.wrappedValue = value
     }	
-    toString() : string { return this.value.toString() }
-    toStepValue(value: any, isSelectOption? : boolean) : string {
-        if(isSelectOption){ return `${this.constructor.name.toUpperCase()}(${this.toStepValue(this.value,isSelectOption)})`; }
-        else{ return this.toStepValue(this.value, isSelectOption); }
-    }
+    toString() : string { return this.wrappedValue.toString() }
 }

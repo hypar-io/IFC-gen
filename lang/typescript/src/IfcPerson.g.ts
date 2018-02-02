@@ -6,17 +6,19 @@ import {IfcActorRole} from "./IfcActorRole.g"
 import {IfcAddress} from "./IfcAddress.g"
 import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperson.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcperson.htm
+ */
 export class IfcPerson extends BaseIfc {
-	Identification : IfcIdentifier// optional
-	FamilyName : IfcLabel// optional
-	GivenName : IfcLabel// optional
-	MiddleNames : Array<IfcLabel>// optional
-	PrefixTitles : Array<IfcLabel>// optional
-	SuffixTitles : Array<IfcLabel>// optional
-	Roles : Array<IfcActorRole>// optional
-	Addresses : Array<IfcAddress>// optional
-	EngagedIn : Array<IfcPersonAndOrganization>// inverse
+	Identification : IfcIdentifier // optional
+	FamilyName : IfcLabel // optional
+	GivenName : IfcLabel // optional
+	MiddleNames : Array<IfcLabel> // optional
+	PrefixTitles : Array<IfcLabel> // optional
+	SuffixTitles : Array<IfcLabel> // optional
+	Roles : Array<IfcActorRole> // optional
+	Addresses : Array<IfcAddress> // optional
+	EngagedIn : Array<IfcPersonAndOrganization> // inverse
 
     constructor() {
         super()
@@ -30,14 +32,14 @@ export class IfcPerson extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.FamilyName != null ? this.toStepValue(this.FamilyName) : "$");
-		parameters.push(this.GivenName != null ? this.toStepValue(this.GivenName) : "$");
-		parameters.push(this.MiddleNames != null ? this.toStepValue(this.MiddleNames) : "$");
-		parameters.push(this.PrefixTitles != null ? this.toStepValue(this.PrefixTitles) : "$");
-		parameters.push(this.SuffixTitles != null ? this.toStepValue(this.SuffixTitles) : "$");
-		parameters.push(this.Roles != null ? this.toStepValue(this.Roles) : "$");
-		parameters.push(this.Addresses != null ? this.toStepValue(this.Addresses) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.FamilyName != null ? BaseIfc.toStepValue(this.FamilyName) : "$");
+		parameters.push(this.GivenName != null ? BaseIfc.toStepValue(this.GivenName) : "$");
+		parameters.push(this.MiddleNames != null ? BaseIfc.toStepValue(this.MiddleNames) : "$");
+		parameters.push(this.PrefixTitles != null ? BaseIfc.toStepValue(this.PrefixTitles) : "$");
+		parameters.push(this.SuffixTitles != null ? BaseIfc.toStepValue(this.SuffixTitles) : "$");
+		parameters.push(this.Roles != null ? BaseIfc.toStepValue(this.Roles) : "$");
+		parameters.push(this.Addresses != null ? BaseIfc.toStepValue(this.Addresses) : "$");
 
         return parameters.join();
     }

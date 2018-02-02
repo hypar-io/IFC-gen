@@ -6,14 +6,18 @@ import {IfcVertex} from "./IfcVertex.g"
 import {IfcEdge} from "./IfcEdge.g"
 import {IfcBoolean} from "./IfcBoolean.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorientededge.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorientededge.htm
+ */
 export class IfcOrientedEdge extends IfcEdge {
 	EdgeElement : IfcEdge
 	Orientation : IfcBoolean
 
-    get EdgeStart() : IfcVertex{throw "Derived property logic has been implemented for EdgeStart."} // derived
+    get EdgeStart() : IfcVertex{throw "Derived property logic has not been implemented for EdgeStart."} // derived
+    set EdgeStart(value : IfcVertex){super.EdgeStart = value}
 
-    get EdgeEnd() : IfcVertex{throw "Derived property logic has been implemented for EdgeEnd."} // derived
+    get EdgeEnd() : IfcVertex{throw "Derived property logic has not been implemented for EdgeEnd."} // derived
+    set EdgeEnd(value : IfcVertex){super.EdgeEnd = value}
 
     constructor(edgeStart : IfcVertex, edgeEnd : IfcVertex, edgeElement : IfcEdge, orientation : IfcBoolean) {
         super(edgeStart,edgeEnd)
@@ -26,8 +30,8 @@ export class IfcOrientedEdge extends IfcEdge {
         var parameters = new Array<string>();
 		parameters.push("*");
 		parameters.push("*");
-		parameters.push(this.EdgeElement != null ? this.toStepValue(this.EdgeElement) : "$");
-		parameters.push(this.Orientation != null ? this.toStepValue(this.Orientation) : "$");
+		parameters.push(this.EdgeElement != null ? BaseIfc.toStepValue(this.EdgeElement) : "$");
+		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
 
         return parameters.join();
     }

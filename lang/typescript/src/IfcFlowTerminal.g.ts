@@ -28,22 +28,11 @@ import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStruc
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
 import {IfcRelConnectsPortToElement} from "./IfcRelConnectsPortToElement.g"
 import {IfcRelFlowControlElements} from "./IfcRelFlowControlElements.g"
-import {IfcAirTerminal} from "./IfcAirTerminal.g"
-import {IfcAudioVisualAppliance} from "./IfcAudioVisualAppliance.g"
-import {IfcCommunicationsAppliance} from "./IfcCommunicationsAppliance.g"
-import {IfcElectricAppliance} from "./IfcElectricAppliance.g"
-import {IfcFireSuppressionTerminal} from "./IfcFireSuppressionTerminal.g"
-import {IfcLamp} from "./IfcLamp.g"
-import {IfcLightFixture} from "./IfcLightFixture.g"
-import {IfcMedicalDevice} from "./IfcMedicalDevice.g"
-import {IfcOutlet} from "./IfcOutlet.g"
-import {IfcSanitaryTerminal} from "./IfcSanitaryTerminal.g"
-import {IfcSpaceHeater} from "./IfcSpaceHeater.g"
-import {IfcStackTerminal} from "./IfcStackTerminal.g"
-import {IfcWasteTerminal} from "./IfcWasteTerminal.g"
 import {IfcDistributionFlowElement} from "./IfcDistributionFlowElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowterminal.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowterminal.htm
+ */
 export class IfcFlowTerminal extends IfcDistributionFlowElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
@@ -52,14 +41,14 @@ export class IfcFlowTerminal extends IfcDistributionFlowElement {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
 
         return parameters.join();
     }

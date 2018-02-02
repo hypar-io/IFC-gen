@@ -1,14 +1,17 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcColour} from "./IfcColour.g"
+import {IfcColourSpecification} from "./IfcColourSpecification.g"
+import {IfcPreDefinedColour} from "./IfcPreDefinedColour.g"
 import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefordefinedfont.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctextstylefordefinedfont.htm
+ */
 export class IfcTextStyleForDefinedFont extends IfcPresentationItem {
-	Colour : IfcColour
-	BackgroundColour : IfcColour// optional
+	Colour : IfcColourSpecification|IfcPreDefinedColour
+	BackgroundColour : IfcColourSpecification|IfcPreDefinedColour // optional
 
-    constructor(colour : IfcColour) {
+    constructor(colour : IfcColourSpecification|IfcPreDefinedColour) {
         super()
 
 		this.Colour = colour
@@ -16,8 +19,8 @@ export class IfcTextStyleForDefinedFont extends IfcPresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Colour != null ? this.toStepValue(this.Colour) : "$");
-		parameters.push(this.BackgroundColour != null ? this.toStepValue(this.BackgroundColour) : "$");
+		parameters.push(this.Colour != null ? BaseIfc.toStepValue(this.Colour) : "$");
+		parameters.push(this.BackgroundColour != null ? BaseIfc.toStepValue(this.BackgroundColour) : "$");
 
         return parameters.join();
     }

@@ -7,12 +7,15 @@ import {IfcParameterValue} from "./IfcParameterValue.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcPoint} from "./IfcPoint.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointoncurve.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpointoncurve.htm
+ */
 export class IfcPointOnCurve extends IfcPoint {
 	BasisCurve : IfcCurve
 	PointParameter : IfcParameterValue
 
-    get Dim() : IfcDimensionCount{throw "Derived property logic has been implemented for Dim."} // derived
+    get Dim() : IfcDimensionCount{throw "Derived property logic has not been implemented for Dim."} // derived
+    set Dim(value : IfcDimensionCount){super.Dim = value}
 
     constructor(basisCurve : IfcCurve, pointParameter : IfcParameterValue) {
         super()
@@ -23,8 +26,8 @@ export class IfcPointOnCurve extends IfcPoint {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.BasisCurve != null ? this.toStepValue(this.BasisCurve) : "$");
-		parameters.push(this.PointParameter != null ? this.toStepValue(this.PointParameter) : "$");
+		parameters.push(this.BasisCurve != null ? BaseIfc.toStepValue(this.BasisCurve) : "$");
+		parameters.push(this.PointParameter != null ? BaseIfc.toStepValue(this.PointParameter) : "$");
 
         return parameters.join();
     }

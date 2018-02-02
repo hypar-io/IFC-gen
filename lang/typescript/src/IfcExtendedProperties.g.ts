@@ -4,14 +4,14 @@ import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationsh
 import {IfcIdentifier} from "./IfcIdentifier.g"
 import {IfcText} from "./IfcText.g"
 import {IfcProperty} from "./IfcProperty.g"
-import {IfcMaterialProperties} from "./IfcMaterialProperties.g"
-import {IfcProfileProperties} from "./IfcProfileProperties.g"
 import {IfcPropertyAbstraction} from "./IfcPropertyAbstraction.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextendedproperties.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcextendedproperties.htm
+ */
 export abstract class IfcExtendedProperties extends IfcPropertyAbstraction {
-	Name : IfcIdentifier// optional
-	Description : IfcText// optional
+	Name : IfcIdentifier // optional
+	Description : IfcText // optional
 	Properties : Array<IfcProperty>
 
     constructor(properties : Array<IfcProperty>) {

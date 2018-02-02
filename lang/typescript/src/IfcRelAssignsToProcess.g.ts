@@ -6,16 +6,19 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
 import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum.g"
-import {IfcProcessSelect} from "./IfcProcessSelect.g"
+import {IfcProcess} from "./IfcProcess.g"
+import {IfcTypeProcess} from "./IfcTypeProcess.g"
 import {IfcMeasureWithUnit} from "./IfcMeasureWithUnit.g"
 import {IfcRelAssigns} from "./IfcRelAssigns.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoprocess.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassignstoprocess.htm
+ */
 export class IfcRelAssignsToProcess extends IfcRelAssigns {
-	RelatingProcess : IfcProcessSelect
-	QuantityInProcess : IfcMeasureWithUnit// optional
+	RelatingProcess : IfcProcess|IfcTypeProcess
+	QuantityInProcess : IfcMeasureWithUnit // optional
 
-    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingProcess : IfcProcessSelect) {
+    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingProcess : IfcProcess|IfcTypeProcess) {
         super(globalId,relatedObjects)
 
 		this.RelatingProcess = relatingProcess
@@ -23,14 +26,14 @@ export class IfcRelAssignsToProcess extends IfcRelAssigns {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? this.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.toStepValue(this.RelatedObjectsType));
-		parameters.push(this.RelatingProcess != null ? this.toStepValue(this.RelatingProcess) : "$");
-		parameters.push(this.QuantityInProcess != null ? this.toStepValue(this.QuantityInProcess) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
+		parameters.push(BaseIfc.toStepValue(this.RelatedObjectsType));
+		parameters.push(this.RelatingProcess != null ? BaseIfc.toStepValue(this.RelatingProcess) : "$");
+		parameters.push(this.QuantityInProcess != null ? BaseIfc.toStepValue(this.QuantityInProcess) : "$");
 
         return parameters.join();
     }

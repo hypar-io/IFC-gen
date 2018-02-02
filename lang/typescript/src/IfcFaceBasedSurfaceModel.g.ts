@@ -6,11 +6,14 @@ import {IfcConnectedFaceSet} from "./IfcConnectedFaceSet.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebasedsurfacemodel.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfacebasedsurfacemodel.htm
+ */
 export class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem {
 	FbsmFaces : Array<IfcConnectedFaceSet>
 
-    get Dim() : IfcDimensionCount{throw "Derived property logic has been implemented for Dim."} // derived
+    get Dim() : IfcDimensionCount{throw "Derived property logic has not been implemented for Dim."} // derived
+    set Dim(value : IfcDimensionCount){super.Dim = value}
 
     constructor(fbsmFaces : Array<IfcConnectedFaceSet>) {
         super()
@@ -20,7 +23,7 @@ export class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.FbsmFaces != null ? this.toStepValue(this.FbsmFaces) : "$");
+		parameters.push(this.FbsmFaces != null ? BaseIfc.toStepValue(this.FbsmFaces) : "$");
 
         return parameters.join();
     }

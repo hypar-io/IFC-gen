@@ -11,11 +11,13 @@ import {IfcIndexedPolygonalFace} from "./IfcIndexedPolygonalFace.g"
 import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
 import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalfaceset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalfaceset.htm
+ */
 export class IfcPolygonalFaceSet extends IfcTessellatedFaceSet {
-	Closed : IfcBoolean// optional
+	Closed : IfcBoolean // optional
 	Faces : Array<IfcIndexedPolygonalFace>
-	PnIndex : Array<IfcPositiveInteger>// optional
+	PnIndex : Array<IfcPositiveInteger> // optional
 
     constructor(coordinates : IfcCartesianPointList3D, faces : Array<IfcIndexedPolygonalFace>) {
         super(coordinates)
@@ -26,10 +28,10 @@ export class IfcPolygonalFaceSet extends IfcTessellatedFaceSet {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Coordinates != null ? this.toStepValue(this.Coordinates) : "$");
-		parameters.push(this.Closed != null ? this.toStepValue(this.Closed) : "$");
-		parameters.push(this.Faces != null ? this.toStepValue(this.Faces) : "$");
-		parameters.push(this.PnIndex != null ? this.toStepValue(this.PnIndex) : "$");
+		parameters.push(this.Coordinates != null ? BaseIfc.toStepValue(this.Coordinates) : "$");
+		parameters.push(this.Closed != null ? BaseIfc.toStepValue(this.Closed) : "$");
+		parameters.push(this.Faces != null ? BaseIfc.toStepValue(this.Faces) : "$");
+		parameters.push(this.PnIndex != null ? BaseIfc.toStepValue(this.PnIndex) : "$");
 
         return parameters.join();
     }

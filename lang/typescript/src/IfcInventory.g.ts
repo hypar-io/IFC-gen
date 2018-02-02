@@ -14,20 +14,23 @@ import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
 import {IfcRelAssignsToGroup} from "./IfcRelAssignsToGroup.g"
 import {IfcInventoryTypeEnum} from "./IfcInventoryTypeEnum.g"
-import {IfcActorSelect} from "./IfcActorSelect.g"
+import {IfcOrganization} from "./IfcOrganization.g"
 import {IfcPerson} from "./IfcPerson.g"
+import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization.g"
 import {IfcDate} from "./IfcDate.g"
 import {IfcCostValue} from "./IfcCostValue.g"
 import {IfcGroup} from "./IfcGroup.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventory.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcinventory.htm
+ */
 export class IfcInventory extends IfcGroup {
-	PredefinedType : IfcInventoryTypeEnum// optional
-	Jurisdiction : IfcActorSelect// optional
-	ResponsiblePersons : Array<IfcPerson>// optional
-	LastUpdateDate : IfcDate// optional
-	CurrentValue : IfcCostValue// optional
-	OriginalValue : IfcCostValue// optional
+	PredefinedType : IfcInventoryTypeEnum // optional
+	Jurisdiction : IfcOrganization|IfcPerson|IfcPersonAndOrganization // optional
+	ResponsiblePersons : Array<IfcPerson> // optional
+	LastUpdateDate : IfcDate // optional
+	CurrentValue : IfcCostValue // optional
+	OriginalValue : IfcCostValue // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -36,17 +39,17 @@ export class IfcInventory extends IfcGroup {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
-		parameters.push(this.Jurisdiction != null ? this.toStepValue(this.Jurisdiction) : "$");
-		parameters.push(this.ResponsiblePersons != null ? this.toStepValue(this.ResponsiblePersons) : "$");
-		parameters.push(this.LastUpdateDate != null ? this.toStepValue(this.LastUpdateDate) : "$");
-		parameters.push(this.CurrentValue != null ? this.toStepValue(this.CurrentValue) : "$");
-		parameters.push(this.OriginalValue != null ? this.toStepValue(this.OriginalValue) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+		parameters.push(this.Jurisdiction != null ? BaseIfc.toStepValue(this.Jurisdiction) : "$");
+		parameters.push(this.ResponsiblePersons != null ? BaseIfc.toStepValue(this.ResponsiblePersons) : "$");
+		parameters.push(this.LastUpdateDate != null ? BaseIfc.toStepValue(this.LastUpdateDate) : "$");
+		parameters.push(this.CurrentValue != null ? BaseIfc.toStepValue(this.CurrentValue) : "$");
+		parameters.push(this.OriginalValue != null ? BaseIfc.toStepValue(this.OriginalValue) : "$");
 
         return parameters.join();
     }

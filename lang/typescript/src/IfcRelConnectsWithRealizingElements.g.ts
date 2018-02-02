@@ -8,10 +8,12 @@ import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
 import {IfcElement} from "./IfcElement.g"
 import {IfcRelConnectsElements} from "./IfcRelConnectsElements.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectswithrealizingelements.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectswithrealizingelements.htm
+ */
 export class IfcRelConnectsWithRealizingElements extends IfcRelConnectsElements {
 	RealizingElements : Array<IfcElement>
-	ConnectionType : IfcLabel// optional
+	ConnectionType : IfcLabel // optional
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement, relatedElement : IfcElement, realizingElements : Array<IfcElement>) {
         super(globalId,relatingElement,relatedElement)
@@ -21,15 +23,15 @@ export class IfcRelConnectsWithRealizingElements extends IfcRelConnectsElements 
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ConnectionGeometry != null ? this.toStepValue(this.ConnectionGeometry) : "$");
-		parameters.push(this.RelatingElement != null ? this.toStepValue(this.RelatingElement) : "$");
-		parameters.push(this.RelatedElement != null ? this.toStepValue(this.RelatedElement) : "$");
-		parameters.push(this.RealizingElements != null ? this.toStepValue(this.RealizingElements) : "$");
-		parameters.push(this.ConnectionType != null ? this.toStepValue(this.ConnectionType) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ConnectionGeometry != null ? BaseIfc.toStepValue(this.ConnectionGeometry) : "$");
+		parameters.push(this.RelatingElement != null ? BaseIfc.toStepValue(this.RelatingElement) : "$");
+		parameters.push(this.RelatedElement != null ? BaseIfc.toStepValue(this.RelatedElement) : "$");
+		parameters.push(this.RealizingElements != null ? BaseIfc.toStepValue(this.RealizingElements) : "$");
+		parameters.push(this.ConnectionType != null ? BaseIfc.toStepValue(this.ConnectionType) : "$");
 
         return parameters.join();
     }

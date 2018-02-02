@@ -4,7 +4,9 @@ import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcPresentationItem} from "./IfcPresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontpattern.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccurvestylefontpattern.htm
+ */
 export class IfcCurveStyleFontPattern extends IfcPresentationItem {
 	VisibleSegmentLength : IfcLengthMeasure
 	InvisibleSegmentLength : IfcPositiveLengthMeasure
@@ -18,8 +20,8 @@ export class IfcCurveStyleFontPattern extends IfcPresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.VisibleSegmentLength != null ? this.toStepValue(this.VisibleSegmentLength) : "$");
-		parameters.push(this.InvisibleSegmentLength != null ? this.toStepValue(this.InvisibleSegmentLength) : "$");
+		parameters.push(this.VisibleSegmentLength != null ? BaseIfc.toStepValue(this.VisibleSegmentLength) : "$");
+		parameters.push(this.InvisibleSegmentLength != null ? BaseIfc.toStepValue(this.InvisibleSegmentLength) : "$");
 
         return parameters.join();
     }

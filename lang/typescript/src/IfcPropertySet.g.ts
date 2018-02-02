@@ -12,7 +12,9 @@ import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
 import {IfcProperty} from "./IfcProperty.g"
 import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyset.htm
+ */
 export class IfcPropertySet extends IfcPropertySetDefinition {
 	HasProperties : Array<IfcProperty>
 
@@ -24,11 +26,11 @@ export class IfcPropertySet extends IfcPropertySetDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.HasProperties != null ? this.toStepValue(this.HasProperties) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.HasProperties != null ? BaseIfc.toStepValue(this.HasProperties) : "$");
 
         return parameters.join();
     }

@@ -1,14 +1,17 @@
 
 import {BaseIfc} from "./BaseIfc"
 import {IfcLabel} from "./IfcLabel.g"
-import {IfcModulusOfSubgradeReactionSelect} from "./IfcModulusOfSubgradeReactionSelect.g"
+import {IfcBoolean} from "./IfcBoolean.g"
+import {IfcModulusOfSubgradeReactionMeasure} from "./IfcModulusOfSubgradeReactionMeasure.g"
 import {IfcBoundaryCondition} from "./IfcBoundaryCondition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryfacecondition.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcboundaryfacecondition.htm
+ */
 export class IfcBoundaryFaceCondition extends IfcBoundaryCondition {
-	TranslationalStiffnessByAreaX : IfcModulusOfSubgradeReactionSelect// optional
-	TranslationalStiffnessByAreaY : IfcModulusOfSubgradeReactionSelect// optional
-	TranslationalStiffnessByAreaZ : IfcModulusOfSubgradeReactionSelect// optional
+	TranslationalStiffnessByAreaX : IfcBoolean|IfcModulusOfSubgradeReactionMeasure // optional
+	TranslationalStiffnessByAreaY : IfcBoolean|IfcModulusOfSubgradeReactionMeasure // optional
+	TranslationalStiffnessByAreaZ : IfcBoolean|IfcModulusOfSubgradeReactionMeasure // optional
 
     constructor() {
         super()
@@ -16,10 +19,10 @@ export class IfcBoundaryFaceCondition extends IfcBoundaryCondition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.TranslationalStiffnessByAreaX != null ? this.toStepValue(this.TranslationalStiffnessByAreaX) : "$");
-		parameters.push(this.TranslationalStiffnessByAreaY != null ? this.toStepValue(this.TranslationalStiffnessByAreaY) : "$");
-		parameters.push(this.TranslationalStiffnessByAreaZ != null ? this.toStepValue(this.TranslationalStiffnessByAreaZ) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.TranslationalStiffnessByAreaX != null ? BaseIfc.toStepValue(this.TranslationalStiffnessByAreaX) : "$");
+		parameters.push(this.TranslationalStiffnessByAreaY != null ? BaseIfc.toStepValue(this.TranslationalStiffnessByAreaY) : "$");
+		parameters.push(this.TranslationalStiffnessByAreaZ != null ? BaseIfc.toStepValue(this.TranslationalStiffnessByAreaZ) : "$");
 
         return parameters.join();
     }

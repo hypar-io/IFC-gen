@@ -8,7 +8,9 @@ import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
 import {IfcDirection} from "./IfcDirection.g"
 import {IfcLightSource} from "./IfcLightSource.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcedirectional.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourcedirectional.htm
+ */
 export class IfcLightSourceDirectional extends IfcLightSource {
 	Orientation : IfcDirection
 
@@ -20,11 +22,11 @@ export class IfcLightSourceDirectional extends IfcLightSource {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.LightColour != null ? this.toStepValue(this.LightColour) : "$");
-		parameters.push(this.AmbientIntensity != null ? this.toStepValue(this.AmbientIntensity) : "$");
-		parameters.push(this.Intensity != null ? this.toStepValue(this.Intensity) : "$");
-		parameters.push(this.Orientation != null ? this.toStepValue(this.Orientation) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.LightColour != null ? BaseIfc.toStepValue(this.LightColour) : "$");
+		parameters.push(this.AmbientIntensity != null ? BaseIfc.toStepValue(this.AmbientIntensity) : "$");
+		parameters.push(this.Intensity != null ? BaseIfc.toStepValue(this.Intensity) : "$");
+		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
 
         return parameters.join();
     }

@@ -8,13 +8,15 @@ import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcMaterialUsageDefinition} from "./IfcMaterialUsageDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayersetusage.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmateriallayersetusage.htm
+ */
 export class IfcMaterialLayerSetUsage extends IfcMaterialUsageDefinition {
 	ForLayerSet : IfcMaterialLayerSet
 	LayerSetDirection : IfcLayerSetDirectionEnum
 	DirectionSense : IfcDirectionSenseEnum
 	OffsetFromReferenceLine : IfcLengthMeasure
-	ReferenceExtent : IfcPositiveLengthMeasure// optional
+	ReferenceExtent : IfcPositiveLengthMeasure // optional
 
     constructor(forLayerSet : IfcMaterialLayerSet, layerSetDirection : IfcLayerSetDirectionEnum, directionSense : IfcDirectionSenseEnum, offsetFromReferenceLine : IfcLengthMeasure) {
         super()
@@ -27,11 +29,11 @@ export class IfcMaterialLayerSetUsage extends IfcMaterialUsageDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.ForLayerSet != null ? this.toStepValue(this.ForLayerSet) : "$");
-		parameters.push(this.toStepValue(this.LayerSetDirection));
-		parameters.push(this.toStepValue(this.DirectionSense));
-		parameters.push(this.OffsetFromReferenceLine != null ? this.toStepValue(this.OffsetFromReferenceLine) : "$");
-		parameters.push(this.ReferenceExtent != null ? this.toStepValue(this.ReferenceExtent) : "$");
+		parameters.push(this.ForLayerSet != null ? BaseIfc.toStepValue(this.ForLayerSet) : "$");
+		parameters.push(BaseIfc.toStepValue(this.LayerSetDirection));
+		parameters.push(BaseIfc.toStepValue(this.DirectionSense));
+		parameters.push(this.OffsetFromReferenceLine != null ? BaseIfc.toStepValue(this.OffsetFromReferenceLine) : "$");
+		parameters.push(this.ReferenceExtent != null ? BaseIfc.toStepValue(this.ReferenceExtent) : "$");
 
         return parameters.join();
     }

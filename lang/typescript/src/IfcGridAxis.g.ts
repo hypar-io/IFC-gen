@@ -6,15 +6,17 @@ import {IfcBoolean} from "./IfcBoolean.g"
 import {IfcGrid} from "./IfcGrid.g"
 import {IfcVirtualGridIntersection} from "./IfcVirtualGridIntersection.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridaxis.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgridaxis.htm
+ */
 export class IfcGridAxis extends BaseIfc {
-	AxisTag : IfcLabel// optional
+	AxisTag : IfcLabel // optional
 	AxisCurve : IfcCurve
 	SameSense : IfcBoolean
-	PartOfW : Array<IfcGrid>// inverse
-	PartOfV : Array<IfcGrid>// inverse
-	PartOfU : Array<IfcGrid>// inverse
-	HasIntersections : Array<IfcVirtualGridIntersection>// inverse
+	PartOfW : Array<IfcGrid> // inverse
+	PartOfV : Array<IfcGrid> // inverse
+	PartOfU : Array<IfcGrid> // inverse
+	HasIntersections : Array<IfcVirtualGridIntersection> // inverse
 
     constructor(axisCurve : IfcCurve, sameSense : IfcBoolean) {
         super()
@@ -29,9 +31,9 @@ export class IfcGridAxis extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.AxisTag != null ? this.toStepValue(this.AxisTag) : "$");
-		parameters.push(this.AxisCurve != null ? this.toStepValue(this.AxisCurve) : "$");
-		parameters.push(this.SameSense != null ? this.toStepValue(this.SameSense) : "$");
+		parameters.push(this.AxisTag != null ? BaseIfc.toStepValue(this.AxisTag) : "$");
+		parameters.push(this.AxisCurve != null ? BaseIfc.toStepValue(this.AxisCurve) : "$");
+		parameters.push(this.SameSense != null ? BaseIfc.toStepValue(this.SameSense) : "$");
 
         return parameters.join();
     }

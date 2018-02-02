@@ -21,7 +21,9 @@ import {IfcRelConnectsStructuralMember} from "./IfcRelConnectsStructuralMember.g
 import {IfcDirection} from "./IfcDirection.g"
 import {IfcStructuralConnection} from "./IfcStructuralConnection.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveconnection.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralcurveconnection.htm
+ */
 export class IfcStructuralCurveConnection extends IfcStructuralConnection {
 	Axis : IfcDirection
 
@@ -33,15 +35,15 @@ export class IfcStructuralCurveConnection extends IfcStructuralConnection {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.AppliedCondition != null ? this.toStepValue(this.AppliedCondition) : "$");
-		parameters.push(this.Axis != null ? this.toStepValue(this.Axis) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.AppliedCondition != null ? BaseIfc.toStepValue(this.AppliedCondition) : "$");
+		parameters.push(this.Axis != null ? BaseIfc.toStepValue(this.Axis) : "$");
 
         return parameters.join();
     }

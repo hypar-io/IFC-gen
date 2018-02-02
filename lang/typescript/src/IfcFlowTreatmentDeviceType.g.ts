@@ -14,12 +14,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcDuctSilencerType} from "./IfcDuctSilencerType.g"
-import {IfcFilterType} from "./IfcFilterType.g"
-import {IfcInterceptorType} from "./IfcInterceptorType.g"
 import {IfcDistributionFlowElementType} from "./IfcDistributionFlowElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowtreatmentdevicetype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcflowtreatmentdevicetype.htm
+ */
 export abstract class IfcFlowTreatmentDeviceType extends IfcDistributionFlowElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {

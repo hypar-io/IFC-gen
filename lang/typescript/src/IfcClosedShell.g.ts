@@ -5,7 +5,9 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcFace} from "./IfcFace.g"
 import {IfcConnectedFaceSet} from "./IfcConnectedFaceSet.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclosedshell.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcclosedshell.htm
+ */
 export class IfcClosedShell extends IfcConnectedFaceSet {
 
     constructor(cfsFaces : Array<IfcFace>) {
@@ -14,7 +16,7 @@ export class IfcClosedShell extends IfcConnectedFaceSet {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.CfsFaces != null ? this.toStepValue(this.CfsFaces) : "$");
+		parameters.push(this.CfsFaces != null ? BaseIfc.toStepValue(this.CfsFaces) : "$");
 
         return parameters.join();
     }

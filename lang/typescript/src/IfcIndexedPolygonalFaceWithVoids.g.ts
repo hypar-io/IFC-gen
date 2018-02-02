@@ -6,7 +6,9 @@ import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
 import {IfcPolygonalFaceSet} from "./IfcPolygonalFaceSet.g"
 import {IfcIndexedPolygonalFace} from "./IfcIndexedPolygonalFace.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedpolygonalfacewithvoids.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcindexedpolygonalfacewithvoids.htm
+ */
 export class IfcIndexedPolygonalFaceWithVoids extends IfcIndexedPolygonalFace {
 	InnerCoordIndices : Array<Array<IfcPositiveInteger>>
 
@@ -18,8 +20,8 @@ export class IfcIndexedPolygonalFaceWithVoids extends IfcIndexedPolygonalFace {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.CoordIndex != null ? this.toStepValue(this.CoordIndex) : "$");
-		parameters.push(this.InnerCoordIndices != null ? this.toStepValue(this.InnerCoordIndices) : "$");
+		parameters.push(this.CoordIndex != null ? BaseIfc.toStepValue(this.CoordIndex) : "$");
+		parameters.push(this.InnerCoordIndices != null ? BaseIfc.toStepValue(this.InnerCoordIndices) : "$");
 
         return parameters.join();
     }

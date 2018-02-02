@@ -2,10 +2,11 @@
 import {BaseIfc} from "./BaseIfc"
 import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
 import {IfcStyledItem} from "./IfcStyledItem.g"
-import {IfcVertexPoint} from "./IfcVertexPoint.g"
 import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertex.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcvertex.htm
+ */
 export class IfcVertex extends IfcTopologicalRepresentationItem {
 
     constructor() {

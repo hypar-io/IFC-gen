@@ -5,17 +5,22 @@ import {IfcTableRow} from "./IfcTableRow.g"
 import {IfcTableColumn} from "./IfcTableColumn.g"
 import {IfcInteger} from "./IfcInteger.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctable.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctable.htm
+ */
 export class IfcTable extends BaseIfc {
-	Name : IfcLabel// optional
-	Rows : Array<IfcTableRow>// optional
-	Columns : Array<IfcTableColumn>// optional
+	Name : IfcLabel // optional
+	Rows : Array<IfcTableRow> // optional
+	Columns : Array<IfcTableColumn> // optional
 
-    get NumberOfCellsInRow() : IfcInteger{throw "Derived property logic has been implemented for NumberOfCellsInRow."} // derived
+    get NumberOfCellsInRow() : IfcInteger{throw "Derived property logic has not been implemented for NumberOfCellsInRow."} // derived
+    set NumberOfCellsInRow(value : IfcInteger){super.NumberOfCellsInRow = value}
 
-    get NumberOfHeadings() : IfcInteger{throw "Derived property logic has been implemented for NumberOfHeadings."} // derived
+    get NumberOfHeadings() : IfcInteger{throw "Derived property logic has not been implemented for NumberOfHeadings."} // derived
+    set NumberOfHeadings(value : IfcInteger){super.NumberOfHeadings = value}
 
-    get NumberOfDataRows() : IfcInteger{throw "Derived property logic has been implemented for NumberOfDataRows."} // derived
+    get NumberOfDataRows() : IfcInteger{throw "Derived property logic has not been implemented for NumberOfDataRows."} // derived
+    set NumberOfDataRows(value : IfcInteger){super.NumberOfDataRows = value}
 
     constructor() {
         super()
@@ -25,9 +30,9 @@ export class IfcTable extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Rows != null ? this.toStepValue(this.Rows) : "$");
-		parameters.push(this.Columns != null ? this.toStepValue(this.Columns) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Rows != null ? BaseIfc.toStepValue(this.Rows) : "$");
+		parameters.push(this.Columns != null ? BaseIfc.toStepValue(this.Columns) : "$");
 
         return parameters.join();
     }

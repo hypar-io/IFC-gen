@@ -19,12 +19,14 @@ import {IfcBoolean} from "./IfcBoolean.g"
 import {IfcStructuralAnalysisModel} from "./IfcStructuralAnalysisModel.g"
 import {IfcGroup} from "./IfcGroup.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralresultgroup.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralresultgroup.htm
+ */
 export class IfcStructuralResultGroup extends IfcGroup {
 	TheoryType : IfcAnalysisTheoryTypeEnum
-	ResultForLoadGroup : IfcStructuralLoadGroup// optional
+	ResultForLoadGroup : IfcStructuralLoadGroup // optional
 	IsLinear : IfcBoolean
-	ResultGroupFor : Array<IfcStructuralAnalysisModel>// inverse
+	ResultGroupFor : Array<IfcStructuralAnalysisModel> // inverse
 
     constructor(globalId : IfcGloballyUniqueId, theoryType : IfcAnalysisTheoryTypeEnum, isLinear : IfcBoolean) {
         super(globalId)
@@ -36,14 +38,14 @@ export class IfcStructuralResultGroup extends IfcGroup {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.toStepValue(this.TheoryType));
-		parameters.push(this.ResultForLoadGroup != null ? this.toStepValue(this.ResultForLoadGroup) : "$");
-		parameters.push(this.IsLinear != null ? this.toStepValue(this.IsLinear) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(BaseIfc.toStepValue(this.TheoryType));
+		parameters.push(this.ResultForLoadGroup != null ? BaseIfc.toStepValue(this.ResultForLoadGroup) : "$");
+		parameters.push(this.IsLinear != null ? BaseIfc.toStepValue(this.IsLinear) : "$");
 
         return parameters.join();
     }

@@ -12,14 +12,17 @@ import {IfcPositiveInteger} from "./IfcPositiveInteger.g"
 import {IfcInteger} from "./IfcInteger.g"
 import {IfcTessellatedFaceSet} from "./IfcTessellatedFaceSet.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctriangulatedfaceset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctriangulatedfaceset.htm
+ */
 export class IfcTriangulatedFaceSet extends IfcTessellatedFaceSet {
-	Normals : Array<Array<IfcParameterValue>>// optional
-	Closed : IfcBoolean// optional
+	Normals : Array<Array<IfcParameterValue>> // optional
+	Closed : IfcBoolean // optional
 	CoordIndex : Array<Array<IfcPositiveInteger>>
-	PnIndex : Array<IfcPositiveInteger>// optional
+	PnIndex : Array<IfcPositiveInteger> // optional
 
-    get NumberOfTriangles() : IfcInteger{throw "Derived property logic has been implemented for NumberOfTriangles."} // derived
+    get NumberOfTriangles() : IfcInteger{throw "Derived property logic has not been implemented for NumberOfTriangles."} // derived
+    set NumberOfTriangles(value : IfcInteger){super.NumberOfTriangles = value}
 
     constructor(coordinates : IfcCartesianPointList3D, coordIndex : Array<Array<IfcPositiveInteger>>) {
         super(coordinates)
@@ -31,11 +34,11 @@ export class IfcTriangulatedFaceSet extends IfcTessellatedFaceSet {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Coordinates != null ? this.toStepValue(this.Coordinates) : "$");
-		parameters.push(this.Normals != null ? this.toStepValue(this.Normals) : "$");
-		parameters.push(this.Closed != null ? this.toStepValue(this.Closed) : "$");
-		parameters.push(this.CoordIndex != null ? this.toStepValue(this.CoordIndex) : "$");
-		parameters.push(this.PnIndex != null ? this.toStepValue(this.PnIndex) : "$");
+		parameters.push(this.Coordinates != null ? BaseIfc.toStepValue(this.Coordinates) : "$");
+		parameters.push(this.Normals != null ? BaseIfc.toStepValue(this.Normals) : "$");
+		parameters.push(this.Closed != null ? BaseIfc.toStepValue(this.Closed) : "$");
+		parameters.push(this.CoordIndex != null ? BaseIfc.toStepValue(this.CoordIndex) : "$");
+		parameters.push(this.PnIndex != null ? BaseIfc.toStepValue(this.PnIndex) : "$");
 
         return parameters.join();
     }

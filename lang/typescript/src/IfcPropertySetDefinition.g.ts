@@ -9,16 +9,15 @@ import {IfcRelAssociates} from "./IfcRelAssociates.g"
 import {IfcTypeObject} from "./IfcTypeObject.g"
 import {IfcRelDefinesByTemplate} from "./IfcRelDefinesByTemplate.g"
 import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
-import {IfcPreDefinedPropertySet} from "./IfcPreDefinedPropertySet.g"
-import {IfcPropertySet} from "./IfcPropertySet.g"
-import {IfcQuantitySet} from "./IfcQuantitySet.g"
 import {IfcPropertyDefinition} from "./IfcPropertyDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinition.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinition.htm
+ */
 export abstract class IfcPropertySetDefinition extends IfcPropertyDefinition {
-	DefinesType : Array<IfcTypeObject>// inverse
-	IsDefinedBy : Array<IfcRelDefinesByTemplate>// inverse
-	DefinesOccurrence : Array<IfcRelDefinesByProperties>// inverse
+	DefinesType : Array<IfcTypeObject> // inverse
+	IsDefinedBy : Array<IfcRelDefinesByTemplate> // inverse
+	DefinesOccurrence : Array<IfcRelDefinesByProperties> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

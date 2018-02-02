@@ -1,4 +1,5 @@
 import * as uuid from "uuid"
+//import { Select } from "./Select";
 
 export abstract class BaseIfc {
     public id : string
@@ -10,7 +11,7 @@ export abstract class BaseIfc {
 
     toSTEP() : string {
         let ifcClass : string = this.constructor.name.toUpperCase();
-        return `${this.stepId} = ${ifcClass}(${this.getStepParameters()})`
+        return `#${this.stepId} = ${ifcClass}(${this.getStepParameters()})`
     }
 
     toXML(xw: any) : void {
@@ -60,8 +61,30 @@ export abstract class BaseIfc {
         xw.endElement()
     }
 
-    toStepValue(value: any, isSelectOption : boolean = false) : string {
-        return `${this.stepId}`
+    static toStepValue(value: any, isSelectOption : boolean = false) : string {
+        if(!value) {
+            return "$"
+        } else if(value instanceof String) {
+            return `'${value}'`
+        } else if (value instanceof Number) {
+            return `'${value}'`
+        } else if (value instanceof Boolean) {
+            let b: Boolean = value
+            return  b === true? "T" : "F"
+        } else if (value.hasOwnProperty("wrappedValue") ) {
+            if(value.stepId) {
+                return `#${value.stepId}`
+            }
+            return `'${value.wrappedValue.toString()}'`
+            //return `${value.constructor.name.toUpperCase()}(${value.wrappedValue.toString()})`
+        } else if (Array.isArray(value)) {
+            if(value.length == 0) {
+                return "$"
+            }
+            return `(${value.map(v=>{BaseIfc.toStepValue(v)})})`
+        } else if (value instanceof BaseIfc){
+            return `#${value.stepId}`
+        }
     }
 
     getStepParameters() : string {

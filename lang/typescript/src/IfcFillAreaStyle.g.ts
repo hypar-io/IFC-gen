@@ -1,16 +1,22 @@
 
 import {BaseIfc} from "./BaseIfc"
 import {IfcLabel} from "./IfcLabel.g"
-import {IfcFillStyleSelect} from "./IfcFillStyleSelect.g"
+import {IfcColourSpecification} from "./IfcColourSpecification.g"
+import {IfcPreDefinedColour} from "./IfcPreDefinedColour.g"
+import {IfcExternallyDefinedHatchStyle} from "./IfcExternallyDefinedHatchStyle.g"
+import {IfcFillAreaStyleHatching} from "./IfcFillAreaStyleHatching.g"
+import {IfcFillAreaStyleTiles} from "./IfcFillAreaStyleTiles.g"
 import {IfcBoolean} from "./IfcBoolean.g"
 import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyle.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfillareastyle.htm
+ */
 export class IfcFillAreaStyle extends IfcPresentationStyle {
-	FillStyles : Array<IfcFillStyleSelect>
-	ModelorDraughting : IfcBoolean// optional
+	FillStyles : Array<IfcColourSpecification|IfcPreDefinedColour|IfcExternallyDefinedHatchStyle|IfcFillAreaStyleHatching|IfcFillAreaStyleTiles>
+	ModelorDraughting : IfcBoolean // optional
 
-    constructor(fillStyles : Array<IfcFillStyleSelect>) {
+    constructor(fillStyles : Array<IfcColourSpecification|IfcPreDefinedColour|IfcExternallyDefinedHatchStyle|IfcFillAreaStyleHatching|IfcFillAreaStyleTiles>) {
         super()
 
 		this.FillStyles = fillStyles
@@ -18,9 +24,9 @@ export class IfcFillAreaStyle extends IfcPresentationStyle {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.FillStyles != null ? this.toStepValue(this.FillStyles) : "$");
-		parameters.push(this.ModelorDraughting != null ? this.toStepValue(this.ModelorDraughting) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.FillStyles != null ? BaseIfc.toStepValue(this.FillStyles) : "$");
+		parameters.push(this.ModelorDraughting != null ? BaseIfc.toStepValue(this.ModelorDraughting) : "$");
 
         return parameters.join();
     }

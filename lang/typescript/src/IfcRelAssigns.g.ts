@@ -6,18 +6,14 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
 import {IfcObjectTypeEnum} from "./IfcObjectTypeEnum.g"
-import {IfcRelAssignsToActor} from "./IfcRelAssignsToActor.g"
-import {IfcRelAssignsToControl} from "./IfcRelAssignsToControl.g"
-import {IfcRelAssignsToGroup} from "./IfcRelAssignsToGroup.g"
-import {IfcRelAssignsToProcess} from "./IfcRelAssignsToProcess.g"
-import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcRelAssignsToResource} from "./IfcRelAssignsToResource.g"
 import {IfcRelationship} from "./IfcRelationship.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassigns.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassigns.htm
+ */
 export abstract class IfcRelAssigns extends IfcRelationship {
 	RelatedObjects : Array<IfcObjectDefinition>
-	RelatedObjectsType : IfcObjectTypeEnum// optional
+	RelatedObjectsType : IfcObjectTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>) {
         super(globalId)

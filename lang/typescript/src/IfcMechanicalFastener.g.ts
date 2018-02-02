@@ -30,11 +30,13 @@ import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcMechanicalFastenerTypeEnum} from "./IfcMechanicalFastenerTypeEnum.g"
 import {IfcElementComponent} from "./IfcElementComponent.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastener.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmechanicalfastener.htm
+ */
 export class IfcMechanicalFastener extends IfcElementComponent {
-	NominalDiameter : IfcPositiveLengthMeasure// optional
-	NominalLength : IfcPositiveLengthMeasure// optional
-	PredefinedType : IfcMechanicalFastenerTypeEnum// optional
+	NominalDiameter : IfcPositiveLengthMeasure // optional
+	NominalLength : IfcPositiveLengthMeasure // optional
+	PredefinedType : IfcMechanicalFastenerTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -42,17 +44,17 @@ export class IfcMechanicalFastener extends IfcElementComponent {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? this.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? this.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.NominalDiameter != null ? this.toStepValue(this.NominalDiameter) : "$");
-		parameters.push(this.NominalLength != null ? this.toStepValue(this.NominalLength) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
+		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.NominalDiameter != null ? BaseIfc.toStepValue(this.NominalDiameter) : "$");
+		parameters.push(this.NominalLength != null ? BaseIfc.toStepValue(this.NominalLength) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

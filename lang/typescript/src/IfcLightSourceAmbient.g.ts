@@ -7,7 +7,9 @@ import {IfcColourRgb} from "./IfcColourRgb.g"
 import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
 import {IfcLightSource} from "./IfcLightSource.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourceambient.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsourceambient.htm
+ */
 export class IfcLightSourceAmbient extends IfcLightSource {
 
     constructor(lightColour : IfcColourRgb) {
@@ -16,10 +18,10 @@ export class IfcLightSourceAmbient extends IfcLightSource {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.LightColour != null ? this.toStepValue(this.LightColour) : "$");
-		parameters.push(this.AmbientIntensity != null ? this.toStepValue(this.AmbientIntensity) : "$");
-		parameters.push(this.Intensity != null ? this.toStepValue(this.Intensity) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.LightColour != null ? BaseIfc.toStepValue(this.LightColour) : "$");
+		parameters.push(this.AmbientIntensity != null ? BaseIfc.toStepValue(this.AmbientIntensity) : "$");
+		parameters.push(this.Intensity != null ? BaseIfc.toStepValue(this.Intensity) : "$");
 
         return parameters.join();
     }

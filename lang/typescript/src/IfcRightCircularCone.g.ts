@@ -7,7 +7,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcCsgPrimitive3D} from "./IfcCsgPrimitive3D.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrightcircularcone.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrightcircularcone.htm
+ */
 export class IfcRightCircularCone extends IfcCsgPrimitive3D {
 	Height : IfcPositiveLengthMeasure
 	BottomRadius : IfcPositiveLengthMeasure
@@ -21,9 +23,9 @@ export class IfcRightCircularCone extends IfcCsgPrimitive3D {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Height != null ? this.toStepValue(this.Height) : "$");
-		parameters.push(this.BottomRadius != null ? this.toStepValue(this.BottomRadius) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Height != null ? BaseIfc.toStepValue(this.Height) : "$");
+		parameters.push(this.BottomRadius != null ? BaseIfc.toStepValue(this.BottomRadius) : "$");
 
         return parameters.join();
     }

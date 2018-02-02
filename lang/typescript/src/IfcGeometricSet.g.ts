@@ -2,18 +2,22 @@
 import {BaseIfc} from "./BaseIfc"
 import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g"
 import {IfcStyledItem} from "./IfcStyledItem.g"
-import {IfcGeometricSetSelect} from "./IfcGeometricSetSelect.g"
+import {IfcCurve} from "./IfcCurve.g"
+import {IfcPoint} from "./IfcPoint.g"
+import {IfcSurface} from "./IfcSurface.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
-import {IfcGeometricCurveSet} from "./IfcGeometricCurveSet.g"
 import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcgeometricset.htm
+ */
 export class IfcGeometricSet extends IfcGeometricRepresentationItem {
-	Elements : Array<IfcGeometricSetSelect>
+	Elements : Array<IfcCurve|IfcPoint|IfcSurface>
 
-    get Dim() : IfcDimensionCount{throw "Derived property logic has been implemented for Dim."} // derived
+    get Dim() : IfcDimensionCount{throw "Derived property logic has not been implemented for Dim."} // derived
+    set Dim(value : IfcDimensionCount){super.Dim = value}
 
-    constructor(elements : Array<IfcGeometricSetSelect>) {
+    constructor(elements : Array<IfcCurve|IfcPoint|IfcSurface>) {
         super()
 
 		this.Elements = elements
@@ -21,7 +25,7 @@ export class IfcGeometricSet extends IfcGeometricRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Elements != null ? this.toStepValue(this.Elements) : "$");
+		parameters.push(this.Elements != null ? BaseIfc.toStepValue(this.Elements) : "$");
 
         return parameters.join();
     }

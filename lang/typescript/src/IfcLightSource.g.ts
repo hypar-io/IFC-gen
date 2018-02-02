@@ -5,18 +5,16 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcColourRgb} from "./IfcColourRgb.g"
 import {IfcNormalisedRatioMeasure} from "./IfcNormalisedRatioMeasure.g"
-import {IfcLightSourceAmbient} from "./IfcLightSourceAmbient.g"
-import {IfcLightSourceDirectional} from "./IfcLightSourceDirectional.g"
-import {IfcLightSourceGoniometric} from "./IfcLightSourceGoniometric.g"
-import {IfcLightSourcePositional} from "./IfcLightSourcePositional.g"
 import {IfcGeometricRepresentationItem} from "./IfcGeometricRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsource.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclightsource.htm
+ */
 export abstract class IfcLightSource extends IfcGeometricRepresentationItem {
-	Name : IfcLabel// optional
+	Name : IfcLabel // optional
 	LightColour : IfcColourRgb
-	AmbientIntensity : IfcNormalisedRatioMeasure// optional
-	Intensity : IfcNormalisedRatioMeasure// optional
+	AmbientIntensity : IfcNormalisedRatioMeasure // optional
+	Intensity : IfcNormalisedRatioMeasure // optional
 
     constructor(lightColour : IfcColourRgb) {
         super()

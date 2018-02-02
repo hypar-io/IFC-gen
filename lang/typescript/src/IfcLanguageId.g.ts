@@ -5,15 +5,11 @@ import {IfcIdentifier} from "./IfcIdentifier.g"
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclanguageid.htm
 export class IfcLanguageId extends BaseIfc
 {
-    protected value : IfcIdentifier
+    protected wrappedValue : IfcIdentifier
 
     constructor(value : IfcIdentifier){
         super()
-        this.value = value
+        this.wrappedValue = value
     }	
-    toString() : string { return this.value.toString() }
-    toStepValue(value: any, isSelectOption? : boolean) : string {
-        if(isSelectOption){ return `${this.constructor.name.toUpperCase()}(${this.toStepValue(this.value,isSelectOption)})`; }
-        else{ return this.toStepValue(this.value, isSelectOption); }
-    }
+    toString() : string { return this.wrappedValue.toString() }
 }

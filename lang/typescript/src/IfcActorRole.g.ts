@@ -5,12 +5,14 @@ import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
 import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorrole.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcactorrole.htm
+ */
 export class IfcActorRole extends BaseIfc {
 	Role : IfcRoleEnum
-	UserDefinedRole : IfcLabel// optional
-	Description : IfcText// optional
-	HasExternalReference : Array<IfcExternalReferenceRelationship>// inverse
+	UserDefinedRole : IfcLabel // optional
+	Description : IfcText // optional
+	HasExternalReference : Array<IfcExternalReferenceRelationship> // inverse
 
     constructor(role : IfcRoleEnum) {
         super()
@@ -21,9 +23,9 @@ export class IfcActorRole extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.toStepValue(this.Role));
-		parameters.push(this.UserDefinedRole != null ? this.toStepValue(this.UserDefinedRole) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
+		parameters.push(BaseIfc.toStepValue(this.Role));
+		parameters.push(this.UserDefinedRole != null ? BaseIfc.toStepValue(this.UserDefinedRole) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
 
         return parameters.join();
     }

@@ -12,12 +12,14 @@ import {IfcPropertyTemplate} from "./IfcPropertyTemplate.g"
 import {IfcRelDefinesByTemplate} from "./IfcRelDefinesByTemplate.g"
 import {IfcPropertyTemplateDefinition} from "./IfcPropertyTemplateDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplate.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysettemplate.htm
+ */
 export class IfcPropertySetTemplate extends IfcPropertyTemplateDefinition {
-	TemplateType : IfcPropertySetTemplateTypeEnum// optional
-	ApplicableEntity : IfcIdentifier// optional
+	TemplateType : IfcPropertySetTemplateTypeEnum // optional
+	ApplicableEntity : IfcIdentifier // optional
 	HasPropertyTemplates : Array<IfcPropertyTemplate>
-	Defines : Array<IfcRelDefinesByTemplate>// inverse
+	Defines : Array<IfcRelDefinesByTemplate> // inverse
 
     constructor(globalId : IfcGloballyUniqueId, hasPropertyTemplates : Array<IfcPropertyTemplate>) {
         super(globalId)
@@ -28,13 +30,13 @@ export class IfcPropertySetTemplate extends IfcPropertyTemplateDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.toStepValue(this.TemplateType));
-		parameters.push(this.ApplicableEntity != null ? this.toStepValue(this.ApplicableEntity) : "$");
-		parameters.push(this.HasPropertyTemplates != null ? this.toStepValue(this.HasPropertyTemplates) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(BaseIfc.toStepValue(this.TemplateType));
+		parameters.push(this.ApplicableEntity != null ? BaseIfc.toStepValue(this.ApplicableEntity) : "$");
+		parameters.push(this.HasPropertyTemplates != null ? BaseIfc.toStepValue(this.HasPropertyTemplates) : "$");
 
         return parameters.join();
     }

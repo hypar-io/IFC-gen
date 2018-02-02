@@ -1,14 +1,18 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcSurfaceOrFaceSurface} from "./IfcSurfaceOrFaceSurface.g"
+import {IfcFaceBasedSurfaceModel} from "./IfcFaceBasedSurfaceModel.g"
+import {IfcFaceSurface} from "./IfcFaceSurface.g"
+import {IfcSurface} from "./IfcSurface.g"
 import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionsurfacegeometry.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionsurfacegeometry.htm
+ */
 export class IfcConnectionSurfaceGeometry extends IfcConnectionGeometry {
-	SurfaceOnRelatingElement : IfcSurfaceOrFaceSurface
-	SurfaceOnRelatedElement : IfcSurfaceOrFaceSurface// optional
+	SurfaceOnRelatingElement : IfcFaceBasedSurfaceModel|IfcFaceSurface|IfcSurface
+	SurfaceOnRelatedElement : IfcFaceBasedSurfaceModel|IfcFaceSurface|IfcSurface // optional
 
-    constructor(surfaceOnRelatingElement : IfcSurfaceOrFaceSurface) {
+    constructor(surfaceOnRelatingElement : IfcFaceBasedSurfaceModel|IfcFaceSurface|IfcSurface) {
         super()
 
 		this.SurfaceOnRelatingElement = surfaceOnRelatingElement
@@ -16,8 +20,8 @@ export class IfcConnectionSurfaceGeometry extends IfcConnectionGeometry {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.SurfaceOnRelatingElement != null ? this.toStepValue(this.SurfaceOnRelatingElement) : "$");
-		parameters.push(this.SurfaceOnRelatedElement != null ? this.toStepValue(this.SurfaceOnRelatedElement) : "$");
+		parameters.push(this.SurfaceOnRelatingElement != null ? BaseIfc.toStepValue(this.SurfaceOnRelatingElement) : "$");
+		parameters.push(this.SurfaceOnRelatedElement != null ? BaseIfc.toStepValue(this.SurfaceOnRelatedElement) : "$");
 
         return parameters.join();
     }

@@ -6,7 +6,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcLengthMeasure} from "./IfcLengthMeasure.g"
 import {IfcCartesianPointList} from "./IfcCartesianPointList.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist2d.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccartesianpointlist2d.htm
+ */
 export class IfcCartesianPointList2D extends IfcCartesianPointList {
 	CoordList : Array<Array<IfcLengthMeasure>>
 
@@ -18,7 +20,7 @@ export class IfcCartesianPointList2D extends IfcCartesianPointList {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.CoordList != null ? this.toStepValue(this.CoordList) : "$");
+		parameters.push(this.CoordList != null ? BaseIfc.toStepValue(this.CoordList) : "$");
 
         return parameters.join();
     }

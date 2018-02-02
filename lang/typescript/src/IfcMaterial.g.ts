@@ -9,14 +9,16 @@ import {IfcMaterialDefinitionRepresentation} from "./IfcMaterialDefinitionRepres
 import {IfcMaterialRelationship} from "./IfcMaterialRelationship.g"
 import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterial.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterial.htm
+ */
 export class IfcMaterial extends IfcMaterialDefinition {
 	Name : IfcLabel
-	Description : IfcText// optional
-	Category : IfcLabel// optional
-	HasRepresentation : Array<IfcMaterialDefinitionRepresentation>// inverse
-	IsRelatedWith : Array<IfcMaterialRelationship>// inverse
-	RelatesTo : Array<IfcMaterialRelationship>// inverse
+	Description : IfcText // optional
+	Category : IfcLabel // optional
+	HasRepresentation : Array<IfcMaterialDefinitionRepresentation> // inverse
+	IsRelatedWith : Array<IfcMaterialRelationship> // inverse
+	RelatesTo : Array<IfcMaterialRelationship> // inverse
 
     constructor(name : IfcLabel) {
         super()
@@ -29,9 +31,9 @@ export class IfcMaterial extends IfcMaterialDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.Category != null ? this.toStepValue(this.Category) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.Category != null ? BaseIfc.toStepValue(this.Category) : "$");
 
         return parameters.join();
     }

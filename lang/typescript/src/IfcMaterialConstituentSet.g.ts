@@ -8,11 +8,13 @@ import {IfcText} from "./IfcText.g"
 import {IfcMaterialConstituent} from "./IfcMaterialConstituent.g"
 import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialconstituentset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialconstituentset.htm
+ */
 export class IfcMaterialConstituentSet extends IfcMaterialDefinition {
-	Name : IfcLabel// optional
-	Description : IfcText// optional
-	MaterialConstituents : Array<IfcMaterialConstituent>// optional
+	Name : IfcLabel // optional
+	Description : IfcText // optional
+	MaterialConstituents : Array<IfcMaterialConstituent> // optional
 
     constructor() {
         super()
@@ -21,9 +23,9 @@ export class IfcMaterialConstituentSet extends IfcMaterialDefinition {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.MaterialConstituents != null ? this.toStepValue(this.MaterialConstituents) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.MaterialConstituents != null ? BaseIfc.toStepValue(this.MaterialConstituents) : "$");
 
         return parameters.join();
     }

@@ -9,11 +9,13 @@ import {IfcDocumentInformation} from "./IfcDocumentInformation.g"
 import {IfcRelAssociatesDocument} from "./IfcRelAssociatesDocument.g"
 import {IfcExternalReference} from "./IfcExternalReference.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentreference.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdocumentreference.htm
+ */
 export class IfcDocumentReference extends IfcExternalReference {
-	Description : IfcText// optional
-	ReferencedDocument : IfcDocumentInformation// optional
-	DocumentRefForObjects : Array<IfcRelAssociatesDocument>// inverse
+	Description : IfcText // optional
+	ReferencedDocument : IfcDocumentInformation // optional
+	DocumentRefForObjects : Array<IfcRelAssociatesDocument> // inverse
 
     constructor() {
         super()
@@ -22,11 +24,11 @@ export class IfcDocumentReference extends IfcExternalReference {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Location != null ? this.toStepValue(this.Location) : "$");
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ReferencedDocument != null ? this.toStepValue(this.ReferencedDocument) : "$");
+		parameters.push(this.Location != null ? BaseIfc.toStepValue(this.Location) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ReferencedDocument != null ? BaseIfc.toStepValue(this.ReferencedDocument) : "$");
 
         return parameters.join();
     }

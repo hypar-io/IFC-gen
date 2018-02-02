@@ -7,13 +7,15 @@ import {IfcCompositeCurveSegment} from "./IfcCompositeCurveSegment.g"
 import {IfcLogical} from "./IfcLogical.g"
 import {IfcInteger} from "./IfcInteger.g"
 import {IfcSurface} from "./IfcSurface.g"
-import {IfcBoundaryCurve} from "./IfcBoundaryCurve.g"
 import {IfcCompositeCurve} from "./IfcCompositeCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurveonsurface.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccompositecurveonsurface.htm
+ */
 export class IfcCompositeCurveOnSurface extends IfcCompositeCurve {
 
-    get BasisSurface() : Array<IfcSurface>{throw "Derived property logic has been implemented for BasisSurface."} // derived
+    get BasisSurface() : Array<IfcSurface>{throw "Derived property logic has not been implemented for BasisSurface."} // derived
+    set BasisSurface(value : Array<IfcSurface>){super.BasisSurface = value}
 
     constructor(segments : Array<IfcCompositeCurveSegment>, selfIntersect : IfcLogical) {
         super(segments,selfIntersect)
@@ -21,8 +23,8 @@ export class IfcCompositeCurveOnSurface extends IfcCompositeCurve {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Segments != null ? this.toStepValue(this.Segments) : "$");
-		parameters.push(this.SelfIntersect != null ? this.toStepValue(this.SelfIntersect) : "$");
+		parameters.push(this.Segments != null ? BaseIfc.toStepValue(this.Segments) : "$");
+		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
 
         return parameters.join();
     }

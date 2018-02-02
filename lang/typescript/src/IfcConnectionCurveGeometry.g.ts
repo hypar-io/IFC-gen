@@ -1,14 +1,17 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcCurveOrEdgeCurve} from "./IfcCurveOrEdgeCurve.g"
+import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
+import {IfcEdgeCurve} from "./IfcEdgeCurve.g"
 import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectioncurvegeometry.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectioncurvegeometry.htm
+ */
 export class IfcConnectionCurveGeometry extends IfcConnectionGeometry {
-	CurveOnRelatingElement : IfcCurveOrEdgeCurve
-	CurveOnRelatedElement : IfcCurveOrEdgeCurve// optional
+	CurveOnRelatingElement : IfcBoundedCurve|IfcEdgeCurve
+	CurveOnRelatedElement : IfcBoundedCurve|IfcEdgeCurve // optional
 
-    constructor(curveOnRelatingElement : IfcCurveOrEdgeCurve) {
+    constructor(curveOnRelatingElement : IfcBoundedCurve|IfcEdgeCurve) {
         super()
 
 		this.CurveOnRelatingElement = curveOnRelatingElement
@@ -16,8 +19,8 @@ export class IfcConnectionCurveGeometry extends IfcConnectionGeometry {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.CurveOnRelatingElement != null ? this.toStepValue(this.CurveOnRelatingElement) : "$");
-		parameters.push(this.CurveOnRelatedElement != null ? this.toStepValue(this.CurveOnRelatedElement) : "$");
+		parameters.push(this.CurveOnRelatingElement != null ? BaseIfc.toStepValue(this.CurveOnRelatingElement) : "$");
+		parameters.push(this.CurveOnRelatedElement != null ? BaseIfc.toStepValue(this.CurveOnRelatedElement) : "$");
 
         return parameters.join();
     }

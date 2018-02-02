@@ -7,7 +7,9 @@ import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcCsgPrimitive3D} from "./IfcCsgPrimitive3D.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangularpyramid.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrectangularpyramid.htm
+ */
 export class IfcRectangularPyramid extends IfcCsgPrimitive3D {
 	XLength : IfcPositiveLengthMeasure
 	YLength : IfcPositiveLengthMeasure
@@ -23,10 +25,10 @@ export class IfcRectangularPyramid extends IfcCsgPrimitive3D {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.XLength != null ? this.toStepValue(this.XLength) : "$");
-		parameters.push(this.YLength != null ? this.toStepValue(this.YLength) : "$");
-		parameters.push(this.Height != null ? this.toStepValue(this.Height) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.XLength != null ? BaseIfc.toStepValue(this.XLength) : "$");
+		parameters.push(this.YLength != null ? BaseIfc.toStepValue(this.YLength) : "$");
+		parameters.push(this.Height != null ? BaseIfc.toStepValue(this.Height) : "$");
 
         return parameters.join();
     }

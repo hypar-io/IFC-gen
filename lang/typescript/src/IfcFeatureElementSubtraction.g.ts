@@ -26,13 +26,13 @@ import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizing
 import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
-import {IfcOpeningElement} from "./IfcOpeningElement.g"
-import {IfcVoidingFeature} from "./IfcVoidingFeature.g"
 import {IfcFeatureElement} from "./IfcFeatureElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelementsubtraction.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfeatureelementsubtraction.htm
+ */
 export abstract class IfcFeatureElementSubtraction extends IfcFeatureElement {
-	VoidsElements : IfcRelVoidsElement// inverse
+	VoidsElements : IfcRelVoidsElement // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

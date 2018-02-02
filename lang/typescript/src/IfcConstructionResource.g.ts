@@ -17,19 +17,15 @@ import {IfcRelAssignsToResource} from "./IfcRelAssignsToResource.g"
 import {IfcResourceTime} from "./IfcResourceTime.g"
 import {IfcAppliedValue} from "./IfcAppliedValue.g"
 import {IfcPhysicalQuantity} from "./IfcPhysicalQuantity.g"
-import {IfcConstructionEquipmentResource} from "./IfcConstructionEquipmentResource.g"
-import {IfcConstructionMaterialResource} from "./IfcConstructionMaterialResource.g"
-import {IfcConstructionProductResource} from "./IfcConstructionProductResource.g"
-import {IfcCrewResource} from "./IfcCrewResource.g"
-import {IfcLaborResource} from "./IfcLaborResource.g"
-import {IfcSubContractResource} from "./IfcSubContractResource.g"
 import {IfcResource} from "./IfcResource.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionresource.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconstructionresource.htm
+ */
 export abstract class IfcConstructionResource extends IfcResource {
-	Usage : IfcResourceTime// optional
-	BaseCosts : Array<IfcAppliedValue>// optional
-	BaseQuantity : IfcPhysicalQuantity// optional
+	Usage : IfcResourceTime // optional
+	BaseCosts : Array<IfcAppliedValue> // optional
+	BaseQuantity : IfcPhysicalQuantity // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

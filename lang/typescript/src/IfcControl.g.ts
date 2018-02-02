@@ -14,20 +14,14 @@ import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
 import {IfcIdentifier} from "./IfcIdentifier.g"
 import {IfcRelAssignsToControl} from "./IfcRelAssignsToControl.g"
-import {IfcActionRequest} from "./IfcActionRequest.g"
-import {IfcCostItem} from "./IfcCostItem.g"
-import {IfcCostSchedule} from "./IfcCostSchedule.g"
-import {IfcPerformanceHistory} from "./IfcPerformanceHistory.g"
-import {IfcPermit} from "./IfcPermit.g"
-import {IfcProjectOrder} from "./IfcProjectOrder.g"
-import {IfcWorkCalendar} from "./IfcWorkCalendar.g"
-import {IfcWorkControl} from "./IfcWorkControl.g"
 import {IfcObject} from "./IfcObject.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrol.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccontrol.htm
+ */
 export abstract class IfcControl extends IfcObject {
-	Identification : IfcIdentifier// optional
-	Controls : Array<IfcRelAssignsToControl>// inverse
+	Identification : IfcIdentifier // optional
+	Controls : Array<IfcRelAssignsToControl> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

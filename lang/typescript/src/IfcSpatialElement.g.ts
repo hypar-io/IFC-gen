@@ -18,17 +18,16 @@ import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelServicesBuildings} from "./IfcRelServicesBuildings.g"
 import {IfcRelReferencedInSpatialStructure} from "./IfcRelReferencedInSpatialStructure.g"
-import {IfcExternalSpatialStructureElement} from "./IfcExternalSpatialStructureElement.g"
-import {IfcSpatialStructureElement} from "./IfcSpatialStructureElement.g"
-import {IfcSpatialZone} from "./IfcSpatialZone.g"
 import {IfcProduct} from "./IfcProduct.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcspatialelement.htm
+ */
 export abstract class IfcSpatialElement extends IfcProduct {
-	LongName : IfcLabel// optional
-	ContainsElements : Array<IfcRelContainedInSpatialStructure>// inverse
-	ServicedBySystems : Array<IfcRelServicesBuildings>// inverse
-	ReferencesElements : Array<IfcRelReferencedInSpatialStructure>// inverse
+	LongName : IfcLabel // optional
+	ContainsElements : Array<IfcRelContainedInSpatialStructure> // inverse
+	ServicedBySystems : Array<IfcRelServicesBuildings> // inverse
+	ReferencesElements : Array<IfcRelReferencedInSpatialStructure> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

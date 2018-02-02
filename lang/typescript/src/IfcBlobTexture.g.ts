@@ -8,7 +8,9 @@ import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures.g"
 import {IfcBinary} from "./IfcBinary.g"
 import {IfcSurfaceTexture} from "./IfcSurfaceTexture.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcblobtexture.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcblobtexture.htm
+ */
 export class IfcBlobTexture extends IfcSurfaceTexture {
 	RasterFormat : IfcIdentifier
 	RasterCode : IfcBinary
@@ -22,13 +24,13 @@ export class IfcBlobTexture extends IfcSurfaceTexture {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.RepeatS != null ? this.toStepValue(this.RepeatS) : "$");
-		parameters.push(this.RepeatT != null ? this.toStepValue(this.RepeatT) : "$");
-		parameters.push(this.Mode != null ? this.toStepValue(this.Mode) : "$");
-		parameters.push(this.TextureTransform != null ? this.toStepValue(this.TextureTransform) : "$");
-		parameters.push(this.Parameter != null ? this.toStepValue(this.Parameter) : "$");
-		parameters.push(this.RasterFormat != null ? this.toStepValue(this.RasterFormat) : "$");
-		parameters.push(this.RasterCode != null ? this.toStepValue(this.RasterCode) : "$");
+		parameters.push(this.RepeatS != null ? BaseIfc.toStepValue(this.RepeatS) : "$");
+		parameters.push(this.RepeatT != null ? BaseIfc.toStepValue(this.RepeatT) : "$");
+		parameters.push(this.Mode != null ? BaseIfc.toStepValue(this.Mode) : "$");
+		parameters.push(this.TextureTransform != null ? BaseIfc.toStepValue(this.TextureTransform) : "$");
+		parameters.push(this.Parameter != null ? BaseIfc.toStepValue(this.Parameter) : "$");
+		parameters.push(this.RasterFormat != null ? BaseIfc.toStepValue(this.RasterFormat) : "$");
+		parameters.push(this.RasterCode != null ? BaseIfc.toStepValue(this.RasterCode) : "$");
 
         return parameters.join();
     }

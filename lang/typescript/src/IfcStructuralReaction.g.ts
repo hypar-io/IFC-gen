@@ -18,12 +18,11 @@ import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
 import {IfcStructuralLoad} from "./IfcStructuralLoad.g"
 import {IfcGlobalOrLocalEnum} from "./IfcGlobalOrLocalEnum.g"
 import {IfcRelConnectsStructuralActivity} from "./IfcRelConnectsStructuralActivity.g"
-import {IfcStructuralCurveReaction} from "./IfcStructuralCurveReaction.g"
-import {IfcStructuralPointReaction} from "./IfcStructuralPointReaction.g"
-import {IfcStructuralSurfaceReaction} from "./IfcStructuralSurfaceReaction.g"
 import {IfcStructuralActivity} from "./IfcStructuralActivity.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralreaction.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralreaction.htm
+ */
 export abstract class IfcStructuralReaction extends IfcStructuralActivity {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum) {

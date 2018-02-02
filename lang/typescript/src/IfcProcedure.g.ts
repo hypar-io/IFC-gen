@@ -18,9 +18,11 @@ import {IfcRelAssignsToProcess} from "./IfcRelAssignsToProcess.g"
 import {IfcProcedureTypeEnum} from "./IfcProcedureTypeEnum.g"
 import {IfcProcess} from "./IfcProcess.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocedure.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcprocedure.htm
+ */
 export class IfcProcedure extends IfcProcess {
-	PredefinedType : IfcProcedureTypeEnum// optional
+	PredefinedType : IfcProcedureTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
@@ -28,14 +30,14 @@ export class IfcProcedure extends IfcProcess {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? this.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.LongDescription != null ? this.toStepValue(this.LongDescription) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.LongDescription != null ? BaseIfc.toStepValue(this.LongDescription) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

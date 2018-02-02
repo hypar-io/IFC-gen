@@ -4,15 +4,19 @@ import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
 import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
-import {IfcDefinitionSelect} from "./IfcDefinitionSelect.g"
-import {IfcClassificationSelect} from "./IfcClassificationSelect.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcPropertyDefinition} from "./IfcPropertyDefinition.g"
+import {IfcClassification} from "./IfcClassification.g"
+import {IfcClassificationReference} from "./IfcClassificationReference.g"
 import {IfcRelAssociates} from "./IfcRelAssociates.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesclassification.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesclassification.htm
+ */
 export class IfcRelAssociatesClassification extends IfcRelAssociates {
-	RelatingClassification : IfcClassificationSelect
+	RelatingClassification : IfcClassification|IfcClassificationReference
 
-    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcDefinitionSelect>, relatingClassification : IfcClassificationSelect) {
+    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingClassification : IfcClassification|IfcClassificationReference) {
         super(globalId,relatedObjects)
 
 		this.RelatingClassification = relatingClassification
@@ -20,12 +24,12 @@ export class IfcRelAssociatesClassification extends IfcRelAssociates {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? this.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.RelatingClassification != null ? this.toStepValue(this.RelatingClassification) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
+		parameters.push(this.RelatingClassification != null ? BaseIfc.toStepValue(this.RelatingClassification) : "$");
 
         return parameters.join();
     }

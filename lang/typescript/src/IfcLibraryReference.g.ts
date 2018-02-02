@@ -10,12 +10,14 @@ import {IfcLibraryInformation} from "./IfcLibraryInformation.g"
 import {IfcRelAssociatesLibrary} from "./IfcRelAssociatesLibrary.g"
 import {IfcExternalReference} from "./IfcExternalReference.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryreference.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclibraryreference.htm
+ */
 export class IfcLibraryReference extends IfcExternalReference {
-	Description : IfcText// optional
-	Language : IfcLanguageId// optional
-	ReferencedLibrary : IfcLibraryInformation// optional
-	LibraryRefForObjects : Array<IfcRelAssociatesLibrary>// inverse
+	Description : IfcText // optional
+	Language : IfcLanguageId // optional
+	ReferencedLibrary : IfcLibraryInformation // optional
+	LibraryRefForObjects : Array<IfcRelAssociatesLibrary> // inverse
 
     constructor() {
         super()
@@ -24,12 +26,12 @@ export class IfcLibraryReference extends IfcExternalReference {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Location != null ? this.toStepValue(this.Location) : "$");
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.Language != null ? this.toStepValue(this.Language) : "$");
-		parameters.push(this.ReferencedLibrary != null ? this.toStepValue(this.ReferencedLibrary) : "$");
+		parameters.push(this.Location != null ? BaseIfc.toStepValue(this.Location) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.Language != null ? BaseIfc.toStepValue(this.Language) : "$");
+		parameters.push(this.ReferencedLibrary != null ? BaseIfc.toStepValue(this.ReferencedLibrary) : "$");
 
         return parameters.join();
     }

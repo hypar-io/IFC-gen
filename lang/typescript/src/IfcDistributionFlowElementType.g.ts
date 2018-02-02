@@ -14,18 +14,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcDistributionChamberElementType} from "./IfcDistributionChamberElementType.g"
-import {IfcEnergyConversionDeviceType} from "./IfcEnergyConversionDeviceType.g"
-import {IfcFlowControllerType} from "./IfcFlowControllerType.g"
-import {IfcFlowFittingType} from "./IfcFlowFittingType.g"
-import {IfcFlowMovingDeviceType} from "./IfcFlowMovingDeviceType.g"
-import {IfcFlowSegmentType} from "./IfcFlowSegmentType.g"
-import {IfcFlowStorageDeviceType} from "./IfcFlowStorageDeviceType.g"
-import {IfcFlowTerminalType} from "./IfcFlowTerminalType.g"
-import {IfcFlowTreatmentDeviceType} from "./IfcFlowTreatmentDeviceType.g"
 import {IfcDistributionElementType} from "./IfcDistributionElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionflowelementtype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdistributionflowelementtype.htm
+ */
 export abstract class IfcDistributionFlowElementType extends IfcDistributionElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {

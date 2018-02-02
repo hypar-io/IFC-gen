@@ -19,14 +19,13 @@ import {IfcStructuralLoad} from "./IfcStructuralLoad.g"
 import {IfcGlobalOrLocalEnum} from "./IfcGlobalOrLocalEnum.g"
 import {IfcRelConnectsStructuralActivity} from "./IfcRelConnectsStructuralActivity.g"
 import {IfcBoolean} from "./IfcBoolean.g"
-import {IfcStructuralCurveAction} from "./IfcStructuralCurveAction.g"
-import {IfcStructuralPointAction} from "./IfcStructuralPointAction.g"
-import {IfcStructuralSurfaceAction} from "./IfcStructuralSurfaceAction.g"
 import {IfcStructuralActivity} from "./IfcStructuralActivity.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralaction.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcstructuralaction.htm
+ */
 export abstract class IfcStructuralAction extends IfcStructuralActivity {
-	DestabilizingLoad : IfcBoolean// optional
+	DestabilizingLoad : IfcBoolean // optional
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum) {
         super(globalId,appliedLoad,globalOrLocal)

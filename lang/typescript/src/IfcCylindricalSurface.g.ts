@@ -7,7 +7,9 @@ import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
 import {IfcPositiveLengthMeasure} from "./IfcPositiveLengthMeasure.g"
 import {IfcElementarySurface} from "./IfcElementarySurface.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccylindricalsurface.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccylindricalsurface.htm
+ */
 export class IfcCylindricalSurface extends IfcElementarySurface {
 	Radius : IfcPositiveLengthMeasure
 
@@ -19,8 +21,8 @@ export class IfcCylindricalSurface extends IfcElementarySurface {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.Radius != null ? this.toStepValue(this.Radius) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
 
         return parameters.join();
     }

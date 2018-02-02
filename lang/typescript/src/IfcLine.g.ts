@@ -7,7 +7,9 @@ import {IfcCartesianPoint} from "./IfcCartesianPoint.g"
 import {IfcVector} from "./IfcVector.g"
 import {IfcCurve} from "./IfcCurve.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcline.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcline.htm
+ */
 export class IfcLine extends IfcCurve {
 	Pnt : IfcCartesianPoint
 	Dir : IfcVector
@@ -21,8 +23,8 @@ export class IfcLine extends IfcCurve {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Pnt != null ? this.toStepValue(this.Pnt) : "$");
-		parameters.push(this.Dir != null ? this.toStepValue(this.Dir) : "$");
+		parameters.push(this.Pnt != null ? BaseIfc.toStepValue(this.Pnt) : "$");
+		parameters.push(this.Dir != null ? BaseIfc.toStepValue(this.Dir) : "$");
 
         return parameters.join();
     }

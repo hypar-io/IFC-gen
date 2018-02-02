@@ -13,6 +13,13 @@ namespace IFC4.Generators
             get{return "Functions.g.cs";}
         }
 
+        private Dictionary<string, SelectType> selectData = new Dictionary<string, SelectType>();
+        public Dictionary<string, SelectType> SelectData
+        {
+            get{return selectData;}
+            set{selectData = value;}
+        }
+
         public string Generate(IEnumerable<FunctionData> functionDatas)
         {
             return $@"

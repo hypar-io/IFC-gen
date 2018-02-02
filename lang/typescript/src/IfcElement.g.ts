@@ -26,33 +26,25 @@ import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizing
 import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
-import {IfcBuildingElement} from "./IfcBuildingElement.g"
-import {IfcCivilElement} from "./IfcCivilElement.g"
-import {IfcDistributionElement} from "./IfcDistributionElement.g"
-import {IfcElementAssembly} from "./IfcElementAssembly.g"
-import {IfcElementComponent} from "./IfcElementComponent.g"
-import {IfcFeatureElement} from "./IfcFeatureElement.g"
-import {IfcFurnishingElement} from "./IfcFurnishingElement.g"
-import {IfcGeographicElement} from "./IfcGeographicElement.g"
-import {IfcTransportElement} from "./IfcTransportElement.g"
-import {IfcVirtualElement} from "./IfcVirtualElement.g"
 import {IfcProduct} from "./IfcProduct.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelement.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelement.htm
+ */
 export abstract class IfcElement extends IfcProduct {
-	Tag : IfcIdentifier// optional
-	FillsVoids : Array<IfcRelFillsElement>// inverse
-	ConnectedTo : Array<IfcRelConnectsElements>// inverse
-	IsInterferedByElements : Array<IfcRelInterferesElements>// inverse
-	InterferesElements : Array<IfcRelInterferesElements>// inverse
-	HasProjections : Array<IfcRelProjectsElement>// inverse
-	ReferencedInStructures : Array<IfcRelReferencedInSpatialStructure>// inverse
-	HasOpenings : Array<IfcRelVoidsElement>// inverse
-	IsConnectionRealization : Array<IfcRelConnectsWithRealizingElements>// inverse
-	ProvidesBoundaries : Array<IfcRelSpaceBoundary>// inverse
-	ConnectedFrom : Array<IfcRelConnectsElements>// inverse
-	ContainedInStructure : Array<IfcRelContainedInSpatialStructure>// inverse
-	HasCoverings : Array<IfcRelCoversBldgElements>// inverse
+	Tag : IfcIdentifier // optional
+	FillsVoids : Array<IfcRelFillsElement> // inverse
+	ConnectedTo : Array<IfcRelConnectsElements> // inverse
+	IsInterferedByElements : Array<IfcRelInterferesElements> // inverse
+	InterferesElements : Array<IfcRelInterferesElements> // inverse
+	HasProjections : Array<IfcRelProjectsElement> // inverse
+	ReferencedInStructures : Array<IfcRelReferencedInSpatialStructure> // inverse
+	HasOpenings : Array<IfcRelVoidsElement> // inverse
+	IsConnectionRealization : Array<IfcRelConnectsWithRealizingElements> // inverse
+	ProvidesBoundaries : Array<IfcRelSpaceBoundary> // inverse
+	ConnectedFrom : Array<IfcRelConnectsElements> // inverse
+	ContainedInStructure : Array<IfcRelContainedInSpatialStructure> // inverse
+	HasCoverings : Array<IfcRelCoversBldgElements> // inverse
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

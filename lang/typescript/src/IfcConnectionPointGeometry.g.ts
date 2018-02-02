@@ -1,15 +1,17 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcPointOrVertexPoint} from "./IfcPointOrVertexPoint.g"
-import {IfcConnectionPointEccentricity} from "./IfcConnectionPointEccentricity.g"
+import {IfcPoint} from "./IfcPoint.g"
+import {IfcVertexPoint} from "./IfcVertexPoint.g"
 import {IfcConnectionGeometry} from "./IfcConnectionGeometry.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionpointgeometry.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcconnectionpointgeometry.htm
+ */
 export class IfcConnectionPointGeometry extends IfcConnectionGeometry {
-	PointOnRelatingElement : IfcPointOrVertexPoint
-	PointOnRelatedElement : IfcPointOrVertexPoint// optional
+	PointOnRelatingElement : IfcPoint|IfcVertexPoint
+	PointOnRelatedElement : IfcPoint|IfcVertexPoint // optional
 
-    constructor(pointOnRelatingElement : IfcPointOrVertexPoint) {
+    constructor(pointOnRelatingElement : IfcPoint|IfcVertexPoint) {
         super()
 
 		this.PointOnRelatingElement = pointOnRelatingElement
@@ -17,8 +19,8 @@ export class IfcConnectionPointGeometry extends IfcConnectionGeometry {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.PointOnRelatingElement != null ? this.toStepValue(this.PointOnRelatingElement) : "$");
-		parameters.push(this.PointOnRelatedElement != null ? this.toStepValue(this.PointOnRelatedElement) : "$");
+		parameters.push(this.PointOnRelatingElement != null ? BaseIfc.toStepValue(this.PointOnRelatingElement) : "$");
+		parameters.push(this.PointOnRelatedElement != null ? BaseIfc.toStepValue(this.PointOnRelatedElement) : "$");
 
         return parameters.join();
     }

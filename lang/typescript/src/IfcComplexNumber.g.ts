@@ -5,15 +5,11 @@ import {BaseIfc} from "./BaseIfc"
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifccomplexnumber.htm
 export class IfcComplexNumber extends BaseIfc
 {
-    protected value : Array<number>
+    protected wrappedValue : Array<number>
 
     constructor(value : Array<number>){
         super()
-        this.value = value
+        this.wrappedValue = value
     }	
-    toString() : string { return this.value.toString() }
-    toStepValue(value: any, isSelectOption? : boolean) : string {
-        if(isSelectOption){ return `${this.constructor.name.toUpperCase()}(${this.toStepValue(this.value,isSelectOption)})`; }
-        else{ return this.toStepValue(this.value, isSelectOption); }
-    }
+    toString() : string { return this.wrappedValue.toString() }
 }

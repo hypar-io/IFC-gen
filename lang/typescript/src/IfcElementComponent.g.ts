@@ -26,15 +26,11 @@ import {IfcRelConnectsWithRealizingElements} from "./IfcRelConnectsWithRealizing
 import {IfcRelSpaceBoundary} from "./IfcRelSpaceBoundary.g"
 import {IfcRelContainedInSpatialStructure} from "./IfcRelContainedInSpatialStructure.g"
 import {IfcRelCoversBldgElements} from "./IfcRelCoversBldgElements.g"
-import {IfcBuildingElementPart} from "./IfcBuildingElementPart.g"
-import {IfcDiscreteAccessory} from "./IfcDiscreteAccessory.g"
-import {IfcFastener} from "./IfcFastener.g"
-import {IfcMechanicalFastener} from "./IfcMechanicalFastener.g"
-import {IfcReinforcingElement} from "./IfcReinforcingElement.g"
-import {IfcVibrationIsolator} from "./IfcVibrationIsolator.g"
 import {IfcElement} from "./IfcElement.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcomponent.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementcomponent.htm
+ */
 export abstract class IfcElementComponent extends IfcElement {
 
     constructor(globalId : IfcGloballyUniqueId) {

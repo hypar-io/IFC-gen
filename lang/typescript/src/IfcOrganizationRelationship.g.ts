@@ -5,7 +5,9 @@ import {IfcText} from "./IfcText.g"
 import {IfcOrganization} from "./IfcOrganization.g"
 import {IfcResourceLevelRelationship} from "./IfcResourceLevelRelationship.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorganizationrelationship.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcorganizationrelationship.htm
+ */
 export class IfcOrganizationRelationship extends IfcResourceLevelRelationship {
 	RelatingOrganization : IfcOrganization
 	RelatedOrganizations : Array<IfcOrganization>
@@ -19,10 +21,10 @@ export class IfcOrganizationRelationship extends IfcResourceLevelRelationship {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingOrganization != null ? this.toStepValue(this.RelatingOrganization) : "$");
-		parameters.push(this.RelatedOrganizations != null ? this.toStepValue(this.RelatedOrganizations) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatingOrganization != null ? BaseIfc.toStepValue(this.RelatingOrganization) : "$");
+		parameters.push(this.RelatedOrganizations != null ? BaseIfc.toStepValue(this.RelatedOrganizations) : "$");
 
         return parameters.join();
     }

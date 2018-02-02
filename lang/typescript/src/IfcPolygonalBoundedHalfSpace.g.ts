@@ -9,7 +9,9 @@ import {IfcAxis2Placement3D} from "./IfcAxis2Placement3D.g"
 import {IfcBoundedCurve} from "./IfcBoundedCurve.g"
 import {IfcHalfSpaceSolid} from "./IfcHalfSpaceSolid.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalboundedhalfspace.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpolygonalboundedhalfspace.htm
+ */
 export class IfcPolygonalBoundedHalfSpace extends IfcHalfSpaceSolid {
 	Position : IfcAxis2Placement3D
 	PolygonalBoundary : IfcBoundedCurve
@@ -23,10 +25,10 @@ export class IfcPolygonalBoundedHalfSpace extends IfcHalfSpaceSolid {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.BaseSurface != null ? this.toStepValue(this.BaseSurface) : "$");
-		parameters.push(this.AgreementFlag != null ? this.toStepValue(this.AgreementFlag) : "$");
-		parameters.push(this.Position != null ? this.toStepValue(this.Position) : "$");
-		parameters.push(this.PolygonalBoundary != null ? this.toStepValue(this.PolygonalBoundary) : "$");
+		parameters.push(this.BaseSurface != null ? BaseIfc.toStepValue(this.BaseSurface) : "$");
+		parameters.push(this.AgreementFlag != null ? BaseIfc.toStepValue(this.AgreementFlag) : "$");
+		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+		parameters.push(this.PolygonalBoundary != null ? BaseIfc.toStepValue(this.PolygonalBoundary) : "$");
 
         return parameters.join();
     }

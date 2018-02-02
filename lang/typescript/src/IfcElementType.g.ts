@@ -14,19 +14,13 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 import {IfcRelDefinesByType} from "./IfcRelDefinesByType.g"
 import {IfcRepresentationMap} from "./IfcRepresentationMap.g"
 import {IfcRelAssignsToProduct} from "./IfcRelAssignsToProduct.g"
-import {IfcBuildingElementType} from "./IfcBuildingElementType.g"
-import {IfcCivilElementType} from "./IfcCivilElementType.g"
-import {IfcDistributionElementType} from "./IfcDistributionElementType.g"
-import {IfcElementAssemblyType} from "./IfcElementAssemblyType.g"
-import {IfcElementComponentType} from "./IfcElementComponentType.g"
-import {IfcFurnishingElementType} from "./IfcFurnishingElementType.g"
-import {IfcGeographicElementType} from "./IfcGeographicElementType.g"
-import {IfcTransportElementType} from "./IfcTransportElementType.g"
 import {IfcTypeProduct} from "./IfcTypeProduct.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementtype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcelementtype.htm
+ */
 export abstract class IfcElementType extends IfcTypeProduct {
-	ElementType : IfcLabel// optional
+	ElementType : IfcLabel // optional
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)

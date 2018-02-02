@@ -6,7 +6,9 @@ import {IfcRepresentation} from "./IfcRepresentation.g"
 import {IfcMaterial} from "./IfcMaterial.g"
 import {IfcProductRepresentation} from "./IfcProductRepresentation.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialdefinitionrepresentation.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialdefinitionrepresentation.htm
+ */
 export class IfcMaterialDefinitionRepresentation extends IfcProductRepresentation {
 	RepresentedMaterial : IfcMaterial
 
@@ -18,10 +20,10 @@ export class IfcMaterialDefinitionRepresentation extends IfcProductRepresentatio
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.Representations != null ? this.toStepValue(this.Representations) : "$");
-		parameters.push(this.RepresentedMaterial != null ? this.toStepValue(this.RepresentedMaterial) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.Representations != null ? BaseIfc.toStepValue(this.Representations) : "$");
+		parameters.push(this.RepresentedMaterial != null ? BaseIfc.toStepValue(this.RepresentedMaterial) : "$");
 
         return parameters.join();
     }

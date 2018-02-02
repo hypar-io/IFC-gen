@@ -3,7 +3,9 @@ import {BaseIfc} from "./BaseIfc"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcPreDefinedCurveFont} from "./IfcPreDefinedCurveFont.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdraughtingpredefinedcurvefont.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdraughtingpredefinedcurvefont.htm
+ */
 export class IfcDraughtingPreDefinedCurveFont extends IfcPreDefinedCurveFont {
 
     constructor(name : IfcLabel) {
@@ -12,7 +14,7 @@ export class IfcDraughtingPreDefinedCurveFont extends IfcPreDefinedCurveFont {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
 
         return parameters.join();
     }

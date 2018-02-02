@@ -8,13 +8,23 @@ import {IfcPropertyDependencyRelationship} from "./IfcPropertyDependencyRelation
 import {IfcComplexProperty} from "./IfcComplexProperty.g"
 import {IfcResourceConstraintRelationship} from "./IfcResourceConstraintRelationship.g"
 import {IfcResourceApprovalRelationship} from "./IfcResourceApprovalRelationship.g"
-import {IfcObjectReferenceSelect} from "./IfcObjectReferenceSelect.g"
+import {IfcAddress} from "./IfcAddress.g"
+import {IfcAppliedValue} from "./IfcAppliedValue.g"
+import {IfcExternalReference} from "./IfcExternalReference.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
+import {IfcOrganization} from "./IfcOrganization.g"
+import {IfcPerson} from "./IfcPerson.g"
+import {IfcPersonAndOrganization} from "./IfcPersonAndOrganization.g"
+import {IfcTable} from "./IfcTable.g"
+import {IfcTimeSeries} from "./IfcTimeSeries.g"
 import {IfcSimpleProperty} from "./IfcSimpleProperty.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyreferencevalue.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertyreferencevalue.htm
+ */
 export class IfcPropertyReferenceValue extends IfcSimpleProperty {
-	UsageName : IfcText// optional
-	PropertyReference : IfcObjectReferenceSelect// optional
+	UsageName : IfcText // optional
+	PropertyReference : IfcAddress|IfcAppliedValue|IfcExternalReference|IfcMaterialDefinition|IfcOrganization|IfcPerson|IfcPersonAndOrganization|IfcTable|IfcTimeSeries // optional
 
     constructor(name : IfcIdentifier) {
         super(name)
@@ -22,10 +32,10 @@ export class IfcPropertyReferenceValue extends IfcSimpleProperty {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.UsageName != null ? this.toStepValue(this.UsageName) : "$");
-		parameters.push(this.PropertyReference != null ? this.toStepValue(this.PropertyReference) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.UsageName != null ? BaseIfc.toStepValue(this.UsageName) : "$");
+		parameters.push(this.PropertyReference != null ? BaseIfc.toStepValue(this.PropertyReference) : "$");
 
         return parameters.join();
     }

@@ -5,7 +5,9 @@ import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcOrientedEdge} from "./IfcOrientedEdge.g"
 import {IfcTopologicalRepresentationItem} from "./IfcTopologicalRepresentationItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpath.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpath.htm
+ */
 export class IfcPath extends IfcTopologicalRepresentationItem {
 	EdgeList : Array<IfcOrientedEdge>
 
@@ -17,7 +19,7 @@ export class IfcPath extends IfcTopologicalRepresentationItem {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.EdgeList != null ? this.toStepValue(this.EdgeList) : "$");
+		parameters.push(this.EdgeList != null ? BaseIfc.toStepValue(this.EdgeList) : "$");
 
         return parameters.join();
     }

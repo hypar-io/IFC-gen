@@ -5,12 +5,14 @@ import {IfcText} from "./IfcText.g"
 import {IfcExternalReferenceRelationship} from "./IfcExternalReferenceRelationship.g"
 import {IfcPhysicalQuantity} from "./IfcPhysicalQuantity.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalcomplexquantity.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcphysicalcomplexquantity.htm
+ */
 export class IfcPhysicalComplexQuantity extends IfcPhysicalQuantity {
 	HasQuantities : Array<IfcPhysicalQuantity>
 	Discrimination : IfcLabel
-	Quality : IfcLabel// optional
-	Usage : IfcLabel// optional
+	Quality : IfcLabel // optional
+	Usage : IfcLabel // optional
 
     constructor(name : IfcLabel, hasQuantities : Array<IfcPhysicalQuantity>, discrimination : IfcLabel) {
         super(name)
@@ -21,12 +23,12 @@ export class IfcPhysicalComplexQuantity extends IfcPhysicalQuantity {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.HasQuantities != null ? this.toStepValue(this.HasQuantities) : "$");
-		parameters.push(this.Discrimination != null ? this.toStepValue(this.Discrimination) : "$");
-		parameters.push(this.Quality != null ? this.toStepValue(this.Quality) : "$");
-		parameters.push(this.Usage != null ? this.toStepValue(this.Usage) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.HasQuantities != null ? BaseIfc.toStepValue(this.HasQuantities) : "$");
+		parameters.push(this.Discrimination != null ? BaseIfc.toStepValue(this.Discrimination) : "$");
+		parameters.push(this.Quality != null ? BaseIfc.toStepValue(this.Quality) : "$");
+		parameters.push(this.Usage != null ? BaseIfc.toStepValue(this.Usage) : "$");
 
         return parameters.join();
     }

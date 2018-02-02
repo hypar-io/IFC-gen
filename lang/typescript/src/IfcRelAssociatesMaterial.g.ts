@@ -4,15 +4,20 @@ import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
 import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
-import {IfcDefinitionSelect} from "./IfcDefinitionSelect.g"
-import {IfcMaterialSelect} from "./IfcMaterialSelect.g"
+import {IfcObjectDefinition} from "./IfcObjectDefinition.g"
+import {IfcPropertyDefinition} from "./IfcPropertyDefinition.g"
+import {IfcMaterialDefinition} from "./IfcMaterialDefinition.g"
+import {IfcMaterialList} from "./IfcMaterialList.g"
+import {IfcMaterialUsageDefinition} from "./IfcMaterialUsageDefinition.g"
 import {IfcRelAssociates} from "./IfcRelAssociates.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesmaterial.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelassociatesmaterial.htm
+ */
 export class IfcRelAssociatesMaterial extends IfcRelAssociates {
-	RelatingMaterial : IfcMaterialSelect
+	RelatingMaterial : IfcMaterialDefinition|IfcMaterialList|IfcMaterialUsageDefinition
 
-    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcDefinitionSelect>, relatingMaterial : IfcMaterialSelect) {
+    constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingMaterial : IfcMaterialDefinition|IfcMaterialList|IfcMaterialUsageDefinition) {
         super(globalId,relatedObjects)
 
 		this.RelatingMaterial = relatingMaterial
@@ -20,12 +25,12 @@ export class IfcRelAssociatesMaterial extends IfcRelAssociates {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? this.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.RelatingMaterial != null ? this.toStepValue(this.RelatingMaterial) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
+		parameters.push(this.RelatingMaterial != null ? BaseIfc.toStepValue(this.RelatingMaterial) : "$");
 
         return parameters.join();
     }

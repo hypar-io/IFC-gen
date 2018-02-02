@@ -165,6 +165,9 @@ namespace Express
         }
     }
 
+    /// <summary>
+    /// A TypeData object stores data about IFC types.
+    /// </summary>
     public abstract class TypeData
     {
         public string Name { get; set; }
@@ -174,13 +177,11 @@ namespace Express
             this.generator = generator;
             Name = name;
         }
-
-        public virtual IEnumerable<string> Dependencies()
-        {
-            throw new NotImplementedException("Override in derived classes.");
-        }
     }
 
+    /// <summary>
+    /// Base class for types which store a collection of values such as IFC SELECT and ENUM types.
+    /// </summary>
     public abstract class CollectionTypeData : TypeData
     {
         /// <summary>
@@ -197,7 +198,7 @@ namespace Express
     }
 
     /// <summary>
-    /// SimpleType stores data about TYPE types.
+    /// A WrapperType object stores data about IFC TYPEs.
     /// </summary>
     public class WrapperType : TypeData
     {
@@ -224,27 +225,19 @@ namespace Express
             this.WrappedType = wrappedType;
         }
 
-        /// <summary>
-        /// Return a string representing the TypeData as an IfcType.
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
+        public override string ToString() 
         {
             return generator.SimpleTypeString(this);
         }
     }
 
     /// <summary>
-    /// EnumType stores information about ENUM types.
+    /// A CollectionTypeData object stores information about IFC ENUM types.
     /// </summary>
     public class EnumType : CollectionTypeData
     {
         public EnumType(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator, values) { }
 
-        /// <summary>
-        /// Returns a string representing the TypeData as an Enum.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return generator.EnumTypeString(this);
@@ -252,29 +245,20 @@ namespace Express
     }
 
     /// <summary>
-    /// SelectType stores information about SELECT types.
+    /// A SelectType object stores information about IFC SELECT types.
     /// </summary>
     public class SelectType : CollectionTypeData
     {
         public SelectType(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator, values) { }
 
-        /// <summary>
-        /// Return a string representing the TypeData as a Select.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return generator.SelectTypeString(this);
         }
-
-        public override IEnumerable<string> Dependencies() 
-        {
-            return this.Values;
-        }
     }
 
     /// <summary>
-    /// EntityData stores information about ENTITY types.
+    /// An Entity object stores information about IFC ENTITY types.
     /// </summary>
     public class Entity : TypeData
     {
@@ -349,7 +333,7 @@ namespace Express
             return false;
         }
 
-        public string Properties()
+        public string Properties(Dictionary<string, SelectType> selectData)
         {
             var attrs = Attributes;
             if (!attrs.Any())
@@ -408,29 +392,9 @@ namespace Express
             return propBuilder.ToString();
         }
 
-        /// <summary>
-        /// Return a string representing the TypeData as a Class.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return generator.EntityString(this);
-        }
-
-        public override IEnumerable<string> Dependencies() 
-        {
-            var parents = ParentsAndSelf().Reverse();
-            var attrs = parents.SelectMany(p => p.Attributes);
-
-            var constructorTypes = attrs.Select(a=>a.type).Distinct();
-            var attrTypes = this.Attributes.Select(a=>a.type).Distinct();
-            var superTypes = this.Supers.Select(s=>s.Name);
-            var subTypes = this.Subs.Select(s=>s.Name);
-
-            var badTypes = new List<string>{"boolean","number","string","boolean","Uint8Array"};
-            var types = constructorTypes.Concat(attrTypes).Concat(superTypes).Concat(subTypes).Distinct().Where(t=>!badTypes.Contains(t) && t!=this.Name);
-
-            return types;
         }
     }
 }

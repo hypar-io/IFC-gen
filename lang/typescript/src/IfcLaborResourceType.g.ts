@@ -18,7 +18,9 @@ import {IfcPhysicalQuantity} from "./IfcPhysicalQuantity.g"
 import {IfcLaborResourceTypeEnum} from "./IfcLaborResourceTypeEnum.g"
 import {IfcConstructionResourceType} from "./IfcConstructionResourceType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifclaborresourcetype.htm
+ */
 export class IfcLaborResourceType extends IfcConstructionResourceType {
 	PredefinedType : IfcLaborResourceTypeEnum
 
@@ -30,18 +32,18 @@ export class IfcLaborResourceType extends IfcConstructionResourceType {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ApplicableOccurrence != null ? this.toStepValue(this.ApplicableOccurrence) : "$");
-		parameters.push(this.HasPropertySets != null ? this.toStepValue(this.HasPropertySets) : "$");
-		parameters.push(this.Identification != null ? this.toStepValue(this.Identification) : "$");
-		parameters.push(this.LongDescription != null ? this.toStepValue(this.LongDescription) : "$");
-		parameters.push(this.ResourceType != null ? this.toStepValue(this.ResourceType) : "$");
-		parameters.push(this.BaseCosts != null ? this.toStepValue(this.BaseCosts) : "$");
-		parameters.push(this.BaseQuantity != null ? this.toStepValue(this.BaseQuantity) : "$");
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ApplicableOccurrence != null ? BaseIfc.toStepValue(this.ApplicableOccurrence) : "$");
+		parameters.push(this.HasPropertySets != null ? BaseIfc.toStepValue(this.HasPropertySets) : "$");
+		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
+		parameters.push(this.LongDescription != null ? BaseIfc.toStepValue(this.LongDescription) : "$");
+		parameters.push(this.ResourceType != null ? BaseIfc.toStepValue(this.ResourceType) : "$");
+		parameters.push(this.BaseCosts != null ? BaseIfc.toStepValue(this.BaseCosts) : "$");
+		parameters.push(this.BaseQuantity != null ? BaseIfc.toStepValue(this.BaseQuantity) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

@@ -4,10 +4,11 @@ import {IfcPresentationLayerAssignment} from "./IfcPresentationLayerAssignment.g
 import {IfcStyledItem} from "./IfcStyledItem.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcClosedShell} from "./IfcClosedShell.g"
-import {IfcAdvancedBrepWithVoids} from "./IfcAdvancedBrepWithVoids.g"
 import {IfcManifoldSolidBrep} from "./IfcManifoldSolidBrep.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcadvancedbrep.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcadvancedbrep.htm
+ */
 export class IfcAdvancedBrep extends IfcManifoldSolidBrep {
 
     constructor(outer : IfcClosedShell) {
@@ -16,7 +17,7 @@ export class IfcAdvancedBrep extends IfcManifoldSolidBrep {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Outer != null ? this.toStepValue(this.Outer) : "$");
+		parameters.push(this.Outer != null ? BaseIfc.toStepValue(this.Outer) : "$");
 
         return parameters.join();
     }

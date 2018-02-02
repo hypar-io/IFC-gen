@@ -18,10 +18,12 @@ import {IfcAssemblyPlaceEnum} from "./IfcAssemblyPlaceEnum.g"
 import {IfcFurnitureTypeEnum} from "./IfcFurnitureTypeEnum.g"
 import {IfcFurnishingElementType} from "./IfcFurnishingElementType.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretype.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcfurnituretype.htm
+ */
 export class IfcFurnitureType extends IfcFurnishingElementType {
 	AssemblyPlace : IfcAssemblyPlaceEnum
-	PredefinedType : IfcFurnitureTypeEnum// optional
+	PredefinedType : IfcFurnitureTypeEnum // optional
 
     constructor(globalId : IfcGloballyUniqueId, assemblyPlace : IfcAssemblyPlaceEnum) {
         super(globalId)
@@ -31,17 +33,17 @@ export class IfcFurnitureType extends IfcFurnishingElementType {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.ApplicableOccurrence != null ? this.toStepValue(this.ApplicableOccurrence) : "$");
-		parameters.push(this.HasPropertySets != null ? this.toStepValue(this.HasPropertySets) : "$");
-		parameters.push(this.RepresentationMaps != null ? this.toStepValue(this.RepresentationMaps) : "$");
-		parameters.push(this.Tag != null ? this.toStepValue(this.Tag) : "$");
-		parameters.push(this.ElementType != null ? this.toStepValue(this.ElementType) : "$");
-		parameters.push(this.toStepValue(this.AssemblyPlace));
-		parameters.push(this.toStepValue(this.PredefinedType));
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.ApplicableOccurrence != null ? BaseIfc.toStepValue(this.ApplicableOccurrence) : "$");
+		parameters.push(this.HasPropertySets != null ? BaseIfc.toStepValue(this.HasPropertySets) : "$");
+		parameters.push(this.RepresentationMaps != null ? BaseIfc.toStepValue(this.RepresentationMaps) : "$");
+		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
+		parameters.push(this.ElementType != null ? BaseIfc.toStepValue(this.ElementType) : "$");
+		parameters.push(BaseIfc.toStepValue(this.AssemblyPlace));
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
 
         return parameters.join();
     }

@@ -9,10 +9,11 @@ import {IfcRelAssociates} from "./IfcRelAssociates.g"
 import {IfcTypeObject} from "./IfcTypeObject.g"
 import {IfcRelDefinesByTemplate} from "./IfcRelDefinesByTemplate.g"
 import {IfcRelDefinesByProperties} from "./IfcRelDefinesByProperties.g"
-import {IfcElementQuantity} from "./IfcElementQuantity.g"
 import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcquantityset.htm
+ */
 export abstract class IfcQuantitySet extends IfcPropertySetDefinition {
 
     constructor(globalId : IfcGloballyUniqueId) {

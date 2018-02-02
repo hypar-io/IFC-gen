@@ -6,17 +6,18 @@ import {IfcCartesianPointList3D} from "./IfcCartesianPointList3D.g"
 import {IfcDimensionCount} from "./IfcDimensionCount.g"
 import {IfcIndexedColourMap} from "./IfcIndexedColourMap.g"
 import {IfcIndexedTextureMap} from "./IfcIndexedTextureMap.g"
-import {IfcPolygonalFaceSet} from "./IfcPolygonalFaceSet.g"
-import {IfcTriangulatedFaceSet} from "./IfcTriangulatedFaceSet.g"
 import {IfcTessellatedItem} from "./IfcTessellatedItem.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellatedfaceset.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifctessellatedfaceset.htm
+ */
 export abstract class IfcTessellatedFaceSet extends IfcTessellatedItem {
 	Coordinates : IfcCartesianPointList3D
 
-    get Dim() : IfcDimensionCount{throw "Derived property logic has been implemented for Dim."} // derived
-	HasColours : Array<IfcIndexedColourMap>// inverse
-	HasTextures : Array<IfcIndexedTextureMap>// inverse
+    get Dim() : IfcDimensionCount{throw "Derived property logic has not been implemented for Dim."} // derived
+    set Dim(value : IfcDimensionCount){super.Dim = value}
+	HasColours : Array<IfcIndexedColourMap> // inverse
+	HasTextures : Array<IfcIndexedTextureMap> // inverse
 
     constructor(coordinates : IfcCartesianPointList3D) {
         super()

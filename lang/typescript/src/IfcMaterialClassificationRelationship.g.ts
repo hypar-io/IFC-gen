@@ -1,14 +1,17 @@
 
 import {BaseIfc} from "./BaseIfc"
-import {IfcClassificationSelect} from "./IfcClassificationSelect.g"
+import {IfcClassification} from "./IfcClassification.g"
+import {IfcClassificationReference} from "./IfcClassificationReference.g"
 import {IfcMaterial} from "./IfcMaterial.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialclassificationrelationship.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmaterialclassificationrelationship.htm
+ */
 export class IfcMaterialClassificationRelationship extends BaseIfc {
-	MaterialClassifications : Array<IfcClassificationSelect>
+	MaterialClassifications : Array<IfcClassification|IfcClassificationReference>
 	ClassifiedMaterial : IfcMaterial
 
-    constructor(materialClassifications : Array<IfcClassificationSelect>, classifiedMaterial : IfcMaterial) {
+    constructor(materialClassifications : Array<IfcClassification|IfcClassificationReference>, classifiedMaterial : IfcMaterial) {
         super()
 
 		this.MaterialClassifications = materialClassifications
@@ -17,8 +20,8 @@ export class IfcMaterialClassificationRelationship extends BaseIfc {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.MaterialClassifications != null ? this.toStepValue(this.MaterialClassifications) : "$");
-		parameters.push(this.ClassifiedMaterial != null ? this.toStepValue(this.ClassifiedMaterial) : "$");
+		parameters.push(this.MaterialClassifications != null ? BaseIfc.toStepValue(this.MaterialClassifications) : "$");
+		parameters.push(this.ClassifiedMaterial != null ? BaseIfc.toStepValue(this.ClassifiedMaterial) : "$");
 
         return parameters.join();
     }

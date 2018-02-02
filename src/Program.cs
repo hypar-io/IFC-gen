@@ -8,6 +8,7 @@ using Antlr4.Runtime;
 using Antlr4.Runtime.Tree;
 using IFC4.Generators;
 using NDesk.Options;
+using Express;
 
 namespace IFC.Generate
 {
@@ -39,7 +40,8 @@ namespace IFC.Generate
                 generators.Add(new Tuple<ILanguageGenerator, IFunctionsGenerator>(new ProtobufGenerator(), null));
             } else if (language == "ts")
             {
-                generators.Add(new Tuple<ILanguageGenerator, IFunctionsGenerator>(new TypescriptGenerator(), null));
+                generators.Add(new Tuple<ILanguageGenerator, IFunctionsGenerator>(new TypescriptGenerator(), 
+                    new TypescriptFunctionsGenerator()));
             }
 
             using (FileStream fs = new FileStream(expressPath, FileMode.Open))
@@ -81,7 +83,13 @@ namespace IFC.Generate
         ILanguageGenerator generator, IFunctionsGenerator functionsGenerator)
         {
             var names = new List<string>();
-            foreach (var kvp in listener.TypeData)
+
+            var sd = listener.TypeData.Where(kvp=>kvp.Value is SelectType).
+                                Select(v=>new {v.Key, v.Value}).
+                                ToDictionary(t => t.Key, t => (SelectType)t.Value);
+            generator.SelectData = sd;
+
+            foreach (var kvp in listener.TypeData.Where(kvp=>kvp.Value.GetType() != typeof(SelectType)))
             {
                 var td = kvp.Value;
                 File.WriteAllText(Path.Combine(outDir, $"{td.Name}.{generator.FileExtension}"), td.ToString());
@@ -92,6 +100,7 @@ namespace IFC.Generate
 
             if (functionsGenerator != null)
             {
+                functionsGenerator.SelectData = sd;
                 var functionsPath = Path.Combine(outDir, functionsGenerator.FileName);
                 File.WriteAllText(functionsPath, functionsGenerator.Generate(listener.FunctionData.Values));
             }

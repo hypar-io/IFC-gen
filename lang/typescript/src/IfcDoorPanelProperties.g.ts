@@ -16,13 +16,15 @@ import {IfcDoorPanelPositionEnum} from "./IfcDoorPanelPositionEnum.g"
 import {IfcShapeAspect} from "./IfcShapeAspect.g"
 import {IfcPreDefinedPropertySet} from "./IfcPreDefinedPropertySet.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelproperties.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcdoorpanelproperties.htm
+ */
 export class IfcDoorPanelProperties extends IfcPreDefinedPropertySet {
-	PanelDepth : IfcPositiveLengthMeasure// optional
+	PanelDepth : IfcPositiveLengthMeasure // optional
 	PanelOperation : IfcDoorPanelOperationEnum
-	PanelWidth : IfcNormalisedRatioMeasure// optional
+	PanelWidth : IfcNormalisedRatioMeasure // optional
 	PanelPosition : IfcDoorPanelPositionEnum
-	ShapeAspectStyle : IfcShapeAspect// optional
+	ShapeAspectStyle : IfcShapeAspect // optional
 
     constructor(globalId : IfcGloballyUniqueId, panelOperation : IfcDoorPanelOperationEnum, panelPosition : IfcDoorPanelPositionEnum) {
         super(globalId)
@@ -33,15 +35,15 @@ export class IfcDoorPanelProperties extends IfcPreDefinedPropertySet {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.PanelDepth != null ? this.toStepValue(this.PanelDepth) : "$");
-		parameters.push(this.toStepValue(this.PanelOperation));
-		parameters.push(this.PanelWidth != null ? this.toStepValue(this.PanelWidth) : "$");
-		parameters.push(this.toStepValue(this.PanelPosition));
-		parameters.push(this.ShapeAspectStyle != null ? this.toStepValue(this.ShapeAspectStyle) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.PanelDepth != null ? BaseIfc.toStepValue(this.PanelDepth) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PanelOperation));
+		parameters.push(this.PanelWidth != null ? BaseIfc.toStepValue(this.PanelWidth) : "$");
+		parameters.push(BaseIfc.toStepValue(this.PanelPosition));
+		parameters.push(this.ShapeAspectStyle != null ? BaseIfc.toStepValue(this.ShapeAspectStyle) : "$");
 
         return parameters.join();
     }

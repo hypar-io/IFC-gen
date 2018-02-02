@@ -2,15 +2,21 @@
 import {BaseIfc} from "./BaseIfc"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcSurfaceSide} from "./IfcSurfaceSide.g"
-import {IfcSurfaceStyleElementSelect} from "./IfcSurfaceStyleElementSelect.g"
+import {IfcExternallyDefinedSurfaceStyle} from "./IfcExternallyDefinedSurfaceStyle.g"
+import {IfcSurfaceStyleLighting} from "./IfcSurfaceStyleLighting.g"
+import {IfcSurfaceStyleRefraction} from "./IfcSurfaceStyleRefraction.g"
+import {IfcSurfaceStyleShading} from "./IfcSurfaceStyleShading.g"
+import {IfcSurfaceStyleWithTextures} from "./IfcSurfaceStyleWithTextures.g"
 import {IfcPresentationStyle} from "./IfcPresentationStyle.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyle.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcsurfacestyle.htm
+ */
 export class IfcSurfaceStyle extends IfcPresentationStyle {
 	Side : IfcSurfaceSide
-	Styles : Array<IfcSurfaceStyleElementSelect>
+	Styles : Array<IfcExternallyDefinedSurfaceStyle|IfcSurfaceStyleLighting|IfcSurfaceStyleRefraction|IfcSurfaceStyleShading|IfcSurfaceStyleWithTextures>
 
-    constructor(side : IfcSurfaceSide, styles : Array<IfcSurfaceStyleElementSelect>) {
+    constructor(side : IfcSurfaceSide, styles : Array<IfcExternallyDefinedSurfaceStyle|IfcSurfaceStyleLighting|IfcSurfaceStyleRefraction|IfcSurfaceStyleShading|IfcSurfaceStyleWithTextures>) {
         super()
 
 		this.Side = side
@@ -19,9 +25,9 @@ export class IfcSurfaceStyle extends IfcPresentationStyle {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Side != null ? this.toStepValue(this.Side) : "$");
-		parameters.push(this.Styles != null ? this.toStepValue(this.Styles) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Side != null ? BaseIfc.toStepValue(this.Side) : "$");
+		parameters.push(this.Styles != null ? BaseIfc.toStepValue(this.Styles) : "$");
 
         return parameters.join();
     }

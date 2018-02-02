@@ -4,16 +4,19 @@ import {IfcGloballyUniqueId} from "./IfcGloballyUniqueId.g"
 import {IfcOwnerHistory} from "./IfcOwnerHistory.g"
 import {IfcLabel} from "./IfcLabel.g"
 import {IfcText} from "./IfcText.g"
-import {IfcStructuralActivityAssignmentSelect} from "./IfcStructuralActivityAssignmentSelect.g"
+import {IfcElement} from "./IfcElement.g"
+import {IfcStructuralItem} from "./IfcStructuralItem.g"
 import {IfcStructuralActivity} from "./IfcStructuralActivity.g"
 import {IfcRelConnects} from "./IfcRelConnects.g"
 
-// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsstructuralactivity.htm
+/**
+ * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcrelconnectsstructuralactivity.htm
+ */
 export class IfcRelConnectsStructuralActivity extends IfcRelConnects {
-	RelatingElement : IfcStructuralActivityAssignmentSelect
+	RelatingElement : IfcElement|IfcStructuralItem
 	RelatedStructuralActivity : IfcStructuralActivity
 
-    constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcStructuralActivityAssignmentSelect, relatedStructuralActivity : IfcStructuralActivity) {
+    constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement|IfcStructuralItem, relatedStructuralActivity : IfcStructuralActivity) {
         super(globalId)
 
 		this.RelatingElement = relatingElement
@@ -22,12 +25,12 @@ export class IfcRelConnectsStructuralActivity extends IfcRelConnects {
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? this.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? this.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? this.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? this.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingElement != null ? this.toStepValue(this.RelatingElement) : "$");
-		parameters.push(this.RelatedStructuralActivity != null ? this.toStepValue(this.RelatedStructuralActivity) : "$");
+		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
+		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
+		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+		parameters.push(this.RelatingElement != null ? BaseIfc.toStepValue(this.RelatingElement) : "$");
+		parameters.push(this.RelatedStructuralActivity != null ? BaseIfc.toStepValue(this.RelatedStructuralActivity) : "$");
 
         return parameters.join();
     }

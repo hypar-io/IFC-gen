@@ -5,15 +5,11 @@ import {IfcPropertySetDefinition} from "./IfcPropertySetDefinition.g"
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcpropertysetdefinitionset.htm
 export class IfcPropertySetDefinitionSet extends BaseIfc
 {
-    protected value : Array<IfcPropertySetDefinition>
+    protected wrappedValue : Array<IfcPropertySetDefinition>
 
     constructor(value : Array<IfcPropertySetDefinition>){
         super()
-        this.value = value
+        this.wrappedValue = value
     }	
-    toString() : string { return this.value.toString() }
-    toStepValue(value: any, isSelectOption? : boolean) : string {
-        if(isSelectOption){ return `${this.constructor.name.toUpperCase()}(${this.toStepValue(this.value,isSelectOption)})`; }
-        else{ return this.toStepValue(this.value, isSelectOption); }
-    }
+    toString() : string { return this.wrappedValue.toString() }
 }
