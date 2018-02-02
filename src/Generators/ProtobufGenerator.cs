@@ -11,6 +11,14 @@ namespace IFC4.Generators
 
         internal List<string> listMessages = new List<string>();
 
+        private Dictionary<string,SelectType> selectData = new Dictionary<string, SelectType>();
+
+        public Dictionary<string,SelectType> SelectData 
+        {
+            get{return selectData;}
+            set{selectData = value;}
+        }
+
         public string Begin()
         {
             return @"
@@ -159,9 +167,9 @@ message {data.Name}{{
 }}";
         }
 
-        public string FileName
+        public string FileExtension
         {
-            get { return "IFC.g.proto"; }
+            get { return "proto"; }
         }
 
         public string ParseSimpleType(ExpressParser.SimpleTypeContext context)
@@ -197,6 +205,7 @@ message {data.Name}{{
             }
             return type;
         }
-
+        
+        public void GenerateManifest(string directory, IEnumerable<string> names){}
     }
 }

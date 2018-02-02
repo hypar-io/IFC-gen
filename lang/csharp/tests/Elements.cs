@@ -1,6 +1,6 @@
 using Elements;
 using Elements.Storage;
-using IFC4;
+using IFC;
 using System;
 using System.IO;
 using Xunit;

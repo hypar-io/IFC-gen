@@ -28,7 +28,7 @@ namespace Express
             this.type = type;
         }
 
-        protected string type;
+        internal string type;
 
         /// <summary>
         /// The name of the Type that is referenced.
@@ -165,19 +165,23 @@ namespace Express
         }
     }
 
+    /// <summary>
+    /// A TypeData object stores data about IFC types.
+    /// </summary>
     public abstract class TypeData
     {
         public string Name { get; set; }
         protected ILanguageGenerator generator;
-        protected ITestGenerator testGenerator;
-        public TypeData(string name, ILanguageGenerator generator, ITestGenerator testGenerator)
+        public TypeData(string name, ILanguageGenerator generator)
         {
             this.generator = generator;
-            this.testGenerator = testGenerator;
             Name = name;
         }
     }
 
+    /// <summary>
+    /// Base class for types which store a collection of values such as IFC SELECT and ENUM types.
+    /// </summary>
     public abstract class CollectionTypeData : TypeData
     {
         /// <summary>
@@ -187,14 +191,14 @@ namespace Express
         /// <returns></returns>
         public IEnumerable<string> Values { get; }
 
-        public CollectionTypeData(string name, ILanguageGenerator generator, ITestGenerator testGenerator, IEnumerable<string> values) : base(name, generator, testGenerator)
+        public CollectionTypeData(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator)
         {
             this.Values = values;
         }
     }
 
     /// <summary>
-    /// SimpleType stores data about TYPE types.
+    /// A WrapperType object stores data about IFC TYPEs.
     /// </summary>
     public class WrapperType : TypeData
     {
@@ -214,34 +218,26 @@ namespace Express
         /// <returns></returns>
         public string WrappedType{get;}
 
-        public WrapperType(string name, string wrappedType, ILanguageGenerator generator, ITestGenerator testGenerator, bool isCollectionType, int rank) : base(name, generator, testGenerator)
+        public WrapperType(string name, string wrappedType, ILanguageGenerator generator, bool isCollectionType, int rank) : base(name, generator)
         {
             this.IsCollectionType = isCollectionType;
             this.Rank = rank;
             this.WrappedType = wrappedType;
         }
 
-        /// <summary>
-        /// Return a string representing the TypeData as an IfcType.
-        /// </summary>
-        /// <returns></returns>
-        public override string ToString()
+        public override string ToString() 
         {
             return generator.SimpleTypeString(this);
         }
     }
 
     /// <summary>
-    /// EnumType stores information about ENUM types.
+    /// A CollectionTypeData object stores information about IFC ENUM types.
     /// </summary>
     public class EnumType : CollectionTypeData
     {
-        public EnumType(string name, ILanguageGenerator generator, ITestGenerator testGenerator, IEnumerable<string> values) : base(name, generator, testGenerator, values) { }
+        public EnumType(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator, values) { }
 
-        /// <summary>
-        /// Returns a string representing the TypeData as an Enum.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return generator.EnumTypeString(this);
@@ -249,16 +245,12 @@ namespace Express
     }
 
     /// <summary>
-    /// SelectType stores information about SELECT types.
+    /// A SelectType object stores information about IFC SELECT types.
     /// </summary>
     public class SelectType : CollectionTypeData
     {
-        public SelectType(string name, ILanguageGenerator generator, ITestGenerator testGenerator, IEnumerable<string> values) : base(name, generator, testGenerator, values) { }
+        public SelectType(string name, ILanguageGenerator generator, IEnumerable<string> values) : base(name, generator, values) { }
 
-        /// <summary>
-        /// Return a string representing the TypeData as a Select.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return generator.SelectTypeString(this);
@@ -266,7 +258,7 @@ namespace Express
     }
 
     /// <summary>
-    /// EntityData stores information about ENTITY types.
+    /// An Entity object stores information about IFC ENTITY types.
     /// </summary>
     public class Entity : TypeData
     {
@@ -277,7 +269,7 @@ namespace Express
 
         public bool IsAbstract { get; set; }
 
-        public Entity(string name, ILanguageGenerator generator, ITestGenerator testGenerator) : base(name, generator, testGenerator)
+        public Entity(string name, ILanguageGenerator generator) : base(name, generator)
         {
             Name = name;
             Supers = new List<Entity>();
@@ -341,7 +333,7 @@ namespace Express
             return false;
         }
 
-        public string Properties()
+        public string Properties(Dictionary<string, SelectType> selectData)
         {
             var attrs = Attributes;
             if (!attrs.Any())
@@ -400,18 +392,9 @@ namespace Express
             return propBuilder.ToString();
         }
 
-        /// <summary>
-        /// Return a string representing the TypeData as a Class.
-        /// </summary>
-        /// <returns></returns>
         public override string ToString()
         {
             return generator.EntityString(this);
-        }
-
-        public string ToTestString()
-        {
-            return testGenerator.EntityTest(this);
         }
     }
 }
