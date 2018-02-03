@@ -12,4 +12,5 @@ export class IfcTextAlignment extends BaseIfc
         this.wrappedValue = value
     }	
     toString() : string { return this.wrappedValue.toString() }
+    getStepParameters() : string { return BaseIfc.toStepValue(this.wrappedValue) }
 }

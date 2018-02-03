@@ -2,44 +2,30 @@ import * as IFC from "../src/index"
 import { expect } from "chai"
 import "mocha"
 import { BaseIfc } from "../src/BaseIfc"
+import { Model } from "../src/Model"
 
-let XmlWriter = require("xml-writer")
-
-describe("Project", () => {
+describe("Model", () => {
     it("should serialize to XML", () => {
         let project = new IFC.IfcProject(new IFC.IfcGloballyUniqueId("foo"))
-        project.stepId = 1
         project.HasAssignments.push(new IFC.IfcRelAssignsToActor(null,null,null))
         project.Name = new IFC.IfcLabel("Test Project")
         project.Description = new IFC.IfcText("A project for testing.")
 
-        let xw = new XmlWriter(true);
-        xw.startDocument()
-        project.toXML(xw)
-        xw.endDocument()
-        console.log(xw.toString())
-        expect(project).to.not.equal(null)
+        let model = new Model()
+        model.addInstance(project)
+        let xml = model.toXML()
+        console.log(xml)
+        expect(xml).to.not.equal(null)
     })
 
     it("should serialize to STEP", () => {
         
         let user = new IFC.IfcPersonAndOrganization(null,null)
-        user.stepId = 1
-
-        let app = new IFC.IfcApplication(null,null,null,null)
-        app.stepId = 2
-
+        let app = new IFC.IfcApplication(null,new IFC.IfcLabel("1"),new IFC.IfcLabel("IFC-gen"),new IFC.IfcIdentifier("IFC-gen"))
         let date = new IFC.IfcTimeStamp(Date.now())
-        date.stepId = 3
-
         let ownerHistory = new IFC.IfcOwnerHistory(user, app, date)
-        ownerHistory.stepId = 4
-
         let project = new IFC.IfcProject(new IFC.IfcGloballyUniqueId("foo"))
-        project.stepId = 5
-
         let rel = new IFC.IfcRelAssignsToActor(null,null,null)
-        rel.stepId = 6
 
         project.HasAssignments.push(rel)
         project.Name = new IFC.IfcLabel("Test Project")
@@ -49,7 +35,6 @@ describe("Project", () => {
         let person = new IFC.IfcPerson()
         person.FamilyName = new IFC.IfcLabel("Keough")
         person.GivenName = new IFC.IfcLabel("Ian")
-        person.stepId = 7
         user.ThePerson = person
 
         let units = Array<IFC.IfcSIUnit>()
@@ -65,12 +50,29 @@ describe("Project", () => {
         let conv = new IFC.IfcConversionBasedUnit(dimExp, IFC.IfcUnitEnum.PLANEANGLEUNIT, new IFC.IfcLabel("DEGREE"), meas)
         let unitsAssignment = new IFC.IfcUnitAssignment(units)
 
-        let ids = new Array<any>()
-        ids.push(user,app,date,ownerHistory,project,rel,person)
-        ids.forEach(id => {
-            console.log(id.toSTEP())
-        });
+        let model = new Model()
+        model.addInstance(user)
+        model.addInstance(app)
+        model.addInstance(date)
+        model.addInstance(ownerHistory)
+        model.addInstance(project)
+        model.addInstance(rel)
+        model.addInstance(user)
+        model.addInstance(length)
+        model.addInstance(area)
+        model.addInstance(volume)
+        model.addInstance(planeAngle)
+        model.addInstance(solidAngle)
+        model.addInstance(mass)
+        model.addInstance(time)
+        model.addInstance(dimExp)
+        model.addInstance(meas)
+        model.addInstance(conv)
+        model.addInstance(unitsAssignment)
 
-        expect(project).to.not.equal(null)
+        let step = model.toSTEP()
+        console.log(step)
+
+        expect(step).to.not.equal(null)
     })
 })

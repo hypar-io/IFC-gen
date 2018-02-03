@@ -2,18 +2,34 @@ import * as uuid from "uuid"
 //import { Select } from "./Select";
 
 export abstract class BaseIfc {
+
+    /**
+     * The unique identifier for the isntance.
+     */
     public id : string
-    public stepId : number
+
+    /**
+     * The identifier used in STEP and XML files.
+     * This is not a stable or unique identifier.
+     */
+    public fileId : number
 
     constructor() {
         this.id = uuid.v4()
     }
 
+    /**
+     * Write the instance to STEP.
+     */
     toSTEP() : string {
         let ifcClass : string = this.constructor.name.toUpperCase();
-        return `#${this.stepId} = ${ifcClass}(${this.getStepParameters()})`
+        return `#${this.fileId} = ${ifcClass}(${this.getStepParameters()})`
     }
 
+    /**
+     * Write the instance to XML.
+     * @param xw The XMLWriter used to write to XML.
+     */
     toXML(xw: any) : void {
         
         let noSerialize = ["id","stepId"]
@@ -23,7 +39,7 @@ export abstract class BaseIfc {
         let values = Object.keys(this).map((key)=>self[key.toString()])
 
         xw.startElement(this.constructor.name)
-        xw.writeAttribute("id", this.id)
+        xw.writeAttribute("id", `i{this.id}`)
 
         for(let i=0; i<properties.length; i++) {
 
@@ -67,23 +83,27 @@ export abstract class BaseIfc {
         } else if(value instanceof String) {
             return `'${value}'`
         } else if (value instanceof Number) {
-            return `'${value}'`
+            return `${value}`
         } else if (value instanceof Boolean) {
             let b: Boolean = value
             return  b === true? "T" : "F"
         } else if (value.hasOwnProperty("wrappedValue") ) {
-            if(value.stepId) {
-                return `#${value.stepId}`
+
+            // If the fileId is set, than its an instance
+            // storead on the model. Return its reference.
+            if(value.fileId) {
+                return `#${value.fileId}`
             }
-            return `'${value.wrappedValue.toString()}'`
-            //return `${value.constructor.name.toUpperCase()}(${value.wrappedValue.toString()})`
+            // Otherwise, return whatever is required to construct
+            // the item inline.
+            return BaseIfc.toStepValue(value.wrappedValue)
         } else if (Array.isArray(value)) {
             if(value.length == 0) {
                 return "$"
             }
             return `(${value.map(v=>{BaseIfc.toStepValue(v)})})`
         } else if (value instanceof BaseIfc){
-            return `#${value.stepId}`
+            return `#${value.fileId}`
         }
     }
 
