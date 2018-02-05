@@ -20,10 +20,10 @@ export class IfcPlanarExtent extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.SizeInX != null ? BaseIfc.toStepValue(this.SizeInX) : "$");
-		parameters.push(this.SizeInY != null ? BaseIfc.toStepValue(this.SizeInY) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SizeInX))
+		parameters.push(BaseIfc.toStepValue(this.SizeInY))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

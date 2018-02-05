@@ -27,17 +27,17 @@ export class IfcRelSequence extends IfcRelConnects {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingProcess != null ? BaseIfc.toStepValue(this.RelatingProcess) : "$");
-		parameters.push(this.RelatedProcess != null ? BaseIfc.toStepValue(this.RelatedProcess) : "$");
-		parameters.push(this.TimeLag != null ? BaseIfc.toStepValue(this.TimeLag) : "$");
-		parameters.push(BaseIfc.toStepValue(this.SequenceType));
-		parameters.push(this.UserDefinedSequenceType != null ? BaseIfc.toStepValue(this.UserDefinedSequenceType) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingProcess))
+		parameters.push(BaseIfc.toStepValue(this.RelatedProcess))
+		parameters.push(BaseIfc.toStepValue(this.TimeLag))
+		parameters.push(BaseIfc.toStepValue(this.SequenceType))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedSequenceType))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

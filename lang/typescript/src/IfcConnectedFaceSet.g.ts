@@ -18,9 +18,9 @@ export class IfcConnectedFaceSet extends IfcTopologicalRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.CfsFaces != null ? BaseIfc.toStepValue(this.CfsFaces) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.CfsFaces))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

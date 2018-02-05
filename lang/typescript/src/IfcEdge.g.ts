@@ -20,10 +20,10 @@ export class IfcEdge extends IfcTopologicalRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.EdgeStart != null ? BaseIfc.toStepValue(this.EdgeStart) : "$");
-		parameters.push(this.EdgeEnd != null ? BaseIfc.toStepValue(this.EdgeEnd) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.EdgeStart))
+		parameters.push(BaseIfc.toStepValue(this.EdgeEnd))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

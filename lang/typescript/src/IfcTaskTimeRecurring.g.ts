@@ -23,29 +23,29 @@ export class IfcTaskTimeRecurring extends IfcTaskTime {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(BaseIfc.toStepValue(this.DataOrigin));
-		parameters.push(this.UserDefinedDataOrigin != null ? BaseIfc.toStepValue(this.UserDefinedDataOrigin) : "$");
-		parameters.push(BaseIfc.toStepValue(this.DurationType));
-		parameters.push(this.ScheduleDuration != null ? BaseIfc.toStepValue(this.ScheduleDuration) : "$");
-		parameters.push(this.ScheduleStart != null ? BaseIfc.toStepValue(this.ScheduleStart) : "$");
-		parameters.push(this.ScheduleFinish != null ? BaseIfc.toStepValue(this.ScheduleFinish) : "$");
-		parameters.push(this.EarlyStart != null ? BaseIfc.toStepValue(this.EarlyStart) : "$");
-		parameters.push(this.EarlyFinish != null ? BaseIfc.toStepValue(this.EarlyFinish) : "$");
-		parameters.push(this.LateStart != null ? BaseIfc.toStepValue(this.LateStart) : "$");
-		parameters.push(this.LateFinish != null ? BaseIfc.toStepValue(this.LateFinish) : "$");
-		parameters.push(this.FreeFloat != null ? BaseIfc.toStepValue(this.FreeFloat) : "$");
-		parameters.push(this.TotalFloat != null ? BaseIfc.toStepValue(this.TotalFloat) : "$");
-		parameters.push(this.IsCritical != null ? BaseIfc.toStepValue(this.IsCritical) : "$");
-		parameters.push(this.StatusTime != null ? BaseIfc.toStepValue(this.StatusTime) : "$");
-		parameters.push(this.ActualDuration != null ? BaseIfc.toStepValue(this.ActualDuration) : "$");
-		parameters.push(this.ActualStart != null ? BaseIfc.toStepValue(this.ActualStart) : "$");
-		parameters.push(this.ActualFinish != null ? BaseIfc.toStepValue(this.ActualFinish) : "$");
-		parameters.push(this.RemainingTime != null ? BaseIfc.toStepValue(this.RemainingTime) : "$");
-		parameters.push(this.Completion != null ? BaseIfc.toStepValue(this.Completion) : "$");
-		parameters.push(this.Recurrence != null ? BaseIfc.toStepValue(this.Recurrence) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.DataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedDataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.DurationType))
+		parameters.push(BaseIfc.toStepValue(this.ScheduleDuration))
+		parameters.push(BaseIfc.toStepValue(this.ScheduleStart))
+		parameters.push(BaseIfc.toStepValue(this.ScheduleFinish))
+		parameters.push(BaseIfc.toStepValue(this.EarlyStart))
+		parameters.push(BaseIfc.toStepValue(this.EarlyFinish))
+		parameters.push(BaseIfc.toStepValue(this.LateStart))
+		parameters.push(BaseIfc.toStepValue(this.LateFinish))
+		parameters.push(BaseIfc.toStepValue(this.FreeFloat))
+		parameters.push(BaseIfc.toStepValue(this.TotalFloat))
+		parameters.push(BaseIfc.toStepValue(this.IsCritical))
+		parameters.push(BaseIfc.toStepValue(this.StatusTime))
+		parameters.push(BaseIfc.toStepValue(this.ActualDuration))
+		parameters.push(BaseIfc.toStepValue(this.ActualStart))
+		parameters.push(BaseIfc.toStepValue(this.ActualFinish))
+		parameters.push(BaseIfc.toStepValue(this.RemainingTime))
+		parameters.push(BaseIfc.toStepValue(this.Completion))
+		parameters.push(BaseIfc.toStepValue(this.Recurrence))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

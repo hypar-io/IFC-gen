@@ -15,10 +15,10 @@ export class IfcSurfaceStyleRefraction extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.RefractionIndex != null ? BaseIfc.toStepValue(this.RefractionIndex) : "$");
-		parameters.push(this.DispersionFactor != null ? BaseIfc.toStepValue(this.DispersionFactor) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.RefractionIndex))
+		parameters.push(BaseIfc.toStepValue(this.DispersionFactor))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

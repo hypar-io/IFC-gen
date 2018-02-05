@@ -19,10 +19,10 @@ export class IfcOuterBoundaryCurve extends IfcBoundaryCurve {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Segments != null ? BaseIfc.toStepValue(this.Segments) : "$");
-		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Segments))
+		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

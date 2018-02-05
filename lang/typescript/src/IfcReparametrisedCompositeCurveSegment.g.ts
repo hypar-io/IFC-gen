@@ -23,12 +23,12 @@ export class IfcReparametrisedCompositeCurveSegment extends IfcCompositeCurveSeg
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Transition != null ? BaseIfc.toStepValue(this.Transition) : "$");
-		parameters.push(this.SameSense != null ? BaseIfc.toStepValue(this.SameSense) : "$");
-		parameters.push(this.ParentCurve != null ? BaseIfc.toStepValue(this.ParentCurve) : "$");
-		parameters.push(this.ParamLength != null ? BaseIfc.toStepValue(this.ParamLength) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Transition))
+		parameters.push(BaseIfc.toStepValue(this.SameSense))
+		parameters.push(BaseIfc.toStepValue(this.ParentCurve))
+		parameters.push(BaseIfc.toStepValue(this.ParamLength))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

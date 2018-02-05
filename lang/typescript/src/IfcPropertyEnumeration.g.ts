@@ -130,11 +130,11 @@ export class IfcPropertyEnumeration extends IfcPropertyAbstraction {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.EnumerationValues != null ? BaseIfc.toStepValue(this.EnumerationValues) : "$");
-		parameters.push(this.Unit != null ? BaseIfc.toStepValue(this.Unit) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.EnumerationValues))
+		parameters.push(BaseIfc.toStepValue(this.Unit))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

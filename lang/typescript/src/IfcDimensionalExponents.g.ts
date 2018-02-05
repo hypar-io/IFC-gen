@@ -26,15 +26,15 @@ export class IfcDimensionalExponents extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.LengthExponent != null ? BaseIfc.toStepValue(this.LengthExponent) : "$");
-		parameters.push(this.MassExponent != null ? BaseIfc.toStepValue(this.MassExponent) : "$");
-		parameters.push(this.TimeExponent != null ? BaseIfc.toStepValue(this.TimeExponent) : "$");
-		parameters.push(this.ElectricCurrentExponent != null ? BaseIfc.toStepValue(this.ElectricCurrentExponent) : "$");
-		parameters.push(this.ThermodynamicTemperatureExponent != null ? BaseIfc.toStepValue(this.ThermodynamicTemperatureExponent) : "$");
-		parameters.push(this.AmountOfSubstanceExponent != null ? BaseIfc.toStepValue(this.AmountOfSubstanceExponent) : "$");
-		parameters.push(this.LuminousIntensityExponent != null ? BaseIfc.toStepValue(this.LuminousIntensityExponent) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.LengthExponent))
+		parameters.push(BaseIfc.toStepValue(this.MassExponent))
+		parameters.push(BaseIfc.toStepValue(this.TimeExponent))
+		parameters.push(BaseIfc.toStepValue(this.ElectricCurrentExponent))
+		parameters.push(BaseIfc.toStepValue(this.ThermodynamicTemperatureExponent))
+		parameters.push(BaseIfc.toStepValue(this.AmountOfSubstanceExponent))
+		parameters.push(BaseIfc.toStepValue(this.LuminousIntensityExponent))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -132,12 +132,12 @@ export class IfcPropertyListValue extends IfcSimpleProperty {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ListValues != null ? BaseIfc.toStepValue(this.ListValues) : "$");
-		parameters.push(this.Unit != null ? BaseIfc.toStepValue(this.Unit) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ListValues))
+		parameters.push(BaseIfc.toStepValue(this.Unit))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

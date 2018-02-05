@@ -20,13 +20,13 @@ export class IfcReference extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.TypeIdentifier != null ? BaseIfc.toStepValue(this.TypeIdentifier) : "$");
-		parameters.push(this.AttributeIdentifier != null ? BaseIfc.toStepValue(this.AttributeIdentifier) : "$");
-		parameters.push(this.InstanceName != null ? BaseIfc.toStepValue(this.InstanceName) : "$");
-		parameters.push(this.ListPositions != null ? BaseIfc.toStepValue(this.ListPositions) : "$");
-		parameters.push(this.InnerReference != null ? BaseIfc.toStepValue(this.InnerReference) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.TypeIdentifier))
+		parameters.push(BaseIfc.toStepValue(this.AttributeIdentifier))
+		parameters.push(BaseIfc.toStepValue(this.InstanceName))
+		parameters.push(BaseIfc.toStepValue(this.ListPositions))
+		parameters.push(BaseIfc.toStepValue(this.InnerReference))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

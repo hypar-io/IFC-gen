@@ -21,9 +21,9 @@ export class IfcIndexedPolygonalFace extends IfcTessellatedItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.CoordIndex != null ? BaseIfc.toStepValue(this.CoordIndex) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.CoordIndex))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

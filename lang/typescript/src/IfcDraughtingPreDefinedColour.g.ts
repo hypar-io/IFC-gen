@@ -13,9 +13,9 @@ export class IfcDraughtingPreDefinedColour extends IfcPreDefinedColour {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

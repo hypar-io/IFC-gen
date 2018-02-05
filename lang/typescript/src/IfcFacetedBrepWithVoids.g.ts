@@ -19,10 +19,10 @@ export class IfcFacetedBrepWithVoids extends IfcFacetedBrep {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Outer != null ? BaseIfc.toStepValue(this.Outer) : "$");
-		parameters.push(this.Voids != null ? BaseIfc.toStepValue(this.Voids) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Outer))
+		parameters.push(BaseIfc.toStepValue(this.Voids))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

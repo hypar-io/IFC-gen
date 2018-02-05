@@ -21,15 +21,15 @@ export class IfcStructuralLoadSingleForce extends IfcStructuralLoadStatic {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.ForceX != null ? BaseIfc.toStepValue(this.ForceX) : "$");
-		parameters.push(this.ForceY != null ? BaseIfc.toStepValue(this.ForceY) : "$");
-		parameters.push(this.ForceZ != null ? BaseIfc.toStepValue(this.ForceZ) : "$");
-		parameters.push(this.MomentX != null ? BaseIfc.toStepValue(this.MomentX) : "$");
-		parameters.push(this.MomentY != null ? BaseIfc.toStepValue(this.MomentY) : "$");
-		parameters.push(this.MomentZ != null ? BaseIfc.toStepValue(this.MomentZ) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.ForceX))
+		parameters.push(BaseIfc.toStepValue(this.ForceY))
+		parameters.push(BaseIfc.toStepValue(this.ForceZ))
+		parameters.push(BaseIfc.toStepValue(this.MomentX))
+		parameters.push(BaseIfc.toStepValue(this.MomentY))
+		parameters.push(BaseIfc.toStepValue(this.MomentZ))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -28,15 +28,15 @@ export class IfcTextStyleTextModel extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.TextIndent != null ? BaseIfc.toStepValue(this.TextIndent) : "$");
-		parameters.push(this.TextAlign != null ? BaseIfc.toStepValue(this.TextAlign) : "$");
-		parameters.push(this.TextDecoration != null ? BaseIfc.toStepValue(this.TextDecoration) : "$");
-		parameters.push(this.LetterSpacing != null ? BaseIfc.toStepValue(this.LetterSpacing) : "$");
-		parameters.push(this.WordSpacing != null ? BaseIfc.toStepValue(this.WordSpacing) : "$");
-		parameters.push(this.TextTransform != null ? BaseIfc.toStepValue(this.TextTransform) : "$");
-		parameters.push(this.LineHeight != null ? BaseIfc.toStepValue(this.LineHeight) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.TextIndent))
+		parameters.push(BaseIfc.toStepValue(this.TextAlign))
+		parameters.push(BaseIfc.toStepValue(this.TextDecoration))
+		parameters.push(BaseIfc.toStepValue(this.LetterSpacing))
+		parameters.push(BaseIfc.toStepValue(this.WordSpacing))
+		parameters.push(BaseIfc.toStepValue(this.TextTransform))
+		parameters.push(BaseIfc.toStepValue(this.LineHeight))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

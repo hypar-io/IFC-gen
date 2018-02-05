@@ -22,14 +22,14 @@ export class IfcRelDefinesByObject extends IfcRelDefines {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.RelatingObject != null ? BaseIfc.toStepValue(this.RelatingObject) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatedObjects))
+		parameters.push(BaseIfc.toStepValue(this.RelatingObject))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

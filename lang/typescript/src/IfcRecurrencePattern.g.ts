@@ -31,16 +31,16 @@ export class IfcRecurrencePattern extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.RecurrenceType));
-		parameters.push(this.DayComponent != null ? BaseIfc.toStepValue(this.DayComponent) : "$");
-		parameters.push(this.WeekdayComponent != null ? BaseIfc.toStepValue(this.WeekdayComponent) : "$");
-		parameters.push(this.MonthComponent != null ? BaseIfc.toStepValue(this.MonthComponent) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.Interval != null ? BaseIfc.toStepValue(this.Interval) : "$");
-		parameters.push(this.Occurrences != null ? BaseIfc.toStepValue(this.Occurrences) : "$");
-		parameters.push(this.TimePeriods != null ? BaseIfc.toStepValue(this.TimePeriods) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.RecurrenceType))
+		parameters.push(BaseIfc.toStepValue(this.DayComponent))
+		parameters.push(BaseIfc.toStepValue(this.WeekdayComponent))
+		parameters.push(BaseIfc.toStepValue(this.MonthComponent))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.Interval))
+		parameters.push(BaseIfc.toStepValue(this.Occurrences))
+		parameters.push(BaseIfc.toStepValue(this.TimePeriods))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

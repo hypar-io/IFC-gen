@@ -20,13 +20,13 @@ export class IfcMaterialProfileSetUsageTapering extends IfcMaterialProfileSetUsa
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ForProfileSet != null ? BaseIfc.toStepValue(this.ForProfileSet) : "$");
-		parameters.push(this.CardinalPoint != null ? BaseIfc.toStepValue(this.CardinalPoint) : "$");
-		parameters.push(this.ReferenceExtent != null ? BaseIfc.toStepValue(this.ReferenceExtent) : "$");
-		parameters.push(this.ForProfileEndSet != null ? BaseIfc.toStepValue(this.ForProfileEndSet) : "$");
-		parameters.push(this.CardinalEndPoint != null ? BaseIfc.toStepValue(this.CardinalEndPoint) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ForProfileSet))
+		parameters.push(BaseIfc.toStepValue(this.CardinalPoint))
+		parameters.push(BaseIfc.toStepValue(this.ReferenceExtent))
+		parameters.push(BaseIfc.toStepValue(this.ForProfileEndSet))
+		parameters.push(BaseIfc.toStepValue(this.CardinalEndPoint))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

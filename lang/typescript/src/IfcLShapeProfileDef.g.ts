@@ -29,17 +29,17 @@ export class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
-		parameters.push(this.Width != null ? BaseIfc.toStepValue(this.Width) : "$");
-		parameters.push(this.Thickness != null ? BaseIfc.toStepValue(this.Thickness) : "$");
-		parameters.push(this.FilletRadius != null ? BaseIfc.toStepValue(this.FilletRadius) : "$");
-		parameters.push(this.EdgeRadius != null ? BaseIfc.toStepValue(this.EdgeRadius) : "$");
-		parameters.push(this.LegSlope != null ? BaseIfc.toStepValue(this.LegSlope) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.Depth))
+		parameters.push(BaseIfc.toStepValue(this.Width))
+		parameters.push(BaseIfc.toStepValue(this.Thickness))
+		parameters.push(BaseIfc.toStepValue(this.FilletRadius))
+		parameters.push(BaseIfc.toStepValue(this.EdgeRadius))
+		parameters.push(BaseIfc.toStepValue(this.LegSlope))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

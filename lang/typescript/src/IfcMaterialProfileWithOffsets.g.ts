@@ -25,15 +25,15 @@ export class IfcMaterialProfileWithOffsets extends IfcMaterialProfile {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.Material != null ? BaseIfc.toStepValue(this.Material) : "$");
-		parameters.push(this.Profile != null ? BaseIfc.toStepValue(this.Profile) : "$");
-		parameters.push(this.Priority != null ? BaseIfc.toStepValue(this.Priority) : "$");
-		parameters.push(this.Category != null ? BaseIfc.toStepValue(this.Category) : "$");
-		parameters.push(this.OffsetValues != null ? BaseIfc.toStepValue(this.OffsetValues) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.Material))
+		parameters.push(BaseIfc.toStepValue(this.Profile))
+		parameters.push(BaseIfc.toStepValue(this.Priority))
+		parameters.push(BaseIfc.toStepValue(this.Category))
+		parameters.push(BaseIfc.toStepValue(this.OffsetValues))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

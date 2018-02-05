@@ -29,16 +29,16 @@ export class IfcCShapeProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
-		parameters.push(this.Width != null ? BaseIfc.toStepValue(this.Width) : "$");
-		parameters.push(this.WallThickness != null ? BaseIfc.toStepValue(this.WallThickness) : "$");
-		parameters.push(this.Girth != null ? BaseIfc.toStepValue(this.Girth) : "$");
-		parameters.push(this.InternalFilletRadius != null ? BaseIfc.toStepValue(this.InternalFilletRadius) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.Depth))
+		parameters.push(BaseIfc.toStepValue(this.Width))
+		parameters.push(BaseIfc.toStepValue(this.WallThickness))
+		parameters.push(BaseIfc.toStepValue(this.Girth))
+		parameters.push(BaseIfc.toStepValue(this.InternalFilletRadius))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

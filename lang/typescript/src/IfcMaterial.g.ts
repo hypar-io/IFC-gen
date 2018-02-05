@@ -30,11 +30,11 @@ export class IfcMaterial extends IfcMaterialDefinition {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.Category != null ? BaseIfc.toStepValue(this.Category) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.Category))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

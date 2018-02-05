@@ -21,12 +21,12 @@ export class IfcCartesianTransformationOperator2D extends IfcCartesianTransforma
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Axis1 != null ? BaseIfc.toStepValue(this.Axis1) : "$");
-		parameters.push(this.Axis2 != null ? BaseIfc.toStepValue(this.Axis2) : "$");
-		parameters.push(this.LocalOrigin != null ? BaseIfc.toStepValue(this.LocalOrigin) : "$");
-		parameters.push(this.Scale != null ? BaseIfc.toStepValue(this.Scale) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Axis1))
+		parameters.push(BaseIfc.toStepValue(this.Axis2))
+		parameters.push(BaseIfc.toStepValue(this.LocalOrigin))
+		parameters.push(BaseIfc.toStepValue(this.Scale))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -55,25 +55,25 @@ export class IfcDocumentInformation extends IfcExternalInformation {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.Location != null ? BaseIfc.toStepValue(this.Location) : "$");
-		parameters.push(this.Purpose != null ? BaseIfc.toStepValue(this.Purpose) : "$");
-		parameters.push(this.IntendedUse != null ? BaseIfc.toStepValue(this.IntendedUse) : "$");
-		parameters.push(this.Scope != null ? BaseIfc.toStepValue(this.Scope) : "$");
-		parameters.push(this.Revision != null ? BaseIfc.toStepValue(this.Revision) : "$");
-		parameters.push(this.DocumentOwner != null ? BaseIfc.toStepValue(this.DocumentOwner) : "$");
-		parameters.push(this.Editors != null ? BaseIfc.toStepValue(this.Editors) : "$");
-		parameters.push(this.CreationTime != null ? BaseIfc.toStepValue(this.CreationTime) : "$");
-		parameters.push(this.LastRevisionTime != null ? BaseIfc.toStepValue(this.LastRevisionTime) : "$");
-		parameters.push(this.ElectronicFormat != null ? BaseIfc.toStepValue(this.ElectronicFormat) : "$");
-		parameters.push(this.ValidFrom != null ? BaseIfc.toStepValue(this.ValidFrom) : "$");
-		parameters.push(this.ValidUntil != null ? BaseIfc.toStepValue(this.ValidUntil) : "$");
-		parameters.push(BaseIfc.toStepValue(this.Confidentiality));
-		parameters.push(BaseIfc.toStepValue(this.Status));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.Location))
+		parameters.push(BaseIfc.toStepValue(this.Purpose))
+		parameters.push(BaseIfc.toStepValue(this.IntendedUse))
+		parameters.push(BaseIfc.toStepValue(this.Scope))
+		parameters.push(BaseIfc.toStepValue(this.Revision))
+		parameters.push(BaseIfc.toStepValue(this.DocumentOwner))
+		parameters.push(BaseIfc.toStepValue(this.Editors))
+		parameters.push(BaseIfc.toStepValue(this.CreationTime))
+		parameters.push(BaseIfc.toStepValue(this.LastRevisionTime))
+		parameters.push(BaseIfc.toStepValue(this.ElectronicFormat))
+		parameters.push(BaseIfc.toStepValue(this.ValidFrom))
+		parameters.push(BaseIfc.toStepValue(this.ValidUntil))
+		parameters.push(BaseIfc.toStepValue(this.Confidentiality))
+		parameters.push(BaseIfc.toStepValue(this.Status))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

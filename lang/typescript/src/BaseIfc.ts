@@ -77,37 +77,35 @@ export abstract class BaseIfc {
         xw.endElement()
     }
 
-    static toStepValue(value: any, isSelectOption : boolean = false) : string {
-        if(!value) {
+    static toStepValue(value: any) : string {
+        if(value == null) {
             return "$"
-        } else if(value instanceof String) {
-            return `'${value}'`
-        } else if (value instanceof Number) {
-            return `${value}`
-        } else if (value instanceof Boolean) {
-            let b: Boolean = value
-            return  b === true? "T" : "F"
-        } else if (value.hasOwnProperty("wrappedValue") ) {
-
-            // If the fileId is set, than its an instance
-            // storead on the model. Return its reference.
+        } else if (value instanceof BaseIfc){
             if(value.fileId) {
                 return `#${value.fileId}`
+            } else {
+                //throw new Error("An instance of BaseIfc was referenced but did not have a file identifier.")
+                return "XXXXXX"
             }
-            // Otherwise, return whatever is required to construct
-            // the item inline.
-            return BaseIfc.toStepValue(value.wrappedValue)
+        } else if(typeof value === "string") {
+            if(value[0] === ".") {
+                // Treat this as an enum
+                return `${value}`
+            }
+            return `'${value}'`
+        } else if (typeof value === "number") {
+            return `${value}`
+        } else if (typeof value === "boolean") {
+            let b: boolean = value
+            return  b === true? ".T." : ".F."
         } else if (Array.isArray(value)) {
-            if(value.length == 0) {
-                return "$"
-            }
             return `(${value.map(v=>{BaseIfc.toStepValue(v)})})`
-        } else if (value instanceof BaseIfc){
-            return `#${value.fileId}`
+        } else {
+            throw new Error(`I found the value ${value}, and don't know how to serialize it.`)
         }
     }
 
     getStepParameters() : string {
-        return ""
+        throw new Error("getStepParameters() should always be overridden in extension classes.")
     }
 }

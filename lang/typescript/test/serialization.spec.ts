@@ -6,10 +6,10 @@ import { Model } from "../src/Model"
 
 describe("Model", () => {
     it("should serialize to XML", () => {
-        let project = new IFC.IfcProject(new IFC.IfcGloballyUniqueId("foo"))
+        let project = new IFC.IfcProject("foo")
         project.HasAssignments.push(new IFC.IfcRelAssignsToActor(null,null,null))
-        project.Name = new IFC.IfcLabel("Test Project")
-        project.Description = new IFC.IfcText("A project for testing.")
+        project.Name = "Test Project"
+        project.Description = "A project for testing."
 
         let model = new Model()
         model.addInstance(project)
@@ -21,20 +21,20 @@ describe("Model", () => {
     it("should serialize to STEP", () => {
         
         let user = new IFC.IfcPersonAndOrganization(null,null)
-        let app = new IFC.IfcApplication(null,new IFC.IfcLabel("1"),new IFC.IfcLabel("IFC-gen"),new IFC.IfcIdentifier("IFC-gen"))
-        let date = new IFC.IfcTimeStamp(Date.now())
+        let app = new IFC.IfcApplication(null,"1","IFC-gen","IFC-gen")
+        let date = Date.now()
         let ownerHistory = new IFC.IfcOwnerHistory(user, app, date)
-        let project = new IFC.IfcProject(new IFC.IfcGloballyUniqueId("foo"))
+        let project = new IFC.IfcProject("Test Project")
         let rel = new IFC.IfcRelAssignsToActor(null,null,null)
 
         project.HasAssignments.push(rel)
-        project.Name = new IFC.IfcLabel("Test Project")
-        project.Description = new IFC.IfcText("A project for testing.")
+        project.Name = "Test Project"
+        project.Description = "A project for testing."
         project.OwnerHistory = ownerHistory
 
         let person = new IFC.IfcPerson()
-        person.FamilyName = new IFC.IfcLabel("Keough")
-        person.GivenName = new IFC.IfcLabel("Ian")
+        person.FamilyName = "Keough"
+        person.GivenName = "Ian"
         user.ThePerson = person
 
         let units = Array<IFC.IfcSIUnit>()
@@ -46,14 +46,16 @@ describe("Model", () => {
         let mass = new IFC.IfcSIUnit(null, IFC.IfcUnitEnum.MASSUNIT, IFC.IfcSIUnitName.GRAM)
         let time = new IFC.IfcSIUnit(null, IFC.IfcUnitEnum.TIMEUNIT, IFC.IfcSIUnitName.SECOND)
         let dimExp = new IFC.IfcDimensionalExponents(0,0,0,0,0,0,0)
-        let meas = new IFC.IfcMeasureWithUnit(new IFC.IfcPlaneAngleMeasure(1.745e-2),planeAngle)
-        let conv = new IFC.IfcConversionBasedUnit(dimExp, IFC.IfcUnitEnum.PLANEANGLEUNIT, new IFC.IfcLabel("DEGREE"), meas)
+        let meas = new IFC.IfcMeasureWithUnit(1.745e-2,planeAngle)
+        let conv = new IFC.IfcConversionBasedUnit(dimExp, IFC.IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", meas)
+        let therm = new IFC.IfcSIUnit(null, IFC.IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IFC.IfcSIUnitName.DEGREE_CELSIUS)
+        let lum = new IFC.IfcSIUnit(null, IFC.IfcUnitEnum.LUMINOUSINTENSITYUNIT, IFC.IfcSIUnitName.LUMEN)
+        units.push(length,area,volume,planeAngle,solidAngle,mass,time,therm,lum)
         let unitsAssignment = new IFC.IfcUnitAssignment(units)
 
         let model = new Model()
         model.addInstance(user)
         model.addInstance(app)
-        model.addInstance(date)
         model.addInstance(ownerHistory)
         model.addInstance(project)
         model.addInstance(rel)

@@ -32,18 +32,18 @@ export class IfcIShapeProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.OverallWidth != null ? BaseIfc.toStepValue(this.OverallWidth) : "$");
-		parameters.push(this.OverallDepth != null ? BaseIfc.toStepValue(this.OverallDepth) : "$");
-		parameters.push(this.WebThickness != null ? BaseIfc.toStepValue(this.WebThickness) : "$");
-		parameters.push(this.FlangeThickness != null ? BaseIfc.toStepValue(this.FlangeThickness) : "$");
-		parameters.push(this.FilletRadius != null ? BaseIfc.toStepValue(this.FilletRadius) : "$");
-		parameters.push(this.FlangeEdgeRadius != null ? BaseIfc.toStepValue(this.FlangeEdgeRadius) : "$");
-		parameters.push(this.FlangeSlope != null ? BaseIfc.toStepValue(this.FlangeSlope) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.OverallWidth))
+		parameters.push(BaseIfc.toStepValue(this.OverallDepth))
+		parameters.push(BaseIfc.toStepValue(this.WebThickness))
+		parameters.push(BaseIfc.toStepValue(this.FlangeThickness))
+		parameters.push(BaseIfc.toStepValue(this.FilletRadius))
+		parameters.push(BaseIfc.toStepValue(this.FlangeEdgeRadius))
+		parameters.push(BaseIfc.toStepValue(this.FlangeSlope))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

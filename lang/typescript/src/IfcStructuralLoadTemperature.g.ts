@@ -17,12 +17,12 @@ export class IfcStructuralLoadTemperature extends IfcStructuralLoadStatic {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.DeltaTConstant != null ? BaseIfc.toStepValue(this.DeltaTConstant) : "$");
-		parameters.push(this.DeltaTY != null ? BaseIfc.toStepValue(this.DeltaTY) : "$");
-		parameters.push(this.DeltaTZ != null ? BaseIfc.toStepValue(this.DeltaTZ) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.DeltaTConstant))
+		parameters.push(BaseIfc.toStepValue(this.DeltaTY))
+		parameters.push(BaseIfc.toStepValue(this.DeltaTZ))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

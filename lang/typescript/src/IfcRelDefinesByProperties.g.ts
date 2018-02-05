@@ -24,14 +24,14 @@ export class IfcRelDefinesByProperties extends IfcRelDefines {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedObjects != null ? BaseIfc.toStepValue(this.RelatedObjects) : "$");
-		parameters.push(this.RelatingPropertyDefinition != null ? BaseIfc.toStepValue(this.RelatingPropertyDefinition) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatedObjects))
+		parameters.push(BaseIfc.toStepValue(this.RelatingPropertyDefinition))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

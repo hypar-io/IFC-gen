@@ -21,11 +21,11 @@ export class IfcContextDependentUnit extends IfcNamedUnit {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Dimensions != null ? BaseIfc.toStepValue(this.Dimensions) : "$");
-		parameters.push(BaseIfc.toStepValue(this.UnitType));
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Dimensions))
+		parameters.push(BaseIfc.toStepValue(this.UnitType))
+		parameters.push(BaseIfc.toStepValue(this.Name))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

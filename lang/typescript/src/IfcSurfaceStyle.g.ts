@@ -24,11 +24,11 @@ export class IfcSurfaceStyle extends IfcPresentationStyle {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Side != null ? BaseIfc.toStepValue(this.Side) : "$");
-		parameters.push(this.Styles != null ? BaseIfc.toStepValue(this.Styles) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Side))
+		parameters.push(BaseIfc.toStepValue(this.Styles))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

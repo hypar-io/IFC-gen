@@ -14,8 +14,8 @@ export class IfcLoop extends IfcTopologicalRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-
-        return parameters.join();
-    }
+            var parameters = new Array<string>();
+    
+            return parameters.join();
+        }
 }

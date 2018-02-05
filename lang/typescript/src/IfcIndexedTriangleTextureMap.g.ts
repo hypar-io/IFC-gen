@@ -18,12 +18,12 @@ export class IfcIndexedTriangleTextureMap extends IfcIndexedTextureMap {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Maps != null ? BaseIfc.toStepValue(this.Maps) : "$");
-		parameters.push(this.MappedTo != null ? BaseIfc.toStepValue(this.MappedTo) : "$");
-		parameters.push(this.TexCoords != null ? BaseIfc.toStepValue(this.TexCoords) : "$");
-		parameters.push(this.TexCoordIndex != null ? BaseIfc.toStepValue(this.TexCoordIndex) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Maps))
+		parameters.push(BaseIfc.toStepValue(this.MappedTo))
+		parameters.push(BaseIfc.toStepValue(this.TexCoords))
+		parameters.push(BaseIfc.toStepValue(this.TexCoordIndex))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

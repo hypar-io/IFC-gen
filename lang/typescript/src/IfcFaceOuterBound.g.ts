@@ -16,10 +16,10 @@ export class IfcFaceOuterBound extends IfcFaceBound {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Bound != null ? BaseIfc.toStepValue(this.Bound) : "$");
-		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Bound))
+		parameters.push(BaseIfc.toStepValue(this.Orientation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

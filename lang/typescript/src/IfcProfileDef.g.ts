@@ -23,10 +23,10 @@ export class IfcProfileDef extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

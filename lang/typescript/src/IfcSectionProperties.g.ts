@@ -21,11 +21,11 @@ export class IfcSectionProperties extends IfcPreDefinedProperties {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.SectionType));
-		parameters.push(this.StartProfile != null ? BaseIfc.toStepValue(this.StartProfile) : "$");
-		parameters.push(this.EndProfile != null ? BaseIfc.toStepValue(this.EndProfile) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SectionType))
+		parameters.push(BaseIfc.toStepValue(this.StartProfile))
+		parameters.push(BaseIfc.toStepValue(this.EndProfile))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

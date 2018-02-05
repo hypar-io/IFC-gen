@@ -28,13 +28,13 @@ export class IfcMaterialLayerSetUsage extends IfcMaterialUsageDefinition {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ForLayerSet != null ? BaseIfc.toStepValue(this.ForLayerSet) : "$");
-		parameters.push(BaseIfc.toStepValue(this.LayerSetDirection));
-		parameters.push(BaseIfc.toStepValue(this.DirectionSense));
-		parameters.push(this.OffsetFromReferenceLine != null ? BaseIfc.toStepValue(this.OffsetFromReferenceLine) : "$");
-		parameters.push(this.ReferenceExtent != null ? BaseIfc.toStepValue(this.ReferenceExtent) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ForLayerSet))
+		parameters.push(BaseIfc.toStepValue(this.LayerSetDirection))
+		parameters.push(BaseIfc.toStepValue(this.DirectionSense))
+		parameters.push(BaseIfc.toStepValue(this.OffsetFromReferenceLine))
+		parameters.push(BaseIfc.toStepValue(this.ReferenceExtent))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

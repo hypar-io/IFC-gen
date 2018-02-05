@@ -45,28 +45,28 @@ export class IfcReinforcingMeshType extends IfcReinforcingElementType {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ApplicableOccurrence != null ? BaseIfc.toStepValue(this.ApplicableOccurrence) : "$");
-		parameters.push(this.HasPropertySets != null ? BaseIfc.toStepValue(this.HasPropertySets) : "$");
-		parameters.push(this.RepresentationMaps != null ? BaseIfc.toStepValue(this.RepresentationMaps) : "$");
-		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
-		parameters.push(this.ElementType != null ? BaseIfc.toStepValue(this.ElementType) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
-		parameters.push(this.MeshLength != null ? BaseIfc.toStepValue(this.MeshLength) : "$");
-		parameters.push(this.MeshWidth != null ? BaseIfc.toStepValue(this.MeshWidth) : "$");
-		parameters.push(this.LongitudinalBarNominalDiameter != null ? BaseIfc.toStepValue(this.LongitudinalBarNominalDiameter) : "$");
-		parameters.push(this.TransverseBarNominalDiameter != null ? BaseIfc.toStepValue(this.TransverseBarNominalDiameter) : "$");
-		parameters.push(this.LongitudinalBarCrossSectionArea != null ? BaseIfc.toStepValue(this.LongitudinalBarCrossSectionArea) : "$");
-		parameters.push(this.TransverseBarCrossSectionArea != null ? BaseIfc.toStepValue(this.TransverseBarCrossSectionArea) : "$");
-		parameters.push(this.LongitudinalBarSpacing != null ? BaseIfc.toStepValue(this.LongitudinalBarSpacing) : "$");
-		parameters.push(this.TransverseBarSpacing != null ? BaseIfc.toStepValue(this.TransverseBarSpacing) : "$");
-		parameters.push(this.BendingShapeCode != null ? BaseIfc.toStepValue(this.BendingShapeCode) : "$");
-		parameters.push(this.BendingParameters != null ? BaseIfc.toStepValue(this.BendingParameters) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ApplicableOccurrence))
+		parameters.push(BaseIfc.toStepValue(this.HasPropertySets))
+		parameters.push(BaseIfc.toStepValue(this.RepresentationMaps))
+		parameters.push(BaseIfc.toStepValue(this.Tag))
+		parameters.push(BaseIfc.toStepValue(this.ElementType))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
+		parameters.push(BaseIfc.toStepValue(this.MeshLength))
+		parameters.push(BaseIfc.toStepValue(this.MeshWidth))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalBarNominalDiameter))
+		parameters.push(BaseIfc.toStepValue(this.TransverseBarNominalDiameter))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalBarCrossSectionArea))
+		parameters.push(BaseIfc.toStepValue(this.TransverseBarCrossSectionArea))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalBarSpacing))
+		parameters.push(BaseIfc.toStepValue(this.TransverseBarSpacing))
+		parameters.push(BaseIfc.toStepValue(this.BendingShapeCode))
+		parameters.push(BaseIfc.toStepValue(this.BendingParameters))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -21,12 +21,12 @@ export class IfcCenterLineProfileDef extends IfcArbitraryOpenProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Curve != null ? BaseIfc.toStepValue(this.Curve) : "$");
-		parameters.push(this.Thickness != null ? BaseIfc.toStepValue(this.Thickness) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Curve))
+		parameters.push(BaseIfc.toStepValue(this.Thickness))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -27,15 +27,15 @@ export class IfcCurrencyRelationship extends IfcResourceLevelRelationship {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingMonetaryUnit != null ? BaseIfc.toStepValue(this.RelatingMonetaryUnit) : "$");
-		parameters.push(this.RelatedMonetaryUnit != null ? BaseIfc.toStepValue(this.RelatedMonetaryUnit) : "$");
-		parameters.push(this.ExchangeRate != null ? BaseIfc.toStepValue(this.ExchangeRate) : "$");
-		parameters.push(this.RateDateTime != null ? BaseIfc.toStepValue(this.RateDateTime) : "$");
-		parameters.push(this.RateSource != null ? BaseIfc.toStepValue(this.RateSource) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingMonetaryUnit))
+		parameters.push(BaseIfc.toStepValue(this.RelatedMonetaryUnit))
+		parameters.push(BaseIfc.toStepValue(this.ExchangeRate))
+		parameters.push(BaseIfc.toStepValue(this.RateDateTime))
+		parameters.push(BaseIfc.toStepValue(this.RateSource))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

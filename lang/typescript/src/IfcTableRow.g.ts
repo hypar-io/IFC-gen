@@ -122,10 +122,10 @@ export class IfcTableRow extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.RowCells != null ? BaseIfc.toStepValue(this.RowCells) : "$");
-		parameters.push(this.IsHeading != null ? BaseIfc.toStepValue(this.IsHeading) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.RowCells))
+		parameters.push(BaseIfc.toStepValue(this.IsHeading))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

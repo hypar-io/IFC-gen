@@ -22,9 +22,9 @@ export class IfcDirection extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.DirectionRatios != null ? BaseIfc.toStepValue(this.DirectionRatios) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.DirectionRatios))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

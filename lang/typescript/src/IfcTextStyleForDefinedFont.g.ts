@@ -18,10 +18,10 @@ export class IfcTextStyleForDefinedFont extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Colour != null ? BaseIfc.toStepValue(this.Colour) : "$");
-		parameters.push(this.BackgroundColour != null ? BaseIfc.toStepValue(this.BackgroundColour) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Colour))
+		parameters.push(BaseIfc.toStepValue(this.BackgroundColour))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -34,17 +34,17 @@ export class IfcDoorPanelProperties extends IfcPreDefinedPropertySet {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.PanelDepth != null ? BaseIfc.toStepValue(this.PanelDepth) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PanelOperation));
-		parameters.push(this.PanelWidth != null ? BaseIfc.toStepValue(this.PanelWidth) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PanelPosition));
-		parameters.push(this.ShapeAspectStyle != null ? BaseIfc.toStepValue(this.ShapeAspectStyle) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.PanelDepth))
+		parameters.push(BaseIfc.toStepValue(this.PanelOperation))
+		parameters.push(BaseIfc.toStepValue(this.PanelWidth))
+		parameters.push(BaseIfc.toStepValue(this.PanelPosition))
+		parameters.push(BaseIfc.toStepValue(this.ShapeAspectStyle))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

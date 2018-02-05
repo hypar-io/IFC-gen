@@ -18,10 +18,10 @@ export class IfcConnectionCurveGeometry extends IfcConnectionGeometry {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.CurveOnRelatingElement != null ? BaseIfc.toStepValue(this.CurveOnRelatingElement) : "$");
-		parameters.push(this.CurveOnRelatedElement != null ? BaseIfc.toStepValue(this.CurveOnRelatedElement) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.CurveOnRelatingElement))
+		parameters.push(BaseIfc.toStepValue(this.CurveOnRelatedElement))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -21,13 +21,13 @@ export class IfcPropertyDependencyRelationship extends IfcResourceLevelRelations
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.DependingProperty != null ? BaseIfc.toStepValue(this.DependingProperty) : "$");
-		parameters.push(this.DependantProperty != null ? BaseIfc.toStepValue(this.DependantProperty) : "$");
-		parameters.push(this.Expression != null ? BaseIfc.toStepValue(this.Expression) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.DependingProperty))
+		parameters.push(BaseIfc.toStepValue(this.DependantProperty))
+		parameters.push(BaseIfc.toStepValue(this.Expression))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -35,12 +35,12 @@ export class IfcResourceApprovalRelationship extends IfcResourceLevelRelationshi
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedResourceObjects != null ? BaseIfc.toStepValue(this.RelatedResourceObjects) : "$");
-		parameters.push(this.RelatingApproval != null ? BaseIfc.toStepValue(this.RelatingApproval) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatedResourceObjects))
+		parameters.push(BaseIfc.toStepValue(this.RelatingApproval))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -24,12 +24,12 @@ export class IfcRectangularPyramid extends IfcCsgPrimitive3D {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.XLength != null ? BaseIfc.toStepValue(this.XLength) : "$");
-		parameters.push(this.YLength != null ? BaseIfc.toStepValue(this.YLength) : "$");
-		parameters.push(this.Height != null ? BaseIfc.toStepValue(this.Height) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.XLength))
+		parameters.push(BaseIfc.toStepValue(this.YLength))
+		parameters.push(BaseIfc.toStepValue(this.Height))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

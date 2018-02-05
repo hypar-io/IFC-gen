@@ -39,21 +39,21 @@ export class IfcTask extends IfcProcess {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.LongDescription != null ? BaseIfc.toStepValue(this.LongDescription) : "$");
-		parameters.push(this.Status != null ? BaseIfc.toStepValue(this.Status) : "$");
-		parameters.push(this.WorkMethod != null ? BaseIfc.toStepValue(this.WorkMethod) : "$");
-		parameters.push(this.IsMilestone != null ? BaseIfc.toStepValue(this.IsMilestone) : "$");
-		parameters.push(this.Priority != null ? BaseIfc.toStepValue(this.Priority) : "$");
-		parameters.push(this.TaskTime != null ? BaseIfc.toStepValue(this.TaskTime) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.LongDescription))
+		parameters.push(BaseIfc.toStepValue(this.Status))
+		parameters.push(BaseIfc.toStepValue(this.WorkMethod))
+		parameters.push(BaseIfc.toStepValue(this.IsMilestone))
+		parameters.push(BaseIfc.toStepValue(this.Priority))
+		parameters.push(BaseIfc.toStepValue(this.TaskTime))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

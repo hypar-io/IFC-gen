@@ -23,15 +23,15 @@ export class IfcBlobTexture extends IfcSurfaceTexture {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.RepeatS != null ? BaseIfc.toStepValue(this.RepeatS) : "$");
-		parameters.push(this.RepeatT != null ? BaseIfc.toStepValue(this.RepeatT) : "$");
-		parameters.push(this.Mode != null ? BaseIfc.toStepValue(this.Mode) : "$");
-		parameters.push(this.TextureTransform != null ? BaseIfc.toStepValue(this.TextureTransform) : "$");
-		parameters.push(this.Parameter != null ? BaseIfc.toStepValue(this.Parameter) : "$");
-		parameters.push(this.RasterFormat != null ? BaseIfc.toStepValue(this.RasterFormat) : "$");
-		parameters.push(this.RasterCode != null ? BaseIfc.toStepValue(this.RasterCode) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.RepeatS))
+		parameters.push(BaseIfc.toStepValue(this.RepeatT))
+		parameters.push(BaseIfc.toStepValue(this.Mode))
+		parameters.push(BaseIfc.toStepValue(this.TextureTransform))
+		parameters.push(BaseIfc.toStepValue(this.Parameter))
+		parameters.push(BaseIfc.toStepValue(this.RasterFormat))
+		parameters.push(BaseIfc.toStepValue(this.RasterCode))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

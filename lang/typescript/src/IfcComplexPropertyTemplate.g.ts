@@ -24,15 +24,15 @@ export class IfcComplexPropertyTemplate extends IfcPropertyTemplate {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.UsageName != null ? BaseIfc.toStepValue(this.UsageName) : "$");
-		parameters.push(BaseIfc.toStepValue(this.TemplateType));
-		parameters.push(this.HasPropertyTemplates != null ? BaseIfc.toStepValue(this.HasPropertyTemplates) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.UsageName))
+		parameters.push(BaseIfc.toStepValue(this.TemplateType))
+		parameters.push(BaseIfc.toStepValue(this.HasPropertyTemplates))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -136,18 +136,18 @@ export class IfcAppliedValue extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.AppliedValue != null ? BaseIfc.toStepValue(this.AppliedValue) : "$");
-		parameters.push(this.UnitBasis != null ? BaseIfc.toStepValue(this.UnitBasis) : "$");
-		parameters.push(this.ApplicableDate != null ? BaseIfc.toStepValue(this.ApplicableDate) : "$");
-		parameters.push(this.FixedUntilDate != null ? BaseIfc.toStepValue(this.FixedUntilDate) : "$");
-		parameters.push(this.Category != null ? BaseIfc.toStepValue(this.Category) : "$");
-		parameters.push(this.Condition != null ? BaseIfc.toStepValue(this.Condition) : "$");
-		parameters.push(BaseIfc.toStepValue(this.ArithmeticOperator));
-		parameters.push(this.Components != null ? BaseIfc.toStepValue(this.Components) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.AppliedValue))
+		parameters.push(BaseIfc.toStepValue(this.UnitBasis))
+		parameters.push(BaseIfc.toStepValue(this.ApplicableDate))
+		parameters.push(BaseIfc.toStepValue(this.FixedUntilDate))
+		parameters.push(BaseIfc.toStepValue(this.Category))
+		parameters.push(BaseIfc.toStepValue(this.Condition))
+		parameters.push(BaseIfc.toStepValue(this.ArithmeticOperator))
+		parameters.push(BaseIfc.toStepValue(this.Components))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

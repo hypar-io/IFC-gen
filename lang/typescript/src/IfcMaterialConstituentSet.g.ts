@@ -22,11 +22,11 @@ export class IfcMaterialConstituentSet extends IfcMaterialDefinition {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.MaterialConstituents != null ? BaseIfc.toStepValue(this.MaterialConstituents) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.MaterialConstituents))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

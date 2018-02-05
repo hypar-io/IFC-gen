@@ -32,14 +32,14 @@ export class IfcGeometricRepresentationContext extends IfcRepresentationContext 
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ContextIdentifier != null ? BaseIfc.toStepValue(this.ContextIdentifier) : "$");
-		parameters.push(this.ContextType != null ? BaseIfc.toStepValue(this.ContextType) : "$");
-		parameters.push(this.CoordinateSpaceDimension != null ? BaseIfc.toStepValue(this.CoordinateSpaceDimension) : "$");
-		parameters.push(this.Precision != null ? BaseIfc.toStepValue(this.Precision) : "$");
-		parameters.push(this.WorldCoordinateSystem != null ? BaseIfc.toStepValue(this.WorldCoordinateSystem) : "$");
-		parameters.push(this.TrueNorth != null ? BaseIfc.toStepValue(this.TrueNorth) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ContextIdentifier))
+		parameters.push(BaseIfc.toStepValue(this.ContextType))
+		parameters.push(BaseIfc.toStepValue(this.CoordinateSpaceDimension))
+		parameters.push(BaseIfc.toStepValue(this.Precision))
+		parameters.push(BaseIfc.toStepValue(this.WorldCoordinateSystem))
+		parameters.push(BaseIfc.toStepValue(this.TrueNorth))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

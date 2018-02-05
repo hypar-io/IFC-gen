@@ -28,16 +28,16 @@ export class IfcOwnerHistory extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.OwningUser != null ? BaseIfc.toStepValue(this.OwningUser) : "$");
-		parameters.push(this.OwningApplication != null ? BaseIfc.toStepValue(this.OwningApplication) : "$");
-		parameters.push(BaseIfc.toStepValue(this.State));
-		parameters.push(BaseIfc.toStepValue(this.ChangeAction));
-		parameters.push(this.LastModifiedDate != null ? BaseIfc.toStepValue(this.LastModifiedDate) : "$");
-		parameters.push(this.LastModifyingUser != null ? BaseIfc.toStepValue(this.LastModifyingUser) : "$");
-		parameters.push(this.LastModifyingApplication != null ? BaseIfc.toStepValue(this.LastModifyingApplication) : "$");
-		parameters.push(this.CreationDate != null ? BaseIfc.toStepValue(this.CreationDate) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.OwningUser))
+		parameters.push(BaseIfc.toStepValue(this.OwningApplication))
+		parameters.push(BaseIfc.toStepValue(this.State))
+		parameters.push(BaseIfc.toStepValue(this.ChangeAction))
+		parameters.push(BaseIfc.toStepValue(this.LastModifiedDate))
+		parameters.push(BaseIfc.toStepValue(this.LastModifyingUser))
+		parameters.push(BaseIfc.toStepValue(this.LastModifyingApplication))
+		parameters.push(BaseIfc.toStepValue(this.CreationDate))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

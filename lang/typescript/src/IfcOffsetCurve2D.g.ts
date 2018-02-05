@@ -24,11 +24,11 @@ export class IfcOffsetCurve2D extends IfcCurve {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.BasisCurve != null ? BaseIfc.toStepValue(this.BasisCurve) : "$");
-		parameters.push(this.Distance != null ? BaseIfc.toStepValue(this.Distance) : "$");
-		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.BasisCurve))
+		parameters.push(BaseIfc.toStepValue(this.Distance))
+		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -35,12 +35,12 @@ export class IfcExternalReferenceRelationship extends IfcResourceLevelRelationsh
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingReference != null ? BaseIfc.toStepValue(this.RelatingReference) : "$");
-		parameters.push(this.RelatedResourceObjects != null ? BaseIfc.toStepValue(this.RelatedResourceObjects) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingReference))
+		parameters.push(BaseIfc.toStepValue(this.RelatedResourceObjects))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

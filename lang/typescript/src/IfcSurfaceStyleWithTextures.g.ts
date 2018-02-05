@@ -16,9 +16,9 @@ export class IfcSurfaceStyleWithTextures extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Textures != null ? BaseIfc.toStepValue(this.Textures) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Textures))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

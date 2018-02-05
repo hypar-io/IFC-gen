@@ -22,15 +22,15 @@ export class IfcBoundaryEdgeCondition extends IfcBoundaryCondition {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.TranslationalStiffnessByLengthX != null ? BaseIfc.toStepValue(this.TranslationalStiffnessByLengthX) : "$");
-		parameters.push(this.TranslationalStiffnessByLengthY != null ? BaseIfc.toStepValue(this.TranslationalStiffnessByLengthY) : "$");
-		parameters.push(this.TranslationalStiffnessByLengthZ != null ? BaseIfc.toStepValue(this.TranslationalStiffnessByLengthZ) : "$");
-		parameters.push(this.RotationalStiffnessByLengthX != null ? BaseIfc.toStepValue(this.RotationalStiffnessByLengthX) : "$");
-		parameters.push(this.RotationalStiffnessByLengthY != null ? BaseIfc.toStepValue(this.RotationalStiffnessByLengthY) : "$");
-		parameters.push(this.RotationalStiffnessByLengthZ != null ? BaseIfc.toStepValue(this.RotationalStiffnessByLengthZ) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessByLengthX))
+		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessByLengthY))
+		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessByLengthZ))
+		parameters.push(BaseIfc.toStepValue(this.RotationalStiffnessByLengthX))
+		parameters.push(BaseIfc.toStepValue(this.RotationalStiffnessByLengthY))
+		parameters.push(BaseIfc.toStepValue(this.RotationalStiffnessByLengthZ))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -31,16 +31,16 @@ export class IfcPerson extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.FamilyName != null ? BaseIfc.toStepValue(this.FamilyName) : "$");
-		parameters.push(this.GivenName != null ? BaseIfc.toStepValue(this.GivenName) : "$");
-		parameters.push(this.MiddleNames != null ? BaseIfc.toStepValue(this.MiddleNames) : "$");
-		parameters.push(this.PrefixTitles != null ? BaseIfc.toStepValue(this.PrefixTitles) : "$");
-		parameters.push(this.SuffixTitles != null ? BaseIfc.toStepValue(this.SuffixTitles) : "$");
-		parameters.push(this.Roles != null ? BaseIfc.toStepValue(this.Roles) : "$");
-		parameters.push(this.Addresses != null ? BaseIfc.toStepValue(this.Addresses) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.FamilyName))
+		parameters.push(BaseIfc.toStepValue(this.GivenName))
+		parameters.push(BaseIfc.toStepValue(this.MiddleNames))
+		parameters.push(BaseIfc.toStepValue(this.PrefixTitles))
+		parameters.push(BaseIfc.toStepValue(this.SuffixTitles))
+		parameters.push(BaseIfc.toStepValue(this.Roles))
+		parameters.push(BaseIfc.toStepValue(this.Addresses))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

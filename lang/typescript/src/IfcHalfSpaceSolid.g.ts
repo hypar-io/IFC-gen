@@ -25,10 +25,10 @@ export class IfcHalfSpaceSolid extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.BaseSurface != null ? BaseIfc.toStepValue(this.BaseSurface) : "$");
-		parameters.push(this.AgreementFlag != null ? BaseIfc.toStepValue(this.AgreementFlag) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.BaseSurface))
+		parameters.push(BaseIfc.toStepValue(this.AgreementFlag))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

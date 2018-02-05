@@ -28,16 +28,16 @@ export class IfcPresentationLayerWithStyle extends IfcPresentationLayerAssignmen
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.AssignedItems != null ? BaseIfc.toStepValue(this.AssignedItems) : "$");
-		parameters.push(this.Identifier != null ? BaseIfc.toStepValue(this.Identifier) : "$");
-		parameters.push(this.LayerOn != null ? BaseIfc.toStepValue(this.LayerOn) : "$");
-		parameters.push(this.LayerFrozen != null ? BaseIfc.toStepValue(this.LayerFrozen) : "$");
-		parameters.push(this.LayerBlocked != null ? BaseIfc.toStepValue(this.LayerBlocked) : "$");
-		parameters.push(this.LayerStyles != null ? BaseIfc.toStepValue(this.LayerStyles) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.AssignedItems))
+		parameters.push(BaseIfc.toStepValue(this.Identifier))
+		parameters.push(BaseIfc.toStepValue(this.LayerOn))
+		parameters.push(BaseIfc.toStepValue(this.LayerFrozen))
+		parameters.push(BaseIfc.toStepValue(this.LayerBlocked))
+		parameters.push(BaseIfc.toStepValue(this.LayerStyles))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

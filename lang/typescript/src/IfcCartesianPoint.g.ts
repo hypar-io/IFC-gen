@@ -22,9 +22,9 @@ export class IfcCartesianPoint extends IfcPoint {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Coordinates != null ? BaseIfc.toStepValue(this.Coordinates) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Coordinates))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -112,7 +112,7 @@ namespace IFC4.Generators
 
         public string AttributeStepString(AttributeData data, bool isDerivedInChild)
         {
-            var step = $"\t\tparameters.push(this.{data.Name} != null ? BaseIfc.toStepValue(this.{data.Name}) : \"$\");";
+            var step = $"\t\tparameters.push(BaseIfc.toStepValue(this.{data.Name}))";
 
             if(isDerivedInChild)
             {
@@ -125,7 +125,7 @@ namespace IFC4.Generators
             // end in 'enum'.
             if (data.Type.EndsWith("Enum") | data.Type == "bool" | data.Type == "int" | data.Type == "double")
             {
-                step = $"\t\tparameters.push(BaseIfc.toStepValue(this.{data.Name}));";
+                step = $"\t\tparameters.push(BaseIfc.toStepValue(this.{data.Name}))";
             }
             return step;
         }
@@ -149,18 +149,7 @@ import {{BaseIfc}} from ""./BaseIfc""
 {wrappedTypeImport}
 
 // http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
-export class {data.Name} extends BaseIfc
-{{
-    protected wrappedValue : {WrappedType(data)}
-
-    constructor(value : {WrappedType(data)}){{
-        super()
-        this.wrappedValue = value
-    }}	
-    toString() : string {{ return this.wrappedValue.toString() }}
-    getStepParameters() : string {{ return BaseIfc.toStepValue(this.wrappedValue) }}
-}}
-";
+export type {data.Name} = {WrappedType(data)}";
             return result;
         }
 
@@ -169,7 +158,7 @@ export class {data.Name} extends BaseIfc
             var result =
 $@"
 //http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
-export enum {data.Name} {{{string.Join(",", data.Values)}}}
+export enum {data.Name} {{{string.Join(",", data.Values.Select(v=>$"{v}=\".{v}.\""))}}}
 ";
             return result;
         }
@@ -262,10 +251,10 @@ export {modifier}class {data.Name} extends {super} {{
 
             var stepParameters = $@"
     getStepParameters() : string {{
-        var parameters = new Array<string>();
-{data.StepProperties()}
-        return parameters.join();
-    }}";
+            var parameters = new Array<string>();
+    {data.StepProperties()}
+            return parameters.join();
+        }}";
             return stepParameters;
         }
 

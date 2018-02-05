@@ -24,12 +24,12 @@ export class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.SweptArea != null ? BaseIfc.toStepValue(this.SweptArea) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.ExtrudedDirection != null ? BaseIfc.toStepValue(this.ExtrudedDirection) : "$");
-		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SweptArea))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.ExtrudedDirection))
+		parameters.push(BaseIfc.toStepValue(this.Depth))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

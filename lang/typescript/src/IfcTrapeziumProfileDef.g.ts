@@ -28,15 +28,15 @@ export class IfcTrapeziumProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.BottomXDim != null ? BaseIfc.toStepValue(this.BottomXDim) : "$");
-		parameters.push(this.TopXDim != null ? BaseIfc.toStepValue(this.TopXDim) : "$");
-		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
-		parameters.push(this.TopXOffset != null ? BaseIfc.toStepValue(this.TopXOffset) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.BottomXDim))
+		parameters.push(BaseIfc.toStepValue(this.TopXDim))
+		parameters.push(BaseIfc.toStepValue(this.YDim))
+		parameters.push(BaseIfc.toStepValue(this.TopXOffset))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

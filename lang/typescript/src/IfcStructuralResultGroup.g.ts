@@ -37,16 +37,16 @@ export class IfcStructuralResultGroup extends IfcGroup {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(BaseIfc.toStepValue(this.TheoryType));
-		parameters.push(this.ResultForLoadGroup != null ? BaseIfc.toStepValue(this.ResultForLoadGroup) : "$");
-		parameters.push(this.IsLinear != null ? BaseIfc.toStepValue(this.IsLinear) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.TheoryType))
+		parameters.push(BaseIfc.toStepValue(this.ResultForLoadGroup))
+		parameters.push(BaseIfc.toStepValue(this.IsLinear))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -21,12 +21,12 @@ export class IfcColourRgb extends IfcColourSpecification {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Red != null ? BaseIfc.toStepValue(this.Red) : "$");
-		parameters.push(this.Green != null ? BaseIfc.toStepValue(this.Green) : "$");
-		parameters.push(this.Blue != null ? BaseIfc.toStepValue(this.Blue) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Red))
+		parameters.push(BaseIfc.toStepValue(this.Green))
+		parameters.push(BaseIfc.toStepValue(this.Blue))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

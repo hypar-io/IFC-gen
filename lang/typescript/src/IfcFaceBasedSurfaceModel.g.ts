@@ -22,9 +22,9 @@ export class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.FbsmFaces != null ? BaseIfc.toStepValue(this.FbsmFaces) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.FbsmFaces))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

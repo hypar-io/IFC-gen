@@ -32,17 +32,17 @@ export class IfcRelSpaceBoundary extends IfcRelConnects {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingSpace != null ? BaseIfc.toStepValue(this.RelatingSpace) : "$");
-		parameters.push(this.RelatedBuildingElement != null ? BaseIfc.toStepValue(this.RelatedBuildingElement) : "$");
-		parameters.push(this.ConnectionGeometry != null ? BaseIfc.toStepValue(this.ConnectionGeometry) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PhysicalOrVirtualBoundary));
-		parameters.push(BaseIfc.toStepValue(this.InternalOrExternalBoundary));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingSpace))
+		parameters.push(BaseIfc.toStepValue(this.RelatedBuildingElement))
+		parameters.push(BaseIfc.toStepValue(this.ConnectionGeometry))
+		parameters.push(BaseIfc.toStepValue(this.PhysicalOrVirtualBoundary))
+		parameters.push(BaseIfc.toStepValue(this.InternalOrExternalBoundary))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

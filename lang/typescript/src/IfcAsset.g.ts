@@ -40,22 +40,22 @@ export class IfcAsset extends IfcGroup {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.OriginalValue != null ? BaseIfc.toStepValue(this.OriginalValue) : "$");
-		parameters.push(this.CurrentValue != null ? BaseIfc.toStepValue(this.CurrentValue) : "$");
-		parameters.push(this.TotalReplacementCost != null ? BaseIfc.toStepValue(this.TotalReplacementCost) : "$");
-		parameters.push(this.Owner != null ? BaseIfc.toStepValue(this.Owner) : "$");
-		parameters.push(this.User != null ? BaseIfc.toStepValue(this.User) : "$");
-		parameters.push(this.ResponsiblePerson != null ? BaseIfc.toStepValue(this.ResponsiblePerson) : "$");
-		parameters.push(this.IncorporationDate != null ? BaseIfc.toStepValue(this.IncorporationDate) : "$");
-		parameters.push(this.DepreciatedValue != null ? BaseIfc.toStepValue(this.DepreciatedValue) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.OriginalValue))
+		parameters.push(BaseIfc.toStepValue(this.CurrentValue))
+		parameters.push(BaseIfc.toStepValue(this.TotalReplacementCost))
+		parameters.push(BaseIfc.toStepValue(this.Owner))
+		parameters.push(BaseIfc.toStepValue(this.User))
+		parameters.push(BaseIfc.toStepValue(this.ResponsiblePerson))
+		parameters.push(BaseIfc.toStepValue(this.IncorporationDate))
+		parameters.push(BaseIfc.toStepValue(this.DepreciatedValue))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

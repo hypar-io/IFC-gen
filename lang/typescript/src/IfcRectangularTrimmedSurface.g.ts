@@ -33,15 +33,15 @@ export class IfcRectangularTrimmedSurface extends IfcBoundedSurface {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.BasisSurface != null ? BaseIfc.toStepValue(this.BasisSurface) : "$");
-		parameters.push(this.U1 != null ? BaseIfc.toStepValue(this.U1) : "$");
-		parameters.push(this.V1 != null ? BaseIfc.toStepValue(this.V1) : "$");
-		parameters.push(this.U2 != null ? BaseIfc.toStepValue(this.U2) : "$");
-		parameters.push(this.V2 != null ? BaseIfc.toStepValue(this.V2) : "$");
-		parameters.push(this.Usense != null ? BaseIfc.toStepValue(this.Usense) : "$");
-		parameters.push(this.Vsense != null ? BaseIfc.toStepValue(this.Vsense) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
+		parameters.push(BaseIfc.toStepValue(this.U1))
+		parameters.push(BaseIfc.toStepValue(this.V1))
+		parameters.push(BaseIfc.toStepValue(this.U2))
+		parameters.push(BaseIfc.toStepValue(this.V2))
+		parameters.push(BaseIfc.toStepValue(this.Usense))
+		parameters.push(BaseIfc.toStepValue(this.Vsense))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

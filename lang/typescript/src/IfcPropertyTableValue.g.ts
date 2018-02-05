@@ -138,16 +138,16 @@ export class IfcPropertyTableValue extends IfcSimpleProperty {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.DefiningValues != null ? BaseIfc.toStepValue(this.DefiningValues) : "$");
-		parameters.push(this.DefinedValues != null ? BaseIfc.toStepValue(this.DefinedValues) : "$");
-		parameters.push(this.Expression != null ? BaseIfc.toStepValue(this.Expression) : "$");
-		parameters.push(this.DefiningUnit != null ? BaseIfc.toStepValue(this.DefiningUnit) : "$");
-		parameters.push(this.DefinedUnit != null ? BaseIfc.toStepValue(this.DefinedUnit) : "$");
-		parameters.push(BaseIfc.toStepValue(this.CurveInterpolation));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.DefiningValues))
+		parameters.push(BaseIfc.toStepValue(this.DefinedValues))
+		parameters.push(BaseIfc.toStepValue(this.Expression))
+		parameters.push(BaseIfc.toStepValue(this.DefiningUnit))
+		parameters.push(BaseIfc.toStepValue(this.DefinedUnit))
+		parameters.push(BaseIfc.toStepValue(this.CurveInterpolation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

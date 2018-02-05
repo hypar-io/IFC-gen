@@ -31,16 +31,16 @@ export class IfcBSplineCurveWithKnots extends IfcBSplineCurve {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Degree != null ? BaseIfc.toStepValue(this.Degree) : "$");
-		parameters.push(this.ControlPointsList != null ? BaseIfc.toStepValue(this.ControlPointsList) : "$");
-		parameters.push(this.CurveForm != null ? BaseIfc.toStepValue(this.CurveForm) : "$");
-		parameters.push(this.ClosedCurve != null ? BaseIfc.toStepValue(this.ClosedCurve) : "$");
-		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
-		parameters.push(this.KnotMultiplicities != null ? BaseIfc.toStepValue(this.KnotMultiplicities) : "$");
-		parameters.push(this.Knots != null ? BaseIfc.toStepValue(this.Knots) : "$");
-		parameters.push(this.KnotSpec != null ? BaseIfc.toStepValue(this.KnotSpec) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Degree))
+		parameters.push(BaseIfc.toStepValue(this.ControlPointsList))
+		parameters.push(BaseIfc.toStepValue(this.CurveForm))
+		parameters.push(BaseIfc.toStepValue(this.ClosedCurve))
+		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
+		parameters.push(BaseIfc.toStepValue(this.KnotMultiplicities))
+		parameters.push(BaseIfc.toStepValue(this.Knots))
+		parameters.push(BaseIfc.toStepValue(this.KnotSpec))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

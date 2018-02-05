@@ -21,11 +21,11 @@ export class IfcMaterialProfileSetUsage extends IfcMaterialUsageDefinition {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ForProfileSet != null ? BaseIfc.toStepValue(this.ForProfileSet) : "$");
-		parameters.push(this.CardinalPoint != null ? BaseIfc.toStepValue(this.CardinalPoint) : "$");
-		parameters.push(this.ReferenceExtent != null ? BaseIfc.toStepValue(this.ReferenceExtent) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ForProfileSet))
+		parameters.push(BaseIfc.toStepValue(this.CardinalPoint))
+		parameters.push(BaseIfc.toStepValue(this.ReferenceExtent))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -33,17 +33,17 @@ export class IfcPermeableCoveringProperties extends IfcPreDefinedPropertySet {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(BaseIfc.toStepValue(this.OperationType));
-		parameters.push(BaseIfc.toStepValue(this.PanelPosition));
-		parameters.push(this.FrameDepth != null ? BaseIfc.toStepValue(this.FrameDepth) : "$");
-		parameters.push(this.FrameThickness != null ? BaseIfc.toStepValue(this.FrameThickness) : "$");
-		parameters.push(this.ShapeAspectStyle != null ? BaseIfc.toStepValue(this.ShapeAspectStyle) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.OperationType))
+		parameters.push(BaseIfc.toStepValue(this.PanelPosition))
+		parameters.push(BaseIfc.toStepValue(this.FrameDepth))
+		parameters.push(BaseIfc.toStepValue(this.FrameThickness))
+		parameters.push(BaseIfc.toStepValue(this.ShapeAspectStyle))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

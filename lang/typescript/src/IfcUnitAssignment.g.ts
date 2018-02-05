@@ -17,9 +17,9 @@ export class IfcUnitAssignment extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Units != null ? BaseIfc.toStepValue(this.Units) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Units))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

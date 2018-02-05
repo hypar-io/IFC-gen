@@ -28,11 +28,11 @@ export class IfcSectionedSpine extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.SpineCurve != null ? BaseIfc.toStepValue(this.SpineCurve) : "$");
-		parameters.push(this.CrossSections != null ? BaseIfc.toStepValue(this.CrossSections) : "$");
-		parameters.push(this.CrossSectionPositions != null ? BaseIfc.toStepValue(this.CrossSectionPositions) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SpineCurve))
+		parameters.push(BaseIfc.toStepValue(this.CrossSections))
+		parameters.push(BaseIfc.toStepValue(this.CrossSectionPositions))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

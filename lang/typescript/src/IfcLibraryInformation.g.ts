@@ -33,14 +33,14 @@ export class IfcLibraryInformation extends IfcExternalInformation {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Version != null ? BaseIfc.toStepValue(this.Version) : "$");
-		parameters.push(this.Publisher != null ? BaseIfc.toStepValue(this.Publisher) : "$");
-		parameters.push(this.VersionDate != null ? BaseIfc.toStepValue(this.VersionDate) : "$");
-		parameters.push(this.Location != null ? BaseIfc.toStepValue(this.Location) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Version))
+		parameters.push(BaseIfc.toStepValue(this.Publisher))
+		parameters.push(BaseIfc.toStepValue(this.VersionDate))
+		parameters.push(BaseIfc.toStepValue(this.Location))
+		parameters.push(BaseIfc.toStepValue(this.Description))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

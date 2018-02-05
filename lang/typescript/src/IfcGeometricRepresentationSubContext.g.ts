@@ -41,18 +41,18 @@ export class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ContextIdentifier != null ? BaseIfc.toStepValue(this.ContextIdentifier) : "$");
-		parameters.push(this.ContextType != null ? BaseIfc.toStepValue(this.ContextType) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ContextIdentifier))
+		parameters.push(BaseIfc.toStepValue(this.ContextType))
 		parameters.push("*");
 		parameters.push("*");
 		parameters.push("*");
 		parameters.push("*");
-		parameters.push(this.ParentContext != null ? BaseIfc.toStepValue(this.ParentContext) : "$");
-		parameters.push(this.TargetScale != null ? BaseIfc.toStepValue(this.TargetScale) : "$");
-		parameters.push(BaseIfc.toStepValue(this.TargetView));
-		parameters.push(this.UserDefinedTargetView != null ? BaseIfc.toStepValue(this.UserDefinedTargetView) : "$");
+		parameters.push(BaseIfc.toStepValue(this.ParentContext))
+		parameters.push(BaseIfc.toStepValue(this.TargetScale))
+		parameters.push(BaseIfc.toStepValue(this.TargetView))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedTargetView))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

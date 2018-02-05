@@ -26,13 +26,13 @@ export class IfcSweptDiskSolid extends IfcSolidModel {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Directrix != null ? BaseIfc.toStepValue(this.Directrix) : "$");
-		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
-		parameters.push(this.InnerRadius != null ? BaseIfc.toStepValue(this.InnerRadius) : "$");
-		parameters.push(this.StartParam != null ? BaseIfc.toStepValue(this.StartParam) : "$");
-		parameters.push(this.EndParam != null ? BaseIfc.toStepValue(this.EndParam) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Directrix))
+		parameters.push(BaseIfc.toStepValue(this.Radius))
+		parameters.push(BaseIfc.toStepValue(this.InnerRadius))
+		parameters.push(BaseIfc.toStepValue(this.StartParam))
+		parameters.push(BaseIfc.toStepValue(this.EndParam))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

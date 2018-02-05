@@ -25,14 +25,14 @@ export class IfcLibraryReference extends IfcExternalReference {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Location != null ? BaseIfc.toStepValue(this.Location) : "$");
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.Language != null ? BaseIfc.toStepValue(this.Language) : "$");
-		parameters.push(this.ReferencedLibrary != null ? BaseIfc.toStepValue(this.ReferencedLibrary) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Location))
+		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.Language))
+		parameters.push(BaseIfc.toStepValue(this.ReferencedLibrary))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

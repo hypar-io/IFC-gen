@@ -16,9 +16,9 @@ export class IfcPlane extends IfcElementarySurface {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Position))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

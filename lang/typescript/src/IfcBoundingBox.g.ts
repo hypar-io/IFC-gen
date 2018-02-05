@@ -29,12 +29,12 @@ export class IfcBoundingBox extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Corner != null ? BaseIfc.toStepValue(this.Corner) : "$");
-		parameters.push(this.XDim != null ? BaseIfc.toStepValue(this.XDim) : "$");
-		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
-		parameters.push(this.ZDim != null ? BaseIfc.toStepValue(this.ZDim) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Corner))
+		parameters.push(BaseIfc.toStepValue(this.XDim))
+		parameters.push(BaseIfc.toStepValue(this.YDim))
+		parameters.push(BaseIfc.toStepValue(this.ZDim))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

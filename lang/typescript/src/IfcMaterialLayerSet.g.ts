@@ -27,11 +27,11 @@ export class IfcMaterialLayerSet extends IfcMaterialDefinition {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.MaterialLayers != null ? BaseIfc.toStepValue(this.MaterialLayers) : "$");
-		parameters.push(this.LayerSetName != null ? BaseIfc.toStepValue(this.LayerSetName) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.MaterialLayers))
+		parameters.push(BaseIfc.toStepValue(this.LayerSetName))
+		parameters.push(BaseIfc.toStepValue(this.Description))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

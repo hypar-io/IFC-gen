@@ -25,10 +25,10 @@ export class IfcPointOnCurve extends IfcPoint {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.BasisCurve != null ? BaseIfc.toStepValue(this.BasisCurve) : "$");
-		parameters.push(this.PointParameter != null ? BaseIfc.toStepValue(this.PointParameter) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.BasisCurve))
+		parameters.push(BaseIfc.toStepValue(this.PointParameter))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

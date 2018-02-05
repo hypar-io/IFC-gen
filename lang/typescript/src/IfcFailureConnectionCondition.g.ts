@@ -20,15 +20,15 @@ export class IfcFailureConnectionCondition extends IfcStructuralConnectionCondit
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.TensionFailureX != null ? BaseIfc.toStepValue(this.TensionFailureX) : "$");
-		parameters.push(this.TensionFailureY != null ? BaseIfc.toStepValue(this.TensionFailureY) : "$");
-		parameters.push(this.TensionFailureZ != null ? BaseIfc.toStepValue(this.TensionFailureZ) : "$");
-		parameters.push(this.CompressionFailureX != null ? BaseIfc.toStepValue(this.CompressionFailureX) : "$");
-		parameters.push(this.CompressionFailureY != null ? BaseIfc.toStepValue(this.CompressionFailureY) : "$");
-		parameters.push(this.CompressionFailureZ != null ? BaseIfc.toStepValue(this.CompressionFailureZ) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.TensionFailureX))
+		parameters.push(BaseIfc.toStepValue(this.TensionFailureY))
+		parameters.push(BaseIfc.toStepValue(this.TensionFailureZ))
+		parameters.push(BaseIfc.toStepValue(this.CompressionFailureX))
+		parameters.push(BaseIfc.toStepValue(this.CompressionFailureY))
+		parameters.push(BaseIfc.toStepValue(this.CompressionFailureZ))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

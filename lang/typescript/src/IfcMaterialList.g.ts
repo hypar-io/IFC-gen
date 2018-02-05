@@ -15,9 +15,9 @@ export class IfcMaterialList extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Materials != null ? BaseIfc.toStepValue(this.Materials) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Materials))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

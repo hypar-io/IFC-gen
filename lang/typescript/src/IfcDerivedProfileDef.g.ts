@@ -23,13 +23,13 @@ export class IfcDerivedProfileDef extends IfcProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.ParentProfile != null ? BaseIfc.toStepValue(this.ParentProfile) : "$");
-		parameters.push(this.Operator != null ? BaseIfc.toStepValue(this.Operator) : "$");
-		parameters.push(this.Label != null ? BaseIfc.toStepValue(this.Label) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.ParentProfile))
+		parameters.push(BaseIfc.toStepValue(this.Operator))
+		parameters.push(BaseIfc.toStepValue(this.Label))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

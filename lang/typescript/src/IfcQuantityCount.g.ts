@@ -22,13 +22,13 @@ export class IfcQuantityCount extends IfcPhysicalSimpleQuantity {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.Unit != null ? BaseIfc.toStepValue(this.Unit) : "$");
-		parameters.push(this.CountValue != null ? BaseIfc.toStepValue(this.CountValue) : "$");
-		parameters.push(this.Formula != null ? BaseIfc.toStepValue(this.Formula) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.Unit))
+		parameters.push(BaseIfc.toStepValue(this.CountValue))
+		parameters.push(BaseIfc.toStepValue(this.Formula))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

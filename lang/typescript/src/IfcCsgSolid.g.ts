@@ -20,9 +20,9 @@ export class IfcCsgSolid extends IfcSolidModel {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.TreeRootExpression != null ? BaseIfc.toStepValue(this.TreeRootExpression) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.TreeRootExpression))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

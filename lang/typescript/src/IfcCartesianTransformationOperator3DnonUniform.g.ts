@@ -26,15 +26,15 @@ export class IfcCartesianTransformationOperator3DnonUniform extends IfcCartesian
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Axis1 != null ? BaseIfc.toStepValue(this.Axis1) : "$");
-		parameters.push(this.Axis2 != null ? BaseIfc.toStepValue(this.Axis2) : "$");
-		parameters.push(this.LocalOrigin != null ? BaseIfc.toStepValue(this.LocalOrigin) : "$");
-		parameters.push(this.Scale != null ? BaseIfc.toStepValue(this.Scale) : "$");
-		parameters.push(this.Axis3 != null ? BaseIfc.toStepValue(this.Axis3) : "$");
-		parameters.push(this.Scale2 != null ? BaseIfc.toStepValue(this.Scale2) : "$");
-		parameters.push(this.Scale3 != null ? BaseIfc.toStepValue(this.Scale3) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Axis1))
+		parameters.push(BaseIfc.toStepValue(this.Axis2))
+		parameters.push(BaseIfc.toStepValue(this.LocalOrigin))
+		parameters.push(BaseIfc.toStepValue(this.Scale))
+		parameters.push(BaseIfc.toStepValue(this.Axis3))
+		parameters.push(BaseIfc.toStepValue(this.Scale2))
+		parameters.push(BaseIfc.toStepValue(this.Scale3))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

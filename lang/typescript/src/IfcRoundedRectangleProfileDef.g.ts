@@ -21,14 +21,14 @@ export class IfcRoundedRectangleProfileDef extends IfcRectangleProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.XDim != null ? BaseIfc.toStepValue(this.XDim) : "$");
-		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
-		parameters.push(this.RoundingRadius != null ? BaseIfc.toStepValue(this.RoundingRadius) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.XDim))
+		parameters.push(BaseIfc.toStepValue(this.YDim))
+		parameters.push(BaseIfc.toStepValue(this.RoundingRadius))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

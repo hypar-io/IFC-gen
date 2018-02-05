@@ -19,15 +19,15 @@ export class IfcEventTime extends IfcSchedulingTime {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(BaseIfc.toStepValue(this.DataOrigin));
-		parameters.push(this.UserDefinedDataOrigin != null ? BaseIfc.toStepValue(this.UserDefinedDataOrigin) : "$");
-		parameters.push(this.ActualDate != null ? BaseIfc.toStepValue(this.ActualDate) : "$");
-		parameters.push(this.EarlyDate != null ? BaseIfc.toStepValue(this.EarlyDate) : "$");
-		parameters.push(this.LateDate != null ? BaseIfc.toStepValue(this.LateDate) : "$");
-		parameters.push(this.ScheduleDate != null ? BaseIfc.toStepValue(this.ScheduleDate) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.DataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedDataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.ActualDate))
+		parameters.push(BaseIfc.toStepValue(this.EarlyDate))
+		parameters.push(BaseIfc.toStepValue(this.LateDate))
+		parameters.push(BaseIfc.toStepValue(this.ScheduleDate))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

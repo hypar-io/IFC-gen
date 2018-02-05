@@ -19,9 +19,9 @@ export class IfcPolyline extends IfcBoundedCurve {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Points != null ? BaseIfc.toStepValue(this.Points) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Points))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

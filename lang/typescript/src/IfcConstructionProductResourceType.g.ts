@@ -31,20 +31,20 @@ export class IfcConstructionProductResourceType extends IfcConstructionResourceT
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ApplicableOccurrence != null ? BaseIfc.toStepValue(this.ApplicableOccurrence) : "$");
-		parameters.push(this.HasPropertySets != null ? BaseIfc.toStepValue(this.HasPropertySets) : "$");
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.LongDescription != null ? BaseIfc.toStepValue(this.LongDescription) : "$");
-		parameters.push(this.ResourceType != null ? BaseIfc.toStepValue(this.ResourceType) : "$");
-		parameters.push(this.BaseCosts != null ? BaseIfc.toStepValue(this.BaseCosts) : "$");
-		parameters.push(this.BaseQuantity != null ? BaseIfc.toStepValue(this.BaseQuantity) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ApplicableOccurrence))
+		parameters.push(BaseIfc.toStepValue(this.HasPropertySets))
+		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.LongDescription))
+		parameters.push(BaseIfc.toStepValue(this.ResourceType))
+		parameters.push(BaseIfc.toStepValue(this.BaseCosts))
+		parameters.push(BaseIfc.toStepValue(this.BaseQuantity))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

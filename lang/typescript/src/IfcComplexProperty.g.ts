@@ -24,12 +24,12 @@ export class IfcComplexProperty extends IfcProperty {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.UsageName != null ? BaseIfc.toStepValue(this.UsageName) : "$");
-		parameters.push(this.HasProperties != null ? BaseIfc.toStepValue(this.HasProperties) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.UsageName))
+		parameters.push(BaseIfc.toStepValue(this.HasProperties))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

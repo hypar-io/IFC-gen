@@ -20,11 +20,11 @@ export class IfcTextureCoordinateGenerator extends IfcTextureCoordinate {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Maps != null ? BaseIfc.toStepValue(this.Maps) : "$");
-		parameters.push(this.Mode != null ? BaseIfc.toStepValue(this.Mode) : "$");
-		parameters.push(this.Parameter != null ? BaseIfc.toStepValue(this.Parameter) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Maps))
+		parameters.push(BaseIfc.toStepValue(this.Mode))
+		parameters.push(BaseIfc.toStepValue(this.Parameter))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

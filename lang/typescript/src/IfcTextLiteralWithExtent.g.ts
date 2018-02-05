@@ -25,13 +25,13 @@ export class IfcTextLiteralWithExtent extends IfcTextLiteral {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Literal != null ? BaseIfc.toStepValue(this.Literal) : "$");
-		parameters.push(this.Placement != null ? BaseIfc.toStepValue(this.Placement) : "$");
-		parameters.push(this.Path != null ? BaseIfc.toStepValue(this.Path) : "$");
-		parameters.push(this.Extent != null ? BaseIfc.toStepValue(this.Extent) : "$");
-		parameters.push(this.BoxAlignment != null ? BaseIfc.toStepValue(this.BoxAlignment) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Literal))
+		parameters.push(BaseIfc.toStepValue(this.Placement))
+		parameters.push(BaseIfc.toStepValue(this.Path))
+		parameters.push(BaseIfc.toStepValue(this.Extent))
+		parameters.push(BaseIfc.toStepValue(this.BoxAlignment))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -30,21 +30,21 @@ export class IfcLightSourceSpot extends IfcLightSourcePositional {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.LightColour != null ? BaseIfc.toStepValue(this.LightColour) : "$");
-		parameters.push(this.AmbientIntensity != null ? BaseIfc.toStepValue(this.AmbientIntensity) : "$");
-		parameters.push(this.Intensity != null ? BaseIfc.toStepValue(this.Intensity) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
-		parameters.push(this.ConstantAttenuation != null ? BaseIfc.toStepValue(this.ConstantAttenuation) : "$");
-		parameters.push(this.DistanceAttenuation != null ? BaseIfc.toStepValue(this.DistanceAttenuation) : "$");
-		parameters.push(this.QuadricAttenuation != null ? BaseIfc.toStepValue(this.QuadricAttenuation) : "$");
-		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
-		parameters.push(this.ConcentrationExponent != null ? BaseIfc.toStepValue(this.ConcentrationExponent) : "$");
-		parameters.push(this.SpreadAngle != null ? BaseIfc.toStepValue(this.SpreadAngle) : "$");
-		parameters.push(this.BeamWidthAngle != null ? BaseIfc.toStepValue(this.BeamWidthAngle) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.LightColour))
+		parameters.push(BaseIfc.toStepValue(this.AmbientIntensity))
+		parameters.push(BaseIfc.toStepValue(this.Intensity))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.Radius))
+		parameters.push(BaseIfc.toStepValue(this.ConstantAttenuation))
+		parameters.push(BaseIfc.toStepValue(this.DistanceAttenuation))
+		parameters.push(BaseIfc.toStepValue(this.QuadricAttenuation))
+		parameters.push(BaseIfc.toStepValue(this.Orientation))
+		parameters.push(BaseIfc.toStepValue(this.ConcentrationExponent))
+		parameters.push(BaseIfc.toStepValue(this.SpreadAngle))
+		parameters.push(BaseIfc.toStepValue(this.BeamWidthAngle))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

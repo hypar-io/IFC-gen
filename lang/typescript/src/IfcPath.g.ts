@@ -18,9 +18,9 @@ export class IfcPath extends IfcTopologicalRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.EdgeList != null ? BaseIfc.toStepValue(this.EdgeList) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.EdgeList))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

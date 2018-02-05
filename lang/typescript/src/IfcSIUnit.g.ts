@@ -23,12 +23,12 @@ export class IfcSIUnit extends IfcNamedUnit {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push("*");
-		parameters.push(BaseIfc.toStepValue(this.UnitType));
-		parameters.push(this.Prefix != null ? BaseIfc.toStepValue(this.Prefix) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
+            var parameters = new Array<string>();
+    		parameters.push("*");
+		parameters.push(BaseIfc.toStepValue(this.UnitType))
+		parameters.push(BaseIfc.toStepValue(this.Prefix))
+		parameters.push(BaseIfc.toStepValue(this.Name))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -41,17 +41,17 @@ export class IfcApproval extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Identifier != null ? BaseIfc.toStepValue(this.Identifier) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.TimeOfApproval != null ? BaseIfc.toStepValue(this.TimeOfApproval) : "$");
-		parameters.push(this.Status != null ? BaseIfc.toStepValue(this.Status) : "$");
-		parameters.push(this.Level != null ? BaseIfc.toStepValue(this.Level) : "$");
-		parameters.push(this.Qualifier != null ? BaseIfc.toStepValue(this.Qualifier) : "$");
-		parameters.push(this.RequestingApproval != null ? BaseIfc.toStepValue(this.RequestingApproval) : "$");
-		parameters.push(this.GivingApproval != null ? BaseIfc.toStepValue(this.GivingApproval) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Identifier))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.TimeOfApproval))
+		parameters.push(BaseIfc.toStepValue(this.Status))
+		parameters.push(BaseIfc.toStepValue(this.Level))
+		parameters.push(BaseIfc.toStepValue(this.Qualifier))
+		parameters.push(BaseIfc.toStepValue(this.RequestingApproval))
+		parameters.push(BaseIfc.toStepValue(this.GivingApproval))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

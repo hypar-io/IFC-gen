@@ -29,13 +29,13 @@ export class IfcCurveStyle extends IfcPresentationStyle {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.CurveFont != null ? BaseIfc.toStepValue(this.CurveFont) : "$");
-		parameters.push(this.CurveWidth != null ? BaseIfc.toStepValue(this.CurveWidth) : "$");
-		parameters.push(this.CurveColour != null ? BaseIfc.toStepValue(this.CurveColour) : "$");
-		parameters.push(this.ModelOrDraughting != null ? BaseIfc.toStepValue(this.ModelOrDraughting) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.CurveFont))
+		parameters.push(BaseIfc.toStepValue(this.CurveWidth))
+		parameters.push(BaseIfc.toStepValue(this.CurveColour))
+		parameters.push(BaseIfc.toStepValue(this.ModelOrDraughting))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -26,17 +26,17 @@ export class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.SurfaceColour != null ? BaseIfc.toStepValue(this.SurfaceColour) : "$");
-		parameters.push(this.Transparency != null ? BaseIfc.toStepValue(this.Transparency) : "$");
-		parameters.push(this.DiffuseColour != null ? BaseIfc.toStepValue(this.DiffuseColour) : "$");
-		parameters.push(this.TransmissionColour != null ? BaseIfc.toStepValue(this.TransmissionColour) : "$");
-		parameters.push(this.DiffuseTransmissionColour != null ? BaseIfc.toStepValue(this.DiffuseTransmissionColour) : "$");
-		parameters.push(this.ReflectionColour != null ? BaseIfc.toStepValue(this.ReflectionColour) : "$");
-		parameters.push(this.SpecularColour != null ? BaseIfc.toStepValue(this.SpecularColour) : "$");
-		parameters.push(this.SpecularHighlight != null ? BaseIfc.toStepValue(this.SpecularHighlight) : "$");
-		parameters.push(BaseIfc.toStepValue(this.ReflectanceMethod));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SurfaceColour))
+		parameters.push(BaseIfc.toStepValue(this.Transparency))
+		parameters.push(BaseIfc.toStepValue(this.DiffuseColour))
+		parameters.push(BaseIfc.toStepValue(this.TransmissionColour))
+		parameters.push(BaseIfc.toStepValue(this.DiffuseTransmissionColour))
+		parameters.push(BaseIfc.toStepValue(this.ReflectionColour))
+		parameters.push(BaseIfc.toStepValue(this.SpecularColour))
+		parameters.push(BaseIfc.toStepValue(this.SpecularHighlight))
+		parameters.push(BaseIfc.toStepValue(this.ReflectanceMethod))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

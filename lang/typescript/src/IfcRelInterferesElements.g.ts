@@ -28,17 +28,17 @@ export class IfcRelInterferesElements extends IfcRelConnects {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingElement != null ? BaseIfc.toStepValue(this.RelatingElement) : "$");
-		parameters.push(this.RelatedElement != null ? BaseIfc.toStepValue(this.RelatedElement) : "$");
-		parameters.push(this.InterferenceGeometry != null ? BaseIfc.toStepValue(this.InterferenceGeometry) : "$");
-		parameters.push(this.InterferenceType != null ? BaseIfc.toStepValue(this.InterferenceType) : "$");
-		parameters.push(this.ImpliedOrder != null ? BaseIfc.toStepValue(this.ImpliedOrder) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingElement))
+		parameters.push(BaseIfc.toStepValue(this.RelatedElement))
+		parameters.push(BaseIfc.toStepValue(this.InterferenceGeometry))
+		parameters.push(BaseIfc.toStepValue(this.InterferenceType))
+		parameters.push(BaseIfc.toStepValue(this.ImpliedOrder))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

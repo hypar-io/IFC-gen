@@ -30,19 +30,19 @@ export class IfcObjective extends IfcConstraint {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(BaseIfc.toStepValue(this.ConstraintGrade));
-		parameters.push(this.ConstraintSource != null ? BaseIfc.toStepValue(this.ConstraintSource) : "$");
-		parameters.push(this.CreatingActor != null ? BaseIfc.toStepValue(this.CreatingActor) : "$");
-		parameters.push(this.CreationTime != null ? BaseIfc.toStepValue(this.CreationTime) : "$");
-		parameters.push(this.UserDefinedGrade != null ? BaseIfc.toStepValue(this.UserDefinedGrade) : "$");
-		parameters.push(this.BenchmarkValues != null ? BaseIfc.toStepValue(this.BenchmarkValues) : "$");
-		parameters.push(BaseIfc.toStepValue(this.LogicalAggregator));
-		parameters.push(BaseIfc.toStepValue(this.ObjectiveQualifier));
-		parameters.push(this.UserDefinedQualifier != null ? BaseIfc.toStepValue(this.UserDefinedQualifier) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ConstraintGrade))
+		parameters.push(BaseIfc.toStepValue(this.ConstraintSource))
+		parameters.push(BaseIfc.toStepValue(this.CreatingActor))
+		parameters.push(BaseIfc.toStepValue(this.CreationTime))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedGrade))
+		parameters.push(BaseIfc.toStepValue(this.BenchmarkValues))
+		parameters.push(BaseIfc.toStepValue(this.LogicalAggregator))
+		parameters.push(BaseIfc.toStepValue(this.ObjectiveQualifier))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedQualifier))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

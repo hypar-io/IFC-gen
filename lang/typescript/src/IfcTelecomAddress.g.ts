@@ -28,17 +28,17 @@ export class IfcTelecomAddress extends IfcAddress {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.Purpose));
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.UserDefinedPurpose != null ? BaseIfc.toStepValue(this.UserDefinedPurpose) : "$");
-		parameters.push(this.TelephoneNumbers != null ? BaseIfc.toStepValue(this.TelephoneNumbers) : "$");
-		parameters.push(this.FacsimileNumbers != null ? BaseIfc.toStepValue(this.FacsimileNumbers) : "$");
-		parameters.push(this.PagerNumber != null ? BaseIfc.toStepValue(this.PagerNumber) : "$");
-		parameters.push(this.ElectronicMailAddresses != null ? BaseIfc.toStepValue(this.ElectronicMailAddresses) : "$");
-		parameters.push(this.WWWHomePageURL != null ? BaseIfc.toStepValue(this.WWWHomePageURL) : "$");
-		parameters.push(this.MessagingIDs != null ? BaseIfc.toStepValue(this.MessagingIDs) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Purpose))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedPurpose))
+		parameters.push(BaseIfc.toStepValue(this.TelephoneNumbers))
+		parameters.push(BaseIfc.toStepValue(this.FacsimileNumbers))
+		parameters.push(BaseIfc.toStepValue(this.PagerNumber))
+		parameters.push(BaseIfc.toStepValue(this.ElectronicMailAddresses))
+		parameters.push(BaseIfc.toStepValue(this.WWWHomePageURL))
+		parameters.push(BaseIfc.toStepValue(this.MessagingIDs))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

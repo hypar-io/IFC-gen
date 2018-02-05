@@ -31,17 +31,17 @@ export class IfcLightSourcePositional extends IfcLightSource {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.LightColour != null ? BaseIfc.toStepValue(this.LightColour) : "$");
-		parameters.push(this.AmbientIntensity != null ? BaseIfc.toStepValue(this.AmbientIntensity) : "$");
-		parameters.push(this.Intensity != null ? BaseIfc.toStepValue(this.Intensity) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
-		parameters.push(this.ConstantAttenuation != null ? BaseIfc.toStepValue(this.ConstantAttenuation) : "$");
-		parameters.push(this.DistanceAttenuation != null ? BaseIfc.toStepValue(this.DistanceAttenuation) : "$");
-		parameters.push(this.QuadricAttenuation != null ? BaseIfc.toStepValue(this.QuadricAttenuation) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.LightColour))
+		parameters.push(BaseIfc.toStepValue(this.AmbientIntensity))
+		parameters.push(BaseIfc.toStepValue(this.Intensity))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.Radius))
+		parameters.push(BaseIfc.toStepValue(this.ConstantAttenuation))
+		parameters.push(BaseIfc.toStepValue(this.DistanceAttenuation))
+		parameters.push(BaseIfc.toStepValue(this.QuadricAttenuation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

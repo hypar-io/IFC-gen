@@ -22,11 +22,11 @@ export class IfcCurveStyleFontAndScaling extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.CurveFont != null ? BaseIfc.toStepValue(this.CurveFont) : "$");
-		parameters.push(this.CurveFontScaling != null ? BaseIfc.toStepValue(this.CurveFontScaling) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.CurveFont))
+		parameters.push(BaseIfc.toStepValue(this.CurveFontScaling))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -22,13 +22,13 @@ export class IfcLagTime extends IfcSchedulingTime {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(BaseIfc.toStepValue(this.DataOrigin));
-		parameters.push(this.UserDefinedDataOrigin != null ? BaseIfc.toStepValue(this.UserDefinedDataOrigin) : "$");
-		parameters.push(this.LagValue != null ? BaseIfc.toStepValue(this.LagValue) : "$");
-		parameters.push(BaseIfc.toStepValue(this.DurationType));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.DataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedDataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.LagValue))
+		parameters.push(BaseIfc.toStepValue(this.DurationType))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

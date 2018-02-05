@@ -31,13 +31,13 @@ export class IfcTrimmedCurve extends IfcBoundedCurve {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.BasisCurve != null ? BaseIfc.toStepValue(this.BasisCurve) : "$");
-		parameters.push(this.Trim1 != null ? BaseIfc.toStepValue(this.Trim1) : "$");
-		parameters.push(this.Trim2 != null ? BaseIfc.toStepValue(this.Trim2) : "$");
-		parameters.push(this.SenseAgreement != null ? BaseIfc.toStepValue(this.SenseAgreement) : "$");
-		parameters.push(this.MasterRepresentation != null ? BaseIfc.toStepValue(this.MasterRepresentation) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.BasisCurve))
+		parameters.push(BaseIfc.toStepValue(this.Trim1))
+		parameters.push(BaseIfc.toStepValue(this.Trim2))
+		parameters.push(BaseIfc.toStepValue(this.SenseAgreement))
+		parameters.push(BaseIfc.toStepValue(this.MasterRepresentation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

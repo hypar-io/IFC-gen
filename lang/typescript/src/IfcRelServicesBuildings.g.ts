@@ -23,14 +23,14 @@ export class IfcRelServicesBuildings extends IfcRelConnects {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingSystem != null ? BaseIfc.toStepValue(this.RelatingSystem) : "$");
-		parameters.push(this.RelatedBuildings != null ? BaseIfc.toStepValue(this.RelatedBuildings) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingSystem))
+		parameters.push(BaseIfc.toStepValue(this.RelatedBuildings))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

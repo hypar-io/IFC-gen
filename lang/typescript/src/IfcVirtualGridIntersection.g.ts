@@ -18,10 +18,10 @@ export class IfcVirtualGridIntersection extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.IntersectingAxes != null ? BaseIfc.toStepValue(this.IntersectingAxes) : "$");
-		parameters.push(this.OffsetDistances != null ? BaseIfc.toStepValue(this.OffsetDistances) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.IntersectingAxes))
+		parameters.push(BaseIfc.toStepValue(this.OffsetDistances))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

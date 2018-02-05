@@ -26,14 +26,14 @@ export class IfcElementQuantity extends IfcQuantitySet {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.MethodOfMeasurement != null ? BaseIfc.toStepValue(this.MethodOfMeasurement) : "$");
-		parameters.push(this.Quantities != null ? BaseIfc.toStepValue(this.Quantities) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.MethodOfMeasurement))
+		parameters.push(BaseIfc.toStepValue(this.Quantities))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

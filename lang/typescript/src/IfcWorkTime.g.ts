@@ -19,14 +19,14 @@ export class IfcWorkTime extends IfcSchedulingTime {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(BaseIfc.toStepValue(this.DataOrigin));
-		parameters.push(this.UserDefinedDataOrigin != null ? BaseIfc.toStepValue(this.UserDefinedDataOrigin) : "$");
-		parameters.push(this.RecurrencePattern != null ? BaseIfc.toStepValue(this.RecurrencePattern) : "$");
-		parameters.push(this.Start != null ? BaseIfc.toStepValue(this.Start) : "$");
-		parameters.push(this.Finish != null ? BaseIfc.toStepValue(this.Finish) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.DataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedDataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.RecurrencePattern))
+		parameters.push(BaseIfc.toStepValue(this.Start))
+		parameters.push(BaseIfc.toStepValue(this.Finish))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

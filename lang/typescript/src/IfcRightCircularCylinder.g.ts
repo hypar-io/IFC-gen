@@ -22,11 +22,11 @@ export class IfcRightCircularCylinder extends IfcCsgPrimitive3D {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.Height != null ? BaseIfc.toStepValue(this.Height) : "$");
-		parameters.push(this.Radius != null ? BaseIfc.toStepValue(this.Radius) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.Height))
+		parameters.push(BaseIfc.toStepValue(this.Radius))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

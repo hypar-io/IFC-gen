@@ -20,11 +20,11 @@ export class IfcBooleanClippingResult extends IfcBooleanResult {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Operator != null ? BaseIfc.toStepValue(this.Operator) : "$");
-		parameters.push(this.FirstOperand != null ? BaseIfc.toStepValue(this.FirstOperand) : "$");
-		parameters.push(this.SecondOperand != null ? BaseIfc.toStepValue(this.SecondOperand) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Operator))
+		parameters.push(BaseIfc.toStepValue(this.FirstOperand))
+		parameters.push(BaseIfc.toStepValue(this.SecondOperand))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

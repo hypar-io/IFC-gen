@@ -31,22 +31,22 @@ export class IfcWorkSchedule extends IfcWorkControl {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.CreationDate != null ? BaseIfc.toStepValue(this.CreationDate) : "$");
-		parameters.push(this.Creators != null ? BaseIfc.toStepValue(this.Creators) : "$");
-		parameters.push(this.Purpose != null ? BaseIfc.toStepValue(this.Purpose) : "$");
-		parameters.push(this.Duration != null ? BaseIfc.toStepValue(this.Duration) : "$");
-		parameters.push(this.TotalFloat != null ? BaseIfc.toStepValue(this.TotalFloat) : "$");
-		parameters.push(this.StartTime != null ? BaseIfc.toStepValue(this.StartTime) : "$");
-		parameters.push(this.FinishTime != null ? BaseIfc.toStepValue(this.FinishTime) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.CreationDate))
+		parameters.push(BaseIfc.toStepValue(this.Creators))
+		parameters.push(BaseIfc.toStepValue(this.Purpose))
+		parameters.push(BaseIfc.toStepValue(this.Duration))
+		parameters.push(BaseIfc.toStepValue(this.TotalFloat))
+		parameters.push(BaseIfc.toStepValue(this.StartTime))
+		parameters.push(BaseIfc.toStepValue(this.FinishTime))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

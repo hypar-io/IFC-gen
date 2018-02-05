@@ -25,18 +25,18 @@ export class IfcPostalAddress extends IfcAddress {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.Purpose));
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.UserDefinedPurpose != null ? BaseIfc.toStepValue(this.UserDefinedPurpose) : "$");
-		parameters.push(this.InternalLocation != null ? BaseIfc.toStepValue(this.InternalLocation) : "$");
-		parameters.push(this.AddressLines != null ? BaseIfc.toStepValue(this.AddressLines) : "$");
-		parameters.push(this.PostalBox != null ? BaseIfc.toStepValue(this.PostalBox) : "$");
-		parameters.push(this.Town != null ? BaseIfc.toStepValue(this.Town) : "$");
-		parameters.push(this.Region != null ? BaseIfc.toStepValue(this.Region) : "$");
-		parameters.push(this.PostalCode != null ? BaseIfc.toStepValue(this.PostalCode) : "$");
-		parameters.push(this.Country != null ? BaseIfc.toStepValue(this.Country) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Purpose))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedPurpose))
+		parameters.push(BaseIfc.toStepValue(this.InternalLocation))
+		parameters.push(BaseIfc.toStepValue(this.AddressLines))
+		parameters.push(BaseIfc.toStepValue(this.PostalBox))
+		parameters.push(BaseIfc.toStepValue(this.Town))
+		parameters.push(BaseIfc.toStepValue(this.Region))
+		parameters.push(BaseIfc.toStepValue(this.PostalCode))
+		parameters.push(BaseIfc.toStepValue(this.Country))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -28,14 +28,14 @@ export class IfcReinforcementBarProperties extends IfcPreDefinedProperties {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.TotalCrossSectionArea != null ? BaseIfc.toStepValue(this.TotalCrossSectionArea) : "$");
-		parameters.push(this.SteelGrade != null ? BaseIfc.toStepValue(this.SteelGrade) : "$");
-		parameters.push(BaseIfc.toStepValue(this.BarSurface));
-		parameters.push(this.EffectiveDepth != null ? BaseIfc.toStepValue(this.EffectiveDepth) : "$");
-		parameters.push(this.NominalBarDiameter != null ? BaseIfc.toStepValue(this.NominalBarDiameter) : "$");
-		parameters.push(this.BarCount != null ? BaseIfc.toStepValue(this.BarCount) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.TotalCrossSectionArea))
+		parameters.push(BaseIfc.toStepValue(this.SteelGrade))
+		parameters.push(BaseIfc.toStepValue(this.BarSurface))
+		parameters.push(BaseIfc.toStepValue(this.EffectiveDepth))
+		parameters.push(BaseIfc.toStepValue(this.NominalBarDiameter))
+		parameters.push(BaseIfc.toStepValue(this.BarCount))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

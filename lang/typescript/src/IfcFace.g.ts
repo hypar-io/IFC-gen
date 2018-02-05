@@ -21,9 +21,9 @@ export class IfcFace extends IfcTopologicalRepresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Bounds != null ? BaseIfc.toStepValue(this.Bounds) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Bounds))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

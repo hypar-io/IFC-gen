@@ -22,12 +22,12 @@ export class IfcEdgeCurve extends IfcEdge {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.EdgeStart != null ? BaseIfc.toStepValue(this.EdgeStart) : "$");
-		parameters.push(this.EdgeEnd != null ? BaseIfc.toStepValue(this.EdgeEnd) : "$");
-		parameters.push(this.EdgeGeometry != null ? BaseIfc.toStepValue(this.EdgeGeometry) : "$");
-		parameters.push(this.SameSense != null ? BaseIfc.toStepValue(this.SameSense) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.EdgeStart))
+		parameters.push(BaseIfc.toStepValue(this.EdgeEnd))
+		parameters.push(BaseIfc.toStepValue(this.EdgeGeometry))
+		parameters.push(BaseIfc.toStepValue(this.SameSense))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

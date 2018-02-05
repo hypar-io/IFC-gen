@@ -28,12 +28,12 @@ export class IfcSurfaceOfLinearExtrusion extends IfcSweptSurface {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.SweptCurve != null ? BaseIfc.toStepValue(this.SweptCurve) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.ExtrudedDirection != null ? BaseIfc.toStepValue(this.ExtrudedDirection) : "$");
-		parameters.push(this.Depth != null ? BaseIfc.toStepValue(this.Depth) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SweptCurve))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.ExtrudedDirection))
+		parameters.push(BaseIfc.toStepValue(this.Depth))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

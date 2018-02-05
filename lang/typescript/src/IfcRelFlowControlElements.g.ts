@@ -23,14 +23,14 @@ export class IfcRelFlowControlElements extends IfcRelConnects {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatedControlElements != null ? BaseIfc.toStepValue(this.RelatedControlElements) : "$");
-		parameters.push(this.RelatingFlowElement != null ? BaseIfc.toStepValue(this.RelatingFlowElement) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatedControlElements))
+		parameters.push(BaseIfc.toStepValue(this.RelatingFlowElement))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

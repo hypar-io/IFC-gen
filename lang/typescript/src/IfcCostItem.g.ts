@@ -34,17 +34,17 @@ export class IfcCostItem extends IfcControl {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
-		parameters.push(this.CostValues != null ? BaseIfc.toStepValue(this.CostValues) : "$");
-		parameters.push(this.CostQuantities != null ? BaseIfc.toStepValue(this.CostQuantities) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
+		parameters.push(BaseIfc.toStepValue(this.CostValues))
+		parameters.push(BaseIfc.toStepValue(this.CostQuantities))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

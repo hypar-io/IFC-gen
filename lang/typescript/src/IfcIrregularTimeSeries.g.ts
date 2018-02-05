@@ -25,17 +25,17 @@ export class IfcIrregularTimeSeries extends IfcTimeSeries {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.StartTime != null ? BaseIfc.toStepValue(this.StartTime) : "$");
-		parameters.push(this.EndTime != null ? BaseIfc.toStepValue(this.EndTime) : "$");
-		parameters.push(BaseIfc.toStepValue(this.TimeSeriesDataType));
-		parameters.push(BaseIfc.toStepValue(this.DataOrigin));
-		parameters.push(this.UserDefinedDataOrigin != null ? BaseIfc.toStepValue(this.UserDefinedDataOrigin) : "$");
-		parameters.push(this.Unit != null ? BaseIfc.toStepValue(this.Unit) : "$");
-		parameters.push(this.Values != null ? BaseIfc.toStepValue(this.Values) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.StartTime))
+		parameters.push(BaseIfc.toStepValue(this.EndTime))
+		parameters.push(BaseIfc.toStepValue(this.TimeSeriesDataType))
+		parameters.push(BaseIfc.toStepValue(this.DataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedDataOrigin))
+		parameters.push(BaseIfc.toStepValue(this.Unit))
+		parameters.push(BaseIfc.toStepValue(this.Values))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

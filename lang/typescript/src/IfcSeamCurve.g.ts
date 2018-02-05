@@ -19,11 +19,11 @@ export class IfcSeamCurve extends IfcSurfaceCurve {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Curve3D != null ? BaseIfc.toStepValue(this.Curve3D) : "$");
-		parameters.push(this.AssociatedGeometry != null ? BaseIfc.toStepValue(this.AssociatedGeometry) : "$");
-		parameters.push(this.MasterRepresentation != null ? BaseIfc.toStepValue(this.MasterRepresentation) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Curve3D))
+		parameters.push(BaseIfc.toStepValue(this.AssociatedGeometry))
+		parameters.push(BaseIfc.toStepValue(this.MasterRepresentation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -26,19 +26,19 @@ export class IfcRelConnectsWithEccentricity extends IfcRelConnectsStructuralMemb
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingStructuralMember != null ? BaseIfc.toStepValue(this.RelatingStructuralMember) : "$");
-		parameters.push(this.RelatedStructuralConnection != null ? BaseIfc.toStepValue(this.RelatedStructuralConnection) : "$");
-		parameters.push(this.AppliedCondition != null ? BaseIfc.toStepValue(this.AppliedCondition) : "$");
-		parameters.push(this.AdditionalConditions != null ? BaseIfc.toStepValue(this.AdditionalConditions) : "$");
-		parameters.push(this.SupportedLength != null ? BaseIfc.toStepValue(this.SupportedLength) : "$");
-		parameters.push(this.ConditionCoordinateSystem != null ? BaseIfc.toStepValue(this.ConditionCoordinateSystem) : "$");
-		parameters.push(this.ConnectionConstraint != null ? BaseIfc.toStepValue(this.ConnectionConstraint) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingStructuralMember))
+		parameters.push(BaseIfc.toStepValue(this.RelatedStructuralConnection))
+		parameters.push(BaseIfc.toStepValue(this.AppliedCondition))
+		parameters.push(BaseIfc.toStepValue(this.AdditionalConditions))
+		parameters.push(BaseIfc.toStepValue(this.SupportedLength))
+		parameters.push(BaseIfc.toStepValue(this.ConditionCoordinateSystem))
+		parameters.push(BaseIfc.toStepValue(this.ConnectionConstraint))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

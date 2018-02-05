@@ -24,12 +24,12 @@ export class IfcConversionBasedUnit extends IfcNamedUnit {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Dimensions != null ? BaseIfc.toStepValue(this.Dimensions) : "$");
-		parameters.push(BaseIfc.toStepValue(this.UnitType));
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.ConversionFactor != null ? BaseIfc.toStepValue(this.ConversionFactor) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Dimensions))
+		parameters.push(BaseIfc.toStepValue(this.UnitType))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.ConversionFactor))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

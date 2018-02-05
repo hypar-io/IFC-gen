@@ -35,18 +35,18 @@ export class IfcLightSourceGoniometric extends IfcLightSource {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.LightColour != null ? BaseIfc.toStepValue(this.LightColour) : "$");
-		parameters.push(this.AmbientIntensity != null ? BaseIfc.toStepValue(this.AmbientIntensity) : "$");
-		parameters.push(this.Intensity != null ? BaseIfc.toStepValue(this.Intensity) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.ColourAppearance != null ? BaseIfc.toStepValue(this.ColourAppearance) : "$");
-		parameters.push(this.ColourTemperature != null ? BaseIfc.toStepValue(this.ColourTemperature) : "$");
-		parameters.push(this.LuminousFlux != null ? BaseIfc.toStepValue(this.LuminousFlux) : "$");
-		parameters.push(BaseIfc.toStepValue(this.LightEmissionSource));
-		parameters.push(this.LightDistributionDataSource != null ? BaseIfc.toStepValue(this.LightDistributionDataSource) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.LightColour))
+		parameters.push(BaseIfc.toStepValue(this.AmbientIntensity))
+		parameters.push(BaseIfc.toStepValue(this.Intensity))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.ColourAppearance))
+		parameters.push(BaseIfc.toStepValue(this.ColourTemperature))
+		parameters.push(BaseIfc.toStepValue(this.LuminousFlux))
+		parameters.push(BaseIfc.toStepValue(this.LightEmissionSource))
+		parameters.push(BaseIfc.toStepValue(this.LightDistributionDataSource))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

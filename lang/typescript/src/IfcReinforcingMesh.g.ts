@@ -50,26 +50,26 @@ export class IfcReinforcingMesh extends IfcReinforcingElement {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
-		parameters.push(this.SteelGrade != null ? BaseIfc.toStepValue(this.SteelGrade) : "$");
-		parameters.push(this.MeshLength != null ? BaseIfc.toStepValue(this.MeshLength) : "$");
-		parameters.push(this.MeshWidth != null ? BaseIfc.toStepValue(this.MeshWidth) : "$");
-		parameters.push(this.LongitudinalBarNominalDiameter != null ? BaseIfc.toStepValue(this.LongitudinalBarNominalDiameter) : "$");
-		parameters.push(this.TransverseBarNominalDiameter != null ? BaseIfc.toStepValue(this.TransverseBarNominalDiameter) : "$");
-		parameters.push(this.LongitudinalBarCrossSectionArea != null ? BaseIfc.toStepValue(this.LongitudinalBarCrossSectionArea) : "$");
-		parameters.push(this.TransverseBarCrossSectionArea != null ? BaseIfc.toStepValue(this.TransverseBarCrossSectionArea) : "$");
-		parameters.push(this.LongitudinalBarSpacing != null ? BaseIfc.toStepValue(this.LongitudinalBarSpacing) : "$");
-		parameters.push(this.TransverseBarSpacing != null ? BaseIfc.toStepValue(this.TransverseBarSpacing) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.ObjectPlacement))
+		parameters.push(BaseIfc.toStepValue(this.Representation))
+		parameters.push(BaseIfc.toStepValue(this.Tag))
+		parameters.push(BaseIfc.toStepValue(this.SteelGrade))
+		parameters.push(BaseIfc.toStepValue(this.MeshLength))
+		parameters.push(BaseIfc.toStepValue(this.MeshWidth))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalBarNominalDiameter))
+		parameters.push(BaseIfc.toStepValue(this.TransverseBarNominalDiameter))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalBarCrossSectionArea))
+		parameters.push(BaseIfc.toStepValue(this.TransverseBarCrossSectionArea))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalBarSpacing))
+		parameters.push(BaseIfc.toStepValue(this.TransverseBarSpacing))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

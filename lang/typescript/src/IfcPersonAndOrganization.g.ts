@@ -21,11 +21,11 @@ export class IfcPersonAndOrganization extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ThePerson != null ? BaseIfc.toStepValue(this.ThePerson) : "$");
-		parameters.push(this.TheOrganization != null ? BaseIfc.toStepValue(this.TheOrganization) : "$");
-		parameters.push(this.Roles != null ? BaseIfc.toStepValue(this.Roles) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ThePerson))
+		parameters.push(BaseIfc.toStepValue(this.TheOrganization))
+		parameters.push(BaseIfc.toStepValue(this.Roles))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

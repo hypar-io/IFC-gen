@@ -18,10 +18,10 @@ export class IfcCurveStyleFont extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.PatternList != null ? BaseIfc.toStepValue(this.PatternList) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.PatternList))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

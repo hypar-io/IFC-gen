@@ -33,18 +33,18 @@ export class IfcBuildingStorey extends IfcSpatialStructureElement {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
-		parameters.push(this.LongName != null ? BaseIfc.toStepValue(this.LongName) : "$");
-		parameters.push(BaseIfc.toStepValue(this.CompositionType));
-		parameters.push(this.Elevation != null ? BaseIfc.toStepValue(this.Elevation) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.ObjectPlacement))
+		parameters.push(BaseIfc.toStepValue(this.Representation))
+		parameters.push(BaseIfc.toStepValue(this.LongName))
+		parameters.push(BaseIfc.toStepValue(this.CompositionType))
+		parameters.push(BaseIfc.toStepValue(this.Elevation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

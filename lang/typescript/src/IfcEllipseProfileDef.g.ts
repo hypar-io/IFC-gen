@@ -23,13 +23,13 @@ export class IfcEllipseProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.SemiAxis1 != null ? BaseIfc.toStepValue(this.SemiAxis1) : "$");
-		parameters.push(this.SemiAxis2 != null ? BaseIfc.toStepValue(this.SemiAxis2) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.SemiAxis1))
+		parameters.push(BaseIfc.toStepValue(this.SemiAxis2))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

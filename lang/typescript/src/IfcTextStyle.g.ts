@@ -24,13 +24,13 @@ export class IfcTextStyle extends IfcPresentationStyle {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.TextCharacterAppearance != null ? BaseIfc.toStepValue(this.TextCharacterAppearance) : "$");
-		parameters.push(this.TextStyle != null ? BaseIfc.toStepValue(this.TextStyle) : "$");
-		parameters.push(this.TextFontStyle != null ? BaseIfc.toStepValue(this.TextFontStyle) : "$");
-		parameters.push(this.ModelOrDraughting != null ? BaseIfc.toStepValue(this.ModelOrDraughting) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.TextCharacterAppearance))
+		parameters.push(BaseIfc.toStepValue(this.TextStyle))
+		parameters.push(BaseIfc.toStepValue(this.TextFontStyle))
+		parameters.push(BaseIfc.toStepValue(this.ModelOrDraughting))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -33,13 +33,13 @@ export class IfcTriangulatedFaceSet extends IfcTessellatedFaceSet {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Coordinates != null ? BaseIfc.toStepValue(this.Coordinates) : "$");
-		parameters.push(this.Normals != null ? BaseIfc.toStepValue(this.Normals) : "$");
-		parameters.push(this.Closed != null ? BaseIfc.toStepValue(this.Closed) : "$");
-		parameters.push(this.CoordIndex != null ? BaseIfc.toStepValue(this.CoordIndex) : "$");
-		parameters.push(this.PnIndex != null ? BaseIfc.toStepValue(this.PnIndex) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Coordinates))
+		parameters.push(BaseIfc.toStepValue(this.Normals))
+		parameters.push(BaseIfc.toStepValue(this.Closed))
+		parameters.push(BaseIfc.toStepValue(this.CoordIndex))
+		parameters.push(BaseIfc.toStepValue(this.PnIndex))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -24,16 +24,16 @@ export class IfcRectangleHollowProfileDef extends IfcRectangleProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.XDim != null ? BaseIfc.toStepValue(this.XDim) : "$");
-		parameters.push(this.YDim != null ? BaseIfc.toStepValue(this.YDim) : "$");
-		parameters.push(this.WallThickness != null ? BaseIfc.toStepValue(this.WallThickness) : "$");
-		parameters.push(this.InnerFilletRadius != null ? BaseIfc.toStepValue(this.InnerFilletRadius) : "$");
-		parameters.push(this.OuterFilletRadius != null ? BaseIfc.toStepValue(this.OuterFilletRadius) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.XDim))
+		parameters.push(BaseIfc.toStepValue(this.YDim))
+		parameters.push(BaseIfc.toStepValue(this.WallThickness))
+		parameters.push(BaseIfc.toStepValue(this.InnerFilletRadius))
+		parameters.push(BaseIfc.toStepValue(this.OuterFilletRadius))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

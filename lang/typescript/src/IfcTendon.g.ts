@@ -52,25 +52,25 @@ export class IfcTendon extends IfcReinforcingElement {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.ObjectPlacement != null ? BaseIfc.toStepValue(this.ObjectPlacement) : "$");
-		parameters.push(this.Representation != null ? BaseIfc.toStepValue(this.Representation) : "$");
-		parameters.push(this.Tag != null ? BaseIfc.toStepValue(this.Tag) : "$");
-		parameters.push(this.SteelGrade != null ? BaseIfc.toStepValue(this.SteelGrade) : "$");
-		parameters.push(BaseIfc.toStepValue(this.PredefinedType));
-		parameters.push(this.NominalDiameter != null ? BaseIfc.toStepValue(this.NominalDiameter) : "$");
-		parameters.push(this.CrossSectionArea != null ? BaseIfc.toStepValue(this.CrossSectionArea) : "$");
-		parameters.push(this.TensionForce != null ? BaseIfc.toStepValue(this.TensionForce) : "$");
-		parameters.push(this.PreStress != null ? BaseIfc.toStepValue(this.PreStress) : "$");
-		parameters.push(this.FrictionCoefficient != null ? BaseIfc.toStepValue(this.FrictionCoefficient) : "$");
-		parameters.push(this.AnchorageSlip != null ? BaseIfc.toStepValue(this.AnchorageSlip) : "$");
-		parameters.push(this.MinCurvatureRadius != null ? BaseIfc.toStepValue(this.MinCurvatureRadius) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.ObjectPlacement))
+		parameters.push(BaseIfc.toStepValue(this.Representation))
+		parameters.push(BaseIfc.toStepValue(this.Tag))
+		parameters.push(BaseIfc.toStepValue(this.SteelGrade))
+		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
+		parameters.push(BaseIfc.toStepValue(this.NominalDiameter))
+		parameters.push(BaseIfc.toStepValue(this.CrossSectionArea))
+		parameters.push(BaseIfc.toStepValue(this.TensionForce))
+		parameters.push(BaseIfc.toStepValue(this.PreStress))
+		parameters.push(BaseIfc.toStepValue(this.FrictionCoefficient))
+		parameters.push(BaseIfc.toStepValue(this.AnchorageSlip))
+		parameters.push(BaseIfc.toStepValue(this.MinCurvatureRadius))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

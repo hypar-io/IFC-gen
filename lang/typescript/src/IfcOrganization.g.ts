@@ -33,13 +33,13 @@ export class IfcOrganization extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Identification != null ? BaseIfc.toStepValue(this.Identification) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.Roles != null ? BaseIfc.toStepValue(this.Roles) : "$");
-		parameters.push(this.Addresses != null ? BaseIfc.toStepValue(this.Addresses) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Identification))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.Roles))
+		parameters.push(BaseIfc.toStepValue(this.Addresses))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

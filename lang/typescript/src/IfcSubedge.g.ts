@@ -18,11 +18,11 @@ export class IfcSubedge extends IfcEdge {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.EdgeStart != null ? BaseIfc.toStepValue(this.EdgeStart) : "$");
-		parameters.push(this.EdgeEnd != null ? BaseIfc.toStepValue(this.EdgeEnd) : "$");
-		parameters.push(this.ParentEdge != null ? BaseIfc.toStepValue(this.ParentEdge) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.EdgeStart))
+		parameters.push(BaseIfc.toStepValue(this.EdgeEnd))
+		parameters.push(BaseIfc.toStepValue(this.ParentEdge))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

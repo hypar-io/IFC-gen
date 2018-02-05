@@ -24,17 +24,17 @@ export class IfcProject extends IfcContext {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ObjectType != null ? BaseIfc.toStepValue(this.ObjectType) : "$");
-		parameters.push(this.LongName != null ? BaseIfc.toStepValue(this.LongName) : "$");
-		parameters.push(this.Phase != null ? BaseIfc.toStepValue(this.Phase) : "$");
-		parameters.push(this.RepresentationContexts != null ? BaseIfc.toStepValue(this.RepresentationContexts) : "$");
-		parameters.push(this.UnitsInContext != null ? BaseIfc.toStepValue(this.UnitsInContext) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ObjectType))
+		parameters.push(BaseIfc.toStepValue(this.LongName))
+		parameters.push(BaseIfc.toStepValue(this.Phase))
+		parameters.push(BaseIfc.toStepValue(this.RepresentationContexts))
+		parameters.push(BaseIfc.toStepValue(this.UnitsInContext))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

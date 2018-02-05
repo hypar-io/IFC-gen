@@ -17,12 +17,12 @@ export class IfcStructuralLoadPlanarForce extends IfcStructuralLoadStatic {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.PlanarForceX != null ? BaseIfc.toStepValue(this.PlanarForceX) : "$");
-		parameters.push(this.PlanarForceY != null ? BaseIfc.toStepValue(this.PlanarForceY) : "$");
-		parameters.push(this.PlanarForceZ != null ? BaseIfc.toStepValue(this.PlanarForceZ) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.PlanarForceX))
+		parameters.push(BaseIfc.toStepValue(this.PlanarForceY))
+		parameters.push(BaseIfc.toStepValue(this.PlanarForceZ))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

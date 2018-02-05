@@ -20,12 +20,12 @@ export class IfcCompositeProfileDef extends IfcProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Profiles != null ? BaseIfc.toStepValue(this.Profiles) : "$");
-		parameters.push(this.Label != null ? BaseIfc.toStepValue(this.Label) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Profiles))
+		parameters.push(BaseIfc.toStepValue(this.Label))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

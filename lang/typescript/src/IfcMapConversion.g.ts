@@ -26,16 +26,16 @@ export class IfcMapConversion extends IfcCoordinateOperation {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.SourceCRS != null ? BaseIfc.toStepValue(this.SourceCRS) : "$");
-		parameters.push(this.TargetCRS != null ? BaseIfc.toStepValue(this.TargetCRS) : "$");
-		parameters.push(this.Eastings != null ? BaseIfc.toStepValue(this.Eastings) : "$");
-		parameters.push(this.Northings != null ? BaseIfc.toStepValue(this.Northings) : "$");
-		parameters.push(this.OrthogonalHeight != null ? BaseIfc.toStepValue(this.OrthogonalHeight) : "$");
-		parameters.push(this.XAxisAbscissa != null ? BaseIfc.toStepValue(this.XAxisAbscissa) : "$");
-		parameters.push(this.XAxisOrdinate != null ? BaseIfc.toStepValue(this.XAxisOrdinate) : "$");
-		parameters.push(this.Scale != null ? BaseIfc.toStepValue(this.Scale) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.SourceCRS))
+		parameters.push(BaseIfc.toStepValue(this.TargetCRS))
+		parameters.push(BaseIfc.toStepValue(this.Eastings))
+		parameters.push(BaseIfc.toStepValue(this.Northings))
+		parameters.push(BaseIfc.toStepValue(this.OrthogonalHeight))
+		parameters.push(BaseIfc.toStepValue(this.XAxisAbscissa))
+		parameters.push(BaseIfc.toStepValue(this.XAxisOrdinate))
+		parameters.push(BaseIfc.toStepValue(this.Scale))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

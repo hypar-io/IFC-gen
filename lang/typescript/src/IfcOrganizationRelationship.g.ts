@@ -20,12 +20,12 @@ export class IfcOrganizationRelationship extends IfcResourceLevelRelationship {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingOrganization != null ? BaseIfc.toStepValue(this.RelatingOrganization) : "$");
-		parameters.push(this.RelatedOrganizations != null ? BaseIfc.toStepValue(this.RelatedOrganizations) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingOrganization))
+		parameters.push(BaseIfc.toStepValue(this.RelatedOrganizations))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

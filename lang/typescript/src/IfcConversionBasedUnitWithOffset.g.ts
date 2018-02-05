@@ -21,13 +21,13 @@ export class IfcConversionBasedUnitWithOffset extends IfcConversionBasedUnit {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Dimensions != null ? BaseIfc.toStepValue(this.Dimensions) : "$");
-		parameters.push(BaseIfc.toStepValue(this.UnitType));
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.ConversionFactor != null ? BaseIfc.toStepValue(this.ConversionFactor) : "$");
-		parameters.push(this.ConversionOffset != null ? BaseIfc.toStepValue(this.ConversionOffset) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Dimensions))
+		parameters.push(BaseIfc.toStepValue(this.UnitType))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.ConversionFactor))
+		parameters.push(BaseIfc.toStepValue(this.ConversionOffset))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -31,14 +31,14 @@ export class IfcTextStyleFontModel extends IfcPreDefinedTextFont {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.FontFamily != null ? BaseIfc.toStepValue(this.FontFamily) : "$");
-		parameters.push(this.FontStyle != null ? BaseIfc.toStepValue(this.FontStyle) : "$");
-		parameters.push(this.FontVariant != null ? BaseIfc.toStepValue(this.FontVariant) : "$");
-		parameters.push(this.FontWeight != null ? BaseIfc.toStepValue(this.FontWeight) : "$");
-		parameters.push(this.FontSize != null ? BaseIfc.toStepValue(this.FontSize) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.FontFamily))
+		parameters.push(BaseIfc.toStepValue(this.FontStyle))
+		parameters.push(BaseIfc.toStepValue(this.FontVariant))
+		parameters.push(BaseIfc.toStepValue(this.FontWeight))
+		parameters.push(BaseIfc.toStepValue(this.FontSize))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

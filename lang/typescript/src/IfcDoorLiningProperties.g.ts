@@ -38,25 +38,25 @@ export class IfcDoorLiningProperties extends IfcPreDefinedPropertySet {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.LiningDepth != null ? BaseIfc.toStepValue(this.LiningDepth) : "$");
-		parameters.push(this.LiningThickness != null ? BaseIfc.toStepValue(this.LiningThickness) : "$");
-		parameters.push(this.ThresholdDepth != null ? BaseIfc.toStepValue(this.ThresholdDepth) : "$");
-		parameters.push(this.ThresholdThickness != null ? BaseIfc.toStepValue(this.ThresholdThickness) : "$");
-		parameters.push(this.TransomThickness != null ? BaseIfc.toStepValue(this.TransomThickness) : "$");
-		parameters.push(this.TransomOffset != null ? BaseIfc.toStepValue(this.TransomOffset) : "$");
-		parameters.push(this.LiningOffset != null ? BaseIfc.toStepValue(this.LiningOffset) : "$");
-		parameters.push(this.ThresholdOffset != null ? BaseIfc.toStepValue(this.ThresholdOffset) : "$");
-		parameters.push(this.CasingThickness != null ? BaseIfc.toStepValue(this.CasingThickness) : "$");
-		parameters.push(this.CasingDepth != null ? BaseIfc.toStepValue(this.CasingDepth) : "$");
-		parameters.push(this.ShapeAspectStyle != null ? BaseIfc.toStepValue(this.ShapeAspectStyle) : "$");
-		parameters.push(this.LiningToPanelOffsetX != null ? BaseIfc.toStepValue(this.LiningToPanelOffsetX) : "$");
-		parameters.push(this.LiningToPanelOffsetY != null ? BaseIfc.toStepValue(this.LiningToPanelOffsetY) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.LiningDepth))
+		parameters.push(BaseIfc.toStepValue(this.LiningThickness))
+		parameters.push(BaseIfc.toStepValue(this.ThresholdDepth))
+		parameters.push(BaseIfc.toStepValue(this.ThresholdThickness))
+		parameters.push(BaseIfc.toStepValue(this.TransomThickness))
+		parameters.push(BaseIfc.toStepValue(this.TransomOffset))
+		parameters.push(BaseIfc.toStepValue(this.LiningOffset))
+		parameters.push(BaseIfc.toStepValue(this.ThresholdOffset))
+		parameters.push(BaseIfc.toStepValue(this.CasingThickness))
+		parameters.push(BaseIfc.toStepValue(this.CasingDepth))
+		parameters.push(BaseIfc.toStepValue(this.ShapeAspectStyle))
+		parameters.push(BaseIfc.toStepValue(this.LiningToPanelOffsetX))
+		parameters.push(BaseIfc.toStepValue(this.LiningToPanelOffsetY))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

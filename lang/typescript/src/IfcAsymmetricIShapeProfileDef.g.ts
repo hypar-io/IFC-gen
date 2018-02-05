@@ -38,23 +38,23 @@ export class IfcAsymmetricIShapeProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.ProfileType));
-		parameters.push(this.ProfileName != null ? BaseIfc.toStepValue(this.ProfileName) : "$");
-		parameters.push(this.Position != null ? BaseIfc.toStepValue(this.Position) : "$");
-		parameters.push(this.BottomFlangeWidth != null ? BaseIfc.toStepValue(this.BottomFlangeWidth) : "$");
-		parameters.push(this.OverallDepth != null ? BaseIfc.toStepValue(this.OverallDepth) : "$");
-		parameters.push(this.WebThickness != null ? BaseIfc.toStepValue(this.WebThickness) : "$");
-		parameters.push(this.BottomFlangeThickness != null ? BaseIfc.toStepValue(this.BottomFlangeThickness) : "$");
-		parameters.push(this.BottomFlangeFilletRadius != null ? BaseIfc.toStepValue(this.BottomFlangeFilletRadius) : "$");
-		parameters.push(this.TopFlangeWidth != null ? BaseIfc.toStepValue(this.TopFlangeWidth) : "$");
-		parameters.push(this.TopFlangeThickness != null ? BaseIfc.toStepValue(this.TopFlangeThickness) : "$");
-		parameters.push(this.TopFlangeFilletRadius != null ? BaseIfc.toStepValue(this.TopFlangeFilletRadius) : "$");
-		parameters.push(this.BottomFlangeEdgeRadius != null ? BaseIfc.toStepValue(this.BottomFlangeEdgeRadius) : "$");
-		parameters.push(this.BottomFlangeSlope != null ? BaseIfc.toStepValue(this.BottomFlangeSlope) : "$");
-		parameters.push(this.TopFlangeEdgeRadius != null ? BaseIfc.toStepValue(this.TopFlangeEdgeRadius) : "$");
-		parameters.push(this.TopFlangeSlope != null ? BaseIfc.toStepValue(this.TopFlangeSlope) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+		parameters.push(BaseIfc.toStepValue(this.ProfileName))
+		parameters.push(BaseIfc.toStepValue(this.Position))
+		parameters.push(BaseIfc.toStepValue(this.BottomFlangeWidth))
+		parameters.push(BaseIfc.toStepValue(this.OverallDepth))
+		parameters.push(BaseIfc.toStepValue(this.WebThickness))
+		parameters.push(BaseIfc.toStepValue(this.BottomFlangeThickness))
+		parameters.push(BaseIfc.toStepValue(this.BottomFlangeFilletRadius))
+		parameters.push(BaseIfc.toStepValue(this.TopFlangeWidth))
+		parameters.push(BaseIfc.toStepValue(this.TopFlangeThickness))
+		parameters.push(BaseIfc.toStepValue(this.TopFlangeFilletRadius))
+		parameters.push(BaseIfc.toStepValue(this.BottomFlangeEdgeRadius))
+		parameters.push(BaseIfc.toStepValue(this.BottomFlangeSlope))
+		parameters.push(BaseIfc.toStepValue(this.TopFlangeEdgeRadius))
+		parameters.push(BaseIfc.toStepValue(this.TopFlangeSlope))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

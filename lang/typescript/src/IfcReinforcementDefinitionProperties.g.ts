@@ -26,14 +26,14 @@ export class IfcReinforcementDefinitionProperties extends IfcPreDefinedPropertyS
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.DefinitionType != null ? BaseIfc.toStepValue(this.DefinitionType) : "$");
-		parameters.push(this.ReinforcementSectionDefinitions != null ? BaseIfc.toStepValue(this.ReinforcementSectionDefinitions) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.DefinitionType))
+		parameters.push(BaseIfc.toStepValue(this.ReinforcementSectionDefinitions))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

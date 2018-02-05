@@ -29,14 +29,14 @@ export class IfcSectionReinforcementProperties extends IfcPreDefinedProperties {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.LongitudinalStartPosition != null ? BaseIfc.toStepValue(this.LongitudinalStartPosition) : "$");
-		parameters.push(this.LongitudinalEndPosition != null ? BaseIfc.toStepValue(this.LongitudinalEndPosition) : "$");
-		parameters.push(this.TransversePosition != null ? BaseIfc.toStepValue(this.TransversePosition) : "$");
-		parameters.push(BaseIfc.toStepValue(this.ReinforcementRole));
-		parameters.push(this.SectionDefinition != null ? BaseIfc.toStepValue(this.SectionDefinition) : "$");
-		parameters.push(this.CrossSectionReinforcementDefinitions != null ? BaseIfc.toStepValue(this.CrossSectionReinforcementDefinitions) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.LongitudinalStartPosition))
+		parameters.push(BaseIfc.toStepValue(this.LongitudinalEndPosition))
+		parameters.push(BaseIfc.toStepValue(this.TransversePosition))
+		parameters.push(BaseIfc.toStepValue(this.ReinforcementRole))
+		parameters.push(BaseIfc.toStepValue(this.SectionDefinition))
+		parameters.push(BaseIfc.toStepValue(this.CrossSectionReinforcementDefinitions))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -17,16 +17,16 @@ export class IfcStructuralLoadSingleDisplacementDistortion extends IfcStructural
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.DisplacementX != null ? BaseIfc.toStepValue(this.DisplacementX) : "$");
-		parameters.push(this.DisplacementY != null ? BaseIfc.toStepValue(this.DisplacementY) : "$");
-		parameters.push(this.DisplacementZ != null ? BaseIfc.toStepValue(this.DisplacementZ) : "$");
-		parameters.push(this.RotationalDisplacementRX != null ? BaseIfc.toStepValue(this.RotationalDisplacementRX) : "$");
-		parameters.push(this.RotationalDisplacementRY != null ? BaseIfc.toStepValue(this.RotationalDisplacementRY) : "$");
-		parameters.push(this.RotationalDisplacementRZ != null ? BaseIfc.toStepValue(this.RotationalDisplacementRZ) : "$");
-		parameters.push(this.Distortion != null ? BaseIfc.toStepValue(this.Distortion) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.DisplacementX))
+		parameters.push(BaseIfc.toStepValue(this.DisplacementY))
+		parameters.push(BaseIfc.toStepValue(this.DisplacementZ))
+		parameters.push(BaseIfc.toStepValue(this.RotationalDisplacementRX))
+		parameters.push(BaseIfc.toStepValue(this.RotationalDisplacementRY))
+		parameters.push(BaseIfc.toStepValue(this.RotationalDisplacementRZ))
+		parameters.push(BaseIfc.toStepValue(this.Distortion))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

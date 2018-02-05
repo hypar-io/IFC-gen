@@ -34,20 +34,20 @@ export class IfcSimplePropertyTemplate extends IfcPropertyTemplate {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.GlobalId != null ? BaseIfc.toStepValue(this.GlobalId) : "$");
-		parameters.push(this.OwnerHistory != null ? BaseIfc.toStepValue(this.OwnerHistory) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(BaseIfc.toStepValue(this.TemplateType));
-		parameters.push(this.PrimaryMeasureType != null ? BaseIfc.toStepValue(this.PrimaryMeasureType) : "$");
-		parameters.push(this.SecondaryMeasureType != null ? BaseIfc.toStepValue(this.SecondaryMeasureType) : "$");
-		parameters.push(this.Enumerators != null ? BaseIfc.toStepValue(this.Enumerators) : "$");
-		parameters.push(this.PrimaryUnit != null ? BaseIfc.toStepValue(this.PrimaryUnit) : "$");
-		parameters.push(this.SecondaryUnit != null ? BaseIfc.toStepValue(this.SecondaryUnit) : "$");
-		parameters.push(this.Expression != null ? BaseIfc.toStepValue(this.Expression) : "$");
-		parameters.push(BaseIfc.toStepValue(this.AccessState));
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.TemplateType))
+		parameters.push(BaseIfc.toStepValue(this.PrimaryMeasureType))
+		parameters.push(BaseIfc.toStepValue(this.SecondaryMeasureType))
+		parameters.push(BaseIfc.toStepValue(this.Enumerators))
+		parameters.push(BaseIfc.toStepValue(this.PrimaryUnit))
+		parameters.push(BaseIfc.toStepValue(this.SecondaryUnit))
+		parameters.push(BaseIfc.toStepValue(this.Expression))
+		parameters.push(BaseIfc.toStepValue(this.AccessState))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

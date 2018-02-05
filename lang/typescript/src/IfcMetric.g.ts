@@ -138,19 +138,19 @@ export class IfcMetric extends IfcConstraint {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(BaseIfc.toStepValue(this.ConstraintGrade));
-		parameters.push(this.ConstraintSource != null ? BaseIfc.toStepValue(this.ConstraintSource) : "$");
-		parameters.push(this.CreatingActor != null ? BaseIfc.toStepValue(this.CreatingActor) : "$");
-		parameters.push(this.CreationTime != null ? BaseIfc.toStepValue(this.CreationTime) : "$");
-		parameters.push(this.UserDefinedGrade != null ? BaseIfc.toStepValue(this.UserDefinedGrade) : "$");
-		parameters.push(BaseIfc.toStepValue(this.Benchmark));
-		parameters.push(this.ValueSource != null ? BaseIfc.toStepValue(this.ValueSource) : "$");
-		parameters.push(this.DataValue != null ? BaseIfc.toStepValue(this.DataValue) : "$");
-		parameters.push(this.ReferencePath != null ? BaseIfc.toStepValue(this.ReferencePath) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ConstraintGrade))
+		parameters.push(BaseIfc.toStepValue(this.ConstraintSource))
+		parameters.push(BaseIfc.toStepValue(this.CreatingActor))
+		parameters.push(BaseIfc.toStepValue(this.CreationTime))
+		parameters.push(BaseIfc.toStepValue(this.UserDefinedGrade))
+		parameters.push(BaseIfc.toStepValue(this.Benchmark))
+		parameters.push(BaseIfc.toStepValue(this.ValueSource))
+		parameters.push(BaseIfc.toStepValue(this.DataValue))
+		parameters.push(BaseIfc.toStepValue(this.ReferencePath))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

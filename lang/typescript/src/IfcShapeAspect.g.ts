@@ -25,13 +25,13 @@ export class IfcShapeAspect extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.ShapeRepresentations != null ? BaseIfc.toStepValue(this.ShapeRepresentations) : "$");
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.ProductDefinitional != null ? BaseIfc.toStepValue(this.ProductDefinitional) : "$");
-		parameters.push(this.PartOfProductDefinitionShape != null ? BaseIfc.toStepValue(this.PartOfProductDefinitionShape) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.ShapeRepresentations))
+		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.ProductDefinitional))
+		parameters.push(BaseIfc.toStepValue(this.PartOfProductDefinitionShape))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

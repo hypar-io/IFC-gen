@@ -28,21 +28,21 @@ export class IfcRationalBSplineSurfaceWithKnots extends IfcBSplineSurfaceWithKno
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.UDegree != null ? BaseIfc.toStepValue(this.UDegree) : "$");
-		parameters.push(this.VDegree != null ? BaseIfc.toStepValue(this.VDegree) : "$");
-		parameters.push(this.ControlPointsList != null ? BaseIfc.toStepValue(this.ControlPointsList) : "$");
-		parameters.push(this.SurfaceForm != null ? BaseIfc.toStepValue(this.SurfaceForm) : "$");
-		parameters.push(this.UClosed != null ? BaseIfc.toStepValue(this.UClosed) : "$");
-		parameters.push(this.VClosed != null ? BaseIfc.toStepValue(this.VClosed) : "$");
-		parameters.push(this.SelfIntersect != null ? BaseIfc.toStepValue(this.SelfIntersect) : "$");
-		parameters.push(this.UMultiplicities != null ? BaseIfc.toStepValue(this.UMultiplicities) : "$");
-		parameters.push(this.VMultiplicities != null ? BaseIfc.toStepValue(this.VMultiplicities) : "$");
-		parameters.push(this.UKnots != null ? BaseIfc.toStepValue(this.UKnots) : "$");
-		parameters.push(this.VKnots != null ? BaseIfc.toStepValue(this.VKnots) : "$");
-		parameters.push(this.KnotSpec != null ? BaseIfc.toStepValue(this.KnotSpec) : "$");
-		parameters.push(this.WeightsData != null ? BaseIfc.toStepValue(this.WeightsData) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.UDegree))
+		parameters.push(BaseIfc.toStepValue(this.VDegree))
+		parameters.push(BaseIfc.toStepValue(this.ControlPointsList))
+		parameters.push(BaseIfc.toStepValue(this.SurfaceForm))
+		parameters.push(BaseIfc.toStepValue(this.UClosed))
+		parameters.push(BaseIfc.toStepValue(this.VClosed))
+		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
+		parameters.push(BaseIfc.toStepValue(this.UMultiplicities))
+		parameters.push(BaseIfc.toStepValue(this.VMultiplicities))
+		parameters.push(BaseIfc.toStepValue(this.UKnots))
+		parameters.push(BaseIfc.toStepValue(this.VKnots))
+		parameters.push(BaseIfc.toStepValue(this.KnotSpec))
+		parameters.push(BaseIfc.toStepValue(this.WeightsData))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

@@ -21,10 +21,10 @@ export class IfcAxis2Placement2D extends IfcPlacement {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Location != null ? BaseIfc.toStepValue(this.Location) : "$");
-		parameters.push(this.RefDirection != null ? BaseIfc.toStepValue(this.RefDirection) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Location))
+		parameters.push(BaseIfc.toStepValue(this.RefDirection))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

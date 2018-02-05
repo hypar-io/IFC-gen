@@ -20,11 +20,11 @@ export class IfcStructuralLoadConfiguration extends IfcStructuralLoad {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Values != null ? BaseIfc.toStepValue(this.Values) : "$");
-		parameters.push(this.Locations != null ? BaseIfc.toStepValue(this.Locations) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Values))
+		parameters.push(BaseIfc.toStepValue(this.Locations))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

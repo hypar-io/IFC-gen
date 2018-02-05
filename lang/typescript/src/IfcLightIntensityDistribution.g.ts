@@ -18,10 +18,10 @@ export class IfcLightIntensityDistribution extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(BaseIfc.toStepValue(this.LightDistributionCurve));
-		parameters.push(this.DistributionData != null ? BaseIfc.toStepValue(this.DistributionData) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.LightDistributionCurve))
+		parameters.push(BaseIfc.toStepValue(this.DistributionData))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

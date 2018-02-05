@@ -24,12 +24,12 @@ export class IfcIndexedColourMap extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.MappedTo != null ? BaseIfc.toStepValue(this.MappedTo) : "$");
-		parameters.push(this.Opacity != null ? BaseIfc.toStepValue(this.Opacity) : "$");
-		parameters.push(this.Colours != null ? BaseIfc.toStepValue(this.Colours) : "$");
-		parameters.push(this.ColourIndex != null ? BaseIfc.toStepValue(this.ColourIndex) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.MappedTo))
+		parameters.push(BaseIfc.toStepValue(this.Opacity))
+		parameters.push(BaseIfc.toStepValue(this.Colours))
+		parameters.push(BaseIfc.toStepValue(this.ColourIndex))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

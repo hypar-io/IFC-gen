@@ -27,12 +27,12 @@ export class IfcOrientedEdge extends IfcEdge {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
+            var parameters = new Array<string>();
+    		parameters.push("*");
 		parameters.push("*");
-		parameters.push("*");
-		parameters.push(this.EdgeElement != null ? BaseIfc.toStepValue(this.EdgeElement) : "$");
-		parameters.push(this.Orientation != null ? BaseIfc.toStepValue(this.Orientation) : "$");
+		parameters.push(BaseIfc.toStepValue(this.EdgeElement))
+		parameters.push(BaseIfc.toStepValue(this.Orientation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

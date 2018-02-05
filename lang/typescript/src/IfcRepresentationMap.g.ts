@@ -25,10 +25,10 @@ export class IfcRepresentationMap extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.MappingOrigin != null ? BaseIfc.toStepValue(this.MappingOrigin) : "$");
-		parameters.push(this.MappedRepresentation != null ? BaseIfc.toStepValue(this.MappedRepresentation) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.MappingOrigin))
+		parameters.push(BaseIfc.toStepValue(this.MappedRepresentation))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

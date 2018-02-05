@@ -21,13 +21,13 @@ export class IfcMaterialRelationship extends IfcResourceLevelRelationship {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.Name != null ? BaseIfc.toStepValue(this.Name) : "$");
-		parameters.push(this.Description != null ? BaseIfc.toStepValue(this.Description) : "$");
-		parameters.push(this.RelatingMaterial != null ? BaseIfc.toStepValue(this.RelatingMaterial) : "$");
-		parameters.push(this.RelatedMaterials != null ? BaseIfc.toStepValue(this.RelatedMaterials) : "$");
-		parameters.push(this.Expression != null ? BaseIfc.toStepValue(this.Expression) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.Name))
+		parameters.push(BaseIfc.toStepValue(this.Description))
+		parameters.push(BaseIfc.toStepValue(this.RelatingMaterial))
+		parameters.push(BaseIfc.toStepValue(this.RelatedMaterials))
+		parameters.push(BaseIfc.toStepValue(this.Expression))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }

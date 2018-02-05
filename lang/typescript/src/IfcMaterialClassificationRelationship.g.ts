@@ -19,10 +19,10 @@ export class IfcMaterialClassificationRelationship extends BaseIfc {
 
     }
     getStepParameters() : string {
-        var parameters = new Array<string>();
-		parameters.push(this.MaterialClassifications != null ? BaseIfc.toStepValue(this.MaterialClassifications) : "$");
-		parameters.push(this.ClassifiedMaterial != null ? BaseIfc.toStepValue(this.ClassifiedMaterial) : "$");
+            var parameters = new Array<string>();
+    		parameters.push(BaseIfc.toStepValue(this.MaterialClassifications))
+		parameters.push(BaseIfc.toStepValue(this.ClassifiedMaterial))
 
-        return parameters.join();
-    }
+            return parameters.join();
+        }
 }
