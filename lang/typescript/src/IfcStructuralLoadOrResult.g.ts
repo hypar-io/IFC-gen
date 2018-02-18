@@ -10,6 +10,5 @@ export abstract class IfcStructuralLoadOrResult extends IfcStructuralLoad {
 
     constructor() {
         super()
-
     }
 }

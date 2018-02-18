@@ -26,7 +26,6 @@ export class IfcSpaceType extends IfcSpatialStructureElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSpaceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

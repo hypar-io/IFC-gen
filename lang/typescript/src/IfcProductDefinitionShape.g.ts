@@ -16,9 +16,6 @@ export class IfcProductDefinitionShape extends IfcProductRepresentation {
 
     constructor(representations : Array<IfcRepresentation>) {
         super(representations)
-		this.ShapeOfProduct = new Array<IfcProduct>()
-		this.HasShapeAspects = new Array<IfcShapeAspect>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

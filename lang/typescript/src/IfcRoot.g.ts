@@ -16,7 +16,6 @@ export abstract class IfcRoot extends BaseIfc {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super()
-
 		this.GlobalId = globalId
 
     }

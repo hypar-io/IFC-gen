@@ -13,7 +13,6 @@ export class IfcConnectedFaceSet extends IfcTopologicalRepresentationItem {
 
     constructor(cfsFaces : Array<IfcFace>) {
         super()
-
 		this.CfsFaces = cfsFaces
 
     }

@@ -14,7 +14,6 @@ export class IfcSurfaceStyleLighting extends IfcPresentationItem {
 
     constructor(diffuseTransmissionColour : IfcColourRgb, diffuseReflectionColour : IfcColourRgb, transmissionColour : IfcColourRgb, reflectanceColour : IfcColourRgb) {
         super()
-
 		this.DiffuseTransmissionColour = diffuseTransmissionColour
 		this.DiffuseReflectionColour = diffuseReflectionColour
 		this.TransmissionColour = transmissionColour

@@ -18,7 +18,6 @@ export class IfcRelConnectsElements extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement, relatedElement : IfcElement) {
         super(globalId)
-
 		this.RelatingElement = relatingElement
 		this.RelatedElement = relatedElement
 

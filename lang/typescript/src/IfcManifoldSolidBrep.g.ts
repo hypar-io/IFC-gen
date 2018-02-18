@@ -14,7 +14,6 @@ export abstract class IfcManifoldSolidBrep extends IfcSolidModel {
 
     constructor(outer : IfcClosedShell) {
         super()
-
 		this.Outer = outer
 
     }

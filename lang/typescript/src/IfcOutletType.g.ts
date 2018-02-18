@@ -25,7 +25,6 @@ export class IfcOutletType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcOutletTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

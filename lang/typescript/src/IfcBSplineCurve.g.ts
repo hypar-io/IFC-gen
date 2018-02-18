@@ -27,7 +27,6 @@ export abstract class IfcBSplineCurve extends IfcBoundedCurve {
 
     constructor(degree : IfcInteger, controlPointsList : Array<IfcCartesianPoint>, curveForm : IfcBSplineCurveForm, closedCurve : IfcLogical, selfIntersect : IfcLogical) {
         super()
-
 		this.Degree = degree
 		this.ControlPointsList = controlPointsList
 		this.CurveForm = curveForm

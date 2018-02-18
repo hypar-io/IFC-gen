@@ -16,7 +16,6 @@ export class IfcCircleHollowProfileDef extends IfcCircleProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, radius : IfcPositiveLengthMeasure, wallThickness : IfcPositiveLengthMeasure) {
         super(profileType,radius)
-
 		this.WallThickness = wallThickness
 
     }

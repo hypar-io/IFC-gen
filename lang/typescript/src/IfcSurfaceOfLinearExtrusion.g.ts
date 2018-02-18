@@ -22,7 +22,6 @@ export class IfcSurfaceOfLinearExtrusion extends IfcSweptSurface {
 
     constructor(sweptCurve : IfcProfileDef, extrudedDirection : IfcDirection, depth : IfcLengthMeasure) {
         super(sweptCurve)
-
 		this.ExtrudedDirection = extrudedDirection
 		this.Depth = depth
 

@@ -17,7 +17,6 @@ export class IfcRelServicesBuildings extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingSystem : IfcSystem, relatedBuildings : Array<IfcSpatialElement>) {
         super(globalId)
-
 		this.RelatingSystem = relatingSystem
 		this.RelatedBuildings = relatedBuildings
 

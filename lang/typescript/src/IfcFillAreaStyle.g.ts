@@ -18,7 +18,6 @@ export class IfcFillAreaStyle extends IfcPresentationStyle {
 
     constructor(fillStyles : Array<IfcColourSpecification|IfcPreDefinedColour|IfcExternallyDefinedHatchStyle|IfcFillAreaStyleHatching|IfcFillAreaStyleTiles>) {
         super()
-
 		this.FillStyles = fillStyles
 
     }

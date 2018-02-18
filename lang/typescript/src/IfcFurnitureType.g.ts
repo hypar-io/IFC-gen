@@ -27,7 +27,6 @@ export class IfcFurnitureType extends IfcFurnishingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, assemblyPlace : IfcAssemblyPlaceEnum) {
         super(globalId)
-
 		this.AssemblyPlace = assemblyPlace
 
     }

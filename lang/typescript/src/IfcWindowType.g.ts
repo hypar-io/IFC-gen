@@ -30,7 +30,6 @@ export class IfcWindowType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcWindowTypeEnum, partitioningType : IfcWindowTypePartitioningEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 		this.PartitioningType = partitioningType
 

@@ -26,7 +26,6 @@ export class IfcConstructionProductResourceType extends IfcConstructionResourceT
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcConstructionProductResourceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

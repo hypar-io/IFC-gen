@@ -25,7 +25,6 @@ export class IfcHumidifierType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcHumidifierTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

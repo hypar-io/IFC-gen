@@ -23,7 +23,6 @@ export class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, depth : IfcPositiveLengthMeasure, thickness : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.Depth = depth
 		this.Thickness = thickness
 

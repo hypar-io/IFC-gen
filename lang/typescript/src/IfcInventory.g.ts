@@ -34,8 +34,6 @@ export class IfcInventory extends IfcGroup {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ResponsiblePersons = new Array<IfcPerson>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

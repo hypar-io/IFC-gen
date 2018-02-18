@@ -28,7 +28,6 @@ export class IfcMechanicalFastenerType extends IfcElementComponentType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcMechanicalFastenerTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

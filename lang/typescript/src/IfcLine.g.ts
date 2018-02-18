@@ -16,7 +16,6 @@ export class IfcLine extends IfcCurve {
 
     constructor(pnt : IfcCartesianPoint, dir : IfcVector) {
         super()
-
 		this.Pnt = pnt
 		this.Dir = dir
 

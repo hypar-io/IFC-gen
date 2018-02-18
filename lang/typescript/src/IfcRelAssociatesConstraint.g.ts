@@ -18,7 +18,6 @@ export class IfcRelAssociatesConstraint extends IfcRelAssociates {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingConstraint : IfcConstraint) {
         super(globalId,relatedObjects)
-
 		this.RelatingConstraint = relatingConstraint
 
     }

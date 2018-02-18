@@ -7,6 +7,7 @@ import { Model } from "../src/Model"
 describe("Model", () => {
     it("should serialize to XML", () => {
         let project = new IFC.IfcProject("foo")
+        project.HasAssignments = new Array<IFC.IfcRelAssigns>()
         project.HasAssignments.push(new IFC.IfcRelAssignsToActor(null,null,null))
         project.Name = "Test Project"
         project.Description = "A project for testing."
@@ -49,6 +50,7 @@ describe("Model", () => {
 
         let rel = new IFC.IfcRelAssignsToActor(null,null,null)
         model.addInstance(rel)
+        project.HasAssignments = new Array<IFC.IfcRelAssigns>()
         project.HasAssignments.push(rel)
         project.Name = "Test Project"
         project.Description = "A project for testing."
@@ -130,5 +132,17 @@ describe("Model", () => {
         let dateTime = 1348486806
         let result = BaseIfc.toStepValue(dateTime)
         expect(result).to.equal("1348486806")
+    })
+
+    it("should serialize an empty array as ()", () => {
+        let arr = []
+        let result = BaseIfc.toStepValue(arr)
+        expect(result).to.equal("()")
+    })
+
+    it("should serialize a null value as $", () => {
+        let test = null
+        let result = BaseIfc.toStepValue(test)
+        expect(result).to.equal("$")
     })
 })

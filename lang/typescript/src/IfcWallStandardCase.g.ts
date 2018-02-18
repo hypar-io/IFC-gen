@@ -36,7 +36,6 @@ export class IfcWallStandardCase extends IfcWall {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

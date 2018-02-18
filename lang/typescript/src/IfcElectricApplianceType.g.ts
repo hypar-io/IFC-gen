@@ -25,7 +25,6 @@ export class IfcElectricApplianceType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcElectricApplianceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -28,9 +28,6 @@ export class IfcWorkCalendar extends IfcControl {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.WorkingTimes = new Array<IfcWorkTime>()
-		this.ExceptionTimes = new Array<IfcWorkTime>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -19,7 +19,6 @@ export class IfcRelAssociatesMaterial extends IfcRelAssociates {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingMaterial : IfcMaterialDefinition|IfcMaterialList|IfcMaterialUsageDefinition) {
         super(globalId,relatedObjects)
-
 		this.RelatingMaterial = relatingMaterial
 
     }

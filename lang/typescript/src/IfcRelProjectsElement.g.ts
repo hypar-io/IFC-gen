@@ -17,7 +17,6 @@ export class IfcRelProjectsElement extends IfcRelDecomposes {
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement, relatedFeatureElement : IfcFeatureElementAddition) {
         super(globalId)
-
 		this.RelatingElement = relatingElement
 		this.RelatedFeatureElement = relatedFeatureElement
 

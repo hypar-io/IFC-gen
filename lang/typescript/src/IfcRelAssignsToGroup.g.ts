@@ -17,7 +17,6 @@ export class IfcRelAssignsToGroup extends IfcRelAssigns {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingGroup : IfcGroup) {
         super(globalId,relatedObjects)
-
 		this.RelatingGroup = relatingGroup
 
     }

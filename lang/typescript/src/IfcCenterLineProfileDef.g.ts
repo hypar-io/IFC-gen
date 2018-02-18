@@ -16,7 +16,6 @@ export class IfcCenterLineProfileDef extends IfcArbitraryOpenProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, curve : IfcBoundedCurve, thickness : IfcPositiveLengthMeasure) {
         super(profileType,curve)
-
 		this.Thickness = thickness
 
     }

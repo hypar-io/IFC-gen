@@ -25,7 +25,6 @@ export class IfcMedicalDeviceType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcMedicalDeviceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

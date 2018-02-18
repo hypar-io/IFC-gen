@@ -26,7 +26,6 @@ export class IfcLaborResourceType extends IfcConstructionResourceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcLaborResourceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

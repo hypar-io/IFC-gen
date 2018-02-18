@@ -16,7 +16,6 @@ export class IfcRoundedRectangleProfileDef extends IfcRectangleProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, xDim : IfcPositiveLengthMeasure, yDim : IfcPositiveLengthMeasure, roundingRadius : IfcPositiveLengthMeasure) {
         super(profileType,xDim,yDim)
-
 		this.RoundingRadius = roundingRadius
 
     }

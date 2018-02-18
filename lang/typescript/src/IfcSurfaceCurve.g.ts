@@ -21,7 +21,6 @@ export class IfcSurfaceCurve extends IfcCurve {
 
     constructor(curve3D : IfcCurve, associatedGeometry : Array<IfcPcurve>, masterRepresentation : IfcPreferredSurfaceCurveRepresentation) {
         super()
-
 		this.Curve3D = curve3D
 		this.AssociatedGeometry = associatedGeometry
 		this.MasterRepresentation = masterRepresentation

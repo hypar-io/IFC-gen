@@ -16,7 +16,6 @@ export class IfcConversionBasedUnitWithOffset extends IfcConversionBasedUnit {
 
     constructor(dimensions : IfcDimensionalExponents, unitType : IfcUnitEnum, name : IfcLabel, conversionFactor : IfcMeasureWithUnit, conversionOffset : IfcReal) {
         super(dimensions,unitType,name,conversionFactor)
-
 		this.ConversionOffset = conversionOffset
 
     }

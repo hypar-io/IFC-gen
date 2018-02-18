@@ -30,7 +30,6 @@ export class IfcDoorStyle extends IfcTypeProduct {
 
     constructor(globalId : IfcGloballyUniqueId, operationType : IfcDoorStyleOperationEnum, constructionType : IfcDoorStyleConstructionEnum, parameterTakesPrecedence : IfcBoolean, sizeable : IfcBoolean) {
         super(globalId)
-
 		this.OperationType = operationType
 		this.ConstructionType = constructionType
 		this.ParameterTakesPrecedence = parameterTakesPrecedence

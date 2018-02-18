@@ -25,7 +25,6 @@ export class IfcMaterialProfile extends IfcMaterialDefinition {
 
     constructor(profile : IfcProfileDef) {
         super()
-
 		this.Profile = profile
 
     }

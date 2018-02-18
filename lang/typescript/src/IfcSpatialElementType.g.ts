@@ -24,6 +24,5 @@ export abstract class IfcSpatialElementType extends IfcTypeProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

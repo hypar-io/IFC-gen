@@ -40,9 +40,6 @@ export class IfcCovering extends IfcBuildingElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.CoversSpaces = new Array<IfcRelCoversSpaces>()
-		this.CoversElements = new Array<IfcRelCoversBldgElements>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

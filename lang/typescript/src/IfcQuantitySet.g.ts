@@ -18,6 +18,5 @@ export abstract class IfcQuantitySet extends IfcPropertySetDefinition {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

@@ -27,7 +27,6 @@ export class IfcEventType extends IfcTypeProcess {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcEventTypeEnum, eventTriggerType : IfcEventTriggerTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 		this.EventTriggerType = eventTriggerType
 

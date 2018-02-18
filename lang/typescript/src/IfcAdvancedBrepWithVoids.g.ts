@@ -14,7 +14,6 @@ export class IfcAdvancedBrepWithVoids extends IfcAdvancedBrep {
 
     constructor(outer : IfcClosedShell, voids : Array<IfcClosedShell>) {
         super(outer)
-
 		this.Voids = voids
 
     }

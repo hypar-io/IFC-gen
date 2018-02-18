@@ -16,7 +16,6 @@ export class IfcLagTime extends IfcSchedulingTime {
 
     constructor(lagValue : IfcDuration|IfcRatioMeasure, durationType : IfcTaskDurationEnum) {
         super()
-
 		this.LagValue = lagValue
 		this.DurationType = durationType
 

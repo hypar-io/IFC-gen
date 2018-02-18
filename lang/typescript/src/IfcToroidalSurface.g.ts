@@ -16,7 +16,6 @@ export class IfcToroidalSurface extends IfcElementarySurface {
 
     constructor(position : IfcAxis2Placement3D, majorRadius : IfcPositiveLengthMeasure, minorRadius : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.MajorRadius = majorRadius
 		this.MinorRadius = minorRadius
 

@@ -105,9 +105,6 @@ export abstract class BaseIfc {
             let b: boolean = value
             return  b === true? ".T." : ".F."
         } else if (Array.isArray(value)) {
-            if(value.length == 0) {
-                return "$"
-            }
             const values = value.map(v=>{return BaseIfc.toStepValue(v)})
             return `(${values.join()})`
         } else {

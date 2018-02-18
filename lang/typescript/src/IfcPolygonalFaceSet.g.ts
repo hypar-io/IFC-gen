@@ -21,8 +21,6 @@ export class IfcPolygonalFaceSet extends IfcTessellatedFaceSet {
 
     constructor(coordinates : IfcCartesianPointList3D, faces : Array<IfcIndexedPolygonalFace>) {
         super(coordinates)
-		this.PnIndex = new Array<IfcPositiveInteger>()
-
 		this.Faces = faces
 
     }

@@ -19,7 +19,6 @@ export class IfcRectangleHollowProfileDef extends IfcRectangleProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, xDim : IfcPositiveLengthMeasure, yDim : IfcPositiveLengthMeasure, wallThickness : IfcPositiveLengthMeasure) {
         super(profileType,xDim,yDim)
-
 		this.WallThickness = wallThickness
 
     }

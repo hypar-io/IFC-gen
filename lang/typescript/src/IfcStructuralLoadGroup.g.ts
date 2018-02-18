@@ -35,9 +35,6 @@ export class IfcStructuralLoadGroup extends IfcGroup {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcLoadGroupTypeEnum, actionType : IfcActionTypeEnum, actionSource : IfcActionSourceTypeEnum) {
         super(globalId)
-		this.SourceOfResultGroup = new Array<IfcStructuralResultGroup>()
-		this.LoadGroupFor = new Array<IfcStructuralAnalysisModel>()
-
 		this.PredefinedType = predefinedType
 		this.ActionType = actionType
 		this.ActionSource = actionSource

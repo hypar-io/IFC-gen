@@ -29,7 +29,6 @@ export class IfcResourceApprovalRelationship extends IfcResourceLevelRelationshi
 
     constructor(relatedResourceObjects : Array<IfcActorRole|IfcAppliedValue|IfcApproval|IfcConstraint|IfcContextDependentUnit|IfcConversionBasedUnit|IfcExternalInformation|IfcExternalReference|IfcMaterialDefinition|IfcOrganization|IfcPerson|IfcPersonAndOrganization|IfcPhysicalQuantity|IfcProfileDef|IfcPropertyAbstraction|IfcTimeSeries>, relatingApproval : IfcApproval) {
         super()
-
 		this.RelatedResourceObjects = relatedResourceObjects
 		this.RelatingApproval = relatingApproval
 

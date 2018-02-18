@@ -36,7 +36,6 @@ export class IfcBeamStandardCase extends IfcBeam {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

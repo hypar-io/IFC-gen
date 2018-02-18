@@ -21,7 +21,6 @@ export class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
 
     constructor(surfaceColour : IfcColourRgb, reflectanceMethod : IfcReflectanceMethodEnum) {
         super(surfaceColour)
-
 		this.ReflectanceMethod = reflectanceMethod
 
     }

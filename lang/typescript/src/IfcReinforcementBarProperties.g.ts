@@ -22,7 +22,6 @@ export class IfcReinforcementBarProperties extends IfcPreDefinedProperties {
 
     constructor(totalCrossSectionArea : IfcAreaMeasure, steelGrade : IfcLabel) {
         super()
-
 		this.TotalCrossSectionArea = totalCrossSectionArea
 		this.SteelGrade = steelGrade
 

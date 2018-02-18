@@ -30,7 +30,6 @@ export class IfcDoorType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDoorTypeEnum, operationType : IfcDoorTypeOperationEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 		this.OperationType = operationType
 

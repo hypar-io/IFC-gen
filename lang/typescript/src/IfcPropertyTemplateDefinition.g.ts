@@ -15,6 +15,5 @@ export abstract class IfcPropertyTemplateDefinition extends IfcPropertyDefinitio
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

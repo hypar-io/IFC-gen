@@ -20,7 +20,6 @@ export class IfcPropertySet extends IfcPropertySetDefinition {
 
     constructor(globalId : IfcGloballyUniqueId, hasProperties : Array<IfcProperty>) {
         super(globalId)
-
 		this.HasProperties = hasProperties
 
     }

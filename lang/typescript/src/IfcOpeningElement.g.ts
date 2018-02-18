@@ -38,8 +38,6 @@ export class IfcOpeningElement extends IfcFeatureElementSubtraction {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasFillings = new Array<IfcRelFillsElement>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

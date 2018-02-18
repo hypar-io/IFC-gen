@@ -21,7 +21,6 @@ export class IfcBoundingBox extends IfcGeometricRepresentationItem {
 
     constructor(corner : IfcCartesianPoint, xDim : IfcPositiveLengthMeasure, yDim : IfcPositiveLengthMeasure, zDim : IfcPositiveLengthMeasure) {
         super()
-
 		this.Corner = corner
 		this.XDim = xDim
 		this.YDim = yDim

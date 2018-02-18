@@ -26,8 +26,6 @@ export abstract class IfcTimeSeries extends BaseIfc {
 
     constructor(name : IfcLabel, startTime : IfcDateTime, endTime : IfcDateTime, timeSeriesDataType : IfcTimeSeriesDataTypeEnum, dataOrigin : IfcDataOriginEnum) {
         super()
-		this.HasExternalReference = new Array<IfcExternalReferenceRelationship>()
-
 		this.Name = name
 		this.StartTime = startTime
 		this.EndTime = endTime

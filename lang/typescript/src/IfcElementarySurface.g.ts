@@ -14,7 +14,6 @@ export abstract class IfcElementarySurface extends IfcSurface {
 
     constructor(position : IfcAxis2Placement3D) {
         super()
-
 		this.Position = position
 
     }

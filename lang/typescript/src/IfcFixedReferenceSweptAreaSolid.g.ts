@@ -21,7 +21,6 @@ export class IfcFixedReferenceSweptAreaSolid extends IfcSweptAreaSolid {
 
     constructor(sweptArea : IfcProfileDef, directrix : IfcCurve, fixedReference : IfcDirection) {
         super(sweptArea)
-
 		this.Directrix = directrix
 		this.FixedReference = fixedReference
 

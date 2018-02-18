@@ -10,6 +10,5 @@ export abstract class IfcPreDefinedProperties extends IfcPropertyAbstraction {
 
     constructor() {
         super()
-
     }
 }

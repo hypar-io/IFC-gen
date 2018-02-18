@@ -25,7 +25,6 @@ export class IfcElectricDistributionBoardType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcElectricDistributionBoardTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

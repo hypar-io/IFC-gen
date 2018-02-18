@@ -24,8 +24,6 @@ export class IfcObjective extends IfcConstraint {
 
     constructor(name : IfcLabel, constraintGrade : IfcConstraintEnum, objectiveQualifier : IfcObjectiveEnum) {
         super(name,constraintGrade)
-		this.BenchmarkValues = new Array<IfcConstraint>()
-
 		this.ObjectiveQualifier = objectiveQualifier
 
     }

@@ -33,12 +33,6 @@ export class IfcApproval extends BaseIfc {
 
     constructor() {
         super()
-		this.HasExternalReferences = new Array<IfcExternalReferenceRelationship>()
-		this.ApprovedObjects = new Array<IfcRelAssociatesApproval>()
-		this.ApprovedResources = new Array<IfcResourceApprovalRelationship>()
-		this.IsRelatedWith = new Array<IfcApprovalRelationship>()
-		this.Relates = new Array<IfcApprovalRelationship>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

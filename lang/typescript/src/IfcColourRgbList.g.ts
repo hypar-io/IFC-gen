@@ -11,7 +11,6 @@ export class IfcColourRgbList extends IfcPresentationItem {
 
     constructor(colourList : Array<Array<IfcNormalisedRatioMeasure>>) {
         super()
-
 		this.ColourList = colourList
 
     }

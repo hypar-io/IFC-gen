@@ -36,9 +36,6 @@ export class IfcSpace extends IfcSpatialStructureElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasCoverings = new Array<IfcRelCoversSpaces>()
-		this.BoundedBy = new Array<IfcRelSpaceBoundary>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

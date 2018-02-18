@@ -15,7 +15,6 @@ export class IfcCsgSolid extends IfcSolidModel {
 
     constructor(treeRootExpression : IfcBooleanResult|IfcCsgPrimitive3D) {
         super()
-
 		this.TreeRootExpression = treeRootExpression
 
     }

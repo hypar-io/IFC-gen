@@ -12,6 +12,5 @@ export abstract class IfcBoundedCurve extends IfcCurve {
 
     constructor() {
         super()
-
     }
 }

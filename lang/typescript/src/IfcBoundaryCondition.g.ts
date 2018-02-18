@@ -10,6 +10,5 @@ export abstract class IfcBoundaryCondition extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

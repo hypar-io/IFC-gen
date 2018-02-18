@@ -25,7 +25,6 @@ export class IfcRampType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcRampTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

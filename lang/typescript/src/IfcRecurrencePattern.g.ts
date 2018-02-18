@@ -22,11 +22,6 @@ export class IfcRecurrencePattern extends BaseIfc {
 
     constructor(recurrenceType : IfcRecurrenceTypeEnum) {
         super()
-		this.DayComponent = new Array<IfcDayInMonthNumber>()
-		this.WeekdayComponent = new Array<IfcDayInWeekNumber>()
-		this.MonthComponent = new Array<IfcMonthInYearNumber>()
-		this.TimePeriods = new Array<IfcTimePeriod>()
-
 		this.RecurrenceType = recurrenceType
 
     }

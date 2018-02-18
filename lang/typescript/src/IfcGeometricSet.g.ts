@@ -19,7 +19,6 @@ export class IfcGeometricSet extends IfcGeometricRepresentationItem {
 
     constructor(elements : Array<IfcCurve|IfcPoint|IfcSurface>) {
         super()
-
 		this.Elements = elements
 
     }

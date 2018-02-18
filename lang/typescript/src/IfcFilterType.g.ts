@@ -25,7 +25,6 @@ export class IfcFilterType extends IfcFlowTreatmentDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcFilterTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

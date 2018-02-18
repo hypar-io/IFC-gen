@@ -17,7 +17,6 @@ export class IfcQuantityLength extends IfcPhysicalSimpleQuantity {
 
     constructor(name : IfcLabel, lengthValue : IfcLengthMeasure) {
         super(name)
-
 		this.LengthValue = lengthValue
 
     }

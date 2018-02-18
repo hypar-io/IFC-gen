@@ -12,7 +12,6 @@ export class IfcUnitAssignment extends BaseIfc {
 
     constructor(units : Array<IfcDerivedUnit|IfcMonetaryUnit|IfcNamedUnit>) {
         super()
-
 		this.Units = units
 
     }

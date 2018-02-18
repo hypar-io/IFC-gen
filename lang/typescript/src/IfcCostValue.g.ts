@@ -121,7 +121,6 @@ export class IfcCostValue extends IfcAppliedValue {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

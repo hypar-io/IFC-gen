@@ -25,7 +25,6 @@ export class IfcTendonAnchorType extends IfcReinforcingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcTendonAnchorTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

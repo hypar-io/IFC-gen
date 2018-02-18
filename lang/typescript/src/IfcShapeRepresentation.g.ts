@@ -16,7 +16,6 @@ export class IfcShapeRepresentation extends IfcShapeModel {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {
         super(contextOfItems,items)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

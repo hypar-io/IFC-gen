@@ -25,7 +25,5 @@ export abstract class IfcControl extends IfcObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.Controls = new Array<IfcRelAssignsToControl>()
-
     }
 }

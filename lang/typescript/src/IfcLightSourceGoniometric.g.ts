@@ -26,7 +26,6 @@ export class IfcLightSourceGoniometric extends IfcLightSource {
 
     constructor(lightColour : IfcColourRgb, position : IfcAxis2Placement3D, colourTemperature : IfcThermodynamicTemperatureMeasure, luminousFlux : IfcLuminousFluxMeasure, lightEmissionSource : IfcLightEmissionSourceEnum, lightDistributionDataSource : IfcExternalReference|IfcLightIntensityDistribution) {
         super(lightColour)
-
 		this.Position = position
 		this.ColourTemperature = colourTemperature
 		this.LuminousFlux = luminousFlux

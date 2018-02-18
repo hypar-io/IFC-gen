@@ -26,8 +26,6 @@ export class IfcAnnotation extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ContainedInStructure = new Array<IfcRelContainedInSpatialStructure>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -14,8 +14,6 @@ export class IfcStructuralLoadConfiguration extends IfcStructuralLoad {
 
     constructor(values : Array<IfcStructuralLoadOrResult>) {
         super()
-		this.Locations = new Array<Array<IfcLengthMeasure>>()
-
 		this.Values = values
 
     }

@@ -23,7 +23,6 @@ export class IfcRationalBSplineCurveWithKnots extends IfcBSplineCurveWithKnots {
 
     constructor(degree : IfcInteger, controlPointsList : Array<IfcCartesianPoint>, curveForm : IfcBSplineCurveForm, closedCurve : IfcLogical, selfIntersect : IfcLogical, knotMultiplicities : Array<IfcInteger>, knots : Array<IfcParameterValue>, knotSpec : IfcKnotType, weightsData : Array<IfcReal>) {
         super(degree,controlPointsList,curveForm,closedCurve,selfIntersect,knotMultiplicities,knots,knotSpec)
-
 		this.WeightsData = weightsData
 
     }

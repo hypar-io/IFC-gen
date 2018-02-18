@@ -22,7 +22,6 @@ export class IfcRevolvedAreaSolid extends IfcSweptAreaSolid {
 
     constructor(sweptArea : IfcProfileDef, axis : IfcAxis1Placement, angle : IfcPlaneAngleMeasure) {
         super(sweptArea)
-
 		this.Axis = axis
 		this.Angle = angle
 

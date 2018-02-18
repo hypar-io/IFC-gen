@@ -23,12 +23,6 @@ export class IfcOrganization extends BaseIfc {
 
     constructor(name : IfcLabel) {
         super()
-		this.Roles = new Array<IfcActorRole>()
-		this.Addresses = new Array<IfcAddress>()
-		this.IsRelatedBy = new Array<IfcOrganizationRelationship>()
-		this.Relates = new Array<IfcOrganizationRelationship>()
-		this.Engages = new Array<IfcPersonAndOrganization>()
-
 		this.Name = name
 
     }

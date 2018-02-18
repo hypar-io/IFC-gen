@@ -16,7 +16,6 @@ export class IfcRelAggregates extends IfcRelDecomposes {
 
     constructor(globalId : IfcGloballyUniqueId, relatingObject : IfcObjectDefinition, relatedObjects : Array<IfcObjectDefinition>) {
         super(globalId)
-
 		this.RelatingObject = relatingObject
 		this.RelatedObjects = relatedObjects
 

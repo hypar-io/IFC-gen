@@ -25,7 +25,6 @@ export class IfcSensorType extends IfcDistributionControlElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSensorTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

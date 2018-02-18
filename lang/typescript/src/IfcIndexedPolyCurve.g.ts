@@ -19,8 +19,6 @@ export class IfcIndexedPolyCurve extends IfcBoundedCurve {
 
     constructor(points : IfcCartesianPointList) {
         super()
-		this.Segments = new Array<IfcArcIndex|IfcLineIndex>()
-
 		this.Points = points
 
     }

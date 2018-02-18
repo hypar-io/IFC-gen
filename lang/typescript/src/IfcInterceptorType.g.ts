@@ -25,7 +25,6 @@ export class IfcInterceptorType extends IfcFlowTreatmentDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcInterceptorTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

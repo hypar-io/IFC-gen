@@ -16,7 +16,6 @@ export class IfcRightCircularCone extends IfcCsgPrimitive3D {
 
     constructor(position : IfcAxis2Placement3D, height : IfcPositiveLengthMeasure, bottomRadius : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.Height = height
 		this.BottomRadius = bottomRadius
 

@@ -30,7 +30,6 @@ export class IfcWindowStyle extends IfcTypeProduct {
 
     constructor(globalId : IfcGloballyUniqueId, constructionType : IfcWindowStyleConstructionEnum, operationType : IfcWindowStyleOperationEnum, parameterTakesPrecedence : IfcBoolean, sizeable : IfcBoolean) {
         super(globalId)
-
 		this.ConstructionType = constructionType
 		this.OperationType = operationType
 		this.ParameterTakesPrecedence = parameterTakesPrecedence

@@ -20,7 +20,6 @@ export class IfcMaterialLayerSetUsage extends IfcMaterialUsageDefinition {
 
     constructor(forLayerSet : IfcMaterialLayerSet, layerSetDirection : IfcLayerSetDirectionEnum, directionSense : IfcDirectionSenseEnum, offsetFromReferenceLine : IfcLengthMeasure) {
         super()
-
 		this.ForLayerSet = forLayerSet
 		this.LayerSetDirection = layerSetDirection
 		this.DirectionSense = directionSense

@@ -226,7 +226,7 @@ export enum {data.Name} {{{string.Join(",", data.Values.Select(v=>$"{v}=\".{v}.\
 
                 constructors = $@"
     constructor({ConstructorParams(data, false)}) {{
-        super({BaseConstructorParams(data, false)}){Allocations(data, true)}{Assignments(data, false)}
+        super({BaseConstructorParams(data, false)}){Assignments(data, false)}
     }}";
 
             var classStr =

@@ -15,6 +15,5 @@ export abstract class IfcSolidModel extends IfcGeometricRepresentationItem {
 
     constructor() {
         super()
-
     }
 }

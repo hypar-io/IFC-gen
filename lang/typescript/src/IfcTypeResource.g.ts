@@ -26,7 +26,5 @@ export abstract class IfcTypeResource extends IfcTypeObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ResourceOf = new Array<IfcRelAssignsToResource>()
-
     }
 }

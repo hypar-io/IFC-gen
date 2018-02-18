@@ -29,9 +29,5 @@ export abstract class IfcProcess extends IfcObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.IsPredecessorTo = new Array<IfcRelSequence>()
-		this.IsSuccessorFrom = new Array<IfcRelSequence>()
-		this.OperatesOn = new Array<IfcRelAssignsToProcess>()
-
     }
 }

@@ -16,7 +16,6 @@ export class IfcCircleProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, radius : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.Radius = radius
 
     }

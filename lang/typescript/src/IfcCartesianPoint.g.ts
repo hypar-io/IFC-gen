@@ -17,7 +17,6 @@ export class IfcCartesianPoint extends IfcPoint {
 
     constructor(coordinates : Array<IfcLengthMeasure>) {
         super()
-
 		this.Coordinates = coordinates
 
     }

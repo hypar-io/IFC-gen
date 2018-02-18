@@ -17,7 +17,6 @@ export class IfcFaceSurface extends IfcFace {
 
     constructor(bounds : Array<IfcFaceBound>, faceSurface : IfcSurface, sameSense : IfcBoolean) {
         super(bounds)
-
 		this.FaceSurface = faceSurface
 		this.SameSense = sameSense
 

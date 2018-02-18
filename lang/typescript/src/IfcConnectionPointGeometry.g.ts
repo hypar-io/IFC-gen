@@ -13,7 +13,6 @@ export class IfcConnectionPointGeometry extends IfcConnectionGeometry {
 
     constructor(pointOnRelatingElement : IfcPoint|IfcVertexPoint) {
         super()
-
 		this.PointOnRelatingElement = pointOnRelatingElement
 
     }

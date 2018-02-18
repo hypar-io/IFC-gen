@@ -13,7 +13,6 @@ export class IfcPath extends IfcTopologicalRepresentationItem {
 
     constructor(edgeList : Array<IfcOrientedEdge>) {
         super()
-
 		this.EdgeList = edgeList
 
     }

@@ -21,8 +21,6 @@ export class IfcRelSpaceBoundary2ndLevel extends IfcRelSpaceBoundary1stLevel {
 
     constructor(globalId : IfcGloballyUniqueId, relatingSpace : IfcExternalSpatialElement|IfcSpace, relatedBuildingElement : IfcElement, physicalOrVirtualBoundary : IfcPhysicalOrVirtualEnum, internalOrExternalBoundary : IfcInternalOrExternalEnum) {
         super(globalId,relatingSpace,relatedBuildingElement,physicalOrVirtualBoundary,internalOrExternalBoundary)
-		this.Corresponds = new Array<IfcRelSpaceBoundary2ndLevel>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

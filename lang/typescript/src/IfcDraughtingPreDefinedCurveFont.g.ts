@@ -10,7 +10,6 @@ export class IfcDraughtingPreDefinedCurveFont extends IfcPreDefinedCurveFont {
 
     constructor(name : IfcLabel) {
         super(name)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

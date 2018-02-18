@@ -15,6 +15,5 @@ export abstract class IfcStyleModel extends IfcRepresentation {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {
         super(contextOfItems,items)
-
     }
 }

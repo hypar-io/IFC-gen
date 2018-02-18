@@ -14,7 +14,6 @@ export class IfcIndexedPolygonalFaceWithVoids extends IfcIndexedPolygonalFace {
 
     constructor(coordIndex : Array<IfcPositiveInteger>, innerCoordIndices : Array<Array<IfcPositiveInteger>>) {
         super(coordIndex)
-
 		this.InnerCoordIndices = innerCoordIndices
 
     }

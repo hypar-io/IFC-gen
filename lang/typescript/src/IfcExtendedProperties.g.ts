@@ -16,7 +16,6 @@ export abstract class IfcExtendedProperties extends IfcPropertyAbstraction {
 
     constructor(properties : Array<IfcProperty>) {
         super()
-
 		this.Properties = properties
 
     }

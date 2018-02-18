@@ -17,8 +17,6 @@ export class IfcConversionBasedUnit extends IfcNamedUnit {
 
     constructor(dimensions : IfcDimensionalExponents, unitType : IfcUnitEnum, name : IfcLabel, conversionFactor : IfcMeasureWithUnit) {
         super(dimensions,unitType)
-		this.HasExternalReference = new Array<IfcExternalReferenceRelationship>()
-
 		this.Name = name
 		this.ConversionFactor = conversionFactor
 

@@ -15,7 +15,6 @@ export class IfcPcurve extends IfcCurve {
 
     constructor(basisSurface : IfcSurface, referenceCurve : IfcCurve) {
         super()
-
 		this.BasisSurface = basisSurface
 		this.ReferenceCurve = referenceCurve
 

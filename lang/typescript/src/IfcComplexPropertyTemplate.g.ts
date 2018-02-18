@@ -20,8 +20,6 @@ export class IfcComplexPropertyTemplate extends IfcPropertyTemplate {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasPropertyTemplates = new Array<IfcPropertyTemplate>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

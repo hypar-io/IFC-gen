@@ -15,6 +15,5 @@ export abstract class IfcCurve extends IfcGeometricRepresentationItem {
 
     constructor() {
         super()
-
     }
 }

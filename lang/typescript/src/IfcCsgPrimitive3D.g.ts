@@ -17,7 +17,6 @@ export abstract class IfcCsgPrimitive3D extends IfcGeometricRepresentationItem {
 
     constructor(position : IfcAxis2Placement3D) {
         super()
-
 		this.Position = position
 
     }

@@ -19,7 +19,6 @@ export class IfcCartesianTransformationOperator3D extends IfcCartesianTransforma
 
     constructor(localOrigin : IfcCartesianPoint) {
         super(localOrigin)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

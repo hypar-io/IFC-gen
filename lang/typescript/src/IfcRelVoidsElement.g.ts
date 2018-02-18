@@ -17,7 +17,6 @@ export class IfcRelVoidsElement extends IfcRelDecomposes {
 
     constructor(globalId : IfcGloballyUniqueId, relatingBuildingElement : IfcElement, relatedOpeningElement : IfcFeatureElementSubtraction) {
         super(globalId)
-
 		this.RelatingBuildingElement = relatingBuildingElement
 		this.RelatedOpeningElement = relatedOpeningElement
 

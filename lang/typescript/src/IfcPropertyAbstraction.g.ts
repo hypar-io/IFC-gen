@@ -10,7 +10,5 @@ export abstract class IfcPropertyAbstraction extends BaseIfc {
 
     constructor() {
         super()
-		this.HasExternalReferences = new Array<IfcExternalReferenceRelationship>()
-
     }
 }

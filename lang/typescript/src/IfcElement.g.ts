@@ -48,18 +48,5 @@ export abstract class IfcElement extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.FillsVoids = new Array<IfcRelFillsElement>()
-		this.ConnectedTo = new Array<IfcRelConnectsElements>()
-		this.IsInterferedByElements = new Array<IfcRelInterferesElements>()
-		this.InterferesElements = new Array<IfcRelInterferesElements>()
-		this.HasProjections = new Array<IfcRelProjectsElement>()
-		this.ReferencedInStructures = new Array<IfcRelReferencedInSpatialStructure>()
-		this.HasOpenings = new Array<IfcRelVoidsElement>()
-		this.IsConnectionRealization = new Array<IfcRelConnectsWithRealizingElements>()
-		this.ProvidesBoundaries = new Array<IfcRelSpaceBoundary>()
-		this.ConnectedFrom = new Array<IfcRelConnectsElements>()
-		this.ContainedInStructure = new Array<IfcRelContainedInSpatialStructure>()
-		this.HasCoverings = new Array<IfcRelCoversBldgElements>()
-
     }
 }

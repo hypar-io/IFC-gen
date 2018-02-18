@@ -133,7 +133,6 @@ export class IfcMetric extends IfcConstraint {
 
     constructor(name : IfcLabel, constraintGrade : IfcConstraintEnum, benchmark : IfcBenchmarkEnum) {
         super(name,constraintGrade)
-
 		this.Benchmark = benchmark
 
     }

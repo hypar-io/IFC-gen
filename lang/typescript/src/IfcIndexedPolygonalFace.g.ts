@@ -15,8 +15,6 @@ export class IfcIndexedPolygonalFace extends IfcTessellatedItem {
 
     constructor(coordIndex : Array<IfcPositiveInteger>) {
         super()
-		this.ToFaceSet = new Array<IfcPolygonalFaceSet>()
-
 		this.CoordIndex = coordIndex
 
     }

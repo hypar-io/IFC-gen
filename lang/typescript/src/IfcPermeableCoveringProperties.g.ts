@@ -27,7 +27,6 @@ export class IfcPermeableCoveringProperties extends IfcPreDefinedPropertySet {
 
     constructor(globalId : IfcGloballyUniqueId, operationType : IfcPermeableCoveringOperationEnum, panelPosition : IfcWindowPanelPositionEnum) {
         super(globalId)
-
 		this.OperationType = operationType
 		this.PanelPosition = panelPosition
 

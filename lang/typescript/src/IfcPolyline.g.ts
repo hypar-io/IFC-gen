@@ -14,7 +14,6 @@ export class IfcPolyline extends IfcBoundedCurve {
 
     constructor(points : Array<IfcCartesianPoint>) {
         super()
-
 		this.Points = points
 
     }

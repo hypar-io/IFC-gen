@@ -25,7 +25,6 @@ export class IfcLampType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcLampTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

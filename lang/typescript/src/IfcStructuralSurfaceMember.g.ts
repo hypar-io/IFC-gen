@@ -30,7 +30,6 @@ export class IfcStructuralSurfaceMember extends IfcStructuralMember {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcStructuralSurfaceMemberTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

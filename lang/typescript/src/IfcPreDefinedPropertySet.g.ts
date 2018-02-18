@@ -18,6 +18,5 @@ export abstract class IfcPreDefinedPropertySet extends IfcPropertySetDefinition 
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

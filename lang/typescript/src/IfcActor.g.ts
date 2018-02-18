@@ -27,8 +27,6 @@ export class IfcActor extends IfcObject {
 
     constructor(globalId : IfcGloballyUniqueId, theActor : IfcOrganization|IfcPerson|IfcPersonAndOrganization) {
         super(globalId)
-		this.IsActingUpon = new Array<IfcRelAssignsToActor>()
-
 		this.TheActor = theActor
 
     }

@@ -25,7 +25,6 @@ export class IfcRailingType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcRailingTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

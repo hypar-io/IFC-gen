@@ -24,7 +24,6 @@ export class IfcRelSpaceBoundary extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingSpace : IfcExternalSpatialElement|IfcSpace, relatedBuildingElement : IfcElement, physicalOrVirtualBoundary : IfcPhysicalOrVirtualEnum, internalOrExternalBoundary : IfcInternalOrExternalEnum) {
         super(globalId)
-
 		this.RelatingSpace = relatingSpace
 		this.RelatedBuildingElement = relatedBuildingElement
 		this.PhysicalOrVirtualBoundary = physicalOrVirtualBoundary

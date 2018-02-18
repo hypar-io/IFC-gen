@@ -39,7 +39,6 @@ export class IfcProtectiveDeviceTrippingUnit extends IfcDistributionControlEleme
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

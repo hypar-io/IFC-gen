@@ -29,7 +29,5 @@ export abstract class IfcStructuralConnection extends IfcStructuralItem {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ConnectsStructuralMembers = new Array<IfcRelConnectsStructuralMember>()
-
     }
 }

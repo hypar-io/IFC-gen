@@ -19,7 +19,6 @@ export class IfcShapeAspect extends BaseIfc {
 
     constructor(shapeRepresentations : Array<IfcShapeModel>, productDefinitional : IfcLogical) {
         super()
-
 		this.ShapeRepresentations = shapeRepresentations
 		this.ProductDefinitional = productDefinitional
 

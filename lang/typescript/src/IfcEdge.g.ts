@@ -14,7 +14,6 @@ export class IfcEdge extends IfcTopologicalRepresentationItem {
 
     constructor(edgeStart : IfcVertex, edgeEnd : IfcVertex) {
         super()
-
 		this.EdgeStart = edgeStart
 		this.EdgeEnd = edgeEnd
 

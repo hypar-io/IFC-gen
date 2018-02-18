@@ -18,7 +18,6 @@ export class IfcRelAssociatesLibrary extends IfcRelAssociates {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingLibrary : IfcLibraryInformation|IfcLibraryReference) {
         super(globalId,relatedObjects)
-
 		this.RelatingLibrary = relatingLibrary
 
     }

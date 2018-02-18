@@ -15,7 +15,6 @@ export class IfcMappedItem extends IfcRepresentationItem {
 
     constructor(mappingSource : IfcRepresentationMap, mappingTarget : IfcCartesianTransformationOperator) {
         super()
-
 		this.MappingSource = mappingSource
 		this.MappingTarget = mappingTarget
 

@@ -30,7 +30,6 @@ export class IfcStructuralPlanarAction extends IfcStructuralSurfaceAction {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum, predefinedType : IfcStructuralSurfaceActivityTypeEnum) {
         super(globalId,appliedLoad,globalOrLocal,predefinedType)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -13,7 +13,6 @@ export class IfcAdvancedBrep extends IfcManifoldSolidBrep {
 
     constructor(outer : IfcClosedShell) {
         super(outer)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -23,6 +23,5 @@ export abstract class IfcDistributionControlElementType extends IfcDistributionE
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

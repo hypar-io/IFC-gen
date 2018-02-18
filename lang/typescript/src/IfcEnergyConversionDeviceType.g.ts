@@ -23,6 +23,5 @@ export abstract class IfcEnergyConversionDeviceType extends IfcDistributionFlowE
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

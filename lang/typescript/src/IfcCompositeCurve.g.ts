@@ -23,7 +23,6 @@ export class IfcCompositeCurve extends IfcBoundedCurve {
 
     constructor(segments : Array<IfcCompositeCurveSegment>, selfIntersect : IfcLogical) {
         super()
-
 		this.Segments = segments
 		this.SelfIntersect = selfIntersect
 

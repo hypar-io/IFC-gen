@@ -25,7 +25,6 @@ export class IfcBurnerType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcBurnerTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

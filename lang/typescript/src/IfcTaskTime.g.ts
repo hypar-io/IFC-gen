@@ -33,7 +33,6 @@ export class IfcTaskTime extends IfcSchedulingTime {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

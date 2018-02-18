@@ -17,7 +17,6 @@ export class IfcRelDefinesByTemplate extends IfcRelDefines {
 
     constructor(globalId : IfcGloballyUniqueId, relatedPropertySets : Array<IfcPropertySetDefinition>, relatingTemplate : IfcPropertySetTemplate) {
         super(globalId)
-
 		this.RelatedPropertySets = relatedPropertySets
 		this.RelatingTemplate = relatingTemplate
 

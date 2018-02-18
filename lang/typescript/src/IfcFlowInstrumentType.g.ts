@@ -25,7 +25,6 @@ export class IfcFlowInstrumentType extends IfcDistributionControlElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcFlowInstrumentTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

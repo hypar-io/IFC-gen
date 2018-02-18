@@ -29,8 +29,6 @@ export class IfcStructuralLoadCase extends IfcStructuralLoadGroup {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcLoadGroupTypeEnum, actionType : IfcActionTypeEnum, actionSource : IfcActionSourceTypeEnum) {
         super(globalId,predefinedType,actionType,actionSource)
-		this.SelfWeightCoefficients = new Array<IfcRatioMeasure>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -10,6 +10,5 @@ export abstract class IfcStructuralLoad extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

@@ -17,7 +17,6 @@ export class IfcEllipse extends IfcConic {
 
     constructor(position : IfcAxis2Placement2D|IfcAxis2Placement3D, semiAxis1 : IfcPositiveLengthMeasure, semiAxis2 : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.SemiAxis1 = semiAxis1
 		this.SemiAxis2 = semiAxis2
 

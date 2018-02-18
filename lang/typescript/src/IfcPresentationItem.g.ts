@@ -8,6 +8,5 @@ export abstract class IfcPresentationItem extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

@@ -10,6 +10,5 @@ export abstract class IfcPreDefinedTextFont extends IfcPreDefinedItem {
 
     constructor(name : IfcLabel) {
         super(name)
-
     }
 }

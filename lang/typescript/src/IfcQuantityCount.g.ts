@@ -17,7 +17,6 @@ export class IfcQuantityCount extends IfcPhysicalSimpleQuantity {
 
     constructor(name : IfcLabel, countValue : IfcCountMeasure) {
         super(name)
-
 		this.CountValue = countValue
 
     }

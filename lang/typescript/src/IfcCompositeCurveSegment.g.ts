@@ -23,8 +23,6 @@ export class IfcCompositeCurveSegment extends IfcGeometricRepresentationItem {
 
     constructor(transition : IfcTransitionCode, sameSense : IfcBoolean, parentCurve : IfcCurve) {
         super()
-		this.UsingCurves = new Array<IfcCompositeCurve>()
-
 		this.Transition = transition
 		this.SameSense = sameSense
 		this.ParentCurve = parentCurve

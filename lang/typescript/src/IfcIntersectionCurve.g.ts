@@ -16,7 +16,6 @@ export class IfcIntersectionCurve extends IfcSurfaceCurve {
 
     constructor(curve3D : IfcCurve, associatedGeometry : Array<IfcPcurve>, masterRepresentation : IfcPreferredSurfaceCurveRepresentation) {
         super(curve3D,associatedGeometry,masterRepresentation)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

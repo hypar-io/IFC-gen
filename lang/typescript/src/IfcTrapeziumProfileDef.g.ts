@@ -20,7 +20,6 @@ export class IfcTrapeziumProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, bottomXDim : IfcPositiveLengthMeasure, topXDim : IfcPositiveLengthMeasure, yDim : IfcPositiveLengthMeasure, topXOffset : IfcLengthMeasure) {
         super(profileType)
-
 		this.BottomXDim = bottomXDim
 		this.TopXDim = topXDim
 		this.YDim = yDim

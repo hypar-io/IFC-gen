@@ -11,6 +11,5 @@ export abstract class IfcPoint extends IfcGeometricRepresentationItem {
 
     constructor() {
         super()
-
     }
 }

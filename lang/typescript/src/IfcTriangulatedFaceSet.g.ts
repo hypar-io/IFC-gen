@@ -26,9 +26,6 @@ export class IfcTriangulatedFaceSet extends IfcTessellatedFaceSet {
 
     constructor(coordinates : IfcCartesianPointList3D, coordIndex : Array<Array<IfcPositiveInteger>>) {
         super(coordinates)
-		this.Normals = new Array<Array<IfcParameterValue>>()
-		this.PnIndex = new Array<IfcPositiveInteger>()
-
 		this.CoordIndex = coordIndex
 
     }

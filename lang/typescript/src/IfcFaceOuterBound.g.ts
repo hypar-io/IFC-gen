@@ -13,7 +13,6 @@ export class IfcFaceOuterBound extends IfcFaceBound {
 
     constructor(bound : IfcLoop, orientation : IfcBoolean) {
         super(bound,orientation)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

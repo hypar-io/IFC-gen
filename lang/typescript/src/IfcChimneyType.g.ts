@@ -25,7 +25,6 @@ export class IfcChimneyType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcChimneyTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

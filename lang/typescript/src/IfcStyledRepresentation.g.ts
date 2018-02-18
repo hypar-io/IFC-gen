@@ -15,7 +15,6 @@ export class IfcStyledRepresentation extends IfcStyleModel {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {
         super(contextOfItems,items)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -18,7 +18,6 @@ export class IfcStructuralLoadLinearForce extends IfcStructuralLoadStatic {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

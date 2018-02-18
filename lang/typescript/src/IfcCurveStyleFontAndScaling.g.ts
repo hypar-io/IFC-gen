@@ -16,7 +16,6 @@ export class IfcCurveStyleFontAndScaling extends IfcPresentationItem {
 
     constructor(curveFont : IfcCurveStyleFont|IfcPreDefinedCurveFont, curveFontScaling : IfcPositiveRatioMeasure) {
         super()
-
 		this.CurveFont = curveFont
 		this.CurveFontScaling = curveFontScaling
 

@@ -18,7 +18,6 @@ export class IfcMirroredProfileDef extends IfcDerivedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, parentProfile : IfcProfileDef, op : IfcCartesianTransformationOperator2D) {
         super(profileType,parentProfile,op)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

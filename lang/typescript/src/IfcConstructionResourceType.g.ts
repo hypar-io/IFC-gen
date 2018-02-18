@@ -26,7 +26,5 @@ export abstract class IfcConstructionResourceType extends IfcTypeResource {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.BaseCosts = new Array<IfcAppliedValue>()
-
     }
 }

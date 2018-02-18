@@ -27,7 +27,6 @@ export class IfcOccupant extends IfcActor {
 
     constructor(globalId : IfcGloballyUniqueId, theActor : IfcOrganization|IfcPerson|IfcPersonAndOrganization) {
         super(globalId,theActor)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

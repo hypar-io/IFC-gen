@@ -21,7 +21,6 @@ export class IfcOwnerHistory extends BaseIfc {
 
     constructor(owningUser : IfcPersonAndOrganization, owningApplication : IfcApplication, creationDate : IfcTimeStamp) {
         super()
-
 		this.OwningUser = owningUser
 		this.OwningApplication = owningApplication
 		this.CreationDate = creationDate

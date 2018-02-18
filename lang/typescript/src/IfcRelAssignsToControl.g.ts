@@ -17,7 +17,6 @@ export class IfcRelAssignsToControl extends IfcRelAssigns {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingControl : IfcControl) {
         super(globalId,relatedObjects)
-
 		this.RelatingControl = relatingControl
 
     }

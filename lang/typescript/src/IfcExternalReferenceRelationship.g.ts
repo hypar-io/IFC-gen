@@ -29,7 +29,6 @@ export class IfcExternalReferenceRelationship extends IfcResourceLevelRelationsh
 
     constructor(relatingReference : IfcExternalReference, relatedResourceObjects : Array<IfcActorRole|IfcAppliedValue|IfcApproval|IfcConstraint|IfcContextDependentUnit|IfcConversionBasedUnit|IfcExternalInformation|IfcExternalReference|IfcMaterialDefinition|IfcOrganization|IfcPerson|IfcPersonAndOrganization|IfcPhysicalQuantity|IfcProfileDef|IfcPropertyAbstraction|IfcTimeSeries>) {
         super()
-
 		this.RelatingReference = relatingReference
 		this.RelatedResourceObjects = relatedResourceObjects
 

@@ -15,6 +15,5 @@ export abstract class IfcPhysicalSimpleQuantity extends IfcPhysicalQuantity {
 
     constructor(name : IfcLabel) {
         super(name)
-
     }
 }

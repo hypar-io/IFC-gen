@@ -23,7 +23,6 @@ export class IfcLightSourceSpot extends IfcLightSourcePositional {
 
     constructor(lightColour : IfcColourRgb, position : IfcCartesianPoint, radius : IfcPositiveLengthMeasure, constantAttenuation : IfcReal, distanceAttenuation : IfcReal, quadricAttenuation : IfcReal, orientation : IfcDirection, spreadAngle : IfcPositivePlaneAngleMeasure, beamWidthAngle : IfcPositivePlaneAngleMeasure) {
         super(lightColour,position,radius,constantAttenuation,distanceAttenuation,quadricAttenuation)
-
 		this.Orientation = orientation
 		this.SpreadAngle = spreadAngle
 		this.BeamWidthAngle = beamWidthAngle

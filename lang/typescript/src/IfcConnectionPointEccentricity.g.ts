@@ -15,7 +15,6 @@ export class IfcConnectionPointEccentricity extends IfcConnectionPointGeometry {
 
     constructor(pointOnRelatingElement : IfcPoint|IfcVertexPoint) {
         super(pointOnRelatingElement)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

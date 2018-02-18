@@ -18,7 +18,6 @@ export abstract class IfcLightSource extends IfcGeometricRepresentationItem {
 
     constructor(lightColour : IfcColourRgb) {
         super()
-
 		this.LightColour = lightColour
 
     }

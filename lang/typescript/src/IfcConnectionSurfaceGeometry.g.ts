@@ -14,7 +14,6 @@ export class IfcConnectionSurfaceGeometry extends IfcConnectionGeometry {
 
     constructor(surfaceOnRelatingElement : IfcFaceBasedSurfaceModel|IfcFaceSurface|IfcSurface) {
         super()
-
 		this.SurfaceOnRelatingElement = surfaceOnRelatingElement
 
     }

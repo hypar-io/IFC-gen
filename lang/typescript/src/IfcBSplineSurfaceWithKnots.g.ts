@@ -29,7 +29,6 @@ export class IfcBSplineSurfaceWithKnots extends IfcBSplineSurface {
 
     constructor(uDegree : IfcInteger, vDegree : IfcInteger, controlPointsList : Array<Array<IfcCartesianPoint>>, surfaceForm : IfcBSplineSurfaceForm, uClosed : IfcLogical, vClosed : IfcLogical, selfIntersect : IfcLogical, uMultiplicities : Array<IfcInteger>, vMultiplicities : Array<IfcInteger>, uKnots : Array<IfcParameterValue>, vKnots : Array<IfcParameterValue>, knotSpec : IfcKnotType) {
         super(uDegree,vDegree,controlPointsList,surfaceForm,uClosed,vClosed,selfIntersect)
-
 		this.UMultiplicities = uMultiplicities
 		this.VMultiplicities = vMultiplicities
 		this.UKnots = uKnots

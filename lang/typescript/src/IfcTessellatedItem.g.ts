@@ -11,6 +11,5 @@ export abstract class IfcTessellatedItem extends IfcGeometricRepresentationItem 
 
     constructor() {
         super()
-
     }
 }

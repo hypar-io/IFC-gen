@@ -16,8 +16,6 @@ export class IfcReference extends BaseIfc {
 
     constructor() {
         super()
-		this.ListPositions = new Array<IfcInteger>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -25,7 +25,6 @@ export class IfcFootingType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcFootingTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

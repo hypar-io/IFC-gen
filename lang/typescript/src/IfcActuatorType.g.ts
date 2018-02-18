@@ -25,7 +25,6 @@ export class IfcActuatorType extends IfcDistributionControlElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcActuatorTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

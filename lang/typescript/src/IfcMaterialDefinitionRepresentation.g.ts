@@ -14,7 +14,6 @@ export class IfcMaterialDefinitionRepresentation extends IfcProductRepresentatio
 
     constructor(representations : Array<IfcRepresentation>, representedMaterial : IfcMaterial) {
         super(representations)
-
 		this.RepresentedMaterial = representedMaterial
 
     }

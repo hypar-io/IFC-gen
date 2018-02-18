@@ -13,7 +13,6 @@ export class IfcVertexPoint extends IfcVertex {
 
     constructor(vertexGeometry : IfcPoint) {
         super()
-
 		this.VertexGeometry = vertexGeometry
 
     }

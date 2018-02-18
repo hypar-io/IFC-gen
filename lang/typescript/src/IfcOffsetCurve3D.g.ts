@@ -19,7 +19,6 @@ export class IfcOffsetCurve3D extends IfcCurve {
 
     constructor(basisCurve : IfcCurve, distance : IfcLengthMeasure, selfIntersect : IfcLogical, refDirection : IfcDirection) {
         super()
-
 		this.BasisCurve = basisCurve
 		this.Distance = distance
 		this.SelfIntersect = selfIntersect

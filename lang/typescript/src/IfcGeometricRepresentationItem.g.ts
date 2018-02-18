@@ -11,6 +11,5 @@ export abstract class IfcGeometricRepresentationItem extends IfcRepresentationIt
 
     constructor() {
         super()
-
     }
 }

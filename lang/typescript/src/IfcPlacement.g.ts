@@ -17,7 +17,6 @@ export abstract class IfcPlacement extends IfcGeometricRepresentationItem {
 
     constructor(location : IfcCartesianPoint) {
         super()
-
 		this.Location = location
 
     }

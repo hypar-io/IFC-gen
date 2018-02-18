@@ -18,7 +18,6 @@ export class IfcRelAssignsToResource extends IfcRelAssigns {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingResource : IfcResource|IfcTypeResource) {
         super(globalId,relatedObjects)
-
 		this.RelatingResource = relatingResource
 
     }

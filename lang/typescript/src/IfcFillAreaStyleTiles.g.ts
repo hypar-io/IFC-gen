@@ -16,7 +16,6 @@ export class IfcFillAreaStyleTiles extends IfcGeometricRepresentationItem {
 
     constructor(tilingPattern : Array<IfcVector>, tiles : Array<IfcStyledItem>, tilingScale : IfcPositiveRatioMeasure) {
         super()
-
 		this.TilingPattern = tilingPattern
 		this.Tiles = tiles
 		this.TilingScale = tilingScale

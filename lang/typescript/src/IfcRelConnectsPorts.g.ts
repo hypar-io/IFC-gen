@@ -18,7 +18,6 @@ export class IfcRelConnectsPorts extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingPort : IfcPort, relatedPort : IfcPort) {
         super(globalId)
-
 		this.RelatingPort = relatingPort
 		this.RelatedPort = relatedPort
 

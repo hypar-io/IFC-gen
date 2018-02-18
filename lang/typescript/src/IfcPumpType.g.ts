@@ -25,7 +25,6 @@ export class IfcPumpType extends IfcFlowMovingDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcPumpTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -25,7 +25,6 @@ export class IfcTextStyleTextModel extends IfcPresentationItem {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

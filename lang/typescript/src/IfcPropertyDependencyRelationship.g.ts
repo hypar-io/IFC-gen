@@ -15,7 +15,6 @@ export class IfcPropertyDependencyRelationship extends IfcResourceLevelRelations
 
     constructor(dependingProperty : IfcProperty, dependantProperty : IfcProperty) {
         super()
-
 		this.DependingProperty = dependingProperty
 		this.DependantProperty = dependantProperty
 

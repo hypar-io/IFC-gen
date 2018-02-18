@@ -19,7 +19,6 @@ export class IfcVector extends IfcGeometricRepresentationItem {
 
     constructor(orientation : IfcDirection, magnitude : IfcLengthMeasure) {
         super()
-
 		this.Orientation = orientation
 		this.Magnitude = magnitude
 

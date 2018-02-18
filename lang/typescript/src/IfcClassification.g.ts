@@ -25,10 +25,6 @@ export class IfcClassification extends IfcExternalInformation {
 
     constructor(name : IfcLabel) {
         super()
-		this.ReferenceTokens = new Array<IfcIdentifier>()
-		this.ClassificationForObjects = new Array<IfcRelAssociatesClassification>()
-		this.HasReferences = new Array<IfcClassificationReference>()
-
 		this.Name = name
 
     }

@@ -18,7 +18,6 @@ export class IfcRevolvedAreaSolidTapered extends IfcRevolvedAreaSolid {
 
     constructor(sweptArea : IfcProfileDef, axis : IfcAxis1Placement, angle : IfcPlaneAngleMeasure, endSweptArea : IfcProfileDef) {
         super(sweptArea,axis,angle)
-
 		this.EndSweptArea = endSweptArea
 
     }

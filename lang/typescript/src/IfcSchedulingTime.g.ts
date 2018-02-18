@@ -13,6 +13,5 @@ export abstract class IfcSchedulingTime extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

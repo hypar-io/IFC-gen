@@ -39,7 +39,6 @@ export class IfcPipeSegment extends IfcFlowSegment {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

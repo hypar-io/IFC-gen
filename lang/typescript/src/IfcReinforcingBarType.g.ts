@@ -36,8 +36,6 @@ export class IfcReinforcingBarType extends IfcReinforcingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcReinforcingBarTypeEnum) {
         super(globalId)
-		this.BendingParameters = new Array<IfcLengthMeasure|IfcPlaneAngleMeasure>()
-
 		this.PredefinedType = predefinedType
 
     }

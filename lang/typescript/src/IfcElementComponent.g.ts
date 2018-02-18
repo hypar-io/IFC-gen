@@ -35,6 +35,5 @@ export abstract class IfcElementComponent extends IfcElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

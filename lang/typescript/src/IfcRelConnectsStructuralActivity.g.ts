@@ -18,7 +18,6 @@ export class IfcRelConnectsStructuralActivity extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement|IfcStructuralItem, relatedStructuralActivity : IfcStructuralActivity) {
         super(globalId)
-
 		this.RelatingElement = relatingElement
 		this.RelatedStructuralActivity = relatedStructuralActivity
 

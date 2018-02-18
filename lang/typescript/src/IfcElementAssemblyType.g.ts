@@ -25,7 +25,6 @@ export class IfcElementAssemblyType extends IfcElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcElementAssemblyTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

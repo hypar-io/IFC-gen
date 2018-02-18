@@ -20,7 +20,6 @@ export class IfcSweptDiskSolid extends IfcSolidModel {
 
     constructor(directrix : IfcCurve, radius : IfcPositiveLengthMeasure) {
         super()
-
 		this.Directrix = directrix
 		this.Radius = radius
 

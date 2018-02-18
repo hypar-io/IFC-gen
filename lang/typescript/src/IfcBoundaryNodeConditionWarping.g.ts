@@ -15,7 +15,6 @@ export class IfcBoundaryNodeConditionWarping extends IfcBoundaryNodeCondition {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -14,7 +14,6 @@ export class IfcPlanarExtent extends IfcGeometricRepresentationItem {
 
     constructor(sizeInX : IfcLengthMeasure, sizeInY : IfcLengthMeasure) {
         super()
-
 		this.SizeInX = sizeInX
 		this.SizeInY = sizeInY
 

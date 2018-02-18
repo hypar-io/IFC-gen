@@ -15,7 +15,6 @@ export class IfcMaterialProfileSetUsageTapering extends IfcMaterialProfileSetUsa
 
     constructor(forProfileSet : IfcMaterialProfileSet, forProfileEndSet : IfcMaterialProfileSet) {
         super(forProfileSet)
-
 		this.ForProfileEndSet = forProfileEndSet
 
     }

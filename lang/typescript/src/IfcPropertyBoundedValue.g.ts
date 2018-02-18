@@ -130,7 +130,6 @@ export class IfcPropertyBoundedValue extends IfcSimpleProperty {
 
     constructor(name : IfcIdentifier) {
         super(name)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

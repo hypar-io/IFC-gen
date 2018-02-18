@@ -16,7 +16,6 @@ export class IfcStyledItem extends IfcRepresentationItem {
 
     constructor(styles : Array<IfcPresentationStyle|IfcPresentationStyleAssignment>) {
         super()
-
 		this.Styles = styles
 
     }

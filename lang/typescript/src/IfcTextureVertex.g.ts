@@ -11,7 +11,6 @@ export class IfcTextureVertex extends IfcPresentationItem {
 
     constructor(coordinates : Array<IfcParameterValue>) {
         super()
-
 		this.Coordinates = coordinates
 
     }

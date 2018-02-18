@@ -14,7 +14,6 @@ export class IfcColourRgb extends IfcColourSpecification {
 
     constructor(red : IfcNormalisedRatioMeasure, green : IfcNormalisedRatioMeasure, blue : IfcNormalisedRatioMeasure) {
         super()
-
 		this.Red = red
 		this.Green = green
 		this.Blue = blue

@@ -18,7 +18,6 @@ export class IfcSurfaceStyle extends IfcPresentationStyle {
 
     constructor(side : IfcSurfaceSide, styles : Array<IfcExternallyDefinedSurfaceStyle|IfcSurfaceStyleLighting|IfcSurfaceStyleRefraction|IfcSurfaceStyleShading|IfcSurfaceStyleWithTextures>) {
         super()
-
 		this.Side = side
 		this.Styles = styles
 

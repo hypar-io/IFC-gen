@@ -25,7 +25,6 @@ export class IfcTextStyleFontModel extends IfcPreDefinedTextFont {
 
     constructor(name : IfcLabel, fontFamily : Array<IfcTextFontName>, fontSize : IfcDescriptiveMeasure|IfcLengthMeasure|IfcNormalisedRatioMeasure|IfcPositiveLengthMeasure|IfcPositiveRatioMeasure|IfcRatioMeasure) {
         super(name)
-
 		this.FontFamily = fontFamily
 		this.FontSize = fontSize
 

@@ -17,7 +17,6 @@ export class IfcRelFillsElement extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingOpeningElement : IfcOpeningElement, relatedBuildingElement : IfcElement) {
         super(globalId)
-
 		this.RelatingOpeningElement = relatingOpeningElement
 		this.RelatedBuildingElement = relatedBuildingElement
 

@@ -26,10 +26,5 @@ export abstract class IfcObject extends IfcObjectDefinition {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.IsDeclaredBy = new Array<IfcRelDefinesByObject>()
-		this.Declares = new Array<IfcRelDefinesByObject>()
-		this.IsTypedBy = new Array<IfcRelDefinesByType>()
-		this.IsDefinedBy = new Array<IfcRelDefinesByProperties>()
-
     }
 }

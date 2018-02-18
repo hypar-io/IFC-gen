@@ -17,7 +17,6 @@ export class IfcBlobTexture extends IfcSurfaceTexture {
 
     constructor(repeatS : IfcBoolean, repeatT : IfcBoolean, rasterFormat : IfcIdentifier, rasterCode : IfcBinary) {
         super(repeatS,repeatT)
-
 		this.RasterFormat = rasterFormat
 		this.RasterCode = rasterCode
 

@@ -25,7 +25,6 @@ export class IfcFireSuppressionTerminalType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcFireSuppressionTerminalTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -30,8 +30,6 @@ export class IfcStructuralResultGroup extends IfcGroup {
 
     constructor(globalId : IfcGloballyUniqueId, theoryType : IfcAnalysisTheoryTypeEnum, isLinear : IfcBoolean) {
         super(globalId)
-		this.ResultGroupFor = new Array<IfcStructuralAnalysisModel>()
-
 		this.TheoryType = theoryType
 		this.IsLinear = isLinear
 

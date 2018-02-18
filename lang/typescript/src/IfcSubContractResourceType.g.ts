@@ -26,7 +26,6 @@ export class IfcSubContractResourceType extends IfcConstructionResourceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSubContractResourceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -21,7 +21,6 @@ export class IfcReinforcementDefinitionProperties extends IfcPreDefinedPropertyS
 
     constructor(globalId : IfcGloballyUniqueId, reinforcementSectionDefinitions : Array<IfcSectionReinforcementProperties>) {
         super(globalId)
-
 		this.ReinforcementSectionDefinitions = reinforcementSectionDefinitions
 
     }

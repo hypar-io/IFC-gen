@@ -28,9 +28,5 @@ export abstract class IfcContext extends IfcObjectDefinition {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.RepresentationContexts = new Array<IfcRepresentationContext>()
-		this.IsDefinedBy = new Array<IfcRelDefinesByProperties>()
-		this.Declares = new Array<IfcRelDeclares>()
-
     }
 }

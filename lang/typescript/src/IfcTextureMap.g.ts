@@ -14,7 +14,6 @@ export class IfcTextureMap extends IfcTextureCoordinate {
 
     constructor(maps : Array<IfcSurfaceTexture>, vertices : Array<IfcTextureVertex>, mappedTo : IfcFace) {
         super(maps)
-
 		this.Vertices = vertices
 		this.MappedTo = mappedTo
 

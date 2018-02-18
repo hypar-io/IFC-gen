@@ -26,9 +26,6 @@ export class IfcTypeProduct extends IfcTypeObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.RepresentationMaps = new Array<IfcRepresentationMap>()
-		this.ReferencedBy = new Array<IfcRelAssignsToProduct>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

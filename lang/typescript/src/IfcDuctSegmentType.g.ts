@@ -25,7 +25,6 @@ export class IfcDuctSegmentType extends IfcFlowSegmentType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDuctSegmentTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

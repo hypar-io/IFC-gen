@@ -14,8 +14,6 @@ export class IfcIndexedTriangleTextureMap extends IfcIndexedTextureMap {
 
     constructor(maps : Array<IfcSurfaceTexture>, mappedTo : IfcTessellatedFaceSet, texCoords : IfcTextureVertexList) {
         super(maps,mappedTo,texCoords)
-		this.TexCoordIndex = new Array<Array<IfcPositiveInteger>>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

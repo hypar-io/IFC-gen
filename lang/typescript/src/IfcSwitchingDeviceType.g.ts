@@ -25,7 +25,6 @@ export class IfcSwitchingDeviceType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSwitchingDeviceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

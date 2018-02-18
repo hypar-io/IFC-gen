@@ -32,7 +32,6 @@ export class IfcStructuralSurfaceAction extends IfcStructuralAction {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum, predefinedType : IfcStructuralSurfaceActivityTypeEnum) {
         super(globalId,appliedLoad,globalOrLocal)
-
 		this.PredefinedType = predefinedType
 
     }

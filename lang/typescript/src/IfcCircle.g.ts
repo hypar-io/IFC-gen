@@ -16,7 +16,6 @@ export class IfcCircle extends IfcConic {
 
     constructor(position : IfcAxis2Placement2D|IfcAxis2Placement3D, radius : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.Radius = radius
 
     }

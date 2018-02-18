@@ -16,7 +16,6 @@ export class IfcImageTexture extends IfcSurfaceTexture {
 
     constructor(repeatS : IfcBoolean, repeatT : IfcBoolean, uRLReference : IfcURIReference) {
         super(repeatS,repeatT)
-
 		this.URLReference = uRLReference
 
     }

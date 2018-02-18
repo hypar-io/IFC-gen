@@ -44,12 +44,6 @@ export class IfcDocumentInformation extends IfcExternalInformation {
 
     constructor(identification : IfcIdentifier, name : IfcLabel) {
         super()
-		this.Editors = new Array<IfcOrganization|IfcPerson|IfcPersonAndOrganization>()
-		this.DocumentInfoForObjects = new Array<IfcRelAssociatesDocument>()
-		this.HasDocumentReferences = new Array<IfcDocumentReference>()
-		this.IsPointedTo = new Array<IfcDocumentInformationRelationship>()
-		this.IsPointer = new Array<IfcDocumentInformationRelationship>()
-
 		this.Identification = identification
 		this.Name = name
 

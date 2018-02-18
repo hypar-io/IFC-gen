@@ -11,7 +11,6 @@ export class IfcVertex extends IfcTopologicalRepresentationItem {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

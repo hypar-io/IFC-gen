@@ -13,7 +13,6 @@ export class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -14,7 +14,6 @@ export abstract class IfcIndexedTextureMap extends IfcTextureCoordinate {
 
     constructor(maps : Array<IfcSurfaceTexture>, mappedTo : IfcTessellatedFaceSet, texCoords : IfcTextureVertexList) {
         super(maps)
-
 		this.MappedTo = mappedTo
 		this.TexCoords = texCoords
 

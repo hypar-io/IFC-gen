@@ -23,8 +23,6 @@ export class IfcPropertySetTemplate extends IfcPropertyTemplateDefinition {
 
     constructor(globalId : IfcGloballyUniqueId, hasPropertyTemplates : Array<IfcPropertyTemplate>) {
         super(globalId)
-		this.Defines = new Array<IfcRelDefinesByTemplate>()
-
 		this.HasPropertyTemplates = hasPropertyTemplates
 
     }

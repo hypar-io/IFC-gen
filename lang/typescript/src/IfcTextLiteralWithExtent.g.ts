@@ -19,7 +19,6 @@ export class IfcTextLiteralWithExtent extends IfcTextLiteral {
 
     constructor(literal : IfcPresentableText, placement : IfcAxis2Placement2D|IfcAxis2Placement3D, path : IfcTextPath, extent : IfcPlanarExtent, boxAlignment : IfcBoxAlignment) {
         super(literal,placement,path)
-
 		this.Extent = extent
 		this.BoxAlignment = boxAlignment
 

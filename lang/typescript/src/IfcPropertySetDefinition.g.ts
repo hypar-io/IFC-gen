@@ -21,9 +21,5 @@ export abstract class IfcPropertySetDefinition extends IfcPropertyDefinition {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.DefinesType = new Array<IfcTypeObject>()
-		this.IsDefinedBy = new Array<IfcRelDefinesByTemplate>()
-		this.DefinesOccurrence = new Array<IfcRelDefinesByProperties>()
-
     }
 }

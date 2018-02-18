@@ -18,7 +18,6 @@ export class IfcReparametrisedCompositeCurveSegment extends IfcCompositeCurveSeg
 
     constructor(transition : IfcTransitionCode, sameSense : IfcBoolean, parentCurve : IfcCurve, paramLength : IfcParameterValue) {
         super(transition,sameSense,parentCurve)
-
 		this.ParamLength = paramLength
 
     }

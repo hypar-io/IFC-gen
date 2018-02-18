@@ -25,7 +25,6 @@ export class IfcRelConnectsStructuralMember extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingStructuralMember : IfcStructuralMember, relatedStructuralConnection : IfcStructuralConnection) {
         super(globalId)
-
 		this.RelatingStructuralMember = relatingStructuralMember
 		this.RelatedStructuralConnection = relatedStructuralConnection
 

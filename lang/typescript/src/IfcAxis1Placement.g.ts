@@ -18,7 +18,6 @@ export class IfcAxis1Placement extends IfcPlacement {
 
     constructor(location : IfcCartesianPoint) {
         super(location)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

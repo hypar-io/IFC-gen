@@ -131,9 +131,6 @@ export class IfcAppliedValue extends BaseIfc {
 
     constructor() {
         super()
-		this.Components = new Array<IfcAppliedValue>()
-		this.HasExternalReference = new Array<IfcExternalReferenceRelationship>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

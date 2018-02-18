@@ -18,8 +18,5 @@ export abstract class IfcAddress extends BaseIfc {
 
     constructor() {
         super()
-		this.OfPerson = new Array<IfcPerson>()
-		this.OfOrganization = new Array<IfcOrganization>()
-
     }
 }

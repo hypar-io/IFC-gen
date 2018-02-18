@@ -25,7 +25,6 @@ export class IfcDuctSilencerType extends IfcFlowTreatmentDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDuctSilencerTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

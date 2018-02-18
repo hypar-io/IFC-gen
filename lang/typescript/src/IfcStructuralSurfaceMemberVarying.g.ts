@@ -28,7 +28,6 @@ export class IfcStructuralSurfaceMemberVarying extends IfcStructuralSurfaceMembe
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcStructuralSurfaceMemberTypeEnum) {
         super(globalId,predefinedType)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

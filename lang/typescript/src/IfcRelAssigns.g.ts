@@ -17,7 +17,6 @@ export abstract class IfcRelAssigns extends IfcRelationship {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>) {
         super(globalId)
-
 		this.RelatedObjects = relatedObjects
 
     }

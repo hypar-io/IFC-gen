@@ -15,9 +15,6 @@ export class IfcSurfaceReinforcementArea extends IfcStructuralLoadOrResult {
 
     constructor() {
         super()
-		this.SurfaceReinforcement1 = new Array<IfcLengthMeasure>()
-		this.SurfaceReinforcement2 = new Array<IfcLengthMeasure>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

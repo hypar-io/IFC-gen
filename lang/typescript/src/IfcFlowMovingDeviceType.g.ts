@@ -23,6 +23,5 @@ export abstract class IfcFlowMovingDeviceType extends IfcDistributionFlowElement
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

@@ -20,7 +20,6 @@ export class IfcRelAssignsToProcess extends IfcRelAssigns {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingProcess : IfcProcess|IfcTypeProcess) {
         super(globalId,relatedObjects)
-
 		this.RelatingProcess = relatingProcess
 
     }

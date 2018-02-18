@@ -20,7 +20,6 @@ export class IfcCurrencyRelationship extends IfcResourceLevelRelationship {
 
     constructor(relatingMonetaryUnit : IfcMonetaryUnit, relatedMonetaryUnit : IfcMonetaryUnit, exchangeRate : IfcPositiveRatioMeasure) {
         super()
-
 		this.RelatingMonetaryUnit = relatingMonetaryUnit
 		this.RelatedMonetaryUnit = relatedMonetaryUnit
 		this.ExchangeRate = exchangeRate

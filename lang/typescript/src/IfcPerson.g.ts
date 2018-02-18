@@ -22,13 +22,6 @@ export class IfcPerson extends BaseIfc {
 
     constructor() {
         super()
-		this.MiddleNames = new Array<IfcLabel>()
-		this.PrefixTitles = new Array<IfcLabel>()
-		this.SuffixTitles = new Array<IfcLabel>()
-		this.Roles = new Array<IfcActorRole>()
-		this.Addresses = new Array<IfcAddress>()
-		this.EngagedIn = new Array<IfcPersonAndOrganization>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

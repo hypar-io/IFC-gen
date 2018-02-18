@@ -13,7 +13,6 @@ export class IfcSurfaceStyleShading extends IfcPresentationItem {
 
     constructor(surfaceColour : IfcColourRgb) {
         super()
-
 		this.SurfaceColour = surfaceColour
 
     }

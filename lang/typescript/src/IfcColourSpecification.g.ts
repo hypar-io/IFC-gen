@@ -11,6 +11,5 @@ export abstract class IfcColourSpecification extends IfcPresentationItem {
 
     constructor() {
         super()
-
     }
 }

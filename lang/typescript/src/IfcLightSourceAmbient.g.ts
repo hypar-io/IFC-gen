@@ -14,7 +14,6 @@ export class IfcLightSourceAmbient extends IfcLightSource {
 
     constructor(lightColour : IfcColourRgb) {
         super(lightColour)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

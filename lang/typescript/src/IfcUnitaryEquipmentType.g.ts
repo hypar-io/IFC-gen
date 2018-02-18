@@ -25,7 +25,6 @@ export class IfcUnitaryEquipmentType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcUnitaryEquipmentTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -25,7 +25,6 @@ export class IfcDiscreteAccessoryType extends IfcElementComponentType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDiscreteAccessoryTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

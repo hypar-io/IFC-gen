@@ -13,7 +13,6 @@ export class IfcSubedge extends IfcEdge {
 
     constructor(edgeStart : IfcVertex, edgeEnd : IfcVertex, parentEdge : IfcEdge) {
         super(edgeStart,edgeEnd)
-
 		this.ParentEdge = parentEdge
 
     }

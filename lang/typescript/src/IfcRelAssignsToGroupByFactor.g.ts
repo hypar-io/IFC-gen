@@ -18,7 +18,6 @@ export class IfcRelAssignsToGroupByFactor extends IfcRelAssignsToGroup {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingGroup : IfcGroup, factor : IfcRatioMeasure) {
         super(globalId,relatedObjects,relatingGroup)
-
 		this.Factor = factor
 
     }

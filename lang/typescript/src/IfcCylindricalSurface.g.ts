@@ -15,7 +15,6 @@ export class IfcCylindricalSurface extends IfcElementarySurface {
 
     constructor(position : IfcAxis2Placement3D, radius : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.Radius = radius
 
     }

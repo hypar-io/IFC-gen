@@ -32,7 +32,6 @@ export abstract class IfcBSplineSurface extends IfcBoundedSurface {
 
     constructor(uDegree : IfcInteger, vDegree : IfcInteger, controlPointsList : Array<Array<IfcCartesianPoint>>, surfaceForm : IfcBSplineSurfaceForm, uClosed : IfcLogical, vClosed : IfcLogical, selfIntersect : IfcLogical) {
         super()
-
 		this.UDegree = uDegree
 		this.VDegree = vDegree
 		this.ControlPointsList = controlPointsList

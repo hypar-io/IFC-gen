@@ -23,7 +23,6 @@ export class IfcBooleanResult extends IfcGeometricRepresentationItem {
 
     constructor(op : IfcBooleanOperator, firstOperand : IfcBooleanResult|IfcCsgPrimitive3D|IfcHalfSpaceSolid|IfcSolidModel|IfcTessellatedFaceSet, secondOperand : IfcBooleanResult|IfcCsgPrimitive3D|IfcHalfSpaceSolid|IfcSolidModel|IfcTessellatedFaceSet) {
         super()
-
 		this.Operator = op
 		this.FirstOperand = firstOperand
 		this.SecondOperand = secondOperand

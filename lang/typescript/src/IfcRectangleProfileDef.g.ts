@@ -17,7 +17,6 @@ export class IfcRectangleProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, xDim : IfcPositiveLengthMeasure, yDim : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.XDim = xDim
 		this.YDim = yDim
 

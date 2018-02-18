@@ -17,7 +17,6 @@ export class IfcDerivedProfileDef extends IfcProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, parentProfile : IfcProfileDef, op : IfcCartesianTransformationOperator2D) {
         super(profileType)
-
 		this.ParentProfile = parentProfile
 		this.Operator = op
 

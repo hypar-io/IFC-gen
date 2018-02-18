@@ -12,8 +12,5 @@ export abstract class IfcObjectPlacement extends BaseIfc {
 
     constructor() {
         super()
-		this.PlacesObject = new Array<IfcProduct>()
-		this.ReferencedByPlacements = new Array<IfcLocalPlacement>()
-
     }
 }

@@ -19,7 +19,6 @@ export class IfcPointOnCurve extends IfcPoint {
 
     constructor(basisCurve : IfcCurve, pointParameter : IfcParameterValue) {
         super()
-
 		this.BasisCurve = basisCurve
 		this.PointParameter = pointParameter
 

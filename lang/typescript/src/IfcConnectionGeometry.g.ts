@@ -8,6 +8,5 @@ export abstract class IfcConnectionGeometry extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

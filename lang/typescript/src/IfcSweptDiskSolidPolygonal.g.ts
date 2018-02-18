@@ -16,7 +16,6 @@ export class IfcSweptDiskSolidPolygonal extends IfcSweptDiskSolid {
 
     constructor(directrix : IfcCurve, radius : IfcPositiveLengthMeasure) {
         super(directrix,radius)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

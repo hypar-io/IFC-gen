@@ -14,7 +14,6 @@ export class IfcApprovalRelationship extends IfcResourceLevelRelationship {
 
     constructor(relatingApproval : IfcApproval, relatedApprovals : Array<IfcApproval>) {
         super()
-
 		this.RelatingApproval = relatingApproval
 		this.RelatedApprovals = relatedApprovals
 

@@ -14,7 +14,6 @@ export class IfcOrganizationRelationship extends IfcResourceLevelRelationship {
 
     constructor(relatingOrganization : IfcOrganization, relatedOrganizations : Array<IfcOrganization>) {
         super()
-
 		this.RelatingOrganization = relatingOrganization
 		this.RelatedOrganizations = relatedOrganizations
 

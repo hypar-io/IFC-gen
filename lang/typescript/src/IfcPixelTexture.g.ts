@@ -20,7 +20,6 @@ export class IfcPixelTexture extends IfcSurfaceTexture {
 
     constructor(repeatS : IfcBoolean, repeatT : IfcBoolean, width : IfcInteger, height : IfcInteger, colourComponents : IfcInteger, pixel : Array<IfcBinary>) {
         super(repeatS,repeatT)
-
 		this.Width = width
 		this.Height = height
 		this.ColourComponents = colourComponents

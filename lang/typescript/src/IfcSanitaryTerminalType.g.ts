@@ -25,7 +25,6 @@ export class IfcSanitaryTerminalType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSanitaryTerminalTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -22,7 +22,6 @@ export class IfcLightSourcePositional extends IfcLightSource {
 
     constructor(lightColour : IfcColourRgb, position : IfcCartesianPoint, radius : IfcPositiveLengthMeasure, constantAttenuation : IfcReal, distanceAttenuation : IfcReal, quadricAttenuation : IfcReal) {
         super(lightColour)
-
 		this.Position = position
 		this.Radius = radius
 		this.ConstantAttenuation = constantAttenuation

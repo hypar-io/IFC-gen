@@ -27,7 +27,5 @@ export abstract class IfcProduct extends IfcObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ReferencedBy = new Array<IfcRelAssignsToProduct>()
-
     }
 }

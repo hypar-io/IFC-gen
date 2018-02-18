@@ -27,7 +27,6 @@ export class IfcWindowPanelProperties extends IfcPreDefinedPropertySet {
 
     constructor(globalId : IfcGloballyUniqueId, operationType : IfcWindowPanelOperationEnum, panelPosition : IfcWindowPanelPositionEnum) {
         super(globalId)
-
 		this.OperationType = operationType
 		this.PanelPosition = panelPosition
 

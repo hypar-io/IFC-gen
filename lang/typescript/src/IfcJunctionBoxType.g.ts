@@ -25,7 +25,6 @@ export class IfcJunctionBoxType extends IfcFlowFittingType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcJunctionBoxTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

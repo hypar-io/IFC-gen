@@ -15,7 +15,6 @@ export class IfcGridPlacement extends IfcObjectPlacement {
 
     constructor(placementLocation : IfcVirtualGridIntersection) {
         super()
-
 		this.PlacementLocation = placementLocation
 
     }

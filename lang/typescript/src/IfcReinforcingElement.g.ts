@@ -36,6 +36,5 @@ export abstract class IfcReinforcingElement extends IfcElementComponent {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

@@ -17,7 +17,6 @@ export class IfcRelConnectsWithRealizingElements extends IfcRelConnectsElements 
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement, relatedElement : IfcElement, realizingElements : Array<IfcElement>) {
         super(globalId,relatingElement,relatedElement)
-
 		this.RealizingElements = realizingElements
 
     }

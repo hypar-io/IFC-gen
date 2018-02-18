@@ -15,7 +15,6 @@ export class IfcArbitraryOpenProfileDef extends IfcProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, curve : IfcBoundedCurve) {
         super(profileType)
-
 		this.Curve = curve
 
     }

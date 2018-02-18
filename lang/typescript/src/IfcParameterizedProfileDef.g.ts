@@ -15,6 +15,5 @@ export abstract class IfcParameterizedProfileDef extends IfcProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum) {
         super(profileType)
-
     }
 }

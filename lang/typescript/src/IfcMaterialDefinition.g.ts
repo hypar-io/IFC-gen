@@ -14,9 +14,5 @@ export abstract class IfcMaterialDefinition extends BaseIfc {
 
     constructor() {
         super()
-		this.AssociatedTo = new Array<IfcRelAssociatesMaterial>()
-		this.HasExternalReferences = new Array<IfcExternalReferenceRelationship>()
-		this.HasProperties = new Array<IfcMaterialProperties>()
-
     }
 }

@@ -25,7 +25,6 @@ export class IfcTaskType extends IfcTypeProcess {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcTaskTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

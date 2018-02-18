@@ -18,7 +18,6 @@ export class IfcExtrudedAreaSolid extends IfcSweptAreaSolid {
 
     constructor(sweptArea : IfcProfileDef, extrudedDirection : IfcDirection, depth : IfcPositiveLengthMeasure) {
         super(sweptArea)
-
 		this.ExtrudedDirection = extrudedDirection
 		this.Depth = depth
 

@@ -38,8 +38,6 @@ export class IfcDistributionControlElement extends IfcDistributionElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.AssignedToFlowElement = new Array<IfcRelFlowControlElements>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

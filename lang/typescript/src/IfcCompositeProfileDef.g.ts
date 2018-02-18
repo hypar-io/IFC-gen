@@ -15,7 +15,6 @@ export class IfcCompositeProfileDef extends IfcProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, profiles : Array<IfcProfileDef>) {
         super(profileType)
-
 		this.Profiles = profiles
 
     }

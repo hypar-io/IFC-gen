@@ -17,7 +17,6 @@ export class IfcRectangularPyramid extends IfcCsgPrimitive3D {
 
     constructor(position : IfcAxis2Placement3D, xLength : IfcPositiveLengthMeasure, yLength : IfcPositiveLengthMeasure, height : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.XLength = xLength
 		this.YLength = yLength
 		this.Height = height

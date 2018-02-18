@@ -25,7 +25,6 @@ export class IfcRoofType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcRoofTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

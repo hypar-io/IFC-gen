@@ -17,7 +17,6 @@ export class IfcQuantityArea extends IfcPhysicalSimpleQuantity {
 
     constructor(name : IfcLabel, areaValue : IfcAreaMeasure) {
         super(name)
-
 		this.AreaValue = areaValue
 
     }

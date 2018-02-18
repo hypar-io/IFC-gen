@@ -16,7 +16,6 @@ export class IfcRightCircularCylinder extends IfcCsgPrimitive3D {
 
     constructor(position : IfcAxis2Placement3D, height : IfcPositiveLengthMeasure, radius : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.Height = height
 		this.Radius = radius
 

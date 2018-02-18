@@ -30,7 +30,6 @@ export class IfcStructuralLinearAction extends IfcStructuralCurveAction {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum, predefinedType : IfcStructuralCurveActivityTypeEnum) {
         super(globalId,appliedLoad,globalOrLocal,predefinedType)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

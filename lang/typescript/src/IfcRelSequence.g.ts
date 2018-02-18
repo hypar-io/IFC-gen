@@ -21,7 +21,6 @@ export class IfcRelSequence extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingProcess : IfcProcess, relatedProcess : IfcProcess) {
         super(globalId)
-
 		this.RelatingProcess = relatingProcess
 		this.RelatedProcess = relatedProcess
 

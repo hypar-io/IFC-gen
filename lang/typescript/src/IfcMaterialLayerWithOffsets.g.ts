@@ -23,7 +23,6 @@ export class IfcMaterialLayerWithOffsets extends IfcMaterialLayer {
 
     constructor(layerThickness : IfcNonNegativeLengthMeasure, offsetDirection : IfcLayerSetDirectionEnum, offsetValues : Array<IfcLengthMeasure>) {
         super(layerThickness)
-
 		this.OffsetDirection = offsetDirection
 		this.OffsetValues = offsetValues
 

@@ -14,8 +14,6 @@ export class IfcPersonAndOrganization extends BaseIfc {
 
     constructor(thePerson : IfcPerson, theOrganization : IfcOrganization) {
         super()
-		this.Roles = new Array<IfcActorRole>()
-
 		this.ThePerson = thePerson
 		this.TheOrganization = theOrganization
 

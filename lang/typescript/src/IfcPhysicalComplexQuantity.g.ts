@@ -16,7 +16,6 @@ export class IfcPhysicalComplexQuantity extends IfcPhysicalQuantity {
 
     constructor(name : IfcLabel, hasQuantities : Array<IfcPhysicalQuantity>, discrimination : IfcLabel) {
         super(name)
-
 		this.HasQuantities = hasQuantities
 		this.Discrimination = discrimination
 

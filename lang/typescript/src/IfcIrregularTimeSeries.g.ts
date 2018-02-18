@@ -20,7 +20,6 @@ export class IfcIrregularTimeSeries extends IfcTimeSeries {
 
     constructor(name : IfcLabel, startTime : IfcDateTime, endTime : IfcDateTime, timeSeriesDataType : IfcTimeSeriesDataTypeEnum, dataOrigin : IfcDataOriginEnum, values : Array<IfcIrregularTimeSeriesValue>) {
         super(name,startTime,endTime,timeSeriesDataType,dataOrigin)
-
 		this.Values = values
 
     }

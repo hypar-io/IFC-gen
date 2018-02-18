@@ -17,7 +17,6 @@ export class IfcRelContainedInSpatialStructure extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatedElements : Array<IfcProduct>, relatingStructure : IfcSpatialElement) {
         super(globalId)
-
 		this.RelatedElements = relatedElements
 		this.RelatingStructure = relatingStructure
 

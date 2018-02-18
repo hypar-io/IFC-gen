@@ -128,7 +128,6 @@ export class IfcPropertySingleValue extends IfcSimpleProperty {
 
     constructor(name : IfcIdentifier) {
         super(name)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

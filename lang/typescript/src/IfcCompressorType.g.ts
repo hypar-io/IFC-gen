@@ -25,7 +25,6 @@ export class IfcCompressorType extends IfcFlowMovingDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcCompressorTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

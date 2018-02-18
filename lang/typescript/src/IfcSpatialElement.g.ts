@@ -31,9 +31,5 @@ export abstract class IfcSpatialElement extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ContainsElements = new Array<IfcRelContainedInSpatialStructure>()
-		this.ServicedBySystems = new Array<IfcRelServicesBuildings>()
-		this.ReferencesElements = new Array<IfcRelReferencedInSpatialStructure>()
-
     }
 }

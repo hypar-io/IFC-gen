@@ -32,9 +32,6 @@ export class IfcGrid extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId, uAxes : Array<IfcGridAxis>, vAxes : Array<IfcGridAxis>) {
         super(globalId)
-		this.WAxes = new Array<IfcGridAxis>()
-		this.ContainedInStructure = new Array<IfcRelContainedInSpatialStructure>()
-
 		this.UAxes = uAxes
 		this.VAxes = vAxes
 

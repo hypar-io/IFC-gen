@@ -14,7 +14,6 @@ export class IfcCartesianPointList2D extends IfcCartesianPointList {
 
     constructor(coordList : Array<Array<IfcLengthMeasure>>) {
         super()
-
 		this.CoordList = coordList
 
     }

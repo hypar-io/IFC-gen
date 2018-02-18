@@ -11,7 +11,6 @@ export class IfcDerivedUnitElement extends BaseIfc {
 
     constructor(unit : IfcNamedUnit, exponent : number) {
         super()
-
 		this.Unit = unit
 		this.Exponent = exponent
 

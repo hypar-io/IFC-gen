@@ -21,7 +21,6 @@ export class IfcProject extends IfcContext {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

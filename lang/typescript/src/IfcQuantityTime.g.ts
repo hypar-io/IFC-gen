@@ -17,7 +17,6 @@ export class IfcQuantityTime extends IfcPhysicalSimpleQuantity {
 
     constructor(name : IfcLabel, timeValue : IfcTimeMeasure) {
         super(name)
-
 		this.TimeValue = timeValue
 
     }

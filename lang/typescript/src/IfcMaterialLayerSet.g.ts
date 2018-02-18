@@ -22,7 +22,6 @@ export class IfcMaterialLayerSet extends IfcMaterialDefinition {
 
     constructor(materialLayers : Array<IfcMaterialLayer>) {
         super()
-
 		this.MaterialLayers = materialLayers
 
     }

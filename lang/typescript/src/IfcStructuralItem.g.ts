@@ -26,7 +26,5 @@ export abstract class IfcStructuralItem extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.AssignedStructuralActivity = new Array<IfcRelConnectsStructuralActivity>()
-
     }
 }

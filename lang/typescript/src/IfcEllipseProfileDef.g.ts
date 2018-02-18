@@ -17,7 +17,6 @@ export class IfcEllipseProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, semiAxis1 : IfcPositiveLengthMeasure, semiAxis2 : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.SemiAxis1 = semiAxis1
 		this.SemiAxis2 = semiAxis2
 

@@ -25,7 +25,6 @@ export class IfcStairFlightType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcStairFlightTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

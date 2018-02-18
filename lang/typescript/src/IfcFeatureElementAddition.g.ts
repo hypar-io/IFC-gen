@@ -36,6 +36,5 @@ export abstract class IfcFeatureElementAddition extends IfcFeatureElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

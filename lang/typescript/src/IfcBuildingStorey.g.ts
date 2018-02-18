@@ -30,7 +30,6 @@ export class IfcBuildingStorey extends IfcSpatialStructureElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

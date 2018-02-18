@@ -18,7 +18,6 @@ export class IfcShellBasedSurfaceModel extends IfcGeometricRepresentationItem {
 
     constructor(sbsmBoundary : Array<IfcClosedShell|IfcOpenShell>) {
         super()
-
 		this.SbsmBoundary = sbsmBoundary
 
     }

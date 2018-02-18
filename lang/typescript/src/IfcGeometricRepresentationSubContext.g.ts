@@ -35,7 +35,6 @@ export class IfcGeometricRepresentationSubContext extends IfcGeometricRepresenta
 
     constructor(coordinateSpaceDimension : IfcDimensionCount, worldCoordinateSystem : IfcAxis2Placement2D|IfcAxis2Placement3D, parentContext : IfcGeometricRepresentationContext, targetView : IfcGeometricProjectionEnum) {
         super(coordinateSpaceDimension,worldCoordinateSystem)
-
 		this.ParentContext = parentContext
 		this.TargetView = targetView
 

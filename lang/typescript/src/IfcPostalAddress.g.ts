@@ -21,8 +21,6 @@ export class IfcPostalAddress extends IfcAddress {
 
     constructor() {
         super()
-		this.AddressLines = new Array<IfcLabel>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

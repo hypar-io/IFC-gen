@@ -25,7 +25,6 @@ export class IfcBuildingElementProxyType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcBuildingElementProxyTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

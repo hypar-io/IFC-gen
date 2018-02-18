@@ -33,9 +33,6 @@ export class IfcStructuralAnalysisModel extends IfcSystem {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcAnalysisModelTypeEnum) {
         super(globalId)
-		this.LoadedBy = new Array<IfcStructuralLoadGroup>()
-		this.HasResults = new Array<IfcStructuralResultGroup>()
-
 		this.PredefinedType = predefinedType
 
     }

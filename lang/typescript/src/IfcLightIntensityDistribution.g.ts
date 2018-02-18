@@ -12,7 +12,6 @@ export class IfcLightIntensityDistribution extends BaseIfc {
 
     constructor(lightDistributionCurve : IfcLightDistributionCurveEnum, distributionData : Array<IfcLightDistributionData>) {
         super()
-
 		this.LightDistributionCurve = lightDistributionCurve
 		this.DistributionData = distributionData
 

@@ -30,8 +30,6 @@ export abstract class IfcStructuralActivity extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum) {
         super(globalId)
-		this.AssignedToStructuralItem = new Array<IfcRelConnectsStructuralActivity>()
-
 		this.AppliedLoad = appliedLoad
 		this.GlobalOrLocal = globalOrLocal
 

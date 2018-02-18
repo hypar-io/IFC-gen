@@ -12,7 +12,6 @@ export class IfcVirtualGridIntersection extends BaseIfc {
 
     constructor(intersectingAxes : Array<IfcGridAxis>, offsetDistances : Array<IfcLengthMeasure>) {
         super()
-
 		this.IntersectingAxes = intersectingAxes
 		this.OffsetDistances = offsetDistances
 

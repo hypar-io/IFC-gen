@@ -32,7 +32,6 @@ export class IfcDistributionPort extends IfcPort {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

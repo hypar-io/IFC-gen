@@ -13,7 +13,6 @@ export class IfcVertexLoop extends IfcLoop {
 
     constructor(loopVertex : IfcVertex) {
         super()
-
 		this.LoopVertex = loopVertex
 
     }

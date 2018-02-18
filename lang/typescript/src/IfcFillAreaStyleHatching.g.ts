@@ -21,7 +21,6 @@ export class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem {
 
     constructor(hatchLineAppearance : IfcCurveStyle, startOfNextHatchLine : IfcPositiveLengthMeasure|IfcVector, hatchLineAngle : IfcPlaneAngleMeasure) {
         super()
-
 		this.HatchLineAppearance = hatchLineAppearance
 		this.StartOfNextHatchLine = startOfNextHatchLine
 		this.HatchLineAngle = hatchLineAngle

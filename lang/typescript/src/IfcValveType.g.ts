@@ -25,7 +25,6 @@ export class IfcValveType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcValveTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

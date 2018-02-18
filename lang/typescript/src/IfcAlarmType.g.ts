@@ -25,7 +25,6 @@ export class IfcAlarmType extends IfcDistributionControlElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcAlarmTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

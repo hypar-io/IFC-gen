@@ -19,7 +19,6 @@ export class IfcMapConversion extends IfcCoordinateOperation {
 
     constructor(sourceCRS : IfcCoordinateReferenceSystem|IfcGeometricRepresentationContext, targetCRS : IfcCoordinateReferenceSystem, eastings : IfcLengthMeasure, northings : IfcLengthMeasure, orthogonalHeight : IfcLengthMeasure) {
         super(sourceCRS,targetCRS)
-
 		this.Eastings = eastings
 		this.Northings = northings
 		this.OrthogonalHeight = orthogonalHeight

@@ -14,8 +14,6 @@ export class IfcAnnotationFillArea extends IfcGeometricRepresentationItem {
 
     constructor(outerBoundary : IfcCurve) {
         super()
-		this.InnerBoundaries = new Array<IfcCurve>()
-
 		this.OuterBoundary = outerBoundary
 
     }

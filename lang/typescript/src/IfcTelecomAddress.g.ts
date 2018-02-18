@@ -21,11 +21,6 @@ export class IfcTelecomAddress extends IfcAddress {
 
     constructor() {
         super()
-		this.TelephoneNumbers = new Array<IfcLabel>()
-		this.FacsimileNumbers = new Array<IfcLabel>()
-		this.ElectronicMailAddresses = new Array<IfcLabel>()
-		this.MessagingIDs = new Array<IfcURIReference>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

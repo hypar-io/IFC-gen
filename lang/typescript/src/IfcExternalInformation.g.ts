@@ -8,6 +8,5 @@ export abstract class IfcExternalInformation extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

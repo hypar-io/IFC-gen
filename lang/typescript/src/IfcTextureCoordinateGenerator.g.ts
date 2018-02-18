@@ -14,8 +14,6 @@ export class IfcTextureCoordinateGenerator extends IfcTextureCoordinate {
 
     constructor(maps : Array<IfcSurfaceTexture>, mode : IfcLabel) {
         super(maps)
-		this.Parameter = new Array<IfcReal>()
-
 		this.Mode = mode
 
     }

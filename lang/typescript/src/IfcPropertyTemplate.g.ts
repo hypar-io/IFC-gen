@@ -19,8 +19,5 @@ export abstract class IfcPropertyTemplate extends IfcPropertyTemplateDefinition 
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.PartOfComplexTemplate = new Array<IfcComplexPropertyTemplate>()
-		this.PartOfPsetTemplate = new Array<IfcPropertySetTemplate>()
-
     }
 }

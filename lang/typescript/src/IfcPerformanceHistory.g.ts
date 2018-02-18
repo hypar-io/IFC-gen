@@ -26,7 +26,6 @@ export class IfcPerformanceHistory extends IfcControl {
 
     constructor(globalId : IfcGloballyUniqueId, lifeCyclePhase : IfcLabel) {
         super(globalId)
-
 		this.LifeCyclePhase = lifeCyclePhase
 
     }

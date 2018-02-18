@@ -25,7 +25,6 @@ export class IfcPlateType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcPlateTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

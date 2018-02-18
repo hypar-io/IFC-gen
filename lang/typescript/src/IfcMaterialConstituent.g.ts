@@ -23,7 +23,6 @@ export class IfcMaterialConstituent extends IfcMaterialDefinition {
 
     constructor(material : IfcMaterial) {
         super()
-
 		this.Material = material
 
     }

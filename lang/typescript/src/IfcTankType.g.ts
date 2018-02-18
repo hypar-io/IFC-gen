@@ -25,7 +25,6 @@ export class IfcTankType extends IfcFlowStorageDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcTankTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

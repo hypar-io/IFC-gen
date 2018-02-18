@@ -25,7 +25,6 @@ export class IfcProtectiveDeviceType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcProtectiveDeviceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

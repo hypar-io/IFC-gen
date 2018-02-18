@@ -27,7 +27,6 @@ export class IfcProxy extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId, proxyType : IfcObjectTypeEnum) {
         super(globalId)
-
 		this.ProxyType = proxyType
 
     }

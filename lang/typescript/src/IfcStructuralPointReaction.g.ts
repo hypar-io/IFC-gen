@@ -27,7 +27,6 @@ export class IfcStructuralPointReaction extends IfcStructuralReaction {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum) {
         super(globalId,appliedLoad,globalOrLocal)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

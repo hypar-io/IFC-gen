@@ -25,7 +25,6 @@ export class IfcDistributionChamberElementType extends IfcDistributionFlowElemen
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDistributionChamberElementTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -13,7 +13,6 @@ export class IfcConnectionCurveGeometry extends IfcConnectionGeometry {
 
     constructor(curveOnRelatingElement : IfcBoundedCurve|IfcEdgeCurve) {
         super()
-
 		this.CurveOnRelatingElement = curveOnRelatingElement
 
     }

@@ -15,7 +15,6 @@ export class IfcSphere extends IfcCsgPrimitive3D {
 
     constructor(position : IfcAxis2Placement3D, radius : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.Radius = radius
 
     }

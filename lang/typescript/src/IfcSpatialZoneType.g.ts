@@ -26,7 +26,6 @@ export class IfcSpatialZoneType extends IfcSpatialElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSpatialZoneTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

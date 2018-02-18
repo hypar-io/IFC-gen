@@ -14,7 +14,6 @@ export class IfcSlippageConnectionCondition extends IfcStructuralConnectionCondi
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

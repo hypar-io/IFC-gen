@@ -25,7 +25,6 @@ export class IfcVibrationIsolatorType extends IfcElementComponentType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcVibrationIsolatorTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

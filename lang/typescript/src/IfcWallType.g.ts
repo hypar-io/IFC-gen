@@ -25,7 +25,6 @@ export class IfcWallType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcWallTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

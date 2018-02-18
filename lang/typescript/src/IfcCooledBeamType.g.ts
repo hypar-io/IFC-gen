@@ -25,7 +25,6 @@ export class IfcCooledBeamType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcCooledBeamTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

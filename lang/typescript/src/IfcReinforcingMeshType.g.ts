@@ -39,8 +39,6 @@ export class IfcReinforcingMeshType extends IfcReinforcingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcReinforcingMeshTypeEnum) {
         super(globalId)
-		this.BendingParameters = new Array<IfcLengthMeasure|IfcPlaneAngleMeasure>()
-
 		this.PredefinedType = predefinedType
 
     }

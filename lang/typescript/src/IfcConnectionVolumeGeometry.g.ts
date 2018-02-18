@@ -13,7 +13,6 @@ export class IfcConnectionVolumeGeometry extends IfcConnectionGeometry {
 
     constructor(volumeOnRelatingElement : IfcClosedShell|IfcSolidModel) {
         super()
-
 		this.VolumeOnRelatingElement = volumeOnRelatingElement
 
     }

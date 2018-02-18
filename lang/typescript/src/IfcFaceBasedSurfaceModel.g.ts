@@ -17,7 +17,6 @@ export class IfcFaceBasedSurfaceModel extends IfcGeometricRepresentationItem {
 
     constructor(fbsmFaces : Array<IfcConnectedFaceSet>) {
         super()
-
 		this.FbsmFaces = fbsmFaces
 
     }

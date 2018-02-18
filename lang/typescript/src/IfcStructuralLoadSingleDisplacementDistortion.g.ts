@@ -14,7 +14,6 @@ export class IfcStructuralLoadSingleDisplacementDistortion extends IfcStructural
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -37,8 +37,6 @@ export class IfcDistributionElement extends IfcElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasPorts = new Array<IfcRelConnectsPortToElement>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

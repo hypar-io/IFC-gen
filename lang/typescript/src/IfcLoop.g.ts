@@ -11,7 +11,6 @@ export class IfcLoop extends IfcTopologicalRepresentationItem {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

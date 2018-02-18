@@ -17,7 +17,6 @@ export class IfcRelConnectsPortToElement extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingPort : IfcPort, relatedElement : IfcDistributionElement) {
         super(globalId)
-
 		this.RelatingPort = relatingPort
 		this.RelatedElement = relatedElement
 

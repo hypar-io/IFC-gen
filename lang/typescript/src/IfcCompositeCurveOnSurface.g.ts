@@ -19,7 +19,6 @@ export class IfcCompositeCurveOnSurface extends IfcCompositeCurve {
 
     constructor(segments : Array<IfcCompositeCurveSegment>, selfIntersect : IfcLogical) {
         super(segments,selfIntersect)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

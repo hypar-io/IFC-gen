@@ -29,7 +29,6 @@ export class IfcResourceConstraintRelationship extends IfcResourceLevelRelations
 
     constructor(relatingConstraint : IfcConstraint, relatedResourceObjects : Array<IfcActorRole|IfcAppliedValue|IfcApproval|IfcConstraint|IfcContextDependentUnit|IfcConversionBasedUnit|IfcExternalInformation|IfcExternalReference|IfcMaterialDefinition|IfcOrganization|IfcPerson|IfcPersonAndOrganization|IfcPhysicalQuantity|IfcProfileDef|IfcPropertyAbstraction|IfcTimeSeries>) {
         super()
-
 		this.RelatingConstraint = relatingConstraint
 		this.RelatedResourceObjects = relatedResourceObjects
 

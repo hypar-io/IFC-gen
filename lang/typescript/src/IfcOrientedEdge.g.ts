@@ -21,7 +21,6 @@ export class IfcOrientedEdge extends IfcEdge {
 
     constructor(edgeStart : IfcVertex, edgeEnd : IfcVertex, edgeElement : IfcEdge, orientation : IfcBoolean) {
         super(edgeStart,edgeEnd)
-
 		this.EdgeElement = edgeElement
 		this.Orientation = orientation
 

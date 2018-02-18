@@ -10,7 +10,6 @@ export class IfcMaterialList extends BaseIfc {
 
     constructor(materials : Array<IfcMaterial>) {
         super()
-
 		this.Materials = materials
 
     }

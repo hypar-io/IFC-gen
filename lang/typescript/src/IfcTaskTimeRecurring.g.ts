@@ -18,7 +18,6 @@ export class IfcTaskTimeRecurring extends IfcTaskTime {
 
     constructor(recurrence : IfcRecurrencePattern) {
         super()
-
 		this.Recurrence = recurrence
 
     }

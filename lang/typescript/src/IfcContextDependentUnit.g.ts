@@ -15,8 +15,6 @@ export class IfcContextDependentUnit extends IfcNamedUnit {
 
     constructor(dimensions : IfcDimensionalExponents, unitType : IfcUnitEnum, name : IfcLabel) {
         super(dimensions,unitType)
-		this.HasExternalReference = new Array<IfcExternalReferenceRelationship>()
-
 		this.Name = name
 
     }

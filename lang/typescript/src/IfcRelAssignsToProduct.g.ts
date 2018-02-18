@@ -18,7 +18,6 @@ export class IfcRelAssignsToProduct extends IfcRelAssigns {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingProduct : IfcProduct|IfcTypeProduct) {
         super(globalId,relatedObjects)
-
 		this.RelatingProduct = relatingProduct
 
     }

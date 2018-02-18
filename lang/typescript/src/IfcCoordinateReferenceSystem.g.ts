@@ -17,8 +17,6 @@ export abstract class IfcCoordinateReferenceSystem extends BaseIfc {
 
     constructor(name : IfcLabel) {
         super()
-		this.HasCoordinateOperation = new Array<IfcCoordinateOperation>()
-
 		this.Name = name
 
     }

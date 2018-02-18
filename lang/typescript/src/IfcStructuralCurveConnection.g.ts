@@ -29,7 +29,6 @@ export class IfcStructuralCurveConnection extends IfcStructuralConnection {
 
     constructor(globalId : IfcGloballyUniqueId, axis : IfcDirection) {
         super(globalId)
-
 		this.Axis = axis
 
     }

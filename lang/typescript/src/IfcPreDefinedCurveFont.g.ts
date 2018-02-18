@@ -10,6 +10,5 @@ export abstract class IfcPreDefinedCurveFont extends IfcPreDefinedItem {
 
     constructor(name : IfcLabel) {
         super(name)
-
     }
 }

@@ -18,7 +18,6 @@ export class IfcRelAssociatesDocument extends IfcRelAssociates {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingDocument : IfcDocumentInformation|IfcDocumentReference) {
         super(globalId,relatedObjects)
-
 		this.RelatingDocument = relatingDocument
 
     }

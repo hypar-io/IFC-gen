@@ -21,9 +21,6 @@ export class IfcClassificationReference extends IfcExternalReference {
 
     constructor() {
         super()
-		this.ClassificationRefForObjects = new Array<IfcRelAssociatesClassification>()
-		this.HasReferences = new Array<IfcClassificationReference>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

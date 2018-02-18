@@ -15,7 +15,6 @@ export class IfcProfileProperties extends IfcExtendedProperties {
 
     constructor(properties : Array<IfcProperty>, profileDefinition : IfcProfileDef) {
         super(properties)
-
 		this.ProfileDefinition = profileDefinition
 
     }

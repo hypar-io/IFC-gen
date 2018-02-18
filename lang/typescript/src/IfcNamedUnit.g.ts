@@ -12,7 +12,6 @@ export abstract class IfcNamedUnit extends BaseIfc {
 
     constructor(dimensions : IfcDimensionalExponents, unitType : IfcUnitEnum) {
         super()
-
 		this.Dimensions = dimensions
 		this.UnitType = unitType
 

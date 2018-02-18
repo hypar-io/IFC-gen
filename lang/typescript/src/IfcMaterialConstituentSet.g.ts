@@ -18,8 +18,6 @@ export class IfcMaterialConstituentSet extends IfcMaterialDefinition {
 
     constructor() {
         super()
-		this.MaterialConstituents = new Array<IfcMaterialConstituent>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

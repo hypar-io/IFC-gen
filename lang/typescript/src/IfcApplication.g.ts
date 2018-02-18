@@ -15,7 +15,6 @@ export class IfcApplication extends BaseIfc {
 
     constructor(applicationDeveloper : IfcOrganization, version : IfcLabel, applicationFullName : IfcLabel, applicationIdentifier : IfcIdentifier) {
         super()
-
 		this.ApplicationDeveloper = applicationDeveloper
 		this.Version = version
 		this.ApplicationFullName = applicationFullName

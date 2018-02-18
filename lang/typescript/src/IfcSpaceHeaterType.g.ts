@@ -25,7 +25,6 @@ export class IfcSpaceHeaterType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSpaceHeaterTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

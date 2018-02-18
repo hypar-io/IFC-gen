@@ -19,7 +19,6 @@ export class IfcCartesianTransformationOperator2DnonUniform extends IfcCartesian
 
     constructor(localOrigin : IfcCartesianPoint) {
         super(localOrigin)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

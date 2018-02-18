@@ -22,10 +22,6 @@ export class IfcMaterial extends IfcMaterialDefinition {
 
     constructor(name : IfcLabel) {
         super()
-		this.HasRepresentation = new Array<IfcMaterialDefinitionRepresentation>()
-		this.IsRelatedWith = new Array<IfcMaterialRelationship>()
-		this.RelatesTo = new Array<IfcMaterialRelationship>()
-
 		this.Name = name
 
     }

@@ -10,6 +10,5 @@ export abstract class IfcPreDefinedColour extends IfcPreDefinedItem {
 
     constructor(name : IfcLabel) {
         super(name)
-
     }
 }

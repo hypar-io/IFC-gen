@@ -17,7 +17,6 @@ export class IfcPresentationLayerAssignment extends BaseIfc {
 
     constructor(name : IfcLabel, assignedItems : Array<IfcRepresentation|IfcRepresentationItem>) {
         super()
-
 		this.Name = name
 		this.AssignedItems = assignedItems
 

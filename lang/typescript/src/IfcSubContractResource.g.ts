@@ -28,7 +28,6 @@ export class IfcSubContractResource extends IfcConstructionResource {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

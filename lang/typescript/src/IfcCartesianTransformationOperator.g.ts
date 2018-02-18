@@ -25,7 +25,6 @@ export abstract class IfcCartesianTransformationOperator extends IfcGeometricRep
 
     constructor(localOrigin : IfcCartesianPoint) {
         super()
-
 		this.LocalOrigin = localOrigin
 
     }

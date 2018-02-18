@@ -25,7 +25,6 @@ export class IfcStackTerminalType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcStackTerminalTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

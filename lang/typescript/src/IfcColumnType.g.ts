@@ -25,7 +25,6 @@ export class IfcColumnType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcColumnTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

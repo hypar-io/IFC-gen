@@ -15,6 +15,5 @@ export abstract class IfcCartesianPointList extends IfcGeometricRepresentationIt
 
     constructor() {
         super()
-
     }
 }

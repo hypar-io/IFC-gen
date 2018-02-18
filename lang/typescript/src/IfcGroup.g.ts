@@ -23,8 +23,6 @@ export class IfcGroup extends IfcObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.IsGroupedBy = new Array<IfcRelAssignsToGroup>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

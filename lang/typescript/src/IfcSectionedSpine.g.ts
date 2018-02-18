@@ -21,7 +21,6 @@ export class IfcSectionedSpine extends IfcGeometricRepresentationItem {
 
     constructor(spineCurve : IfcCompositeCurve, crossSections : Array<IfcProfileDef>, crossSectionPositions : Array<IfcAxis2Placement3D>) {
         super()
-
 		this.SpineCurve = spineCurve
 		this.CrossSections = crossSections
 		this.CrossSectionPositions = crossSectionPositions

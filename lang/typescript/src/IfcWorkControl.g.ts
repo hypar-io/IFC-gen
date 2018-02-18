@@ -33,8 +33,6 @@ export abstract class IfcWorkControl extends IfcControl {
 
     constructor(globalId : IfcGloballyUniqueId, creationDate : IfcDateTime, startTime : IfcDateTime) {
         super(globalId)
-		this.Creators = new Array<IfcPerson>()
-
 		this.CreationDate = creationDate
 		this.StartTime = startTime
 

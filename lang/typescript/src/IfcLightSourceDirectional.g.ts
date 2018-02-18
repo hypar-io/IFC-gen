@@ -16,7 +16,6 @@ export class IfcLightSourceDirectional extends IfcLightSource {
 
     constructor(lightColour : IfcColourRgb, orientation : IfcDirection) {
         super(lightColour)
-
 		this.Orientation = orientation
 
     }

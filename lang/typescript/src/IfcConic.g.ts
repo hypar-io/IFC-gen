@@ -15,7 +15,6 @@ export abstract class IfcConic extends IfcCurve {
 
     constructor(position : IfcAxis2Placement2D|IfcAxis2Placement3D) {
         super()
-
 		this.Position = position
 
     }

@@ -25,7 +25,6 @@ export class IfcGeographicElementType extends IfcElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcGeographicElementTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

@@ -14,7 +14,6 @@ export abstract class IfcProductRepresentation extends BaseIfc {
 
     constructor(representations : Array<IfcRepresentation>) {
         super()
-
 		this.Representations = representations
 
     }

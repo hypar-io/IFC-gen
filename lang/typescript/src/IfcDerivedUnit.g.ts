@@ -18,7 +18,6 @@ export class IfcDerivedUnit extends BaseIfc {
 
     constructor(elements : Array<IfcDerivedUnitElement>, unitType : IfcDerivedUnitEnum) {
         super()
-
 		this.Elements = elements
 		this.UnitType = unitType
 

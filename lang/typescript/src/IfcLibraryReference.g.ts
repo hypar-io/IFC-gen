@@ -21,8 +21,6 @@ export class IfcLibraryReference extends IfcExternalReference {
 
     constructor() {
         super()
-		this.LibraryRefForObjects = new Array<IfcRelAssociatesLibrary>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

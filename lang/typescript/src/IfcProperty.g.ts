@@ -25,13 +25,6 @@ export abstract class IfcProperty extends IfcPropertyAbstraction {
 
     constructor(name : IfcIdentifier) {
         super()
-		this.PartOfPset = new Array<IfcPropertySet>()
-		this.PropertyForDependance = new Array<IfcPropertyDependencyRelationship>()
-		this.PropertyDependsOn = new Array<IfcPropertyDependencyRelationship>()
-		this.PartOfComplex = new Array<IfcComplexProperty>()
-		this.HasConstraints = new Array<IfcResourceConstraintRelationship>()
-		this.HasApprovals = new Array<IfcResourceApprovalRelationship>()
-
 		this.Name = name
 
     }

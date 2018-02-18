@@ -21,10 +21,6 @@ export abstract class IfcRepresentation extends BaseIfc {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {
         super()
-		this.RepresentationMap = new Array<IfcRepresentationMap>()
-		this.LayerAssignments = new Array<IfcPresentationLayerAssignment>()
-		this.OfProductRepresentation = new Array<IfcProductRepresentation>()
-
 		this.ContextOfItems = contextOfItems
 		this.Items = items
 

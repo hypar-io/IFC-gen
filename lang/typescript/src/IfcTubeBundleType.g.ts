@@ -25,7 +25,6 @@ export class IfcTubeBundleType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcTubeBundleTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

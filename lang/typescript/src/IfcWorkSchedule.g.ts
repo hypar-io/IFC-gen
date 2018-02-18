@@ -28,7 +28,6 @@ export class IfcWorkSchedule extends IfcWorkControl {
 
     constructor(globalId : IfcGloballyUniqueId, creationDate : IfcDateTime, startTime : IfcDateTime) {
         super(globalId,creationDate,startTime)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

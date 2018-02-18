@@ -11,7 +11,6 @@ export abstract class IfcTextureCoordinate extends IfcPresentationItem {
 
     constructor(maps : Array<IfcSurfaceTexture>) {
         super()
-
 		this.Maps = maps
 
     }

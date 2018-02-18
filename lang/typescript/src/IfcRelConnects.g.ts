@@ -13,6 +13,5 @@ export abstract class IfcRelConnects extends IfcRelationship {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

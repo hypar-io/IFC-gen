@@ -13,7 +13,5 @@ export abstract class IfcRepresentationContext extends BaseIfc {
 
     constructor() {
         super()
-		this.RepresentationsInContext = new Array<IfcRepresentation>()
-
     }
 }

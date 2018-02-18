@@ -14,7 +14,6 @@ export class IfcPresentationStyleAssignment extends BaseIfc {
 
     constructor(styles : Array<IfcCurveStyle|IfcFillAreaStyle|IfcNullStyle|IfcSurfaceStyle|IfcTextStyle>) {
         super()
-
 		this.Styles = styles
 
     }

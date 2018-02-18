@@ -25,7 +25,6 @@ export class IfcMemberType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcMemberTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

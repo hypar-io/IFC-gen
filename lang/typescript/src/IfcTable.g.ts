@@ -24,9 +24,6 @@ export class IfcTable extends BaseIfc {
 
     constructor() {
         super()
-		this.Rows = new Array<IfcTableRow>()
-		this.Columns = new Array<IfcTableColumn>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

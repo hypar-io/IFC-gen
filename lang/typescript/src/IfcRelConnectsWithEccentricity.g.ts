@@ -21,7 +21,6 @@ export class IfcRelConnectsWithEccentricity extends IfcRelConnectsStructuralMemb
 
     constructor(globalId : IfcGloballyUniqueId, relatingStructuralMember : IfcStructuralMember, relatedStructuralConnection : IfcStructuralConnection, connectionConstraint : IfcConnectionGeometry) {
         super(globalId,relatingStructuralMember,relatedStructuralConnection)
-
 		this.ConnectionConstraint = connectionConstraint
 
     }

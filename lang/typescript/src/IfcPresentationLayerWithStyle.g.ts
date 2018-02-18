@@ -20,7 +20,6 @@ export class IfcPresentationLayerWithStyle extends IfcPresentationLayerAssignmen
 
     constructor(name : IfcLabel, assignedItems : Array<IfcRepresentation|IfcRepresentationItem>, layerOn : IfcLogical, layerFrozen : IfcLogical, layerBlocked : IfcLogical, layerStyles : Array<IfcPresentationStyle>) {
         super(name,assignedItems)
-
 		this.LayerOn = layerOn
 		this.LayerFrozen = layerFrozen
 		this.LayerBlocked = layerBlocked

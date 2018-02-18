@@ -15,6 +15,5 @@ export abstract class IfcSurface extends IfcGeometricRepresentationItem {
 
     constructor() {
         super()
-
     }
 }

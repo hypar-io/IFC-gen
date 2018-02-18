@@ -15,7 +15,6 @@ export class IfcArbitraryProfileDefWithVoids extends IfcArbitraryClosedProfileDe
 
     constructor(profileType : IfcProfileTypeEnum, outerCurve : IfcCurve, innerCurves : Array<IfcCurve>) {
         super(profileType,outerCurve)
-
 		this.InnerCurves = innerCurves
 
     }

@@ -13,7 +13,6 @@ export class IfcLightDistributionData extends BaseIfc {
 
     constructor(mainPlaneAngle : IfcPlaneAngleMeasure, secondaryPlaneAngle : Array<IfcPlaneAngleMeasure>, luminousIntensity : Array<IfcLuminousIntensityDistributionMeasure>) {
         super()
-
 		this.MainPlaneAngle = mainPlaneAngle
 		this.SecondaryPlaneAngle = secondaryPlaneAngle
 		this.LuminousIntensity = luminousIntensity

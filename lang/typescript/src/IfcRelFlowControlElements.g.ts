@@ -17,7 +17,6 @@ export class IfcRelFlowControlElements extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatedControlElements : Array<IfcDistributionControlElement>, relatingFlowElement : IfcDistributionFlowElement) {
         super(globalId)
-
 		this.RelatedControlElements = relatedControlElements
 		this.RelatingFlowElement = relatingFlowElement
 

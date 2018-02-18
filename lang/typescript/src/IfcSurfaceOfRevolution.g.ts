@@ -20,7 +20,6 @@ export class IfcSurfaceOfRevolution extends IfcSweptSurface {
 
     constructor(sweptCurve : IfcProfileDef, axisPosition : IfcAxis1Placement) {
         super(sweptCurve)
-
 		this.AxisPosition = axisPosition
 
     }

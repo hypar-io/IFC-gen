@@ -24,7 +24,6 @@ export class IfcBSplineCurveWithKnots extends IfcBSplineCurve {
 
     constructor(degree : IfcInteger, controlPointsList : Array<IfcCartesianPoint>, curveForm : IfcBSplineCurveForm, closedCurve : IfcLogical, selfIntersect : IfcLogical, knotMultiplicities : Array<IfcInteger>, knots : Array<IfcParameterValue>, knotSpec : IfcKnotType) {
         super(degree,controlPointsList,curveForm,closedCurve,selfIntersect)
-
 		this.KnotMultiplicities = knotMultiplicities
 		this.Knots = knots
 		this.KnotSpec = knotSpec

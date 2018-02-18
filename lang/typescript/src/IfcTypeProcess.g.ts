@@ -26,7 +26,5 @@ export abstract class IfcTypeProcess extends IfcTypeObject {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.OperatesOn = new Array<IfcRelAssignsToProcess>()
-
     }
 }

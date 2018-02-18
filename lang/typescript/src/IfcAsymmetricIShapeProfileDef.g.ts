@@ -29,7 +29,6 @@ export class IfcAsymmetricIShapeProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, bottomFlangeWidth : IfcPositiveLengthMeasure, overallDepth : IfcPositiveLengthMeasure, webThickness : IfcPositiveLengthMeasure, bottomFlangeThickness : IfcPositiveLengthMeasure, topFlangeWidth : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.BottomFlangeWidth = bottomFlangeWidth
 		this.OverallDepth = overallDepth
 		this.WebThickness = webThickness

@@ -17,6 +17,5 @@ export abstract class IfcSimpleProperty extends IfcProperty {
 
     constructor(name : IfcIdentifier) {
         super(name)
-
     }
 }

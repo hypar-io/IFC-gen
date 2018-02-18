@@ -29,7 +29,6 @@ export class IfcStructuralCurveReaction extends IfcStructuralReaction {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum, predefinedType : IfcStructuralCurveActivityTypeEnum) {
         super(globalId,appliedLoad,globalOrLocal)
-
 		this.PredefinedType = predefinedType
 
     }

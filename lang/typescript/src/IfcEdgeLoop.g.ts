@@ -17,7 +17,6 @@ export class IfcEdgeLoop extends IfcLoop {
 
     constructor(edgeList : Array<IfcOrientedEdge>) {
         super()
-
 		this.EdgeList = edgeList
 
     }

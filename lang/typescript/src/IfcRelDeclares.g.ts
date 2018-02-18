@@ -18,7 +18,6 @@ export class IfcRelDeclares extends IfcRelationship {
 
     constructor(globalId : IfcGloballyUniqueId, relatingContext : IfcContext, relatedDefinitions : Array<IfcObjectDefinition|IfcPropertyDefinition>) {
         super(globalId)
-
 		this.RelatingContext = relatingContext
 		this.RelatedDefinitions = relatedDefinitions
 

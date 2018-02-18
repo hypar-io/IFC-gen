@@ -17,7 +17,5 @@ export abstract class IfcShapeModel extends IfcRepresentation {
 
     constructor(contextOfItems : IfcRepresentationContext, items : Array<IfcRepresentationItem>) {
         super(contextOfItems,items)
-		this.OfShapeAspect = new Array<IfcShapeAspect>()
-
     }
 }

@@ -17,7 +17,6 @@ export class IfcQuantityWeight extends IfcPhysicalSimpleQuantity {
 
     constructor(name : IfcLabel, weightValue : IfcMassMeasure) {
         super(name)
-
 		this.WeightValue = weightValue
 
     }

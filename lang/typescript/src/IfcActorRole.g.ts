@@ -16,8 +16,6 @@ export class IfcActorRole extends BaseIfc {
 
     constructor(role : IfcRoleEnum) {
         super()
-		this.HasExternalReference = new Array<IfcExternalReferenceRelationship>()
-
 		this.Role = role
 
     }

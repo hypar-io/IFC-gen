@@ -11,7 +11,6 @@ export abstract class IfcPreDefinedItem extends IfcPresentationItem {
 
     constructor(name : IfcLabel) {
         super()
-
 		this.Name = name
 
     }

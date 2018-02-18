@@ -25,7 +25,6 @@ export class IfcTransportElementType extends IfcElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcTransportElementTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

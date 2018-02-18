@@ -18,7 +18,6 @@ export class IfcRelAssociatesClassification extends IfcRelAssociates {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingClassification : IfcClassification|IfcClassificationReference) {
         super(globalId,relatedObjects)
-
 		this.RelatingClassification = relatingClassification
 
     }

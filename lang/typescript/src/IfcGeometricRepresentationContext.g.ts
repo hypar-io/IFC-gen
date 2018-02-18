@@ -24,9 +24,6 @@ export class IfcGeometricRepresentationContext extends IfcRepresentationContext 
 
     constructor(coordinateSpaceDimension : IfcDimensionCount, worldCoordinateSystem : IfcAxis2Placement2D|IfcAxis2Placement3D) {
         super()
-		this.HasSubContexts = new Array<IfcGeometricRepresentationSubContext>()
-		this.HasCoordinateOperation = new Array<IfcCoordinateOperation>()
-
 		this.CoordinateSpaceDimension = coordinateSpaceDimension
 		this.WorldCoordinateSystem = worldCoordinateSystem
 

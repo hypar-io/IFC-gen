@@ -17,7 +17,6 @@ export class IfcRelAssociatesApproval extends IfcRelAssociates {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition|IfcPropertyDefinition>, relatingApproval : IfcApproval) {
         super(globalId,relatedObjects)
-
 		this.RelatingApproval = relatingApproval
 
     }

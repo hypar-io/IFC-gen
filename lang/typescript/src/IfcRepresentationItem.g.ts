@@ -12,8 +12,5 @@ export abstract class IfcRepresentationItem extends BaseIfc {
 
     constructor() {
         super()
-		this.LayerAssignment = new Array<IfcPresentationLayerAssignment>()
-		this.StyledByItem = new Array<IfcStyledItem>()
-
     }
 }

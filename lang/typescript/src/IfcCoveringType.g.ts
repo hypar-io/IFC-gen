@@ -25,7 +25,6 @@ export class IfcCoveringType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcCoveringTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

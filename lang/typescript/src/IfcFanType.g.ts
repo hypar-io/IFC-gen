@@ -25,7 +25,6 @@ export class IfcFanType extends IfcFlowMovingDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcFanTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

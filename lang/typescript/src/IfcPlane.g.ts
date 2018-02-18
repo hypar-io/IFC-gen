@@ -13,7 +13,6 @@ export class IfcPlane extends IfcElementarySurface {
 
     constructor(position : IfcAxis2Placement3D) {
         super(position)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

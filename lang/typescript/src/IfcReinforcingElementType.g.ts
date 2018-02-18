@@ -23,6 +23,5 @@ export abstract class IfcReinforcingElementType extends IfcElementComponentType 
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

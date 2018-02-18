@@ -25,7 +25,6 @@ export class IfcMotorConnectionType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcMotorConnectionTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

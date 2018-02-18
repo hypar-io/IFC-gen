@@ -18,7 +18,6 @@ export class IfcRelDefinesByProperties extends IfcRelDefines {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingPropertyDefinition : IfcPropertySetDefinition|IfcPropertySetDefinitionSet) {
         super(globalId)
-
 		this.RelatedObjects = relatedObjects
 		this.RelatingPropertyDefinition = relatingPropertyDefinition
 

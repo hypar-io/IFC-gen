@@ -11,7 +11,6 @@ export class IfcTimePeriod extends BaseIfc {
 
     constructor(startTime : IfcTime, endTime : IfcTime) {
         super()
-
 		this.StartTime = startTime
 		this.EndTime = endTime
 

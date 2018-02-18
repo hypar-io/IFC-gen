@@ -13,7 +13,6 @@ export class IfcCurveStyleFont extends IfcPresentationItem {
 
     constructor(patternList : Array<IfcCurveStyleFontPattern>) {
         super()
-
 		this.PatternList = patternList
 
     }

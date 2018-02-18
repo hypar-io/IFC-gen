@@ -23,6 +23,5 @@ export abstract class IfcDistributionFlowElementType extends IfcDistributionElem
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

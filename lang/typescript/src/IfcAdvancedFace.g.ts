@@ -15,7 +15,6 @@ export class IfcAdvancedFace extends IfcFaceSurface {
 
     constructor(bounds : Array<IfcFaceBound>, faceSurface : IfcSurface, sameSense : IfcBoolean) {
         super(bounds,faceSurface,sameSense)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

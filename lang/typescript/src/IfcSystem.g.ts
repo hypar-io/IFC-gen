@@ -24,8 +24,6 @@ export class IfcSystem extends IfcGroup {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ServicesBuildings = new Array<IfcRelServicesBuildings>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

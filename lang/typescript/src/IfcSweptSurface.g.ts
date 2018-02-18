@@ -16,7 +16,6 @@ export abstract class IfcSweptSurface extends IfcSurface {
 
     constructor(sweptCurve : IfcProfileDef) {
         super()
-
 		this.SweptCurve = sweptCurve
 
     }

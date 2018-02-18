@@ -25,7 +25,6 @@ export class IfcCableCarrierFittingType extends IfcFlowFittingType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcCableCarrierFittingTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

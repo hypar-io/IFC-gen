@@ -25,13 +25,5 @@ export abstract class IfcObjectDefinition extends IfcRoot {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasAssignments = new Array<IfcRelAssigns>()
-		this.Nests = new Array<IfcRelNests>()
-		this.IsNestedBy = new Array<IfcRelNests>()
-		this.HasContext = new Array<IfcRelDeclares>()
-		this.IsDecomposedBy = new Array<IfcRelAggregates>()
-		this.Decomposes = new Array<IfcRelAggregates>()
-		this.HasAssociations = new Array<IfcRelAssociates>()
-
     }
 }

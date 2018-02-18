@@ -17,7 +17,6 @@ export class IfcQuantityVolume extends IfcPhysicalSimpleQuantity {
 
     constructor(name : IfcLabel, volumeValue : IfcVolumeMeasure) {
         super(name)
-
 		this.VolumeValue = volumeValue
 
     }

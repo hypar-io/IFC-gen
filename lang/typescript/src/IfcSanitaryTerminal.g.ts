@@ -39,7 +39,6 @@ export class IfcSanitaryTerminal extends IfcFlowTerminal {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

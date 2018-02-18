@@ -30,7 +30,6 @@ export class IfcTendonType extends IfcReinforcingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcTendonTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

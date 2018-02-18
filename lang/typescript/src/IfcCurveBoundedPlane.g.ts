@@ -17,7 +17,6 @@ export class IfcCurveBoundedPlane extends IfcBoundedSurface {
 
     constructor(basisSurface : IfcPlane, outerBoundary : IfcCurve, innerBoundaries : Array<IfcCurve>) {
         super()
-
 		this.BasisSurface = basisSurface
 		this.OuterBoundary = outerBoundary
 		this.InnerBoundaries = innerBoundaries

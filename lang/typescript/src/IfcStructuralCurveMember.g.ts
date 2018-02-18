@@ -30,7 +30,6 @@ export class IfcStructuralCurveMember extends IfcStructuralMember {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcStructuralCurveMemberTypeEnum, axis : IfcDirection) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 		this.Axis = axis
 

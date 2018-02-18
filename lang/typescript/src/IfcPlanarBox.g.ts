@@ -15,7 +15,6 @@ export class IfcPlanarBox extends IfcPlanarExtent {
 
     constructor(sizeInX : IfcLengthMeasure, sizeInY : IfcLengthMeasure, placement : IfcAxis2Placement2D|IfcAxis2Placement3D) {
         super(sizeInX,sizeInY)
-
 		this.Placement = placement
 
     }

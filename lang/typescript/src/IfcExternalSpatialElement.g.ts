@@ -31,8 +31,6 @@ export class IfcExternalSpatialElement extends IfcExternalSpatialStructureElemen
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.BoundedBy = new Array<IfcRelSpaceBoundary>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

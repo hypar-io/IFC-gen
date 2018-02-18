@@ -23,6 +23,5 @@ export abstract class IfcFlowTreatmentDeviceType extends IfcDistributionFlowElem
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

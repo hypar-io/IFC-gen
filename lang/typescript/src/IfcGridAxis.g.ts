@@ -20,11 +20,6 @@ export class IfcGridAxis extends BaseIfc {
 
     constructor(axisCurve : IfcCurve, sameSense : IfcBoolean) {
         super()
-		this.PartOfW = new Array<IfcGrid>()
-		this.PartOfV = new Array<IfcGrid>()
-		this.PartOfU = new Array<IfcGrid>()
-		this.HasIntersections = new Array<IfcVirtualGridIntersection>()
-
 		this.AxisCurve = axisCurve
 		this.SameSense = sameSense
 

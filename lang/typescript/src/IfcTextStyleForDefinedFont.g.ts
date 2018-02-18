@@ -13,7 +13,6 @@ export class IfcTextStyleForDefinedFont extends IfcPresentationItem {
 
     constructor(colour : IfcColourSpecification|IfcPreDefinedColour) {
         super()
-
 		this.Colour = colour
 
     }

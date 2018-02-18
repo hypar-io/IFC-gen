@@ -16,7 +16,5 @@ export abstract class IfcExternalReference extends BaseIfc {
 
     constructor() {
         super()
-		this.ExternalReferenceForResources = new Array<IfcExternalReferenceRelationship>()
-
     }
 }

@@ -15,7 +15,6 @@ export class IfcDocumentInformationRelationship extends IfcResourceLevelRelation
 
     constructor(relatingDocument : IfcDocumentInformation, relatedDocuments : Array<IfcDocumentInformation>) {
         super()
-
 		this.RelatingDocument = relatingDocument
 		this.RelatedDocuments = relatedDocuments
 

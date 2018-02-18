@@ -29,9 +29,6 @@ export class IfcCostItem extends IfcControl {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.CostValues = new Array<IfcCostValue>()
-		this.CostQuantities = new Array<IfcPhysicalQuantity>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -15,7 +15,6 @@ export class IfcFaceBound extends IfcTopologicalRepresentationItem {
 
     constructor(bound : IfcLoop, orientation : IfcBoolean) {
         super()
-
 		this.Bound = bound
 		this.Orientation = orientation
 

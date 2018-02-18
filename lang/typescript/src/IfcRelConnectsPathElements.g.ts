@@ -21,7 +21,6 @@ export class IfcRelConnectsPathElements extends IfcRelConnectsElements {
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement, relatedElement : IfcElement, relatingPriorities : Array<IfcInteger>, relatedPriorities : Array<IfcInteger>, relatedConnectionType : IfcConnectionTypeEnum, relatingConnectionType : IfcConnectionTypeEnum) {
         super(globalId,relatingElement,relatedElement)
-
 		this.RelatingPriorities = relatingPriorities
 		this.RelatedPriorities = relatedPriorities
 		this.RelatedConnectionType = relatedConnectionType

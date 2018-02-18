@@ -25,7 +25,6 @@ export class IfcElectricTimeControlType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcElectricTimeControlTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

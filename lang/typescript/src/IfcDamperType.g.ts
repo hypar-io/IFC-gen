@@ -25,7 +25,6 @@ export class IfcDamperType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcDamperTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

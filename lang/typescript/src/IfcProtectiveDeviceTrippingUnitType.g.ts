@@ -25,7 +25,6 @@ export class IfcProtectiveDeviceTrippingUnitType extends IfcDistributionControlE
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcProtectiveDeviceTrippingUnitTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

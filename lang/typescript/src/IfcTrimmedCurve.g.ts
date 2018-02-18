@@ -22,7 +22,6 @@ export class IfcTrimmedCurve extends IfcBoundedCurve {
 
     constructor(basisCurve : IfcCurve, trim1 : Array<IfcCartesianPoint|IfcParameterValue>, trim2 : Array<IfcCartesianPoint|IfcParameterValue>, senseAgreement : IfcBoolean, masterRepresentation : IfcTrimmingPreference) {
         super()
-
 		this.BasisCurve = basisCurve
 		this.Trim1 = trim1
 		this.Trim2 = trim2

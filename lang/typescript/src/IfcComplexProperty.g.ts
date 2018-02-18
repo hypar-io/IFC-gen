@@ -18,7 +18,6 @@ export class IfcComplexProperty extends IfcProperty {
 
     constructor(name : IfcIdentifier, usageName : IfcIdentifier, hasProperties : Array<IfcProperty>) {
         super(name)
-
 		this.UsageName = usageName
 		this.HasProperties = hasProperties
 

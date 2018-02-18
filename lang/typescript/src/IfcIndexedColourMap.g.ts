@@ -17,7 +17,6 @@ export class IfcIndexedColourMap extends IfcPresentationItem {
 
     constructor(mappedTo : IfcTessellatedFaceSet, colours : IfcColourRgbList, colourIndex : Array<IfcPositiveInteger>) {
         super()
-
 		this.MappedTo = mappedTo
 		this.Colours = colours
 		this.ColourIndex = colourIndex

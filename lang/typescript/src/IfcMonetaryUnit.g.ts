@@ -10,7 +10,6 @@ export class IfcMonetaryUnit extends BaseIfc {
 
     constructor(currency : IfcLabel) {
         super()
-
 		this.Currency = currency
 
     }

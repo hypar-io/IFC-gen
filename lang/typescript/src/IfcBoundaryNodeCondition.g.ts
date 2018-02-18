@@ -19,7 +19,6 @@ export class IfcBoundaryNodeCondition extends IfcBoundaryCondition {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

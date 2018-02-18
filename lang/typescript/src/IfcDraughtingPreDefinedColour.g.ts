@@ -10,7 +10,6 @@ export class IfcDraughtingPreDefinedColour extends IfcPreDefinedColour {
 
     constructor(name : IfcLabel) {
         super(name)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

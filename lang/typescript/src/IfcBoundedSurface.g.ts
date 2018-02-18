@@ -12,6 +12,5 @@ export abstract class IfcBoundedSurface extends IfcSurface {
 
     constructor() {
         super()
-
     }
 }

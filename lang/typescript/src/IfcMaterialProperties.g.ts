@@ -15,7 +15,6 @@ export class IfcMaterialProperties extends IfcExtendedProperties {
 
     constructor(properties : Array<IfcProperty>, material : IfcMaterialDefinition) {
         super(properties)
-
 		this.Material = material
 
     }

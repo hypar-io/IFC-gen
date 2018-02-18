@@ -19,7 +19,6 @@ export class IfcRelAssignsToActor extends IfcRelAssigns {
 
     constructor(globalId : IfcGloballyUniqueId, relatedObjects : Array<IfcObjectDefinition>, relatingActor : IfcActor) {
         super(globalId,relatedObjects)
-
 		this.RelatingActor = relatingActor
 
     }

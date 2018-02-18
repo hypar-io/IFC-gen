@@ -16,7 +16,6 @@ export abstract class IfcSweptAreaSolid extends IfcSolidModel {
 
     constructor(sweptArea : IfcProfileDef) {
         super()
-
 		this.SweptArea = sweptArea
 
     }

@@ -16,7 +16,6 @@ export class IfcEdgeCurve extends IfcEdge {
 
     constructor(edgeStart : IfcVertex, edgeEnd : IfcVertex, edgeGeometry : IfcCurve, sameSense : IfcBoolean) {
         super(edgeStart,edgeEnd)
-
 		this.EdgeGeometry = edgeGeometry
 		this.SameSense = sameSense
 

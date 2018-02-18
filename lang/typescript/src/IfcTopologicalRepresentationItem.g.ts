@@ -11,6 +11,5 @@ export abstract class IfcTopologicalRepresentationItem extends IfcRepresentation
 
     constructor() {
         super()
-
     }
 }

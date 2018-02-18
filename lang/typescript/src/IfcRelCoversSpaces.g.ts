@@ -17,7 +17,6 @@ export class IfcRelCoversSpaces extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingSpace : IfcSpace, relatedCoverings : Array<IfcCovering>) {
         super(globalId)
-
 		this.RelatingSpace = relatingSpace
 		this.RelatedCoverings = relatedCoverings
 

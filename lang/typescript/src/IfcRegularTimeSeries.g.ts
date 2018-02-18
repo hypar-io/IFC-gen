@@ -22,7 +22,6 @@ export class IfcRegularTimeSeries extends IfcTimeSeries {
 
     constructor(name : IfcLabel, startTime : IfcDateTime, endTime : IfcDateTime, timeSeriesDataType : IfcTimeSeriesDataTypeEnum, dataOrigin : IfcDataOriginEnum, timeStep : IfcTimeMeasure, values : Array<IfcTimeSeriesValue>) {
         super(name,startTime,endTime,timeSeriesDataType,dataOrigin)
-
 		this.TimeStep = timeStep
 		this.Values = values
 

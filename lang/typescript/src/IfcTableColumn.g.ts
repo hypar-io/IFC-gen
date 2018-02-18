@@ -20,7 +20,6 @@ export class IfcTableColumn extends BaseIfc {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -13,7 +13,6 @@ export class IfcPolyLoop extends IfcLoop {
 
     constructor(polygon : Array<IfcCartesianPoint>) {
         super()
-
 		this.Polygon = polygon
 
     }

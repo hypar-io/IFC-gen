@@ -25,7 +25,6 @@ export class IfcBuildingElementPartType extends IfcElementComponentType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcBuildingElementPartTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

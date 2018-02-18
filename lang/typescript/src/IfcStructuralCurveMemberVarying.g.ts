@@ -28,7 +28,6 @@ export class IfcStructuralCurveMemberVarying extends IfcStructuralCurveMember {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcStructuralCurveMemberTypeEnum, axis : IfcDirection) {
         super(globalId,predefinedType,axis)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -26,7 +26,6 @@ export class IfcCurveStyle extends IfcPresentationStyle {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

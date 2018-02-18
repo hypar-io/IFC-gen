@@ -18,7 +18,6 @@ export class IfcTextLiteral extends IfcGeometricRepresentationItem {
 
     constructor(literal : IfcPresentableText, placement : IfcAxis2Placement2D|IfcAxis2Placement3D, path : IfcTextPath) {
         super()
-
 		this.Literal = literal
 		this.Placement = placement
 		this.Path = path

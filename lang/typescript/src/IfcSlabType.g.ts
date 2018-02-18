@@ -25,7 +25,6 @@ export class IfcSlabType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcSlabTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

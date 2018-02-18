@@ -16,7 +16,6 @@ export class IfcMaterialProfileSetUsage extends IfcMaterialUsageDefinition {
 
     constructor(forProfileSet : IfcMaterialProfileSet) {
         super()
-
 		this.ForProfileSet = forProfileSet
 
     }

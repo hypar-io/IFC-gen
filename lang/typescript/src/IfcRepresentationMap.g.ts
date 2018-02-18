@@ -17,9 +17,6 @@ export class IfcRepresentationMap extends BaseIfc {
 
     constructor(mappingOrigin : IfcAxis2Placement2D|IfcAxis2Placement3D, mappedRepresentation : IfcRepresentation) {
         super()
-		this.HasShapeAspects = new Array<IfcShapeAspect>()
-		this.MapUsage = new Array<IfcMappedItem>()
-
 		this.MappingOrigin = mappingOrigin
 		this.MappedRepresentation = mappedRepresentation
 

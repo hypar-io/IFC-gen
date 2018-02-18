@@ -14,7 +14,6 @@ export class IfcStructuralLoadTemperature extends IfcStructuralLoadStatic {
 
     constructor() {
         super()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

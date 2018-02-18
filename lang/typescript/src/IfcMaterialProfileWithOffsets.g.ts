@@ -20,7 +20,6 @@ export class IfcMaterialProfileWithOffsets extends IfcMaterialProfile {
 
     constructor(profile : IfcProfileDef, offsetValues : Array<IfcLengthMeasure>) {
         super(profile)
-
 		this.OffsetValues = offsetValues
 
     }

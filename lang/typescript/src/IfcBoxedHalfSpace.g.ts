@@ -16,7 +16,6 @@ export class IfcBoxedHalfSpace extends IfcHalfSpaceSolid {
 
     constructor(baseSurface : IfcSurface, agreementFlag : IfcBoolean, enclosure : IfcBoundingBox) {
         super(baseSurface,agreementFlag)
-
 		this.Enclosure = enclosure
 
     }

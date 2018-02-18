@@ -18,7 +18,6 @@ export class IfcSIUnit extends IfcNamedUnit {
 
     constructor(dimensions : IfcDimensionalExponents, unitType : IfcUnitEnum, name : IfcSIUnitName) {
         super(dimensions,unitType)
-
 		this.Name = name
 
     }

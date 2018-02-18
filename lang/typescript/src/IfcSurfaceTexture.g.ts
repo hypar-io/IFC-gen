@@ -21,10 +21,6 @@ export abstract class IfcSurfaceTexture extends IfcPresentationItem {
 
     constructor(repeatS : IfcBoolean, repeatT : IfcBoolean) {
         super()
-		this.Parameter = new Array<IfcIdentifier>()
-		this.IsMappedBy = new Array<IfcTextureCoordinate>()
-		this.UsedInStyles = new Array<IfcSurfaceStyleWithTextures>()
-
 		this.RepeatS = repeatS
 		this.RepeatT = repeatT
 

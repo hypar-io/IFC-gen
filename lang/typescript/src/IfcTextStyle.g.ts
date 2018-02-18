@@ -19,7 +19,6 @@ export class IfcTextStyle extends IfcPresentationStyle {
 
     constructor(textFontStyle : IfcExternallyDefinedTextFont|IfcPreDefinedTextFont) {
         super()
-
 		this.TextFontStyle = textFontStyle
 
     }

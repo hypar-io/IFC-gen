@@ -24,7 +24,6 @@ export class IfcIShapeProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, overallWidth : IfcPositiveLengthMeasure, overallDepth : IfcPositiveLengthMeasure, webThickness : IfcPositiveLengthMeasure, flangeThickness : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.OverallWidth = overallWidth
 		this.OverallDepth = overallDepth
 		this.WebThickness = webThickness

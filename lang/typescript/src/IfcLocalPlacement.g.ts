@@ -14,7 +14,6 @@ export class IfcLocalPlacement extends IfcObjectPlacement {
 
     constructor(relativePlacement : IfcAxis2Placement2D|IfcAxis2Placement3D) {
         super()
-
 		this.RelativePlacement = relativePlacement
 
     }

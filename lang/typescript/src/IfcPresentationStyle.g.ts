@@ -10,6 +10,5 @@ export abstract class IfcPresentationStyle extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

@@ -27,7 +27,6 @@ export class IfcMaterialLayer extends IfcMaterialDefinition {
 
     constructor(layerThickness : IfcNonNegativeLengthMeasure) {
         super()
-
 		this.LayerThickness = layerThickness
 
     }

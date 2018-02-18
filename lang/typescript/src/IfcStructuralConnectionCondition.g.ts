@@ -10,6 +10,5 @@ export abstract class IfcStructuralConnectionCondition extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

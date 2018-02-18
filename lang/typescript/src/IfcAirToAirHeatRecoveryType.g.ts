@@ -25,7 +25,6 @@ export class IfcAirToAirHeatRecoveryType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcAirToAirHeatRecoveryTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

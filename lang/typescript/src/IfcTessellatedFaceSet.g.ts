@@ -21,9 +21,6 @@ export abstract class IfcTessellatedFaceSet extends IfcTessellatedItem {
 
     constructor(coordinates : IfcCartesianPointList3D) {
         super()
-		this.HasColours = new Array<IfcIndexedColourMap>()
-		this.HasTextures = new Array<IfcIndexedTextureMap>()
-
 		this.Coordinates = coordinates
 
     }

@@ -17,7 +17,6 @@ export class IfcRelCoversBldgElements extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingBuildingElement : IfcElement, relatedCoverings : Array<IfcCovering>) {
         super(globalId)
-
 		this.RelatingBuildingElement = relatingBuildingElement
 		this.RelatedCoverings = relatedCoverings
 

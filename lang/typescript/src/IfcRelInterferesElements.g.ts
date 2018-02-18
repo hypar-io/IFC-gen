@@ -21,7 +21,6 @@ export class IfcRelInterferesElements extends IfcRelConnects {
 
     constructor(globalId : IfcGloballyUniqueId, relatingElement : IfcElement, relatedElement : IfcElement, impliedOrder : boolean) {
         super(globalId)
-
 		this.RelatingElement = relatingElement
 		this.RelatedElement = relatedElement
 		this.ImpliedOrder = impliedOrder

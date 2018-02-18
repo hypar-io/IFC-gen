@@ -13,7 +13,6 @@ export class IfcMaterialClassificationRelationship extends BaseIfc {
 
     constructor(materialClassifications : Array<IfcClassification|IfcClassificationReference>, classifiedMaterial : IfcMaterial) {
         super()
-
 		this.MaterialClassifications = materialClassifications
 		this.ClassifiedMaterial = classifiedMaterial
 

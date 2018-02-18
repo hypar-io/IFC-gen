@@ -25,7 +25,6 @@ export class IfcAudioVisualApplianceType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcAudioVisualApplianceTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

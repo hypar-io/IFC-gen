@@ -19,8 +19,6 @@ export class IfcDocumentReference extends IfcExternalReference {
 
     constructor() {
         super()
-		this.DocumentRefForObjects = new Array<IfcRelAssociatesDocument>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

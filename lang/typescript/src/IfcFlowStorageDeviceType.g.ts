@@ -23,6 +23,5 @@ export abstract class IfcFlowStorageDeviceType extends IfcDistributionFlowElemen
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

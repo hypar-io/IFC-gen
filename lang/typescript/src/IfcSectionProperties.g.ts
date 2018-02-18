@@ -15,7 +15,6 @@ export class IfcSectionProperties extends IfcPreDefinedProperties {
 
     constructor(sectionType : IfcSectionTypeEnum, startProfile : IfcProfileDef) {
         super()
-
 		this.SectionType = sectionType
 		this.StartProfile = startProfile
 

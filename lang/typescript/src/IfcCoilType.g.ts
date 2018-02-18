@@ -25,7 +25,6 @@ export class IfcCoilType extends IfcEnergyConversionDeviceType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcCoilTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

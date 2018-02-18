@@ -15,7 +15,6 @@ export class IfcDimensionalExponents extends BaseIfc {
 
     constructor(lengthExponent : number, massExponent : number, timeExponent : number, electricCurrentExponent : number, thermodynamicTemperatureExponent : number, amountOfSubstanceExponent : number, luminousIntensityExponent : number) {
         super()
-
 		this.LengthExponent = lengthExponent
 		this.MassExponent = massExponent
 		this.TimeExponent = timeExponent

@@ -26,9 +26,6 @@ export abstract class IfcConstraint extends BaseIfc {
 
     constructor(name : IfcLabel, constraintGrade : IfcConstraintEnum) {
         super()
-		this.HasExternalReferences = new Array<IfcExternalReferenceRelationship>()
-		this.PropertiesForConstraint = new Array<IfcResourceConstraintRelationship>()
-
 		this.Name = name
 		this.ConstraintGrade = constraintGrade
 

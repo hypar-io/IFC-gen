@@ -25,7 +25,6 @@ export class IfcRampFlightType extends IfcBuildingElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcRampFlightTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

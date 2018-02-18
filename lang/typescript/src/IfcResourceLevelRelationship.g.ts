@@ -12,6 +12,5 @@ export abstract class IfcResourceLevelRelationship extends BaseIfc {
 
     constructor() {
         super()
-
     }
 }

@@ -16,9 +16,6 @@ export class IfcProfileDef extends BaseIfc {
 
     constructor(profileType : IfcProfileTypeEnum) {
         super()
-		this.HasExternalReference = new Array<IfcExternalReferenceRelationship>()
-		this.HasProperties = new Array<IfcProfileProperties>()
-
 		this.ProfileType = profileType
 
     }

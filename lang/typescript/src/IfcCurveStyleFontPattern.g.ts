@@ -13,7 +13,6 @@ export class IfcCurveStyleFontPattern extends IfcPresentationItem {
 
     constructor(visibleSegmentLength : IfcLengthMeasure, invisibleSegmentLength : IfcPositiveLengthMeasure) {
         super()
-
 		this.VisibleSegmentLength = visibleSegmentLength
 		this.InvisibleSegmentLength = invisibleSegmentLength
 

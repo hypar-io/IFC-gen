@@ -37,7 +37,6 @@ export class IfcGeographicElement extends IfcElement {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

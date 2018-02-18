@@ -15,8 +15,6 @@ export class IfcFace extends IfcTopologicalRepresentationItem {
 
     constructor(bounds : Array<IfcFaceBound>) {
         super()
-		this.HasTextureMaps = new Array<IfcTextureMap>()
-
 		this.Bounds = bounds
 
     }

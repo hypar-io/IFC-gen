@@ -29,9 +29,5 @@ export abstract class IfcPort extends IfcProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.ContainedIn = new Array<IfcRelConnectsPortToElement>()
-		this.ConnectedFrom = new Array<IfcRelConnectsPorts>()
-		this.ConnectedTo = new Array<IfcRelConnectsPorts>()
-
     }
 }

@@ -17,7 +17,6 @@ export class IfcBlock extends IfcCsgPrimitive3D {
 
     constructor(position : IfcAxis2Placement3D, xLength : IfcPositiveLengthMeasure, yLength : IfcPositiveLengthMeasure, zLength : IfcPositiveLengthMeasure) {
         super(position)
-
 		this.XLength = xLength
 		this.YLength = yLength
 		this.ZLength = zLength

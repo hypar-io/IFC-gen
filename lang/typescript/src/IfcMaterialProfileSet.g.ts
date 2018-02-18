@@ -20,7 +20,6 @@ export class IfcMaterialProfileSet extends IfcMaterialDefinition {
 
     constructor(materialProfiles : Array<IfcMaterialProfile>) {
         super()
-
 		this.MaterialProfiles = materialProfiles
 
     }

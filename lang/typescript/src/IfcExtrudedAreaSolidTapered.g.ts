@@ -17,7 +17,6 @@ export class IfcExtrudedAreaSolidTapered extends IfcExtrudedAreaSolid {
 
     constructor(sweptArea : IfcProfileDef, extrudedDirection : IfcDirection, depth : IfcPositiveLengthMeasure, endSweptArea : IfcProfileDef) {
         super(sweptArea,extrudedDirection,depth)
-
 		this.EndSweptArea = endSweptArea
 
     }

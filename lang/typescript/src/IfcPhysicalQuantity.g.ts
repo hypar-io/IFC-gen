@@ -16,9 +16,6 @@ export abstract class IfcPhysicalQuantity extends BaseIfc {
 
     constructor(name : IfcLabel) {
         super()
-		this.HasExternalReferences = new Array<IfcExternalReferenceRelationship>()
-		this.PartOfComplex = new Array<IfcPhysicalComplexQuantity>()
-
 		this.Name = name
 
     }

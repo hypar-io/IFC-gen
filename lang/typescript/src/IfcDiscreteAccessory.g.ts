@@ -37,7 +37,6 @@ export class IfcDiscreteAccessory extends IfcElementComponent {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

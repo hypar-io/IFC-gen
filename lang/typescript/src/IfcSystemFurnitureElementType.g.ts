@@ -25,7 +25,6 @@ export class IfcSystemFurnitureElementType extends IfcFurnishingElementType {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

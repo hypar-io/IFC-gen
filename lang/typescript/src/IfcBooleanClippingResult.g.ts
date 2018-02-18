@@ -17,7 +17,6 @@ export class IfcBooleanClippingResult extends IfcBooleanResult {
 
     constructor(op : IfcBooleanOperator, firstOperand : IfcBooleanResult|IfcCsgPrimitive3D|IfcHalfSpaceSolid|IfcSolidModel|IfcTessellatedFaceSet, secondOperand : IfcBooleanResult|IfcCsgPrimitive3D|IfcHalfSpaceSolid|IfcSolidModel|IfcTessellatedFaceSet) {
         super(op,firstOperand,secondOperand)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -25,7 +25,6 @@ export class IfcControllerType extends IfcDistributionControlElementType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcControllerTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

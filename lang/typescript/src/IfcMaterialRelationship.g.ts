@@ -15,7 +15,6 @@ export class IfcMaterialRelationship extends IfcResourceLevelRelationship {
 
     constructor(relatingMaterial : IfcMaterial, relatedMaterials : Array<IfcMaterial>) {
         super()
-
 		this.RelatingMaterial = relatingMaterial
 		this.RelatedMaterials = relatedMaterials
 

@@ -11,7 +11,6 @@ export class IfcSurfaceStyleWithTextures extends IfcPresentationItem {
 
     constructor(textures : Array<IfcSurfaceTexture>) {
         super()
-
 		this.Textures = textures
 
     }

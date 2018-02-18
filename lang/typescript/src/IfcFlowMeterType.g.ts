@@ -25,7 +25,6 @@ export class IfcFlowMeterType extends IfcFlowControllerType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcFlowMeterTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

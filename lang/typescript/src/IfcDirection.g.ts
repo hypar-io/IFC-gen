@@ -17,7 +17,6 @@ export class IfcDirection extends IfcGeometricRepresentationItem {
 
     constructor(directionRatios : Array<IfcReal>) {
         super()
-
 		this.DirectionRatios = directionRatios
 
     }

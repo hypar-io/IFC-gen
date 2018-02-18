@@ -24,6 +24,5 @@ export abstract class IfcElementType extends IfcTypeProduct {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

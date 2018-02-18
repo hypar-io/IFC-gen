@@ -15,7 +15,6 @@ export class IfcGeometricCurveSet extends IfcGeometricSet {
 
     constructor(elements : Array<IfcCurve|IfcPoint|IfcSurface>) {
         super(elements)
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();

@@ -17,8 +17,5 @@ export abstract class IfcPropertyDefinition extends IfcRoot {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasContext = new Array<IfcRelDeclares>()
-		this.HasAssociations = new Array<IfcRelAssociates>()
-
     }
 }

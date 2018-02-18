@@ -22,7 +22,6 @@ export class IfcRectangularTrimmedSurface extends IfcBoundedSurface {
 
     constructor(basisSurface : IfcSurface, u1 : IfcParameterValue, v1 : IfcParameterValue, u2 : IfcParameterValue, v2 : IfcParameterValue, usense : IfcBoolean, vsense : IfcBoolean) {
         super()
-
 		this.BasisSurface = basisSurface
 		this.U1 = u1
 		this.V1 = v1

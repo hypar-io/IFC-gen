@@ -20,7 +20,6 @@ export class IfcSectionReinforcementProperties extends IfcPreDefinedProperties {
 
     constructor(longitudinalStartPosition : IfcLengthMeasure, longitudinalEndPosition : IfcLengthMeasure, reinforcementRole : IfcReinforcingBarRoleEnum, sectionDefinition : IfcSectionProperties, crossSectionReinforcementDefinitions : Array<IfcReinforcementBarProperties>) {
         super()
-
 		this.LongitudinalStartPosition = longitudinalStartPosition
 		this.LongitudinalEndPosition = longitudinalEndPosition
 		this.ReinforcementRole = reinforcementRole

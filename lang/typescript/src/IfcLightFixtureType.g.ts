@@ -25,7 +25,6 @@ export class IfcLightFixtureType extends IfcFlowTerminalType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcLightFixtureTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

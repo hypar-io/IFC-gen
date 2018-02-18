@@ -21,7 +21,6 @@ export class IfcCShapeProfileDef extends IfcParameterizedProfileDef {
 
     constructor(profileType : IfcProfileTypeEnum, depth : IfcPositiveLengthMeasure, width : IfcPositiveLengthMeasure, wallThickness : IfcPositiveLengthMeasure, girth : IfcPositiveLengthMeasure) {
         super(profileType)
-
 		this.Depth = depth
 		this.Width = width
 		this.WallThickness = wallThickness

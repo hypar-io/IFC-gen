@@ -21,7 +21,6 @@ export class IfcSurfaceCurveSweptAreaSolid extends IfcSweptAreaSolid {
 
     constructor(sweptArea : IfcProfileDef, directrix : IfcCurve, referenceSurface : IfcSurface) {
         super(sweptArea)
-
 		this.Directrix = directrix
 		this.ReferenceSurface = referenceSurface
 

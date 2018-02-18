@@ -25,7 +25,6 @@ export class IfcPipeFittingType extends IfcFlowFittingType {
 
     constructor(globalId : IfcGloballyUniqueId, predefinedType : IfcPipeFittingTypeEnum) {
         super(globalId)
-
 		this.PredefinedType = predefinedType
 
     }

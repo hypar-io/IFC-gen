@@ -19,7 +19,6 @@ export class IfcHalfSpaceSolid extends IfcGeometricRepresentationItem {
 
     constructor(baseSurface : IfcSurface, agreementFlag : IfcBoolean) {
         super()
-
 		this.BaseSurface = baseSurface
 		this.AgreementFlag = agreementFlag
 

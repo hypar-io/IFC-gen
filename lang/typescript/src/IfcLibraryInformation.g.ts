@@ -26,9 +26,6 @@ export class IfcLibraryInformation extends IfcExternalInformation {
 
     constructor(name : IfcLabel) {
         super()
-		this.LibraryInfoForObjects = new Array<IfcRelAssociatesLibrary>()
-		this.HasLibraryReferences = new Array<IfcLibraryReference>()
-
 		this.Name = name
 
     }

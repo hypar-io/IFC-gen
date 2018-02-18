@@ -34,7 +34,6 @@ export class IfcTask extends IfcProcess {
 
     constructor(globalId : IfcGloballyUniqueId, isMilestone : IfcBoolean) {
         super(globalId)
-
 		this.IsMilestone = isMilestone
 
     }

@@ -11,7 +11,6 @@ export class IfcTextureVertexList extends IfcPresentationItem {
 
     constructor(texCoordsList : Array<Array<IfcParameterValue>>) {
         super()
-
 		this.TexCoordsList = texCoordsList
 
     }

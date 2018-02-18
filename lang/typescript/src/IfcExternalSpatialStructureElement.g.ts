@@ -27,6 +27,5 @@ export abstract class IfcExternalSpatialStructureElement extends IfcSpatialEleme
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-
     }
 }

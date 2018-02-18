@@ -21,7 +21,6 @@ export class IfcElementQuantity extends IfcQuantitySet {
 
     constructor(globalId : IfcGloballyUniqueId, quantities : Array<IfcPhysicalQuantity>) {
         super(globalId)
-
 		this.Quantities = quantities
 
     }

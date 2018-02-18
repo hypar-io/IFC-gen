@@ -12,7 +12,6 @@ export abstract class IfcCoordinateOperation extends BaseIfc {
 
     constructor(sourceCRS : IfcCoordinateReferenceSystem|IfcGeometricRepresentationContext, targetCRS : IfcCoordinateReferenceSystem) {
         super()
-
 		this.SourceCRS = sourceCRS
 		this.TargetCRS = targetCRS
 

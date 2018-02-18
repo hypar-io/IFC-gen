@@ -18,7 +18,6 @@ export class IfcPolygonalBoundedHalfSpace extends IfcHalfSpaceSolid {
 
     constructor(baseSurface : IfcSurface, agreementFlag : IfcBoolean, position : IfcAxis2Placement3D, polygonalBoundary : IfcBoundedCurve) {
         super(baseSurface,agreementFlag)
-
 		this.Position = position
 		this.PolygonalBoundary = polygonalBoundary
 

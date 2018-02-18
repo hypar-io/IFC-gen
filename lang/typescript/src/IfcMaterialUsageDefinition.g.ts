@@ -10,7 +10,5 @@ export abstract class IfcMaterialUsageDefinition extends BaseIfc {
 
     constructor() {
         super()
-		this.AssociatedTo = new Array<IfcRelAssociatesMaterial>()
-
     }
 }

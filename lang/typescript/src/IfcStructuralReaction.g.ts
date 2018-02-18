@@ -27,6 +27,5 @@ export abstract class IfcStructuralReaction extends IfcStructuralActivity {
 
     constructor(globalId : IfcGloballyUniqueId, appliedLoad : IfcStructuralLoad, globalOrLocal : IfcGlobalOrLocalEnum) {
         super(globalId,appliedLoad,globalOrLocal)
-
     }
 }

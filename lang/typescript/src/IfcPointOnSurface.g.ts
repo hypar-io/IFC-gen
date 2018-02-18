@@ -20,7 +20,6 @@ export class IfcPointOnSurface extends IfcPoint {
 
     constructor(basisSurface : IfcSurface, pointParameterU : IfcParameterValue, pointParameterV : IfcParameterValue) {
         super()
-
 		this.BasisSurface = basisSurface
 		this.PointParameterU = pointParameterU
 		this.PointParameterV = pointParameterV

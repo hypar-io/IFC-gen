@@ -24,9 +24,6 @@ export class IfcTypeObject extends IfcObjectDefinition {
 
     constructor(globalId : IfcGloballyUniqueId) {
         super(globalId)
-		this.HasPropertySets = new Array<IfcPropertySetDefinition>()
-		this.Types = new Array<IfcRelDefinesByType>()
-
     }
     getStepParameters() : string {
         var parameters = new Array<string>();
