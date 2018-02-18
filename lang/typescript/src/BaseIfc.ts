@@ -135,7 +135,7 @@ export abstract class BaseIfc {
                 // Convert the character to its UTF-16 code unit.
                 let i: number = c.charCodeAt(icounter);
                 if (i < 32 || i > 126)
-                    result += "\\X2\\" + this.toFourCharacters(i.toString(16)).toUpperCase() + "\\X0\\";
+                    result += "\\X2\\" + this.padHexadecimalStringToFourCharacters(i.toString(16)).toUpperCase() + "\\X0\\";
                 else
                     result += c;
             }
@@ -143,7 +143,7 @@ export abstract class BaseIfc {
         return result;
     }
 
-    private static toFourCharacters(str: string) {
+    private static padHexadecimalStringToFourCharacters(str: string) {
         let buf = ["0","0","0","0"]
         for (let i=str.length-1; i>=0; i--) {
             buf[i+str.length] = str[i] // assign with proper offset
