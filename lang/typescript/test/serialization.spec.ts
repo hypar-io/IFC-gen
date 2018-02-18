@@ -145,4 +145,16 @@ describe("Model", () => {
         let result = BaseIfc.toStepValue(test)
         expect(result).to.equal("$")
     })
+
+    it("should serialize a string with ''", () => {
+        let test = "test"
+        let result = BaseIfc.toStepValue(test)
+        expect(result).to.equal("'test'")
+    })
+
+    it("should serialize an enum starting and ending with .", () => {
+        let test = IFC.IfcUnitEnum.VOLUMEUNIT
+        let result = BaseIfc.toStepValue(test)
+        expect(result).to.equal(".VOLUMEUNIT.")
+    })
 })
