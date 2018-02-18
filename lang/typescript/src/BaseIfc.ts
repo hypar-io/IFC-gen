@@ -92,9 +92,9 @@ export abstract class BaseIfc {
                 // Treat this as an enum
                 return `${value}`
             }
-            return `'${value}'`
+            return `'${this.encode(value)}'`
         } else if (typeof value === "number") {
-            return `${value}`
+            return `${value.toExponential().toUpperCase()}`
         } else if (typeof value === "boolean") {
             let b: boolean = value
             return  b === true? ".T." : ".F."

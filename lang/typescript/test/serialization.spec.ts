@@ -109,14 +109,20 @@ describe("Model", () => {
     })
 
     it("should encode apostrophes per ISO 10303-11", () =>{
-        let test ="Don't"
+        let test = "Don't"
         let result = BaseIfc.encode(test)
         expect(result).to.equal("Don\"t")
     })
 
     it("should encode empty strings per ISO 10303-11", () =>{
-        let test =""
+        let test = ""
         let result = BaseIfc.encode(test)
         expect(result).to.equal("\"")
+    })
+
+    it("should serialize a number using scientific notation per ISO 10303-11", () =>{
+        let test = 0.01745
+        let result = BaseIfc.toStepValue(test)
+        expect(result).to.equal("1.745E-2")
     })
 })
