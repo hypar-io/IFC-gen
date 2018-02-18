@@ -101,4 +101,22 @@ describe("Model", () => {
 
         expect(step).to.not.equal(null)
     })
+
+    it("should encode page offset strings per ISO 10303-11", () =>{
+        let test = "Ä"
+        let result = BaseIfc.encode(test)
+        expect(result).to.equal("\\X2\\00C4\\X0\\")
+    })
+
+    it("should encode apostrophes per ISO 10303-11", () =>{
+        let test ="Don't"
+        let result = BaseIfc.encode(test)
+        expect(result).to.equal("Don\"t")
+    })
+
+    it("should encode empty strings per ISO 10303-11", () =>{
+        let test =""
+        let result = BaseIfc.encode(test)
+        expect(result).to.equal("\"")
+    })
 })

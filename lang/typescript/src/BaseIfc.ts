@@ -109,6 +109,45 @@ export abstract class BaseIfc {
         }
     }
 
+    // http://www.steptools.com/stds/step/IS_final_p21e3.html#clause-6-4-3
+    static encode(str: string): string
+    {
+        if(str === "") {
+            return "\""
+        }
+
+        let result: string = "";
+        let length: number = str.length;
+        for (let icounter = 0; icounter < length; icounter++)
+        {
+            let c: string = str[icounter];
+            if (c.endsWith("\r") || c.endsWith("\r\n") || c.endsWith("\n"))
+            {
+                continue;
+            }
+            if (c === "'")
+                result += "\"";
+            else
+            {
+                // Convert the character to its UTF-16 code unit.
+                let i: number = c.charCodeAt(icounter);
+                if (i < 32 || i > 126)
+                    result += "\\X2\\" + this.toFourCharacters(i.toString(16)).toUpperCase() + "\\X0\\";
+                else
+                    result += c;
+            }
+        }
+        return result;
+    }
+
+    private static toFourCharacters(str: string) {
+        let buf = ["0","0","0","0"]
+        for (let i=str.length-1; i>=0; i--) {
+            buf[i+str.length] = str[i] // assign with proper offset
+        }
+        return buf.join("")
+    }
+
     getStepParameters() : string {
         throw new Error("getStepParameters() should always be overridden in extension classes.")
     }
