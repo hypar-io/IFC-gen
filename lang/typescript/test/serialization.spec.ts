@@ -125,4 +125,10 @@ describe("Model", () => {
         let result = BaseIfc.toStepValue(test)
         expect(result).to.equal("1.745E-2")
     })
+
+    it("should serialize a date time without scientific notation", () => {
+        let dateTime = 1348486806
+        let result = BaseIfc.toStepValue(dateTime)
+        expect(result).to.equal("1348486806")
+    })
 })

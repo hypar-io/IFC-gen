@@ -94,6 +94,12 @@ export abstract class BaseIfc {
             }
             return `'${this.encode(value)}'`
         } else if (typeof value === "number") {
+            if(value === 0.0) {
+                return value.toPrecision(1)
+            }
+            if(value % 1 == 0) {
+                return value.toString()
+            }
             return `${value.toExponential().toUpperCase()}`
         } else if (typeof value === "boolean") {
             let b: boolean = value
