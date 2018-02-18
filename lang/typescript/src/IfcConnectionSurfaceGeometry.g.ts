@@ -19,10 +19,10 @@ export class IfcConnectionSurfaceGeometry extends IfcConnectionGeometry {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SurfaceOnRelatingElement))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SurfaceOnRelatingElement))
 		parameters.push(BaseIfc.toStepValue(this.SurfaceOnRelatedElement))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

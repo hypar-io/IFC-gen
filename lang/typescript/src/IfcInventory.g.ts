@@ -38,8 +38,8 @@ export class IfcInventory extends IfcGroup {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -51,6 +51,6 @@ export class IfcInventory extends IfcGroup {
 		parameters.push(BaseIfc.toStepValue(this.CurrentValue))
 		parameters.push(BaseIfc.toStepValue(this.OriginalValue))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

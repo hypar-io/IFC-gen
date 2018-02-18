@@ -24,9 +24,9 @@ export class IfcGeometricSet extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Elements))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Elements))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

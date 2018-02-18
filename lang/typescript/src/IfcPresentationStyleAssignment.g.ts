@@ -19,9 +19,9 @@ export class IfcPresentationStyleAssignment extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Styles))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Styles))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

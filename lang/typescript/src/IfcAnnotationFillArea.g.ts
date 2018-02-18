@@ -20,10 +20,10 @@ export class IfcAnnotationFillArea extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.OuterBoundary))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.OuterBoundary))
 		parameters.push(BaseIfc.toStepValue(this.InnerBoundaries))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -37,8 +37,8 @@ export class IfcStructuralSurfaceAction extends IfcStructuralAction {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -51,6 +51,6 @@ export class IfcStructuralSurfaceAction extends IfcStructuralAction {
 		parameters.push(BaseIfc.toStepValue(this.ProjectedOrTrue))
 		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

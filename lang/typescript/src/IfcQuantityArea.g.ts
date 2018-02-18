@@ -22,13 +22,13 @@ export class IfcQuantityArea extends IfcPhysicalSimpleQuantity {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Unit))
 		parameters.push(BaseIfc.toStepValue(this.AreaValue))
 		parameters.push(BaseIfc.toStepValue(this.Formula))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -22,12 +22,12 @@ export class IfcSurfaceStyleLighting extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.DiffuseTransmissionColour))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.DiffuseTransmissionColour))
 		parameters.push(BaseIfc.toStepValue(this.DiffuseReflectionColour))
 		parameters.push(BaseIfc.toStepValue(this.TransmissionColour))
 		parameters.push(BaseIfc.toStepValue(this.ReflectanceColour))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

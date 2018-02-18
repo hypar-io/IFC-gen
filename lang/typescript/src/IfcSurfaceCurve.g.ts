@@ -28,11 +28,11 @@ export class IfcSurfaceCurve extends IfcCurve {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Curve3D))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Curve3D))
 		parameters.push(BaseIfc.toStepValue(this.AssociatedGeometry))
 		parameters.push(BaseIfc.toStepValue(this.MasterRepresentation))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

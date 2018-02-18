@@ -20,8 +20,8 @@ export class IfcFailureConnectionCondition extends IfcStructuralConnectionCondit
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.TensionFailureX))
 		parameters.push(BaseIfc.toStepValue(this.TensionFailureY))
 		parameters.push(BaseIfc.toStepValue(this.TensionFailureZ))
@@ -29,6 +29,6 @@ export class IfcFailureConnectionCondition extends IfcStructuralConnectionCondit
 		parameters.push(BaseIfc.toStepValue(this.CompressionFailureY))
 		parameters.push(BaseIfc.toStepValue(this.CompressionFailureZ))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -34,8 +34,8 @@ export class IfcDoorPanelProperties extends IfcPreDefinedPropertySet {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -45,6 +45,6 @@ export class IfcDoorPanelProperties extends IfcPreDefinedPropertySet {
 		parameters.push(BaseIfc.toStepValue(this.PanelPosition))
 		parameters.push(BaseIfc.toStepValue(this.ShapeAspectStyle))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

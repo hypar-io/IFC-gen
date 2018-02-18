@@ -20,10 +20,10 @@ export class IfcSphericalSurface extends IfcElementarySurface {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Position))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.Radius))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

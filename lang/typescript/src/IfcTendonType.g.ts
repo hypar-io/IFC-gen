@@ -35,8 +35,8 @@ export class IfcTendonType extends IfcReinforcingElementType {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -50,6 +50,6 @@ export class IfcTendonType extends IfcReinforcingElementType {
 		parameters.push(BaseIfc.toStepValue(this.CrossSectionArea))
 		parameters.push(BaseIfc.toStepValue(this.SheathDiameter))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -29,8 +29,8 @@ export class IfcMaterialLayerWithOffsets extends IfcMaterialLayer {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Material))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Material))
 		parameters.push(BaseIfc.toStepValue(this.LayerThickness))
 		parameters.push(BaseIfc.toStepValue(this.IsVentilated))
 		parameters.push(BaseIfc.toStepValue(this.Name))
@@ -40,6 +40,6 @@ export class IfcMaterialLayerWithOffsets extends IfcMaterialLayer {
 		parameters.push(BaseIfc.toStepValue(this.OffsetDirection))
 		parameters.push(BaseIfc.toStepValue(this.OffsetValues))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -19,12 +19,12 @@ export class IfcMaterialDefinitionRepresentation extends IfcProductRepresentatio
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Representations))
 		parameters.push(BaseIfc.toStepValue(this.RepresentedMaterial))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -20,11 +20,11 @@ export class IfcPlanarBox extends IfcPlanarExtent {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SizeInX))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SizeInX))
 		parameters.push(BaseIfc.toStepValue(this.SizeInY))
 		parameters.push(BaseIfc.toStepValue(this.Placement))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

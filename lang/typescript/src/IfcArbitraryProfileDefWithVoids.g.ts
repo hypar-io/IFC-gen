@@ -20,12 +20,12 @@ export class IfcArbitraryProfileDefWithVoids extends IfcArbitraryClosedProfileDe
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ProfileType))
 		parameters.push(BaseIfc.toStepValue(this.ProfileName))
 		parameters.push(BaseIfc.toStepValue(this.OuterCurve))
 		parameters.push(BaseIfc.toStepValue(this.InnerCurves))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

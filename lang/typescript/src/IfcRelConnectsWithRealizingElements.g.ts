@@ -22,8 +22,8 @@ export class IfcRelConnectsWithRealizingElements extends IfcRelConnectsElements 
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -33,6 +33,6 @@ export class IfcRelConnectsWithRealizingElements extends IfcRelConnectsElements 
 		parameters.push(BaseIfc.toStepValue(this.RealizingElements))
 		parameters.push(BaseIfc.toStepValue(this.ConnectionType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -31,11 +31,11 @@ export class IfcCompositeCurveSegment extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Transition))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Transition))
 		parameters.push(BaseIfc.toStepValue(this.SameSense))
 		parameters.push(BaseIfc.toStepValue(this.ParentCurve))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -35,8 +35,8 @@ export class IfcStructuralSurfaceMember extends IfcStructuralMember {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -46,6 +46,6 @@ export class IfcStructuralSurfaceMember extends IfcStructuralMember {
 		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 		parameters.push(BaseIfc.toStepValue(this.Thickness))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

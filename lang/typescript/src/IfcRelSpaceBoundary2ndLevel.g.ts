@@ -25,8 +25,8 @@ export class IfcRelSpaceBoundary2ndLevel extends IfcRelSpaceBoundary1stLevel {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -38,6 +38,6 @@ export class IfcRelSpaceBoundary2ndLevel extends IfcRelSpaceBoundary1stLevel {
 		parameters.push(BaseIfc.toStepValue(this.ParentBoundary))
 		parameters.push(BaseIfc.toStepValue(this.CorrespondingBoundary))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -26,8 +26,8 @@ export class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SurfaceColour))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SurfaceColour))
 		parameters.push(BaseIfc.toStepValue(this.Transparency))
 		parameters.push(BaseIfc.toStepValue(this.DiffuseColour))
 		parameters.push(BaseIfc.toStepValue(this.TransmissionColour))
@@ -37,6 +37,6 @@ export class IfcSurfaceStyleRendering extends IfcSurfaceStyleShading {
 		parameters.push(BaseIfc.toStepValue(this.SpecularHighlight))
 		parameters.push(BaseIfc.toStepValue(this.ReflectanceMethod))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -27,11 +27,11 @@ export class IfcPointOnSurface extends IfcPoint {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
 		parameters.push(BaseIfc.toStepValue(this.PointParameterU))
 		parameters.push(BaseIfc.toStepValue(this.PointParameterV))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

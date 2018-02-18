@@ -18,10 +18,10 @@ export class IfcConnectionVolumeGeometry extends IfcConnectionGeometry {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.VolumeOnRelatingElement))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.VolumeOnRelatingElement))
 		parameters.push(BaseIfc.toStepValue(this.VolumeOnRelatedElement))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

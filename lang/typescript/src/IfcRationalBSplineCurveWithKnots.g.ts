@@ -28,8 +28,8 @@ export class IfcRationalBSplineCurveWithKnots extends IfcBSplineCurveWithKnots {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Degree))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Degree))
 		parameters.push(BaseIfc.toStepValue(this.ControlPointsList))
 		parameters.push(BaseIfc.toStepValue(this.CurveForm))
 		parameters.push(BaseIfc.toStepValue(this.ClosedCurve))
@@ -39,6 +39,6 @@ export class IfcRationalBSplineCurveWithKnots extends IfcBSplineCurveWithKnots {
 		parameters.push(BaseIfc.toStepValue(this.KnotSpec))
 		parameters.push(BaseIfc.toStepValue(this.WeightsData))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

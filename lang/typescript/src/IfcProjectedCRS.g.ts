@@ -20,8 +20,8 @@ export class IfcProjectedCRS extends IfcCoordinateReferenceSystem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.GeodeticDatum))
 		parameters.push(BaseIfc.toStepValue(this.VerticalDatum))
@@ -29,6 +29,6 @@ export class IfcProjectedCRS extends IfcCoordinateReferenceSystem {
 		parameters.push(BaseIfc.toStepValue(this.MapZone))
 		parameters.push(BaseIfc.toStepValue(this.MapUnit))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

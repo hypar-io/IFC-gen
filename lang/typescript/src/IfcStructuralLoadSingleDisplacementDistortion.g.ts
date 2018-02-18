@@ -17,8 +17,8 @@ export class IfcStructuralLoadSingleDisplacementDistortion extends IfcStructural
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.DisplacementX))
 		parameters.push(BaseIfc.toStepValue(this.DisplacementY))
 		parameters.push(BaseIfc.toStepValue(this.DisplacementZ))
@@ -27,6 +27,6 @@ export class IfcStructuralLoadSingleDisplacementDistortion extends IfcStructural
 		parameters.push(BaseIfc.toStepValue(this.RotationalDisplacementRZ))
 		parameters.push(BaseIfc.toStepValue(this.Distortion))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

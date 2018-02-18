@@ -39,7 +39,7 @@ export abstract class BaseIfc {
         let values = Object.keys(this).map((key)=>self[key.toString()])
 
         xw.startElement(this.constructor.name)
-        xw.writeAttribute("id", `i{this.id}`)
+        xw.writeAttribute("id", `i${this.id}`)
 
         for(let i=0; i<properties.length; i++) {
 
@@ -99,7 +99,11 @@ export abstract class BaseIfc {
             let b: boolean = value
             return  b === true? ".T." : ".F."
         } else if (Array.isArray(value)) {
-            return `(${value.map(v=>{BaseIfc.toStepValue(v)})})`
+            if(value.length == 0) {
+                return "$"
+            }
+            const values = value.map(v=>{return BaseIfc.toStepValue(v)})
+            return `(${values.join()})`
         } else {
             throw new Error(`I found the value ${value}, and don't know how to serialize it.`)
         }

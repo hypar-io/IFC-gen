@@ -22,11 +22,11 @@ export class IfcActorRole extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Role))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Role))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedRole))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

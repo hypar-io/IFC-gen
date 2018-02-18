@@ -18,9 +18,9 @@ export class IfcVertexPoint extends IfcVertex {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.VertexGeometry))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.VertexGeometry))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

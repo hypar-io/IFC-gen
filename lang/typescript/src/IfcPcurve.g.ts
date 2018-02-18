@@ -21,10 +21,10 @@ export class IfcPcurve extends IfcCurve {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
 		parameters.push(BaseIfc.toStepValue(this.ReferenceCurve))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

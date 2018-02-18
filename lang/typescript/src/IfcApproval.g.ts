@@ -41,8 +41,8 @@ export class IfcApproval extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Identifier))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Identifier))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.TimeOfApproval))
@@ -52,6 +52,6 @@ export class IfcApproval extends BaseIfc {
 		parameters.push(BaseIfc.toStepValue(this.RequestingApproval))
 		parameters.push(BaseIfc.toStepValue(this.GivingApproval))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

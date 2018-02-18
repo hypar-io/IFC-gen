@@ -16,9 +16,9 @@ export class IfcTextureVertexList extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.TexCoordsList))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.TexCoordsList))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -15,9 +15,9 @@ export class IfcOpenShell extends IfcConnectedFaceSet {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.CfsFaces))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.CfsFaces))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

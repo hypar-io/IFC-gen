@@ -21,11 +21,11 @@ export class IfcProductDefinitionShape extends IfcProductRepresentation {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Representations))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

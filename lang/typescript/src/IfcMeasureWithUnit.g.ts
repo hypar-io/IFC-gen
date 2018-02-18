@@ -127,10 +127,10 @@ export class IfcMeasureWithUnit extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ValueComponent))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ValueComponent))
 		parameters.push(BaseIfc.toStepValue(this.UnitComponent))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

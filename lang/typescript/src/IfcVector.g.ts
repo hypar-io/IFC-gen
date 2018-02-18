@@ -25,10 +25,10 @@ export class IfcVector extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Orientation))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Orientation))
 		parameters.push(BaseIfc.toStepValue(this.Magnitude))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

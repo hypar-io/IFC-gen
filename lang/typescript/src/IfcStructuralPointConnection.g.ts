@@ -32,8 +32,8 @@ export class IfcStructuralPointConnection extends IfcStructuralConnection {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -43,6 +43,6 @@ export class IfcStructuralPointConnection extends IfcStructuralConnection {
 		parameters.push(BaseIfc.toStepValue(this.AppliedCondition))
 		parameters.push(BaseIfc.toStepValue(this.ConditionCoordinateSystem))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

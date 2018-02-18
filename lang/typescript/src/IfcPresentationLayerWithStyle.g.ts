@@ -28,8 +28,8 @@ export class IfcPresentationLayerWithStyle extends IfcPresentationLayerAssignmen
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.AssignedItems))
 		parameters.push(BaseIfc.toStepValue(this.Identifier))
@@ -38,6 +38,6 @@ export class IfcPresentationLayerWithStyle extends IfcPresentationLayerAssignmen
 		parameters.push(BaseIfc.toStepValue(this.LayerBlocked))
 		parameters.push(BaseIfc.toStepValue(this.LayerStyles))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

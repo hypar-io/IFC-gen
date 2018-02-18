@@ -38,8 +38,8 @@ export class IfcWindowLiningProperties extends IfcPreDefinedPropertySet {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -56,6 +56,6 @@ export class IfcWindowLiningProperties extends IfcPreDefinedPropertySet {
 		parameters.push(BaseIfc.toStepValue(this.LiningToPanelOffsetX))
 		parameters.push(BaseIfc.toStepValue(this.LiningToPanelOffsetY))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

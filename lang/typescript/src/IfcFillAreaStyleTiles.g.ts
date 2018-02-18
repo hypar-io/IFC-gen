@@ -23,11 +23,11 @@ export class IfcFillAreaStyleTiles extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.TilingPattern))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.TilingPattern))
 		parameters.push(BaseIfc.toStepValue(this.Tiles))
 		parameters.push(BaseIfc.toStepValue(this.TilingScale))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

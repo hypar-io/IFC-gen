@@ -21,11 +21,11 @@ export class IfcBoxedHalfSpace extends IfcHalfSpaceSolid {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.BaseSurface))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.BaseSurface))
 		parameters.push(BaseIfc.toStepValue(this.AgreementFlag))
 		parameters.push(BaseIfc.toStepValue(this.Enclosure))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

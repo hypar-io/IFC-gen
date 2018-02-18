@@ -28,8 +28,8 @@ export class IfcRationalBSplineSurfaceWithKnots extends IfcBSplineSurfaceWithKno
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.UDegree))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.UDegree))
 		parameters.push(BaseIfc.toStepValue(this.VDegree))
 		parameters.push(BaseIfc.toStepValue(this.ControlPointsList))
 		parameters.push(BaseIfc.toStepValue(this.SurfaceForm))
@@ -43,6 +43,6 @@ export class IfcRationalBSplineSurfaceWithKnots extends IfcBSplineSurfaceWithKno
 		parameters.push(BaseIfc.toStepValue(this.KnotSpec))
 		parameters.push(BaseIfc.toStepValue(this.WeightsData))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

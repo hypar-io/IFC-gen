@@ -30,11 +30,11 @@ export class IfcBooleanResult extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Operator))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Operator))
 		parameters.push(BaseIfc.toStepValue(this.FirstOperand))
 		parameters.push(BaseIfc.toStepValue(this.SecondOperand))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -133,14 +133,14 @@ export class IfcPropertyBoundedValue extends IfcSimpleProperty {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.UpperBoundValue))
 		parameters.push(BaseIfc.toStepValue(this.LowerBoundValue))
 		parameters.push(BaseIfc.toStepValue(this.Unit))
 		parameters.push(BaseIfc.toStepValue(this.SetPointValue))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

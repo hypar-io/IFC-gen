@@ -20,12 +20,12 @@ export class IfcProfileProperties extends IfcExtendedProperties {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Properties))
 		parameters.push(BaseIfc.toStepValue(this.ProfileDefinition))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

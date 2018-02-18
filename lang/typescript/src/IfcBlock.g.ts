@@ -24,12 +24,12 @@ export class IfcBlock extends IfcCsgPrimitive3D {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Position))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.XLength))
 		parameters.push(BaseIfc.toStepValue(this.YLength))
 		parameters.push(BaseIfc.toStepValue(this.ZLength))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

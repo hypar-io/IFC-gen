@@ -23,12 +23,12 @@ export class IfcApplication extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ApplicationDeveloper))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ApplicationDeveloper))
 		parameters.push(BaseIfc.toStepValue(this.Version))
 		parameters.push(BaseIfc.toStepValue(this.ApplicationFullName))
 		parameters.push(BaseIfc.toStepValue(this.ApplicationIdentifier))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

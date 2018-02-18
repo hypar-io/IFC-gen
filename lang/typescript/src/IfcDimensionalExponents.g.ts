@@ -26,8 +26,8 @@ export class IfcDimensionalExponents extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.LengthExponent))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.LengthExponent))
 		parameters.push(BaseIfc.toStepValue(this.MassExponent))
 		parameters.push(BaseIfc.toStepValue(this.TimeExponent))
 		parameters.push(BaseIfc.toStepValue(this.ElectricCurrentExponent))
@@ -35,6 +35,6 @@ export class IfcDimensionalExponents extends BaseIfc {
 		parameters.push(BaseIfc.toStepValue(this.AmountOfSubstanceExponent))
 		parameters.push(BaseIfc.toStepValue(this.LuminousIntensityExponent))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

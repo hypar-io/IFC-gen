@@ -36,8 +36,8 @@ export class IfcStructuralCurveMember extends IfcStructuralMember {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -47,6 +47,6 @@ export class IfcStructuralCurveMember extends IfcStructuralMember {
 		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 		parameters.push(BaseIfc.toStepValue(this.Axis))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

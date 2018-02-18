@@ -29,8 +29,8 @@ export class IfcProcedure extends IfcProcess {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -39,6 +39,6 @@ export class IfcProcedure extends IfcProcess {
 		parameters.push(BaseIfc.toStepValue(this.LongDescription))
 		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -33,8 +33,8 @@ export class IfcBuildingStorey extends IfcSpatialStructureElement {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -45,6 +45,6 @@ export class IfcBuildingStorey extends IfcSpatialStructureElement {
 		parameters.push(BaseIfc.toStepValue(this.CompositionType))
 		parameters.push(BaseIfc.toStepValue(this.Elevation))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

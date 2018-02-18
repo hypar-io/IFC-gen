@@ -22,14 +22,14 @@ export class IfcPhysicalComplexQuantity extends IfcPhysicalQuantity {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.HasQuantities))
 		parameters.push(BaseIfc.toStepValue(this.Discrimination))
 		parameters.push(BaseIfc.toStepValue(this.Quality))
 		parameters.push(BaseIfc.toStepValue(this.Usage))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

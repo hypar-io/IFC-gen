@@ -22,13 +22,13 @@ export class IfcExtrudedAreaSolidTapered extends IfcExtrudedAreaSolid {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SweptArea))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SweptArea))
 		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.ExtrudedDirection))
 		parameters.push(BaseIfc.toStepValue(this.Depth))
 		parameters.push(BaseIfc.toStepValue(this.EndSweptArea))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

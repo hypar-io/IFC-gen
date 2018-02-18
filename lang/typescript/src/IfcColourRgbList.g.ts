@@ -16,9 +16,9 @@ export class IfcColourRgbList extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ColourList))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ColourList))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

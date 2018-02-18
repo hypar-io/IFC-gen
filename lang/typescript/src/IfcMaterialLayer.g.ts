@@ -32,8 +32,8 @@ export class IfcMaterialLayer extends IfcMaterialDefinition {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Material))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Material))
 		parameters.push(BaseIfc.toStepValue(this.LayerThickness))
 		parameters.push(BaseIfc.toStepValue(this.IsVentilated))
 		parameters.push(BaseIfc.toStepValue(this.Name))
@@ -41,6 +41,6 @@ export class IfcMaterialLayer extends IfcMaterialDefinition {
 		parameters.push(BaseIfc.toStepValue(this.Category))
 		parameters.push(BaseIfc.toStepValue(this.Priority))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

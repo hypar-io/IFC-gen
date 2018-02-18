@@ -19,10 +19,10 @@ export class IfcIndexedPolygonalFaceWithVoids extends IfcIndexedPolygonalFace {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.CoordIndex))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.CoordIndex))
 		parameters.push(BaseIfc.toStepValue(this.InnerCoordIndices))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

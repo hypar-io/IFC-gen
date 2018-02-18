@@ -20,12 +20,12 @@ export class IfcSurfaceReinforcementArea extends IfcStructuralLoadOrResult {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.SurfaceReinforcement1))
 		parameters.push(BaseIfc.toStepValue(this.SurfaceReinforcement2))
 		parameters.push(BaseIfc.toStepValue(this.ShearReinforcement))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -28,12 +28,12 @@ export class IfcRevolvedAreaSolid extends IfcSweptAreaSolid {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SweptArea))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SweptArea))
 		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.Axis))
 		parameters.push(BaseIfc.toStepValue(this.Angle))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

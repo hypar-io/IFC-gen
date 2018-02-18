@@ -29,11 +29,11 @@ export class IfcTable extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Rows))
 		parameters.push(BaseIfc.toStepValue(this.Columns))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

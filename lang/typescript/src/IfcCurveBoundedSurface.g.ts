@@ -25,11 +25,11 @@ export class IfcCurveBoundedSurface extends IfcBoundedSurface {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.BasisSurface))
 		parameters.push(BaseIfc.toStepValue(this.Boundaries))
 		parameters.push(BaseIfc.toStepValue(this.ImplicitOuter))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

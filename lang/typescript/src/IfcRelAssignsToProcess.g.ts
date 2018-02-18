@@ -25,8 +25,8 @@ export class IfcRelAssignsToProcess extends IfcRelAssigns {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -35,6 +35,6 @@ export class IfcRelAssignsToProcess extends IfcRelAssigns {
 		parameters.push(BaseIfc.toStepValue(this.RelatingProcess))
 		parameters.push(BaseIfc.toStepValue(this.QuantityInProcess))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

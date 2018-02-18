@@ -138,8 +138,8 @@ export class IfcPropertyTableValue extends IfcSimpleProperty {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.DefiningValues))
 		parameters.push(BaseIfc.toStepValue(this.DefinedValues))
@@ -148,6 +148,6 @@ export class IfcPropertyTableValue extends IfcSimpleProperty {
 		parameters.push(BaseIfc.toStepValue(this.DefinedUnit))
 		parameters.push(BaseIfc.toStepValue(this.CurveInterpolation))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

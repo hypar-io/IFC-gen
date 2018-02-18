@@ -23,9 +23,9 @@ export class IfcShellBasedSurfaceModel extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SbsmBoundary))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SbsmBoundary))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

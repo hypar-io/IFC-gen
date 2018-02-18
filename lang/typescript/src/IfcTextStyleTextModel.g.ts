@@ -28,8 +28,8 @@ export class IfcTextStyleTextModel extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.TextIndent))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.TextIndent))
 		parameters.push(BaseIfc.toStepValue(this.TextAlign))
 		parameters.push(BaseIfc.toStepValue(this.TextDecoration))
 		parameters.push(BaseIfc.toStepValue(this.LetterSpacing))
@@ -37,6 +37,6 @@ export class IfcTextStyleTextModel extends IfcPresentationItem {
 		parameters.push(BaseIfc.toStepValue(this.TextTransform))
 		parameters.push(BaseIfc.toStepValue(this.LineHeight))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

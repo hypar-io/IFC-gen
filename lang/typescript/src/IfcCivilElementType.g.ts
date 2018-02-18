@@ -26,8 +26,8 @@ export class IfcCivilElementType extends IfcElementType {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -37,6 +37,6 @@ export class IfcCivilElementType extends IfcElementType {
 		parameters.push(BaseIfc.toStepValue(this.Tag))
 		parameters.push(BaseIfc.toStepValue(this.ElementType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

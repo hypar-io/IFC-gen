@@ -55,8 +55,8 @@ export class IfcDocumentInformation extends IfcExternalInformation {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Identification))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Identification))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Location))
@@ -74,6 +74,6 @@ export class IfcDocumentInformation extends IfcExternalInformation {
 		parameters.push(BaseIfc.toStepValue(this.Confidentiality))
 		parameters.push(BaseIfc.toStepValue(this.Status))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

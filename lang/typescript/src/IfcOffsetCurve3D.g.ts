@@ -27,12 +27,12 @@ export class IfcOffsetCurve3D extends IfcCurve {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.BasisCurve))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.BasisCurve))
 		parameters.push(BaseIfc.toStepValue(this.Distance))
 		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
 		parameters.push(BaseIfc.toStepValue(this.RefDirection))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -20,11 +20,11 @@ export class IfcLightDistributionData extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.MainPlaneAngle))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.MainPlaneAngle))
 		parameters.push(BaseIfc.toStepValue(this.SecondaryPlaneAngle))
 		parameters.push(BaseIfc.toStepValue(this.LuminousIntensity))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

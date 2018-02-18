@@ -28,8 +28,8 @@ export class IfcRegularTimeSeries extends IfcTimeSeries {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.StartTime))
 		parameters.push(BaseIfc.toStepValue(this.EndTime))
@@ -40,6 +40,6 @@ export class IfcRegularTimeSeries extends IfcTimeSeries {
 		parameters.push(BaseIfc.toStepValue(this.TimeStep))
 		parameters.push(BaseIfc.toStepValue(this.Values))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

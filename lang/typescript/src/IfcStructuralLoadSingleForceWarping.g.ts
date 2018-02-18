@@ -17,8 +17,8 @@ export class IfcStructuralLoadSingleForceWarping extends IfcStructuralLoadSingle
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.ForceX))
 		parameters.push(BaseIfc.toStepValue(this.ForceY))
 		parameters.push(BaseIfc.toStepValue(this.ForceZ))
@@ -27,6 +27,6 @@ export class IfcStructuralLoadSingleForceWarping extends IfcStructuralLoadSingle
 		parameters.push(BaseIfc.toStepValue(this.MomentZ))
 		parameters.push(BaseIfc.toStepValue(this.WarpingMoment))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

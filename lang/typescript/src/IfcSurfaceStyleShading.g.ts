@@ -18,10 +18,10 @@ export class IfcSurfaceStyleShading extends IfcPresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SurfaceColour))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SurfaceColour))
 		parameters.push(BaseIfc.toStepValue(this.Transparency))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -17,12 +17,12 @@ export class IfcSlippageConnectionCondition extends IfcStructuralConnectionCondi
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.SlippageX))
 		parameters.push(BaseIfc.toStepValue(this.SlippageY))
 		parameters.push(BaseIfc.toStepValue(this.SlippageZ))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

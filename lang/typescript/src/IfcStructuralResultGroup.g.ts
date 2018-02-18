@@ -37,8 +37,8 @@ export class IfcStructuralResultGroup extends IfcGroup {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -47,6 +47,6 @@ export class IfcStructuralResultGroup extends IfcGroup {
 		parameters.push(BaseIfc.toStepValue(this.ResultForLoadGroup))
 		parameters.push(BaseIfc.toStepValue(this.IsLinear))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

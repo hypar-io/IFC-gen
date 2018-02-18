@@ -28,8 +28,8 @@ export class IfcOwnerHistory extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.OwningUser))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.OwningUser))
 		parameters.push(BaseIfc.toStepValue(this.OwningApplication))
 		parameters.push(BaseIfc.toStepValue(this.State))
 		parameters.push(BaseIfc.toStepValue(this.ChangeAction))
@@ -38,6 +38,6 @@ export class IfcOwnerHistory extends BaseIfc {
 		parameters.push(BaseIfc.toStepValue(this.LastModifyingApplication))
 		parameters.push(BaseIfc.toStepValue(this.CreationDate))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

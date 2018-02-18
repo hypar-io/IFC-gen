@@ -27,14 +27,14 @@ export class IfcSurfaceCurveSweptAreaSolid extends IfcSweptAreaSolid {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SweptArea))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SweptArea))
 		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.Directrix))
 		parameters.push(BaseIfc.toStepValue(this.StartParam))
 		parameters.push(BaseIfc.toStepValue(this.EndParam))
 		parameters.push(BaseIfc.toStepValue(this.ReferenceSurface))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -33,8 +33,8 @@ export class IfcStructuralLinearAction extends IfcStructuralCurveAction {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -47,6 +47,6 @@ export class IfcStructuralLinearAction extends IfcStructuralCurveAction {
 		parameters.push(BaseIfc.toStepValue(this.ProjectedOrTrue))
 		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

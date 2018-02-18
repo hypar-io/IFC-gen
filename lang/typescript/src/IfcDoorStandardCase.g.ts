@@ -41,8 +41,8 @@ export class IfcDoorStandardCase extends IfcDoor {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -56,6 +56,6 @@ export class IfcDoorStandardCase extends IfcDoor {
 		parameters.push(BaseIfc.toStepValue(this.OperationType))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedOperationType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

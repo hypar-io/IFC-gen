@@ -33,14 +33,14 @@ export class IfcLibraryInformation extends IfcExternalInformation {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Version))
 		parameters.push(BaseIfc.toStepValue(this.Publisher))
 		parameters.push(BaseIfc.toStepValue(this.VersionDate))
 		parameters.push(BaseIfc.toStepValue(this.Location))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

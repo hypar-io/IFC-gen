@@ -21,10 +21,10 @@ export class IfcMappedItem extends IfcRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.MappingSource))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.MappingSource))
 		parameters.push(BaseIfc.toStepValue(this.MappingTarget))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

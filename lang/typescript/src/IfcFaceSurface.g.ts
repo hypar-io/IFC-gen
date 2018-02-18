@@ -23,11 +23,11 @@ export class IfcFaceSurface extends IfcFace {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Bounds))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Bounds))
 		parameters.push(BaseIfc.toStepValue(this.FaceSurface))
 		parameters.push(BaseIfc.toStepValue(this.SameSense))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

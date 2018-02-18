@@ -18,13 +18,13 @@ export class IfcConnectionPointEccentricity extends IfcConnectionPointGeometry {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.PointOnRelatingElement))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.PointOnRelatingElement))
 		parameters.push(BaseIfc.toStepValue(this.PointOnRelatedElement))
 		parameters.push(BaseIfc.toStepValue(this.EccentricityInX))
 		parameters.push(BaseIfc.toStepValue(this.EccentricityInY))
 		parameters.push(BaseIfc.toStepValue(this.EccentricityInZ))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

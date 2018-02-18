@@ -34,8 +34,8 @@ export class IfcSimplePropertyTemplate extends IfcPropertyTemplate {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -48,6 +48,6 @@ export class IfcSimplePropertyTemplate extends IfcPropertyTemplate {
 		parameters.push(BaseIfc.toStepValue(this.Expression))
 		parameters.push(BaseIfc.toStepValue(this.AccessState))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

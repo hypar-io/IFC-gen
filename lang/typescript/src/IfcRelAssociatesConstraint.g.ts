@@ -23,8 +23,8 @@ export class IfcRelAssociatesConstraint extends IfcRelAssociates {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -32,6 +32,6 @@ export class IfcRelAssociatesConstraint extends IfcRelAssociates {
 		parameters.push(BaseIfc.toStepValue(this.Intent))
 		parameters.push(BaseIfc.toStepValue(this.RelatingConstraint))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

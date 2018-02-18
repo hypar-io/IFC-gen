@@ -23,13 +23,13 @@ export class IfcDocumentReference extends IfcExternalReference {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Location))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Location))
 		parameters.push(BaseIfc.toStepValue(this.Identification))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.ReferencedDocument))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

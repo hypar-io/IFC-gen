@@ -20,10 +20,10 @@ export class IfcGridPlacement extends IfcObjectPlacement {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.PlacementLocation))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.PlacementLocation))
 		parameters.push(BaseIfc.toStepValue(this.PlacementRefDirection))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

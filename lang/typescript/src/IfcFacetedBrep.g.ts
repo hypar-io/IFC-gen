@@ -16,9 +16,9 @@ export class IfcFacetedBrep extends IfcManifoldSolidBrep {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Outer))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Outer))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

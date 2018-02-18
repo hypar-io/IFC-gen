@@ -18,9 +18,9 @@ export class IfcPolyLoop extends IfcLoop {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Polygon))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Polygon))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

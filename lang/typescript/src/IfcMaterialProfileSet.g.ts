@@ -25,12 +25,12 @@ export class IfcMaterialProfileSet extends IfcMaterialDefinition {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.MaterialProfiles))
 		parameters.push(BaseIfc.toStepValue(this.CompositeProfile))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

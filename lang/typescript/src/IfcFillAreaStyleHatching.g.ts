@@ -28,13 +28,13 @@ export class IfcFillAreaStyleHatching extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.HatchLineAppearance))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.HatchLineAppearance))
 		parameters.push(BaseIfc.toStepValue(this.StartOfNextHatchLine))
 		parameters.push(BaseIfc.toStepValue(this.PointOfReferenceHatchLine))
 		parameters.push(BaseIfc.toStepValue(this.PatternStart))
 		parameters.push(BaseIfc.toStepValue(this.HatchLineAngle))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -22,11 +22,11 @@ export class IfcRightCircularCone extends IfcCsgPrimitive3D {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Position))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.Height))
 		parameters.push(BaseIfc.toStepValue(this.BottomRadius))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

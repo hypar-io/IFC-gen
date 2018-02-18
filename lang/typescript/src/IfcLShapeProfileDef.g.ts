@@ -29,8 +29,8 @@ export class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ProfileType))
 		parameters.push(BaseIfc.toStepValue(this.ProfileName))
 		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.Depth))
@@ -40,6 +40,6 @@ export class IfcLShapeProfileDef extends IfcParameterizedProfileDef {
 		parameters.push(BaseIfc.toStepValue(this.EdgeRadius))
 		parameters.push(BaseIfc.toStepValue(this.LegSlope))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

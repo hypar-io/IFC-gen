@@ -24,11 +24,11 @@ export class IfcDerivedUnit extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Elements))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Elements))
 		parameters.push(BaseIfc.toStepValue(this.UnitType))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

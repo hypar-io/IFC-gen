@@ -30,8 +30,8 @@ export class IfcAnnotation extends IfcProduct {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -39,6 +39,6 @@ export class IfcAnnotation extends IfcProduct {
 		parameters.push(BaseIfc.toStepValue(this.ObjectPlacement))
 		parameters.push(BaseIfc.toStepValue(this.Representation))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

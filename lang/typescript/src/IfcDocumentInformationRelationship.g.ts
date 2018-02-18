@@ -21,13 +21,13 @@ export class IfcDocumentInformationRelationship extends IfcResourceLevelRelation
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.RelatingDocument))
 		parameters.push(BaseIfc.toStepValue(this.RelatedDocuments))
 		parameters.push(BaseIfc.toStepValue(this.RelationshipType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

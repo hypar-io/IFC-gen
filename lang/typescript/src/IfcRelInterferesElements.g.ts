@@ -28,8 +28,8 @@ export class IfcRelInterferesElements extends IfcRelConnects {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -39,6 +39,6 @@ export class IfcRelInterferesElements extends IfcRelConnects {
 		parameters.push(BaseIfc.toStepValue(this.InterferenceType))
 		parameters.push(BaseIfc.toStepValue(this.ImpliedOrder))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

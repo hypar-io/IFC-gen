@@ -19,9 +19,9 @@ export class IfcCartesianPointList2D extends IfcCartesianPointList {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.CoordList))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.CoordList))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

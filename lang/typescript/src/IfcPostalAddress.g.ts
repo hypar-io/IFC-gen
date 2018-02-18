@@ -25,8 +25,8 @@ export class IfcPostalAddress extends IfcAddress {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Purpose))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Purpose))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedPurpose))
 		parameters.push(BaseIfc.toStepValue(this.InternalLocation))
@@ -37,6 +37,6 @@ export class IfcPostalAddress extends IfcAddress {
 		parameters.push(BaseIfc.toStepValue(this.PostalCode))
 		parameters.push(BaseIfc.toStepValue(this.Country))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

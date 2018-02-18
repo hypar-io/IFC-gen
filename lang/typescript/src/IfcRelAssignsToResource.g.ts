@@ -23,8 +23,8 @@ export class IfcRelAssignsToResource extends IfcRelAssigns {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -32,6 +32,6 @@ export class IfcRelAssignsToResource extends IfcRelAssigns {
 		parameters.push(BaseIfc.toStepValue(this.RelatedObjectsType))
 		parameters.push(BaseIfc.toStepValue(this.RelatingResource))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

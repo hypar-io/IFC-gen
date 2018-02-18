@@ -23,13 +23,13 @@ export class IfcRectangleProfileDef extends IfcParameterizedProfileDef {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ProfileType))
 		parameters.push(BaseIfc.toStepValue(this.ProfileName))
 		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.XDim))
 		parameters.push(BaseIfc.toStepValue(this.YDim))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

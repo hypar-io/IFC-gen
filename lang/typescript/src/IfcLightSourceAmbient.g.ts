@@ -17,12 +17,12 @@ export class IfcLightSourceAmbient extends IfcLightSource {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.LightColour))
 		parameters.push(BaseIfc.toStepValue(this.AmbientIntensity))
 		parameters.push(BaseIfc.toStepValue(this.Intensity))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

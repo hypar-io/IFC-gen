@@ -21,13 +21,13 @@ export class IfcCircleHollowProfileDef extends IfcCircleProfileDef {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ProfileType))
 		parameters.push(BaseIfc.toStepValue(this.ProfileName))
 		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.Radius))
 		parameters.push(BaseIfc.toStepValue(this.WallThickness))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

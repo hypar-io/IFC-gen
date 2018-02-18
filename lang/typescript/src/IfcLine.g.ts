@@ -22,10 +22,10 @@ export class IfcLine extends IfcCurve {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Pnt))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Pnt))
 		parameters.push(BaseIfc.toStepValue(this.Dir))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

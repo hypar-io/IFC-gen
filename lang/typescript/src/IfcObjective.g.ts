@@ -30,8 +30,8 @@ export class IfcObjective extends IfcConstraint {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.ConstraintGrade))
 		parameters.push(BaseIfc.toStepValue(this.ConstraintSource))
@@ -43,6 +43,6 @@ export class IfcObjective extends IfcConstraint {
 		parameters.push(BaseIfc.toStepValue(this.ObjectiveQualifier))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedQualifier))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

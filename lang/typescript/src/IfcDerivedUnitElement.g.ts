@@ -17,10 +17,10 @@ export class IfcDerivedUnitElement extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Unit))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Unit))
 		parameters.push(BaseIfc.toStepValue(this.Exponent))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

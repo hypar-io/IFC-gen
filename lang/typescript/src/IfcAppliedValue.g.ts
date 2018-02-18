@@ -136,8 +136,8 @@ export class IfcAppliedValue extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.AppliedValue))
 		parameters.push(BaseIfc.toStepValue(this.UnitBasis))
@@ -148,6 +148,6 @@ export class IfcAppliedValue extends BaseIfc {
 		parameters.push(BaseIfc.toStepValue(this.ArithmeticOperator))
 		parameters.push(BaseIfc.toStepValue(this.Components))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

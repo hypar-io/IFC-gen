@@ -28,13 +28,13 @@ export class IfcMaterialConstituent extends IfcMaterialDefinition {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Material))
 		parameters.push(BaseIfc.toStepValue(this.Fraction))
 		parameters.push(BaseIfc.toStepValue(this.Category))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

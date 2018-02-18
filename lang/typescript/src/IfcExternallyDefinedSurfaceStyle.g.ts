@@ -16,11 +16,11 @@ export class IfcExternallyDefinedSurfaceStyle extends IfcExternalReference {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Location))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Location))
 		parameters.push(BaseIfc.toStepValue(this.Identification))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

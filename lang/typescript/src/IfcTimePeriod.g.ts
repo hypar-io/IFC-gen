@@ -17,10 +17,10 @@ export class IfcTimePeriod extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.StartTime))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.StartTime))
 		parameters.push(BaseIfc.toStepValue(this.EndTime))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

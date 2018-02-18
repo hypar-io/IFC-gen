@@ -22,11 +22,11 @@ export class IfcToroidalSurface extends IfcElementarySurface {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Position))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Position))
 		parameters.push(BaseIfc.toStepValue(this.MajorRadius))
 		parameters.push(BaseIfc.toStepValue(this.MinorRadius))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -19,12 +19,12 @@ export class IfcTopologyRepresentation extends IfcShapeModel {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ContextOfItems))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ContextOfItems))
 		parameters.push(BaseIfc.toStepValue(this.RepresentationIdentifier))
 		parameters.push(BaseIfc.toStepValue(this.RepresentationType))
 		parameters.push(BaseIfc.toStepValue(this.Items))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

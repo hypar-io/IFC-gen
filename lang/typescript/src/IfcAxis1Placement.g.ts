@@ -21,10 +21,10 @@ export class IfcAxis1Placement extends IfcPlacement {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Location))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Location))
 		parameters.push(BaseIfc.toStepValue(this.Axis))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

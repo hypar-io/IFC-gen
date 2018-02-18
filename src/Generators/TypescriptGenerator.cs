@@ -251,10 +251,10 @@ export {modifier}class {data.Name} extends {super} {{
 
             var stepParameters = $@"
     getStepParameters() : string {{
-            var parameters = new Array<string>();
-    {data.StepProperties()}
-            return parameters.join();
-        }}";
+        var parameters = new Array<string>();
+{data.StepProperties()}
+        return parameters.join();
+    }}";
             return stepParameters;
         }
 

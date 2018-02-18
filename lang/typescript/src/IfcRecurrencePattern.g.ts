@@ -31,8 +31,8 @@ export class IfcRecurrencePattern extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.RecurrenceType))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.RecurrenceType))
 		parameters.push(BaseIfc.toStepValue(this.DayComponent))
 		parameters.push(BaseIfc.toStepValue(this.WeekdayComponent))
 		parameters.push(BaseIfc.toStepValue(this.MonthComponent))
@@ -41,6 +41,6 @@ export class IfcRecurrencePattern extends BaseIfc {
 		parameters.push(BaseIfc.toStepValue(this.Occurrences))
 		parameters.push(BaseIfc.toStepValue(this.TimePeriods))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

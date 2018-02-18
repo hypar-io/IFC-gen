@@ -50,8 +50,8 @@ export class IfcReinforcingMesh extends IfcReinforcingElement {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -70,6 +70,6 @@ export class IfcReinforcingMesh extends IfcReinforcingElement {
 		parameters.push(BaseIfc.toStepValue(this.TransverseBarSpacing))
 		parameters.push(BaseIfc.toStepValue(this.PredefinedType))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

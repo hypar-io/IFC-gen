@@ -19,14 +19,14 @@ export class IfcSweptDiskSolidPolygonal extends IfcSweptDiskSolid {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Directrix))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Directrix))
 		parameters.push(BaseIfc.toStepValue(this.Radius))
 		parameters.push(BaseIfc.toStepValue(this.InnerRadius))
 		parameters.push(BaseIfc.toStepValue(this.StartParam))
 		parameters.push(BaseIfc.toStepValue(this.EndParam))
 		parameters.push(BaseIfc.toStepValue(this.FilletRadius))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

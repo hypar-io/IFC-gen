@@ -18,9 +18,9 @@ export class IfcVertexLoop extends IfcLoop {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.LoopVertex))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.LoopVertex))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

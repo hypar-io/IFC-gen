@@ -30,11 +30,11 @@ export class IfcGridAxis extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.AxisTag))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.AxisTag))
 		parameters.push(BaseIfc.toStepValue(this.AxisCurve))
 		parameters.push(BaseIfc.toStepValue(this.SameSense))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -18,8 +18,8 @@ export class IfcBoundaryNodeConditionWarping extends IfcBoundaryNodeCondition {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessX))
 		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessY))
 		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessZ))
@@ -28,6 +28,6 @@ export class IfcBoundaryNodeConditionWarping extends IfcBoundaryNodeCondition {
 		parameters.push(BaseIfc.toStepValue(this.RotationalStiffnessZ))
 		parameters.push(BaseIfc.toStepValue(this.WarpingStiffness))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -23,13 +23,13 @@ export class IfcTableColumn extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Identifier))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Identifier))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.Unit))
 		parameters.push(BaseIfc.toStepValue(this.ReferencePath))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

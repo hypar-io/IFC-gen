@@ -18,12 +18,12 @@ export class IfcBoundaryFaceCondition extends IfcBoundaryCondition {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessByAreaX))
 		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessByAreaY))
 		parameters.push(BaseIfc.toStepValue(this.TranslationalStiffnessByAreaZ))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

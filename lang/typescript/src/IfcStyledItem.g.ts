@@ -21,11 +21,11 @@ export class IfcStyledItem extends IfcRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Item))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Item))
 		parameters.push(BaseIfc.toStepValue(this.Styles))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

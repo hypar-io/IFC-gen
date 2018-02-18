@@ -19,8 +19,8 @@ export class IfcEventTime extends IfcSchedulingTime {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.DataOrigin))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedDataOrigin))
 		parameters.push(BaseIfc.toStepValue(this.ActualDate))
@@ -28,6 +28,6 @@ export class IfcEventTime extends IfcSchedulingTime {
 		parameters.push(BaseIfc.toStepValue(this.LateDate))
 		parameters.push(BaseIfc.toStepValue(this.ScheduleDate))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -22,10 +22,10 @@ export class IfcCompositeCurveOnSurface extends IfcCompositeCurve {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Segments))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Segments))
 		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

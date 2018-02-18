@@ -31,8 +31,8 @@ export class IfcPerson extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Identification))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Identification))
 		parameters.push(BaseIfc.toStepValue(this.FamilyName))
 		parameters.push(BaseIfc.toStepValue(this.GivenName))
 		parameters.push(BaseIfc.toStepValue(this.MiddleNames))
@@ -41,6 +41,6 @@ export class IfcPerson extends BaseIfc {
 		parameters.push(BaseIfc.toStepValue(this.Roles))
 		parameters.push(BaseIfc.toStepValue(this.Addresses))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

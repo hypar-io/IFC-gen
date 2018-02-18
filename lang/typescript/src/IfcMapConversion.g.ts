@@ -26,8 +26,8 @@ export class IfcMapConversion extends IfcCoordinateOperation {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.SourceCRS))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.SourceCRS))
 		parameters.push(BaseIfc.toStepValue(this.TargetCRS))
 		parameters.push(BaseIfc.toStepValue(this.Eastings))
 		parameters.push(BaseIfc.toStepValue(this.Northings))
@@ -36,6 +36,6 @@ export class IfcMapConversion extends IfcCoordinateOperation {
 		parameters.push(BaseIfc.toStepValue(this.XAxisOrdinate))
 		parameters.push(BaseIfc.toStepValue(this.Scale))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

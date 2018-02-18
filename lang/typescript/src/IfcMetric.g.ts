@@ -138,8 +138,8 @@ export class IfcMetric extends IfcConstraint {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Name))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.ConstraintGrade))
 		parameters.push(BaseIfc.toStepValue(this.ConstraintSource))
@@ -151,6 +151,6 @@ export class IfcMetric extends IfcConstraint {
 		parameters.push(BaseIfc.toStepValue(this.DataValue))
 		parameters.push(BaseIfc.toStepValue(this.ReferencePath))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

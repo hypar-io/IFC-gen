@@ -20,11 +20,11 @@ export class IfcArbitraryOpenProfileDef extends IfcProfileDef {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.ProfileType))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.ProfileType))
 		parameters.push(BaseIfc.toStepValue(this.ProfileName))
 		parameters.push(BaseIfc.toStepValue(this.Curve))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

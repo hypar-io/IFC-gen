@@ -24,14 +24,14 @@ export class IfcRelDeclares extends IfcRelationship {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.RelatingContext))
 		parameters.push(BaseIfc.toStepValue(this.RelatedDefinitions))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

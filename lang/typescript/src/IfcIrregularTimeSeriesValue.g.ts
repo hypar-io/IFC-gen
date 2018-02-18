@@ -124,10 +124,10 @@ export class IfcIrregularTimeSeriesValue extends BaseIfc {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.TimeStamp))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.TimeStamp))
 		parameters.push(BaseIfc.toStepValue(this.ListValues))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

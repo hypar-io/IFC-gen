@@ -27,12 +27,12 @@ export class IfcPolygonalFaceSet extends IfcTessellatedFaceSet {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Coordinates))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Coordinates))
 		parameters.push(BaseIfc.toStepValue(this.Closed))
 		parameters.push(BaseIfc.toStepValue(this.Faces))
 		parameters.push(BaseIfc.toStepValue(this.PnIndex))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

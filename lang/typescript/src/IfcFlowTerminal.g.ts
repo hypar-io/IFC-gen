@@ -40,8 +40,8 @@ export class IfcFlowTerminal extends IfcDistributionFlowElement {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -50,6 +50,6 @@ export class IfcFlowTerminal extends IfcDistributionFlowElement {
 		parameters.push(BaseIfc.toStepValue(this.Representation))
 		parameters.push(BaseIfc.toStepValue(this.Tag))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

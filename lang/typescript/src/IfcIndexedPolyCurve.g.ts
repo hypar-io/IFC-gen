@@ -25,11 +25,11 @@ export class IfcIndexedPolyCurve extends IfcBoundedCurve {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Points))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Points))
 		parameters.push(BaseIfc.toStepValue(this.Segments))
 		parameters.push(BaseIfc.toStepValue(this.SelfIntersect))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

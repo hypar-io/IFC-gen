@@ -28,8 +28,8 @@ export class IfcTelecomAddress extends IfcAddress {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Purpose))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Purpose))
 		parameters.push(BaseIfc.toStepValue(this.Description))
 		parameters.push(BaseIfc.toStepValue(this.UserDefinedPurpose))
 		parameters.push(BaseIfc.toStepValue(this.TelephoneNumbers))
@@ -39,6 +39,6 @@ export class IfcTelecomAddress extends IfcAddress {
 		parameters.push(BaseIfc.toStepValue(this.WWWHomePageURL))
 		parameters.push(BaseIfc.toStepValue(this.MessagingIDs))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

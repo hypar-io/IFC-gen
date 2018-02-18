@@ -42,8 +42,8 @@ export class IfcReinforcingBarType extends IfcReinforcingElementType {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -60,6 +60,6 @@ export class IfcReinforcingBarType extends IfcReinforcingElementType {
 		parameters.push(BaseIfc.toStepValue(this.BendingShapeCode))
 		parameters.push(BaseIfc.toStepValue(this.BendingParameters))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

@@ -23,8 +23,8 @@ export class IfcRelAssignsToGroupByFactor extends IfcRelAssignsToGroup {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.GlobalId))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.GlobalId))
 		parameters.push(BaseIfc.toStepValue(this.OwnerHistory))
 		parameters.push(BaseIfc.toStepValue(this.Name))
 		parameters.push(BaseIfc.toStepValue(this.Description))
@@ -33,6 +33,6 @@ export class IfcRelAssignsToGroupByFactor extends IfcRelAssignsToGroup {
 		parameters.push(BaseIfc.toStepValue(this.RelatingGroup))
 		parameters.push(BaseIfc.toStepValue(this.Factor))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

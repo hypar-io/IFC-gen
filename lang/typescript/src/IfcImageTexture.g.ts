@@ -21,14 +21,14 @@ export class IfcImageTexture extends IfcSurfaceTexture {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.RepeatS))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.RepeatS))
 		parameters.push(BaseIfc.toStepValue(this.RepeatT))
 		parameters.push(BaseIfc.toStepValue(this.Mode))
 		parameters.push(BaseIfc.toStepValue(this.TextureTransform))
 		parameters.push(BaseIfc.toStepValue(this.Parameter))
 		parameters.push(BaseIfc.toStepValue(this.URLReference))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

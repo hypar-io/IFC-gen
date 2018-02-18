@@ -25,11 +25,11 @@ export class IfcTextLiteral extends IfcGeometricRepresentationItem {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.Literal))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.Literal))
 		parameters.push(BaseIfc.toStepValue(this.Placement))
 		parameters.push(BaseIfc.toStepValue(this.Path))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }

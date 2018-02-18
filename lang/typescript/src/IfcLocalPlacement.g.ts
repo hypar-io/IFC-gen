@@ -19,10 +19,10 @@ export class IfcLocalPlacement extends IfcObjectPlacement {
 
     }
     getStepParameters() : string {
-            var parameters = new Array<string>();
-    		parameters.push(BaseIfc.toStepValue(this.PlacementRelTo))
+        var parameters = new Array<string>();
+		parameters.push(BaseIfc.toStepValue(this.PlacementRelTo))
 		parameters.push(BaseIfc.toStepValue(this.RelativePlacement))
 
-            return parameters.join();
-        }
+        return parameters.join();
+    }
 }
