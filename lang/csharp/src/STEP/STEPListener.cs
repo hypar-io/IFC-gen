@@ -54,7 +54,7 @@ namespace STEP
 	{
 		private int currId;
 		private IEnumerable<Type> enums;
-		private IEnumerable<Type> types;
+		private Dictionary<string, Type> types;
 
 		private Dictionary<int,InstanceData> instanceData;
 
@@ -70,8 +70,15 @@ namespace STEP
 			// Parsing will involve finding many enum values
 			// Cache the enum types for lookup during parsing. 
 			enums = typeof(Elements.Model).Assembly.GetTypes().Where(t=>t.IsEnum).ToList();
-
-			types = typeof(Elements.Model).Assembly.GetTypes().Where(t=>!t.IsEnum).ToList();
+            types = new Dictionary<string, Type>();
+            foreach (var item in typeof(Elements.Model).Assembly.GetTypes().Where(t => !t.IsEnum))
+            {
+                var key = item.Name.ToUpper();
+                if (!types.ContainsKey(key))
+                {
+                    types[key] = item;
+                }
+            }
 		}
 
 		public override void EnterInstance(STEPParser.InstanceContext context)
@@ -140,22 +147,28 @@ namespace STEP
 			//Console.WriteLine($"Parsing constructor {id}.");
 
 			var typeName = context.TypeRef().GetText();
-			
-			// If a type has been passed in, we're parsing a constructor
-			// as a parameter of a constructor.
-			if(ifcType == null)
-			{
-				ifcType = types.FirstOrDefault(t=>t.Name.ToUpper() == typeName);
-			}
 
-			if(ifcType == null)
-			{
-				throw new STEPUnknownTypeException(typeName);
-			}
+            // If a type has been passed in, we're parsing a constructor
+            // as a parameter of a constructor.
+            if (ifcType == null)
+            {
+                if (!types.ContainsKey(typeName))
+                {
+                    throw new STEPUnknownTypeException(typeName);
+                }
+                ifcType = types[typeName];
+            }
+
+            Type fromSTEP = null;
+            if (types.ContainsKey(typeName))
+            {
+                fromSTEP = types[typeName];
+            }
+
 
 			// Use the constructor which includes all non-optional parameters.
 			var ctorChain = new List<System.Reflection.ConstructorInfo>();
-			var ctor = GetConstructorForType(ifcType, ref ctorChain, types.FirstOrDefault(t=>t.Name.ToUpper() == typeName));
+			var ctor = GetConstructorForType(ifcType, ref ctorChain, fromSTEP);
 
 			if(ctorChain.Any())
 			{
