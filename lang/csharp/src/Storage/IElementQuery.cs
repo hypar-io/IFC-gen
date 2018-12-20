@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Elements.Storage
+namespace IFC.Storage
 {
     public interface IInstanceQuery
     {

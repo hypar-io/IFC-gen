@@ -69,9 +69,9 @@ namespace STEP
 
 			// Parsing will involve finding many enum values
 			// Cache the enum types for lookup during parsing. 
-			enums = typeof(Elements.Model).Assembly.GetTypes().Where(t=>t.IsEnum).ToList();
+			enums = typeof(IFC.Model).Assembly.GetTypes().Where(t=>t.IsEnum).ToList();
 
-			types = typeof(Elements.Model).Assembly.GetTypes().Where(t=>!t.IsEnum).ToList();
+			types = typeof(IFC.Model).Assembly.GetTypes().Where(t=>!t.IsEnum).ToList();
 		}
 
 		public override void EnterInstance(STEPParser.InstanceContext context)

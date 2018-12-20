@@ -15,7 +15,8 @@
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-    <Version>0.0.1</Version>
+    <Version>0.0.3</Version>
+    <PackageLicenseUrl>https://github.com/hypar-io/IFC-gen/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
   <ItemGroup>

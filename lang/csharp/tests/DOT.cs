@@ -1,5 +1,4 @@
-using Elements;
-using Elements.Storage;
+using IFC.Storage;
 using STEP;
 using System.Collections.Generic;
 using Xunit;

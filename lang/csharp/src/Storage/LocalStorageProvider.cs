@@ -1,11 +1,10 @@
-using Elements;
 using IFC;
 using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Collections;
 
-namespace Elements.Storage
+namespace IFC.Storage
 {
 	public class LocalStorageProvider : IDictionary<Guid, BaseIfc>
 	{

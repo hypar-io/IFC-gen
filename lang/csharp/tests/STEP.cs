@@ -1,5 +1,4 @@
-using Elements;
-using Elements.Storage;
+using IFC.Storage;
 using Newtonsoft.Json;
 using STEP;
 using System;
@@ -109,6 +108,60 @@ namespace IFC.Tests
             foreach (var e in errors)
             {
                 Console.WriteLine(e.Message);
+            }
+        }
+
+        [Fact]
+        public void GetSlabEdges()
+        {
+            var stepPath = "../../../models/example.ifc";
+            IList<STEPError> errors;
+            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
+
+            // var project = model.AllInstancesOfType<IFC.IfcProject>().FirstOrDefault();
+            // var units = project.UnitsInContext.Units;
+            // foreach(var u in units)
+            // {
+            //     this.output.WriteLine(u.GetType().ToString());
+
+            //     if (u.GetType() == typeof(IFC.IfcDerivedUnit))
+            //     {
+            //     }
+            //     else if(u.GetType() == typeof(IFC.IfcNamedUnit))
+            //     {
+
+            //     }
+            //     else if(u.GetType() == typeof(IFC.IfcMonetaryUnit))
+            //     {
+
+            //     }
+            // }
+
+            var slabs = model.AllInstancesOfType<IfcSlab>();
+            foreach(var s in slabs)
+            {
+                
+                foreach(var rep in s.Representation.Representations)
+                {
+                    foreach(var i in rep.Items)
+                    {
+                        var solid = (IFC.IfcExtrudedAreaSolid)i;
+                        var profileDef = (IFC.IfcArbitraryClosedProfileDef)solid.SweptArea;
+
+                        if(profileDef.GetType() == typeof(IFC.IfcPolyline))
+                        {
+                            
+                        }
+                        var pline = (IFC.IfcPolyline)profileDef.OuterCurve;
+                        foreach(var p in pline.Points)
+                        {
+                            foreach(var c in p.Coordinates)
+                            {
+                                this.output.WriteLine(((double)c).ToString());
+                            }
+                        }
+                    }
+                }
             }
         }
     }

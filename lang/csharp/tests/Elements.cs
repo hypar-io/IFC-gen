@@ -1,12 +1,11 @@
-using Elements;
-using Elements.Storage;
+using IFC.Storage;
 using IFC;
 using System;
 using System.IO;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace Elements.Tests
+namespace IFC.Tests
 {
     public class Elements
     {

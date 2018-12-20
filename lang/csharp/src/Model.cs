@@ -10,10 +10,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Collections.Generic;
-using Elements.Storage;
-using IFC;
+using IFC.Storage;
 
-namespace Elements
+namespace IFC
 {
     /// <summary>
     /// A Model contains a number of Elements.
