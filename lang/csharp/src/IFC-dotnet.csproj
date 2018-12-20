@@ -1,11 +1,22 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>0.0.1-beta1</Version>
-    <authors>Ian Keough</authors>
-    <AssemblyName>IFC-dotnet</AssemblyName>
-    <PackageId>IFC-dotnet</PackageId>
-    <NoWarn>3021</NoWarn> 
+    <NoWarn>3021;CS1591</NoWarn> 
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>Hypar.IFC</AssemblyName>
+    <Title>Hypar IFC</Title>
+    <Authors>Hypar</Authors>
+    <PackageId>Hypar.IFC</PackageId>
+    <PackageDescription>A building elements library for AEC.</PackageDescription>
+    <Summary>The Elements library provides object types for creating the built environment.</Summary>
+    <Copyright>Hypar LLC, 2018</Copyright>
+    <PackageProjectUrl>https://github.com/hypar-io/ifc-gen</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/hypar-io/ifc-gen</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <Version>0.0.1</Version>
+    <PackageTags>AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.7.1" />
