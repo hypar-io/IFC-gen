@@ -7,9 +7,9 @@
     <Title>Hypar IFC</Title>
     <Authors>Hypar</Authors>
     <PackageId>Hypar.IFC</PackageId>
-    <PackageDescription>A building elements library for AEC.</PackageDescription>
-    <Summary>The Elements library provides object types for creating the built environment.</Summary>
-    <Copyright>Hypar LLC, 2018</Copyright>
+    <PackageDescription>An IFC library for .net.</PackageDescription>
+    <Summary>A .net implementation of the IFC schema.</Summary>
+    <Copyright>Hypar LLC, 2019</Copyright>
     <PackageProjectUrl>https://github.com/hypar-io/ifc-gen</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hypar-io/ifc-gen</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -17,7 +17,7 @@
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Version>0.0.4</Version>
     <PackageLicenseUrl>https://github.com/hypar-io/IFC-gen/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageTags>AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
+    <PackageTags>IFC, AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.7.1" />
