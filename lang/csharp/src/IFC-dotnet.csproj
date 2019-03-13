@@ -3,19 +3,19 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <NoWarn>3021;CS1591</NoWarn> 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <AssemblyName>Hypar.IFC</AssemblyName>
+    <AssemblyName>Hypar.IFC2X3</AssemblyName>
     <Title>Hypar IFC</Title>
     <Authors>Hypar</Authors>
-    <PackageId>Hypar.IFC</PackageId>
+    <PackageId>Hypar.IFC2X3</PackageId>
     <PackageDescription>An IFC library for .net.</PackageDescription>
     <Summary>A .net implementation of the IFC schema.</Summary>
-    <Copyright>Hypar LLC, 2019</Copyright>
+    <Copyright>Hypar Inc., 2019</Copyright>
     <PackageProjectUrl>https://github.com/hypar-io/ifc-gen</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hypar-io/ifc-gen</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-    <Version>0.0.4</Version>
+    <Version>0.1.0-beta1</Version>
     <PackageLicenseUrl>https://github.com/hypar-io/IFC-gen/blob/master/LICENSE</PackageLicenseUrl>
     <PackageTags>IFC, AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
