@@ -917,7 +917,7 @@ WHILE : 'WHILE' ;
 XOR : 'XOR';
 
 SchemaDef 
-	: 'IFC' IntegerLiteral
+	: 'IFC4' (IntegerLiteral|'2X3')
 	; 
 
 SimpleId
