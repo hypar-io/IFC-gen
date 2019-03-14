@@ -917,7 +917,7 @@ WHILE : 'WHILE' ;
 XOR : 'XOR';
 
 SchemaDef 
-	: 'IFC4' (IntegerLiteral|'2X3')
+	: ('IFC4'|'IFC2X3')
 	; 
 
 SimpleId
@@ -1005,6 +1005,8 @@ Comments
 // Rules
 //	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
 
+// Functons
+//	: 'FUNCTION' .*? 'END_FUNCTION;' -> skip;
 
 
 
