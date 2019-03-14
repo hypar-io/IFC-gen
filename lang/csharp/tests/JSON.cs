@@ -21,7 +21,7 @@ namespace IFC.Tests
         {
             var id = new IfcGloballyUniqueId("12345");
 
-            var p1 = new IfcProject(id);
+            var p1 = new IfcProject(id,null, null, null);
             p1.Name = "Test Project";
             p1.Description = "A test of IFC-dotnet.";
 
@@ -29,7 +29,7 @@ namespace IFC.Tests
             //Assert.Equal(p1.Name.Value, p2.Name.Value);
             //Assert.Equal(p1.Description.Value, p2.Description.Value);
 
-            var wall = new IfcWall(new IfcGloballyUniqueId("wall1"));
+            var wall = new IfcWall(new IfcGloballyUniqueId("wall1"), null);
         }
 
         [Fact]
