@@ -32,12 +32,12 @@ namespace IFC
             this.storage = storage;
 
             this.storage.Add(address.Id, address);
-            this.storage.Add(user.Id, user);
-            this.storage.Add(owner.Id, owner);
+            this.storage.Add(IfcGuid.FromIfcGUID(user.Id), user);
+            this.storage.Add(IfcGuid.FromIfcGUID(owner.Id), owner);
             
             // Create an organization for app creation.
             var appOrg = new IfcOrganization(APPNAME);
-            this.storage.Add(appOrg.Id, appOrg);
+            this.storage.Add(IfcGuid.FromIfcGUID(appOrg.Id), appOrg);
 
             // Create an authoring application.
             var v = owner.GetType().Assembly.GetName().Version.ToString();
@@ -136,6 +136,7 @@ namespace IFC
         /// Create a Model given a STEP file.
         /// </summary>
         /// <param name="STEPfilePath">The path to the STEP file.</param>
+        /// <param name="storage"></param>
         /// <param name="errors">A list of errors generated during creation of the Document.</param>
         /// <returns>A Model.</returns>
         /// <exception cref="FileNotFoundException">The specified file path does not exist.</exception>
@@ -269,6 +270,9 @@ END-ISO-10303-21;";
         /// </summary>
         /// <param name="data">The instance data from which to construct the instance.</param>
         /// <param name="instances">The dictionary containing instance data gathered from the parser.</param>
+        /// <param name="currLine"></param>
+        /// <param name="errors"></param>
+        /// <param name="level"></param>
         /// <returns></returns>
         private static object ConstructAndStoreInstance(STEP.InstanceData data, Dictionary<int, STEP.InstanceData> instances, int currLine, IList<STEPError> errors, int level)
         {
