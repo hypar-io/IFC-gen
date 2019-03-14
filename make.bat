@@ -1,8 +1,9 @@
 SET ANTLR=java -jar C:\Javalib\antlr-4.7-complete.jar
 SET CURR_DIR=%cd%
 SET GRAMMAR_IFC=%CURR_DIR%\Express.g4
-SET GRAMMAR_STEP=%CURR_DIR%\STEP.g4
-SET SCHEMA=%CURR_DIR%\IFC4.exp
+SET GRAMMAR_STEP=%CURR_DIR%\grammar\STEP.g4
+SET SCHEMA_VERSION=IFC2X3
+SET SCHEMA=%CURR_DIR%\schemas\%SCHEMA_VERSION%.exp
 
 ::csharp:
 	%ANTLR% -Dlanguage=CSharp -package Express -o %CURR_DIR%\src\antlr %GRAMMAR_IFC%
