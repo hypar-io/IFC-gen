@@ -49,7 +49,7 @@ namespace IFC
             this.storage.Add(personAndOrg.Id, personAndOrg);
 
             // Create an owner history for the project.
-            var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
+            var history = new IfcOwnerHistory(personAndOrg, app, IfcChangeActionEnum.ADDED, UnixNow());
             this.storage.Add(history.Id, history);
             
             var lu = new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE);
