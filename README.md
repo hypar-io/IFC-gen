@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.org/ikeough/IFC-gen.svg?branch=master)](https://travis-ci.org/ikeough/IFC-gen)
+# IFC-gen
+[![Build Status](https://travis-ci.org/hypar-io/IFC-gen.svg?branch=master)](https://travis-ci.org/hypar-io/IFC-gen)
+An IFC code generator for IFC2X3 and IFC4.
 
-# IFC-gen is EXPERIMENTAL currently. I appreciate pull requests, but collaborators should expect that breaking changes may occur.
-
-IFC-gen is a library for generating an IFC library for use in the language of your choice. The code generator uses [ANTLR](http://www.antlr.org) to parse the `Express.g4` grammar file and generate a parser. The parser is capable of reading the IFC object model as described in EXPRESS format in `IFC4.exp`. In addition, IFC-gen uses the STEP grammar described in `STEP.g4` to generate a STEP parser whose generated files are output in the target language directory. The code generator is a dotnet core project containing an interface, `ILanguageGenerator`, which is implemented by classes which generate code.
+IFC-gen is a library for generating an IFC library for use in the language of your choice. The code generator uses [ANTLR](http://www.antlr.org) to parse the `Express.g4` grammar file and generate a parser. The parser is capable of reading the IFC object model as described in EXPRESS format in `IFC4.exp` or `IFC2X3.exp`. In addition, IFC-gen uses the STEP grammar described in `STEP.g4` to generate a STEP parser whose generated files are output in the target language directory. The code generator is a dotnet core project containing an interface, `ILanguageGenerator`, which is implemented by classes which generate code.
 
 Source files for each target language can be found in the directory corresponding to the language's name. For example, the source code for the C# IFC library generator can be found in the `/lang/csharp` folder. 
 
@@ -16,13 +16,15 @@ As more firms build their own data models to solve the same problem, we get furt
 
 IFC-gen was created to make generating IFC-compliant software libraries easy, and to ease the updating and testing of those libraries with new releases of the IFC specification. To achieve this goal, IFC-gen has code generation at its core.  What do you want to build? A Python library? An [Open API](https://github.com/OAI/OpenAPI-Specification) specification? A [GraphQL](http://graphql.org) schema? Creating a generator for any of these is as easy as providing a new implementation of `ILanguageGenerator`.
 
-Because IFC is an incredibly broad data model, I have also set the goal of proposing a high-level API for building geometry which will use the generated libraries under the hood, but will provide an interface that is grokable by the lay user. This will most-likely become the focus of work when the underlying code generation mechanisms and STEP reading and writing facilities are stabilized.
-
-If IFC-gen isn't exactly what you're looking for, there are a few other great IFC projects that you might want to check out:
+If IFC-gen isn't exactly what you're looking for, there are a few other great IFC related projects that you might want to check out:
+- https://github.com/hypar-io/elements
 - http://bimserver.org
 - http://ifcopenshell.org
 - https://github.com/jmirtsch/GeometryGymIFC
 - https://github.com/xBimTeam
+
+## Schemas
+IFC-gen supports the IFC2X3 and IFC4 schemas. These are represented by the `IFC2X3` and `IFC4` branches in this repository. If you are contributing to this repository, your change will be applied to both branches, unless it is a change that can only be logically applied to one branch.
 
 ## Road Map
 - [x] ANTLR grammar for IFC EXPRESS.  
@@ -42,18 +44,22 @@ If IFC-gen isn't exactly what you're looking for, there are a few other great IF
 ## Building
 
 ### For 'nix
-`make`
+To generate the parsers:
+`make generate`
+To generate language code:
+`make <language>`
 
 ### For Windows
 `make.bat`
 
 ## Contributing
-Check out issues marked [help wanted](https://github.com/ikeough/IFC-gen/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
+Check out issues marked [help wanted](https://github.com/hypar-io/IFC-gen/issues?q=is%3Aissue+is%3Aopen+label%3A%22help+wanted%22).
 
 ## Creating a Language Generator
 Language generators implement the `ILanguageGenerator` interface. You can find implementations of `ILanguageGenerator` in `/Generators`. To create your own language generator do the following:
 - Place an implementation of `ILanguageGenerator` in `/Generators`.
 - Extend the command line options parsing in `Program.cs` to support your target language.
+- Extend the makefile with a new task for the language.
 
 ## Debugging the Parser
 Due to the size of the IFC schema, debugging the parser can be painful. I recommend creating a `debug.exp` in the root directory that contains only the entities that you are trying to debug, then using `make debug_parser`. This make step will generate the parser based on the debug schema, and will run `IFC-gen` outputting tokens to the console for debugging. 
