@@ -32,12 +32,12 @@ namespace IFC
             this.storage = storage;
 
             this.storage.Add(address.Id, address);
-            this.storage.Add(IfcGuid.FromIfcGUID(user.Id), user);
-            this.storage.Add(IfcGuid.FromIfcGUID(owner.Id), owner);
+            this.storage.Add(user.Id, user);
+            this.storage.Add(owner.Id, owner);
             
             // Create an organization for app creation.
             var appOrg = new IfcOrganization(APPNAME);
-            this.storage.Add(IfcGuid.FromIfcGUID(appOrg.Id), appOrg);
+            this.storage.Add(appOrg.Id, appOrg);
 
             // Create an authoring application.
             var v = owner.GetType().Assembly.GetName().Version.ToString();
@@ -49,7 +49,7 @@ namespace IFC
             this.storage.Add(personAndOrg.Id, personAndOrg);
 
             // Create an owner history for the project.
-            var history = new IfcOwnerHistory(personAndOrg, app, IfcChangeActionEnum.ADDED, UnixNow());
+            var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
             this.storage.Add(history.Id, history);
             
             var lu = new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE);
