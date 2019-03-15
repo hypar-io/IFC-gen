@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-// Generated from /Users/ikeough/Documents/IFC-gen/STEP.g4 by ANTLR 4.7
+// Generated from /Users/ikeough/Documents/IFC-gen/schemas/STEP.g4 by ANTLR 4.7
 
 // Unreachable code detected
 #pragma warning disable 0162

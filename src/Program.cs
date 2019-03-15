@@ -89,7 +89,7 @@ namespace IFC.Generate
                                 ToDictionary(t => t.Key, t => (SelectType)t.Value);
             generator.SelectData = sd;
 
-            foreach (var kvp in listener.TypeData.Where(kvp=>kvp.Value.GetType() != typeof(SelectType)))
+            foreach (var kvp in listener.TypeData)
             {
                 var td = kvp.Value;
                 File.WriteAllText(Path.Combine(outDir, $"{td.Name}.{generator.FileExtension}"), td.ToString());
