@@ -1,8 +1,7 @@
 # IFC-gen  
-An IFC code generator for IFC2X3 and IFC4.  
-[![Build Status](https://travis-ci.org/hypar-io/IFC-gen.svg?branch=IFC4)](https://travis-ci.org/hypar-io/IFC-gen)
+[![Build Status](https://travis-ci.org/hypar-io/IFC-gen.svg?branch=IFC4)](https://travis-ci.org/hypar-io/IFC-gen)   
 
-IFC-gen is a library for generating an IFC library for use in the language of your choice. The code generator uses [ANTLR](http://www.antlr.org) to parse the `Express.g4` grammar file and generate a parser. The parser is capable of reading the IFC object model as described in EXPRESS format in `IFC4.exp` or `IFC2X3.exp`. In addition, IFC-gen uses the STEP grammar described in `STEP.g4` to generate a STEP parser whose generated files are output in the target language directory. The code generator is a dotnet core project containing an interface, `ILanguageGenerator`, which is implemented by classes which generate code.
+IFC-gen is an IFC code generator for IFC2X3 and IFC4. The code generator uses [ANTLR](http://www.antlr.org) to parse the `Express.g4` grammar file and generate a parser. The parser is capable of reading the IFC object model as described in EXPRESS format in `IFC4.exp` or `IFC2X3.exp`. In addition, IFC-gen uses the STEP grammar described in `STEP.g4` to generate a STEP parser whose generated files are output in the target language directory. The code generator is a dotnet core project containing an interface, `ILanguageGenerator`, which is implemented by classes which generate code.
 
 Source files for each target language can be found in the directory corresponding to the language's name. For example, the source code for the C# IFC library generator can be found in the `/lang/csharp` folder. 
 
