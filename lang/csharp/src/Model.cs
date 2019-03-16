@@ -31,80 +31,80 @@ namespace IFC
         {
             this.storage = storage;
 
-            this.storage.Add(address.Id, address);
-            this.storage.Add(user.Id, user);
-            this.storage.Add(owner.Id, owner);
+            this.storage.Add(address.BaseId, address);
+            this.storage.Add(user.BaseId, user);
+            this.storage.Add(owner.BaseId, owner);
             
             // Create an organization for app creation.
             var appOrg = new IfcOrganization(APPNAME);
-            this.storage.Add(appOrg.Id, appOrg);
+            this.storage.Add(appOrg.BaseId, appOrg);
 
             // Create an authoring application.
             var v = owner.GetType().Assembly.GetName().Version.ToString();
             var app = new IfcApplication(appOrg, v, APPNAME, APPNAME);
-            this.storage.Add(app.Id, app);
+            this.storage.Add(app.BaseId, app);
 
             // Create an person and history for the owner history.
             var personAndOrg = new IfcPersonAndOrganization(user, owner);
-            this.storage.Add(personAndOrg.Id, personAndOrg);
+            this.storage.Add(personAndOrg.BaseId, personAndOrg);
 
             // Create an owner history for the project.
-            var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
-            this.storage.Add(history.Id, history);
+            var history = new IfcOwnerHistory(personAndOrg, app, IfcChangeActionEnum.ADDED, UnixNow());
+            this.storage.Add(history.BaseId, history);
             
             var lu = new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE);
-            this.storage.Add(lu.Id, lu);
+            this.storage.Add(lu.BaseId, lu);
             var lengthUnit = new IfcUnit(lu);
             
             var au = new IfcSIUnit(null, IfcUnitEnum.AREAUNIT, IfcSIUnitName.SQUARE_METRE);
-            this.storage.Add(au.Id, au);
+            this.storage.Add(au.BaseId, au);
             var areaUnit = new IfcUnit(au);
             
             var vu = new IfcSIUnit(null, IfcUnitEnum.VOLUMEUNIT, IfcSIUnitName.CUBIC_METRE);
-            this.storage.Add(vu.Id, vu);
+            this.storage.Add(vu.BaseId, vu);
             var volumeUnit = new IfcUnit(vu);
 
             var sau = new IfcSIUnit(null, IfcUnitEnum.SOLIDANGLEUNIT, IfcSIUnitName.STERADIAN);
-            this.storage.Add(sau.Id, sau);
+            this.storage.Add(sau.BaseId, sau);
             var solidAngleUnit = new IfcUnit(sau);
             
             var mu = new IfcSIUnit(null, IfcUnitEnum.MASSUNIT, IfcSIUnitName.GRAM);
-            this.storage.Add(mu.Id, mu);
+            this.storage.Add(mu.BaseId, mu);
             var massUnit = new IfcUnit(mu);
 
             var tu = new IfcSIUnit(null, IfcUnitEnum.TIMEUNIT, IfcSIUnitName.SECOND);
-            this.storage.Add(tu.Id, tu);
+            this.storage.Add(tu.BaseId, tu);
             var timeUnit = new IfcUnit(tu);
 
             var thu = new IfcSIUnit(null, IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IfcSIUnitName.DEGREE_CELSIUS);
-            this.storage.Add(thu.Id, thu);
+            this.storage.Add(thu.BaseId, thu);
             var thermUnit = new IfcUnit(thu);
             
             var lmu = new IfcSIUnit(null, IfcUnitEnum.LUMINOUSINTENSITYUNIT, IfcSIUnitName.LUMEN);
-            this.storage.Add(lmu.Id, lmu);
+            this.storage.Add(lmu.BaseId, lmu);
             var lumUnit = new IfcUnit(lmu);
             
             var pau = new IfcSIUnit(null, IfcUnitEnum.PLANEANGLEUNIT, IfcSIUnitName.RADIAN);
-            this.storage.Add(pau.Id, pau);
+            this.storage.Add(pau.BaseId, pau);
             var planeAngleUnit = new IfcUnit(pau);
            
             var measure = new IfcMeasureWithUnit(new IfcValue(new IfcMeasureValue(new IfcPlaneAngleMeasure(1.745e-2))), planeAngleUnit);
-            this.storage.Add(measure.Id, measure);
+            this.storage.Add(measure.BaseId, measure);
 
             var dimExp = new IfcDimensionalExponents(0,0,0,0,0,0,0);
-            this.storage.Add(dimExp.Id, dimExp);
+            this.storage.Add(dimExp.BaseId, dimExp);
 
             var du = new IfcConversionBasedUnit(dimExp, IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", measure);
-            this.storage.Add(du.Id, du);
+            this.storage.Add(du.BaseId, du);
             var degree = new IfcUnit(du);
             
             var units = new List<IfcUnit>{lengthUnit, areaUnit, volumeUnit, solidAngleUnit, massUnit, timeUnit, thermUnit, lumUnit, planeAngleUnit, degree};
             var unitAss = new IfcUnitAssignment(units);
-            this.storage.Add(unitAss.Id, unitAss);
+            this.storage.Add(unitAss.BaseId, unitAss);
 
             // Create the project.
             var proj = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, name, description, null, null, null, null, unitAss);   
-            this.storage.Add(proj.Id, proj);
+            this.storage.Add(proj.BaseId, proj);
         }
 
         private int UnixNow()
@@ -121,7 +121,7 @@ namespace IFC
         public static IfcPerson CreateUser(IDictionary<Guid, BaseIfc> storage, string userId, string lastName, string firstName, string emailAddress, IfcRoleEnum role)
         {
             var r = new IfcActorRole(role);
-            storage.Add(r.Id, r);
+            storage.Add(r.BaseId, r);
             return new IfcPerson(userId, lastName, firstName, null, null, null, new List<IfcActorRole>{r}, null);
         }
 
@@ -189,7 +189,7 @@ namespace IFC
                 foreach (var data in listener.InstanceData)
                 {
                     var inst = (BaseIfc)data.Value.ConstructedInstance;
-                    storage.Add(inst.Id, inst);
+                    storage.Add(inst.BaseId, inst);
                 }
 
                 sw.Stop();
@@ -459,17 +459,17 @@ END-ISO-10303-21;";
                         var vs = (IList)pVal;
                         foreach (BaseIfc v in vs)
                         {
-                            relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
+                            relations.AppendLine($"\t\"{r.BaseId} : {rType.Name}\" -- \"{v.BaseId} : {v.GetType().Name}\"");
                         }
                     }
                     else if (pVal is BaseIfc)
                     {
                         var v = (BaseIfc)pVal;
-                        relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
+                        relations.AppendLine($"\t\"{r.BaseId} : {rType.Name}\" -- \"{v.BaseId} : {v.GetType().Name}\"");
                     }
                     else if (pVal == null)
                     {
-                        relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"null\"");
+                        relations.AppendLine($"\t\"{r.BaseId} : {rType.Name}\" -- \"null\"");
                     }
                 }
             }
