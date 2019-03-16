@@ -148,54 +148,59 @@ namespace IFC
             }
 
             this.storage = storage;
+            errors = new List<STEPError>();
 
             using (FileStream fs = new FileStream(STEPfilePath, FileMode.Open))
             {
-                var sw = new Stopwatch();
-                sw.Start();
-
-                var input = new AntlrInputStream(fs);
-                var lexer = new STEP.STEPLexer(input);
-                var tokens = new CommonTokenStream(lexer);
-
-                var parser = new STEP.STEPParser(tokens);
-                parser.BuildParseTree = true;
-
-                var tree = parser.file();
-                var walker = new ParseTreeWalker();
-
-                var listener = new STEP.STEPListener();
-                walker.Walk(listener, tree);
-
-                sw.Stop();
-                Console.WriteLine($"{sw.Elapsed} for parsing STEP file {STEPfilePath}.");
-                sw.Reset();
-
-                sw.Start();
-                var err = new List<STEPError>();
-                foreach (var data in listener.InstanceData)
+                try 
                 {
-                    if (listener.InstanceData[data.Key].ConstructedInstance != null)
+                    var sw = new Stopwatch();
+                    sw.Start();
+
+                    var input = new AntlrInputStream(fs);
+                    var lexer = new STEP.STEPLexer(input);
+                    var tokens = new CommonTokenStream(lexer);
+
+                    var parser = new STEP.STEPParser(tokens);
+                    parser.BuildParseTree = true;
+
+                    var tree = parser.file();
+                    var walker = new ParseTreeWalker();
+
+                    var listener = new STEP.STEPListener();
+                    walker.Walk(listener, tree);
+
+                    sw.Stop();
+                    Console.WriteLine($"{sw.Elapsed} for parsing STEP file {STEPfilePath}.");
+                    sw.Reset();
+
+                    sw.Start();
+                    foreach (var data in listener.InstanceData)
                     {
-                        // Instance may have been previously constructed as the result
-                        // of another construction.
-                        continue;
+                        if (listener.InstanceData[data.Key].ConstructedInstance != null)
+                        {
+                            // Instance may have been previously constructed as the result
+                            // of another construction.
+                            continue;
+                        }
+
+                        ConstructAndStoreInstance(data.Value, listener.InstanceData, data.Key, errors, 0);
                     }
 
-                    ConstructAndStoreInstance(data.Value, listener.InstanceData, data.Key, err, 0);
-                }
+                    // Transfer the constructed instances to storage.
+                    foreach (var data in listener.InstanceData)
+                    {
+                        var inst = (BaseIfc)data.Value.ConstructedInstance;
+                        storage.Add(inst.BaseId, inst);
+                    }
 
-                // Transfer the constructed instances to storage.
-                foreach (var data in listener.InstanceData)
+                    sw.Stop();
+                    Console.WriteLine($"{sw.Elapsed} for creating instances.");
+                }
+                catch(STEPUnknownSchemaException ex)
                 {
-                    var inst = (BaseIfc)data.Value.ConstructedInstance;
-                    storage.Add(inst.BaseId, inst);
+                    errors.Add(new UnknownSchemaError(ex.RequestedSchema));
                 }
-
-                sw.Stop();
-                Console.WriteLine($"{sw.Elapsed} for creating instances.");
-
-                errors = err;
             }
         }
 
@@ -251,7 +256,7 @@ FILE_NAME(
     'IFC-dotnet',
     '{typeof(Model).Assembly.GetName().Version}',
 	'None');
-FILE_SCHEMA (('IFC4'));
+FILE_SCHEMA (('IFC2X3'));
 ENDSEC;
 DATA;";
         }

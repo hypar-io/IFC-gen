@@ -4,19 +4,19 @@ namespace IFC
 {
 	public class STEPUnknownSchemaException : Exception 
 	{
-		private string requestedSchema;
+		public string RequestedSchema{get;}
 
 		public override string Message
 		{
 			get
 			{
-				return $"The requested schema, {requestedSchema}, is not supported.";
+				return $"The requested schema, {RequestedSchema}, is not supported.";
 			}
 		}
 
 		public STEPUnknownSchemaException(string requestedSchema)
 		{
-			this.requestedSchema = requestedSchema;
+			this.RequestedSchema = requestedSchema;
 		}
 	}
 
