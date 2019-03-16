@@ -2,6 +2,23 @@ using System;
 
 namespace IFC
 {
+	public class STEPUnknownSchemaException : Exception 
+	{
+		private string requestedSchema;
+
+		public override string Message
+		{
+			get
+			{
+				return $"The requested schema, {requestedSchema}, is not supported.";
+			}
+		}
+
+		public STEPUnknownSchemaException(string requestedSchema)
+		{
+			this.requestedSchema = requestedSchema;
+		}
+	}
 
 	/// <summary>
 	/// Exception thrown when an unknown type is encountered.
