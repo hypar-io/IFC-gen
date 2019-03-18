@@ -83,7 +83,7 @@ namespace STEP
 
         public override void EnterFileSchema(STEPParser.FileSchemaContext context)
         {
-            var schema = context.AnyString().GetText();
+            var schema = context.AnyString().GetText().Replace("'","");
             if(schema != "IFC2X3") 
             {
                 throw new STEPUnknownSchemaException(schema);
