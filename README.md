@@ -7,7 +7,7 @@ Source files for each target language can be found in the directory correspondin
 
 ## Motivation
 
-Let's say you work in an architecture or engineering firm writing code. Or a software startup that's trying to solve problems in AEC. Where do you go to find a library that reads and writes data in an industry-standard form? Maybe you've looked at the IFC schema and, like many before you, have decided that it's "too complex" or "too heavy" for your needs. Maybe you've even gone and built your own data model to describe building elements. 
+If you work in an architecture or engineering firm writing code, or a software startup that's trying to solve problems in AEC, where do you go to find a library that reads and writes building data in an industry-standard form? Maybe you've looked at the IFC schema and, like many before you, have decided that it's "too complex" or "too heavy" for your needs. Maybe you've even gone and built your own data model to describe building elements. 
 
 As more firms build their own data models to solve the same problem, we get further away from the vision of what IFC was _supposed_ to be. By comparison, it would be as if every software company that makes a browser decided that they were going to create their own markup and styling languages such that the website you've designed to work in one, wouldn't work in any of the others. That's crazy. It seems to me that not speaking the same language is an impediment to technological progress in AEC. 
 
