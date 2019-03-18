@@ -1,0 +1,29 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (
+        ('ViewDefinition [CoordinationView, QuantityTakeOffAddOnView]'),
+        '2;1');
+FILE_NAME (
+        'example.ifc',
+        '2012-09-24T14:40:06',
+        ('Architect'),
+        ('Building Designer Office'),
+        'IFC Engine DLL version 1.03 beta',
+        'IFC Engine DLL version 1.03 beta',
+        'The authorising person');
+FILE_SCHEMA (('IFC4RC4'));
+ENDSEC;
+DATA;
+#45 = IFCPROPERTYSET('3tHNUXbZH5vxePn_rLyQFg', #2, 'Pset_WallCommon', $, (#46, #47, #48, #49, #50, #51, #52, #53, #54, #55));
+#46 = IFCPROPERTYSINGLEVALUE('Reference', 'Reference', IFCIDENTIFIER(''), $);
+#47 = IFCPROPERTYSINGLEVALUE('AcousticRating', 'AcousticRating', IFCLABEL(''), $);
+#48 = IFCPROPERTYSINGLEVALUE('FireRating', 'FireRating', IFCLABEL(''), $);
+#49 = IFCPROPERTYSINGLEVALUE('Combustible', 'Combustible', IFCBOOLEAN(.F.), $);
+#50 = IFCPROPERTYSINGLEVALUE('SurfaceSpreadOfFlame', 'SurfaceSpreadOfFlame', IFCLABEL(''), $);
+#51 = IFCPROPERTYSINGLEVALUE('ThermalTransmittance', 'ThermalTransmittance', IFCTHERMALTRANSMITTANCEMEASURE(2.4E-1), $);
+#52 = IFCPROPERTYSINGLEVALUE('IsExternal', 'IsExternal', IFCBOOLEAN(.T.), $);
+#53 = IFCPROPERTYSINGLEVALUE('ExtendToStructure', 'ExtendToStructure', IFCBOOLEAN(.F.), $);
+#54 = IFCPROPERTYSINGLEVALUE('LoadBearing', 'LoadBearing', IFCBOOLEAN(.F.), $);
+#55 = IFCPROPERTYSINGLEVALUE('Compartmentation', 'Compartmentation', IFCBOOLEAN(.F.), $);
+ENDSEC;
+END-ISO-10303-21;

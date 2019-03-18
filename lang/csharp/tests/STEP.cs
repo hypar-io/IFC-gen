@@ -20,12 +20,9 @@ namespace IFC.Tests
         }
 
         [Theory]
-        [InlineData("../../../models/example.ifc", 283, 0)]
-        [InlineData("../../../models/scientific_notation.ifc", 4, 0)]
-        [InlineData("../../../models/AC-20-Smiley-West-10-Bldg.ifc", 205693, 1)]
-        [InlineData("../../../models/select.ifc",0,4)]
-        [InlineData("../../../models/property_set.ifc", 11, 0)]
-        [InlineData("../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc", 952819, 0)]
+        [InlineData("../../../models/IFC2X3/example_1.ifc", 283, 0)]
+        [InlineData("../../../models/IFC2X3/example_2.ifc", 283, 0)]
+        [InlineData("../../../models/IFC2X3/example_3.ifc", 283, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
             IList<STEPError> errors;
