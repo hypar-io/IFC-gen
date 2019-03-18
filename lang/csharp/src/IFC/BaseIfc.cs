@@ -10,13 +10,13 @@ namespace IFC
 	public abstract class BaseIfc : IConvertibleToSTEP
 	{
 		[JsonProperty("id")]
-		public Guid Id{get;}
+		public Guid BaseId{get;}
 
 		public int StepId{get;set;}
 
 		public BaseIfc()
 		{
-			Id = Guid.NewGuid();
+			BaseId = Guid.NewGuid();
 		}
 
 		public virtual string ToJSON()

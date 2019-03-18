@@ -297,3 +297,4 @@ __pycache__/
 .DS_Store
 tokens.txt
 debug.exp
+lang/csharp/src/IFC/*.g.cs

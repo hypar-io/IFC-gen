@@ -81,6 +81,15 @@ namespace STEP
             }
         }
 
+        public override void EnterFileSchema(STEPParser.FileSchemaContext context)
+        {
+            var schema = context.AnyString().GetText();
+            if(schema != "IFC2X3") 
+            {
+                throw new STEPUnknownSchemaException(schema);
+            }
+        }
+
         public override void EnterInstance(STEPParser.InstanceContext context)
         {
             currId = int.Parse(context.Id().GetText().TrimStart('#'));
@@ -377,7 +386,7 @@ namespace STEP
             }
             catch
             {
-                throw new STEPParserException(typeof(Enum), trimmedValue);
+                throw new STEPParserException(t, trimmedValue);
             }
         }
 

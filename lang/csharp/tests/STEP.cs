@@ -19,82 +19,35 @@ namespace IFC.Tests
             this.output = output;
         }
 
-        [Fact]
-        public void ExampleModel_Deserialize()
+        [Theory]
+        [InlineData("../../../models/example.ifc", 283, 0)]
+        [InlineData("../../../models/scientific_notation.ifc", 4, 0)]
+        [InlineData("../../../models/AC-20-Smiley-West-10-Bldg.ifc", 205693, 1)]
+        [InlineData("../../../models/select.ifc",0,4)]
+        [InlineData("../../../models/property_set.ifc", 11, 0)]
+        [InlineData("../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc", 952819, 0)]
+        public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
-            var stepPath = "../../../models/example.ifc";
             IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            ReportErrors(stepPath, errors);
-            Assert.Equal(283, model.AllInstances.Count());
-        }
+            var model = new Model(modelPath, new LocalStorageProvider(), out errors);
+            ReportErrors(modelPath, errors);
+            Assert.Equal(expectedErrorCount, errors.Count);
+            Assert.Equal(expectedInstanceCount, model.AllInstances.Count());
 
-        [Fact]
-        public void ExampleModel_Serialize()
-        {
-            // Load the example model
-            var stepPath = "../../../models/example.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            Assert.Equal(283, model.AllInstances.Count());
-            
-            // Serialize the example model
-            var outputPath = "../../../models/output.ifc";
+            // Serialize the model to STEP.
+            errors.Clear();
+            var outputPath = Path.GetTempFileName();
+            Console.WriteLine($"Exporting IFC to {outputPath}.");
             File.WriteAllText(outputPath, model.ToSTEP(outputPath));
-            ReportErrors(stepPath, errors);
+             
+            ReportErrors(outputPath, errors);
+            Assert.Equal(0, errors.Count);
 
             // Reload the new version of the model
+            errors.Clear();
             var newModel = new Model(outputPath, new LocalStorageProvider(), out errors);
-            Assert.Equal(283, newModel.AllInstances.Count());
-        }
-
-        [Fact]
-        public void ScientificNotation_Deserialize()
-        {
-            var stepPath = "../../../models/scientific_notation.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            Assert.Equal(4, model.AllInstances.Count());
-        }
-
-        [Fact]
-        public void OfficeBuilding_Deserialize_STEP()
-        {
-            var stepPath = "../../../models/AC-20-Smiley-West-10-Bldg.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            //Assert.Equal(205693, model.AllInstances.Count());
-            ReportErrors(stepPath, errors);
-        }
-
-        [Fact]
-        public void Hospital_Deserialize()
-        {
-            var stepPath = "../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            //Assert.Equal(952819, model.AllInstances.Count());
-            ReportErrors(stepPath, errors);
-        }
-
-        [Fact]
-        public void PropertySet_Deserialize()
-        {
-            var stepPath = "../../../models/property_set.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            Assert.Equal(11, model.AllInstances.Count());
-            ReportErrors(stepPath, errors);
-        }
-
-        [Fact]
-        public void Select_Deserialize()
-        {
-            var stepPath = "../../../models/select.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-            Assert.Equal(4, model.AllInstances.Count());
-            ReportErrors(stepPath, errors);
+            Assert.Equal(expectedInstanceCount, newModel.AllInstances.Count());
+            Assert.Equal(0, errors.Count);
         }
 
         private void ReportErrors(string filePath, IEnumerable<STEPError> errors)
@@ -108,60 +61,6 @@ namespace IFC.Tests
             foreach (var e in errors)
             {
                 Console.WriteLine(e.Message);
-            }
-        }
-
-        [Fact]
-        public void GetSlabEdges()
-        {
-            var stepPath = "../../../models/example.ifc";
-            IList<STEPError> errors;
-            var model = new Model(stepPath, new LocalStorageProvider(), out errors);
-
-            // var project = model.AllInstancesOfType<IFC.IfcProject>().FirstOrDefault();
-            // var units = project.UnitsInContext.Units;
-            // foreach(var u in units)
-            // {
-            //     this.output.WriteLine(u.GetType().ToString());
-
-            //     if (u.GetType() == typeof(IFC.IfcDerivedUnit))
-            //     {
-            //     }
-            //     else if(u.GetType() == typeof(IFC.IfcNamedUnit))
-            //     {
-
-            //     }
-            //     else if(u.GetType() == typeof(IFC.IfcMonetaryUnit))
-            //     {
-
-            //     }
-            // }
-
-            var slabs = model.AllInstancesOfType<IfcSlab>();
-            foreach(var s in slabs)
-            {
-                
-                foreach(var rep in s.Representation.Representations)
-                {
-                    foreach(var i in rep.Items)
-                    {
-                        var solid = (IFC.IfcExtrudedAreaSolid)i;
-                        var profileDef = (IFC.IfcArbitraryClosedProfileDef)solid.SweptArea;
-
-                        if(profileDef.GetType() == typeof(IFC.IfcPolyline))
-                        {
-                            
-                        }
-                        var pline = (IFC.IfcPolyline)profileDef.OuterCurve;
-                        foreach(var p in pline.Points)
-                        {
-                            foreach(var c in p.Coordinates)
-                            {
-                                this.output.WriteLine(((double)c).ToString());
-                            }
-                        }
-                    }
-                }
             }
         }
     }

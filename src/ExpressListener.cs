@@ -376,7 +376,9 @@ namespace Express
 				if(context.pseudoType().genericType() != null)
 				{
 					isGeneric = true;
-					return context.pseudoType().genericType().typeLabel().SimpleId().GetText();
+					return "";
+					// TODO: Although we don't support Functions, this breaks in IFC2X3. Figure out why.
+					// return context.pseudoType().genericType().typeLabel().SimpleId().GetText();
 				}
 			}
 			else if(context.aggregateType() != null)

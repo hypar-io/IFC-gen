@@ -9,9 +9,31 @@ namespace STEP
             get { return $"There was an error reading the STEP file at Id, {currId}."; }
         }
 
+        /// <summary>
+        /// Construct a STEPError.
+        /// </summary>
+        /// <param name="currId">The id of the instance which emitted the error.</param>
         public STEPError(int currId)
         {
             this.currId = currId;
+        }
+    }
+
+    /// <summary>
+    /// UnknownSchemaError is generated when the schema specified in the file is not supported.
+    /// </summary>
+    public class UnknownSchemaError : STEPError
+    {
+        private string schema;
+
+        public override string Message
+        {
+            get{ return $"The specified file schema, {schema}, is not supported.";}
+        }
+
+        public UnknownSchemaError(string schema) : base(-1) 
+        {
+            this.schema = schema;
         }
     }
 
