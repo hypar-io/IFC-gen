@@ -26,6 +26,8 @@ namespace IFC.Tests
         [InlineData("../../../models/select.ifc",4,0)]
         [InlineData("../../../models/property_set.ifc", 11, 1)]
         [InlineData("../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc", 488638, 1)]
+        [InlineData("../../../models/Regression_49.ifc", 2, 0)]
+        [InlineData("../../../models/Regression_50.ifc", 5, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
             IList<STEPError> errors;
@@ -36,7 +38,7 @@ namespace IFC.Tests
 
             // Serialize the model to STEP.
             errors.Clear();
-            var outputPath = Path.GetTempFileName();
+            var outputPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(modelPath));
             output.WriteLine($"Exporting IFC to {outputPath}.");
             File.WriteAllText(outputPath, model.ToSTEP(outputPath));
             
