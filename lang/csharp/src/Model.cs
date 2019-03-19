@@ -235,7 +235,7 @@ namespace IFC
         private string Begin(string filePath)
         {
             var project = AllInstancesOfType<IfcProject>().FirstOrDefault();
-
+            var org = project != null ? project.OwnerHistory.OwningUser.TheOrganization.Name : new IfcLabel("Hypar");
             return $@"
 ISO-10303-21;
 HEADER;
@@ -246,7 +246,7 @@ FILE_NAME(
     '{filePath}',
     '{DateTime.Now.ToString("yyyy-MM-ddTHH:MM:ss")}',
     ('{System.Environment.UserName}'),
-    ('{project.OwnerHistory.OwningUser.TheOrganization.Name}'),
+    ('{org}'),
     'IFC-dotnet',
     '{typeof(Model).Assembly.GetName().Version}',
 	'None');
@@ -274,7 +274,7 @@ END-ISO-10303-21;";
         {
             var indent = string.Join("", Enumerable.Repeat("\t", level));
 
-            //Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
+            //     Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
 
             for (var i = 0; i < data.Parameters.Count(); i++)
             {
