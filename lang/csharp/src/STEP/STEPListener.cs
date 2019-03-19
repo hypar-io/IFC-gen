@@ -83,7 +83,7 @@ namespace STEP
 
         public override void EnterFileSchema(STEPParser.FileSchemaContext context)
         {
-            var schema = context.AnyString().GetText();
+            var schema = context.AnyString().GetText().Replace("'","");
             if(schema != "IFC2X3") 
             {
                 throw new STEPUnknownSchemaException(schema);
@@ -106,18 +106,30 @@ namespace STEP
 
         private System.Reflection.ConstructorInfo GetConstructorForType(Type required, ref List<System.Reflection.ConstructorInfo> ctorChain, Type fromSTEP = null)
         {
+            var ctors = required.GetConstructors();
+
             if (fromSTEP == null || required.IsAssignableFrom(fromSTEP))
             {
-                return required.GetConstructors().OrderBy(c => c.GetParameters().Count()).Last();
+                return ctors.OrderBy(c => c.GetParameters().Count()).Last();
             }
+
+            System.Reflection.ConstructorInfo ctor;
 
             if (typeof(Select).IsAssignableFrom(required))
             {
-                System.Reflection.ConstructorInfo ctor;
                 if (TypeHasConstructorForSelectChoice(required, fromSTEP, out ctor, ref ctorChain))
                 {
                     return ctor;
                 }
+            }
+
+            // See if there is a constructor with the fromSTEP as its
+            // only parameter.
+            // Ex: IfcNormalisedRatioMeasure(IfcRatioMeasure value)
+            ctor = ctors.FirstOrDefault(c=>c.GetParameters().First().ParameterType == fromSTEP);
+            if(ctor != null)
+            {
+                return ctor;
             }
 
             throw new Exception($"I could not find a constructor which would create a {required} from a {fromSTEP}.");
