@@ -418,66 +418,6 @@ END-ISO-10303-21;";
             }
             return result; 
         }
-
-        /// <summary>
-        /// Serialize the model to JSON.
-        /// </summary>
-        /// <returns>A string representing the model serialized to JSON. The string will be indented and include type references.</returns>
-        public string ToJSON()
-        {
-            var settings = new JsonSerializerSettings()
-            {
-                Formatting = Formatting.Indented,
-                TypeNameHandling = TypeNameHandling.Objects
-            };
-            var json = JsonConvert.SerializeObject(this.storage, settings);
-            return json;
-        }
-
-        /// <summary>
-        /// Serialize the document's relationships to a DOT graph notation.
-        /// </summary>
-        /// <returns>A string representing the model serialized in DOT notation.</returns>
-        public string ToDOT()
-        {
-            var relationships = AllInstancesDerivedFromType<IfcRelationship>();
-            var visited = new List<Guid>();  // Ids of visited nodes;
-
-            var relations = new StringBuilder();
-            foreach (var r in relationships)
-            {
-                var rType = r.GetType();
-                foreach (var p in r.GetType().GetProperties().Where(p => p.DeclaringType == r.GetType()))
-                {
-                    var pVal = p.GetValue(r);
-                    if (pVal is IList && pVal.GetType().IsGenericType)
-                    {
-                        var vs = (IList)pVal;
-                        foreach (BaseIfc v in vs)
-                        {
-                            relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
-                        }
-                    }
-                    else if (pVal is BaseIfc)
-                    {
-                        var v = (BaseIfc)pVal;
-                        relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"{v.Id} : {v.GetType().Name}\"");
-                    }
-                    else if (pVal == null)
-                    {
-                        relations.AppendLine($"\t\"{r.Id} : {rType.Name}\" -- \"null\"");
-                    }
-                }
-            }
-            string graph =
-$@"graph model{{
-	rankdir=LR
-	node [shape=box];
-{relations.ToString()}
-}}";
-            return graph;
-        }
-
         		
 		#region IElementQuery
 
