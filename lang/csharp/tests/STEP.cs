@@ -20,9 +20,9 @@ namespace IFC.Tests
         }
 
         [Theory]
-        [InlineData("../../../models/example_1.ifc", 283, 0)]
-        [InlineData("../../../models/example_2.ifc", 283, 0)]
-        [InlineData("../../../models/example_3.ifc", 283, 0)]
+        [InlineData("../../../models/example_1.ifc", 335, 0)]
+        [InlineData("../../../models/example_2.ifc", 250482, 0)]
+        [InlineData("../../../models/example_3.ifc", 234654, 0)]
         [InlineData("../../../models/Regression_49.ifc", 2, 0)]
         [InlineData("../../../models/Regression_50.ifc", 5, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
