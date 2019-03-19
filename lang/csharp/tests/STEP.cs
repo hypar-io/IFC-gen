@@ -20,9 +20,12 @@ namespace IFC.Tests
         }
 
         [Theory]
-        [InlineData("../../../models/IFC2X3/example_1.ifc", 283, 0)]
-        [InlineData("../../../models/IFC2X3/example_2.ifc", 283, 0)]
-        [InlineData("../../../models/IFC2X3/example_3.ifc", 283, 0)]
+        [InlineData("../../../models/example.ifc", 283, 0)]
+        [InlineData("../../../models/scientific_notation.ifc", 4, 0)]
+        [InlineData("../../../models/AC-20-Smiley-West-10-Bldg.ifc", 110176, 0)]
+        [InlineData("../../../models/select.ifc",4,0)]
+        [InlineData("../../../models/property_set.ifc", 11, 1)]
+        [InlineData("../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc", 488638, 1)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
             IList<STEPError> errors;
@@ -34,12 +37,9 @@ namespace IFC.Tests
             // Serialize the model to STEP.
             errors.Clear();
             var outputPath = Path.GetTempFileName();
-            Console.WriteLine($"Exporting IFC to {outputPath}.");
+            output.WriteLine($"Exporting IFC to {outputPath}.");
             File.WriteAllText(outputPath, model.ToSTEP(outputPath));
-             
-            ReportErrors(outputPath, errors);
-            Assert.Equal(0, errors.Count);
-
+            
             // Reload the new version of the model
             errors.Clear();
             var newModel = new Model(outputPath, new LocalStorageProvider(), out errors);
@@ -54,10 +54,10 @@ namespace IFC.Tests
                 return;
             }
 
-            Console.WriteLine($"The following errors occurred while parsing {filePath}:");
+            output.WriteLine($"The following errors occurred while parsing {filePath}:");
             foreach (var e in errors)
             {
-                Console.WriteLine(e.Message);
+                output.WriteLine(e.Message);
             }
         }
     }
