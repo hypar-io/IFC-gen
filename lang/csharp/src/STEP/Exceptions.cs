@@ -2,7 +2,6 @@ using System;
 
 namespace IFC
 {
-
 	/// <summary>
 	/// Exception thrown when an unknown type is encountered.
 	/// </summary>
