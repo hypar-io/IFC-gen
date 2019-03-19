@@ -20,9 +20,11 @@ namespace IFC.Tests
         }
 
         [Theory]
-        [InlineData("../../../models/IFC2X3/example_1.ifc", 283, 0)]
-        [InlineData("../../../models/IFC2X3/example_2.ifc", 283, 0)]
-        [InlineData("../../../models/IFC2X3/example_3.ifc", 283, 0)]
+        [InlineData("../../../models/example_1.ifc", 283, 0)]
+        [InlineData("../../../models/example_2.ifc", 283, 0)]
+        [InlineData("../../../models/example_3.ifc", 283, 0)]
+        [InlineData("../../../models/Regression_49.ifc", 2, 0)]
+        [InlineData("../../../models/Regression_50.ifc", 5, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
             IList<STEPError> errors;
@@ -33,8 +35,8 @@ namespace IFC.Tests
 
             // Serialize the model to STEP.
             errors.Clear();
-            var outputPath = Path.GetTempFileName();
-            Console.WriteLine($"Exporting IFC to {outputPath}.");
+            var outputPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(modelPath));
+            output.WriteLine($"Exporting IFC to {outputPath}.");
             File.WriteAllText(outputPath, model.ToSTEP(outputPath));
              
             ReportErrors(outputPath, errors);
