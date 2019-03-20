@@ -20,7 +20,7 @@ csharp: default
 	dotnet build ./lang/csharp/IFC-dotnet.sln
 
 csharp-tests: csharp
-	cd ./lang/csharp/tests/ && dotnet test
+	cd ./lang/csharp/test/ && dotnet test
 
 proto: default
 	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l proto -o ./lang/proto
