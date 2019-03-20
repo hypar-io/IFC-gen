@@ -1,10 +1,13 @@
-[![Build Status](https://travis-ci.org/hypar-io/IFC-dotnet.svg?branch=master)](https://travis-ci.org/hypar-io/IFC-dotnet)
-
 # IFC-csharp
 An [Industry Foundation Classes](http://www.buildingsmart-tech.org/specifications/ifc-overview/ifc-overview-summary) (IFC) library for .NET.
 
 # Pre-requisites
 - [.NET Core](https://www.microsoft.com/net/core)
+
+# Nuget
+```
+dotnet add package Hypar.IFC4
+```
 
 # To Build
 ```
@@ -14,7 +17,7 @@ dotnet build
 
 # To Test
 ```
-cd tests
+cd test
 dotnet test
 ```
 
