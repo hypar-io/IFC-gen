@@ -6,7 +6,7 @@ An [Industry Foundation Classes](http://www.buildingsmart-tech.org/specification
 
 # Nuget
 ```
-dotnet add package Hypar.IFC2X3`
+dotnet add package Hypar.IFC2X3
 ```
 
 # To Build
