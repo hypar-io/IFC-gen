@@ -6,7 +6,7 @@ FILE_DESCRIPTION(
 	'2;1');
 FILE_NAME(
     '../../../baselines/project.ifc',
-    '2019-03-23T11:03:44',
+    '2019-03-23T16:03:11',
     ('ikeough'),
     ('hypar'),
     'IFC-dotnet',
@@ -22,7 +22,7 @@ DATA;
 #5 = IFCPERSON('ikeough', 'keough', 'ian', $, $, $, (#4), $);
 #6 = IFCORGANIZATION('hypar', 'hypar', 'Hypar - Generative design for AEC.', $, (#3));
 #7 = IFCPERSONANDORGANIZATION(#5, #6, $);
-#8 = IFCOWNERHISTORY(#7, #2, $, .ADDED., $, $, $, 1553366684);
+#8 = IFCOWNERHISTORY(#7, #2, $, .ADDED., $, $, $, 1553382671);
 #9 = IFCSIUNIT(*, .LENGTHUNIT., $, .METRE.);
 #10 = IFCSIUNIT(*, .AREAUNIT., $, .SQUARE_METRE.);
 #11 = IFCSIUNIT(*, .VOLUMEUNIT., $, .CUBIC_METRE.);
@@ -32,7 +32,7 @@ DATA;
 #15 = IFCSIUNIT(*, .THERMODYNAMICTEMPERATUREUNIT., $, .DEGREE_CELSIUS.);
 #16 = IFCSIUNIT(*, .LUMINOUSINTENSITYUNIT., $, .LUMEN.);
 #17 = IFCSIUNIT(*, .PLANEANGLEUNIT., $, .RADIAN.);
-#18 = IFCMEASUREWITHUNIT(IFCPLANEANGLEMEASURE(0.01745), #17);
+#18 = IFCMEASUREWITHUNIT(IFCPLANEANGLEMEASURE(0.017450), #17);
 #19 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
 #20 = IFCCONVERSIONBASEDUNIT(#19, .PLANEANGLEUNIT., 'DEGREE', #18);
 #21 = IFCUNITASSIGNMENT((#9, #10, #11, #12, #13, #14, #15, #16, #17, #20));
@@ -41,7 +41,7 @@ DATA;
 #24 = IFCDIRECTION((1.0, 0.0, 0.0));
 #25 = IFCAXIS2PLACEMENT3D(#22, #23, #24);
 #26 = IFCDIRECTION((0.0, 1.0, 0.0));
-#27 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 1E-05, #25, #26);
-#28 = IFCPROJECT('3RNk3S2k14iBI$N1g2oZu7', #8, 'Test Project', 'A test project for IFC-dotnet.', $, $, $, (#27), #21);
+#27 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 0.000010, #25, #26);
+#28 = IFCPROJECT('34lztYvnLDQOpz4Oj$6jNa', #8, 'Test Project', 'A test project for IFC-dotnet.', $, $, $, (#27), #21);
 ENDSEC;
 END-ISO-10303-21;

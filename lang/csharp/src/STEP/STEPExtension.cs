@@ -157,7 +157,7 @@ namespace STEP
             {
                 return value.ToString("0.0", CultureInfo.InvariantCulture);
             }
-            return value.ToString("G15", CultureInfo.InvariantCulture);
+            return value.ToString("F6", CultureInfo.InvariantCulture);
         }
 
         public static string ToStepValue(this string value, bool isSelectOption = false)
