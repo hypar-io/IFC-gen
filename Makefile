@@ -38,3 +38,4 @@ clean:
 	rm -rf ./src/bin
 	rm -rf ./src/obj
 	rm -rf ./lang/csharp/src/IFC/*.g.cs
+	rm -rf ./lang/typescript/src/*.g.ts
