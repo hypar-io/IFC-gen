@@ -83,7 +83,7 @@ namespace IFC
             this.AddEntity(personAndOrg);
 
             // Create an owner history for the project.
-            var history = new IfcOwnerHistory(personAndOrg, app, IfcChangeActionEnum.ADDED, UnixNow());
+            var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
             this.AddEntity(history);
             
             var unitAss = AddUnitAssignment();
@@ -166,14 +166,14 @@ namespace IFC
             //Ex: #38= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.000010,#36,#37);
             var dimCount = new IfcDimensionCount(3);
             var location = new IfcCartesianPoint(new List<IfcLengthMeasure>{0,0,0});
-            var up = new IfcDirection(new List<double>{0,0,1});
-            var x= new IfcDirection(new List<double>{1,0,0});
+            var up = new IfcDirection(new List<IfcReal>{0,0,1});
+            var x= new IfcDirection(new List<IfcReal>{1,0,0});
             this.AddEntity(location);
             this.AddEntity(up);
             this.AddEntity(x);
             var place3d = new IfcAxis2Placement3D(location, up, x);
             var worldCs = new IfcAxis2Placement(place3d);
-            var north = new IfcDirection(new List<double>{0,1,0});
+            var north = new IfcDirection(new List<IfcReal>{0,1,0});
             // this.AddEntity(worldCs);
             this.AddEntity(place3d);
             this.AddEntity(north);
@@ -189,12 +189,12 @@ namespace IFC
         public void AddEntity(BaseIfc entity)
         {
             // Add the entity and recursively add all sub entities.
-            if(this.storage.ContainsKey(entity.BaseId))
+            if(this.storage.ContainsKey(entity.Id))
             {
                 return;
             }
 
-            this.storage.Add(entity.BaseId, entity);
+            this.storage.Add(entity.Id, entity);
         }
 
         /// <summary>
