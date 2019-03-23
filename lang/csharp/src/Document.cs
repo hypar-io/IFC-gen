@@ -322,7 +322,7 @@ namespace IFC
         /// <returns></returns>
         private IfcPostalAddress AddAddress(string description, string street, string city, string poBox, string state, string postalCode, string country)
         {
-            var lines = new List<IfcLabel>(){street};
+            var lines = street != null ? new List<IfcLabel>(){street} : null;
             var address = new IfcPostalAddress(IfcAddressTypeEnum.OFFICE, description, null, null, lines, poBox, city, state, postalCode, country);
             this.AddEntity(address);
             return address;
