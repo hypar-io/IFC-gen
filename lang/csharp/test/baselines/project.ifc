@@ -6,23 +6,23 @@ FILE_DESCRIPTION(
 	'2;1');
 FILE_NAME(
     '../../../baselines/project.ifc',
-    '2019-03-19T16:03:14',
+    '2019-03-22T17:03:13',
     ('ikeough'),
-    ('Test'),
+    ('hypar'),
     'IFC-dotnet',
-    '0.1.0.0',
+    '0.1.2.0',
 	'None');
 FILE_SCHEMA (('IFC4'));
 ENDSEC;
 DATA;
-#1 = IFCACTORROLE(.ARCHITECT., $, $);
-#2 = IFCPOSTALADDRESS(.OFFICE., 'Office', $, $, ('12345 Sesame Street'), $, 'Gotham', 'New York', '10005', 'USA');
-#3 = IFCPERSON('ikeough', 'Ian', 'Keough', $, $, $, (#1), $);
-#4 = IFCORGANIZATION('Test', 'Test', 'A test organization for model creation.', $, (#2));
-#5 = IFCORGANIZATION($, 'IFC-dotnet', $, $, $);
-#6 = IFCAPPLICATION(#5, '0.1.0.0', 'IFC-dotnet', 'IFC-dotnet');
-#7 = IFCPERSONANDORGANIZATION(#3, #4, $);
-#8 = IFCOWNERHISTORY(#7, #6, .READWRITE., .NOCHANGE., $, $, $, 1553039174);
+#1 = IFCORGANIZATION($, 'IFC-dotnet', $, $, $);
+#2 = IFCAPPLICATION(#1, '0.1.2.0', 'IFC-dotnet', 'IFC-dotnet');
+#3 = IFCPOSTALADDRESS(.OFFICE., 'Office', $, $, ('12345 Sesame Street.'), $, 'Gotham', 'NY', '10005', 'USA');
+#4 = IFCACTORROLE(.ARCHITECT., $, $);
+#5 = IFCPERSON('ikeough', 'keough', 'ian', $, $, $, (#4), $);
+#6 = IFCORGANIZATION('hypar', 'hypar', 'Hypar - Generative design for AEC.', $, (#3));
+#7 = IFCPERSONANDORGANIZATION(#5, #6, $);
+#8 = IFCOWNERHISTORY(#7, #2, .READWRITE., .ADDED., $, $, $, 1553301433);
 #9 = IFCSIUNIT(*, .LENGTHUNIT., .EXA., .METRE.);
 #10 = IFCSIUNIT(*, .AREAUNIT., .EXA., .SQUARE_METRE.);
 #11 = IFCSIUNIT(*, .VOLUMEUNIT., .EXA., .CUBIC_METRE.);
@@ -36,6 +36,12 @@ DATA;
 #19 = IFCDIMENSIONALEXPONENTS(0, 0, 0, 0, 0, 0, 0);
 #20 = IFCCONVERSIONBASEDUNIT(#19, .PLANEANGLEUNIT., 'DEGREE', #18);
 #21 = IFCUNITASSIGNMENT((#9, #10, #11, #12, #13, #14, #15, #16, #17, #20));
-#22 = IFCPROJECT('0w6A62Ebr8EP0cf7g1hodJ', #8, 'Test Project', 'A test project for the Elements API.', $, $, $, $, #21);
+#22 = IFCCARTESIANPOINT((0.0, 0.0, 0.0));
+#23 = IFCDIRECTION((0.0, 0.0, 1.0));
+#24 = IFCDIRECTION((1.0, 0.0, 0.0));
+#25 = IFCAXIS2PLACEMENT3D(#22, #23, #24);
+#26 = IFCDIRECTION((0.0, 1.0, 0.0));
+#27 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 1E-05, #25, #26);
+#28 = IFCPROJECT('2o0Bp$9UrB$P8VwAunShgm', #8, 'Test Project', 'A test project for IFC-dotnet.', $, $, $, (#27), #21);
 ENDSEC;
 END-ISO-10303-21;

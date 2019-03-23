@@ -1,5 +1,3 @@
-using IFC.Storage;
-using Newtonsoft.Json;
 using STEP;
 using System;
 using System.Collections.Generic;
@@ -10,11 +8,11 @@ using Xunit.Abstractions;
 
 namespace IFC.Tests
 {
-    public class STEP
+    public class STEPTests
     {
         private readonly ITestOutputHelper output;
 
-        public STEP(ITestOutputHelper output)
+        public STEPTests(ITestOutputHelper output)
         {
             this.output = output;
         }
@@ -30,11 +28,11 @@ namespace IFC.Tests
         [InlineData("../../../models/Regression_50.ifc", 5, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
-            IList<STEPError> errors;
-            var model = new Model(modelPath, new LocalStorageProvider(), out errors);
+            List<STEPError> errors;
+            var model = new Document(modelPath, out errors);
             ReportErrors(modelPath, errors);
             Assert.Equal(expectedErrorCount, errors.Count);
-            Assert.Equal(expectedInstanceCount, model.AllInstances.Count());
+            Assert.Equal(expectedInstanceCount, model.AllEntities.Count());
 
             // Serialize the model to STEP.
             errors.Clear();
@@ -44,8 +42,8 @@ namespace IFC.Tests
             
             // Reload the new version of the model
             errors.Clear();
-            var newModel = new Model(outputPath, new LocalStorageProvider(), out errors);
-            Assert.Equal(expectedInstanceCount, newModel.AllInstances.Count());
+            var newModel = new Document(outputPath, out errors);
+            Assert.Equal(expectedInstanceCount, newModel.AllEntities.Count());
             Assert.Equal(0, errors.Count);
         }
 
