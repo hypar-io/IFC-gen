@@ -89,6 +89,11 @@ namespace IFC.Generate
                                 ToDictionary(t => t.Key, t => (SelectType)t.Value);
             generator.SelectData = sd;
 
+            var ed = listener.TypeData.Where(kvp=>kvp.Value is EnumType).
+                                Select(v=>new {v.Key, v.Value}).
+                                ToDictionary(t=>t.Key, t=>(EnumType)t.Value);
+            generator.EnumData = ed;
+
             foreach (var kvp in listener.TypeData)
             {
                 var td = kvp.Value;

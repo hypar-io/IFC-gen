@@ -171,7 +171,7 @@ namespace STEP
 
         public static string ToStepValue(this Enum value, bool isSelectOption = false)
         {
-            return "." + value.ToString() + ".";
+            return value == null ? NULLTOKEN : "." + value.ToString() + ".";
         }
     }
 }

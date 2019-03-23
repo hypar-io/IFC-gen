@@ -11,13 +11,9 @@ namespace IFC4.Generators
 
         internal List<string> listMessages = new List<string>();
 
-        private Dictionary<string,SelectType> selectData = new Dictionary<string, SelectType>();
+        public Dictionary<string,SelectType> SelectData {get;set;}
 
-        public Dictionary<string,SelectType> SelectData 
-        {
-            get{return selectData;}
-            set{selectData = value;}
-        }
+        public Dictionary<string,EnumType> EnumData{get;set;}
 
         public string Begin()
         {

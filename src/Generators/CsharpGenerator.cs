@@ -8,12 +8,8 @@ namespace IFC4.Generators
 {
     public class CsharpLanguageGenerator : ILanguageGenerator
     {
-        private Dictionary<string,SelectType> selectData = new Dictionary<string, SelectType>();
-        public Dictionary<string,SelectType> SelectData 
-        {
-            get{return selectData;}
-            set{selectData = value;}
-        }
+        public Dictionary<string,SelectType> SelectData {get;set;}
+        public Dictionary<string,EnumType> EnumData {get;set;}
 
         public string Assignment(AttributeData data)
         {
@@ -69,7 +65,8 @@ namespace IFC4.Generators
                 if(data.IsInverse) tags.Add("inverse");
                 var opt = data.IsOptional ? "optional" : string.Empty;
                 var inverse = data.IsInverse ? "inverse" : string.Empty;
-                prop = $"\t\tpublic {data.Type} {data.Name}{{get;set;}} {(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}";
+                var nullable = EnumData.ContainsKey(data.Type) ? "?" : string.Empty;
+                prop = $"\t\tpublic {data.Type}{nullable} {data.Name}{{get;set;}} {(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}";
             }
 
             return prop;
@@ -302,7 +299,7 @@ namespace IFC
 	/// </summary>
 	public {modifier} partial class {data.Name} : {super}
 	{{
-{data.Properties(selectData)}
+{data.Properties(SelectData)}
 {constructors}
 		public static {newMod} {data.Name} FromJSON(string json){{ return JsonConvert.DeserializeObject<{data.Name}>(json); }}
 {StepParameters(data)}
