@@ -19,6 +19,10 @@ csharp: default
 	dotnet $(DEBUG_OUT)/IFC-gen.dll -e $(SCHEMA) -l csharp -o ./lang/csharp/src/IFC
 	dotnet build ./lang/csharp/IFC-dotnet.sln
 
+csharp-release:
+	dotnet $(DEBUG_OUT)/IFC-gen.dll -e $(SCHEMA) -l csharp -o ./lang/csharp/src/IFC
+	dotnet build -c Release ./lang/csharp/IFC-dotnet.sln
+
 csharp-tests: csharp
 	cd ./lang/csharp/test/ && dotnet test
 
@@ -38,3 +42,4 @@ clean:
 	rm -rf ./src/bin
 	rm -rf ./src/obj
 	rm -rf ./lang/csharp/src/IFC/*.g.cs
+	rm -rf ./lang/typescript/src/*.g.ts

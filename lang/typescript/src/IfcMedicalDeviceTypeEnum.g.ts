@@ -1,3 +1,0 @@
-
-//http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/ifcmedicaldevicetypeenum.htm
-export enum IfcMedicalDeviceTypeEnum {AIRSTATION=".AIRSTATION.",FEEDAIRUNIT=".FEEDAIRUNIT.",OXYGENGENERATOR=".OXYGENGENERATOR.",OXYGENPLANT=".OXYGENPLANT.",VACUUMSTATION=".VACUUMSTATION.",USERDEFINED=".USERDEFINED.",NOTDEFINED=".NOTDEFINED."}

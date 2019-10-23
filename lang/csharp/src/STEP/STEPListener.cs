@@ -69,9 +69,9 @@ namespace STEP
 
             // Parsing will involve finding many enum values
             // Cache the enum types for lookup during parsing. 
-            enums = typeof(IFC.Model).Assembly.GetTypes().Where(t => t.IsEnum).ToList();
+            enums = typeof(IFC.Document).Assembly.GetTypes().Where(t => t.IsEnum).ToList();
             types = new Dictionary<string, Type>();
-            foreach (var item in typeof(IFC.Model).Assembly.GetTypes().Where(t => !t.IsEnum))
+            foreach (var item in typeof(IFC.Document).Assembly.GetTypes().Where(t => !t.IsEnum))
             {
                 var key = item.Name.ToUpper();
                 if (!types.ContainsKey(key))

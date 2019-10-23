@@ -9,13 +9,9 @@ namespace IFC4.Generators
 {
     public class TypescriptGenerator : ILanguageGenerator
     {
-        private Dictionary<string,SelectType> selectData = new Dictionary<string, SelectType>();
+        public Dictionary<string,SelectType> SelectData {get;set;}
 
-        public Dictionary<string,SelectType> SelectData
-        {
-            get{return selectData;}
-            set{selectData = value;}
-        }
+        public Dictionary<string,EnumType> EnumData {get;set;}
 
         public string Assignment(AttributeData data)
         {
@@ -35,7 +31,7 @@ namespace IFC4.Generators
         {
             if (isCollection)
             {
-                if(selectData.ContainsKey(type))
+                if(SelectData.ContainsKey(type))
                 {
                     var unionType = string.Join('|', ExpandPossibleTypes(type));
                     return $"{string.Join("", Enumerable.Repeat("Array<", rank))}{unionType}{string.Join("", Enumerable.Repeat(">", rank))}";
@@ -58,7 +54,7 @@ namespace IFC4.Generators
                 return "IfcSIUnitName";
             }
 
-            if(selectData.ContainsKey(type))
+            if(SelectData.ContainsKey(type))
             {
                 return string.Join('|', ExpandPossibleTypes(type));
             }
@@ -69,13 +65,13 @@ namespace IFC4.Generators
 
         private IEnumerable<string> ExpandPossibleTypes(string baseType)
         {
-            if(!selectData.ContainsKey(baseType))
+            if(!SelectData.ContainsKey(baseType))
             {
                 // return right away, it's not a select
                 return new List<string>{baseType};
             }
 
-            var values = selectData[baseType].Values;
+            var values = SelectData[baseType].Values;
             var result = new List<string>();
             foreach(var v in values)
             {
@@ -184,7 +180,7 @@ export enum {data.Name} {{{string.Join(",", data.Values.Select(v=>$"{v}=\".{v}.\
 
             var validAttrs = includeOptional ? AttributesWithOptional(attrs) : AttributesWithoutOptional(attrs);
 
-            return string.Join(", ", validAttrs.Select(a => $"{a.ParameterName} : {(selectData.ContainsKey(a.Type)?string.Join('|',selectData[a.Type].Values):a.Type)}"));
+            return string.Join(", ", validAttrs.Select(a => $"{a.ParameterName} : {(SelectData.ContainsKey(a.Type)?string.Join('|',SelectData[a.Type].Values):a.Type)}"));
         }
 
         public string EntityBaseConstructorParams(Entity data, bool includeOptional)
@@ -237,7 +233,7 @@ import {{BaseIfc}} from ""./BaseIfc""
  * http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
  */
 export {modifier}class {data.Name} extends {super} {{
-{data.Properties(selectData)}{constructors}{StepParameters(data)}
+{data.Properties(SelectData)}{constructors}{StepParameters(data)}
 }}";
             return classStr;
         }

@@ -92,6 +92,11 @@ namespace IFC4.Generators
         /// This must be set before operations which require checking dependencies and attribute types.
         /// </summary>
         Dictionary<string,SelectType> SelectData{get;set;}
+
+        /// <summary>
+        /// A map of EnumType by name.
+        /// </summary>
+        Dictionary<string,EnumType> EnumData{get;set;}
     }
 
     public interface IFunctionsGenerator

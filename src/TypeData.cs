@@ -262,11 +262,24 @@ namespace Express
     /// </summary>
     public class Entity : TypeData
     {
+        /// <summary>
+        /// The super types.
+        /// </summary>
         public List<Entity> Supers { get; set; }
+
+        /// <summary>
+        /// The inherited types.
+        /// </summary>
         public List<Entity> Subs { get; set; }
 
+        /// <summary>
+        /// The attributes.
+        /// </summary>
         public List<AttributeData> Attributes { get; set; }
 
+        /// <summary>
+        /// Is the Entity abstract?
+        /// </summary>
         public bool IsAbstract { get; set; }
 
         public Entity(string name, ILanguageGenerator generator) : base(name, generator)
