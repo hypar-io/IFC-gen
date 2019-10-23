@@ -2,11 +2,11 @@
 ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(
-	('ViewDefinition [CoordinationView]'),
+	('ViewDefinition [DesignTransferView_V1.0]'),
 	'2;1');
 FILE_NAME(
     '../../../baselines/project.ifc',
-    '2019-03-23T16:03:06',
+    '2019-10-23T14:10:00',
     ('ikeough'),
     ('hypar'),
     'IFC-dotnet',
@@ -17,12 +17,12 @@ ENDSEC;
 DATA;
 #1 = IFCORGANIZATION($, 'IFC-dotnet', $, $, $);
 #2 = IFCAPPLICATION(#1, '0.1.4.0', 'IFC-dotnet', 'IFC-dotnet');
-#3 = IFCPOSTALADDRESS(.OFFICE., 'Office', $, $, $, $, 'Gotham', 'NY', '10005', 'USA');
+#3 = IFCPOSTALADDRESS(.OFFICE., 'Office', $, $, ('12345 Sesame Street.'), $, 'Gotham', 'NY', '10005', 'USA');
 #4 = IFCACTORROLE(.ARCHITECT., $, $);
 #5 = IFCPERSON('ikeough', 'keough', 'ian', $, $, $, (#4), $);
 #6 = IFCORGANIZATION('hypar', 'hypar', 'Hypar - Generative design for AEC.', $, (#3));
 #7 = IFCPERSONANDORGANIZATION(#5, #6, $);
-#8 = IFCOWNERHISTORY(#7, #2, $, .ADDED., $, $, $, 1553384766);
+#8 = IFCOWNERHISTORY(#7, #2, $, $, $, $, $, 1571866440);
 #9 = IFCSIUNIT(*, .LENGTHUNIT., $, .METRE.);
 #10 = IFCSIUNIT(*, .AREAUNIT., $, .SQUARE_METRE.);
 #11 = IFCSIUNIT(*, .VOLUMEUNIT., $, .CUBIC_METRE.);
@@ -42,6 +42,6 @@ DATA;
 #25 = IFCAXIS2PLACEMENT3D(#22, #23, #24);
 #26 = IFCDIRECTION((0.0, 1.0, 0.0));
 #27 = IFCGEOMETRICREPRESENTATIONCONTEXT($, 'Model', 3, 0.000010, #25, #26);
-#28 = IFCPROJECT('3EDGcqx415WAaDGtGVUgxS', #8, 'Test Project', 'A test project for IFC-dotnet.', $, $, $, (#27), #21);
+#28 = IFCPROJECT('2OKPkVpxT608bfa7KyQSyR', #8, 'Test Project', 'A test project for IFC-dotnet.', $, $, $, (#27), #21);
 ENDSEC;
 END-ISO-10303-21;
