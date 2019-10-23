@@ -370,7 +370,7 @@ namespace IFC
 ISO-10303-21;
 HEADER;
 FILE_DESCRIPTION(
-	('ViewDefinition [CoordinationView]'),
+	('ViewDefinition [DesignTransferView_V1.0]'),
 	'2;1');
 FILE_NAME(
     '{filePath}',
