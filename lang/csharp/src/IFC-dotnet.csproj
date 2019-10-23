@@ -16,7 +16,7 @@
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
     <Version>0.1.4</Version>
-    <PackageLicenseUrl>https://github.com/hypar-io/IFC-gen/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>IFC, AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
   <ItemGroup>
