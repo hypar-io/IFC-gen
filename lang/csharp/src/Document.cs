@@ -114,7 +114,6 @@ namespace IFC
             using (FileStream fs = new FileStream(STEPfilePath, FileMode.Open))
             {
                 var sw = new Stopwatch();
-                sw.Start();
 
                 var input = new AntlrInputStream(fs);
                 var lexer = new STEP.STEPLexer(input);
@@ -129,11 +128,6 @@ namespace IFC
                 var listener = new STEP.STEPListener();
                 walker.Walk(listener, tree);
 
-                sw.Stop();
-                Console.WriteLine($"{sw.Elapsed} for parsing STEP file {STEPfilePath}.");
-                sw.Reset();
-
-                sw.Start();
                 var err = new List<STEPError>();
                 foreach (var data in listener.InstanceData)
                 {
@@ -153,9 +147,6 @@ namespace IFC
                     var inst = (BaseIfc)data.Value.ConstructedInstance;
                     AddEntity(inst);
                 }
-
-                sw.Stop();
-                Console.WriteLine($"{sw.Elapsed} for creating instances.");
 
                 errors = err;
             }
@@ -225,7 +216,6 @@ namespace IFC
             builder.Append(End());
 
             sw.Stop();
-            Console.WriteLine($"{sw.Elapsed} for serializing Document to STEP.");
 
             return builder.ToString();
         }
@@ -404,8 +394,6 @@ END-ISO-10303-21;";
         {
             var indent = string.Join("", Enumerable.Repeat("\t", level));
 
-            //     Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
-
             for (var i = 0; i < data.Parameters.Count(); i++)
             {
                 if (data.Parameters[i] is STEP.InstanceData)
@@ -422,7 +410,6 @@ END-ISO-10303-21;";
                     {
                         if (instances[stepId.Value].ConstructedInstance != null)
                         {
-                            //Console.WriteLine($"{indent}Using pre-created instance {stepId.Value}");
                             data.Parameters[i] = instances[stepId.Value].ConstructedInstance;
                             continue;
                         }
@@ -516,7 +503,6 @@ END-ISO-10303-21;";
                 instances[data.Id].ConstructedInstance = (BaseIfc)instance;
             }
 
-            //Console.WriteLine($"Setting instanceDataMap[{data.Id}] constructed instance as {instance.Id} for type {instance.GetType().Name}.");
             return instance;
         }
         
