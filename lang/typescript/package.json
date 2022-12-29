@@ -35,8 +35,8 @@
     "@types/mocha": "^2.2.48",
     "chai": "^4.1.2",
     "mocha": "^5.0.0",
-    "ts-loader": "^3.4.0",
+    "ts-loader": "^9.4.2",
     "ts-node": "^4.1.0",
-    "webpack": "^3.10.0"
+    "webpack": "^5.75.0"
   }
 }
