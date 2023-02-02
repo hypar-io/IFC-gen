@@ -1,0 +1,11 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION(('ViewDefinition [ReferenceView_V1.2]', 'ExchangeRequirement [Architecture]'), '2;1');
+FILE_NAME('00', '2022-09-29T17:02:02+02:00', (''), (''), 'ODA SDAI 22.12', '23.0.20.21 - Exporter 23.1.1.0 - Alternate UI 23.1.1.0', '');
+FILE_SCHEMA(('IFC4'));
+ENDSEC;
+
+DATA;
+ENDSEC;
+
+END-ISO-10303-21;

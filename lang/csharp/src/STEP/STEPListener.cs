@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using IFC;
 using System.Globalization;
+using Antlr4.Runtime.Misc;
 
 namespace STEP
 {
@@ -53,15 +54,19 @@ namespace STEP
     public class STEPListener : STEPBaseListener
     {
         private int currId;
-        private IEnumerable<Type> enums;
-        private Dictionary<string, Type> types;
+        private readonly IEnumerable<Type> enums;
+        private readonly Dictionary<string, Type> types;
 
-        private Dictionary<int, InstanceData> instanceData;
+        private readonly Dictionary<int, InstanceData> instanceData;
 
         public Dictionary<int, InstanceData> InstanceData
         {
             get { return instanceData; }
         }
+
+        public IfcLabel FileName { get; private set; }
+
+        public IfcDateTime TimeStamp { get; private set; }
 
         public STEPListener()
         {
@@ -79,6 +84,12 @@ namespace STEP
                     types[key] = item;
                 }
             }
+        }
+
+        public override void EnterFileName([NotNull] STEPParser.FileNameContext context)
+        {
+            FileName = ParseString(typeof(IfcLabel), context.name().GetText());
+            TimeStamp = ParseString(typeof(IfcDateTime), context.timeStamp().GetText());
         }
 
         public override void EnterInstance(STEPParser.InstanceContext context)
@@ -117,8 +128,8 @@ namespace STEP
             // See if there is a constructor with the fromSTEP as its
             // only parameter.
             // Ex: IfcNormalisedRatioMeasure(IfcRatioMeasure value)
-            ctor = ctors.FirstOrDefault(c=>c.GetParameters().First().ParameterType == fromSTEP);
-            if(ctor != null)
+            ctor = ctors.FirstOrDefault(c => c.GetParameters().First().ParameterType == fromSTEP);
+            if (ctor != null)
             {
                 return ctor;
             }
@@ -349,15 +360,14 @@ namespace STEP
 
         private dynamic ParseString(Type t, string value)
         {
-            string result = null;
             try
             {
-                result = TrimQuotes(value);
+                string result = TrimQuotes(value);
                 if (t == typeof(string))
                 {
                     return result;
                 }
-                return CreateIfcTypeOrUseConstructorParameterTypeToConstruct<string>(t, result);
+                return CreateIfcTypeOrUseConstructorParameterTypeToConstruct(t, result);
             }
             catch (Exception)
             {
@@ -367,7 +377,18 @@ namespace STEP
 
         private string TrimQuotes(string value)
         {
-            return value.TrimStart('\'').TrimEnd('\'');
+            var result = value.TrimStart('\'');
+            if (result.EndsWith("''"))
+            {
+                // Trim only one quote. It may be the case that 
+                // the string ends in a '.
+                result = result.Remove(result.Length - 2, 2);
+            }
+            else
+            {
+                result = result.TrimEnd('\'');
+            }
+            return result.Replace("''", "'");
         }
 
         private string TrimDots(string value)

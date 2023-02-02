@@ -128,7 +128,11 @@ CapitalLetter
 	;
 
 DateTime
-	: '\'' Digits '-' Digits '-' Digits 'T' Digits ':' Digits ':' Digits '\''
+	: '\'' Digits '-' Digits '-' Digits 'T' Digits ':' Digits ':' Digits (PlusMinus Digits ':' Digits)? '\''
+	;
+
+PlusMinus
+	: '+'|'-'
 	;
 
 Derived
@@ -177,8 +181,12 @@ Undefined
 	: '$' 
 	;
 
+DoubleQuote
+	: '\'\''
+	;
+	
 AnyString
-	: '\'' .*? '\''
+	: '\'' (. DoubleQuote?)*? '\''
 	;
 
 NewlineChar 
