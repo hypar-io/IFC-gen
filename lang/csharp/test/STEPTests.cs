@@ -21,11 +21,12 @@ namespace IFC.Tests
         [InlineData("../../../models/example.ifc", 283, 0)]
         [InlineData("../../../models/scientific_notation.ifc", 4, 0)]
         [InlineData("../../../models/AC-20-Smiley-West-10-Bldg.ifc", 110176, 0)]
-        [InlineData("../../../models/select.ifc",4,0)]
+        [InlineData("../../../models/select.ifc", 4, 0)]
         [InlineData("../../../models/property_set.ifc", 11, 1)]
         [InlineData("../../../models/20160125WestRiverSide Hospital - IFC4-Autodesk_Hospital_Sprinkle.ifc", 488638, 1)]
         [InlineData("../../../models/Regression_49.ifc", 2, 0)]
         [InlineData("../../../models/Regression_50.ifc", 5, 0)]
+        [InlineData("../../../models/BIMIT-Sample-Model.ifc", 224263, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
             List<STEPError> errors;
@@ -39,7 +40,7 @@ namespace IFC.Tests
             var outputPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(modelPath));
             output.WriteLine($"Exporting IFC to {outputPath}.");
             File.WriteAllText(outputPath, model.ToSTEP(outputPath));
-            
+
             // Reload the new version of the model
             errors.Clear();
             var newModel = new Document(outputPath, out errors);
