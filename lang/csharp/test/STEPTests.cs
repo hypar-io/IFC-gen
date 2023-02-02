@@ -40,7 +40,8 @@ namespace IFC.Tests
             errors.Clear();
             var outputPath = Path.Combine(Path.GetTempPath(), Path.GetFileName(modelPath));
             output.WriteLine($"Exporting IFC to {outputPath}.");
-            File.WriteAllText(outputPath, model.ToSTEP());
+            var step = model.ToSTEP();
+            File.WriteAllText(outputPath, step);
 
             // Reload the new version of the model
             errors.Clear();
