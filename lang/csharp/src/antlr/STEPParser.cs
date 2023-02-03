@@ -41,8 +41,7 @@ public partial class STEPParser : Parser {
 		Letter=10, CapitalLetter=11, DateTime=12, PlusMinus=13, Derived=14, BoolLogical=15, 
 		Enum=16, RealLiteral=17, DATA=18, ENDSEC=19, FILE_DESCRIPTION=20, FILE_NAME=21, 
 		FILE_SCHEMA=22, HEADER=23, Id=24, ISO=25, ISO_END=26, StringLiteral=27, 
-		TypeRef=28, Undefined=29, DoubleQuote=30, AnyString=31, NewlineChar=32, 
-		WS=33, Comments=34;
+		TypeRef=28, Undefined=29, AnyString=30, NewlineChar=31, WS=32, Comments=33;
 	public const int
 		RULE_author = 0, RULE_authorisation = 1, RULE_collection = 2, RULE_collectionValue = 3, 
 		RULE_constructor = 4, RULE_data = 5, RULE_description = 6, RULE_file = 7, 
@@ -61,14 +60,14 @@ public partial class STEPParser : Parser {
 		null, "'('", "','", "')'", "'()'", "';'", "'''", "'.'", "'='", null, null, 
 		null, null, null, "'*'", null, null, null, "'DATA'", "'ENDSEC'", "'FILE_DESCRIPTION'", 
 		"'FILE_NAME'", "'FILE_SCHEMA'", "'HEADER'", null, null, null, null, null, 
-		"'$'", "''''"
+		"'$'"
 	};
 	private static readonly string[] _SymbolicNames = {
 		null, null, null, null, null, null, null, null, null, "IntegerLiteral", 
 		"Letter", "CapitalLetter", "DateTime", "PlusMinus", "Derived", "BoolLogical", 
 		"Enum", "RealLiteral", "DATA", "ENDSEC", "FILE_DESCRIPTION", "FILE_NAME", 
 		"FILE_SCHEMA", "HEADER", "Id", "ISO", "ISO_END", "StringLiteral", "TypeRef", 
-		"Undefined", "DoubleQuote", "AnyString", "NewlineChar", "WS", "Comments"
+		"Undefined", "AnyString", "NewlineChar", "WS", "Comments"
 	};
 	public static readonly IVocabulary DefaultVocabulary = new Vocabulary(_LiteralNames, _SymbolicNames);
 
@@ -1321,7 +1320,7 @@ public partial class STEPParser : Parser {
 
 	private static char[] _serializedATN = {
 		'\x3', '\x608B', '\xA72A', '\x8133', '\xB9ED', '\x417C', '\x3BE7', '\x7786', 
-		'\x5964', '\x3', '$', '\xCA', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
+		'\x5964', '\x3', '#', '\xCA', '\x4', '\x2', '\t', '\x2', '\x4', '\x3', 
 		'\t', '\x3', '\x4', '\x4', '\t', '\x4', '\x4', '\x5', '\t', '\x5', '\x4', 
 		'\x6', '\t', '\x6', '\x4', '\a', '\t', '\a', '\x4', '\b', '\t', '\b', 
 		'\x4', '\t', '\t', '\t', '\x4', '\n', '\t', '\n', '\x4', '\v', '\t', '\v', 
@@ -1375,8 +1374,8 @@ public partial class STEPParser : Parser {
 		'\x2', '\x2', '\x2', '\"', '\xB4', '\x3', '\x2', '\x2', '\x2', '$', '\xB6', 
 		'\x3', '\x2', '\x2', '\x2', '&', '\xC3', '\x3', '\x2', '\x2', '\x2', '(', 
 		'\xC5', '\x3', '\x2', '\x2', '\x2', '*', '\xC7', '\x3', '\x2', '\x2', 
-		'\x2', ',', '-', '\a', '!', '\x2', '\x2', '-', '\x3', '\x3', '\x2', '\x2', 
-		'\x2', '.', '/', '\a', '!', '\x2', '\x2', '/', '\x5', '\x3', '\x2', '\x2', 
+		'\x2', ',', '-', '\a', ' ', '\x2', '\x2', '-', '\x3', '\x3', '\x2', '\x2', 
+		'\x2', '.', '/', '\a', ' ', '\x2', '\x2', '/', '\x5', '\x3', '\x2', '\x2', 
 		'\x2', '\x30', '\x31', '\a', '\x3', '\x2', '\x2', '\x31', '\x36', '\x5', 
 		'\b', '\x5', '\x2', '\x32', '\x33', '\a', '\x4', '\x2', '\x2', '\x33', 
 		'\x35', '\x5', '\b', '\x5', '\x2', '\x34', '\x32', '\x3', '\x2', '\x2', 
@@ -1388,7 +1387,7 @@ public partial class STEPParser : Parser {
 		'\x2', '\x2', '\x2', '<', ';', '\x3', '\x2', '\x2', '\x2', '=', '\a', 
 		'\x3', '\x2', '\x2', '\x2', '>', '\x46', '\a', '\x13', '\x2', '\x2', '?', 
 		'\x46', '\a', '\v', '\x2', '\x2', '@', '\x46', '\a', '\x1D', '\x2', '\x2', 
-		'\x41', '\x46', '\a', '!', '\x2', '\x2', '\x42', '\x46', '\a', '\x1A', 
+		'\x41', '\x46', '\a', ' ', '\x2', '\x2', '\x42', '\x46', '\a', '\x1A', 
 		'\x2', '\x2', '\x43', '\x46', '\x5', '\n', '\x6', '\x2', '\x44', '\x46', 
 		'\a', '\x1F', '\x2', '\x2', '\x45', '>', '\x3', '\x2', '\x2', '\x2', '\x45', 
 		'?', '\x3', '\x2', '\x2', '\x2', '\x45', '@', '\x3', '\x2', '\x2', '\x2', 
@@ -1409,7 +1408,7 @@ public partial class STEPParser : Parser {
 		'\x2', '\x2', 'Z', '[', '\x3', '\x2', '\x2', '\x2', '[', ']', '\x3', '\x2', 
 		'\x2', '\x2', '\\', 'Z', '\x3', '\x2', '\x2', '\x2', ']', '^', '\a', '\x15', 
 		'\x2', '\x2', '^', '_', '\a', '\a', '\x2', '\x2', '_', '\r', '\x3', '\x2', 
-		'\x2', '\x2', '`', '\x63', '\a', '!', '\x2', '\x2', '\x61', '\x63', '\x5', 
+		'\x2', '\x2', '`', '\x63', '\a', ' ', '\x2', '\x2', '\x61', '\x63', '\x5', 
 		'\x6', '\x4', '\x2', '\x62', '`', '\x3', '\x2', '\x2', '\x2', '\x62', 
 		'\x61', '\x3', '\x2', '\x2', '\x2', '\x63', '\xF', '\x3', '\x2', '\x2', 
 		'\x2', '\x64', '\x65', '\a', '\x1B', '\x2', '\x2', '\x65', '\x66', '\x5', 
@@ -1446,29 +1445,29 @@ public partial class STEPParser : Parser {
 		'\a', '\b', '\x2', '\x2', '\x98', '\x17', '\x3', '\x2', '\x2', '\x2', 
 		'\x99', '\x9A', '\a', '\x18', '\x2', '\x2', '\x9A', '\x9B', '\a', '\x3', 
 		'\x2', '\x2', '\x9B', '\x9C', '\a', '\x3', '\x2', '\x2', '\x9C', '\x9D', 
-		'\a', '!', '\x2', '\x2', '\x9D', '\x9E', '\a', '\x5', '\x2', '\x2', '\x9E', 
+		'\a', ' ', '\x2', '\x2', '\x9D', '\x9E', '\a', '\x5', '\x2', '\x2', '\x9E', 
 		'\x9F', '\a', '\x5', '\x2', '\x2', '\x9F', '\xA0', '\a', '\a', '\x2', 
 		'\x2', '\xA0', '\x19', '\x3', '\x2', '\x2', '\x2', '\xA1', '\xA2', '\a', 
 		'\x19', '\x2', '\x2', '\xA2', '\xA3', '\a', '\a', '\x2', '\x2', '\xA3', 
 		'\xA4', '\x5', '\x12', '\n', '\x2', '\xA4', '\xA5', '\x5', '\x14', '\v', 
 		'\x2', '\xA5', '\xA6', '\x5', '\x18', '\r', '\x2', '\xA6', '\xA7', '\a', 
 		'\x15', '\x2', '\x2', '\xA7', '\xA8', '\a', '\a', '\x2', '\x2', '\xA8', 
-		'\x1B', '\x3', '\x2', '\x2', '\x2', '\xA9', '\xAA', '\a', '!', '\x2', 
+		'\x1B', '\x3', '\x2', '\x2', '\x2', '\xA9', '\xAA', '\a', ' ', '\x2', 
 		'\x2', '\xAA', '\x1D', '\x3', '\x2', '\x2', '\x2', '\xAB', '\xAC', '\a', 
 		'\x1A', '\x2', '\x2', '\xAC', '\xAD', '\a', '\n', '\x2', '\x2', '\xAD', 
 		'\xAE', '\x5', '\n', '\x6', '\x2', '\xAE', '\xAF', '\a', '\a', '\x2', 
 		'\x2', '\xAF', '\x1F', '\x3', '\x2', '\x2', '\x2', '\xB0', '\xB3', '\a', 
-		'!', '\x2', '\x2', '\xB1', '\xB3', '\x5', '\x16', '\f', '\x2', '\xB2', 
+		' ', '\x2', '\x2', '\xB1', '\xB3', '\x5', '\x16', '\f', '\x2', '\xB2', 
 		'\xB0', '\x3', '\x2', '\x2', '\x2', '\xB2', '\xB1', '\x3', '\x2', '\x2', 
 		'\x2', '\xB3', '!', '\x3', '\x2', '\x2', '\x2', '\xB4', '\xB5', '\a', 
-		'!', '\x2', '\x2', '\xB5', '#', '\x3', '\x2', '\x2', '\x2', '\xB6', '\xB7', 
-		'\a', '!', '\x2', '\x2', '\xB7', '%', '\x3', '\x2', '\x2', '\x2', '\xB8', 
+		' ', '\x2', '\x2', '\xB5', '#', '\x3', '\x2', '\x2', '\x2', '\xB6', '\xB7', 
+		'\a', ' ', '\x2', '\x2', '\xB7', '%', '\x3', '\x2', '\x2', '\x2', '\xB8', 
 		'\xC4', '\x5', '\n', '\x6', '\x2', '\xB9', '\xC4', '\x5', '\x6', '\x4', 
 		'\x2', '\xBA', '\xC4', '\a', '\x1F', '\x2', '\x2', '\xBB', '\xC4', '\a', 
 		'\x1D', '\x2', '\x2', '\xBC', '\xC4', '\a', '\x10', '\x2', '\x2', '\xBD', 
 		'\xC4', '\a', '\x12', '\x2', '\x2', '\xBE', '\xC4', '\a', '\x11', '\x2', 
 		'\x2', '\xBF', '\xC4', '\a', '\x13', '\x2', '\x2', '\xC0', '\xC4', '\a', 
-		'!', '\x2', '\x2', '\xC1', '\xC4', '\a', '\x1A', '\x2', '\x2', '\xC2', 
+		' ', '\x2', '\x2', '\xC1', '\xC4', '\a', '\x1A', '\x2', '\x2', '\xC2', 
 		'\xC4', '\a', '\v', '\x2', '\x2', '\xC3', '\xB8', '\x3', '\x2', '\x2', 
 		'\x2', '\xC3', '\xB9', '\x3', '\x2', '\x2', '\x2', '\xC3', '\xBA', '\x3', 
 		'\x2', '\x2', '\x2', '\xC3', '\xBB', '\x3', '\x2', '\x2', '\x2', '\xC3', 
@@ -1477,7 +1476,7 @@ public partial class STEPParser : Parser {
 		'\x2', '\x2', '\x2', '\xC3', '\xC0', '\x3', '\x2', '\x2', '\x2', '\xC3', 
 		'\xC1', '\x3', '\x2', '\x2', '\x2', '\xC3', '\xC2', '\x3', '\x2', '\x2', 
 		'\x2', '\xC4', '\'', '\x3', '\x2', '\x2', '\x2', '\xC5', '\xC6', '\a', 
-		'!', '\x2', '\x2', '\xC6', ')', '\x3', '\x2', '\x2', '\x2', '\xC7', '\xC8', 
+		' ', '\x2', '\x2', '\xC6', ')', '\x3', '\x2', '\x2', '\x2', '\xC7', '\xC8', 
 		'\a', '\xE', '\x2', '\x2', '\xC8', '+', '\x3', '\x2', '\x2', '\x2', '\xF', 
 		'\x36', '<', '\x45', 'J', 'P', 'Z', '\x62', 'y', '~', '\x8D', '\x94', 
 		'\xB2', '\xC3',

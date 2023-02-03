@@ -181,12 +181,18 @@ Undefined
 	: '$' 
 	;
 
+fragment
 DoubleQuote
 	: '\'\''
 	;
-	
+
+fragment
+QuotedString
+	: . DoubleQuote?
+	;
+
 AnyString
-	: '\'' (. DoubleQuote?)*? '\''
+	: '\'' QuotedString*? '\''
 	;
 
 NewlineChar 
