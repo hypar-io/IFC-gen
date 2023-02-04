@@ -27,8 +27,9 @@ namespace IFC.Tests
         // [InlineData("../../../models/Regression_49.ifc", 2, 0)]
         // [InlineData("../../../models/Regression_50.ifc", 5, 0)]
         // [InlineData("../../../models/date_time.ifc", 0, 0)]
-        [InlineData("../../../models/label_with_apostrophe.ifc", 3, 0)]
+        // [InlineData("../../../models/label_with_apostrophe.ifc", 3, 0)]
         // [InlineData("../../../models/BIMIT-Sample-Model.ifc", 224263, 0)]
+        [InlineData("../../../models/points_list.ifc", 1, 0)]
         public void DeserializeFromSTEP(string modelPath, int expectedInstanceCount, int expectedErrorCount)
         {
             var model = new Document(modelPath, out List<STEPError> errors);

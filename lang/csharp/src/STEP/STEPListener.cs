@@ -438,7 +438,9 @@ namespace STEP
                 collectionType = ctor.GetParameters()[0].ParameterType.GetGenericArguments()[0];
             }
 
-            var result = new List<object>();
+            var listType = typeof(List<>);
+            var constructedListType = listType.MakeGenericType(collectionType);
+            var result = (IList)Activator.CreateInstance(constructedListType);
 
             foreach (var cv in value.collectionValue())
             {
@@ -465,6 +467,10 @@ namespace STEP
                 else if (cv.constructor() != null)
                 {
                     result.Add(ParseConstructor(currId, cv.constructor()));
+                }
+                else if (cv.collection() != null)
+                {
+                    result.Add(ParseCollection(collectionType, cv.collection()));
                 }
             }
 

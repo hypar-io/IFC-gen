@@ -14,7 +14,8 @@ collection
 	;
 
 collectionValue
-	: RealLiteral
+	: collection
+	| RealLiteral
 	| IntegerLiteral
 	| StringLiteral
 	| AnyString
