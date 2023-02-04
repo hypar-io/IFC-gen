@@ -1002,11 +1002,11 @@ Comments
 	: '(*' .*? '*)' -> skip ;
 
 // IFC: Skip rules
-// Rules
-//	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
+Rules
+	: 'RULE ' SimpleId .*? 'END_RULE;' -> skip ;
 
-// Functons
-//	: 'FUNCTION' .*? 'END_FUNCTION;' -> skip;
+Functons
+	: 'FUNCTION' .*? 'END_FUNCTION;' -> skip;
 
 
 
