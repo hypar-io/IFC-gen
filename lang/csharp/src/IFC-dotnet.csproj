@@ -9,13 +9,13 @@
     <PackageId>Hypar.IFC4</PackageId>
     <PackageDescription>An IFC library for .net.</PackageDescription>
     <Summary>A .net implementation of the IFC schema.</Summary>
-    <Copyright>Hypar LLC, 2019</Copyright>
+    <Copyright>Hypar Inc., 2022</Copyright>
     <PackageProjectUrl>https://github.com/hypar-io/ifc-gen</PackageProjectUrl>
     <RepositoryUrl>https://github.com/hypar-io/ifc-gen</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-    <Version>0.1.4</Version>
+    <Version>1.0</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>IFC, AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>

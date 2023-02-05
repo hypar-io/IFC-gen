@@ -1,0 +1,21 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (
+        ('ViewDefinition [CoordinationView, QuantityTakeOffAddOnView]'),
+        '2;1');
+FILE_NAME (
+        'example.ifc',
+        '2012-09-24T14:40:06',
+        ('Architect'),
+        ('Building Designer Office'),
+        'IFC Engine DLL version 1.03 beta',
+        'IFC Engine DLL version 1.03 beta',
+        'The authorising person');
+FILE_SCHEMA (('IFC4RC4'));
+ENDSEC;
+DATA;
+
+#1=IFCCARTESIANPOINTLIST3D(((0.,0.,0.),(43.75,0.,0.)));
+
+ENDSEC;
+END-ISO-10303-21;

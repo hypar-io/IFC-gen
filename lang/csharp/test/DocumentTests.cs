@@ -21,21 +21,20 @@ namespace IFC.Tests
         public void Project()
         {
             // Create the document.
-            var doc = new Document("Test Project", 
+            var doc = new Document("Test Project",
                 "A test project for IFC-dotnet.",
                 "ikeough", "keough", "ian", "ian@hypar.io",
                 "hypar", "Hypar - Generative design for AEC.",
-                "Office", "12345 Sesame Street.", "Gotham", null, "NY", "10005","USA");
+                "Office", "12345 Sesame Street.", "Gotham", null, "NY", "10005", "USA");
 
             // Write the model to STEP.
             var stepPath = Path.Combine(BASELINES, "project.ifc");
-            var step = doc.ToSTEP(stepPath);
+            var step = doc.ToSTEP();
             File.WriteAllText(stepPath, step);
 
             // Read the model from STEP
-            List<STEPError> errors;
-            var newDoc = new Document(stepPath, out errors);
-            foreach(var e in errors)
+            var newDoc = new Document(stepPath, out List<STEPError> errors);
+            foreach (var e in errors)
             {
                 output.WriteLine(e.Message);
             }

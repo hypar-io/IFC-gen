@@ -8,8 +8,8 @@ namespace IFC4.Generators
 {
     public class CsharpLanguageGenerator : ILanguageGenerator
     {
-        public Dictionary<string,SelectType> SelectData {get;set;}
-        public Dictionary<string,EnumType> EnumData {get;set;}
+        public Dictionary<string, SelectType> SelectData { get; set; }
+        public Dictionary<string, EnumType> EnumData { get; set; }
 
         public string Assignment(AttributeData data)
         {
@@ -33,13 +33,13 @@ namespace IFC4.Generators
             }
 
             // Item is used in functions.
-            if(isGeneric)
+            if (isGeneric)
             {
                 return "T";
             }
 
             // https://github.com/ikeough/IFC-gen/issues/25
-            if(type == "IfcSiUnitName")
+            if (type == "IfcSiUnitName")
             {
                 return "IfcSIUnitName";
             }
@@ -50,7 +50,7 @@ namespace IFC4.Generators
         public string AttributeDataString(AttributeData data)
         {
             var prop = string.Empty;
-            if(data.IsDerived)
+            if (data.IsDerived)
             {
                 var isNew = data.IsDerived && data.HidesParentAttributeOfSameName ? "new " : string.Empty;
                 var name = data.Name;
@@ -59,14 +59,14 @@ namespace IFC4.Generators
         {isNew}public {data.Type} {name}{{get{{throw new NotImplementedException($""Derived property logic has been implemented for {name}."");}}}} // derived";
             }
             else
-            {   
+            {
                 var tags = new List<string>();
-                if(data.IsOptional) tags.Add("optional");
-                if(data.IsInverse) tags.Add("inverse");
+                if (data.IsOptional) tags.Add("optional");
+                if (data.IsInverse) tags.Add("inverse");
                 var opt = data.IsOptional ? "optional" : string.Empty;
                 var inverse = data.IsInverse ? "inverse" : string.Empty;
                 var nullable = EnumData.ContainsKey(data.Type) ? "?" : string.Empty;
-                prop = $"\t\tpublic {data.Type}{nullable} {data.Name}{{get;set;}} {(tags.Any()? "// " + string.Join(",",tags) : string.Empty)}";
+                prop = $"\t\tpublic {data.Type}{nullable} {data.Name}{{get;set;}} {(tags.Any() ? "// " + string.Join(",", tags) : string.Empty)}";
             }
 
             return prop;
@@ -76,7 +76,7 @@ namespace IFC4.Generators
         {
             var step = $"\t\t\tparameters.Add({data.Name} != null ? {data.Name}.ToStepValue() : \"$\");";
 
-            if(isDerivedInChild)
+            if (isDerivedInChild)
             {
                 step = "\t\t\tparameters.Add(\"*\");";
                 return step;
@@ -117,7 +117,7 @@ namespace IFC
     /// <summary>
 	/// http://www.buildingsmart-tech.org/ifc/IFC4/final/html/link/{data.Name.ToLower()}.htm
 	/// </summary>
-	public class {data.Name} : BaseIfc
+	public partial class {data.Name} : BaseIfc
 	{{
 		internal {WrappedType(data)} value;
 
@@ -161,12 +161,12 @@ namespace IFC
         public string SelectTypeString(SelectType data)
         {
             var constructors = new StringBuilder();
-            foreach(var value in data.Values)
+            foreach (var value in data.Values)
             {
                 // There is one select in IFC that 
                 // has an option which is an enum, which
                 // does not inherit from BaseIfc.
-                if(value == "IfcNullStyle")
+                if (value == "IfcNullStyle")
                 {
                     continue;
                 }
@@ -311,7 +311,7 @@ namespace IFC
 
         public string StepParameters(Entity data)
         {
-            if(data.IsAbstract)
+            if (data.IsAbstract)
             {
                 return string.Empty;
             }
@@ -440,6 +440,6 @@ namespace IFC
             return EntityBaseConstructorParams(data, includeOptional);
         }
 
-        public void GenerateManifest(string directory, IEnumerable<string> names){}
+        public void GenerateManifest(string directory, IEnumerable<string> names) { }
     }
 }

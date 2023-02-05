@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using IFC;
 using System.Globalization;
+using Antlr4.Runtime.Misc;
 
 namespace STEP
 {
@@ -53,15 +54,19 @@ namespace STEP
     public class STEPListener : STEPBaseListener
     {
         private int currId;
-        private IEnumerable<Type> enums;
-        private Dictionary<string, Type> types;
+        private readonly IEnumerable<Type> enums;
+        private readonly Dictionary<string, Type> types;
 
-        private Dictionary<int, InstanceData> instanceData;
+        private readonly Dictionary<int, InstanceData> instanceData;
 
         public Dictionary<int, InstanceData> InstanceData
         {
             get { return instanceData; }
         }
+
+        public IfcLabel FileName { get; private set; }
+
+        public IfcDateTime TimeStamp { get; private set; }
 
         public STEPListener()
         {
@@ -79,6 +84,12 @@ namespace STEP
                     types[key] = item;
                 }
             }
+        }
+
+        public override void EnterFileName([NotNull] STEPParser.FileNameContext context)
+        {
+            FileName = ParseString(typeof(IfcLabel), context.name().GetText());
+            TimeStamp = ParseString(typeof(IfcDateTime), context.timeStamp().GetText());
         }
 
         public override void EnterInstance(STEPParser.InstanceContext context)
@@ -117,8 +128,8 @@ namespace STEP
             // See if there is a constructor with the fromSTEP as its
             // only parameter.
             // Ex: IfcNormalisedRatioMeasure(IfcRatioMeasure value)
-            ctor = ctors.FirstOrDefault(c=>c.GetParameters().First().ParameterType == fromSTEP);
-            if(ctor != null)
+            ctor = ctors.FirstOrDefault(c => c.GetParameters().First().ParameterType == fromSTEP);
+            if (ctor != null)
             {
                 return ctor;
             }
@@ -176,7 +187,6 @@ namespace STEP
             {
                 fromSTEP = types[typeName];
             }
-
 
             // Use the constructor which includes all non-optional parameters.
             var ctorChain = new List<System.Reflection.ConstructorInfo>();
@@ -289,8 +299,7 @@ namespace STEP
 
         private dynamic ParseId(string value)
         {
-            int result;
-            if (!int.TryParse(value.TrimStart('#'), out result))
+            if (!int.TryParse(value.TrimStart('#'), out int result))
             {
                 throw new STEPParserException(typeof(STEPId), value);
             }
@@ -299,8 +308,7 @@ namespace STEP
 
         private dynamic ParseInt(Type t, string value)
         {
-            int result;
-            if (!int.TryParse(value, out result))
+            if (!int.TryParse(value, out int result))
             {
                 throw new STEPParserException(typeof(int), value);
             }
@@ -315,8 +323,7 @@ namespace STEP
 
         private dynamic ParseReal(Type t, string value)
         {
-            double result;
-            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
+            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double result))
             {
                 throw new STEPParserException(typeof(double), value);
             }
@@ -349,15 +356,14 @@ namespace STEP
 
         private dynamic ParseString(Type t, string value)
         {
-            string result = null;
             try
             {
-                result = TrimQuotes(value);
+                string result = TrimQuotes(value);
                 if (t == typeof(string))
                 {
                     return result;
                 }
-                return CreateIfcTypeOrUseConstructorParameterTypeToConstruct<string>(t, result);
+                return CreateIfcTypeOrUseConstructorParameterTypeToConstruct(t, result);
             }
             catch (Exception)
             {
@@ -367,7 +373,18 @@ namespace STEP
 
         private string TrimQuotes(string value)
         {
-            return value.TrimStart('\'').TrimEnd('\'');
+            var result = value.TrimStart('\'');
+            if (result.EndsWith("''"))
+            {
+                // Trim only one quote. It may be the case that 
+                // the string ends in a '.
+                result = result.Remove(result.Length - 2, 2);
+            }
+            else
+            {
+                result = result.TrimEnd('\'');
+            }
+            return result.Replace("''", "'");
         }
 
         private string TrimDots(string value)
@@ -417,9 +434,18 @@ namespace STEP
                 collectionType = ctor.GetParameters()[0].ParameterType.GetGenericArguments()[0];
             }
 
-            var result = new List<object>();
+            IList result = new List<object>();
+            // If the collection is not a list of ids or a list of constructors,
+            // then make a list of objects.
+            var collectionVal = value.collectionValue();
+            if (!collectionVal.All(cv => cv.Id() != null) && !collectionVal.All(cv => cv.constructor() != null))
+            {
+                var listType = typeof(List<>);
+                var constructedListType = listType.MakeGenericType(collectionType);
+                result = (IList)Activator.CreateInstance(constructedListType);
+            }
 
-            foreach (var cv in value.collectionValue())
+            foreach (var cv in collectionVal)
             {
                 if (cv.Id() != null)
                 {
@@ -443,7 +469,12 @@ namespace STEP
                 }
                 else if (cv.constructor() != null)
                 {
-                    result.Add(ParseConstructor(currId, cv.constructor()));
+                    var ctorResults = ParseConstructor(currId, cv.constructor());
+                    result.Add(ctorResults);
+                }
+                else if (cv.collection() != null)
+                {
+                    result.Add(ParseCollection(collectionType, cv.collection()));
                 }
             }
 

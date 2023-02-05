@@ -14,7 +14,8 @@ collection
 	;
 
 collectionValue
-	: RealLiteral
+	: collection
+	| RealLiteral
 	| IntegerLiteral
 	| StringLiteral
 	| AnyString
@@ -128,7 +129,11 @@ CapitalLetter
 	;
 
 DateTime
-	: '\'' Digits '-' Digits '-' Digits 'T' Digits ':' Digits ':' Digits '\''
+	: '\'' Digits '-' Digits '-' Digits 'T' Digits ':' Digits ':' Digits (PlusMinus Digits ':' Digits)? '\''
+	;
+
+PlusMinus
+	: '+'|'-'
 	;
 
 Derived
@@ -177,8 +182,18 @@ Undefined
 	: '$' 
 	;
 
+fragment
+DoubleQuote
+	: '\'\''
+	;
+
+fragment
+QuotedString
+	: . DoubleQuote?
+	;
+
 AnyString
-	: '\'' .*? '\''
+	: '\'' QuotedString*? '\''
 	;
 
 NewlineChar 

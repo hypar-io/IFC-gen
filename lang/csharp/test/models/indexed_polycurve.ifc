@@ -1,0 +1,22 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION (
+        ('ViewDefinition [CoordinationView, QuantityTakeOffAddOnView]'),
+        '2;1');
+FILE_NAME (
+        'example.ifc',
+        '2012-09-24T14:40:06',
+        ('Architect'),
+        ('Building Designer Office'),
+        'IFC Engine DLL version 1.03 beta',
+        'IFC Engine DLL version 1.03 beta',
+        'The authorising person');
+FILE_SCHEMA (('IFC4RC4'));
+ENDSEC;
+DATA;
+
+#2187=IFCCARTESIANPOINTLIST2D(((-0.028501457247113615,-0.),(-2.2204460492503131E-16,-0.028501457247113837),(0.028501457247113615,-1.1102230246251565E-16),(0.,0.028501457247113615)));
+#2188=IFCINDEXEDPOLYCURVE(#2187,(IFCARCINDEX((1,2,3)),IFCARCINDEX((3,4,1))),.F.);
+
+ENDSEC;
+END-ISO-10303-21;

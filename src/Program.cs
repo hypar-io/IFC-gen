@@ -38,9 +38,10 @@ namespace IFC.Generate
             else if (language == "proto")
             {
                 generators.Add(new Tuple<ILanguageGenerator, IFunctionsGenerator>(new ProtobufGenerator(), null));
-            } else if (language == "ts")
+            }
+            else if (language == "ts")
             {
-                generators.Add(new Tuple<ILanguageGenerator, IFunctionsGenerator>(new TypescriptGenerator(), 
+                generators.Add(new Tuple<ILanguageGenerator, IFunctionsGenerator>(new TypescriptGenerator(),
                     new TypescriptFunctionsGenerator()));
             }
 
@@ -84,14 +85,14 @@ namespace IFC.Generate
         {
             var names = new List<string>();
 
-            var sd = listener.TypeData.Where(kvp=>kvp.Value is SelectType).
-                                Select(v=>new {v.Key, v.Value}).
+            var sd = listener.TypeData.Where(kvp => kvp.Value is SelectType).
+                                Select(v => new { v.Key, v.Value }).
                                 ToDictionary(t => t.Key, t => (SelectType)t.Value);
             generator.SelectData = sd;
 
-            var ed = listener.TypeData.Where(kvp=>kvp.Value is EnumType).
-                                Select(v=>new {v.Key, v.Value}).
-                                ToDictionary(t=>t.Key, t=>(EnumType)t.Value);
+            var ed = listener.TypeData.Where(kvp => kvp.Value is EnumType).
+                                Select(v => new { v.Key, v.Value }).
+                                ToDictionary(t => t.Key, t => (EnumType)t.Value);
             generator.EnumData = ed;
 
             foreach (var kvp in listener.TypeData)

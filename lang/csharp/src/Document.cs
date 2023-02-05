@@ -17,16 +17,20 @@ namespace IFC
     /// </summary>
     public class Document
     {
-        private IDictionary<Guid, BaseIfc>  storage = new Dictionary<Guid, BaseIfc>();
+        private IDictionary<Guid, BaseIfc> storage = new Dictionary<Guid, BaseIfc>();
 
         private const string APPNAME = "IFC-dotnet";
+
+        public IfcLabel FileName { get; private set; }
+
+        public IfcDateTime Timestamp { get; private set; }
 
         /// <summary>
         /// Get all entities in the document.
         /// </summary>
         public IEnumerable<BaseIfc> AllEntities
         {
-            get{return storage.Values;}
+            get { return storage.Values; }
         }
 
         /// <summary>
@@ -49,13 +53,13 @@ namespace IFC
         /// <param name="state">The state.</param>
         /// <param name="postalCode">The postal code.</param>
         /// <param name="country">The country.</param>
-        public Document(string projectName, 
-            string projectDescription = null, 
-            string userId = null, 
-            string userLastName = null, 
-            string userFirstName = null, 
-            string userEmailAddress = null, 
-            string orgName = null, 
+        public Document(string projectName,
+            string projectDescription = null,
+            string userId = null,
+            string userLastName = null,
+            string userFirstName = null,
+            string userEmailAddress = null,
+            string orgName = null,
             string orgDescription = null,
             string addressDescription = null,
             string street = null,
@@ -85,13 +89,13 @@ namespace IFC
             // Create an owner history for the project.
             var history = new IfcOwnerHistory(personAndOrg, app, UnixNow());
             this.AddEntity(history);
-            
+
             var unitAss = AddUnitAssignment();
 
             var geo = AddGeometricContext();
 
             // Create the project.
-            var proj = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, projectName, projectDescription, null, null, null, new List<IfcRepresentationContext>{geo}, unitAss);   
+            var proj = new IfcProject(IfcGuid.ToIfcGuid(Guid.NewGuid()), history, projectName, projectDescription, null, null, null, new List<IfcRepresentationContext> { geo }, unitAss);
             this.AddEntity(proj);
         }
 
@@ -114,26 +118,25 @@ namespace IFC
             using (FileStream fs = new FileStream(STEPfilePath, FileMode.Open))
             {
                 var sw = new Stopwatch();
-                sw.Start();
 
                 var input = new AntlrInputStream(fs);
-                var lexer = new STEP.STEPLexer(input);
+                var lexer = new STEPLexer(input);
                 var tokens = new CommonTokenStream(lexer);
 
-                var parser = new STEP.STEPParser(tokens);
-                parser.BuildParseTree = true;
+                var parser = new STEPParser(tokens)
+                {
+                    BuildParseTree = true
+                };
 
                 var tree = parser.file();
                 var walker = new ParseTreeWalker();
 
-                var listener = new STEP.STEPListener();
+                var listener = new STEPListener();
                 walker.Walk(listener, tree);
 
-                sw.Stop();
-                Console.WriteLine($"{sw.Elapsed} for parsing STEP file {STEPfilePath}.");
-                sw.Reset();
+                this.FileName = listener.FileName;
+                this.Timestamp = listener.TimeStamp;
 
-                sw.Start();
                 var err = new List<STEPError>();
                 foreach (var data in listener.InstanceData)
                 {
@@ -154,9 +157,6 @@ namespace IFC
                     AddEntity(inst);
                 }
 
-                sw.Stop();
-                Console.WriteLine($"{sw.Elapsed} for creating instances.");
-
                 errors = err;
             }
         }
@@ -165,15 +165,15 @@ namespace IFC
         {
             //Ex: #38= IFCGEOMETRICREPRESENTATIONCONTEXT($,'Model',3,0.000010,#36,#37);
             var dimCount = new IfcDimensionCount(3);
-            var location = new IfcCartesianPoint(new List<IfcLengthMeasure>{0,0,0});
-            var up = new IfcDirection(new List<IfcReal>{0,0,1});
-            var x= new IfcDirection(new List<IfcReal>{1,0,0});
+            var location = new IfcCartesianPoint(new List<IfcLengthMeasure> { 0, 0, 0 });
+            var up = new IfcDirection(new List<IfcReal> { 0, 0, 1 });
+            var x = new IfcDirection(new List<IfcReal> { 1, 0, 0 });
             this.AddEntity(location);
             this.AddEntity(up);
             this.AddEntity(x);
             var place3d = new IfcAxis2Placement3D(location, up, x);
             var worldCs = new IfcAxis2Placement(place3d);
-            var north = new IfcDirection(new List<IfcReal>{0,1,0});
+            var north = new IfcDirection(new List<IfcReal> { 0, 1, 0 });
             // this.AddEntity(worldCs);
             this.AddEntity(place3d);
             this.AddEntity(north);
@@ -189,7 +189,7 @@ namespace IFC
         public void AddEntity(BaseIfc entity)
         {
             // Add the entity and recursively add all sub entities.
-            if(this.storage.ContainsKey(entity.Id))
+            if (this.storage.ContainsKey(entity.Id))
             {
                 return;
             }
@@ -201,13 +201,13 @@ namespace IFC
         /// Write the document to STEP.
         /// </summary>
         /// <returns>A string representing the model serialized to STEP.</returns>
-        public string ToSTEP(string filePath)
+        public string ToSTEP()
         {
             var sw = new Stopwatch();
             sw.Start();
 
             var builder = new StringBuilder();
-            builder.AppendLine(Begin(filePath));
+            builder.AppendLine(Begin());
 
             var index = 1;
             foreach (var element in storage.Values)
@@ -225,7 +225,6 @@ namespace IFC
             builder.Append(End());
 
             sw.Stop();
-            Console.WriteLine($"{sw.Elapsed} for serializing Document to STEP.");
 
             return builder.ToString();
         }
@@ -237,7 +236,7 @@ namespace IFC
         /// <returns>A collection of BaseIfc.</returns>
         public IEnumerable<Tifc> AllInstancesDerivedFromType<Tifc>()
         {
-            return storage.Values.Where(e=>typeof(Tifc).IsAssignableFrom(e.GetType())).Cast<Tifc>();
+            return storage.Values.Where(e => typeof(Tifc).IsAssignableFrom(e.GetType())).Cast<Tifc>();
         }
 
         /// <summary>
@@ -247,7 +246,7 @@ namespace IFC
         /// <returns>A collection of BaseIfc.</returns>
         public IEnumerable<Tifc> AllInstancesOfType<Tifc>()
         {
-            return storage.Values.Where(e=>e.GetType() == typeof(Tifc)).Cast<Tifc>();
+            return storage.Values.Where(e => e.GetType() == typeof(Tifc)).Cast<Tifc>();
         }
 
         /// <summary>
@@ -259,11 +258,11 @@ namespace IFC
             var lu = new IfcSIUnit(null, IfcUnitEnum.LENGTHUNIT, IfcSIUnitName.METRE);
             this.AddEntity(lu);
             var lengthUnit = new IfcUnit(lu);
-            
+
             var au = new IfcSIUnit(null, IfcUnitEnum.AREAUNIT, IfcSIUnitName.SQUARE_METRE);
             this.AddEntity(au);
             var areaUnit = new IfcUnit(au);
-            
+
             var vu = new IfcSIUnit(null, IfcUnitEnum.VOLUMEUNIT, IfcSIUnitName.CUBIC_METRE);
             this.AddEntity(vu);
             var volumeUnit = new IfcUnit(vu);
@@ -271,7 +270,7 @@ namespace IFC
             var sau = new IfcSIUnit(null, IfcUnitEnum.SOLIDANGLEUNIT, IfcSIUnitName.STERADIAN);
             this.AddEntity(sau);
             var solidAngleUnit = new IfcUnit(sau);
-            
+
             var mu = new IfcSIUnit(null, IfcUnitEnum.MASSUNIT, IfcSIUnitName.GRAM);
             this.AddEntity(mu);
             var massUnit = new IfcUnit(mu);
@@ -283,26 +282,26 @@ namespace IFC
             var thu = new IfcSIUnit(null, IfcUnitEnum.THERMODYNAMICTEMPERATUREUNIT, IfcSIUnitName.DEGREE_CELSIUS);
             this.AddEntity(thu);
             var thermUnit = new IfcUnit(thu);
-            
+
             var lmu = new IfcSIUnit(null, IfcUnitEnum.LUMINOUSINTENSITYUNIT, IfcSIUnitName.LUMEN);
             this.AddEntity(lmu);
             var lumUnit = new IfcUnit(lmu);
-            
+
             var pau = new IfcSIUnit(null, IfcUnitEnum.PLANEANGLEUNIT, IfcSIUnitName.RADIAN);
             this.AddEntity(pau);
             var planeAngleUnit = new IfcUnit(pau);
-           
+
             var measure = new IfcMeasureWithUnit(new IfcValue(new IfcMeasureValue(new IfcPlaneAngleMeasure(1.745e-2))), planeAngleUnit);
             this.AddEntity(measure);
 
-            var dimExp = new IfcDimensionalExponents(0,0,0,0,0,0,0);
+            var dimExp = new IfcDimensionalExponents(0, 0, 0, 0, 0, 0, 0);
             this.AddEntity(dimExp);
 
             var du = new IfcConversionBasedUnit(dimExp, IfcUnitEnum.PLANEANGLEUNIT, "DEGREE", measure);
             this.AddEntity(du);
             var degree = new IfcUnit(du);
-            
-            var units = new List<IfcUnit>{lengthUnit, areaUnit, volumeUnit, solidAngleUnit, massUnit, timeUnit, thermUnit, lumUnit, planeAngleUnit, degree};
+
+            var units = new List<IfcUnit> { lengthUnit, areaUnit, volumeUnit, solidAngleUnit, massUnit, timeUnit, thermUnit, lumUnit, planeAngleUnit, degree };
             var unitAss = new IfcUnitAssignment(units);
             this.AddEntity(unitAss);
 
@@ -322,7 +321,7 @@ namespace IFC
         /// <returns></returns>
         private IfcPostalAddress AddAddress(string description, string street, string city, string poBox, string state, string postalCode, string country)
         {
-            var lines = street != null ? new List<IfcLabel>(){street} : null;
+            var lines = street != null ? new List<IfcLabel>() { street } : null;
             var address = new IfcPostalAddress(IfcAddressTypeEnum.OFFICE, description, null, null, lines, poBox, city, state, postalCode, country);
             this.AddEntity(address);
             return address;
@@ -341,7 +340,7 @@ namespace IFC
         {
             var r = new IfcActorRole(role);
             this.AddEntity(r);
-            var person = new IfcPerson(userId, lastName, firstName, null, null, null, new List<IfcActorRole>{r}, null);
+            var person = new IfcPerson(userId, lastName, firstName, null, null, null, new List<IfcActorRole> { r }, null);
             this.AddEntity(person);
             return person;
         }
@@ -356,16 +355,17 @@ namespace IFC
         private IfcOrganization AddOrganization(string name, string description, IfcAddress address)
         {
             // Create an organization to own the Project
-            var org = new IfcOrganization(name, name, description, 
-                            new List<IfcActorRole>(), new List<IfcAddress>(){address});
+            var org = new IfcOrganization(name, name, description,
+                            new List<IfcActorRole>(), new List<IfcAddress>() { address });
             this.AddEntity(org);
             return org;
         }
 
-        private string Begin(string filePath)
+        private string Begin()
         {
             var project = AllInstancesOfType<IfcProject>().FirstOrDefault();
             var org = project != null ? project.OwnerHistory.OwningUser.TheOrganization.Name : new IfcLabel("Hypar");
+            var timeStamp = Timestamp != null ? $"{Timestamp.value}" : $"{DateTime.Now.ToUniversalTime():yyyy-MM-ddTHH:MM:ssK}";
             return $@"
 ISO-10303-21;
 HEADER;
@@ -373,9 +373,9 @@ FILE_DESCRIPTION(
 	('ViewDefinition [DesignTransferView_V1.0]'),
 	'2;1');
 FILE_NAME(
-    '{filePath}',
-    '{DateTime.Now.ToString("yyyy-MM-ddTHH:MM:ss")}',
-    ('{System.Environment.UserName}'),
+    '{FileName}',
+    '{timeStamp}',
+    ('{Environment.UserName}'),
     ('{org}'),
     'IFC-dotnet',
     '{typeof(Document).Assembly.GetName().Version}',
@@ -399,22 +399,24 @@ END-ISO-10303-21;";
         /// </summary>
         /// <param name="data">The instance data from which to construct the instance.</param>
         /// <param name="instances">The dictionary containing instance data gathered from the parser.</param>
-        /// <returns></returns>
-        private static object ConstructAndStoreInstance(STEP.InstanceData data, Dictionary<int, STEP.InstanceData> instances, int currLine, IList<STEPError> errors, int level)
+        /// <param name="currLine"></param>
+        /// <param name="errors"></param>
+        /// <param name="level"></param>
+        private static object ConstructAndStoreInstance(InstanceData data,
+                                                        Dictionary<int, InstanceData> instances,
+                                                        int currLine,
+                                                        IList<STEPError> errors,
+                                                        int level)
         {
-            var indent = string.Join("", Enumerable.Repeat("\t", level));
-
-            //     Console.WriteLine($"{indent}{currLine},{data.Id} : Constructing type {data.Type.Name} with parameters [{string.Join(",",data.Parameters)}]");
-
             for (var i = 0; i < data.Parameters.Count(); i++)
             {
-                if (data.Parameters[i] is STEP.InstanceData)
+                if (data.Parameters[i] is InstanceData data1)
                 {
-                    data.Parameters[i] = ConstructAndStoreInstance((STEP.InstanceData)data.Parameters[i], instances, currLine, errors, level);
+                    data.Parameters[i] = ConstructAndStoreInstance(data1, instances, currLine, errors, level);
                 }
-                else if (data.Parameters[i] is STEP.STEPId)
+                else if (data.Parameters[i] is STEPId)
                 {
-                    var stepId = data.Parameters[i] as STEP.STEPId;
+                    var stepId = data.Parameters[i] as STEPId;
 
                     // The instance has already been constructed.
                     // Use the id to look it up.
@@ -422,7 +424,6 @@ END-ISO-10303-21;";
                     {
                         if (instances[stepId.Value].ConstructedInstance != null)
                         {
-                            //Console.WriteLine($"{indent}Using pre-created instance {stepId.Value}");
                             data.Parameters[i] = instances[stepId.Value].ConstructedInstance;
                             continue;
                         }
@@ -435,8 +436,8 @@ END-ISO-10303-21;";
                         data.Parameters[i] = null;
                         continue;
                     }
-                    
-                    data.Parameters[i] = ConstructAndStoreInstance(instances[stepId.Value], instances, currLine, errors, level);        
+
+                    data.Parameters[i] = ConstructAndStoreInstance(instances[stepId.Value], instances, currLine, errors, level);
                 }
                 else if (data.Parameters[i] is List<object>)
                 {
@@ -459,9 +460,9 @@ END-ISO-10303-21;";
 
                     foreach (var item in list)
                     {
-                        if (item is STEP.STEPId)
+                        if (item is STEPId)
                         {
-                            var id = item as STEP.STEPId;
+                            var id = item as STEPId;
 
                             // Do a check for an existing instance with this id.
                             if (instances.ContainsKey(id.Value))
@@ -477,9 +478,9 @@ END-ISO-10303-21;";
                             var coerce = CoerceObject(subInstance, instanceType);
                             subInstances.Add(coerce);
                         }
-                        else if (item is STEP.InstanceData)
+                        else if (item is InstanceData data2)
                         {
-                            var subInstance = ConstructAndStoreInstance((STEP.InstanceData)item, instances, currLine, errors, level);
+                            var subInstance = ConstructAndStoreInstance(data2, instances, currLine, errors, level);
                             var coerce = CoerceObject(subInstance, instanceType);
                             subInstances.Add(coerce);
                         }
@@ -495,11 +496,11 @@ END-ISO-10303-21;";
                 }
             }
 
-            for(var i=0; i<data.Parameters.Count; i++)
+            for (var i = 0; i < data.Parameters.Count; i++)
             {
-                data.Parameters[i] = CoerceObject(data.Parameters[i],data.Constructor.GetParameters()[i].ParameterType); 
+                data.Parameters[i] = CoerceObject(data.Parameters[i], data.Constructor.GetParameters()[i].ParameterType);
             }
-            
+
             // Construct the instance, assuming that all required sub-instances
             // have already been constructed.
             var instance = data.Constructor.Invoke(data.Parameters.ToArray());
@@ -516,40 +517,38 @@ END-ISO-10303-21;";
                 instances[data.Id].ConstructedInstance = (BaseIfc)instance;
             }
 
-            //Console.WriteLine($"Setting instanceDataMap[{data.Id}] constructed instance as {instance.Id} for type {instance.GetType().Name}.");
             return instance;
         }
-        
+
         private static object CoerceObject(object value, Type to)
         {
-            if(value == null)
+            if (value == null)
             {
                 return null;
             }
 
             var result = value;
-            if(typeof(Select).IsAssignableFrom(to))
+            if (typeof(Select).IsAssignableFrom(to))
             {
-                var ctorChain = new List<System.Reflection.ConstructorInfo>();
-                System.Reflection.ConstructorInfo ctor = null;
-                if(STEPListener.TypeHasConstructorForSelectChoice(to, value.GetType(), out ctor, ref ctorChain))
+                var ctorChain = new List<ConstructorInfo>();
+                if (STEPListener.TypeHasConstructorForSelectChoice(to, value.GetType(), out ConstructorInfo ctor, ref ctorChain))
                 {
-                    result = ctor.Invoke(new object[]{value});
-                    if(ctorChain.Any())
+                    result = ctor.Invoke(new object[] { value });
+                    if (ctorChain.Any())
                     {
                         // Construct the necessary wrappers working
                         // backwards. For the first constructor, the parameter
                         // will be the constructed instance.
-                        for(var y=ctorChain.Count-1; y>=0; y--)
+                        for (var y = ctorChain.Count - 1; y >= 0; y--)
                         {
-                            result = ctorChain[y].Invoke(new object[]{result});
+                            result = ctorChain[y].Invoke(new object[] { result });
                         }
                     }
                 }
             }
-            return result; 
+            return result;
         }
-    
+
         private int UnixNow()
         {
             return (Int32)(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;

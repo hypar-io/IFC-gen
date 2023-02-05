@@ -143,7 +143,7 @@ namespace STEP
 
         public static string ToStepValue(this byte[] value, bool isSelectOption = false)
         {
-            if(value == null)
+            if (value == null)
             {
                 return NULLTOKEN;
             }
@@ -153,7 +153,7 @@ namespace STEP
 
         public static string ToStepValue(this double value, bool isSelectOption = false)
         {
-            if(value % 1 == 0)
+            if (value % 1 == 0)
             {
                 return value.ToString("0.0", CultureInfo.InvariantCulture);
             }
@@ -162,11 +162,11 @@ namespace STEP
 
         public static string ToStepValue(this string value, bool isSelectOption = false)
         {
-            if(value == null)
+            if (value == null)
             {
                 return NULLTOKEN;
             }
-            return "'" + value.ToString() + "'";
+            return "'" + value.Replace("'", "''").ToString() + "'";
         }
 
         public static string ToStepValue(this Enum value, bool isSelectOption = false)
