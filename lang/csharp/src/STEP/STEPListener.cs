@@ -188,7 +188,6 @@ namespace STEP
                 fromSTEP = types[typeName];
             }
 
-
             // Use the constructor which includes all non-optional parameters.
             var ctorChain = new List<System.Reflection.ConstructorInfo>();
             var ctor = GetConstructorForType(ifcType, ref ctorChain, fromSTEP);
@@ -300,8 +299,7 @@ namespace STEP
 
         private dynamic ParseId(string value)
         {
-            int result;
-            if (!int.TryParse(value.TrimStart('#'), out result))
+            if (!int.TryParse(value.TrimStart('#'), out int result))
             {
                 throw new STEPParserException(typeof(STEPId), value);
             }
@@ -310,8 +308,7 @@ namespace STEP
 
         private dynamic ParseInt(Type t, string value)
         {
-            int result;
-            if (!int.TryParse(value, out result))
+            if (!int.TryParse(value, out int result))
             {
                 throw new STEPParserException(typeof(int), value);
             }
@@ -326,8 +323,7 @@ namespace STEP
 
         private dynamic ParseReal(Type t, string value)
         {
-            double result;
-            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out result))
+            if (!double.TryParse(value, NumberStyles.Any, CultureInfo.InvariantCulture, out double result))
             {
                 throw new STEPParserException(typeof(double), value);
             }
@@ -438,11 +434,18 @@ namespace STEP
                 collectionType = ctor.GetParameters()[0].ParameterType.GetGenericArguments()[0];
             }
 
-            var listType = typeof(List<>);
-            var constructedListType = listType.MakeGenericType(collectionType);
-            var result = (IList)Activator.CreateInstance(constructedListType);
+            IList result = new List<object>();
+            // If the collection is not a list of ids or a list of constructors,
+            // then make a list of objects.
+            var collectionVal = value.collectionValue();
+            if (!collectionVal.All(cv => cv.Id() != null) && !collectionVal.All(cv => cv.constructor() != null))
+            {
+                var listType = typeof(List<>);
+                var constructedListType = listType.MakeGenericType(collectionType);
+                result = (IList)Activator.CreateInstance(constructedListType);
+            }
 
-            foreach (var cv in value.collectionValue())
+            foreach (var cv in collectionVal)
             {
                 if (cv.Id() != null)
                 {
@@ -466,7 +469,8 @@ namespace STEP
                 }
                 else if (cv.constructor() != null)
                 {
-                    result.Add(ParseConstructor(currId, cv.constructor()));
+                    var ctorResults = ParseConstructor(currId, cv.constructor());
+                    result.Add(ctorResults);
                 }
                 else if (cv.collection() != null)
                 {
