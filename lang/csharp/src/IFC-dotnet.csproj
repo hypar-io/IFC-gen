@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net7.0</TargetFramework>
     <NoWarn>3021;CS1591</NoWarn> 
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Hypar.IFC4</AssemblyName>
@@ -20,7 +20,7 @@
     <PackageTags>IFC, AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.7.1" />
+    <PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.0" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 </Project>

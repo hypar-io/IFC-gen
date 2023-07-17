@@ -1,9 +1,9 @@
-ANTLR=java -jar /usr/local/lib/antlr-4.7-complete.jar
+ANTLR=antlr
 CURR_DIR=$(shell pwd)
 GRAMMAR_IFC=$(CURR_DIR)/grammar/Express.g4
 GRAMMAR_STEP=$(CURR_DIR)/schemas/STEP.g4
 SCHEMA=$(CURR_DIR)/schemas/IFC.exp
-DEBUG_OUT=$(CURR_DIR)/src/bin/Debug/netcoreapp2.0
+DEBUG_OUT=$(CURR_DIR)/src/bin/Debug/net7.0
 
 default:
 	dotnet build ./src/IFC-gen.csproj
