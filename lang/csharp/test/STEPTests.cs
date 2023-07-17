@@ -50,7 +50,7 @@ namespace IFC.Tests
             errors.Clear();
             var newModel = new Document(outputPath, out errors);
             Assert.Equal(expectedInstanceCount, newModel.AllEntities.Count());
-            Assert.Equal(0, errors.Count);
+            Assert.Empty(errors);
         }
 
         private void ReportErrors(string filePath, IEnumerable<STEPError> errors)
