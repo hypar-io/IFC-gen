@@ -154,6 +154,7 @@ namespace IFC
                 foreach (var data in listener.InstanceData)
                 {
                     var inst = (BaseIfc)data.Value.ConstructedInstance;
+                    inst.StepId = data.Value.Id;
                     AddEntity(inst);
                 }
 
@@ -414,10 +415,8 @@ END-ISO-10303-21;";
                 {
                     data.Parameters[i] = ConstructAndStoreInstance(data1, instances, currLine, errors, level);
                 }
-                else if (data.Parameters[i] is STEPId)
+                else if (data.Parameters[i] is STEPId stepId)
                 {
-                    var stepId = data.Parameters[i] as STEPId;
-
                     // The instance has already been constructed.
                     // Use the id to look it up.
                     if (instances.ContainsKey(stepId.Value))
@@ -439,10 +438,8 @@ END-ISO-10303-21;";
 
                     data.Parameters[i] = ConstructAndStoreInstance(instances[stepId.Value], instances, currLine, errors, level);
                 }
-                else if (data.Parameters[i] is List<object>)
+                else if (data.Parameters[i] is List<object> list)
                 {
-                    var list = data.Parameters[i] as List<object>;
-
                     // The parameters will have been stored in a List<object> during parsing.
                     // We need to create a List<T> where T is the type expected by the constructor
                     // in the STEP file.
