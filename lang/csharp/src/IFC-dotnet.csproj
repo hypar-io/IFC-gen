@@ -15,7 +15,7 @@
     <RepositoryType>git</RepositoryType>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
-    <Version>1.0</Version>
+    <Version>1.1</Version>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageTags>IFC, AEC, Architecture, Structure, Engineering, Infrastructure</PackageTags>
   </PropertyGroup>
