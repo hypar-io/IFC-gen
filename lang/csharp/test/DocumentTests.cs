@@ -38,7 +38,7 @@ namespace IFC.Tests
             {
                 output.WriteLine(e.Message);
             }
-            Assert.Equal(0, errors.Count);
+            Assert.Empty(errors);
         }
     }
 }
