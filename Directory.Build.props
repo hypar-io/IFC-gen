@@ -2,7 +2,7 @@
     <PropertyGroup>
         <Authors>Hypar, Inc.</Authors>
         <Company>Hypar, Inc.</Company>
-        <Copyright>Hypar, Inc. 2020</Copyright>
+        <Copyright>Hypar, Inc. 2023</Copyright>
         <RepositoryType>git</RepositoryType>
         <PackageTags>AEC, Architecture, Structure, Engineering</PackageTags>
         <TargetFramework>net6.0</TargetFramework>
