@@ -1,9 +1,9 @@
 ANTLR=antlr
 CURR_DIR=$(shell pwd)
 GRAMMAR_IFC=$(CURR_DIR)/grammar/Express.g4
-GRAMMAR_STEP=$(CURR_DIR)/schemas/STEP.g4
+GRAMMAR_STEP=$(CURR_DIR)/grammar/STEP.g4
 SCHEMA=$(CURR_DIR)/schemas/IFC.exp
-DEBUG_OUT=$(CURR_DIR)/src/bin/Debug/net7.0
+DEBUG_OUT=$(CURR_DIR)/src/bin/Debug/net6.0
 
 default:
 	dotnet build ./src/IFC-gen.csproj
@@ -31,7 +31,7 @@ proto: default
 
 ts: default
 	dotnet run -p ./src/IFC-gen.csproj -e $(SCHEMA) -l ts -o ./lang/typescript/src
-	
+
 debug_parser: generate_debug
 	dotnet build ./src/IFC-gen.csproj
 	dotnet $(DEBUG_OUT)/IFC-gen.dll -e ./debug.exp -l csharp -o ./lang/csharp/src/IFC -p

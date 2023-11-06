@@ -298,4 +298,5 @@ __pycache__/
 tokens.txt
 debug.exp
 lang/csharp/src/IFC/*.g.cs
+lang/csharp/src/*.g.cs
 lang/ts/src/*.g.cs
