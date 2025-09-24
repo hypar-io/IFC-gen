@@ -378,7 +378,7 @@ inverseDef
 	;
 
 inverseRedef
-	: attrRef ';' inverseType FOR attrRef ';'
+	: attrRef ':' inverseType FOR attrRef ';'
 	;
 
 inverseType
