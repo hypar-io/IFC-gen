@@ -33,7 +33,7 @@ allTypeSel
 	| conformantType
 	| simpleType
 	| namedType
-	| pseudoType
+	| genericType
 	;
 
 arrayType
